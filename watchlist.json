@@ -1,0 +1,62 @@
+{
+  "watchlist": [
+    {
+      "symbol": "SPY",
+      "description": "S&P 500 ETF — baseline market exposure and benchmark",
+      "max_allocation_pct": 15,
+      "sector": "ETF",
+      "active": true
+    },
+    {
+      "symbol": "QQQ",
+      "description": "Nasdaq-100 ETF — tech sector exposure",
+      "max_allocation_pct": 10,
+      "sector": "ETF",
+      "active": true
+    },
+    {
+      "symbol": "NVDA",
+      "description": "GPU/AI infrastructure — high-conviction AI infrastructure play",
+      "max_allocation_pct": 5,
+      "sector": "Technology",
+      "active": true
+    },
+    {
+      "symbol": "AAPL",
+      "description": "Large-cap tech — stability anchor",
+      "max_allocation_pct": 5,
+      "sector": "Technology",
+      "active": true
+    },
+    {
+      "symbol": "MSFT",
+      "description": "Cloud/enterprise — Azure AI infrastructure",
+      "max_allocation_pct": 5,
+      "sector": "Technology",
+      "active": true
+    },
+    {
+      "symbol": "AMZN",
+      "description": "E-commerce + AWS cloud — diversified mega-cap",
+      "max_allocation_pct": 5,
+      "sector": "Technology",
+      "active": true
+    },
+    {
+      "symbol": "META",
+      "description": "Social media + AI model investments",
+      "max_allocation_pct": 5,
+      "sector": "Technology",
+      "active": true
+    },
+    {
+      "symbol": "GOOGL",
+      "description": "Search + cloud + AI — Gemini ecosystem",
+      "max_allocation_pct": 5,
+      "sector": "Technology",
+      "active": true
+    }
+  ],
+  "cash_reserve_pct": 20,
+  "last_updated": "2026-05-17"
+}

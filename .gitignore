@@ -1,0 +1,34 @@
+# Credentials — never commit these
+.env
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+
+# Logs & journals (optional — remove if you want journals in git)
+journal/*.md
+
+# Heartbeat (runtime state)
+heartbeat.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

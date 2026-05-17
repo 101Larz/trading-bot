@@ -1,0 +1,22 @@
+{
+  "model": "claude-opus-4-7",
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/research.py*)",
+      "Bash(python scripts/trade.py*)",
+      "Bash(python scripts/risk.py*)",
+      "Bash(python scripts/market_data.py*)",
+      "Bash(python scripts/journal.py*)",
+      "Bash(python scripts/notify.py*)",
+      "Read(journal/*)",
+      "Read(memory/*)",
+      "Read(routines/*)",
+      "Read(watchlist.json)",
+      "Read(heartbeat.json)",
+      "Read(CLAUDE.md)",
+      "Write(journal/*)",
+      "Write(memory/*)",
+      "Write(heartbeat.json)"
+    ]
+  }
+}
