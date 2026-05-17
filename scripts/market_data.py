@@ -1,14 +1,18 @@
 """
 Market data fetching: price bars, latest quotes, moving averages, RSI.
-All functions return plain dicts suitable for JSON serialization.
+
+Bar data source priority:
+  1. Alpaca IEX feed (free, real-time quotes but no historical bars on free plan)
+  2. yfinance (fallback for historical OHLCV bars, MAs, RSI)
 """
 
 import os
 import sys
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timezone
 
 import requests
+import yfinance as yf
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -25,41 +29,91 @@ def _headers():
     }
 
 
-def get_bars(symbol: str, timeframe: str = "1Day", limit: int = 60) -> dict:
+# ---------------------------------------------------------------------------
+# Bar data
+# ---------------------------------------------------------------------------
+
+def get_bars_alpaca(symbol: str, limit: int = 60) -> list[dict]:
+    """Fetch daily bars from Alpaca IEX. Returns [] on free-plan null response."""
     url = f"{DATA_BASE}/v2/stocks/{symbol}/bars"
-    params = {"timeframe": timeframe, "limit": limit, "adjustment": "raw", "sort": "asc"}
+    params = {"timeframe": "1Day", "limit": limit, "adjustment": "raw", "sort": "asc", "feed": "iex"}
     r = requests.get(url, headers=_headers(), params=params, timeout=10)
     r.raise_for_status()
-    return r.json()
+    return r.json().get("bars") or []
 
+
+def get_bars_yfinance(symbol: str, limit: int = 60) -> list[dict]:
+    """Fetch daily bars from yfinance. Returns list of {c, o, h, l, v} dicts."""
+    ticker = yf.Ticker(symbol)
+    hist = ticker.history(period=f"{limit}d", interval="1d", auto_adjust=True)
+    if hist.empty:
+        return []
+    return [
+        {
+            "t": str(idx.date()),
+            "o": round(row["Open"], 4),
+            "h": round(row["High"], 4),
+            "l": round(row["Low"], 4),
+            "c": round(row["Close"], 4),
+            "v": int(row["Volume"]),
+        }
+        for idx, row in hist.iterrows()
+    ]
+
+
+def get_bars(symbol: str, limit: int = 60) -> tuple[list[dict], str]:
+    """
+    Returns (bars, source) where source is 'alpaca' or 'yfinance'.
+    Tries Alpaca first; falls back to yfinance if Alpaca returns no data.
+    """
+    bars = get_bars_alpaca(symbol, limit)
+    if bars:
+        return bars, "alpaca"
+    bars = get_bars_yfinance(symbol, limit)
+    return bars, "yfinance"
+
+
+# ---------------------------------------------------------------------------
+# Latest quote
+# ---------------------------------------------------------------------------
 
 def get_latest_quote(symbol: str) -> dict:
+    """Fetch latest bid/ask from Alpaca IEX."""
     url = f"{DATA_BASE}/v2/stocks/{symbol}/quotes/latest"
-    r = requests.get(url, headers=_headers(), timeout=10)
+    r = requests.get(url, headers=_headers(), params={"feed": "iex"}, timeout=10)
     r.raise_for_status()
-    return r.json()
+    return r.json().get("quote", {})
 
+
+# ---------------------------------------------------------------------------
+# Indicators
+# ---------------------------------------------------------------------------
 
 def compute_moving_averages(bars: list[dict]) -> dict:
-    """Compute 20-day and 50-day simple moving averages from bar data."""
-    closes = [b["c"] for b in bars]
-    if len(closes) < 50:
-        return {"ma20": None, "ma50": None, "note": "Insufficient data"}
-    ma20 = sum(closes[-20:]) / 20
-    ma50 = sum(closes[-50:]) / 50
+    if not bars:
+        return {"ma20": None, "ma50": None, "trend": None, "note": "No bar data"}
+    closes = [float(b["c"]) for b in bars]
+    if len(closes) < 20:
+        return {"ma20": None, "ma50": None, "trend": None, "note": f"Only {len(closes)} bars — need 20+"}
     current = closes[-1]
+    ma20 = round(sum(closes[-20:]) / 20, 2)
+    ma50 = round(sum(closes[-50:]) / 50, 2) if len(closes) >= 50 else None
+    trend = None
+    if ma50 is not None:
+        trend = "bullish" if current > ma20 > ma50 else ("bearish" if current < ma20 < ma50 else "mixed")
     return {
-        "ma20": round(ma20, 2),
-        "ma50": round(ma50, 2),
         "current_price": round(current, 2),
-        "above_ma20": current > ma20,
-        "above_ma50": current > ma50,
-        "trend": "bullish" if current > ma20 > ma50 else ("bearish" if current < ma20 < ma50 else "mixed"),
+        "ma20": ma20,
+        "ma50": ma50,
+        "above_ma20": bool(current > ma20),
+        "above_ma50": bool(current > ma50) if ma50 else None,
+        "trend": trend,
     }
 
 
 def compute_rsi(bars: list[dict], period: int = 14) -> float | None:
-    """Compute RSI-14 from bar data."""
+    if not bars:
+        return None
     closes = [b["c"] for b in bars]
     if len(closes) < period + 1:
         return None
@@ -70,9 +124,12 @@ def compute_rsi(bars: list[dict], period: int = 14) -> float | None:
     avg_loss = sum(losses) / period
     if avg_loss == 0:
         return 100.0
-    rs = avg_gain / avg_loss
-    return round(100 - (100 / (1 + rs)), 2)
+    return round(100 - (100 / (1 + avg_gain / avg_loss)), 2)
 
+
+# ---------------------------------------------------------------------------
+# Market clock
+# ---------------------------------------------------------------------------
 
 def get_market_clock() -> dict:
     url = f"{os.getenv('APCA_BASE_URL')}/v2/clock"
@@ -81,20 +138,38 @@ def get_market_clock() -> dict:
     return r.json()
 
 
+# ---------------------------------------------------------------------------
+# Full snapshot
+# ---------------------------------------------------------------------------
+
 def full_snapshot(symbol: str) -> dict:
-    """Return bars, MAs, RSI and latest quote for a symbol in one call."""
-    bars_data = get_bars(symbol, timeframe="1Day", limit=60)
-    bars = bars_data.get("bars", [])
-    quote_data = get_latest_quote(symbol)
+    """
+    Return a complete picture of a symbol: latest quote, MAs, RSI, bar source.
+    Bars come from Alpaca if available, yfinance otherwise.
+    """
+    bars, bar_source = get_bars(symbol)
+    quote = get_latest_quote(symbol)
     mas = compute_moving_averages(bars)
     rsi = compute_rsi(bars)
+
+    # Derive a clean last price: prefer IEX ask, fall back to MA current_price
+    last_price = quote.get("ap") or quote.get("bp") or mas.get("current_price")
+
     return {
         "symbol": symbol,
-        "timestamp": datetime.utcnow().isoformat() + "Z",
-        "latest_quote": quote_data.get("quote", {}),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "last_price": last_price,
+        "bar_source": bar_source,
+        "bar_count": len(bars),
+        "latest_quote": {"bid": quote.get("bp"), "ask": quote.get("ap")},
         "moving_averages": mas,
         "rsi_14": rsi,
-        "bar_count": len(bars),
+        "rsi_signal": (
+            "overbought" if rsi and rsi > 70
+            else "oversold" if rsi and rsi < 30
+            else "neutral" if rsi
+            else None
+        ),
     }
 
 
@@ -103,10 +178,11 @@ if __name__ == "__main__":
     symbol = sys.argv[2] if len(sys.argv) > 2 else "SPY"
 
     if action == "bars":
-        print(json.dumps(get_bars(symbol)))
+        bars, source = get_bars(symbol)
+        print(json.dumps({"source": source, "count": len(bars), "bars": bars[-5:]}, indent=2))
     elif action == "quote":
-        print(json.dumps(get_latest_quote(symbol)))
+        print(json.dumps(get_latest_quote(symbol), indent=2))
     elif action == "clock":
-        print(json.dumps(get_market_clock()))
+        print(json.dumps(get_market_clock(), indent=2))
     else:
         print(json.dumps(full_snapshot(symbol), indent=2))
