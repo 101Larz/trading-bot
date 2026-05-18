@@ -19,9 +19,6 @@ build/
 # Logs & journals (optional — remove if you want journals in git)
 journal/*.md
 
-# Heartbeat (runtime state)
-heartbeat.json
-
 # OS
 .DS_Store
 Thumbs.db

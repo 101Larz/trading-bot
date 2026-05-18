@@ -73,6 +73,14 @@ These rules are **hardcoded**. No trade may bypass them.
 
 ---
 
+## Git Workflow (Non-Negotiable)
+
+- **Always work on the `main` branch.** Do not switch to or develop on any other branch.
+- **Never create new branches.** All work happens directly on `main`.
+- **Always push to `origin main`.** Every commit goes directly to `main` via `git push origin main`.
+
+---
+
 ## Decision Framework
 
 Before every trade, answer these five questions:

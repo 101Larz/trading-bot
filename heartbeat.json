@@ -1,0 +1,11 @@
+{
+  "last_routine": "pre-market-research",
+  "last_run_utc": "2026-05-18T13:00:00Z",
+  "status": "success",
+  "account_status": "ACTIVE",
+  "portfolio_value": 100000.0,
+  "cash": 100000.0,
+  "open_positions": 0,
+  "decision": "HOLD",
+  "notes": "Fresh account. Risk-off open, NVDA earnings Wed. No trade."
+}
