@@ -48,3 +48,48 @@ Sources:
 - [Stock Market News for May 18, 2026 — Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/stock-market-news-may-18-120100990.html)
 - [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
 - [Best Performing Stocks 2026 YTD — StockTitan](https://www.stocktitan.net/rankings/stock-gains-ytd/2026)
+
+---
+
+## 2026-05-18 (Monday) — Pre-Market (session: keen-wright)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Open Positions | 0 |
+| Status | ACTIVE |
+
+Fresh account, all cash, no open positions. No position-specific news to review.
+
+### Market Context
+- **S&P 500 futures lower** to start the week. Both S&P 500 and Nasdaq hit record highs last week but pulled back Friday; weakness continuing Monday.
+- **Inflation / rates headwind**: US 10Y Treasury yield above 4.60% — highest in a year. Recent data points to accelerating inflation; traders have fully priced out any Fed rate cuts in 2026.
+- **Event risk this week**: NVDA earnings Wed 5/20 (KeyBanc PT raised to $300 from $275), TGT Wed, WMT Thu. Market is largely in wait-and-see mode ahead of NVDA.
+- **Geopolitical**: US-Iran tensions keeping oil bid; potential Samsung labor strike risk to memory chip supply.
+- **Sector momentum**: Semis (SOX) +65% YTD — strongest sector but extended; analysts flagging dot-com parallels and risk of a 25-30% correction.
+- **Single-name movers**: LiveRamp (RAMP) +27% (Publicis $2.5B all-cash buyout), Dominion (D) +14% (NextEra buyout talks), Regeneron (REGN) -10.5% (failed Phase 3 melanoma trial).
+
+### Trade Ideas (watch only — not actioned today)
+1. **NVDA** — Trend strongly bullish, but **earnings in 2 trading days** (Wed 5/20). Strategy rule: do not enter with earnings < 5 days out. Binary event risk. *No entry.*
+2. **AVGO (Broadcom)** — AI/semis leader with strong trend. RSI likely overbought after sector's 65% YTD run; violates RSI 40-65 entry rule and chases an extended move. Watch for a pullback toward the 20-day MA. Indicative: entry on pullback ~ -5% from current with 8% stop, 15% target — *no entry until RSI resets.*
+3. **Cash / SPY benchmark** — With rising yields, inflation surprise, and a market-defining NVDA print midweek, the highest-EV action is to preserve capital and reassess post-NVDA.
+
+### Decision: **HOLD / NO_TRADE**
+
+Rationale:
+- Macro backdrop is risk-off: yields at 1-year highs, inflation accelerating, Fed cuts off the table, geopolitical oil shock.
+- The week's price action is hostage to NVDA earnings Wed — a binary event that violates the "no entry within 5 days of earnings" rule for the strongest-trend names.
+- Leading sector (semis) is overbought and historically extended; no setup currently satisfies all five entry criteria (trend + RSI 40-65 + clean news + SPY trend + risk budget).
+- Default to NO_TRADE under uncertainty. Reassess at next routine and after the NVDA print.
+
+### Sources
+- [Stock Market Today May 18 2026 — TheStreet](https://www.thestreet.com/latest-news/stock-market-today-may-18-2026-updates)
+- [Stock market today: inflation fears, Nvidia — Yahoo Finance](https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-may-18-earnings-nvidia-232705005.html)
+- [Stock Market News for May 18, 2026 — Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/stock-market-news-may-18-120100990.html)
+- [Nvidia's Next Earnings Report on May 20 — Motley Fool](https://www.fool.com/investing/2026/05/18/nvidias-next-earnings-report-on-may-20-could-send/)
+- [Semiconductor Leaders SOXX, SMH, FTXL — 24/7 Wall St.](https://247wallst.com/investing/2026/05/06/semiconductor-leaders-soxx-smh-and-ftxl-are-crushing-it-on-ai-infrastructure-demand/)
+- [Top Semiconductor Stocks to Watch May 2026 — Intellectia](https://intellectia.ai/blog/semiconductor-stocks-to-watch-may-2026)
