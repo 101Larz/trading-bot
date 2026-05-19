@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market-research",
-  "last_run_utc": "2026-05-19T11:00:00Z",
+  "last_routine": "market-open-execution",
+  "last_run_utc": "2026-05-19T13:45:00Z",
   "status": "success",
   "account_status": "ACTIVE",
   "portfolio_value": 100000.0,
   "cash": 100000.0,
   "open_positions": 0,
-  "decision": "HOLD",
-  "notes": "Fresh account. Risk-off: yields breaking higher, tech/semi weak, SPY RSI 73 overbought, NVDA earnings Wed + OpEx. No trade."
+  "decision": "NO_TRADE",
+  "notes": "Market-data feed returned only 1 bar for CVX and SPY -- MA20/MA50/RSI unverifiable, strategy entry criteria 1/2/4 cannot be confirmed. CVX quote stale (bid 184.72/ask 199.24, ~7.8% spread). Risk-off macro into binary NVDA print Wed. No trade; full cash preserved."
 }

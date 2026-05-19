@@ -271,3 +271,43 @@ Rationale:
 - [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
 - [Best Stocks to Buy Now: May 2026 — Motley Fool](https://www.fool.com/investing/top-stocks-to-buy-and-hold/)
 - [Monthly Stock Sector Outlook 2026 — Charles Schwab](https://www.schwab.com/learn/story/stock-sector-outlook)
+
+---
+
+## 2026-05-19 (Tuesday) — Market-Open Execution (session: sweet-shannon, 13:45 UTC / 9:45 ET)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Open Positions | 0 |
+| Status | ACTIVE (paper) |
+
+Heartbeat: last routine `pre-market-research` = success, decision HOLD. Buy-rule budget: 0/6 positions, 0/3 weekly trades — capacity available.
+
+### Live Validation of Pre-Market Primary Candidate (CVX)
+| Check | Result |
+|-------|--------|
+| Quote | bid **$184.72** / ask **$199.24** — ~7.8% spread, stale/illiquid |
+| MA20 / MA50 | **null** — data feed returned only 1 bar (need 20+) |
+| RSI-14 | **null** — insufficient bars |
+| SPY macro filter (criterion 4) | **unverifiable** — SPY also returned 1 bar, MA20 null |
+
+### Market Context (Alpaca news, last 48h)
+- Risk-off: S&P 500 / Nasdaq-100 futures lower on inflation fears; SPY last ~$734 (down a third session).
+- Moody's (Zandi) and Yardeni warn Trump–Iran war risks "unmoored" inflation and a **July rate hike**.
+- US–Iran sanctions escalation (Bessent at G7).
+- NVDA earnings after the bell **Wed 5/20** — binary cross-market event risk.
+
+### Decision: **NO_TRADE / HOLD**
+Rationale:
+- Strategy entry criteria 1 (price > MA20 & MA50), 2 (RSI 40–65), and 4 (SPY > its MA20) **cannot be confirmed** — the market-data feed returned only 1 bar for both CVX and SPY this run. The pre-market log explicitly conditioned execution on re-validating technicals/spreads at the open; that validation fails.
+- CVX quote spread is ~7.8% (bid 184.72 / ask 199.24) — stale/illiquid. A buy limit at ask +0.25% would risk a materially bad fill, violating the spirit of the order-execution rule.
+- Macro is risk-off into a binary NVDA print Wed; default action under uncertainty is NO_TRADE.
+- Capital fully preserved. Re-evaluate at the next routine when 20+ bars / clean spreads are available and post-NVDA.
+
+### Sources
+- Alpaca news feed (SPY/QQQ), 2026-05-19 — Benzinga: "S&P 500/Nasdaq-100 Futures Slip As Inflation Fears Grip Wall Street"; "Trump's Iran War Risks 'Unmoored' Inflation… Yardeni Sees July Rate Hike".
