@@ -29,7 +29,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 | Date | Starting Value | Ending Value | Daily P&L | Daily % | Trades | Notes |
 |------|---------------|--------------|-----------|---------|--------|-------|
-| — | — | — | — | — | — | Bot not yet started |
+| 2026-05-19 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | market-open: NO_TRADE. XLF qualified on technicals (px>MA20>MA50, RSI 48.6) but session ran 06:43 ET (market closed) and XLF quote stale (bid 49.99/ask 53.15, 6.3% spread). XLF queued for live tight-spread quote. |
 
 ---
 
