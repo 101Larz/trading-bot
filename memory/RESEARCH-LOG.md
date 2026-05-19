@@ -206,3 +206,68 @@ Rationale:
 - [Pre-market Stocks — CNN](https://www.cnn.com/markets/premarkets)
 - [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
 - [Top Stock Market Movers — Morningstar](https://www.morningstar.com/markets/movers)
+
+---
+
+## 2026-05-19 (Tuesday) — Pre-Market (session: gallant-lamport, 11:04 UTC re-run)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 |
+| Status | ACTIVE (paper) |
+
+Fresh paper account, all cash, no open positions — no held-position news to review. Max single-position size = 5% = **$5,000**.
+
+### Market Context
+- **Tape**: U.S. futures slightly lower (S&P 500 / Nasdaq-100 ≈ −0.1%) after a tech-led selloff. SPY last ≈ $738. Records set last week, but Friday's bond-yield spike triggered the worst Nasdaq-100 day since Mar 27.
+- **Rates**: Treasury yields breaching key levels — 2Y > 4.0%, 10Y > 4.50%, 30Y > 5.0%. Headwind for long-duration tech.
+- **Geopolitics**: US–Iran tensions keep oil bid — WTI ≈ $108.66 (+3%), Brent ≈ $112.10 (+2%). Direct positive catalyst for energy.
+- **Event risk**: NVDA earnings after the bell **Wed 5/20** — market-defining, "sell-the-news" risk; lack of fresh bullish AI catalysts afterward.
+- **Sector momentum (May)**: Healthcare, Technology, Consumer Cyclical leading by monthly gains; **Energy** strong on the oil shock; semis (SOX) at all-time high but extended.
+
+### Technical Screen
+| Symbol | Last | >MA20 | >MA50 | Trend | RSI-14 | Read |
+|--------|------|-------|-------|-------|--------|------|
+| SPY | 738.65 | yes | yes | bullish | 73.2 | Macro filter OK (not a downtrend) but **overbought** — do not chase |
+| XLE | 60.58 | yes | yes | mixed | 62.0 | Energy ETF; oil catalyst; RSI upper-band but ≤65 |
+| CVX | 196.12 | yes | yes | mixed | 61.0 | Clean bullish alignment, RSI 61 in-range, oil beneficiary |
+| XOM | 160.49 | yes | yes | mixed | 65.5 | Marginal — RSI at the 65 ceiling |
+| XLV | 145.72 | yes | no | mixed | 56.6 | **Reject** — below 50-day MA (fails entry criterion 1) |
+| UNH | 391.13 | yes | yes | bullish | 69.6 | **Reject** — RSI 70 (fails RSI 40–65 rule) |
+
+> Pre-market quotes show wide/stale bid-ask (e.g. CVX/XLV ask = 0; SPY bid 717 / ask 762). Limits below computed off last/ask per strategy — **re-validate live spreads at market-open before sending any order**.
+
+### Trade Ideas (for market-open execution — not actioned pre-market)
+Sizing = floor(($100,000 × 0.05) / limit). Stop = −8% entry, Target = +15% entry.
+
+1. **CVX (primary)** — Energy, clean bullish MA alignment, RSI 61 (in 40–65), live oil catalyst from US–Iran supply risk.
+   - Entry (buy limit, ≈ last +0.25%): **$185.95** | Stop: **$171.07** | Target: **$213.84**
+   - Size: ~26 shares (~$4,835)
+2. **XLE (secondary)** — Energy ETF, diversified oil exposure, RSI 62.
+   - Entry (buy limit, ask +0.25%): **$62.42** | Stop: **$57.43** | Target: **$71.78**
+   - Size: ~80 shares (~$4,994)
+3. **XOM (conditional)** — Integrated oil; only if RSI cools back below 65 (currently 65.5, at the ceiling).
+   - Entry (buy limit, ≈ last +0.25%): **$169.02** | Stop: **$155.50** | Target: **$194.37**
+   - Size: ~29 shares (~$4,902)
+
+### Decision: **HOLD / NO_TRADE**
+Rationale:
+- Pre-market research only; market closed — no trades placed outside 9:30–4:00 ET.
+- SPY RSI 73 (overbought) into a risk-off tape (yields breaching 10Y > 4.50%, 30Y > 5.0%); strategy avoids chasing extended momentum.
+- Binary NVDA print Wed adds outsized cross-market event risk to any new long initiated today.
+- Energy is the only sector with both a clean technical setup *and* a positive live catalyst (oil shock) — queue **CVX** as primary for the market-open routine, contingent on: live spread normalized, RSI still 40–65, no negative energy/stock catalyst in prior 48h. XLE secondary; XOM only if RSI < 65.
+- Default action under uncertainty remains NO_TRADE; capital preservation first.
+
+### Sources
+- [S&P 500 Futures — Investing.com](https://www.investing.com/indices/us-spx-500-futures)
+- [Market Wavers Amid Conflicting Reports on War — Schwab](https://www.schwab.com/learn/story/stock-market-update-open)
+- [Stock market news for May 18, 2026 — CNBC](https://www.cnbc.com/2026/05/17/stock-market-today-live-updates.html)
+- [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
+- [Best Stocks to Buy Now: May 2026 — Motley Fool](https://www.fool.com/investing/top-stocks-to-buy-and-hold/)
+- [Monthly Stock Sector Outlook 2026 — Charles Schwab](https://www.schwab.com/learn/story/stock-sector-outlook)
