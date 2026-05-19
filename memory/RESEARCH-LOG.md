@@ -93,3 +93,59 @@ Rationale:
 - [Nvidia's Next Earnings Report on May 20 — Motley Fool](https://www.fool.com/investing/2026/05/18/nvidias-next-earnings-report-on-may-20-could-send/)
 - [Semiconductor Leaders SOXX, SMH, FTXL — 24/7 Wall St.](https://247wallst.com/investing/2026/05/06/semiconductor-leaders-soxx-smh-and-ftxl-are-crushing-it-on-ai-infrastructure-demand/)
 - [Top Semiconductor Stocks to Watch May 2026 — Intellectia](https://intellectia.ai/blog/semiconductor-stocks-to-watch-may-2026)
+
+---
+
+## 2026-05-19 (Tuesday) — Pre-Market (session: keen-wright)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Open Positions | 0 |
+| Status | ACTIVE (paper) |
+
+Fresh account, all cash, no open positions. No position-specific news to review. Max single-position size = 5% = **$5,000**.
+
+### Market Context
+- **Tape**: S&P 500 ~7,400 (SPY ~$762 last), down ~0.3%. Second consecutive session of losses, led by tech/semis.
+- **Rates**: US 10Y Treasury yield broke above 4.60% — highest in a year. Headwind for equities, especially long-duration tech.
+- **Catalyst**: Seagate −7% on CEO factory-capacity remarks; dragged Micron −6% and the broader memory/chip complex. Earnings due: Home Depot, Keysight, Toll Brothers.
+- **Rotation**: Out of technology into **Energy, Consumer Staples, Financials**; overall earnings momentum still solid (improving breadth ex-tech).
+- **Single-name**: LiveRamp (RAMP) bid on Publicis $2.2B acquisition (deal-driven, not trend-tradeable).
+- **Macro filter (strategy criterion 4)**: SPY above its 20-day ($725) and 50-day ($691) MAs — **not in a confirmed downtrend**, longs permitted. Caveat: SPY RSI-14 = 73 (overbought) → index stretched, do not chase.
+
+### Technical Screen (sector ETFs aligned with rotation)
+| Symbol | Last | >MA20 | >MA50 | Trend | RSI-14 | Read |
+|--------|------|-------|-------|-------|--------|------|
+| XLF | 53.15 | yes | yes | bullish | 48.6 | Cleanest setup — RSI mid-range, bullish alignment |
+| XLE | 62.26 | yes | yes | mixed | 62.0 | Strong sector; MA20 marginally < MA50 (weaker confirm) |
+| XLP | 88.18 | yes | yes | bullish | 68.8 | Defensive bid; RSI elevated, near overbought caution |
+
+> Note: pre-market quotes show wide bid/ask spreads (e.g. XLF bid 49.99 / ask 53.15) — likely stale. Limits below are computed off the ask per strategy; re-validate live spreads at market-open before sending orders.
+
+### Trade Ideas (for market-open execution — not actioned pre-market)
+Sizing: floor(($100,000 × 0.05) / limit). Stop = −8% entry, Target = +15% entry.
+
+1. **XLF (primary)** — Financials, RSI 48.6, bullish MA alignment, leading-sector rotation.
+   - Entry (buy limit, ask +0.25%): **$53.28** | Stop: **$49.02** | Target: **$61.27**
+   - Size: ~93 shares (~$4,955)
+2. **XLE (secondary)** — Energy, strong weekly sector momentum, RSI 62 (upper band).
+   - Entry (buy limit, ask +0.25%): **$62.42** | Stop: **$57.43** | Target: **$71.78**
+   - Size: ~80 shares (~$4,994)
+3. **XLP (conditional)** — Consumer Staples, defensive vs. rising-rate/tech-weak tape. RSI 68.8 → only if RSI cools < 65.
+   - Entry (buy limit, ask +0.25%): **$88.40** | Stop: **$81.33** | Target: **$101.66**
+   - Size: ~56 shares (~$4,950)
+
+### Decision: **HOLD**
+Pre-market research only; market closed (no trades outside 9:30–4:00 ET). No positions to manage. SPY overbought (RSI 73) and the 10Y breakout above 4.60% is a fresh macro headwind — do not chase at the open. Queue **XLF** as primary candidate for the market-open routine, contingent on: live spread normalizing, RSI still 40–65, and no negative financials-sector catalyst in prior 48h. XLE secondary; XLP only if RSI < 65. Default remains **NO_TRADE** if conditions are not cleanly met.
+
+### Sources
+- [S&P 500 Futures — Investing.com](https://www.investing.com/indices/us-spx-500-futures)
+- [Pre-market Stocks — CNN](https://www.cnn.com/markets/premarkets)
+- [Stock Market Today May 18 2026 — TheStreet](https://www.thestreet.com/latest-news/stock-market-today-may-18-2026-updates)
+- [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
+- [Premarket Movers — Benzinga](https://www.benzinga.com/premarket)
