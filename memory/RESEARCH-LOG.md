@@ -206,3 +206,55 @@ Rationale:
 - [Pre-market Stocks — CNN](https://www.cnn.com/markets/premarkets)
 - [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
 - [Top Stock Market Movers — Morningstar](https://www.morningstar.com/markets/movers)
+
+---
+
+## 2026-05-19 (Tuesday) — Pre-Market (session: gallant-lamport, run 2)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 |
+| Status | ACTIVE (paper) |
+
+Fresh paper account, all cash, no open positions — no held-position news to review. Max single-position size = 5% = **$5,000**.
+
+### Market Context
+- **Tape**: S&P 500 futures down ~0.4% pre-market; second consecutive session of losses, led by tech/memory-chip weakness.
+- **Rates**: 10Y Treasury yield at a one-year high (>4.60%), 30Y >5.0% — broad risk-off tone, headwind for long-duration tech.
+- **Event risk**: NVDA earnings after the close **Wed 5/20** (also TGT). Market-defining binary catalyst — avoid initiating tech or earnings-window positions.
+- **Geopolitics**: US–Iran tensions; oil supply-shock risk supporting energy.
+- **Sector momentum**: Defensives leading — energy, consumer staples, financials, utilities firm; technology the laggard.
+
+### Technical Screen
+| Symbol | Last | >MA20 | >MA50 | Trend | RSI-14 | Read |
+|--------|------|-------|-------|-------|--------|------|
+| SPY | 738.65 | yes | yes | bullish | 73.2 | Macro filter passes (SPY > 20MA) but index overbought |
+| XLE | 60.58 | yes | yes | mixed | 62.0 | Only candidate inside the 40–65 RSI entry band |
+| XLP | 85.90 | yes | yes | bullish | 68.8 | RSI > 65 entry ceiling — fails momentum filter |
+
+> Pre-market quotes show wide bid/ask spreads (likely stale). Limits computed off the ask per strategy; re-validate live spreads at market-open before any order.
+
+### Trade Ideas (watch only — not actioned pre-market)
+Sizing = floor(($100,000 × 0.05) / limit), stop −8%, target +15%.
+
+1. **XLE (Energy SPDR)** — only name meeting all entry criteria (price > MA20/MA50, RSI 62).
+   - Entry (buy limit, ask +0.25%): **$62.42** | Stop: **$57.43** | Target: **$71.78** | Size: ~80 sh (~$4,994)
+   - Caveat: driver is a fragile geopolitical/oil spike — size conservatively.
+2. **XLP (Consumer Staples)** — WATCH. Defensive bid real but RSI 68.8 above the 40–65 band. Revisit on a pullback toward MA20 (~$83.8) with RSI < 65.
+3. **SPY** — WATCH. Trend bullish but RSI 73 (overbought) and NVDA catalyst lands tomorrow. No chase into an overbought index ahead of a binary event.
+
+### Decision: **HOLD**
+Rationale: pre-market research only; market closed (no trades outside 9:30–4:00 ET). Macro is risk-off (10Y at one-year high, two down sessions, geopolitical/oil overhang), SPY is overbought (RSI 73), and a market-moving NVDA print hits tomorrow after the close. Only XLE cleanly passes entry rules and its driver is a fragile geopolitical spike. Per strategy, default under uncertainty is NO_TRADE. Preserve full cash; queue XLE as the primary candidate for the market-open routine contingent on live spread, RSI still 40–65, and no negative energy catalyst — and reassess post-NVDA.
+
+### Sources
+- [S&P 500 Futures — Investing.com](https://www.investing.com/indices/us-spx-500-futures)
+- [Stock futures fall as traders monitor U.S.-Iran war — CNBC](https://www.cnbc.com/2026/05/18/stock-market-today-live-updates.html)
+- [Stock Market Today May 18 2026 — TheStreet](https://www.thestreet.com/latest-news/stock-market-today-may-18-2026-updates)
+- [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
+- [Weekly Trader's Outlook — Charles Schwab](https://www.schwab.com/learn/story/weekly-traders-outlook)
