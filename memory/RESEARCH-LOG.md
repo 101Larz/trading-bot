@@ -149,3 +149,60 @@ Pre-market research only; market closed (no trades outside 9:30–4:00 ET). No p
 - [Stock Market Today May 18 2026 — TheStreet](https://www.thestreet.com/latest-news/stock-market-today-may-18-2026-updates)
 - [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
 - [Premarket Movers — Benzinga](https://www.benzinga.com/premarket)
+
+---
+
+## 2026-05-19 (Tuesday) — Pre-Market (session: gallant-lamport)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 |
+| Status | ACTIVE (paper) |
+
+Fresh paper account, all cash, no open positions — no held-position news to review. Max single-position size = 5% = **$5,000**. Heartbeat (2026-05-18) shows last routine `success`, decision HOLD.
+
+### Market Context
+- **Tape**: S&P 500 futures little changed after two consecutive down sessions; tech/semis the drag (Seagate −7% on CEO factory-capacity remarks, Micron −6%).
+- **Rates**: Treasury yields breaching key levels (2Y > 4.0%, 10Y > 4.50%, 30Y > 5.0%) — risk-off pressure on long-duration tech.
+- **Event risk**: NVDA earnings after the bell **Wed 5/20** — market-defining, with "sell-the-news" risk. Today carries options-expiration volatility.
+- **Geopolitics**: Middle East / US–Iran headlines still moving the tape.
+- **Sector momentum (May)**: Healthcare, Technology, Consumer Cyclical leading.
+
+### SPY Technical Read (macro filter — strategy criterion 4)
+| Metric | Value |
+|--------|-------|
+| Last | ~738.65 |
+| MA20 | 725.30 (price above) |
+| MA50 | 691.04 (price above) |
+| Trend | Bullish alignment |
+| RSI-14 | **73.15 — overbought** |
+
+SPY not in a confirmed downtrend (longs technically permitted), but the index is **overbought** into a risk-off, high-event-risk session — do not chase.
+
+### Trade Ideas (watch only — not actioned pre-market)
+Watchlist is tech-heavy; sizing = floor(($100,000 × 0.05) / limit), stop −8%, target +15%.
+
+1. **MSFT** — Cloud/Azure AI; less directly exposed to the memory-chip selloff than NVDA/Micron. Candidate only on a confirmed pullback holding above the 20-day MA with RSI 40–65.
+2. **GOOGL** — Search + cloud, no imminent earnings catalyst. Candidate on a constructive trend with RSI 40–65, same risk template.
+3. **NVDA** — **Excluded.** Earnings in 2 trading days (Wed) violates the "no entry with earnings < 5 trading days" rule and sits at the center of the semi selloff.
+
+### Decision: **HOLD / NO_TRADE**
+Rationale:
+- Pre-market research only; market closed — no trades outside 9:30–4:00 ET.
+- SPY RSI 73 (overbought) — strategy avoids chasing extended momentum.
+- Risk-off macro: rising yields + two down sessions + tech/semi weakness.
+- Binary NVDA catalyst Wed plus today's OpEx volatility — outsized event risk for any new long.
+- Default action under uncertainty is NO_TRADE. Preserve full cash; reassess at the market-open routine and post-NVDA.
+
+### Sources
+- [S&P 500 Futures — Investing.com](https://www.investing.com/indices/us-spx-500-futures)
+- [Market Wavers Amid Conflicting Reports — Schwab](https://www.schwab.com/learn/story/stock-market-update-open)
+- [Pre-market Stocks — CNN](https://www.cnn.com/markets/premarkets)
+- [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
+- [Top Stock Market Movers — Morningstar](https://www.morningstar.com/markets/movers)
