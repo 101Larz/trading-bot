@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}Research{% endblock %}
+{% block page_title %}Research Log{% endblock %}
+{% block page_subtitle %}Market research and bot decisions from memory/RESEARCH-LOG.md{% endblock %}
+
+{% block content %}
+
+{% if sessions %}
+
+<!-- ── Session selector tabs ─────────────────────────────────── -->
+<div class="session-tabs">
+  {% for s in sessions[:6] %}
+  <button class="tab-btn {% if loop.first %}active{% endif %}"
+          onclick="showSession({{ loop.index0 }}, this)">
+    {{ s.date }}
+    <span class="tab-sub">{{ s.title[:28] }}{% if s.title | length > 28 %}…{% endif %}</span>
+  </button>
+  {% endfor %}
+</div>
+
+<!-- ── Session panels ─────────────────────────────────────────── -->
+{% for s in sessions[:6] %}
+<div class="session-panel {% if not loop.first %}hidden{% endif %}" id="session-{{ loop.index0 }}">
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">{{ s.date }} — {{ s.title }}</span>
+      <span class="card-badge">{{ s.sections | length }} section{{ 's' if s.sections | length != 1 }}</span>
+    </div>
+    <div class="card-body research-body">
+
+      {% for sec in s.sections %}
+      <div class="research-section">
+        <h3 class="research-heading">{{ sec.heading }}</h3>
+        <div class="research-content">
+          {# Render markdown-ish: bold, tables, bullet lines #}
+          {% for line in sec.body.split('\n') %}
+            {% set l = line.strip() %}
+            {% if l.startswith('| ') or l.startswith('|--') %}
+              {# Table row #}
+              {% if loop.first or not sec.body.split('\n')[loop.index0 - 1].strip().startswith('|') %}
+              <div class="md-table-wrap"><table class="md-table">
+              {% endif %}
+              {% if not l.startswith('|--') %}
+              <tr>
+                {% for cell in l.split('|') %}
+                  {% if cell.strip() %}
+                  <td>{{ cell.strip() }}</td>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+              {% endif %}
+              {% if loop.last or not sec.body.split('\n')[loop.index0 + 1 if not loop.last else loop.index0].strip().startswith('|') %}
+              </table></div>
+              {% endif %}
+            {% elif l.startswith('- ') or l.startswith('* ') %}
+              <div class="md-bullet">{{ l[2:] }}</div>
+            {% elif l.startswith('**') and l.endswith('**') %}
+              <div class="md-bold">{{ l[2:-2] }}</div>
+            {% elif l.startswith('#') %}
+              <div class="md-subhead">{{ l.lstrip('#').strip() }}</div>
+            {% elif l == '' %}
+              <div class="md-spacer"></div>
+            {% else %}
+              <div class="md-para">{{ l }}</div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% else %}
+<!-- No research yet -->
+<div class="card empty-card">
+  <div class="empty-icon">⊹</div>
+  <div class="empty-title">No research logged yet</div>
+  <div class="empty-sub">
+    Research entries appear here after the pre-market routine runs.<br>
+    Run <code>/research</code> in Claude Code to start a manual research session.
+  </div>
+</div>
+{% endif %}
+
+<!-- ── Today's Journal ────────────────────────────────────────── -->
+{% if journal %}
+<div class="card" style="margin-top: 1.5rem">
+  <div class="card-header">
+    <span class="card-title">Today's Journal</span>
+    <span class="card-badge">Live</span>
+  </div>
+  <div class="card-body">
+    <pre class="journal-pre">{{ journal }}</pre>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+function showSession(idx, btn) {
+  document.querySelectorAll(".session-panel").forEach(el => el.classList.add("hidden"));
+  document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
+  document.getElementById("session-" + idx).classList.remove("hidden");
+  btn.classList.add("active");
+}
+
+// Research page refreshes fully (markdown content changes rarely)
+window.refreshData = function () { location.reload(); };
+</script>
+{% endblock %}

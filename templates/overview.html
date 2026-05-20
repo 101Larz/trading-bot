@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+{% block title %}Overview{% endblock %}
+{% block page_title %}Overview{% endblock %}
+{% block page_subtitle %}Live portfolio snapshot · auto-refreshes every 60 s{% endblock %}
+
+{% block content %}
+
+<!-- ── KPI cards ──────────────────────────────────────────────── -->
+<div class="kpi-grid">
+
+  <div class="kpi-card">
+    <div class="kpi-label">Portfolio Value</div>
+    <div class="kpi-value" id="kpi-portfolio">
+      ${{ "{:,.2f}".format(account.portfolio_value) }}
+    </div>
+    <div class="kpi-sub">
+      {% if account.paper_mode %}<span class="badge-paper">PAPER</span>{% endif %}
+      {{ account.status | upper }}
+    </div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-label">Cash Available</div>
+    <div class="kpi-value" id="kpi-cash">
+      ${{ "{:,.2f}".format(account.cash) }}
+    </div>
+    <div class="kpi-sub">Buying power ${{ "{:,.2f}".format(account.buying_power) }}</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-label">Unrealized P&amp;L</div>
+    <div class="kpi-value {{ total_unrealized | pl_class }}" id="kpi-unrealized">
+      {{ total_unrealized | money }}
+    </div>
+    <div class="kpi-sub">{{ positions_count }} open position{{ 's' if positions_count != 1 }}</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-label">Total Realized P&amp;L</div>
+    <div class="kpi-value {{ total_realized | pl_class }}" id="kpi-realized">
+      {{ total_realized | money }}
+    </div>
+    <div class="kpi-sub">Closed trades</div>
+  </div>
+
+</div>
+
+<!-- ── P&L chart ──────────────────────────────────────────────── -->
+<div class="card chart-card">
+  <div class="card-header">
+    <span class="card-title">Portfolio Value Over Time</span>
+    <span class="card-badge">Daily close</span>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="pnl-chart"></canvas>
+  </div>
+  {% if chart_labels | length <= 1 %}
+  <div class="chart-empty">
+    No trading history yet — chart will populate after the first end-of-day routine.
+  </div>
+  {% endif %}
+</div>
+
+<!-- ── Progress & stats ───────────────────────────────────────── -->
+<div class="two-col">
+
+  <!-- Paper trading progress -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Paper Trading Progress</span>
+    </div>
+    <div class="card-body">
+      {% set trading_days = stats.get('Total Trading Days', '0') | int %}
+      {% set target_days  = 30 %}
+      {% set progress_pct = [((trading_days / target_days) * 100) | int, 100] | min %}
+      <div class="progress-label">
+        <span>Trading days logged</span>
+        <span class="progress-value">{{ trading_days }} / {{ target_days }}</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" style="width: {{ progress_pct }}%"></div>
+      </div>
+
+      {% set win_rate_str = stats.get('Win Rate', '—') %}
+      {% set win_rate_num = win_rate_str.replace('%','') | float(0) %}
+      <div class="progress-label" style="margin-top:1.2rem">
+        <span>Win rate (target ≥ 45%)</span>
+        <span class="progress-value">{{ win_rate_str }}</span>
+      </div>
+      <div class="progress-bar-wrap">
+        {% if win_rate_num > 0 %}
+        <div class="progress-bar {{ 'progress-green' if win_rate_num >= 45 else 'progress-red' }}"
+             style="width: {{ [win_rate_num, 100] | min }}%"></div>
+        {% else %}
+        <div class="progress-bar" style="width:0%"></div>
+        {% endif %}
+      </div>
+
+      <div class="go-live-check">
+        <div class="check-item {{ 'check-ok' if trading_days >= 30 else 'check-pending' }}">
+          {{ '✓' if trading_days >= 30 else '○' }} 30 days paper trading
+        </div>
+        <div class="check-item {{ 'check-ok' if win_rate_num >= 45 else 'check-pending' }}">
+          {{ '✓' if win_rate_num >= 45 else '○' }} Win rate ≥ 45%
+        </div>
+        <div class="check-item {{ 'check-ok' if stats.get('Daily Loss Limit Breaches','0') | int == 0 else 'check-fail' }}">
+          {{ '✓' if stats.get('Daily Loss Limit Breaches','0') | int == 0 else '✗' }}
+          No daily-loss-limit breaches
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Performance stats -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Performance Summary</span>
+    </div>
+    <div class="card-body">
+      <table class="stats-table">
+        <tbody>
+          {% set stat_rows = [
+            ('Total Trades',           stats.get('Total Trades',    '—')),
+            ('Win Rate',               stats.get('Win Rate',        '—')),
+            ('Average Win',            stats.get('Average Win',     '—')),
+            ('Average Loss',           stats.get('Average Loss',    '—')),
+            ('Largest Win',            stats.get('Largest Win',     '—')),
+            ('Largest Loss',           stats.get('Largest Loss',    '—')),
+            ('Total P&L',              stats.get('Total P&L',       '—')),
+            ('Max Drawdown',           stats.get('Max Drawdown',    '—')),
+            ('Daily Loss Limit Hits',  stats.get('Daily Loss Limit Breaches','0')),
+          ] %}
+          {% for label, value in stat_rows %}
+          <tr>
+            <td class="stat-label">{{ label }}</td>
+            <td class="stat-value">{{ value }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  const labels = {{ chart_labels | tojson }};
+  const values = {{ chart_values | tojson }};
+  const baseline = values.length > 0 ? values[0] : 100000;
+
+  const ctx = document.getElementById("pnl-chart");
+  if (!ctx) return;
+
+  const gradient = ctx.getContext("2d").createLinearGradient(0, 0, 0, 280);
+  gradient.addColorStop(0, "rgba(56, 189, 248, 0.25)");
+  gradient.addColorStop(1, "rgba(56, 189, 248, 0.00)");
+
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Portfolio Value",
+        data: values,
+        borderColor: "#38bdf8",
+        backgroundColor: gradient,
+        borderWidth: 2,
+        pointRadius: labels.length > 30 ? 0 : 4,
+        pointHoverRadius: 6,
+        pointBackgroundColor: "#38bdf8",
+        fill: true,
+        tension: 0.35,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#1c2128",
+          titleColor: "#8b949e",
+          bodyColor: "#e6edf3",
+          borderColor: "#30363d",
+          borderWidth: 1,
+          callbacks: {
+            label: ctx => " $" + ctx.parsed.y.toLocaleString("en-US", {minimumFractionDigits: 2}),
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: "#21262d" },
+          ticks: { color: "#8b949e", maxTicksLimit: 10 },
+        },
+        y: {
+          grid: { color: "#21262d" },
+          ticks: {
+            color: "#8b949e",
+            callback: v => "$" + v.toLocaleString("en-US", {minimumFractionDigits: 0}),
+          }
+        }
+      }
+    }
+  });
+
+  // Auto-refresh: update KPI cards without full reload
+  window.refreshData = function () {
+    fetch("/api/portfolio")
+      .then(r => r.json())
+      .then(d => {
+        setText("kpi-portfolio",  "$" + d.account.portfolio_value.toLocaleString("en-US", {minimumFractionDigits:2}));
+        setText("kpi-cash",       "$" + d.account.cash.toLocaleString("en-US", {minimumFractionDigits:2}));
+        setSignedMoney("kpi-unrealized", d.total_unrealized);
+        setSignedMoney("kpi-realized",   d.total_realized);
+        updateMarketStatus(d.clock);
+      })
+      .catch(() => {});
+  };
+})();
+</script>
+{% endblock %}

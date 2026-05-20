@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}Positions{% endblock %}
+{% block page_title %}Open Positions{% endblock %}
+{% block page_subtitle %}Live from Alpaca · {{ positions | length }} position{{ 's' if positions | length != 1 }}{% endblock %}
+
+{% block content %}
+
+<!-- ── Summary bar ────────────────────────────────────────────── -->
+<div class="kpi-grid kpi-grid-3">
+  <div class="kpi-card">
+    <div class="kpi-label">Portfolio Value</div>
+    <div class="kpi-value">${{ "{:,.2f}".format(account.portfolio_value) }}</div>
+    <div class="kpi-sub">Cash ${{ "{:,.2f}".format(account.cash) }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Invested</div>
+    <div class="kpi-value">${{ "{:,.2f}".format(account.long_market_value) }}</div>
+    {% set exposure = (account.long_market_value / account.portfolio_value * 100) if account.portfolio_value else 0 %}
+    <div class="kpi-sub">{{ "%.1f" | format(exposure) }}% of portfolio</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Total Unrealized P&amp;L</div>
+    {% set total_pl = positions | sum(attribute='unrealized_pl') %}
+    <div class="kpi-value {{ total_pl | pl_class }}" id="total-unreal">
+      {{ total_pl | money }}
+    </div>
+    <div class="kpi-sub">Across {{ positions | length }} position{{ 's' if positions | length != 1 }}</div>
+  </div>
+</div>
+
+<!-- ── Positions table ────────────────────────────────────────── -->
+{% if positions %}
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Open Positions</span>
+    <span class="card-badge" id="pos-updated">{{ last_updated }}</span>
+  </div>
+  <div class="table-wrap">
+    <table class="data-table" id="positions-table">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Side</th>
+          <th class="num">Qty</th>
+          <th class="num">Entry Price</th>
+          <th class="num">Current Price</th>
+          <th class="num">Market Value</th>
+          <th class="num">Unrealized P&amp;L</th>
+          <th class="num">P&amp;L %</th>
+          <th class="num">Today's Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in positions %}
+        <tr>
+          <td><span class="symbol-badge">{{ p.symbol }}</span></td>
+          <td><span class="side-badge side-{{ p.side }}">{{ p.side | upper }}</span></td>
+          <td class="num">{{ "{:,.2f}".format(p.qty) }}</td>
+          <td class="num">${{ "{:,.2f}".format(p.avg_entry_price) }}</td>
+          <td class="num">${{ "{:,.2f}".format(p.current_price) }}</td>
+          <td class="num">${{ "{:,.2f}".format(p.market_value) }}</td>
+          <td class="num {{ p.pl_class }}">{{ p.unrealized_pl | money }}</td>
+          <td class="num {{ p.pct_class }}">{{ p.unrealized_plpc | pct }}</td>
+          <td class="num {{ p.change_today | pl_class }}">${{ "{:,.2f}".format(p.change_today) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── Stop-loss tracker ──────────────────────────────────────── -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Stop-Loss Tracker</span>
+    <span class="card-badge">8% threshold</span>
+  </div>
+  <div class="card-body">
+    {% for p in positions %}
+    {% set pct = p.unrealized_plpc %}
+    {% set bar_pct = [((pct + 8) / 8 * 100) | int, 100] | min %}
+    {% set bar_pct = [bar_pct, 0] | max %}
+    <div class="stop-row">
+      <div class="stop-symbol">{{ p.symbol }}</div>
+      <div class="stop-bar-wrap">
+        <div class="stop-bar {{ 'stop-danger' if pct <= -6 else 'stop-warn' if pct <= -4 else 'stop-safe' }}"
+             style="width: {{ bar_pct }}%"></div>
+      </div>
+      <div class="stop-pct {{ p.pct_class }}">{{ pct | pct }}</div>
+      <div class="stop-status">
+        {% if pct <= -8 %}
+        <span class="badge-danger">🚨 STOP</span>
+        {% elif pct <= -6 %}
+        <span class="badge-warn">⚠ Near stop</span>
+        {% elif pct >= 15 %}
+        <span class="badge-ok">🎯 Target</span>
+        {% else %}
+        <span class="badge-neutral">OK</span>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% else %}
+<!-- Empty state -->
+<div class="card empty-card">
+  <div class="empty-icon">◈</div>
+  <div class="empty-title">No open positions</div>
+  <div class="empty-sub">The bot is fully in cash. Positions will appear here after the next market-open routine.</div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+window.refreshData = function () {
+  fetch("/api/positions")
+    .then(r => r.json())
+    .then(d => {
+      // Full positions reload — just refresh the page for simplicity
+      // (positions table is complex; a full reload is fine every 60s)
+      location.reload();
+    })
+    .catch(() => {});
+};
+</script>
+{% endblock %}
