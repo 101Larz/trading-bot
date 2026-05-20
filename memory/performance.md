@@ -31,7 +31,30 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 |------|---------------|--------------|-----------|---------|--------|-------|
 | — | — | — | — | — | — | Bot not yet started |
 | 2026-05-19 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | EOD snapshot — no trades, no open positions, cash $100,000.00 |
-| 2026-05-20 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | Market-open: NO_TRADE. NVDA earnings tonight (binary event); MA/RSI not verifiable live (1 bar). Defaulted to capital preservation per strategy. |
+| 2026-05-20 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | EOD: NO_TRADE day. Market-open declined NVDA (earnings tonight). No positions opened or closed. Cash $100,000.00. |
+
+---
+
+## EOD Snapshot — 2026-05-20
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $100,000.00 |
+| Cash | $100,000.00 |
+| Long Market Value | $0.00 |
+| Day P&L ($) | $0.00 |
+| Day P&L (%) | 0.00% |
+| Trades Today | 0 |
+| Trades This Week | 0 |
+| Open Positions | 0 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| — | — | — | — | — |
+
+Notes: Flat into close. NVDA earnings released after-hours — re-evaluate at tomorrow's pre-market routine.
 
 ---
 
