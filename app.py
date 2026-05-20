@@ -193,8 +193,11 @@ def parse_research_log() -> list[dict]:
     current = None
 
     for line in text.splitlines():
-        # Top-level session header: ## 2026-05-17 — Pre-Market Research ...
-        m = re.match(r"^## (\d{4}-\d{2}-\d{2})\s*[—–-]\s*(.+)", line)
+        # Match headers like:
+        #   ## 2026-05-17 — Pre-Market Research
+        #   ## 2026-05-18 (Monday) — Pre-Market
+        #   ## 2026-05-18 (Monday) — Pre-Market (session: keen-wright)
+        m = re.match(r"^## (\d{4}-\d{2}-\d{2})(?:\s+\([^)]+\))?\s*[—–-]\s*(.+)", line)
         if m:
             if current:
                 sessions.append(current)
