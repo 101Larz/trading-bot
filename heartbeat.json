@@ -1,0 +1,11 @@
+{
+  "last_routine": "pre-market-research",
+  "last_run_utc": "2026-05-20T07:15:00Z",
+  "status": "success",
+  "account_status": "ACTIVE",
+  "portfolio_value": 100000.0,
+  "cash": 100000.0,
+  "open_positions": 0,
+  "decision": "HOLD",
+  "notes": "NVDA earnings tonight (binary cross-market catalyst). Two clean candidates queued for post-event reassessment: MSFT (primary, RSI 45) and V (secondary, RSI 46). SPY trend bullish, RSI 67.6. NO_TRADE pre-market; if conditions hold at open, consider HALF-size MSFT entry."
+}
