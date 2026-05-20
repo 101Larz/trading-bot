@@ -31,6 +31,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 |------|---------------|--------------|-----------|---------|--------|-------|
 | — | — | — | — | — | — | Bot not yet started |
 | 2026-05-19 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | EOD snapshot — no trades, no open positions, cash $100,000.00 |
+| 2026-05-20 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | Market-open: NO_TRADE. NVDA earnings tonight (binary event); MA/RSI not verifiable live (1 bar). Defaulted to capital preservation per strategy. |
 
 ---
 

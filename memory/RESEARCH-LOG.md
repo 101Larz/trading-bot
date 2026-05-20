@@ -385,3 +385,46 @@ Rationale:
 - [Top Semiconductor Stocks to Watch May 2026 — Intellectia](https://intellectia.ai/blog/semiconductor-stocks-to-watch-may-2026)
 - [Best Stocks to Buy Right Now for May — Motley Fool](https://www.fool.com/investing/2026/05/06/the-best-stocks-to-buy-right-now-for-may/)
 
+---
+
+## 2026-05-20 (Wednesday) — Market-Open (session: sweet-shannon)
+
+### Account Snapshot (live, 9:45 ET)
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Open Positions | 0 |
+| Status | ACTIVE (paper) |
+
+Week-to-date trade count: **0** (well below 3-trade weekly cap). Position count: **0/6**.
+
+### Live Quotes (9:45 ET)
+| Symbol | Last | Bid | Ask | Notes |
+|--------|------|-----|-----|-------|
+| MSFT | 418.00 | 412.93 | 418.00 | Gap roughly flat vs. pre-market plan ($418.50 entry) |
+| V | 329.75 | 329.25 | 329.75 | Tight spread, slightly below pre-market plan ($330.74) |
+| SPY | 737.00 | 736.53 | 737.00 | Modestly higher vs. yesterday's $733.73 |
+
+`market_data.py snapshot` returns only **1 bar** for each name at this hour → MA20/MA50/RSI-14 cannot be re-verified live. Pre-market values stand: MSFT RSI 45.4, V RSI 45.8, both above MA20/MA50.
+
+### Buy-Rule Check (per market-open routine)
+- Max 6 open positions: ✅ 0 currently
+- Max 3 trades this week: ✅ 0 used
+- Max 20% equity per position: ✅ candidate sizes ≤ 5%
+- Catalyst in today's RESEARCH-LOG: ✅ MSFT (primary) and V (secondary) named
+
+### Decision: **NO_TRADE**
+Rationale:
+- **NVDA earnings AFTER the close tonight** is a binary cross-market event capable of moving SPY ±2–3% tomorrow. Pre-market plan was conditional on a "calm" gap and explicitly preferred to wait one session.
+- Live indicators (MA/RSI) cannot be re-verified at the open (1 bar only). Strategy's default under unverifiable entry criteria is NO_TRADE.
+- Capital preservation > opportunity cost: MSFT and V both remain viable post-print. No edge lost by waiting.
+- `scripts/trade.py` currently has no `buy` CLI subcommand wired up; `safe_buy()` exists internally only. Not patching during a live routine.
+
+### Plan for next routine (midday / post-NVDA)
+- Re-pull MSFT and V snapshots once bar count ≥ 20 to re-verify MA/RSI.
+- If NVDA print is benign and SPY holds MA20, consider opening **MSFT at half size (~6 sh ≈ $2,510)** in the midday or Thursday open routine.
+- If NVDA disappoints and SPY breaks MA20 (~727), stand down further and re-evaluate the watchlist.
+
