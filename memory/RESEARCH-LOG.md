@@ -310,3 +310,78 @@ Rationale:
 - [Best Stocks to Buy Now: May 2026 — Motley Fool](https://www.fool.com/investing/top-stocks-to-buy-and-hold/)
 - [Monthly Stock Sector Outlook 2026 — Charles Schwab](https://www.schwab.com/learn/story/stock-sector-outlook)
 
+---
+
+## 2026-05-20 (Wednesday) — Pre-Market (session: gallant-lamport)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 |
+| Status | ACTIVE (paper) |
+
+Fresh paper account, all cash, no held positions — no position-specific news to review. Max single-position size = 5% = **$5,000**.
+
+### Market Context
+- **Tape**: ES (June S&P 500 e-mini) ≈ −0.38% pre-market; soft tone into the NVDA print.
+- **Today's main catalyst**: **NVDA reports Q1 earnings AFTER the close** — market-defining binary event for AI/semis and the broad tape.
+- **This week's other earnings**: HD (Wed AM), WMT (Thu), ROST (Thu) — all within 5 trading days → excluded from new entries per strategy.
+- **Sector momentum**: Semis (SOX) +65% YTD continues to lead, but technology now broadly extended; analysts flagging dot-com parallels. Some rotation hints toward financials/staples.
+- **Single-name catalysts**: PIII, RXT, AGL leading May monthly momentum (small caps — outside strategy universe).
+
+### SPY Macro Filter (strategy criterion 4)
+| Metric | Value |
+|--------|-------|
+| Last | $733.73 |
+| MA20 | $726.78 (price above) |
+| MA50 | $692.18 (price above) |
+| Trend | Bullish alignment |
+| RSI-14 | 67.6 (neutral, slightly elevated) |
+
+SPY is NOT in a confirmed downtrend → longs permitted. RSI slightly above 65 — do not chase.
+
+### Technical Screen
+| Symbol | Last | >MA20 | >MA50 | Trend | RSI-14 | Read |
+|--------|------|-------|-------|-------|--------|------|
+| MSFT | 417.42 | yes | yes | bullish | 45.4 | **Clean setup** — RSI mid-range, bullish alignment, no near earnings |
+| V    | 329.91 | yes | yes | bullish | 45.8 | **Clean setup** — defensive payments, decoupled from NVDA event |
+| GOOGL| 387.66 | yes | yes | bullish | 68.9 | Reject — RSI > 65 ceiling |
+| AAPL | 298.97 | yes | yes | bullish | 84.1 | Reject — overbought |
+| AVGO | 411.07 | no  | yes | mixed   | 52.2 | Reject — below 20-day MA |
+| JPM  | 295.70 | no  | no  | mixed   | 36.9 | Reject — trend filter fails |
+| WMT  | 134.20 | yes | yes | bullish | 67.2 | Reject — earnings Thu (< 5 days) |
+
+> Pre-market quotes show wide/stale spreads (e.g. MSFT/WMT ask = 0). Limits below are computed off last; re-validate live spreads at market-open before any order.
+
+### Trade Ideas (for market-open execution — not actioned pre-market)
+Sizing = floor(($100,000 × 0.05) / limit). Stop = −8% entry, Target = +15% entry.
+
+1. **MSFT (primary)** — Cloud/AI mega-cap, RSI 45 (mid-band), no near earnings, less binary than NVDA.
+   - Entry (buy limit, last +0.25%): **$418.50** | Stop: **$385.00** | Target: **$481.00**
+   - Size: ~11 shares (~$4,604)
+2. **V (secondary, defensive complement)** — Payments leader, RSI 46, decoupled from NVDA tonight.
+   - Entry (buy limit, last +0.25%): **$330.74** | Stop: **$304.40** | Target: **$380.40**
+   - Size: ~15 shares (~$4,961)
+3. **Watch only**: GOOGL (RSI too high), AVGO (sub-MA20), WMT (earnings window).
+
+### Decision: **HOLD / NO_TRADE**
+Rationale:
+- Pre-market research only; market closed — no trades placed outside 9:30–4:00 ET.
+- **NVDA earnings TONIGHT** is a binary cross-market event capable of moving SPY ±2–3% tomorrow. Initiating today commits capital to an exogenous binary without edge.
+- MSFT and V both remain viable post-print; we lose no setup by waiting one session.
+- Per strategy: default under uncertainty is NO_TRADE. Preserve full cash; reassess at market-open routine and again after the NVDA print.
+- If, at market-open, conditions still qualify AND the gap is calm, plan: enter ONE position (MSFT preferred) at HALF size (~$2,500) to keep powder dry across the event.
+
+### Sources
+- [S&P 500 Futures — Investing.com](https://www.investing.com/indices/us-spx-500-futures)
+- [Tech Still Struggling, but Yields, Oil Slip Early — Schwab](https://www.schwab.com/learn/story/stock-market-update-open)
+- [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
+- [5 Leading Semiconductor Stocks Dominating May 2026 — Parameter](https://parameter.io/5-leading-semiconductor-stocks-dominating-may-2026-nvidia-nvda-amd-and-more/)
+- [Top Semiconductor Stocks to Watch May 2026 — Intellectia](https://intellectia.ai/blog/semiconductor-stocks-to-watch-may-2026)
+- [Best Stocks to Buy Right Now for May — Motley Fool](https://www.fool.com/investing/2026/05/06/the-best-stocks-to-buy-right-now-for-may/)
+
