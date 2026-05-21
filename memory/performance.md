@@ -94,3 +94,14 @@ Trades executed: **none.**
 - All values are paper trading until `PAPER_MODE=false`.
 - Performance is measured against SPY (buy-and-hold benchmark).
 - Update this file at the end of each trading day via the end-of-day routine.
+
+### Trade Entry — 2026-05-21 16:54
+| Field | Value |
+|-------|-------|
+| Symbol | AAPL |
+| Side | BUY |
+| Shares | 1.0 |
+| Est. Price | $301.90 |
+| Est. Value | $301.90 |
+| Order ID | 1a27b81f-a6ce-4da9-99ed-f89995d719c6 |
+| Trailing Stop | 10% GTC placed immediately after fill |

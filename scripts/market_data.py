@@ -9,8 +9,9 @@ Bar data source priority:
 import os
 import sys
 import json
-from datetime import datetime, timezone
+from datetime import datetime, date, timedelta, timezone
 
+import pandas as pd
 import requests
 import yfinance as yf
 from dotenv import load_dotenv
@@ -43,31 +44,50 @@ def get_bars_alpaca(symbol: str, limit: int = 60) -> list[dict]:
 
 
 def get_bars_yfinance(symbol: str, limit: int = 60) -> list[dict]:
-    """Fetch daily bars from yfinance. Returns list of {c, o, h, l, v} dicts."""
-    ticker = yf.Ticker(symbol)
-    hist = ticker.history(period=f"{limit}d", interval="1d", auto_adjust=True)
-    if hist.empty:
+    """Fetch daily bars from yfinance. Returns list of {t, o, h, l, c, v} dicts.
+
+    Uses explicit start/end dates so that today's incomplete intraday session
+    is never counted as a daily bar — the bug that caused only 1 bar to be
+    returned during market hours when period="Nd" was used.
+    """
+    end = date.today()
+    # Request 3× calendar days so weekends + holidays still yield `limit` bars
+    start = end - timedelta(days=limit * 3)
+    df = yf.download(
+        symbol,
+        start=start.isoformat(),
+        end=end.isoformat(),   # end is exclusive in yfinance, so today is not included
+        interval="1d",
+        auto_adjust=True,
+        progress=False,
+    )
+    if df.empty:
         return []
+    if isinstance(df.columns, pd.MultiIndex):
+        df.columns = df.columns.get_level_values(0)
+    df = df.tail(limit)
     return [
         {
-            "t": str(idx.date()),
-            "o": round(row["Open"], 4),
-            "h": round(row["High"], 4),
-            "l": round(row["Low"], 4),
-            "c": round(row["Close"], 4),
+            "t": str(idx.date() if hasattr(idx, "date") else idx),
+            "o": round(float(row["Open"]), 4),
+            "h": round(float(row["High"]), 4),
+            "l": round(float(row["Low"]), 4),
+            "c": round(float(row["Close"]), 4),
             "v": int(row["Volume"]),
         }
-        for idx, row in hist.iterrows()
+        for idx, row in df.iterrows()
     ]
 
 
 def get_bars(symbol: str, limit: int = 60) -> tuple[list[dict], str]:
     """
     Returns (bars, source) where source is 'alpaca' or 'yfinance'.
-    Tries Alpaca first; falls back to yfinance if Alpaca returns no data.
+    Alpaca free plan often returns only 1 bar (IEX real-time, no history).
+    Fall back to yfinance whenever Alpaca returns fewer than 20 bars so that
+    MA20, MA50, and RSI-14 always have enough data.
     """
     bars = get_bars_alpaca(symbol, limit)
-    if bars:
+    if len(bars) >= 20:
         return bars, "alpaca"
     bars = get_bars_yfinance(symbol, limit)
     return bars, "yfinance"
