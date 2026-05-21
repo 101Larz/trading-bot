@@ -58,6 +58,29 @@ Notes: Flat into close. NVDA earnings released after-hours — re-evaluate at to
 
 ---
 
+## Market-Open Log — 2026-05-21 (Thursday)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (9:46 ET) |
+| Cash | $100,000.00 |
+| Equity | $100,000.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Buy-rule check: positions 0/6 ✅ · weekly trades 0/3 ✅ · ≤20% equity/position ✅ · catalyst in RESEARCH-LOG ✅ (MSFT primary, GOOGL secondary).
+
+Decision rationale:
+- Entry criteria unverifiable: `market_data.py` returns only 1 bar for MSFT/GOOGL/SPY → MA20/MA50/RSI-14 all `null`. Strategy criteria #1 (price > MA20 & MA50) and #2 (RSI 40–65) cannot be confirmed. Pre-market plan explicitly required RSI 40–65 on a ≥20-bar live snapshot — condition fails.
+- `trade.py` has no `buy` subcommand (CLI: `clock|open|orders|cancel-all|close`). No documented execution path; not patching trading infrastructure during a live routine.
+- Live quotes benign — no tech-rotation gap-down: MSFT ask $423 (vs plan $422.11), GOOGL ask $386.24 (vs plan $389.88), SPY $738.10.
+- Default under unverifiable entry criteria is NO_TRADE. Capital preserved at full cash.
+
+Trades executed: **none.**
+
+---
+
 ## Closed Trade Log
 
 | Date | Symbol | Side | Qty | Entry | Exit | P&L | Hold Days | Exit Reason |
