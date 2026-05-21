@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market-research",
-  "last_run_utc": "2026-05-21T07:08:00Z",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-05-21T20:33:24Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100000.0,
-  "cash": 100000.0,
-  "open_positions": 0,
+  "portfolio_value": 100002.65,
+  "cash": 99698.12,
+  "open_positions": 1,
   "decision": "HOLD",
-  "notes": "NVDA beat Q1 (EPS $1.87 vs $1.77, rev $81.62B +85% y/y) but stock fell >2% after-hours — sell-the-news/tech-rotation risk live; S&P breadth weak (<50% above 200-day MA). Two clean candidates queued for market-open: MSFT (primary, RSI 60.6) and GOOGL (secondary, RSI 53.1), both bullish MA alignment. SPY bullish but RSI 67.8 (do not chase). NO_TRADE pre-market; if conditions hold at open, consider HALF-size MSFT entry."
+  "notes": "EOD 2026-05-21: Day P&L +$2.65 (+0.0027%) vs prior close $100,000.00. One open position - AAPL 1 sh @ $301.88 avg, mark $304.53, unrealized +$2.65 (+0.88%); 10% trailing-stop GTC active (order 5851cbb5, stop $274.99). 1 trade today, 1 this week. Cash 99.7% of equity. Flat-to-green day, no risk limits approached."
 }
