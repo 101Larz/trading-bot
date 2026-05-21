@@ -10,6 +10,27 @@ This bot is a disciplined, trend-following momentum trader. We do not predict th
 
 ---
 
+## Primary Watchlist — Markov Screener (updated 2026-05-21)
+
+The following tickers passed all three Markov screener conditions on the full 80-ticker cross-asset screen:
+- **Bull stationary distribution > 50%** (long-run regime mix dominated by Bull)
+- **Walk-forward Sharpe > 0.3** (transition matrix signal adds value over 10-year backtest)
+- **Current regime = Bull** (most recent trading day confirmed in Bull regime)
+
+| Ticker | Stat Bull% | Sharpe | Notes |
+|--------|-----------|--------|-------|
+| NVDA   | 59.4%     | +0.307 | Highest stat Bull in screen; 91.7% persistence |
+| AAPL   | 54.2%     | +0.692 | Strongest Sharpe of the five |
+| GOOGL  | 52.2%     | +0.347 | |
+| COST   | 51.5%     | +0.571 | Lowest Bear% (22.7%) — most asymmetric Bull bias |
+| AMD    | 51.0%     | +0.517 | |
+
+These are the **primary candidates for entry** subject to the entry criteria below. Run the Markov regime check (Step 3B in pre-market routine) each session before acting on any of them. A ticker drops off the watchlist if its current regime shifts out of Bull.
+
+Screener parameters: window=20 days, threshold=2%, 10-year history, stationary filter > 50%, Sharpe filter > 0.3, regime filter = Bull.
+
+---
+
 ## Entry Criteria (all must be true)
 
 1. **Trend confirmed**: Current price is above both the 20-day MA and 50-day MA (bullish alignment).

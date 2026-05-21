@@ -27,6 +27,30 @@ Run: `python scripts/research.py positions`
 
 Record the portfolio value, cash balance, and all open positions in the journal's Portfolio Status section.
 
+## Step 3B — Markov Regime Check
+
+Run the Markov regime analysis on each primary watchlist ticker. Execute from the skill directory:
+
+```
+cd ~/.claude/skills/markov-hedge-fund-method
+uv run python -m markov_hedge_fund_method.run --ticker NVDA --years 10
+uv run python -m markov_hedge_fund_method.run --ticker AAPL --years 10
+uv run python -m markov_hedge_fund_method.run --ticker GOOGL --years 10
+uv run python -m markov_hedge_fund_method.run --ticker COST --years 10
+uv run python -m markov_hedge_fund_method.run --ticker AMD --years 10
+```
+
+For each ticker, record in today's journal:
+- **Current regime** (Bull / Bear / Sideways)
+- **Markov signal** = P(Bull | current state) − P(Bear | current state) — positive means long bias, negative means short bias
+- **Bull persistence** from the transition matrix diagonal
+
+**Gate rule: only proceed to Step 6 per-symbol research for a ticker if BOTH conditions hold:**
+1. Current regime = Bull
+2. Markov signal is positive (P→Bull > P→Bear from current state)
+
+If either condition fails, mark the ticker as **AVOID (Markov)** in the journal and skip its Step 6 research for today. Do not place trades on tickers that fail this gate regardless of other signals.
+
 ## Step 4 — Check Stop-Losses on Open Positions
 
 For each open position, check if it is down ≥8% from entry price. If so, flag it in the journal with: "⚠️ STOP-LOSS CANDIDATE: [SYMBOL] — down [X]% from entry."
