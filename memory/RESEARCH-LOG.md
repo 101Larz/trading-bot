@@ -428,3 +428,67 @@ Rationale:
 - If NVDA print is benign and SPY holds MA20, consider opening **MSFT at half size (~6 sh ≈ $2,510)** in the midday or Thursday open routine.
 - If NVDA disappoints and SPY breaks MA20 (~727), stand down further and re-evaluate the watchlist.
 
+---
+
+## 2026-05-21 (Thursday) — Pre-Market (session: gallant-lamport)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $100,000.00 |
+| Portfolio Value | $100,000.00 |
+| Equity | $100,000.00 |
+| Buying Power | $200,000.00 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 |
+| Status | ACTIVE (paper) |
+
+Fresh paper account, all cash, no held positions — no position-specific news to review. Max single-position size = 5% = **$5,000**. Heartbeat (2026-05-20) shows last routine `success`, decision HOLD.
+
+### Market Context
+- **Tape**: ES (S&P 500 e-mini) ≈ 7,440, **+0.24%** pre-market. SPY closed **+1.08%** yesterday (index 7,432.97) as oil and Treasury yields slid on Middle East de-escalation optimism.
+- **NVDA earnings (released after close 5/20)**: **Beat** — EPS $1.87 vs $1.77 est; revenue $81.62B (+85% y/y) vs $79.18B est; data-center $75.2B (92% of sales); Q2 guide $89.1–92.8B vs $87.3B Street; dividend raised to $0.25. **But the stock fell >2% after-hours** — third straight post-earnings drop; "sell-the-news" pattern intact despite the beat.
+- **Today's earnings calendar**: WMT, DE, ROST, RL, ZM, DECK — all within 5 trading days → excluded from new entries per strategy.
+- **Breadth / rotation**: Weak internals — **<50% of S&P 500 stocks above their 200-day MA**; chips just had the worst two-day stretch since October; ongoing rotation-out-of-tech theme. SPY RSI cooled from ~77 last week to ~66.
+- **Sector momentum (May)**: Utilities (leader), Healthcare, Technology. Single-name movers HCWB +128%, IMVT +35%, LICN −62% are small-caps outside the strategy universe.
+
+### Technical Screen (`market_data.py`)
+| Symbol | Price | >MA20 | >MA50 | Trend | RSI-14 | Read |
+|--------|-------|-------|-------|-------|--------|------|
+| SPY   | 741.25 | yes | yes | bullish | 67.8 | Macro filter OK (not a downtrend); RSI >65 — do not chase |
+| MSFT  | 421.06 | yes | yes | bullish | 60.6 | **Clean setup** — RSI in 40–65 band, bullish alignment |
+| GOOGL | 388.91 | yes | yes | bullish | 53.1 | **Clean setup** — RSI mid-band, bullish alignment |
+| QQQ   | 713.15 | yes | yes | bullish | 73.1 | Reject — overbought (RSI >65) |
+| AAPL  | 302.25 | yes | yes | bullish | 84.8 | Reject — extremely overbought |
+| NVDA  | 223.47 | yes | yes | bullish | 69.8 | Reject — RSI >65 + post-earnings volatility |
+| AMZN  | 265.01 | no  | yes | mixed   | 49.9 | Reject — below 20-day MA |
+| META  | 605.06 | no  | no  | mixed   | 45.6 | Reject — below 20- & 50-day MA |
+
+> **Data caveat**: `market_data.py` reports a `last_price` field that diverges materially from the MA engine's `current_price` (e.g. SPY last_price 713.48 vs current_price 741.25). The MA/RSI engine uses `current_price`, which is consistent with SPY's actual ~$743 close — `last_price` appears stale. Limits below are computed off `current_price`; **re-validate live spreads at market-open before any order.**
+
+### Trade Ideas (for market-open execution — not actioned pre-market)
+Sizing = floor(($100,000 × 0.05) / limit). Stop = −8% entry, Target = +15% entry.
+
+1. **MSFT (primary)** — Cloud/Azure AI mega-cap, RSI 60.6 (in 40–65 band), bullish MA alignment, no imminent earnings. Carried over from yesterday's queue.
+   - Entry (buy limit, current +0.25%): **$422.11** | Stop: **$388.34** | Target: **$485.43**
+   - Size: **11 shares** (~$4,643)
+2. **GOOGL (secondary)** — Search/Cloud/Gemini, RSI 53.1 (mid-band — cleanest momentum read), bullish alignment, no imminent earnings.
+   - Entry (buy limit, current +0.25%): **$389.88** | Stop: **$358.69** | Target: **$448.36**
+   - Size: **12 shares** (~$4,679)
+3. **Watch only**: SPY (RSI 67.8 above the 65 ceiling), QQQ/AAPL/NVDA overbought, AMZN/META below their MAs.
+
+### Decision: **HOLD**
+Rationale:
+- Pre-market research only; market closed — no trades placed outside 9:30–4:00 ET.
+- NVDA **beat** but the stock still **fell after-hours** — the tech "sell-the-news" / rotation risk remains live, and S&P breadth is weak (<50% above 200-day MA).
+- MSFT and GOOGL both cleanly pass the five-point entry checklist (trend + RSI 40–65 + no near earnings + SPY above 20-day MA + risk budget). Queue both for the **market-open routine**, contingent on: (a) no tech-rotation gap-down, (b) RSI still 40–65 on a ≥20-bar live snapshot, (c) SPY holding above its 20-day MA (~728).
+- Given weak breadth, prefer **a single HALF-size entry (MSFT preferred, ~6 sh ≈ $2,530)** at the open rather than opening both. Default remains **NO_TRADE** if conditions do not cleanly hold.
+
+### Sources
+- [S&P 500 E-Mini Futures — Barchart](https://www.barchart.com/futures/quotes/ES*0/futures-prices)
+- [Stock market news for May 20, 2026 — CNBC](https://www.cnbc.com/2026/05/19/stock-market-today-live-updates.html)
+- [Nvidia (NVDA) Q1 2027 earnings report: Live updates — CNBC](https://www.cnbc.com/2026/05/20/nvidia-nvda-earnings-report-q1-2027.html)
+- [Nvidia tops Q1 estimates, offers upbeat outlook — Yahoo Finance](https://finance.yahoo.com/markets/stocks/article/nvidia-to-report-q1-earnings-as-chip-competition-grows-191200841.html)
+- [Weekly Trader's Stock Market Outlook — Charles Schwab](https://www.schwab.com/learn/story/weekly-traders-outlook)
+- [May 2026's Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
+

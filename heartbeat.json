@@ -1,11 +1,11 @@
 {
   "last_routine": "pre-market-research",
-  "last_run_utc": "2026-05-20T07:15:00Z",
+  "last_run_utc": "2026-05-21T07:08:00Z",
   "status": "success",
   "account_status": "ACTIVE",
   "portfolio_value": 100000.0,
   "cash": 100000.0,
   "open_positions": 0,
   "decision": "HOLD",
-  "notes": "NVDA earnings tonight (binary cross-market catalyst). Two clean candidates queued for post-event reassessment: MSFT (primary, RSI 45) and V (secondary, RSI 46). SPY trend bullish, RSI 67.6. NO_TRADE pre-market; if conditions hold at open, consider HALF-size MSFT entry."
+  "notes": "NVDA beat Q1 (EPS $1.87 vs $1.77, rev $81.62B +85% y/y) but stock fell >2% after-hours — sell-the-news/tech-rotation risk live; S&P breadth weak (<50% above 200-day MA). Two clean candidates queued for market-open: MSFT (primary, RSI 60.6) and GOOGL (secondary, RSI 53.1), both bullish MA alignment. SPY bullish but RSI 67.8 (do not chase). NO_TRADE pre-market; if conditions hold at open, consider HALF-size MSFT entry."
 }
