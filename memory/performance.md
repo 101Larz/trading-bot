@@ -32,6 +32,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | — | — | — | — | — | — | Bot not yet started |
 | 2026-05-19 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | EOD snapshot — no trades, no open positions, cash $100,000.00 |
 | 2026-05-20 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | EOD: NO_TRADE day. Market-open declined NVDA (earnings tonight). No positions opened or closed. Cash $100,000.00. |
+| 2026-05-21 | $100,000.00 | $100,002.65 | +$2.65 | +0.00% | 1 | EOD: opened AAPL 1 sh @ $301.88; 10% trailing-stop GTC active. Unrealized +$2.65. |
 
 ---
 
@@ -105,3 +106,26 @@ Trades executed: **none.**
 | Est. Value | $301.90 |
 | Order ID | 1a27b81f-a6ce-4da9-99ed-f89995d719c6 |
 | Trailing Stop | 10% GTC placed immediately after fill |
+
+---
+
+## EOD Snapshot — 2026-05-21
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $100,002.65 |
+| Cash | $99,698.12 |
+| Long Market Value | $304.53 |
+| Day P&L ($) | +$2.65 |
+| Day P&L (%) | +0.0027% |
+| Trades Today | 1 |
+| Trades This Week | 1 |
+| Open Positions | 1 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $304.53 | +$2.65 (+0.88%) |
+
+Notes: First position of the week. AAPL 1 sh opened @ $301.88 avg entry; 10% trailing-stop GTC active (order 5851cbb5, stop $274.99, HWM $305.54). Day P&L driven entirely by AAPL mark-up. Cash reserve 99.7% of equity — comfortably within the ≥20% rule and the 5% single-position cap. Trade was entered after the market-open routine, which had logged NO_TRADE at 09:46 ET. Flat-to-green day; no risk limits approached.
