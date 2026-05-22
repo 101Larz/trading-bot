@@ -492,3 +492,69 @@ Rationale:
 - [Weekly Trader's Stock Market Outlook — Charles Schwab](https://www.schwab.com/learn/story/weekly-traders-outlook)
 - [May 2026's Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
 
+---
+
+## 2026-05-22 (Friday) — Pre-Market (session: gallant-lamport)
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $99,698.12 |
+| Portfolio Value | $100,003.74 |
+| Equity | $100,003.74 |
+| Buying Power | $199,701.86 |
+| Long Market Value | $305.62 |
+| Open Positions | 1 |
+| Status | ACTIVE (paper) |
+
+Held position: **AAPL 1 sh** @ $301.88 avg, mark $305.62, unrealized **+$3.74 (+1.24%)**; 10% trailing-stop GTC active. Max single-position size = 5% = **$5,000**. Heartbeat (2026-05-21 EOD) shows last routine `success`, decision HOLD.
+
+### Market Context
+- **Tape**: S&P 500 futures **+0.34%** pre-market Friday; the benchmark is up ~0.5% week-to-date and on track for its **eighth straight weekly gain** despite elevated volatility. Macro filter is supportive.
+- **Today's catalyst**: Final May University of Michigan Consumer Sentiment report.
+- **Sector momentum**: Semiconductors remain the dominant leadership ($SOX posted a ~41% four-week advance into late April — best rally since 2000); AI infrastructure / data-center demand still driving tech. Caveat: equal-weight tech has been lagging cap-weight since end of March — strength is concentrated in the mega-caps.
+- **Single-name movers**: CAVA +7.5% on strong earnings and raised guidance; MU +3% as a Samsung memory-chip strike threatens ~3% of global supply.
+- **Held-position news (AAPL)**: Stock broke above $300, hit $306 on 5/21. Q2 FY26 beat (EPS $2.01 vs $1.95; revenue $111.2B; Services $30.98B; Greater China $20.5B). 28 analysts at Buy consensus, 12-mo target $308.65. Watch: iPhone supply constraints on advanced processor chips. **No negative 48h catalyst** — position thesis intact.
+
+### Technical Screen (`market_data.py`, 60-bar yfinance)
+| Symbol | Price | >MA20 | >MA50 | Trend | RSI-14 | Read |
+|--------|-------|-------|-------|-------|--------|------|
+| SPY   | 742.72 | yes | yes | bullish | 67.5 | Macro filter OK (above 20-day MA); RSI >65 — don't chase SPY |
+| GOOGL | 387.66 | yes | yes | bullish | 51.5 | **Clean setup** — RSI mid-band, bullish alignment |
+| COST  | 1050.45 | yes | yes | bullish | 60.0 | Clean RSI/trend, but earnings risk (see caveat) |
+| NVDA  | 219.51 | yes | yes | bullish | 66.7 | Reject — RSI just above 65 entry ceiling |
+| AMD   | 449.59 | yes | yes | bullish | 67.8 | Reject — RSI above 65 entry ceiling |
+| AAPL  | 304.99 | yes | yes | bullish | 82.4 | Held — extremely overbought (see exit flag) |
+
+> **Data caveat**: `market_data.py` again reports a `last_price` that diverges from the MA engine's `current_price` (AAPL last_price 285.74 vs current_price 304.99; SPY bid 716.42 / ask 760.80). The MA/RSI engine's `current_price` is consistent with AAPL's actual ~$305 mark. Limits below are off `current_price`; **re-validate live spreads at market-open before any order.**
+
+### Trade Ideas (for market-open execution — not actioned pre-market)
+Sizing = floor(($100,003.74 × 0.05) / limit). Stop = −8% entry, Target = +15% entry.
+
+1. **GOOGL (primary)** — Search/Cloud/Gemini mega-cap, RSI 51.5 (cleanest mid-band read), bullish MA alignment, no imminent earnings. Passes all five entry criteria.
+   - Entry (buy limit, current +0.25%): **$388.63** | Stop: **$357.54** | Target: **$446.92**
+   - Size: **12 shares** (~$4,664)
+2. **COST (secondary)** — Consumer-staples momentum, RSI 60.0 (in band), bullish alignment.
+   - Entry (buy limit, current +0.25%): **$1,053.08** | Stop: **$968.83** | Target: **$1,211.04**
+   - Size: **4 shares** (~$4,212)
+   - **Caveat**: Costco fiscal Q3 typically reports late May — verify the earnings date at market-open; if within 5 trading days, exclude per strategy.
+3. **Watch only**: NVDA (RSI 66.7) and AMD (RSI 67.8) both just above the 40–65 entry band — re-check for a pullback into band.
+
+### Position Management Flag — AAPL
+AAPL RSI-14 is **82.4** (extremely overbought). Strategy exit criteria: "RSI > 75 → consider full exit." Position is tiny (1 sh, ~$306) with a 10% trailing stop active, so risk is contained — but the **market-open routine should consider trimming/closing AAPL** to lock the +1.2% gain rather than ride an overbought name.
+
+### Decision: **TRADE**
+Rationale:
+- Macro supportive: futures +0.34%, eighth straight weekly gain, SPY above its 20- and 50-day MAs.
+- **GOOGL** cleanly passes the five-point entry checklist (trend + RSI 51.5 in 40–65 band + no near earnings + SPY above 20-day MA + risk budget available). Queue as the **primary market-open entry**.
+- **COST** is a clean secondary, contingent on confirming its earnings date is >5 trading days out.
+- Pre-market research only — no orders placed outside 9:30–4:00 ET. Execution at the market-open routine is contingent on live re-validation: (a) no gap-down, (b) RSI still 40–65 on a ≥20-bar live snapshot, (c) SPY holding above its 20-day MA (~730). Default to **NO_TRADE** if conditions do not cleanly hold.
+- Separately, evaluate trimming/closing the overbought AAPL position at the open.
+
+### Sources
+- [Stock futures rise as S&P 500 looks toward another winning week — CNBC](https://www.cnbc.com/2026/05/21/stock-market-today-live-updates.html)
+- [Nvidia, Fed Minutes on Marquee as Stocks Up Early — Charles Schwab](https://www.schwab.com/learn/story/stock-market-update-open)
+- [7 Best-Performing Semiconductor Stocks for May 2026 — NerdWallet](https://www.nerdwallet.com/investing/learn/best-semiconductor-stocks)
+- [Apple AAPL Stock Reaches $306 — FX Leaders](https://www.fxleaders.com/news/2026/05/21/apple-aapl-stock-reaches-306-as-strong-fundamentals-offset-growing-supply-concerns/)
+- [NVIDIA (NVDA) Stock Forecast & Analyst Price Targets — StockAnalysis](https://stockanalysis.com/stocks/nvda/forecast/)
+

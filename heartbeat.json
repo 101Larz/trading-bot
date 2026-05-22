@@ -1,11 +1,11 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-05-21T20:33:24Z",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-05-22T07:10:00Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100002.65,
+  "portfolio_value": 100003.74,
   "cash": 99698.12,
   "open_positions": 1,
-  "decision": "HOLD",
-  "notes": "EOD 2026-05-21: Day P&L +$2.65 (+0.0027%) vs prior close $100,000.00. One open position - AAPL 1 sh @ $301.88 avg, mark $304.53, unrealized +$2.65 (+0.88%); 10% trailing-stop GTC active (order 5851cbb5, stop $274.99). 1 trade today, 1 this week. Cash 99.7% of equity. Flat-to-green day, no risk limits approached."
+  "decision": "TRADE",
+  "notes": "Pre-market 2026-05-22: Macro supportive (S&P futures +0.34%, eighth straight weekly gain, SPY above 20/50-day MA). One open position - AAPL 1 sh @ $301.88 avg, mark $305.62, unrealized +$3.74 (+1.24%); RSI 82.4 overbought - flag AAPL for trim/close at market-open. Primary trade idea GOOGL (RSI 51.5, clean five-point entry checklist): entry $388.63, stop $357.54, target $446.92, 12 sh. Secondary COST (RSI 60.0) contingent on earnings-date check. Decision TRADE - queue GOOGL for market-open routine pending live re-validation."
 }
