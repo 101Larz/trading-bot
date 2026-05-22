@@ -33,6 +33,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-05-19 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | EOD snapshot — no trades, no open positions, cash $100,000.00 |
 | 2026-05-20 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | EOD: NO_TRADE day. Market-open declined NVDA (earnings tonight). No positions opened or closed. Cash $100,000.00. |
 | 2026-05-21 | $100,000.00 | $100,002.65 | +$2.65 | +0.00% | 1 | EOD: opened AAPL 1 sh @ $301.88; 10% trailing-stop GTC active. Unrealized +$2.65. |
+| 2026-05-22 | $100,002.65 | $99,975.69 | -$26.96 | -0.03% | 1 | EOD: opened GOOGL 12 sh @ $385.82. AAPL +$6.68, GOOGL -$30.99 unrealized. AAPL RSI overbought — flagged for exit review. |
 
 ---
 
@@ -168,3 +169,27 @@ Trade executed:
 Sizing: floor(($100,005.54 × 0.05) / $386.79 limit) = 12 shares. 10% trailing-stop GTC placed immediately after fill (order a7fadae9, stop $347.157, HWM $385.73). Weekly buys remaining: 1.
 
 Position-management note — AAPL: RSI-14 still extremely overbought (~82). Tiny 1-share position protected by a 10% trailing stop; flagged for the end-of-day routine to consider a full exit per the "RSI > 75" exit rule.
+
+---
+
+## EOD Snapshot — 2026-05-22
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,975.69 |
+| Cash | $95,068.28 |
+| Long Market Value | $4,907.41 |
+| Day P&L ($) | -$26.96 |
+| Day P&L (%) | -0.03% |
+| Trades Today | 1 |
+| Trades This Week | 2 |
+| Open Positions | 2 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $308.56 | +$6.68 (+2.21%) |
+| GOOGL | 12 | $385.82 | $383.24 | -$30.99 (-0.67%) |
+
+Notes: Flat-to-slightly-red day; Day P&L -$26.96 driven by GOOGL marking down -$30.99 after entry, partially offset by AAPL +$6.68. Both positions carry 10% trailing-stop GTC orders. Cash reserve $95,068.28 = 95.1% of equity — well within the ≥20% cash rule; total exposure 4.9%. No risk limits approached (daily loss limit 3% not remotely close). AAPL RSI-14 remains overbought (>75) — carried into the weekend; re-evaluate for exit at Monday's pre-market routine. 2 of 3 weekly trades used.
