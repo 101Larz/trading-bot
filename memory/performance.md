@@ -129,3 +129,42 @@ Trades executed: **none.**
 | AAPL | 1 | $301.88 | $304.53 | +$2.65 (+0.88%) |
 
 Notes: First position of the week. AAPL 1 sh opened @ $301.88 avg entry; 10% trailing-stop GTC active (order 5851cbb5, stop $274.99, HWM $305.54). Day P&L driven entirely by AAPL mark-up. Cash reserve 99.7% of equity — comfortably within the ≥20% rule and the 5% single-position cap. Trade was entered after the market-open routine, which had logged NO_TRADE at 09:46 ET. Flat-to-green day; no risk limits approached.
+
+### Trade Entry — 2026-05-22 13:46
+| Field | Value |
+|-------|-------|
+| Symbol | GOOGL |
+| Side | BUY |
+| Shares | 12.0 |
+| Est. Price | $390.00 |
+| Est. Value | $4680.00 |
+| Order ID | a543b11b-59fe-4fad-84d2-fd0d545e3c78 |
+| Trailing Stop | 10% GTC placed immediately after fill |
+
+---
+
+## Market-Open Log — 2026-05-22 (Friday)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash (pre-trade) | $99,698.12 |
+| Equity (pre-trade) | $100,005.54 |
+| Open Positions | 1 → 2 / 6 |
+| Trades This Week | 1 → 2 / 3 |
+| Decision | **TRADE — GOOGL** |
+
+Buy-rule check: positions 1/6 ✅ · weekly trades 1/3 ✅ · ≤20% equity/position ✅ (~4.6%) · catalyst in today's RESEARCH-LOG ✅ (GOOGL primary).
+
+Entry-criteria re-validation (live, 60-bar snapshot):
+- GOOGL: price $385.83 > MA20 $383.55 & MA50 $339.55 (bullish) ✅ · RSI-14 51.48 in 40–65 band ✅ · tight spread (bid 385.72 / ask 385.83) ✅ · SPY $742.72 > MA20 $730.0 (macro filter OK) ✅ · no negative 48h catalyst ✅. No gap-down vs pre-market plan.
+- COST: **rejected.** RSI 60 / bullish MAs passed, but (a) quote spread unusable/stale (bid $984.20 / ask $1,092 vs $1,050 mark) and (b) Costco fiscal Q3 earnings land ~May 28–29 — within 5 trading days. Strategy bars entry into the earnings window.
+
+Trade executed:
+| Symbol | Side | Qty | Est. Price | Est. Value | Order ID |
+|--------|------|-----|-----------|-----------|----------|
+| GOOGL | BUY | 12 | $390.00 | $4,680.00 | a543b11b-59fe-4fad-84d2-fd0d545e3c78 |
+
+Sizing: floor(($100,005.54 × 0.05) / $386.79 limit) = 12 shares. 10% trailing-stop GTC placed immediately after fill (order a7fadae9, stop $347.157, HWM $385.73). Weekly buys remaining: 1.
+
+Position-management note — AAPL: RSI-14 still extremely overbought (~82). Tiny 1-share position protected by a 10% trailing stop; flagged for the end-of-day routine to consider a full exit per the "RSI > 75" exit rule.
