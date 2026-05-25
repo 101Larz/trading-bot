@@ -34,6 +34,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-05-20 | $100,000.00 | $100,000.00 | $0.00 | 0.00% | 0 | EOD: NO_TRADE day. Market-open declined NVDA (earnings tonight). No positions opened or closed. Cash $100,000.00. |
 | 2026-05-21 | $100,000.00 | $100,002.65 | +$2.65 | +0.00% | 1 | EOD: opened AAPL 1 sh @ $301.88; 10% trailing-stop GTC active. Unrealized +$2.65. |
 | 2026-05-22 | $100,002.65 | $99,975.69 | -$26.96 | -0.03% | 1 | EOD: opened GOOGL 12 sh @ $385.82. AAPL +$6.68, GOOGL -$30.99 unrealized. AAPL RSI overbought — flagged for exit review. |
+| 2026-05-25 | $99,975.69 | $99,972.74 | -$2.95 | -0.003% | 0 | EOD: Memorial Day — US markets closed. No trades. AAPL +$6.94, GOOGL -$34.20 unrealized. Trailing stops active. |
 
 ---
 
@@ -223,3 +224,27 @@ Position snapshot:
 | GOOGL | 12 | $385.82 | $382.97 | -$34.20 (-0.74%) |
 
 Trades executed: **none** (market closed). Both positions remain protected by 10% trailing-stop GTC orders. AAPL RSI overbought flag still open — defer exit evaluation to Tuesday's pre-market routine when live data is available.
+
+---
+
+## EOD Snapshot — 2026-05-25
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,972.74 |
+| Cash | $95,068.28 |
+| Long Market Value | $4,904.46 |
+| Day P&L ($) | -$2.95 |
+| Day P&L (%) | -0.003% |
+| Trades Today | 0 |
+| Trades This Week | 0 |
+| Open Positions | 2 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $308.82 | +$6.94 (+2.30%) |
+| GOOGL | 12 | $385.82 | $382.97 | -$34.20 (-0.74%) |
+
+Notes: **Memorial Day — US equity markets closed.** No trades placed; portfolio marked at last available prices (effectively flat vs Friday close). Day P&L -$2.95 reflects tiny residual mark drift in the broker's account snapshot, not real session activity. Both positions remain protected by 10% trailing-stop GTC orders. Cash 95.1% of equity — well above the ≥20% reserve rule. AAPL RSI-overbought flag carried forward to Tuesday's pre-market routine. Weekly trade counter reset to 0/3 for the new trading week starting 2026-05-26.
