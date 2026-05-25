@@ -193,3 +193,33 @@ Position-management note — AAPL: RSI-14 still extremely overbought (~82). Tiny
 | GOOGL | 12 | $385.82 | $383.24 | -$30.99 (-0.67%) |
 
 Notes: Flat-to-slightly-red day; Day P&L -$26.96 driven by GOOGL marking down -$30.99 after entry, partially offset by AAPL +$6.68. Both positions carry 10% trailing-stop GTC orders. Cash reserve $95,068.28 = 95.1% of equity — well within the ≥20% cash rule; total exposure 4.9%. No risk limits approached (daily loss limit 3% not remotely close). AAPL RSI-14 remains overbought (>75) — carried into the weekend; re-evaluate for exit at Monday's pre-market routine. 2 of 3 weekly trades used.
+
+---
+
+## Market-Open Log — 2026-05-25 (Monday — Memorial Day)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $95,068.28 |
+| Equity | $99,972.74 |
+| Long Market Value | $4,904.46 |
+| Open Positions | 2 / 6 (AAPL 1 sh, GOOGL 12 sh) |
+| Trades This Week | 0 / 3 (new week) |
+| Decision | **NO_TRADE** |
+
+Market clock: `is_open=false`, `next_open=2026-05-26T09:30 ET`. Today is **Memorial Day** — US equity markets closed. No order placement possible.
+
+Buy-rule check (pre-empted by market closure):
+- Max 6 open positions ✅ (2/6)
+- Max 3 trades this week ✅ (0/3, new week)
+- Max 20% equity per position ✅
+- Catalyst in today's RESEARCH-LOG ❌ — no 2026-05-25 entry in `memory/RESEARCH-LOG.md` (last entry 2026-05-22). Holiday → no pre-market routine ran.
+
+Position snapshot:
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $308.82 | +$6.94 (+2.30%) |
+| GOOGL | 12 | $385.82 | $382.97 | -$34.20 (-0.74%) |
+
+Trades executed: **none** (market closed). Both positions remain protected by 10% trailing-stop GTC orders. AAPL RSI overbought flag still open — defer exit evaluation to Tuesday's pre-market routine when live data is available.
