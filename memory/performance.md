@@ -248,3 +248,39 @@ Trades executed: **none** (market closed). Both positions remain protected by 10
 | GOOGL | 12 | $385.82 | $382.97 | -$34.20 (-0.74%) |
 
 Notes: **Memorial Day — US equity markets closed.** No trades placed; portfolio marked at last available prices (effectively flat vs Friday close). Day P&L -$2.95 reflects tiny residual mark drift in the broker's account snapshot, not real session activity. Both positions remain protected by 10% trailing-stop GTC orders. Cash 95.1% of equity — well above the ≥20% reserve rule. AAPL RSI-overbought flag carried forward to Tuesday's pre-market routine. Weekly trade counter reset to 0/3 for the new trading week starting 2026-05-26.
+
+---
+
+## Market-Open Log — 2026-05-26 (Tuesday — session: sweet-shannon)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $95,068.28 |
+| Equity | $99,996.35 |
+| Long Market Value | $4,928.07 |
+| Open Positions | 2 / 6 (AAPL 1 sh, GOOGL 12 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Market clock: `is_open=true` (next_close 16:00 ET). Trading window active.
+
+Buy-rule check:
+- Max 6 open positions ✅ (2/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅
+- **Catalyst in today's RESEARCH-LOG ❌** — no 2026-05-26 entry exists in `memory/RESEARCH-LOG.md`; last entry is 2026-05-22. Heartbeat dated 2026-05-22T07:10Z — Tuesday's pre-market routine did not produce a logged catalyst.
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $310.23 | +$8.35 (+2.77%) |
+| GOOGL | 12 | $385.82 | $384.82 | -$12.00 (-0.26%) |
+
+Decision rationale:
+- Buy-rule #4 (catalyst in today's RESEARCH-LOG) fails — no symbol is authorized for entry under the market-open routine.
+- Per CLAUDE.md: default action under uncertainty is **NO_TRADE**.
+- AAPL RSI-overbought exit flag remains open from 2026-05-22 — exit evaluation is the EOD routine's responsibility, not market-open.
+- Both positions remain protected by 10% trailing-stop GTC orders. Cash 95.1% of equity, well within the ≥20% rule.
+
+Trades executed: **none.**
