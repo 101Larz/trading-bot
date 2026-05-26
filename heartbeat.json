@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market-research",
-  "last_run_utc": "2026-05-21T07:08:00Z",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-05-26T07:10:00Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100000.0,
-  "cash": 100000.0,
-  "open_positions": 0,
-  "decision": "HOLD",
-  "notes": "NVDA beat Q1 (EPS $1.87 vs $1.77, rev $81.62B +85% y/y) but stock fell >2% after-hours — sell-the-news/tech-rotation risk live; S&P breadth weak (<50% above 200-day MA). Two clean candidates queued for market-open: MSFT (primary, RSI 60.6) and GOOGL (secondary, RSI 53.1), both bullish MA alignment. SPY bullish but RSI 67.8 (do not chase). NO_TRADE pre-market; if conditions hold at open, consider HALF-size MSFT entry."
+  "portfolio_value": 100013.27,
+  "cash": 95068.28,
+  "open_positions": 2,
+  "decision": "TRADE",
+  "notes": "Pre-market 2026-05-26 (Tue, post-Memorial Day): SPY bullish (price $745.64 > MA20 $731.58 > MA50 $696.49) but RSI 71.84 overbought - macro filter PASSES with caution. New Fed Chair Warsh oath today; US-Iran de-escalation tone; AZO/ZS earnings. Held: AAPL 1sh +$8.47 RSI 91 (FLAGGED for exit per RSI>75 rule), GOOGL 12sh +$4.80 RSI 49.8 mixed (below MA20). Primary trade idea: NVDA BUY 21 sh (~$4.79k, RSI 62.5 neutral, post-earnings clean catalyst, bullish MA stack). AMD blocked RSI 75; COST blocked earnings May 28. Decision TRADE - NVDA add + AAPL exit at market-open routine, contingent on live re-validation."
 }
