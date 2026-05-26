@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-05-26T07:10:00Z",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-05-26T20:15:00Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100013.27,
+  "portfolio_value": 100035.52,
   "cash": 95068.28,
   "open_positions": 2,
-  "decision": "TRADE",
-  "notes": "Pre-market 2026-05-26 (Tue, post-Memorial Day): SPY bullish (price $745.64 > MA20 $731.58 > MA50 $696.49) but RSI 71.84 overbought - macro filter PASSES with caution. New Fed Chair Warsh oath today; US-Iran de-escalation tone; AZO/ZS earnings. Held: AAPL 1sh +$8.47 RSI 91 (FLAGGED for exit per RSI>75 rule), GOOGL 12sh +$4.80 RSI 49.8 mixed (below MA20). Primary trade idea: NVDA BUY 21 sh (~$4.79k, RSI 62.5 neutral, post-earnings clean catalyst, bullish MA stack). AMD blocked RSI 75; COST blocked earnings May 28. Decision TRADE - NVDA add + AAPL exit at market-open routine, contingent on live re-validation."
+  "decision": "HOLD",
+  "notes": "EOD 2026-05-26 (Tue): Day P&L +$62.78 (+0.063%). 0 trades today, 0/3 this week. Open: AAPL 1sh +$6.84 (+2.27%), GOOGL 12sh +$28.68 (+0.62%). Both protected by 10% trailing-stop GTC (AAPL stop $280.64 HWM $311.82; GOOGL stop $350.33 HWM $389.26). Cash 95.03% of equity; exposure 4.97%. AAPL RSI-overbought flag carried forward — trailing stop providing discipline; re-evaluate at pre-market."
 }

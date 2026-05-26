@@ -35,6 +35,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-05-21 | $100,000.00 | $100,002.65 | +$2.65 | +0.00% | 1 | EOD: opened AAPL 1 sh @ $301.88; 10% trailing-stop GTC active. Unrealized +$2.65. |
 | 2026-05-22 | $100,002.65 | $99,975.69 | -$26.96 | -0.03% | 1 | EOD: opened GOOGL 12 sh @ $385.82. AAPL +$6.68, GOOGL -$30.99 unrealized. AAPL RSI overbought — flagged for exit review. |
 | 2026-05-25 | $99,975.69 | $99,972.74 | -$2.95 | -0.003% | 0 | EOD: Memorial Day — US markets closed. No trades. AAPL +$6.94, GOOGL -$34.20 unrealized. Trailing stops active. |
+| 2026-05-26 | $99,972.74 | $100,035.52 | +$62.78 | +0.063% | 0 | EOD: NO_TRADE day (no catalyst in research log). AAPL +$6.84, GOOGL +$28.68 unrealized. Trailing stops active. |
 
 ---
 
@@ -284,3 +285,27 @@ Decision rationale:
 - Both positions remain protected by 10% trailing-stop GTC orders. Cash 95.1% of equity, well within the ≥20% rule.
 
 Trades executed: **none.**
+
+---
+
+## EOD Snapshot — 2026-05-26
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $100,035.52 |
+| Cash | $95,068.28 |
+| Long Market Value | $4,967.24 |
+| Day P&L ($) | +$62.78 |
+| Day P&L (%) | +0.063% |
+| Trades Today | 0 |
+| Trades This Week | 0 |
+| Open Positions | 2 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $308.72 | +$6.84 (+2.27%) |
+| GOOGL | 12 | $385.82 | $388.21 | +$28.68 (+0.62%) |
+
+Notes: Quiet, slightly green day. NO_TRADE at market-open (no 2026-05-26 catalyst in `memory/RESEARCH-LOG.md`); 0 trades placed today. Day P&L +$62.78 driven by GOOGL recovering +$28.68 unrealized (vs -$34.20 entering the session) and AAPL holding +$6.84. Both positions protected by 10% trailing-stop GTC orders (AAPL stop $280.64 / HWM $311.82; GOOGL stop $350.33 / HWM $389.26). Cash $95,068.28 = 95.03% of equity — well above the ≥20% reserve rule; total exposure 4.97%. Daily-loss limit (3%) not approached. Weekly trade counter 0/3. AAPL RSI-overbought exit flag still open from 2026-05-22 — defer to tomorrow's pre-market routine for re-evaluation; trailing stop currently providing the exit discipline.
