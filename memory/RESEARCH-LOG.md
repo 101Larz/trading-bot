@@ -1,4 +1,7 @@
-# Pre-Market Research Log
+# Pre-Market Research Log — 2026-05-25 (for 2026-05-26 open)
+
+ claude/gallant-lamport-53nWG
+> US markets are **closed Mon 2026-05-25 (Memorial Day)**. Next session opens Tue 2026-05-26 09:30 ET. This research targets that open.
 
 ## 2026-05-26 (Tuesday) — Pre-Market
 
@@ -373,251 +376,90 @@ Rationale:
 - [Best Stocks to Buy Now: May 2026 — Motley Fool](https://www.fool.com/investing/top-stocks-to-buy-and-hold/)
 - [Monthly Stock Sector Outlook 2026 — Charles Schwab](https://www.schwab.com/learn/story/stock-sector-outlook)
 
----
-
-## 2026-05-20 (Wednesday) — Pre-Market (session: gallant-lamport)
-
-### Account Snapshot
-| Metric | Value |
-|--------|-------|
-| Cash | $100,000.00 |
-| Portfolio Value | $100,000.00 |
-| Equity | $100,000.00 |
-| Buying Power | $200,000.00 |
-| Long Market Value | $0.00 |
-| Open Positions | 0 |
-| Status | ACTIVE (paper) |
-
-Fresh paper account, all cash, no held positions — no position-specific news to review. Max single-position size = 5% = **$5,000**.
-
-### Market Context
-- **Tape**: ES (June S&P 500 e-mini) ≈ −0.38% pre-market; soft tone into the NVDA print.
-- **Today's main catalyst**: **NVDA reports Q1 earnings AFTER the close** — market-defining binary event for AI/semis and the broad tape.
-- **This week's other earnings**: HD (Wed AM), WMT (Thu), ROST (Thu) — all within 5 trading days → excluded from new entries per strategy.
-- **Sector momentum**: Semis (SOX) +65% YTD continues to lead, but technology now broadly extended; analysts flagging dot-com parallels. Some rotation hints toward financials/staples.
-- **Single-name catalysts**: PIII, RXT, AGL leading May monthly momentum (small caps — outside strategy universe).
-
-### SPY Macro Filter (strategy criterion 4)
-| Metric | Value |
-|--------|-------|
-| Last | $733.73 |
-| MA20 | $726.78 (price above) |
-| MA50 | $692.18 (price above) |
-| Trend | Bullish alignment |
-| RSI-14 | 67.6 (neutral, slightly elevated) |
-
-SPY is NOT in a confirmed downtrend → longs permitted. RSI slightly above 65 — do not chase.
-
-### Technical Screen
-| Symbol | Last | >MA20 | >MA50 | Trend | RSI-14 | Read |
-|--------|------|-------|-------|-------|--------|------|
-| MSFT | 417.42 | yes | yes | bullish | 45.4 | **Clean setup** — RSI mid-range, bullish alignment, no near earnings |
-| V    | 329.91 | yes | yes | bullish | 45.8 | **Clean setup** — defensive payments, decoupled from NVDA event |
-| GOOGL| 387.66 | yes | yes | bullish | 68.9 | Reject — RSI > 65 ceiling |
-| AAPL | 298.97 | yes | yes | bullish | 84.1 | Reject — overbought |
-| AVGO | 411.07 | no  | yes | mixed   | 52.2 | Reject — below 20-day MA |
-| JPM  | 295.70 | no  | no  | mixed   | 36.9 | Reject — trend filter fails |
-| WMT  | 134.20 | yes | yes | bullish | 67.2 | Reject — earnings Thu (< 5 days) |
-
-> Pre-market quotes show wide/stale spreads (e.g. MSFT/WMT ask = 0). Limits below are computed off last; re-validate live spreads at market-open before any order.
-
-### Trade Ideas (for market-open execution — not actioned pre-market)
-Sizing = floor(($100,000 × 0.05) / limit). Stop = −8% entry, Target = +15% entry.
-
-1. **MSFT (primary)** — Cloud/AI mega-cap, RSI 45 (mid-band), no near earnings, less binary than NVDA.
-   - Entry (buy limit, last +0.25%): **$418.50** | Stop: **$385.00** | Target: **$481.00**
-   - Size: ~11 shares (~$4,604)
-2. **V (secondary, defensive complement)** — Payments leader, RSI 46, decoupled from NVDA tonight.
-   - Entry (buy limit, last +0.25%): **$330.74** | Stop: **$304.40** | Target: **$380.40**
-   - Size: ~15 shares (~$4,961)
-3. **Watch only**: GOOGL (RSI too high), AVGO (sub-MA20), WMT (earnings window).
-
-### Decision: **HOLD / NO_TRADE**
-Rationale:
-- Pre-market research only; market closed — no trades placed outside 9:30–4:00 ET.
-- **NVDA earnings TONIGHT** is a binary cross-market event capable of moving SPY ±2–3% tomorrow. Initiating today commits capital to an exogenous binary without edge.
-- MSFT and V both remain viable post-print; we lose no setup by waiting one session.
-- Per strategy: default under uncertainty is NO_TRADE. Preserve full cash; reassess at market-open routine and again after the NVDA print.
-- If, at market-open, conditions still qualify AND the gap is calm, plan: enter ONE position (MSFT preferred) at HALF size (~$2,500) to keep powder dry across the event.
-
-### Sources
-- [S&P 500 Futures — Investing.com](https://www.investing.com/indices/us-spx-500-futures)
-- [Tech Still Struggling, but Yields, Oil Slip Early — Schwab](https://www.schwab.com/learn/story/stock-market-update-open)
-- [May 2026 Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
-- [5 Leading Semiconductor Stocks Dominating May 2026 — Parameter](https://parameter.io/5-leading-semiconductor-stocks-dominating-may-2026-nvidia-nvda-amd-and-more/)
-- [Top Semiconductor Stocks to Watch May 2026 — Intellectia](https://intellectia.ai/blog/semiconductor-stocks-to-watch-may-2026)
-- [Best Stocks to Buy Right Now for May — Motley Fool](https://www.fool.com/investing/2026/05/06/the-best-stocks-to-buy-right-now-for-may/)
 
 ---
 
-## 2026-05-20 (Wednesday) — Market-Open (session: sweet-shannon)
+## 1. Account Snapshot
 
-### Account Snapshot (live, 9:45 ET)
-| Metric | Value |
-|--------|-------|
-| Cash | $100,000.00 |
-| Portfolio Value | $100,000.00 |
-| Equity | $100,000.00 |
-| Buying Power | $200,000.00 |
-| Open Positions | 0 |
-| Status | ACTIVE (paper) |
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,972.74 |
+| Equity | $99,972.74 |
+| Cash | $95,068.28 |
+| Long Market Value | $4,904.46 |
+| Buying Power | $195,041.02 |
+| Exposure | 4.9% (well within ≥20% cash rule) |
+| Open Positions | 2 / 10 |
+| Trades This Week (rolling) | 2 / 3 |
+| Daily-loss-limit breaches | 0 |
 
-Week-to-date trade count: **0** (well below 3-trade weekly cap). Position count: **0/6**.
+### Open Positions
 
-### Live Quotes (9:45 ET)
-| Symbol | Last | Bid | Ask | Notes |
-|--------|------|-----|-----|-------|
-| MSFT | 418.00 | 412.93 | 418.00 | Gap roughly flat vs. pre-market plan ($418.50 entry) |
-| V | 329.75 | 329.25 | 329.75 | Tight spread, slightly below pre-market plan ($330.74) |
-| SPY | 737.00 | 736.53 | 737.00 | Modestly higher vs. yesterday's $733.73 |
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | RSI-14 | Status |
+|--------|-----|-----------|---------|----------------|--------|--------|
+| AAPL | 1 | $301.88 | $308.82 | +$6.94 (+2.30%) | **91.1** | **EXIT — RSI > 75 rule triggered** |
+| GOOGL | 12 | $385.82 | $382.97 | -$34.20 (-0.74%) | 49.8 | Hold (price just below MA20 $385.48, above MA50 $341.14) |
 
-`market_data.py snapshot` returns only **1 bar** for each name at this hour → MA20/MA50/RSI-14 cannot be re-verified live. Pre-market values stand: MSFT RSI 45.4, V RSI 45.8, both above MA20/MA50.
-
-### Buy-Rule Check (per market-open routine)
-- Max 6 open positions: ✅ 0 currently
-- Max 3 trades this week: ✅ 0 used
-- Max 20% equity per position: ✅ candidate sizes ≤ 5%
-- Catalyst in today's RESEARCH-LOG: ✅ MSFT (primary) and V (secondary) named
-
-### Decision: **NO_TRADE**
-Rationale:
-- **NVDA earnings AFTER the close tonight** is a binary cross-market event capable of moving SPY ±2–3% tomorrow. Pre-market plan was conditional on a "calm" gap and explicitly preferred to wait one session.
-- Live indicators (MA/RSI) cannot be re-verified at the open (1 bar only). Strategy's default under unverifiable entry criteria is NO_TRADE.
-- Capital preservation > opportunity cost: MSFT and V both remain viable post-print. No edge lost by waiting.
-- `scripts/trade.py` currently has no `buy` CLI subcommand wired up; `safe_buy()` exists internally only. Not patching during a live routine.
-
-### Plan for next routine (midday / post-NVDA)
-- Re-pull MSFT and V snapshots once bar count ≥ 20 to re-verify MA/RSI.
-- If NVDA print is benign and SPY holds MA20, consider opening **MSFT at half size (~6 sh ≈ $2,510)** in the midday or Thursday open routine.
-- If NVDA disappoints and SPY breaks MA20 (~727), stand down further and re-evaluate the watchlist.
+Both positions carry 10% trailing-stop GTC orders.
 
 ---
 
-## 2026-05-21 (Thursday) — Pre-Market (session: gallant-lamport)
+## 2. Market Context
 
-### Account Snapshot
-| Metric | Value |
-|--------|-------|
-| Cash | $100,000.00 |
-| Portfolio Value | $100,000.00 |
-| Equity | $100,000.00 |
-| Buying Power | $200,000.00 |
-| Long Market Value | $0.00 |
-| Open Positions | 0 |
-| Status | ACTIVE (paper) |
+- **Holiday session:** US cash equities closed today. Futures trading thin; sentiment skewed positive on reported US/Iran progress easing oil/inflation risk.
+- **SPY:** $745.64, above MA20 ($731.58) and MA50 ($696.49) — macro filter **PASSES**. But RSI-14 = **71.84 (overbought)** — broader market is extended.
+- **Tape:** S&P 500 EW + Dow at fresh ATHs; "Magnificent 7" earnings gap to the rest of the S&P is narrowing — broadening rally.
+- **Sector momentum:** Semis dominant — PHLX SOX +65% YTD, 22 of 23 up-sessions. Tech / Comm Services / Healthcare leading May. Veteran analysts flagging 1999-style froth + 25–30% drawdown risk.
+- **Watchlist regime check (Markov primary candidates):**
 
-Fresh paper account, all cash, no held positions — no position-specific news to review. Max single-position size = 5% = **$5,000**. Heartbeat (2026-05-20) shows last routine `success`, decision HOLD.
-
-### Market Context
-- **Tape**: ES (S&P 500 e-mini) ≈ 7,440, **+0.24%** pre-market. SPY closed **+1.08%** yesterday (index 7,432.97) as oil and Treasury yields slid on Middle East de-escalation optimism.
-- **NVDA earnings (released after close 5/20)**: **Beat** — EPS $1.87 vs $1.77 est; revenue $81.62B (+85% y/y) vs $79.18B est; data-center $75.2B (92% of sales); Q2 guide $89.1–92.8B vs $87.3B Street; dividend raised to $0.25. **But the stock fell >2% after-hours** — third straight post-earnings drop; "sell-the-news" pattern intact despite the beat.
-- **Today's earnings calendar**: WMT, DE, ROST, RL, ZM, DECK — all within 5 trading days → excluded from new entries per strategy.
-- **Breadth / rotation**: Weak internals — **<50% of S&P 500 stocks above their 200-day MA**; chips just had the worst two-day stretch since October; ongoing rotation-out-of-tech theme. SPY RSI cooled from ~77 last week to ~66.
-- **Sector momentum (May)**: Utilities (leader), Healthcare, Technology. Single-name movers HCWB +128%, IMVT +35%, LICN −62% are small-caps outside the strategy universe.
-
-### Technical Screen (`market_data.py`)
-| Symbol | Price | >MA20 | >MA50 | Trend | RSI-14 | Read |
-|--------|-------|-------|-------|-------|--------|------|
-| SPY   | 741.25 | yes | yes | bullish | 67.8 | Macro filter OK (not a downtrend); RSI >65 — do not chase |
-| MSFT  | 421.06 | yes | yes | bullish | 60.6 | **Clean setup** — RSI in 40–65 band, bullish alignment |
-| GOOGL | 388.91 | yes | yes | bullish | 53.1 | **Clean setup** — RSI mid-band, bullish alignment |
-| QQQ   | 713.15 | yes | yes | bullish | 73.1 | Reject — overbought (RSI >65) |
-| AAPL  | 302.25 | yes | yes | bullish | 84.8 | Reject — extremely overbought |
-| NVDA  | 223.47 | yes | yes | bullish | 69.8 | Reject — RSI >65 + post-earnings volatility |
-| AMZN  | 265.01 | no  | yes | mixed   | 49.9 | Reject — below 20-day MA |
-| META  | 605.06 | no  | no  | mixed   | 45.6 | Reject — below 20- & 50-day MA |
-
-> **Data caveat**: `market_data.py` reports a `last_price` field that diverges materially from the MA engine's `current_price` (e.g. SPY last_price 713.48 vs current_price 741.25). The MA/RSI engine uses `current_price`, which is consistent with SPY's actual ~$743 close — `last_price` appears stale. Limits below are computed off `current_price`; **re-validate live spreads at market-open before any order.**
-
-### Trade Ideas (for market-open execution — not actioned pre-market)
-Sizing = floor(($100,000 × 0.05) / limit). Stop = −8% entry, Target = +15% entry.
-
-1. **MSFT (primary)** — Cloud/Azure AI mega-cap, RSI 60.6 (in 40–65 band), bullish MA alignment, no imminent earnings. Carried over from yesterday's queue.
-   - Entry (buy limit, current +0.25%): **$422.11** | Stop: **$388.34** | Target: **$485.43**
-   - Size: **11 shares** (~$4,643)
-2. **GOOGL (secondary)** — Search/Cloud/Gemini, RSI 53.1 (mid-band — cleanest momentum read), bullish alignment, no imminent earnings.
-   - Entry (buy limit, current +0.25%): **$389.88** | Stop: **$358.69** | Target: **$448.36**
-   - Size: **12 shares** (~$4,679)
-3. **Watch only**: SPY (RSI 67.8 above the 65 ceiling), QQQ/AAPL/NVDA overbought, AMZN/META below their MAs.
-
-### Decision: **HOLD**
-Rationale:
-- Pre-market research only; market closed — no trades placed outside 9:30–4:00 ET.
-- NVDA **beat** but the stock still **fell after-hours** — the tech "sell-the-news" / rotation risk remains live, and S&P breadth is weak (<50% above 200-day MA).
-- MSFT and GOOGL both cleanly pass the five-point entry checklist (trend + RSI 40–65 + no near earnings + SPY above 20-day MA + risk budget). Queue both for the **market-open routine**, contingent on: (a) no tech-rotation gap-down, (b) RSI still 40–65 on a ≥20-bar live snapshot, (c) SPY holding above its 20-day MA (~728).
-- Given weak breadth, prefer **a single HALF-size entry (MSFT preferred, ~6 sh ≈ $2,530)** at the open rather than opening both. Default remains **NO_TRADE** if conditions do not cleanly hold.
-
-### Sources
-- [S&P 500 E-Mini Futures — Barchart](https://www.barchart.com/futures/quotes/ES*0/futures-prices)
-- [Stock market news for May 20, 2026 — CNBC](https://www.cnbc.com/2026/05/19/stock-market-today-live-updates.html)
-- [Nvidia (NVDA) Q1 2027 earnings report: Live updates — CNBC](https://www.cnbc.com/2026/05/20/nvidia-nvda-earnings-report-q1-2027.html)
-- [Nvidia tops Q1 estimates, offers upbeat outlook — Yahoo Finance](https://finance.yahoo.com/markets/stocks/article/nvidia-to-report-q1-earnings-as-chip-competition-grows-191200841.html)
-- [Weekly Trader's Stock Market Outlook — Charles Schwab](https://www.schwab.com/learn/story/weekly-traders-outlook)
-- [May 2026's Top Stocks by Monthly Momentum — StockTitan](https://www.stocktitan.net/rankings/stock-gains-monthly/2026/may)
+| Ticker | Price | MA20 | MA50 | Trend | RSI-14 | Entry-rule status |
+|--------|-------|------|------|-------|--------|-------------------|
+| NVDA | $215.33 | $214.75 | $196.81 | Bullish | 62.51 | **OK** — RSI in 40–65 band, MAs aligned |
+| AAPL | $308.82 | $289.22 | $270.36 | Bullish | 91.10 | **Blocked** — already held, RSI > 75 |
+| GOOGL | $382.97 | $385.48 | $341.14 | Mixed | 49.80 | Hold (just under MA20) |
+| COST | $1,028.24 | $1,026.25 | $1,007.01 | Bullish | 53.61 | **Blocked** — fiscal Q3 earnings May 28–29 (< 5 trading days) |
+| AMD | $467.51 | $405.90 | $303.19 | Bullish | 75.22 | **Blocked** — RSI > 70 (overextended) |
 
 ---
 
-## 2026-05-22 (Friday) — Pre-Market (session: gallant-lamport)
+## 3. Trade Ideas — for Tue 2026-05-26 open
 
-### Account Snapshot
-| Metric | Value |
-|--------|-------|
-| Cash | $99,698.12 |
-| Portfolio Value | $100,003.74 |
-| Equity | $100,003.74 |
-| Buying Power | $199,701.86 |
-| Long Market Value | $305.62 |
-| Open Positions | 1 |
-| Status | ACTIVE (paper) |
+### Idea A (priority): SELL AAPL — RSI-exit rule
 
-Held position: **AAPL 1 sh** @ $301.88 avg, mark $305.62, unrealized **+$3.74 (+1.24%)**; 10% trailing-stop GTC active. Max single-position size = 5% = **$5,000**. Heartbeat (2026-05-21 EOD) shows last routine `success`, decision HOLD.
+- **Symbol / Side:** AAPL / SELL
+- **Qty:** 1 (full position)
+- **Rationale:** RSI-14 = 91.1, far above the strategy's RSI > 75 exit trigger. Position is +2.3% unrealized; lock the gain rather than wait for the 10% trailing stop to bleed it.
+- **Limit:** bid − 0.25% (bid ref ~$304 → limit ~$303.20; re-quote at open).
+- **Post-fill:** cancel companion 10% trailing-stop GTC.
 
-### Market Context
-- **Tape**: S&P 500 futures **+0.34%** pre-market Friday; the benchmark is up ~0.5% week-to-date and on track for its **eighth straight weekly gain** despite elevated volatility. Macro filter is supportive.
-- **Today's catalyst**: Final May University of Michigan Consumer Sentiment report.
-- **Sector momentum**: Semiconductors remain the dominant leadership ($SOX posted a ~41% four-week advance into late April — best rally since 2000); AI infrastructure / data-center demand still driving tech. Caveat: equal-weight tech has been lagging cap-weight since end of March — strength is concentrated in the mega-caps.
-- **Single-name movers**: CAVA +7.5% on strong earnings and raised guidance; MU +3% as a Samsung memory-chip strike threatens ~3% of global supply.
-- **Held-position news (AAPL)**: Stock broke above $300, hit $306 on 5/21. Q2 FY26 beat (EPS $2.01 vs $1.95; revenue $111.2B; Services $30.98B; Greater China $20.5B). 28 analysts at Buy consensus, 12-mo target $308.65. Watch: iPhone supply constraints on advanced processor chips. **No negative 48h catalyst** — position thesis intact.
+### Idea B: BUY NVDA — Markov primary, clean entry
 
-### Technical Screen (`market_data.py`, 60-bar yfinance)
-| Symbol | Price | >MA20 | >MA50 | Trend | RSI-14 | Read |
-|--------|-------|-------|-------|-------|--------|------|
-| SPY   | 742.72 | yes | yes | bullish | 67.5 | Macro filter OK (above 20-day MA); RSI >65 — don't chase SPY |
-| GOOGL | 387.66 | yes | yes | bullish | 51.5 | **Clean setup** — RSI mid-band, bullish alignment |
-| COST  | 1050.45 | yes | yes | bullish | 60.0 | Clean RSI/trend, but earnings risk (see caveat) |
-| NVDA  | 219.51 | yes | yes | bullish | 66.7 | Reject — RSI just above 65 entry ceiling |
-| AMD   | 449.59 | yes | yes | bullish | 67.8 | Reject — RSI above 65 entry ceiling |
-| AAPL  | 304.99 | yes | yes | bullish | 82.4 | Held — extremely overbought (see exit flag) |
+- **Symbol / Side:** NVDA / BUY (new)
+- **Entry limit:** ask + 0.25% on Tuesday's open — current ask reference $215.33 → limit ~$215.87 (re-quote at open).
+- **Sizing:** floor(($99,972 × 0.05) / $215.87) = **23 shares** (~$4,965 ≈ 5.0% cap; round to **20 sh** for headroom against intraday drift).
+- **Stop:** 10% trailing GTC immediately after fill (initial stop ~$194.30).
+- **Target:** +15% (~$248) → trim 50%.
+- **Rationale:** Markov primary (Bull stat 59.4%, persistence 91.7%, Sharpe +0.307). MA20/50 aligned bullish; RSI 62.5 sits at the top edge of the 40–65 band — confirm sub-65 at open. Sector tailwind strong but SPY RSI 71.8 says don't oversize.
+- **Risk:** ~$430 max loss at 10% stop on 20 sh (~0.43% of portfolio).
 
-> **Data caveat**: `market_data.py` again reports a `last_price` that diverges from the MA engine's `current_price` (AAPL last_price 285.74 vs current_price 304.99; SPY bid 716.42 / ask 760.80). The MA/RSI engine's `current_price` is consistent with AAPL's actual ~$305 mark. Limits below are off `current_price`; **re-validate live spreads at market-open before any order.**
+### Idea C (contingent): GOOGL — HOLD
 
-### Trade Ideas (for market-open execution — not actioned pre-market)
-Sizing = floor(($100,003.74 × 0.05) / limit). Stop = −8% entry, Target = +15% entry.
+- **Action:** No add. Price ($382.97) sits **just under MA20** ($385.48) — entry rule #1 (price > MA20) currently fails for new adds. Existing position is small (-0.74%, -$34) and protected by 10% trailing stop.
+- **Watch:** If GOOGL prints back over MA20 with RSI still 40–65, eligible for re-evaluation. Otherwise hold and let the trailing stop manage downside.
 
-1. **GOOGL (primary)** — Search/Cloud/Gemini mega-cap, RSI 51.5 (cleanest mid-band read), bullish MA alignment, no imminent earnings. Passes all five entry criteria.
-   - Entry (buy limit, current +0.25%): **$388.63** | Stop: **$357.54** | Target: **$446.92**
-   - Size: **12 shares** (~$4,664)
-2. **COST (secondary)** — Consumer-staples momentum, RSI 60.0 (in band), bullish alignment.
-   - Entry (buy limit, current +0.25%): **$1,053.08** | Stop: **$968.83** | Target: **$1,211.04**
-   - Size: **4 shares** (~$4,212)
-   - **Caveat**: Costco fiscal Q3 typically reports late May — verify the earnings date at market-open; if within 5 trading days, exclude per strategy.
-3. **Watch only**: NVDA (RSI 66.7) and AMD (RSI 67.8) both just above the 40–65 entry band — re-check for a pullback into band.
+---
 
-### Position Management Flag — AAPL
-AAPL RSI-14 is **82.4** (extremely overbought). Strategy exit criteria: "RSI > 75 → consider full exit." Position is tiny (1 sh, ~$306) with a 10% trailing stop active, so risk is contained — but the **market-open routine should consider trimming/closing AAPL** to lock the +1.2% gain rather than ride an overbought name.
+## 4. Decision
 
-### Decision: **TRADE**
-Rationale:
-- Macro supportive: futures +0.34%, eighth straight weekly gain, SPY above its 20- and 50-day MAs.
-- **GOOGL** cleanly passes the five-point entry checklist (trend + RSI 51.5 in 40–65 band + no near earnings + SPY above 20-day MA + risk budget available). Queue as the **primary market-open entry**.
-- **COST** is a clean secondary, contingent on confirming its earnings date is >5 trading days out.
-- Pre-market research only — no orders placed outside 9:30–4:00 ET. Execution at the market-open routine is contingent on live re-validation: (a) no gap-down, (b) RSI still 40–65 on a ≥20-bar live snapshot, (c) SPY holding above its 20-day MA (~730). Default to **NO_TRADE** if conditions do not cleanly hold.
-- Separately, evaluate trimming/closing the overbought AAPL position at the open.
+**TRADE on 2026-05-26 open:**
+1. **SELL AAPL 1 sh** at limit (bid − 0.25%) — RSI-exit rule.
+2. **BUY NVDA 20 sh** at limit (ask + 0.25%) — Markov primary, entry criteria pass.
+3. **HOLD GOOGL** — let trailing stop manage; no add until back over MA20.
 
-### Sources
-- [Stock futures rise as S&P 500 looks toward another winning week — CNBC](https://www.cnbc.com/2026/05/21/stock-market-today-live-updates.html)
-- [Nvidia, Fed Minutes on Marquee as Stocks Up Early — Charles Schwab](https://www.schwab.com/learn/story/stock-market-update-open)
-- [7 Best-Performing Semiconductor Stocks for May 2026 — NerdWallet](https://www.nerdwallet.com/investing/learn/best-semiconductor-stocks)
-- [Apple AAPL Stock Reaches $306 — FX Leaders](https://www.fxleaders.com/news/2026/05/21/apple-aapl-stock-reaches-306-as-strong-fundamentals-offset-growing-supply-concerns/)
-- [NVIDIA (NVDA) Stock Forecast & Analyst Price Targets — StockAnalysis](https://stockanalysis.com/stocks/nvda/forecast/)
-
+### Pre-trade gate (re-run at 09:30 ET Tue):
+- [ ] Re-fetch live quote + bar snapshot for AAPL, NVDA, SPY
+- [ ] Confirm SPY still > MA20 (macro filter)
+- [ ] Confirm NVDA RSI-14 still in 40–65 band (live, not stale)
+- [ ] Confirm no overnight negative catalyst on NVDA/AAPL
+- [ ] Re-compute NVDA share count from live portfolio value
+- [ ] Cancel AAPL trailing-stop GTC after AAPL exit fills
