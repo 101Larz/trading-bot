@@ -1,5 +1,68 @@
 # Pre-Market Research Log
 
+## 2026-05-26 (Tuesday) — Pre-Market
+
+### Account Snapshot
+| Metric | Value |
+|--------|-------|
+| Cash | $95,068.28 |
+| Portfolio Value | $100,013.27 |
+| Equity | $100,013.27 |
+| Buying Power | $195,081.55 |
+| Long Market Value | $4,944.99 |
+| Open Positions | 2 / 10 |
+| Trades This Week | 0 / 3 (new week) |
+| Account Status | ACTIVE |
+
+Open positions:
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $310.35 | +$8.47 (+2.81%) |
+| GOOGL | 12 | $385.82 | $386.22 | +$4.80 (+0.10%) |
+
+Both protected by 10% trailing-stop GTC orders. Cash 95.1% of equity — well above 20% reserve rule. First trading day after Memorial Day; weekly trade counter reset.
+
+### Market Context
+- **Macro / events**: New Fed Chair Kevin Warsh expected to take the oath today. US-Iran signaling progress on de-escalation — risk-on tilt. May consumer-confidence print due; AutoZone (AZO) and Zscaler (ZS) report earnings.
+- **S&P 500**: SPY $745.64, above MA20 ($731.58) and MA50 ($696.49) — confirmed bullish trend. RSI-14 **71.84 → overbought**. Macro filter PASSES, but extension argues against chasing here.
+- **Sector momentum**: Semis re-asserting leadership — PHLX Semi outperforming SPX by most in over a year. AMD +267% TTM and Data Center revenue $5.8B (+57% YoY). NVDA Q1 print landed May 20 (EPS $1.76 est, rev $78.5B est). YTD leadership still tilts to Industrials/Energy/Consumer Defensive, but May has rotated back to Tech + Comm Services.
+- **Held names**:
+  - **AAPL** $310.35; +2.81% unrealized. RSI-14 **91.10** (extreme overbought — strategy exit rule "RSI > 75 → consider full exit" still triggered). Bullish MA stack (price > MA20 $289 > MA50 $270). Q2 2026 print was strong (rev $111.2B +17%, EPS $2.01); $100B buyback authorized + dividend raise.
+  - **GOOGL** $386.22; +0.10% unrealized. Price now **below** MA20 ($385.48), still above MA50 ($341.14) — trend **mixed**. RSI-14 49.80 (neutral). Q1 2026 blowout (rev $109.9B +22%, Cloud +63%); Gemini 3.5 launched at I/O. Headwind: EU antitrust fine (low-9-figure EUR) and $190B capex pace.
+- **Earnings calendar (next 5 trading days)**: COST reports May 28 → **rules out new COST entry** (≥5-day buffer). CRM, MRVL, SNOW, SNPS, DKS on May 27. DELL, MDB, BBY, ADSK on May 28.
+
+### Watchlist Technical Scan
+| Ticker | Price | MA20 | MA50 | RSI-14 | Status | Verdict |
+|--------|-------|------|------|--------|--------|---------|
+| NVDA   | 215.33 | 214.75 | 196.81 | 62.51 | bullish, neutral RSI | **ENTRY-ELIGIBLE** |
+| AAPL   | 308.82 | 289.22 | 270.36 | 91.10 | overbought | HOLD/TRIM — no add |
+| GOOGL  | 382.97 | 385.48 | 341.14 | 49.80 | mixed (below MA20) | HOLD — no add |
+| COST   | 1028.24 | 1026.25 | 1007.01 | 53.61 | bullish | **BLOCKED** — earnings May 28 |
+| AMD    | 467.51 | 405.90 | 303.19 | 75.22 | overbought | NO ENTRY — RSI > 70 |
+
+### Trade Ideas
+
+1. **NVDA — BUY (PRIMARY)**
+   - Thesis: Only watchlist ticker passing all entry criteria post-earnings. Price > MA20 > MA50, RSI 62.51 in the 40–65 band (just inside), bullish persistence 91.7% per Markov screen. Earnings already cleared (May 20) — clean catalyst window.
+   - Sizing: floor(($100,013 × 0.05) / ~$228 ask) = **21 shares** max (~$4,788, ~4.79% equity).
+   - Entry: limit @ ask + 0.25% — confirm in market-open routine with a live ≥20-bar snapshot.
+   - Stop: 10% trailing-stop GTC immediately after fill (hard stop ~$205).
+   - Target: trim 50% at +15% ($262); reassess at RSI > 75.
+
+2. **AAPL — TRIM / FULL EXIT (RISK MGMT)**
+   - Thesis: RSI 91 is **far beyond** the strategy's "RSI > 75 → consider full exit" trigger. Single share (~$310) so the trim mechanic collapses to a full exit decision. Carrying overbought-flag for the third session in a row.
+   - Action at open: exit AAPL 1 sh via limit sell at bid − 0.25%; cancel paired trailing-stop on fill. Frees marginal cash and removes a stale risk flag.
+
+3. **GOOGL — HOLD**
+   - Thesis: Just lost MA20 by $2.51; MA50 still well below. RSI neutral. No catalyst exit and trailing stop still well wide (HWM $385.73, stop $347.16). Do not add; do not exit.
+
+### Decision: **TRADE**
+- Place NVDA buy (21 sh limit) at market-open routine, contingent on a fresh live-data re-check (MA stack + RSI 40–65 must still hold; SPY must remain above MA20).
+- Exit AAPL position concurrently to respect the RSI > 75 rule.
+- Net effect: 0/3 → 1/3 weekly trades for the new buy; one closeout (not counted against weekly buy cap).
+
+---
+
 ## 2026-05-18 (Monday) — Pre-Market
 
 ### Account Snapshot

@@ -1,11 +1,11 @@
 {
   "last_routine": "pre-market",
-  "last_run_utc": "2026-05-22T07:10:00Z",
+  "last_run_utc": "2026-05-26T07:10:00Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100003.74,
-  "cash": 99698.12,
-  "open_positions": 1,
+  "portfolio_value": 100013.27,
+  "cash": 95068.28,
+  "open_positions": 2,
   "decision": "TRADE",
-  "notes": "Pre-market 2026-05-22: Macro supportive (S&P futures +0.34%, eighth straight weekly gain, SPY above 20/50-day MA). One open position - AAPL 1 sh @ $301.88 avg, mark $305.62, unrealized +$3.74 (+1.24%); RSI 82.4 overbought - flag AAPL for trim/close at market-open. Primary trade idea GOOGL (RSI 51.5, clean five-point entry checklist): entry $388.63, stop $357.54, target $446.92, 12 sh. Secondary COST (RSI 60.0) contingent on earnings-date check. Decision TRADE - queue GOOGL for market-open routine pending live re-validation."
+  "notes": "Pre-market 2026-05-26 (Tue, post-Memorial Day): SPY bullish (price $745.64 > MA20 $731.58 > MA50 $696.49) but RSI 71.84 overbought - macro filter PASSES with caution. New Fed Chair Warsh oath today; US-Iran de-escalation tone; AZO/ZS earnings. Held: AAPL 1sh +$8.47 RSI 91 (FLAGGED for exit per RSI>75 rule), GOOGL 12sh +$4.80 RSI 49.8 mixed (below MA20). Primary trade idea: NVDA BUY 21 sh (~$4.79k, RSI 62.5 neutral, post-earnings clean catalyst, bullish MA stack). AMD blocked RSI 75; COST blocked earnings May 28. Decision TRADE - NVDA add + AAPL exit at market-open routine, contingent on live re-validation."
 }
