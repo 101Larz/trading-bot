@@ -86,6 +86,22 @@ Do **not** use Perplexity. Use the built-in WebSearch tool.
 
 ---
 
+## Research Log File Structure
+
+Research sessions are stored as **one markdown file per trading day**:
+
+```
+memory/research/YYYY-MM-DD.md
+```
+
+- Each routine (pre-market, market-open, midday) **appends** a `## date — Routine` block to that day's file.
+- Multiple routines on the same day write to the **same file** — no conflicts.
+- Different calendar days never share a file — git merges are clean.
+- The dashboard reads all `memory/research/*.md` files automatically.
+- **Do not write to `memory/RESEARCH-LOG.md`** — that file is deprecated.
+
+---
+
 ## Model in Use
 
 - **Claude claude-opus-4-7** (`claude-opus-4-7`) for all trading decisions.

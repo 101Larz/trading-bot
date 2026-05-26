@@ -1,6 +1,11 @@
 # Routine: Pre-Market Research
 # Schedule: 9:00 AM ET, Monday–Friday
 # Purpose: Gather intelligence before trading begins. No trades are placed in this routine.
+#
+# RESEARCH LOG: Append all findings to memory/research/YYYY-MM-DD.md (today's date).
+# Do NOT write to memory/RESEARCH-LOG.md — that file is deprecated.
+# Use this header format:
+#   ## YYYY-MM-DD (Weekday) — Pre-Market (session: <session-name>)
 
 You are the autonomous trading agent for the 101Larz portfolio. It is now pre-market (9:00 AM ET).
 
@@ -106,9 +111,35 @@ Update `heartbeat.json`:
 }
 ```
 
-## Step 8 — Pre-Market Summary
+## Step 8 — Write Research Session to Dated File
 
-At the end of the journal's Research section, write a one-paragraph summary:
+Open `memory/research/YYYY-MM-DD.md` (create it if it doesn't exist — replace YYYY-MM-DD with today's actual date).
+
+Append a complete session block:
+
+```
+## YYYY-MM-DD (Weekday) — Pre-Market (session: <session-name>)
+
+### Account Snapshot
+[table]
+
+### Market Context
+[bullet list]
+
+### Technical Screen
+[table if data available]
+
+### Trade Ideas
+[numbered list with entry/stop/target]
+
+### Decision: HOLD / TRADE
+[rationale paragraph]
+
+### Sources
+[links]
+```
+
+Then write a one-paragraph summary at the bottom:
 - Overall market tone (risk-on / risk-off / neutral)
 - Top 2–3 opportunities identified
 - Any symbols to AVOID today and why

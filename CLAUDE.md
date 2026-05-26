@@ -33,7 +33,9 @@ trading-bot/
 │   ├── strategy.md        ← core strategy rules (READ EVERY SESSION)
 │   ├── performance.md     ← running P&L and win-rate log
 │   ├── lessons.md         ← what went wrong and why
-│   └── watchlist-notes.md ← per-symbol thesis notes
+│   ├── watchlist-notes.md ← per-symbol thesis notes
+│   └── research/          ← per-day research logs (one file per trading day)
+│       └── YYYY-MM-DD.md  ← append each routine's ## session block here
 ├── routines/
 │   ├── pre-market.md      ← 9:00 AM ET routine prompt
 │   ├── market-open.md     ← 9:45 AM ET routine prompt
@@ -110,6 +112,27 @@ Do **not** use Perplexity. Use the built-in WebSearch tool.
 ## Output & Logging Standards
 
 Every action must produce a journal entry. Journal files live in `journal/YYYY-MM-DD.md`.
+
+### Research Log (important — replaces RESEARCH-LOG.md)
+
+Each routine appends its research session block to **`memory/research/YYYY-MM-DD.md`** (the file named after today's date). Do **not** write to `memory/RESEARCH-LOG.md` — that file is deprecated.
+
+Format: open (or create) `memory/research/YYYY-MM-DD.md` and append:
+
+```markdown
+## YYYY-MM-DD (Weekday) — Routine Name (session: session-id)
+
+### Account Snapshot
+...
+
+### Market Context
+...
+
+### Decision: HOLD / TRADE
+...
+```
+
+One file per calendar day. Multiple routines (pre-market, market-open, midday) all append to the **same day's file**. This eliminates the git merge conflicts that occurred with the old single-file approach.
 
 Required sections per journal file:
 - **Portfolio Status** — cash, open positions, total value

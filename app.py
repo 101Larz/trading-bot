@@ -19,8 +19,9 @@ load_dotenv()
 app = Flask(__name__)
 
 ROOT = Path(__file__).parent
-MEMORY_DIR = ROOT / "memory"
-JOURNAL_DIR = ROOT / "journal"
+MEMORY_DIR   = ROOT / "memory"
+RESEARCH_DIR = MEMORY_DIR / "research"   # per-day research files: YYYY-MM-DD.md
+JOURNAL_DIR  = ROOT / "journal"
 
 ALPACA_KEY    = os.getenv("APCA_API_KEY_ID", "")
 ALPACA_SECRET = os.getenv("APCA_API_SECRET_KEY", "")
@@ -181,60 +182,82 @@ def parse_performance() -> dict:
 
 def parse_research_log() -> list[dict]:
     """
-    Parse memory/RESEARCH-LOG.md into a list of research sessions.
+    Parse memory/research/YYYY-MM-DD.md files into a list of research sessions.
+    Each file may contain multiple ## date — routine session blocks.
+    Falls back to the legacy memory/RESEARCH-LOG.md if the research/ dir is empty.
+    Returns sessions sorted newest-first.
+
     Each session = { date, title, sections: [{heading, body}] }
     """
-    path = MEMORY_DIR / "RESEARCH-LOG.md"
-    if not path.exists():
+    research_dir = MEMORY_DIR / "research"
+
+    # Collect source files: all *.md from memory/research/, sorted by name (ISO date = alpha order)
+    files: list[Path] = []
+    if research_dir.exists():
+        files = sorted(research_dir.glob("*.md"))
+
+    # Legacy fallback: read old monolithic file if no per-day files found
+    legacy = MEMORY_DIR / "RESEARCH-LOG.md"
+    if not files and legacy.exists():
+        files = [legacy]
+
+    if not files:
         return []
 
-    text = path.read_text(encoding="utf-8")
-    sessions = []
-    current = None
+    def _parse_text(text: str) -> list[dict]:
+        sessions: list[dict] = []
+        current: dict | None = None
 
-    for line in text.splitlines():
-        # Match headers like:
-        #   ## 2026-05-17 — Pre-Market Research
-        #   ## 2026-05-18 (Monday) — Pre-Market
-        #   ## 2026-05-18 (Monday) — Pre-Market (session: keen-wright)
-        m = re.match(r"^## (\d{4}-\d{2}-\d{2})(?:\s+\([^)]+\))?\s*[—–-]\s*(.+)", line)
-        if m:
-            if current:
-                sessions.append(current)
-            current = {
-                "date":     m.group(1),
-                "title":    m.group(2).strip(),
-                "sections": [],
-                "_cur_sec": None,
-            }
-            continue
+        for line in text.splitlines():
+            # Match session headers like:
+            #   ## 2026-05-18 (Monday) — Pre-Market
+            #   ## 2026-05-20 (Wednesday) — Market-Open (session: sweet-shannon)
+            m = re.match(r"^## (\d{4}-\d{2}-\d{2})(?:\s+\([^)]+\))?\s*[—–-]\s*(.+)", line)
+            if m:
+                if current:
+                    sessions.append(current)
+                current = {
+                    "date":     m.group(1),
+                    "title":    m.group(2).strip(),
+                    "sections": [],
+                    "_cur_sec": None,
+                }
+                continue
 
-        if current is None:
-            continue
+            if current is None:
+                continue
 
-        # Sub-section header: ### Symbol or heading
-        if line.startswith("### "):
-            heading = line.lstrip("# ").strip()
-            sec = {"heading": heading, "lines": []}
-            current["sections"].append(sec)
-            current["_cur_sec"] = sec
-            continue
+            if line.startswith("### "):
+                heading = line.lstrip("# ").strip()
+                sec: dict = {"heading": heading, "lines": []}
+                current["sections"].append(sec)
+                current["_cur_sec"] = sec
+                continue
 
-        # Accumulate body lines into current section
-        if current["_cur_sec"] is not None:
-            current["_cur_sec"]["lines"].append(line)
+            if current["_cur_sec"] is not None:
+                current["_cur_sec"]["lines"].append(line)
 
-    if current:
-        sessions.append(current)
+        if current:
+            sessions.append(current)
 
-    # Clean up internal cursor and join body lines
-    for s in sessions:
-        s.pop("_cur_sec", None)
-        for sec in s["sections"]:
-            sec["body"] = "\n".join(sec["lines"]).strip()
-            del sec["lines"]
+        for s in sessions:
+            s.pop("_cur_sec", None)
+            for sec in s["sections"]:
+                sec["body"] = "\n".join(sec["lines"]).strip()
+                del sec["lines"]
 
-    return list(reversed(sessions))  # newest first
+        return sessions
+
+    all_sessions: list[dict] = []
+    for f in files:
+        try:
+            all_sessions.extend(_parse_text(f.read_text(encoding="utf-8")))
+        except Exception:
+            pass
+
+    # Sort newest-first; secondary sort by title to keep same-day sessions stable
+    all_sessions.sort(key=lambda s: (s["date"], s["title"]), reverse=True)
+    return all_sessions
 
 
 def parse_journal_today() -> str:

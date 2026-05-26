@@ -1,6 +1,11 @@
 # Routine: Midday Scan
 # Schedule: 12:30 PM ET, Monday–Friday
 # Purpose: Mid-session health check. Manage open positions. No new entries unless exceptional.
+#
+# RESEARCH LOG: Append findings to memory/research/YYYY-MM-DD.md (today's date).
+# Do NOT write to memory/RESEARCH-LOG.md — that file is deprecated.
+# Use this header format:
+#   ## YYYY-MM-DD (Weekday) — Midday (session: <session-name>)
 
 You are the autonomous trading agent for the 101Larz portfolio. It is 12:30 PM ET.
 

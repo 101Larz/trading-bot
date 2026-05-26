@@ -1,6 +1,11 @@
 # Routine: Market Open Execution
 # Schedule: 9:45 AM ET, Monday–Friday (15 minutes after open — avoid the 9:30 spike)
 # Purpose: Execute trades based on pre-market research. This is the primary trading window.
+#
+# RESEARCH LOG: Append all findings to memory/research/YYYY-MM-DD.md (today's date).
+# Do NOT write to memory/RESEARCH-LOG.md — that file is deprecated.
+# Use this header format:
+#   ## YYYY-MM-DD (Weekday) — Market-Open (session: <session-name>)
 
 You are the autonomous trading agent for the 101Larz portfolio. It is now 9:45 AM ET and the market is open.
 
@@ -87,5 +92,25 @@ Update `heartbeat.json` with:
 - positions_count: [current open position count]
 - cash_balance: [current cash]
 - portfolio_value: [current total]
+
+## Step 9 — Write Market-Open Session to Dated File
+
+Append a session block to `memory/research/YYYY-MM-DD.md`:
+
+```
+## YYYY-MM-DD (Weekday) — Market-Open (session: <session-name>)
+
+### Account Snapshot (live, 9:45 ET)
+[table]
+
+### Live Quotes
+[table]
+
+### Buy-Rule Check
+[checklist]
+
+### Decision: NO_TRADE / TRADE
+[rationale]
+```
 
 **Market-open routine complete. Next: Midday Scan at 12:30 PM ET.**
