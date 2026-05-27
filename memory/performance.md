@@ -309,3 +309,39 @@ Trades executed: **none.**
 | GOOGL | 12 | $385.82 | $388.21 | +$28.68 (+0.62%) |
 
 Notes: Quiet, slightly green day. NO_TRADE at market-open (no 2026-05-26 catalyst in `memory/RESEARCH-LOG.md`); 0 trades placed today. Day P&L +$62.78 driven by GOOGL recovering +$28.68 unrealized (vs -$34.20 entering the session) and AAPL holding +$6.84. Both positions protected by 10% trailing-stop GTC orders (AAPL stop $280.64 / HWM $311.82; GOOGL stop $350.33 / HWM $389.26). Cash $95,068.28 = 95.03% of equity — well above the ≥20% reserve rule; total exposure 4.97%. Daily-loss limit (3%) not approached. Weekly trade counter 0/3. AAPL RSI-overbought exit flag still open from 2026-05-22 — defer to tomorrow's pre-market routine for re-evaluation; trailing stop currently providing the exit discipline.
+
+---
+
+## Market-Open Log — 2026-05-27 (Wednesday — session: sweet-shannon-yaC8h)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $95,068.28 |
+| Equity | $100,037.60 |
+| Long Market Value | $4,969.32 |
+| Open Positions | 2 / 6 (AAPL 1 sh, GOOGL 12 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Market clock: `is_open=true` (next_close 16:00 ET). Trading window active.
+
+Buy-rule check:
+- Max 6 open positions ✅ (2/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅
+- Catalyst in today's RESEARCH-LOG ✅ — NVDA primary (memory/research/2026-05-27.md authorizes 21 sh max, conditional on live re-validation).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $310.60 | +$8.72 (+2.89%) |
+| GOOGL | 12 | $385.82 | $388.22 | +$28.80 (+0.62%) |
+
+Entry-criteria re-validation (live, 60-bar snapshot):
+- **NVDA**: live ask **$211.70** vs MA20 **$214.66** → price **BELOW** MA20. Strategy criterion #1 (price > MA20 & MA50) **FAILS** on live data. RSI-14 63.94 still inside 40–65 band ✅; SPY $750.59 > MA20 $733.35 (macro filter OK, though SPY RSI 71.48 overbought). The pre-market plan's explicit contingency — "require fresh live-data re-validation … if RSI prints > 65 at open, defer to NO_TRADE" — extends to MA stack failure under the strategy's "all must be true" entry rule. Bar-based `current_price` of $214.86 reflects the prior bar's close; live tape ($211.70) has drifted below MA20 since pre-market. Default under criterion failure: NO_TRADE.
+- **AAPL exit**: pre-market authorized full exit (1 sh) on RSI 87.71. Per established precedent (2026-05-26 market-open log: "exit evaluation is the EOD routine's responsibility, not market-open"), AAPL RSI-overbought exit flag carries forward to EOD. 10% trailing-stop GTC (stop ~$280.64 / HWM $311.82) continues to provide exit discipline. Flag now 5 sessions old — EOD must resolve.
+
+Trades executed: **none.**
+
+Risk posture: cash 95.0% of equity (≥20% reserve rule ✅), exposure 4.97%, daily-loss limit (3%) not approached. Weekly trade counter remains 0/3 — full budget preserved for Thursday/Friday if NVDA's MA stack reclaims bullish alignment or another watchlist name becomes entry-eligible.
