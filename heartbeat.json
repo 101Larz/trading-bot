@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-05-27T07:10:00Z",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-05-27T13:46:30Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100037.20,
+  "portfolio_value": 100037.60,
   "cash": 95068.28,
   "open_positions": 2,
-  "decision": "TRADE",
-  "notes": "Pre-market 2026-05-27 (Wed): NVDA primary BUY candidate (21 sh max, ~$229 ask, ~4.8% equity) — contingent on live re-check (RSI ≤ 65, MA stack, SPY > MA20). AAPL flagged for full exit (RSI 87.71 — far above 75 trigger; flag 4 sessions old). GOOGL HOLD (reclaimed MA20, RSI neutral). SPY RSI 71 = overbought macro tape; heavy software/semis earnings cluster tonight (CRM, MRVL, SNOW, SNPS, HPQ, PDD) raises gap risk. Cash 95.0%, exposure 4.97%, weekly trades 0/3."
+  "decision": "NO_TRADE",
+  "notes": "Market-open 2026-05-27 (Wed): NO_TRADE. NVDA failed live MA stack re-check — ask $211.70 below MA20 $214.66 (strategy criterion #1 fails); pre-market contingency triggered. AAPL RSI-87 exit flag deferred to EOD per precedent (trailing stop protecting). 0 trades placed; weekly budget 0/3 preserved. Cash 95.0%, exposure 4.97%."
 }
