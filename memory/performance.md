@@ -36,6 +36,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-05-22 | $100,002.65 | $99,975.69 | -$26.96 | -0.03% | 1 | EOD: opened GOOGL 12 sh @ $385.82. AAPL +$6.68, GOOGL -$30.99 unrealized. AAPL RSI overbought — flagged for exit review. |
 | 2026-05-25 | $99,975.69 | $99,972.74 | -$2.95 | -0.003% | 0 | EOD: Memorial Day — US markets closed. No trades. AAPL +$6.94, GOOGL -$34.20 unrealized. Trailing stops active. |
 | 2026-05-26 | $99,972.74 | $100,035.52 | +$62.78 | +0.063% | 0 | EOD: NO_TRADE day (no catalyst in research log). AAPL +$6.84, GOOGL +$28.68 unrealized. Trailing stops active. |
+| 2026-05-27 | $100,035.52 | $100,056.98 | +$21.46 | +0.021% | 0 | EOD: NO_TRADE day (NVDA rejected at market-open — live ask $211.70 < MA20 $214.66). AAPL +$8.62, GOOGL +$48.36 unrealized. Trailing stops active. |
 
 ---
 
@@ -345,3 +346,27 @@ Entry-criteria re-validation (live, 60-bar snapshot):
 Trades executed: **none.**
 
 Risk posture: cash 95.0% of equity (≥20% reserve rule ✅), exposure 4.97%, daily-loss limit (3%) not approached. Weekly trade counter remains 0/3 — full budget preserved for Thursday/Friday if NVDA's MA stack reclaims bullish alignment or another watchlist name becomes entry-eligible.
+
+---
+
+## EOD Snapshot — 2026-05-27
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $100,056.98 |
+| Cash | $95,068.28 |
+| Long Market Value | $4,988.70 |
+| Day P&L ($) | +$21.46 |
+| Day P&L (%) | +0.021% |
+| Trades Today | 0 |
+| Trades This Week | 0 |
+| Open Positions | 2 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $310.50 | +$8.62 (+2.86%) |
+| GOOGL | 12 | $385.82 | $389.85 | +$48.36 (+1.05%) |
+
+Notes: Quiet, slightly green day. NO_TRADE at market-open — NVDA (the pre-market primary catalyst) rejected on live re-validation: ask $211.70 had drifted below MA20 $214.66, failing strategy criterion #1 (price > MA20 & MA50). Day P&L +$21.46 driven by GOOGL adding +$19.68 unrealized (to +$48.36) and AAPL marking up +$1.78 (to +$8.62). Both positions protected by 10% trailing-stop GTC orders — AAPL stop $281.93 / HWM $313.26; GOOGL stop $354.49 / HWM $393.88 (both HWMs ratcheted higher today). Cash $95,068.28 = 95.01% of equity (≥20% reserve rule ✅); total exposure 4.99%. Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Thursday/Friday. **AAPL RSI-overbought exit flag (open since 2026-05-22, now 5 sessions old):** trailing stop has continued ratcheting higher with the position (+2.86% unrealized) — providing disciplined exit without forcing a sale into strength. Flag remains carried; re-evaluate at Thursday pre-market alongside fresh RSI print.
