@@ -1,11 +1,11 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-05-27T13:46:30Z",
+  "last_routine": "pre-market-refresh",
+  "last_run_utc": "2026-05-27T17:30:00Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100037.60,
+  "portfolio_value": 100082.53,
   "cash": 95068.28,
   "open_positions": 2,
-  "decision": "NO_TRADE",
-  "notes": "Market-open 2026-05-27 (Wed): NO_TRADE. NVDA failed live MA stack re-check — ask $211.70 below MA20 $214.66 (strategy criterion #1 fails); pre-market contingency triggered. AAPL RSI-87 exit flag deferred to EOD per precedent (trailing stop protecting). 0 trades placed; weekly budget 0/3 preserved. Cash 95.0%, exposure 4.97%."
+  "decision": "HOLD",
+  "notes": "Pre-market refresh 2026-05-27 (Wed, off-schedule post-open). Account live: equity $100,082.53, cash $95,068.28 (95.0%), exposure 5.01%. AAPL +$9.83 (+3.26%), GOOGL +$72.36 (+1.56%); both trailing-stop protected. Thursday plan: conditional NVDA BUY (~23 sh) on live MA stack + RSI re-check, plus full exit of AAPL 1 sh to clear stale RSI>75 flag (5 sessions old). Weekly budget 0/3."
 }
