@@ -1,11 +1,11 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-05-26T20:15:00Z",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-05-27T07:10:00Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100035.52,
+  "portfolio_value": 100037.20,
   "cash": 95068.28,
   "open_positions": 2,
-  "decision": "HOLD",
-  "notes": "EOD 2026-05-26 (Tue): Day P&L +$62.78 (+0.063%). 0 trades today, 0/3 this week. Open: AAPL 1sh +$6.84 (+2.27%), GOOGL 12sh +$28.68 (+0.62%). Both protected by 10% trailing-stop GTC (AAPL stop $280.64 HWM $311.82; GOOGL stop $350.33 HWM $389.26). Cash 95.03% of equity; exposure 4.97%. AAPL RSI-overbought flag carried forward — trailing stop providing discipline; re-evaluate at pre-market."
+  "decision": "TRADE",
+  "notes": "Pre-market 2026-05-27 (Wed): NVDA primary BUY candidate (21 sh max, ~$229 ask, ~4.8% equity) — contingent on live re-check (RSI ≤ 65, MA stack, SPY > MA20). AAPL flagged for full exit (RSI 87.71 — far above 75 trigger; flag 4 sessions old). GOOGL HOLD (reclaimed MA20, RSI neutral). SPY RSI 71 = overbought macro tape; heavy software/semis earnings cluster tonight (CRM, MRVL, SNOW, SNPS, HPQ, PDD) raises gap risk. Cash 95.0%, exposure 4.97%, weekly trades 0/3."
 }
