@@ -405,3 +405,30 @@ Trades executed: **none.**
 
 Risk posture: cash 95.06% of equity (≥20% reserve rule ✅), exposure 4.94%, daily-loss limit (3%) not approached. Weekly trade counter remains 0/3 — full budget preserved into Friday. Heavy macro day (Q2 GDP, PCE, Claims, Durable Goods at 8:30 ET); cluster of after-close earnings tonight (COST/DELL/ADSK/MDB/BBY/BURL/DLTR/GAP/NTAP) — tape may move on the prints. Holding flat-plus-stops is the disciplined response.
 
+---
+
+## Midday Scan — 2026-05-28 (Thursday — session: sweet-shannon-toUfU)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Cash | $95,068.28 |
+| Long Market Value | $4,978.45 |
+| Open Positions | 2 / 10 (AAPL 1 sh, GOOGL 12 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $309.97 | +$8.09 (+2.68%) |
+| GOOGL | 12 | $385.82 | $389.04 | +$38.64 (+0.84%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL +2.68%, GOOGL +0.84% — no losers to cut.
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%) gain. 10% trailing-stop GTC orders remain in force.
+- **Thesis check (web news, 48h)**:
+  - AAPL: record Q2 FY2026 ($111.18B), Melius and BofA PT hikes ahead of WWDC 2026 — thesis intact.
+  - GOOGL: Q1 2026 +22% YoY, Cloud +63%, Strong Buy (57/0) — thesis intact.
+
+No trades executed. Trailing stops continue mechanical exit discipline. AAPL RSI-overbought flag still EOD's responsibility.
+
