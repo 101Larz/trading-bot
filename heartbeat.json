@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market-refresh",
-  "last_run_utc": "2026-05-27T17:30:00Z",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-05-28T07:15:00Z",
   "status": "success",
   "account_status": "ACTIVE",
-  "portfolio_value": 100082.53,
+  "portfolio_value": 100031.0,
   "cash": 95068.28,
   "open_positions": 2,
   "decision": "HOLD",
-  "notes": "Pre-market refresh 2026-05-27 (Wed, off-schedule post-open). Account live: equity $100,082.53, cash $95,068.28 (95.0%), exposure 5.01%. AAPL +$9.83 (+3.26%), GOOGL +$72.36 (+1.56%); both trailing-stop protected. Thursday plan: conditional NVDA BUY (~23 sh) on live MA stack + RSI re-check, plus full exit of AAPL 1 sh to clear stale RSI>75 flag (5 sessions old). Weekly budget 0/3."
+  "notes": "Pre-market 2026-05-28 (Thu). Equity $100,031.00, cash $95,068.28 (95.0%), exposure 4.96%. AAPL +$8.92 (+2.96%, RSI 87.39 — exit flag 6 sessions old); GOOGL +$22.08 (+0.48%). Watchlist entry screen empty: NVDA below MA20, GOOGL below MA20, COST below MA stack + earnings tonight, AMD RSI 67.28 above 65 cap. Decision HOLD; recommend AAPL full exit at market-open if RSI re-prints > 75 live. Heavy macro (PCE/GDP/Claims at 8:30 ET). Weekly budget 0/3."
 }
