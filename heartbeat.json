@@ -1,11 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-05-28T07:15:00Z",
+  "last_routine": "market-open",
+  "session_id": "sweet-shannon-toUfU",
+  "timestamp_utc": "2026-05-28T13:47:30Z",
   "status": "success",
-  "account_status": "ACTIVE",
-  "portfolio_value": 100031.0,
-  "cash": 95068.28,
+  "decision": "NO_TRADE",
+  "trades_executed": 0,
   "open_positions": 2,
-  "decision": "HOLD",
-  "notes": "Pre-market 2026-05-28 (Thu). Equity $100,031.00, cash $95,068.28 (95.0%), exposure 4.96%. AAPL +$8.92 (+2.96%, RSI 87.39 — exit flag 6 sessions old); GOOGL +$22.08 (+0.48%). Watchlist entry screen empty: NVDA below MA20, GOOGL below MA20, COST below MA stack + earnings tonight, AMD RSI 67.28 above 65 cap. Decision HOLD; recommend AAPL full exit at market-open if RSI re-prints > 75 live. Heavy macro (PCE/GDP/Claims at 8:30 ET). Weekly budget 0/3."
+  "weekly_trades": 0,
+  "cash": 95068.28,
+  "equity": 100005.35,
+  "notes": "No watchlist names passed entry criteria; AAPL RSI 87.39 exit flag carried to EOD per precedent."
 }
