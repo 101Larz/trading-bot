@@ -506,3 +506,28 @@ Position-management notes:
 - **GOOGL** (12 sh, -$30.60 / -0.66%): live ask $383.27 below MA20 $391.37; held; trailing-stop GTC active. No add — would push GOOGL toward 5% cap.
 
 Risk posture: cash 95.10% → ~90.13% post-trade (≥20% reserve rule ✅); total exposure 4.91% → ~9.88% (≤80% ✅); daily-loss limit (3%) not approached. Weekly trade budget 2/3 remaining into Friday close.
+
+---
+
+## Midday Scan — 2026-05-29 (Friday — session: sweet-shannon-9il3Z)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Long Market Value | $9,885.90 |
+| Open Positions | 3 / 10 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $311.40 | +$9.52 (+3.15%) |
+| GOOGL | 12 | $385.82 | $382.91 | -$34.95 (-0.76%) |
+| NVDA | 23 | $216.00 | $216.51 | +$11.62 (+0.23%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL +3.15%, GOOGL -0.76%, NVDA +0.23% — no losers approaching the -7% cut threshold.
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%) gain. 10% trailing-stop GTC orders remain in force on all three.
+- **Thesis check**: AAPL/GOOGL theses confirmed intact at 2026-05-28 midday scan (record AAPL Q2, GOOGL Q1 +22%); NVDA thesis fresh from this morning's market-open entry (all 5 criteria passed live re-validation). No new negative catalysts surfaced intraday.
+
+No trades executed. Trailing stops continue mechanical exit discipline. AAPL RSI-overbought flag still EOD's responsibility (flag now 8 sessions old; trailing stop ratcheting with position).
