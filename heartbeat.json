@@ -1,13 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "session_id": "gallant-lamport-eXj1B",
-  "timestamp_utc": "2026-05-29T07:10:00Z",
+  "last_routine": "market-open",
+  "session_id": "sweet-shannon-9il3Z",
+  "timestamp_utc": "2026-05-29T13:47:00Z",
   "status": "success",
-  "decision": "HOLD",
-  "trades_executed": 0,
-  "open_positions": 2,
-  "weekly_trades": 0,
+  "decision": "TRADE",
+  "trades_executed": 1,
+  "open_positions": 3,
+  "weekly_trades": 1,
   "cash": 95068.28,
-  "equity": 100053.19,
-  "notes": "Pre-market 5/29: watchlist screen zero passes (5th session). NVDA closest ($0.63 below MA20). AAPL RSI 88 / GOOGL below MA20 — both held, protected by trailing stops. Conditional NVDA setup pre-authorized for market-open if ask > $215.50 with RSI <=65. Default: HOLD."
+  "equity": 99977.89,
+  "notes": "Market-open 5/29: NVDA conditional setup pre-authorized from pre-market triggered live (ask $215.66 > $215.50, RSI 52.51, spread 0.033%). Bought 23 sh @ ~$216.02 (~$4,968 / 4.97% of equity). 10% trailing-stop GTC placed via retry (initial chained call returned broker 403). Weekly trades 1/3. AAPL RSI flag (8 sessions) carried to EOD."
 }

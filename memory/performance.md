@@ -457,3 +457,52 @@ No trades executed. Trailing stops continue mechanical exit discipline. AAPL RSI
 
 Notes: Quiet, marginally green day. NO_TRADE at market-open — pre-market screen returned zero passes (NVDA/GOOGL/COST below MA20; AAPL RSI 87 overbought; AMD RSI 67 > 65 ceiling and quote spread ~2.9% unusable). Midday scan confirmed HOLD — no losers to cut, no positions at +15/+20% gain threshold for stop-tightening; AAPL and GOOGL theses both intact per 48h news check. Day P&L +$6.21 driven by AAPL ratcheting to +$10.27 (+3.40%, new HWM) and GOOGL adding to +$52.92 (+1.14%). Both positions protected by 10% trailing-stop GTC orders. Cash $95,068.28 = 94.98% of equity (≥20% reserve rule ✅); total exposure 4.99%. Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget unused; week closes Friday. **AAPL RSI-overbought exit flag (open since 2026-05-22, now 7 sessions old):** trailing stop continues ratcheting with the position — providing disciplined exit without forcing a sale into strength. Flag remains carried; re-evaluate at Friday pre-market alongside fresh RSI print.
 
+
+### Trade Entry — 2026-05-29 13:46
+| Field | Value |
+|-------|-------|
+| Symbol | NVDA |
+| Side | BUY |
+| Shares | 23.0 |
+| Est. Price | $216.02 |
+| Est. Value | $4968.46 |
+| Order ID | ccf47f68-f16e-4b77-8316-0a0f1c4889b3 |
+| Trailing Stop | 10% GTC placed immediately after fill |
+
+---
+
+## Market-Open Log — 2026-05-29 (Friday — session: sweet-shannon-9il3Z)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash (pre-trade) | $95,068.28 |
+| Equity (pre-trade) | $99,977.89 |
+| Long Market Value | $4,909.61 |
+| Open Positions | 2 → 3 / 6 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Trades This Week | 0 → 1 / 3 |
+| Decision | **TRADE — NVDA** |
+
+Market clock: `is_open=true` (next_close 16:00 ET). Trading window active.
+
+Buy-rule check:
+- Max 6 open positions ✅ (2/6 → 3/6)
+- Max 3 trades this week ✅ (0/3 → 1/3)
+- Max 20% equity per position ✅ (~4.97%)
+- Catalyst in today's RESEARCH-LOG ✅ — NVDA conditional pre-authorized (`memory/research/2026-05-29.md`, trigger: ask > $215.50 with RSI ≤ 65 and spread < 0.5%).
+
+Entry-criteria re-validation (live, 60-bar snapshot):
+- **NVDA**: live ask **$215.66** > MA20 **$214.88** ✅ (reclaim of MA20 confirmed; pre-market plan trigger $215.50 exceeded) · price > MA50 $198.73 ✅ · RSI-14 **52.51** in 40–65 band ✅ · spread $0.07 / 0.033% < 0.5% ✅ · SPY $757.94 > MA20 $737.44 (macro filter OK) ✅ · no negative 48h catalyst ✅. All five entry criteria pass.
+
+Trade executed:
+| Symbol | Side | Qty | Est. Price | Est. Value | Buy Order ID | Trail-Stop Order ID |
+|--------|------|-----|-----------|-----------|--------------|---------------------|
+| NVDA | BUY | 23 | $216.02 | $4,968.46 | ccf47f68-f16e-4b77-8316-0a0f1c4889b3 | f36bf1b2-1fda-4b2d-8c79-db7b6e80968b |
+
+Sizing: floor(($99,977.89 × 0.05) / $216.20 limit) = 23 shares. 10% trailing-stop GTC placed via retry after the initial chained call returned 403 from broker (transient; second call succeeded; stop $194.319, qty 23, status `new`). Weekly buys remaining: 2.
+
+Position-management notes:
+- **AAPL** (1 sh, +$11.75 / +3.89%): RSI-14 still ~88 — flag now 8 sessions old. Trailing-stop GTC (HWM ratcheting with the position) continues to provide mechanical exit discipline. EOD's responsibility per established precedent.
+- **GOOGL** (12 sh, -$30.60 / -0.66%): live ask $383.27 below MA20 $391.37; held; trailing-stop GTC active. No add — would push GOOGL toward 5% cap.
+
+Risk posture: cash 95.10% → ~90.13% post-trade (≥20% reserve rule ✅); total exposure 4.91% → ~9.88% (≤80% ✅); daily-loss limit (3%) not approached. Weekly trade budget 2/3 remaining into Friday close.
