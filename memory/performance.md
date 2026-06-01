@@ -593,3 +593,31 @@ Entry-criteria re-validation (live, 60-bar snapshot):
 Trades executed: **none.**
 
 Risk posture: cash 90.14% of equity (≥20% reserve rule ✅), exposure 9.86% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget preserved into Tuesday.
+
+---
+
+## Midday Scan — 2026-06-01 (Monday — session: sweet-shannon-6cBiH)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Long Market Value | $9,909.02 |
+| Open Positions | 3 / 10 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $305.83 | +$3.95 (+1.31%) |
+| GOOGL | 12 | $385.82 | $375.39 | -$125.16 (-2.70%) |
+| NVDA | 23 | $216.00 | $221.67 | +$130.51 (+2.63%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL +1.31%, GOOGL -2.70%, NVDA +2.63% — no losers approaching the -7% cut threshold.
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%) gain. 10% trailing-stop GTC orders remain in force on all three.
+- **Thesis check (web news, 48h)**:
+  - AAPL: BofA reiterated Buy ($380 PT) into June 2026 — strong iPhone upgrade cycle, Services growth, internal silicon margins. Thesis intact.
+  - GOOGL: trading in $378–$388 range; no breaking negative catalyst. Thesis intact.
+  - NVDA: BofA reiterated Buy ($320 PT) into June; Jensen Huang COMPUTEX 2026 keynote today — positive event-driven catalyst. Thesis intact.
+
+No trades executed. Trailing stops continue mechanical exit discipline. AAPL RSI-overbought flag still EOD's responsibility (flag now 9 sessions old; trailing stop ratcheting with position).
