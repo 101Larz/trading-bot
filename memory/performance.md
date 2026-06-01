@@ -557,3 +557,39 @@ No trades executed. Trailing stops continue mechanical exit discipline. AAPL RSI
 | NVDA | 23 | $216.00 | $212.48 | -$80.93 (-1.63%) |
 
 Notes: First trade-day of the week — NVDA 23 sh opened @ $216.00 at market-open after live re-validation of pre-market trigger ($215.50 ask, RSI ≤ 65, spread < 0.5%; all five entry criteria passed). 10% trailing-stop GTC placed immediately after fill. Day P&L -$191.98 (-0.192%) driven by GOOGL marking down -$23.31 (to -$56.52 unrealized; live -2.31% session move) and NVDA marking down -$80.93 (entered $216.00, closed $212.48 — small post-entry pullback, well above 10% trailing-stop floor of $194.32) — partially offset by AAPL ratcheting +$9.61 to a fresh HWM. Cash $90,100.28 = 90.22% of equity (≥20% reserve rule ✅); total exposure 9.78% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 1/3 — week closes today; weekly review routine to follow at 17:00 ET. **AAPL RSI-overbought exit flag (open since 2026-05-22, now 8 sessions old):** trailing stop continues ratcheting (position now +3.18% unrealized) — providing disciplined exit without forcing a sale into strength. All three positions protected by 10% trailing-stop GTC orders entering the weekend.
+
+---
+
+## Market-Open Log — 2026-06-01 (Monday — session: sweet-shannon-6cBiH)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $90,100.28 |
+| Equity | $99,960.05 |
+| Long Market Value | $9,859.77 |
+| Open Positions | 3 / 6 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Trades This Week | 0 / 3 (new week) |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (3/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅
+- Catalyst in today's RESEARCH-LOG ✅ — AMD conditional pre-authorization (memory/research/2026-06-01.md, trigger: live RSI ≤ 65 AND spread < 0.5%).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $309.79 | +$7.91 (+2.62%) |
+| GOOGL | 12 | $385.82 | $375.32 | -$126.06 (-2.72%) |
+| NVDA | 23 | $216.00 | $219.42 | +$78.66 (+1.58%) |
+
+Entry-criteria re-validation (live, 60-bar snapshot):
+- **AMD**: live ask **$496.00** > MA20 $440.11 & MA50 $328.15 ✅ · RSI-14 **66.97** > 65 ceiling ❌ · spread bid $490.90 / ask $496.00 = $5.10 / **1.03%** > 0.5% ceiling ❌. Two criteria fail. Pre-market plan was explicit: "Defer to NO_TRADE if RSI prints > 65, spread > 0.5%". Both triggered → NO_TRADE.
+- **AAPL exit re-validation**: live RSI-14 **84.28** still >> 75 exit threshold (flag now 9 sessions old). Per established precedent (2026-05-26 / 27 / 28 market-open logs), AAPL exit evaluation is EOD's responsibility; market-open routine does not execute exits. 10% trailing-stop GTC continues mechanical exit discipline; HWM ratcheting with the position (unrealized +2.62%). Flag carried to EOD.
+- **NVDA / GOOGL holds**: no add (NVDA combined position would exceed 5% cap per pre-market analysis); GOOGL still below MA20 — both held under trailing-stop GTC protection.
+
+Trades executed: **none.**
+
+Risk posture: cash 90.14% of equity (≥20% reserve rule ✅), exposure 9.86% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget preserved into Tuesday.
