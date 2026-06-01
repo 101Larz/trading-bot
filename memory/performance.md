@@ -39,6 +39,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-05-27 | $100,035.52 | $100,056.98 | +$21.46 | +0.021% | 0 | EOD: NO_TRADE day (NVDA rejected at market-open — live ask $211.70 < MA20 $214.66). AAPL +$8.62, GOOGL +$48.36 unrealized. Trailing stops active. |
 | 2026-05-28 | $100,056.98 | $100,063.19 | +$6.21 | +0.0062% | 0 | EOD: NO_TRADE day (pre-market screen returned zero passes; AMD RSI 67 > 65 ceiling). AAPL +$10.27, GOOGL +$52.92 unrealized. Trailing stops active. |
 | 2026-05-29 | $100,063.19 | $99,871.21 | -$191.98 | -0.192% | 1 | EOD: opened NVDA 23 sh @ $216.00 (pre-market trigger passed live). AAPL +$9.61, GOOGL -$56.52, NVDA -$80.93 unrealized. Trailing stops active on all three. |
+| 2026-06-01 | $99,871.21 | $100,085.49 | +$214.28 | +0.214% | 0 | EOD: NO_TRADE day (AMD rejected — RSI 67 > 65 and spread 1.03% > 0.5%). AAPL +$4.18, GOOGL -$113.04, NVDA +$194.81 unrealized. Trailing stops active on all three. |
 
 ---
 
@@ -621,3 +622,28 @@ Midday checks:
   - NVDA: BofA reiterated Buy ($320 PT) into June; Jensen Huang COMPUTEX 2026 keynote today — positive event-driven catalyst. Thesis intact.
 
 No trades executed. Trailing stops continue mechanical exit discipline. AAPL RSI-overbought flag still EOD's responsibility (flag now 9 sessions old; trailing stop ratcheting with position).
+
+---
+
+## EOD Snapshot — 2026-06-01
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $100,085.49 |
+| Cash | $90,100.28 |
+| Long Market Value | $9,985.21 |
+| Day P&L ($) | +$214.28 |
+| Day P&L (%) | +0.214% |
+| Trades Today | 0 |
+| Trades This Week | 0 |
+| Open Positions | 3 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $306.06 | +$4.18 (+1.39%) |
+| GOOGL | 12 | $385.82 | $376.40 | -$113.04 (-2.44%) |
+| NVDA | 23 | $216.00 | $224.47 | +$194.81 (+3.92%) |
+
+Notes: First session of the new trading week. NO_TRADE at market-open — AMD (the sole pre-authorized catalyst) rejected on live re-validation: RSI-14 66.97 > 65 ceiling AND spread $5.10 / 1.03% > 0.5% ceiling (two criteria failed against an explicit "defer if either triggers" plan). Midday scan confirmed HOLD — no losers near the -7% cut threshold, no positions at +15/+20% gain for stop-tightening; AAPL/GOOGL/NVDA theses all confirmed intact via 48h news check (BofA Buy reiterations on AAPL and NVDA; Jensen Huang COMPUTEX 2026 keynote positive for NVDA). Day P&L +$214.28 (+0.214%) driven by NVDA marking up to +$194.81 (+3.92%, fresh HWM since entry Friday) — partially offset by GOOGL drifting to -$113.04 (-2.44%) and AAPL pulling back to +$4.18 (+1.39%). Cash $90,100.28 = 90.02% of equity (≥20% reserve rule ✅); total exposure 9.98% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Tuesday. **AAPL RSI-overbought exit flag (open since 2026-05-22, now 9 sessions old):** trailing stop continues ratcheting with the position — providing disciplined exit without forcing a sale into strength. All three positions protected by 10% trailing-stop GTC orders.
