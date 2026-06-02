@@ -662,6 +662,34 @@ Risk posture: cash 90.06% of equity (≥20% reserve rule ✅), exposure 9.94% (�
 
 ---
 
+## Midday Scan — 2026-06-02 (Tuesday — session: exciting-bohr-0mfD5)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Long Market Value | $9,902.93 |
+| Open Positions | 3 / 10 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $312.18 | +$10.30 (+3.41%) |
+| GOOGL | 12 | $385.82 | $367.27 | -$222.60 (-4.81%) |
+| NVDA | 23 | $216.00 | $225.37 | +$215.51 (+4.34%) |
+
+Midday checks:
+- **Cut-loser (-7%)**: AAPL +3.41%, GOOGL -4.81%, NVDA +4.34% — no positions at/below -7% threshold. GOOGL recovered from -6.35% at market-open to -4.81% intraday (no cut).
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%) gain. 10% trailing-stop GTC orders remain in force on all three.
+- **Thesis check (web news, 48h)**:
+  - AAPL: Morgan Stanley reiterates WWDC 6/8 as "key catalyst" — PT $365–$385 (upside $440); BofA $380. Thesis intact.
+  - GOOGL: $80B equity raise (Berkshire $10B PP + $30B public + $40B ATM) drove intraday selling — dilution overhang plus AI capex doubling to $180–190B for 2026. Strong Buy (64 analysts, $430 PT) intact; share-supply pressure is the headwind, not a fundamental break. Thesis pressured but **not broken**.
+  - NVDA: Computex Vera Rubin in full production (OpenAI/Anthropic/xAI/Oracle); RTX Spark PC chip with Microsoft/Dell/HP/ASUS/Lenovo/MSI. Thesis intact / strengthened.
+
+No trades executed. Trailing stops continue mechanical exit discipline. AAPL pre-WWDC exit still pre-staged for Friday 2026-06-05 EOD per pre-market plan.
+
+---
+
 ## EOD Snapshot — 2026-06-01
 
 | Field | Value |
