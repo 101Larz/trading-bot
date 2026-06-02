@@ -1,13 +1,13 @@
 {
   "last_routine": "pre-market",
-  "session_id": "gallant-lamport-26LeM",
-  "timestamp_utc": "2026-06-01T07:10:00Z",
+  "session_id": "gallant-lamport-MHHOg",
+  "timestamp_utc": "2026-06-02T07:15:00Z",
   "status": "success",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 3,
   "weekly_trades": 0,
   "cash": 90100.28,
-  "equity": 99942.67,
-  "notes": "Pre-market 6/1 (Mon): zero watchlist passes on bar-based screen. NVDA/GOOGL/COST below MA20; AAPL RSI 84 (>>65, 9-session exit flag); AMD RSI 66.97 just above 65 ceiling. AMD pre-authorized for market-open conditional on live RSI <= 65 + spread < 0.5%. SPY bullish (RSI 68.77, above MA20/50). ES +0.29% pre-open, June starts at record highs. Held positions: AAPL +$8.29, GOOGL -$70.68, NVDA +$5.06; trailing stops active."
+  "equity": 100029.47,
+  "notes": "Pre-market 6/2 (Tue): NVDA passes all 5 entry criteria (price > MA20 $216.75 > MA50; RSI 53.9 in band; Computex catalysts +6% Mon) but position at 5.19% of equity already — 5% cap blocks add. AAPL RSI pulled back to 70.58 (below 75 exit) but below MA20; WWDC 6/8 = T-6 — pre-stage exit for Fri EOD. GOOGL -4.38% drifting; midday -7% cut watch. SPY $758.60 bullish (RSI 69). ES +0.31% pre-open. NFP Friday."
 }
