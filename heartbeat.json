@@ -1,13 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "session_id": "gallant-lamport-MHHOg",
-  "timestamp_utc": "2026-06-02T07:15:00Z",
+  "last_routine": "market-open",
+  "session_id": "sweet-shannon-2jsqG",
+  "timestamp_utc": "2026-06-02T13:46:00Z",
   "status": "success",
-  "decision": "HOLD",
+  "decision": "NO_TRADE",
   "trades_executed": 0,
   "open_positions": 3,
   "weekly_trades": 0,
   "cash": 90100.28,
-  "equity": 100029.47,
-  "notes": "Pre-market 6/2 (Tue): NVDA passes all 5 entry criteria (price > MA20 $216.75 > MA50; RSI 53.9 in band; Computex catalysts +6% Mon) but position at 5.19% of equity already — 5% cap blocks add. AAPL RSI pulled back to 70.58 (below 75 exit) but below MA20; WWDC 6/8 = T-6 — pre-stage exit for Fri EOD. GOOGL -4.38% drifting; midday -7% cut watch. SPY $758.60 bullish (RSI 69). ES +0.31% pre-open. NFP Friday."
+  "equity": 100050.69,
+  "notes": "Market-open 6/2 (Tue): NO_TRADE. NVDA passes all 5 entry criteria but at 5.31% of equity (above 5% cap) — no add. AAPL/GOOGL/MSFT/META/AMZN all fail pre-market screen. GOOGL drifted to -6.35% — within $0.65/sh of -7% midday cut threshold. Trailing stops in force on all three."
 }
