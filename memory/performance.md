@@ -625,6 +625,43 @@ No trades executed. Trailing stops continue mechanical exit discipline. AAPL RSI
 
 ---
 
+## Market-Open Log — 2026-06-02 (Tuesday — session: sweet-shannon-2jsqG)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $90,100.28 |
+| Equity | $100,050.69 |
+| Long Market Value | $9,950.41 |
+| Open Positions | 3 / 6 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (3/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅
+- Catalyst in today's RESEARCH-LOG ✅ — but only NVDA passes criteria, and NVDA is at the 5% cap.
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $308.43 | +$6.55 (+2.17%) |
+| GOOGL | 12 | $385.82 | $361.34 | -$293.76 (-6.35%) |
+| NVDA | 23 | $216.00 | $230.76 | +$339.48 (+6.83%) |
+
+Entry-criteria re-validation (per pre-market plan):
+- **NVDA add (BLOCKED)**: all 5 criteria pass (price $230.76 > MA20 $216.75 > MA50; RSI 53.9 in band; SPY bullish; Computex catalysts intact). Sizing: NVDA mark = $5,307.48 = **5.31% of equity**, above the 5% per-position cap. No additional shares authorized. Hold existing 23 sh.
+- **AAPL/GOOGL/MSFT/META/AMZN**: all failed the pre-market bar-based screen (below MA20 and/or RSI out of band).
+- **AAPL exit re-validation**: RSI pulled back to 70.58 (below 75 exit threshold). Trailing-stop GTC continues ratcheting. Pre-WWDC exit pre-staged for Friday 2026-06-05 EOD (T-1 before 6/8 keynote). Today: hold.
+- **GOOGL midday watch**: live -6.35% — within $0.65/share of the **-7% midday cut threshold**. Pre-market does not execute exits; midday routine will decide.
+
+Trades executed: **none.**
+
+Risk posture: cash 90.06% of equity (≥20% reserve rule ✅), exposure 9.94% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter remains 0/3 — full budget preserved into the week. JOLTS 10:00 ET; AVGO earnings Wednesday after-close.
+
+---
+
 ## EOD Snapshot — 2026-06-01
 
 | Field | Value |
