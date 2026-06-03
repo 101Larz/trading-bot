@@ -1,13 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "session_id": "gallant-lamport-JPXG4",
-  "timestamp_utc": "2026-06-03T07:10:00Z",
+  "last_routine": "market-open",
+  "session_id": "sweet-shannon-UIskX",
+  "timestamp_utc": "2026-06-03T13:46:00Z",
   "status": "success",
-  "decision": "HOLD",
+  "decision": "NO_TRADE",
   "trades_executed": 0,
   "open_positions": 3,
   "weekly_trades": 0,
   "cash": 90100.28,
-  "equity": 99894.88,
-  "notes": "Pre-market 6/3 (Wed): HOLD. NVDA passes all 5 criteria but at 5.12% cap (no add). AMD RSI 70 > 65 ceiling. GOOGL/COST below MA20. AAPL overbought (RSI 75.58) + pre-WWDC exit pre-staged Fri 6/5. GOOGL -5.77% — within $1.39/sh of -7% midday cut. AVGO earnings after-close — semis read-through to NVDA tomorrow."
+  "equity": 99785.77,
+  "notes": "Market-open 6/3 (Wed): NO_TRADE. NVDA add cap-blocked (24sh × $217.76 = 5.237% > 5% cap). AMD blocked (RSI 70.04 > 65; spread 2.73% > 0.5%). AAPL pre-WWDC exit pre-staged Fri 6/5. GOOGL -5.72% — within $1.50/sh of -7% midday cut; carry to midday. AVGO earnings after-close."
 }
