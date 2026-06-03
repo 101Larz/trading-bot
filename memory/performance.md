@@ -753,6 +753,34 @@ Risk posture: cash 90.29% of equity (≥20% reserve rule ✅), exposure 9.71% (�
 
 ---
 
+## Midday Scan — 2026-06-03 (Wednesday — session: exciting-bohr-rMX4b)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Long Market Value | $9,583.17 |
+| Open Positions | 3 / 10 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $309.72 | +$7.84 (+2.60%) |
+| GOOGL | 12 | $385.82 | $360.11 | -$308.52 (-6.66%) |
+| NVDA | 23 | $216.00 | $215.31 | -$15.87 (-0.32%) |
+
+Midday checks:
+- **Cut-loser (-7%)**: AAPL +2.60%, GOOGL **-6.66%** (closest, within ~$1.30/sh of cut), NVDA -0.32% — no position at/below the -7% threshold. GOOGL one print away from mechanical exit; carried to EOD.
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%) gain. 10% trailing-stop GTC orders remain in force on all three.
+- **Thesis check (web news, 48h)**:
+  - AAPL: WWDC 6/8 key catalyst — Morgan Stanley $365–$385 PT, upside $440. Apple trading near $4.6T cap on AI expectations. Thesis intact. Pre-WWDC exit still pre-staged for Friday 2026-06-05 EOD.
+  - GOOGL: Same $80B capital raise / dilution overhang from 6/2 — no new thesis break, just continuing weakness. Strong Buy 64-analyst rating intact; FY revenue >$400B; $0.22 dividend ex-date 6/8. Thesis pressured but **not broken**.
+  - NVDA: Microsoft/Azure unified agentic-AI stack across Windows; Coherent datacenter optics investment partnership. Thesis intact / strengthened — intraday weakness is broader-tape semi rotation, not stock-specific.
+
+No trades executed. Trailing stops continue mechanical exit discipline. GOOGL -6.66% remains the live risk; one more session of dilution-overhang selling triggers the mechanical -7% cut at next routine.
+
+---
+
 ## EOD Snapshot — 2026-06-02
 
 | Field | Value |
