@@ -41,6 +41,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-05-29 | $100,063.19 | $99,871.21 | -$191.98 | -0.192% | 1 | EOD: opened NVDA 23 sh @ $216.00 (pre-market trigger passed live). AAPL +$9.61, GOOGL -$56.52, NVDA -$80.93 unrealized. Trailing stops active on all three. |
 | 2026-06-01 | $99,871.21 | $100,085.49 | +$214.28 | +0.214% | 0 | EOD: NO_TRADE day (AMD rejected — RSI 67 > 65 and spread 1.03% > 0.5%). AAPL +$4.18, GOOGL -$113.04, NVDA +$194.81 unrealized. Trailing stops active on all three. |
 | 2026-06-02 | $100,085.49 | $99,888.31 | -$197.18 | -0.197% | 0 | EOD: NO_TRADE day (NVDA add blocked — position at 5.31% > 5% cap; AMD/other watchlist failed pre-market screen). AAPL +$12.97, GOOGL -$278.76, NVDA +$154.10 unrealized. Trailing stops active on all three. |
+| 2026-06-03 | $99,888.31 | $99,666.86 | -$221.45 | -0.222% | 0 | EOD: NO_TRADE day (NVDA add blocked at 5% cap; AMD blocked — RSI 70.04 > 65 and spread 2.73% > 0.5%). AAPL +$8.65, GOOGL -$319.44 (now -6.90%, ~$0.40/sh from -7% cut), NVDA -$22.35 unrealized. Trailing stops active on all three. |
 
 ---
 
@@ -803,3 +804,28 @@ No trades executed. Trailing stops continue mechanical exit discipline. GOOGL -6
 | NVDA | 23 | $216.00 | $222.70 | +$154.10 (+3.10%) |
 
 Notes: Second session of the new trading week. NO_TRADE at market-open — only NVDA passed all 5 entry criteria, but its current mark put the position at 5.31% of equity, exceeding the 5% per-position cap (no add authorized); AAPL/GOOGL/MSFT/META/AMZN all failed the pre-market bar-based screen. Midday scan confirmed HOLD — GOOGL recovered intraday from -6.35% (market-open) to -4.81% (midday), staying above the -7% cut threshold; no positions at +15/+20% gain for stop-tightening; all three theses confirmed intact (AAPL: Morgan Stanley reiterated WWDC 6/8 catalyst, $365–$385 PT; GOOGL: $80B equity raise drove intraday selling — dilution overhang but Strong Buy 64-analyst rating intact; NVDA: Computex Vera Rubin in full production with OpenAI/Anthropic/xAI/Oracle, RTX Spark with major OEMs). Day P&L -$197.18 (-0.197%) driven by GOOGL marking down further to -$278.76 (-6.02%, new low — close to but above the -7% cut threshold) — partially offset by AAPL ratcheting +$8.79 to fresh HWM (+$12.97 / +4.30%) and NVDA giving back -$40.71 to +$154.10 (+3.10%). Cash $90,100.28 = 90.20% of equity (≥20% reserve rule ✅); total exposure 9.80% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Wednesday. **AAPL pre-WWDC exit pre-staged for Friday 2026-06-05 EOD** (T-1 before 6/8 keynote per pre-market plan; RSI pulled back to 70.58, now below the 75 exit threshold — trailing stop continues mechanical discipline in the interim). **GOOGL midday watch (-6.02% close, within $0.65 of -7% cut threshold):** carry forward to Wednesday midday scan — one more session of dilution-overhang weakness would trigger mechanical exit. All three positions protected by 10% trailing-stop GTC orders.
+
+---
+
+## EOD Snapshot — 2026-06-03
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,666.86 |
+| Cash | $90,100.28 |
+| Long Market Value | $9,566.58 |
+| Day P&L ($) | -$221.45 |
+| Day P&L (%) | -0.222% |
+| Trades Today | 0 |
+| Trades This Week | 0 |
+| Open Positions | 3 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $310.53 | +$8.65 (+2.87%) |
+| GOOGL | 12 | $385.82 | $359.20 | -$319.44 (-6.90%) |
+| NVDA | 23 | $216.00 | $215.03 | -$22.35 (-0.45%) |
+
+Notes: Third session of the trading week. NO_TRADE at market-open — NVDA add blocked (5.237% > 5% per-position cap despite all 5 criteria passing); AMD blocked (RSI 70.04 > 65 ceiling AND spread $14.19 / 2.73% > 0.5% ceiling). Midday scan confirmed HOLD — GOOGL deteriorated further to -6.66% (within ~$1.30/sh of -7% cut) but did not trigger; AAPL theses intact (WWDC 6/8 catalyst, MS $365–$385 PT); GOOGL dilution overhang from $80B raise continues (Strong Buy 64-analyst rating intact); NVDA Microsoft/Azure agentic-AI stack + Coherent optics partnership strengthens thesis. Day P&L -$221.45 (-0.222%) driven by GOOGL leg lower to -$319.44 (-6.90%, fresh low — now within ~$0.40/sh of -7% cut threshold) and NVDA flipping to -$22.35 (-0.45%) on intraday semi-rotation — partially offset by AAPL holding +$8.65 (+2.87%). Cash $90,100.28 = 90.40% of equity (≥20% reserve rule ✅); total exposure 9.60% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget remaining for Thu/Fri. **GOOGL -7% cut watch (HIGHEST PRIORITY for Thursday midday scan):** position closed -6.90%, one more session of dilution-overhang selling triggers mechanical exit; trailing-stop GTC remains primary backstop. **AAPL pre-WWDC exit pre-staged for Friday 2026-06-05 EOD** (T-1 before 6/8 keynote). **NVDA** post-AVGO earnings tomorrow — semis read-through monitored. All three positions protected by 10% trailing-stop GTC orders.
