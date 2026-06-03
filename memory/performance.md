@@ -716,6 +716,43 @@ Notes: First session of the new trading week. NO_TRADE at market-open — AMD (t
 
 ---
 
+## Market-Open Log — 2026-06-03 (Wednesday — session: sweet-shannon-UIskX)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $90,100.28 |
+| Equity | $99,785.77 |
+| Long Market Value | $9,685.49 |
+| Open Positions | 3 / 6 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (3/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅
+- Catalyst in today's RESEARCH-LOG ✅ — NVDA conditional (cap-blocked); AMD conditional (RSI/spread).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $316.42 | +$14.54 (+4.82%) |
+| GOOGL | 12 | $385.82 | $363.76 | -$264.72 (-5.72%) |
+| NVDA | 23 | $216.00 | $217.605 | +$36.92 (+0.74%) |
+
+Entry-criteria re-validation (per pre-market plan):
+- **NVDA add (BLOCKED)**: all 5 criteria pass live (price $222.82 > MA20 $217.97 > MA50 $201.27; RSI 51.61 in band; SPY bullish). Sizing: 24 sh × $217.76 ask = $5,226.24 = **5.237% of equity** > 5% per-position cap. No additional shares authorized.
+- **AMD entry (BLOCKED)**: live RSI **70.04** > 65 ceiling ❌; spread $533.00 − $518.81 = $14.19 = **2.73%** > 0.5% ceiling ❌. Both gating conditions fail per pre-market plan.
+- **AAPL exit pre-stage**: still pre-staged for Friday 2026-06-05 EOD (T-1 before WWDC 6/8). Trailing-stop GTC continues mechanical discipline; RSI ~76 at premarket.
+- **GOOGL midday watch**: live -5.72% — within ~$1.50/sh of the -7% midday cut threshold. Carry forward to midday scan.
+
+Trades executed: **none.**
+
+Risk posture: cash 90.29% of equity (≥20% reserve rule ✅), exposure 9.71% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget preserved. AVGO earnings after-close — semis read-through to NVDA tomorrow.
+
+---
+
 ## EOD Snapshot — 2026-06-02
 
 | Field | Value |
