@@ -1,13 +1,10 @@
 {
-  "last_routine": "pre-market",
-  "session_id": "gallant-lamport-WBajX",
-  "timestamp_utc": "2026-06-04T07:12:00Z",
-  "status": "success",
+  "routine": "market-open",
+  "session": "sweet-shannon-z4odj",
+  "timestamp": "2026-06-04T13:47:00Z",
   "decision": "NO_TRADE",
-  "trades_executed": 0,
   "open_positions": 3,
-  "weekly_trades": 0,
-  "cash": 90100.28,
-  "equity": 99696.64,
-  "notes": "Pre-market 6/4 (Thu): NO_TRADE. Zero watchlist passes — NVDA below MA20 ($214.75 < $218.88) + cap-blocked at 4.97%; AAPL pre-WWDC exit pre-staged Fri 6/5 (no add); AMD RSI 74.14 overbought; COST/GOOGL below MA stack. AVGO Q3 guide ($29.4B) disappointed -13% AH; CRWD -10%; software->semis rotation continues. SPY 754.24 > MA20 744.83, RSI 61.53. GOOGL -6.48% — within $2.02/sh of -7% mechanical cut; HIGHEST-PRIORITY midday watch."
+  "cash_pct": 90.38,
+  "trades_this_week": 0,
+  "status": "OK"
 }
