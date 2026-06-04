@@ -832,6 +832,34 @@ Notes: Third session of the trading week. NO_TRADE at market-open — NVDA add b
 
 ---
 
+## Midday Scan — 2026-06-04 (Thursday — session: exciting-bohr-oKZGa)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Long Market Value | $9,786.89 |
+| Open Positions | 3 / 10 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $311.27 | +$9.39 (+3.11%) |
+| GOOGL | 12 | $385.82 | $371.725 | -$169.14 (-3.65%) |
+| NVDA | 23 | $216.00 | $218.04 | +$46.92 (+0.94%) |
+
+Midday checks:
+- **Cut-loser (-7%)**: AAPL +3.11%, GOOGL -3.65%, NVDA +0.94% — no position at/below -7% threshold. **GOOGL cut-loser watch resolved favorably**: position recovered from yesterday's -6.90% close (within $0.40/sh of cut) to -3.65% midday (intraday +3.55%).
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%) gain. 10% trailing-stop GTC orders remain in force on all three.
+- **Thesis check (web news, 48h)**:
+  - AAPL: WWDC 6/8 catalyst — MS PT $365–$385 (upside $440). Pre-WWDC exit pre-staged for Friday 2026-06-05 EOD. Thesis intact.
+  - GOOGL: Capital raise upsized to $84.75B (from $80B); ARK bought 134K shares today; Strong Buy intact. Thesis pressured but **not broken**.
+  - NVDA: AVGO Q2 beat ($73B AI order book, AI rev +>100% to $10.8B) read-through net positive; Vera Rubin in production; Microsoft/Azure agentic-AI stack. Thesis intact / strengthened.
+
+No trades executed. Trailing stops continue mechanical exit discipline. AAPL pre-WWDC exit still pre-staged for Friday 2026-06-05 EOD.
+
+---
+
 ## Market-Open Log — 2026-06-04 (Thursday — session: sweet-shannon-z4odj)
 
 | Field | Value |

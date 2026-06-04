@@ -1,10 +1,10 @@
 {
-  "routine": "market-open",
-  "session": "sweet-shannon-z4odj",
-  "timestamp": "2026-06-04T13:47:00Z",
-  "decision": "NO_TRADE",
+  "routine": "midday-scan",
+  "session": "exciting-bohr-oKZGa",
+  "timestamp": "2026-06-04T16:30:00Z",
+  "decision": "HOLD",
   "open_positions": 3,
-  "cash_pct": 90.38,
+  "cash_pct": 90.39,
   "trades_this_week": 0,
   "status": "OK"
 }
