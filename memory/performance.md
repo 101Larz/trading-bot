@@ -959,3 +959,49 @@ Risk posture: cash 90.38% of equity (≥20% reserve rule ✅), exposure 9.62% (�
 | NVDA | 23 | $216.00 | $217.83 | +$42.09 (+0.85%) |
 
 Notes: Fourth session of the trading week — green recovery day. NO_TRADE at market-open — NVDA add blocked (live $213.68 < MA20 $218.88 + position 4.93% near 5% cap); AMD add blocked (pre-market RSI 74.14 > 65 ceiling AND spread 2.73% > 0.5% ceiling); AAPL add blocked (pre-WWDC exit pre-staged for Friday EOD inverts add logic). Midday scan confirmed HOLD — **GOOGL -7% cut watch resolved favorably**: position recovered from yesterday's -6.90% close (within $0.40/sh of mechanical cut) to -3.65% midday (intraday +3.55%), closing -3.79%; no stop-tighten triggers; theses all intact (AAPL: WWDC 6/8 catalyst with MS PT $365–$385; GOOGL: capital raise upsized to $84.75B but ARK accumulating, Strong Buy intact; NVDA: AVGO Q2 beat read-through positive, Vera Rubin in production, Microsoft/Azure agentic-AI stack). Day P&L +$209.01 (+0.210%) driven by GOOGL rallying from -$319.44 to -$175.44 (+$144.00 swing) and NVDA recovering from -$22.35 to +$42.09 (+$64.44 swing) — partially offset by AAPL ticking back to +$9.22 (+3.05%). Cash $90,100.28 = 90.21% of equity (≥20% reserve rule ✅); total exposure 9.79% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget unused; Friday is the week's final session. **AAPL pre-WWDC exit pre-staged for Friday 2026-06-05 EOD** (T-1 before 6/8 keynote). **GOOGL cut-loser watch DE-ESCALATED** after intraday recovery — trailing-stop GTC remains the primary backstop; carry forward to Friday for re-evaluation if dilution-overhang selling resumes. All three positions protected by 10% trailing-stop GTC orders.
+
+---
+
+### Trade Exit — 2026-06-05 11:20 ET (trailing stop)
+| Field | Value |
+|-------|-------|
+| Symbol | NVDA |
+| Side | SELL (trailing_stop GTC fill) |
+| Shares | 23 |
+| Avg Exit Price | $209.04 |
+| Avg Entry Price | $216.00 |
+| Realized P&L | -$160.08 (-3.22%) |
+| HWM | $232.28 |
+| Stop Price | $209.052 |
+| Hold Days | 5 (entered 2026-05-29) |
+| Order ID | f36bf1b2-1fda-4b2d-8c79-db7b6e80968b |
+| Exit Reason | 10% trailing-stop fired intraday (NVDA broke $209 on AVGO read-through + soft semis tape; HWM $232.28 set 2026-06-02 intraday after Computex high) |
+
+---
+
+## Midday Scan — 2026-06-05 (Friday — session: exciting-bohr-yp0ZW)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Cash | $94,908.20 |
+| Equity | $99,658.77 |
+| Long Market Value | $4,750.57 |
+| Open Positions | 2 / 10 (AAPL 1 sh, GOOGL 12 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $311.29 | +$9.41 (+3.12%) |
+| GOOGL | 12 | $385.82 | $369.94 | -$190.56 (-4.12%) |
+
+Midday checks:
+- **NVDA exit recorded**: 10% trailing-stop GTC filled at 11:20 ET, 23 sh @ $209.04 (HWM $232.28, stop $209.052). Realized -$160.08 / -3.22%. Mechanical exit discipline worked as designed — semis derate + AVGO read-through pulled NVDA through the trailing stop. Cash $90,100.28 → $94,908.20 (+$4,807.92 proceeds).
+- **Cut-loser (-7%)**: AAPL +3.12%, GOOGL -4.12% — no losers at/below -7% threshold. GOOGL widened modestly from yesterday's close (-3.79%) but still well above the -$358.81 mechanical cut level (currently $369.94).
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%) gain. AAPL +3.12% is closest to a gain trigger but nowhere near +15%. 10% trailing-stop GTC orders remain in force on both AAPL and GOOGL.
+- **Thesis check (web news, 48h)**:
+  - AAPL: Wedbush (Dan Ives) frames WWDC 6/8 keynote as "Apple Stock Could Finally Have Its AI Moment" — "Expect Fireworks" on Apple Intelligence 2.0 + Gemini-Siri. Morgan Stanley PT $365–$385 (upside $440), BofA $380 still standing. **Pre-WWDC exit remains pre-staged for TODAY EOD.** Thesis intact.
+  - GOOGL: Daniel Loeb (Third Point) added Meta + Alphabet in Q1 — billionaire endorsement vs the dilution overhang. Ackman / Ives both holding GOOGL. Depositary-share close completes today; supply-pressure window ends. Thesis intact.
+
+No trades executed at midday. Realized -$160.08 from NVDA trailing-stop exit. AAPL pre-WWDC EOD exit still queued. Cash reserve climbs to 95.23% of equity (≥20% rule ✅); exposure drops to 4.77% (≤80% ✅). Daily-loss limit (3%) not approached.
