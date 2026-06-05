@@ -43,6 +43,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-02 | $100,085.49 | $99,888.31 | -$197.18 | -0.197% | 0 | EOD: NO_TRADE day (NVDA add blocked — position at 5.31% > 5% cap; AMD/other watchlist failed pre-market screen). AAPL +$12.97, GOOGL -$278.76, NVDA +$154.10 unrealized. Trailing stops active on all three. |
 | 2026-06-03 | $99,888.31 | $99,666.86 | -$221.45 | -0.222% | 0 | EOD: NO_TRADE day (NVDA add blocked at 5% cap; AMD blocked — RSI 70.04 > 65 and spread 2.73% > 0.5%). AAPL +$8.65, GOOGL -$319.44 (now -6.90%, ~$0.40/sh from -7% cut), NVDA -$22.35 unrealized. Trailing stops active on all three. |
 | 2026-06-04 | $99,666.86 | $99,875.87 | +$209.01 | +0.210% | 0 | EOD: NO_TRADE day (NVDA add blocked — price $213.68 < MA20 $218.88 and at 4.93% cap; AMD blocked — RSI 74.14 > 65, spread 2.73% > 0.5%; AAPL add blocked — pre-WWDC exit pre-staged). GOOGL -7% cut watch resolved favorably (-6.90% → -3.79%). AAPL +$9.22, GOOGL -$175.44, NVDA +$42.09 unrealized. |
+| 2026-06-05 | $99,875.87 | $99,609.60 | -$266.27 | -0.267% | 1 | EOD: NVDA trailing-stop fired 11:20 ET — 23 sh sold @ $209.04, realized -$160.08 / -3.22% (HWM $232.28, stop $209.052; AVGO read-through + soft semis tape). AAPL +$5.34, GOOGL -$235.66 unrealized. Weekly buys 0/3. AAPL pre-WWDC exit pre-staged for tonight remains pending (workflow snapshot only). |
 
 ---
 
@@ -1005,3 +1006,38 @@ Midday checks:
   - GOOGL: Daniel Loeb (Third Point) added Meta + Alphabet in Q1 — billionaire endorsement vs the dilution overhang. Ackman / Ives both holding GOOGL. Depositary-share close completes today; supply-pressure window ends. Thesis intact.
 
 No trades executed at midday. Realized -$160.08 from NVDA trailing-stop exit. AAPL pre-WWDC EOD exit still queued. Cash reserve climbs to 95.23% of equity (≥20% rule ✅); exposure drops to 4.77% (≤80% ✅). Daily-loss limit (3%) not approached.
+
+---
+
+## EOD Snapshot — 2026-06-05
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,609.60 |
+| Cash | $94,908.20 |
+| Long Market Value | $4,701.40 |
+| Day P&L ($) | -$266.27 |
+| Day P&L (%) | -0.267% |
+| Trades Today | 1 (NVDA SELL, trailing-stop fill) |
+| Trades This Week | 0 buys / 3 budget · 1 exit |
+| Open Positions | 2 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $307.22 | +$5.34 (+1.77%) |
+| GOOGL | 12 | $385.82 | $366.18 | -$235.66 (-5.09%) |
+
+### Week Recap (2026-06-01 → 2026-06-05)
+
+| Date | EOD Equity | Day P&L | Day % |
+|------|-----------|---------|-------|
+| 2026-06-01 | $100,085.49 | +$214.28 | +0.214% |
+| 2026-06-02 | $99,888.31 | -$197.18 | -0.197% |
+| 2026-06-03 | $99,666.86 | -$221.45 | -0.222% |
+| 2026-06-04 | $99,875.87 | +$209.01 | +0.210% |
+| 2026-06-05 | $99,609.60 | -$266.27 | -0.267% |
+| **Week** | — | **-$475.89** | **-0.476%** |
+
+Notes: Fifth and final session of the trading week. **NVDA trailing-stop fired at 11:20 ET** — 23 sh @ $209.04 vs $216.00 avg entry, realized **-$160.08 / -3.22%** (HWM $232.28 set 2026-06-02 intraday post-Computex, stop $209.052). Mechanical exit discipline worked as designed: AVGO read-through + soft semis tape + macro defensive backdrop (BofA June seasonality call, US/Iran tensions) pulled NVDA through the trailing stop; 5-day hold. Cash $90,100.28 → $94,908.20 (+$4,807.92 proceeds). Day P&L **-$266.27 (-0.267%)** = realized -$160.08 on NVDA exit + unrealized drag on remaining names (AAPL ticked back to +$5.34 from +$9.22; GOOGL widened to -$235.66 from -$175.44 on continuing dilution-overhang selling after the upsized $84.75B raise). Daily-loss limit (3%) not approached. Cash 95.28% of equity (≥20% reserve rule ✅); exposure 4.72% (≤80% ✅). Weekly trade counter ended **0 buys / 3 budget · 1 exit** — all entry attempts blocked by strategy filters all week (NVDA 5% cap / sub-MA20; AMD RSI > 65 + spread > 0.5%; AAPL pre-WWDC freeze; GOOGL averaging-down barred). Week ended **-$475.89 / -0.476%** — fourth losing week in a row of a flat-to-slightly-red post-entry environment; full weekly review routine to follow at 17:00 ET. **AAPL pre-WWDC exit (T-1 before 6/8 keynote) pre-staged for tonight EOD remains pending** — outside this 5-step snapshot workflow; flagged for follow-up so it can be evaluated/executed before the keynote weekend gap risk. AAPL trailing-stop GTC (stop $285.237 / HWM $316.93) continues mechanical discipline in the interim. GOOGL trailing-stop GTC (stop $354.492 / HWM $393.88) also active.
