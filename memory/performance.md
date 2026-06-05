@@ -46,6 +46,45 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-06-05 (Friday — session: sweet-shannon-vLVM7)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $90,100.28 |
+| Equity | $99,773.96 |
+| Long Market Value | $9,673.68 |
+| Open Positions | 3 / 6 (AAPL 1 sh, GOOGL 12 sh, NVDA 23 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (3/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (largest NVDA 4.92%)
+- Catalyst in today's RESEARCH-LOG: pre-market log rejected all candidates (zero watchlist passes).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $313.665 | +$11.79 (+3.90%) |
+| GOOGL | 12 | $385.82 | $371.00 | -$177.84 (-3.84%) |
+| NVDA | 23 | $216.00 | $213.36 | -$60.72 (-1.22%) |
+
+Entry-criteria re-validation (live, 60-bar snapshot):
+- **NVDA add (BLOCKED)**: live last $213.38 < MA20 $219.18 → criterion #1 fails; RSI-14 **36.12** < 40 band → criterion #2 fails; position 4.92% of equity — one more share crosses 5% cap. Three independent blockers.
+- **AMD entry (BLOCKED)**: live RSI-14 **67.01** > 65 ceiling → criterion #2 fails. Quote spread $2.06 / 0.42% within 0.5% (improved from prior sessions), but RSI alone disqualifies.
+- **AAPL add (BLOCKED)**: pre-WWDC exit pre-staged for tonight 2026-06-05 EOD (T-1 before 6/8 keynote) — adding inverts the exit plan.
+- **GOOGL add (BLOCKED)**: price $371.00 < MA20 $386.85 (criterion #1) and RSI 30.09 oversold (criterion #2) — strategy bars averaging down.
+
+Trades executed: **none.**
+
+Risk posture: cash 90.30% of equity (≥20% reserve rule ✅), exposure 9.70% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter remains 0/3 — full budget unused into Friday close. Macro context: NFP 8:30 ET is the binary print; US/Iran tensions + oil spike + AVGO semis derate = unfavorable add-longs environment. **AAPL pre-WWDC exit pre-staged for tonight EOD.** **GOOGL cut-loser watch (-3.84%)** deferred to midday scan. All three positions protected by 10% trailing-stop GTC orders.
+
+---
+
+---
+
 ## EOD Snapshot — 2026-05-20
 
 | Field | Value |
