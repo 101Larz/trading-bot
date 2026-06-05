@@ -1,10 +1,10 @@
 {
-  "routine": "midday-scan",
-  "session": "exciting-bohr-oKZGa",
-  "timestamp": "2026-06-04T16:30:00Z",
-  "decision": "HOLD",
+  "routine": "pre-market",
+  "session": "gallant-lamport-5NqlH",
+  "timestamp": "2026-06-05T07:15:00Z",
+  "decision": "NO_TRADE",
   "open_positions": 3,
-  "cash_pct": 90.39,
+  "cash_pct": 90.31,
   "trades_this_week": 0,
   "status": "OK"
 }
