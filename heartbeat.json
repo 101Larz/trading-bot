@@ -1,10 +1,11 @@
 {
-  "routine": "midday-scan",
-  "session": "exciting-bohr-yp0ZW",
-  "timestamp": "2026-06-05T16:38:00Z",
+  "routine": "pre-market",
+  "session": "gallant-lamport-JhN8J",
+  "timestamp": "2026-06-08T07:05:00Z",
   "decision": "HOLD",
   "open_positions": 2,
-  "cash_pct": 95.23,
+  "cash_pct": 95.3,
   "trades_this_week": 0,
-  "status": "OK"
+  "status": "OK",
+  "notes": "Macro filter fails (SPY < MA20). Iran-Israel escalation overnight. AAPL pre-WWDC exit (pre-staged 6/5 EOD) NOT executed — flagged for market-open."
 }
