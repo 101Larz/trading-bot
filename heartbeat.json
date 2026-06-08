@@ -1,11 +1,11 @@
 {
-  "routine": "pre-market",
-  "session": "gallant-lamport-JhN8J",
-  "timestamp": "2026-06-08T07:05:00Z",
-  "decision": "HOLD",
+  "routine": "market-open",
+  "session": "sweet-shannon-J8VSZ",
+  "timestamp": "2026-06-08T13:47:00Z",
+  "decision": "NO_TRADE",
   "open_positions": 2,
   "cash_pct": 95.3,
   "trades_this_week": 0,
   "status": "OK",
-  "notes": "Macro filter fails (SPY < MA20). Iran-Israel escalation overnight. AAPL pre-WWDC exit (pre-staged 6/5 EOD) NOT executed — flagged for market-open."
+  "notes": "Macro filter fails (SPY < MA20). No buys eligible. AAPL pre-WWDC exit OVERRIDDEN — hold through 13:00 ET keynote (trailing-stop GTC = backstop; position 0.31% equity = immaterial; trade.py close = market order, violates limit-only rule). Pre-WWDC carry-forward flag CLOSED."
 }

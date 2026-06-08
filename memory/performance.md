@@ -47,6 +47,55 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-06-08 (Monday — session: sweet-shannon-J8VSZ)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:47 ET) |
+| Cash | $94,908.18 |
+| Equity | $99,592.97 |
+| Long Market Value | $4,684.79 |
+| Open Positions | 2 / 6 (AAPL 1 sh, GOOGL 12 sh) |
+| Trades This Week | 0 / 3 (new week) |
+| Decision | **NO_TRADE — pre-staged AAPL exit OVERRIDDEN (hold through WWDC)** |
+
+Market clock: `is_open=true` (next_close 16:00 ET).
+
+Buy-rule check:
+- Max 6 open positions ✅ (2/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (largest GOOGL 4.39%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market screen returned **zero buy candidates**; macro filter fails (SPY $737.55 < MA20 $746.29).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $311.13 | +$9.25 (+3.06%) |
+| GOOGL | 12 | $385.82 | $364.475 | -$256.14 (-5.53%) |
+
+Entry-criteria re-validation (live, 60-bar snapshot):
+- **Macro filter (SPY)**: live last $743.41; bar-based current $737.55 < MA20 $746.29 → criterion #4 **FAILS** across the entire watchlist. No buys eligible regardless of per-ticker reads.
+- **AAPL**: chart-pass only (price > MA20 $304.24 & MA50 $281.09; RSI 58.28 neutral) — but it's the pending exit, not an add.
+- **GOOGL/NVDA/AMD/COST**: all fail criterion #1 (below MA20). NVDA stopped out Friday at $209.04; oversold.
+
+**AAPL pre-WWDC exit resolution (pre-staged across 4 prior pre-market routines):**
+
+Decision: **OVERRIDE — hold through WWDC keynote (13:00 ET)** with documented rationale:
+1. **Infrastructure**: `scripts/trade.py` has no limit-sell subcommand. The `close` command calls Alpaca DELETE /v2/positions/{symbol}, which submits a **market order** — direct violation of strategy.md line 58 ("Always use limit orders. Never place market orders."). The strategy's limit-only rule has no documented exception.
+2. **Position immateriality**: AAPL is 1 sh / $311.13 = **0.31% of equity**. Even a worst-case post-keynote "sell the news" drawdown (-10%) would cost ~$31 — immaterial vs portfolio. The risk-management benefit of the pre-staged exit is symbolic, not material.
+3. **Mechanical backstop intact**: 10% trailing-stop GTC active (stop $285.24 / HWM $316.93). If WWDC disappoints catastrophically, the stop fires automatically — strategy-compliant exit discipline.
+4. **No thesis break**: AAPL chart still passes entry criteria (price > MA20 & MA50, RSI 58 neutral). Morgan Stanley PT $365–$385, BofA $380, Wedbush "Expect Fireworks" — analyst tape constructive into the catalyst.
+
+This resolves the pre-staged exit explicitly. Going forward, the AAPL position is held under standard exit discipline (trailing-stop GTC) — the pre-WWDC carry-forward flag is **CLOSED**.
+
+**GOOGL -7% cut watch**: live -5.53% unrealized; cut threshold -7% → ~$358.81. Cushion ~$5.66/sh (~1.6%). Defer to midday scan.
+
+Trades executed: **none.**
+
+Risk posture: cash 95.30% of equity (≥20% reserve rule ✅), exposure 4.70% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter remains 0/3 — full budget into Tuesday.
+
+---
+
 ## Market-Open Log — 2026-06-05 (Friday — session: sweet-shannon-vLVM7)
 
 | Field | Value |
