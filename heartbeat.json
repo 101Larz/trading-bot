@@ -1,11 +1,11 @@
 {
-  "routine": "market-open",
-  "session": "sweet-shannon-J8VSZ",
-  "timestamp": "2026-06-08T13:47:00Z",
-  "decision": "NO_TRADE",
+  "routine": "midday-scan",
+  "session": "exciting-bohr-25t3go",
+  "timestamp": "2026-06-08T16:33:26Z",
+  "decision": "HOLD",
   "open_positions": 2,
   "cash_pct": 95.3,
   "trades_this_week": 0,
   "status": "OK",
-  "notes": "Macro filter fails (SPY < MA20). No buys eligible. AAPL pre-WWDC exit OVERRIDDEN — hold through 13:00 ET keynote (trailing-stop GTC = backstop; position 0.31% equity = immaterial; trade.py close = market order, violates limit-only rule). Pre-WWDC carry-forward flag CLOSED."
+  "notes": "No -7% cuts (AAPL +3.86%, GOOGL -5.99%). No +15/+20% winners to tighten. Theses intact (AAPL: WWDC live, analyst tape bullish; GOOGL: Berkshire $10B + $80B AI capex raise). GOOGL cut-watch cushion ~1.01% — carried to EOD."
 }
