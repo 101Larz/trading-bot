@@ -1090,3 +1090,28 @@ No trades executed at midday. Realized -$160.08 from NVDA trailing-stop exit. AA
 | **Week** | — | **-$475.89** | **-0.476%** |
 
 Notes: Fifth and final session of the trading week. **NVDA trailing-stop fired at 11:20 ET** — 23 sh @ $209.04 vs $216.00 avg entry, realized **-$160.08 / -3.22%** (HWM $232.28 set 2026-06-02 intraday post-Computex, stop $209.052). Mechanical exit discipline worked as designed: AVGO read-through + soft semis tape + macro defensive backdrop (BofA June seasonality call, US/Iran tensions) pulled NVDA through the trailing stop; 5-day hold. Cash $90,100.28 → $94,908.20 (+$4,807.92 proceeds). Day P&L **-$266.27 (-0.267%)** = realized -$160.08 on NVDA exit + unrealized drag on remaining names (AAPL ticked back to +$5.34 from +$9.22; GOOGL widened to -$235.66 from -$175.44 on continuing dilution-overhang selling after the upsized $84.75B raise). Daily-loss limit (3%) not approached. Cash 95.28% of equity (≥20% reserve rule ✅); exposure 4.72% (≤80% ✅). Weekly trade counter ended **0 buys / 3 budget · 1 exit** — all entry attempts blocked by strategy filters all week (NVDA 5% cap / sub-MA20; AMD RSI > 65 + spread > 0.5%; AAPL pre-WWDC freeze; GOOGL averaging-down barred). Week ended **-$475.89 / -0.476%** — fourth losing week in a row of a flat-to-slightly-red post-entry environment; full weekly review routine to follow at 17:00 ET. **AAPL pre-WWDC exit (T-1 before 6/8 keynote) pre-staged for tonight EOD remains pending** — outside this 5-step snapshot workflow; flagged for follow-up so it can be evaluated/executed before the keynote weekend gap risk. AAPL trailing-stop GTC (stop $285.237 / HWM $316.93) continues mechanical discipline in the interim. GOOGL trailing-stop GTC (stop $354.492 / HWM $393.88) also active.
+
+---
+
+## Midday Scan — 2026-06-08 (Monday — session: exciting-bohr-25t3go)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (~12:33 ET) |
+| Open Positions | 2 / 10 (AAPL 1 sh, GOOGL 12 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $313.52 | +$11.64 (+3.86%) |
+| GOOGL | 12 | $385.82 | $362.70 | -$277.44 (-5.99%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL +3.86%, GOOGL **-5.99%** — neither at threshold. GOOGL cushion ~$3.69/sh (~1.01%) to $358.81 cut. Carried to EOD.
+- **Stop-tighten**: no position at +15%/+20% gain — no adjustments. 10% trailing-stop GTCs active on both.
+- **Thesis check (web news, 48h)**:
+  - AAPL: WWDC 2026 keynote live today; Bernstein Outperform $350, BofA Buy $380, Morgan Stanley "key catalyst" framing. Thesis intact.
+  - GOOGL: Berkshire $10B placement; $80B equity raise for 2026 AI capex ($180–190B); $25B TPU venture w/ Blackstone; SpaceX GPU deal. Drawdown is positioning, not thesis. Thesis intact.
+
+No trades executed. Trailing stops continue mechanical exit discipline.
