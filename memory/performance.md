@@ -44,6 +44,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-03 | $99,888.31 | $99,666.86 | -$221.45 | -0.222% | 0 | EOD: NO_TRADE day (NVDA add blocked at 5% cap; AMD blocked — RSI 70.04 > 65 and spread 2.73% > 0.5%). AAPL +$8.65, GOOGL -$319.44 (now -6.90%, ~$0.40/sh from -7% cut), NVDA -$22.35 unrealized. Trailing stops active on all three. |
 | 2026-06-04 | $99,666.86 | $99,875.87 | +$209.01 | +0.210% | 0 | EOD: NO_TRADE day (NVDA add blocked — price $213.68 < MA20 $218.88 and at 4.93% cap; AMD blocked — RSI 74.14 > 65, spread 2.73% > 0.5%; AAPL add blocked — pre-WWDC exit pre-staged). GOOGL -7% cut watch resolved favorably (-6.90% → -3.79%). AAPL +$9.22, GOOGL -$175.44, NVDA +$42.09 unrealized. |
 | 2026-06-05 | $99,875.87 | $99,609.60 | -$266.27 | -0.267% | 1 | EOD: NVDA trailing-stop fired 11:20 ET — 23 sh sold @ $209.04, realized -$160.08 / -3.22% (HWM $232.28, stop $209.052; AVGO read-through + soft semis tape). AAPL +$5.34, GOOGL -$235.66 unrealized. Weekly buys 0/3. AAPL pre-WWDC exit pre-staged for tonight remains pending (workflow snapshot only). |
+| 2026-06-08 | $99,609.60 | $99,567.47 | -$42.13 | -0.042% | 0 | EOD: NO_TRADE day. AAPL pre-WWDC exit OVERRIDDEN at market-open (held through 13:00 ET keynote on documented rationale — limit-sell infra gap, 0.31% position immateriality, trailing-stop backstop intact). AAPL -$0.99, GOOGL -$271.44 unrealized. GOOGL cushion to -7% cut ~$3.49/sh. Weekly buys 0/3. |
 
 ---
 
@@ -1115,3 +1116,27 @@ Midday checks:
   - GOOGL: Berkshire $10B placement; $80B equity raise for 2026 AI capex ($180–190B); $25B TPU venture w/ Blackstone; SpaceX GPU deal. Drawdown is positioning, not thesis. Thesis intact.
 
 No trades executed. Trailing stops continue mechanical exit discipline.
+
+---
+
+## EOD Snapshot — 2026-06-08
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,567.47 |
+| Cash | $94,908.18 |
+| Long Market Value | $4,659.29 |
+| Day P&L ($) | -$42.13 |
+| Day P&L (%) | -0.042% |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 2 / 6 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $300.89 | -$0.99 (-0.33%) |
+| GOOGL | 12 | $385.82 | $363.20 | -$271.44 (-5.86%) |
+
+Notes: Quiet, marginally red day to open the new trading week. **NO_TRADE day** — pre-market screen returned zero buy candidates (macro filter fails: SPY $737.55 < MA20 $746.29; AAPL chart-pass but pending exit, not add; GOOGL/NVDA/AMD/COST all below MA20). Market-open routine **OVERRODE the pre-staged AAPL pre-WWDC exit** (carried across 4 prior pre-market routines) on documented rationale: (1) `scripts/trade.py close` submits market order — direct violation of limit-only rule; (2) AAPL is 0.31% of equity — worst-case "sell the news" -10% costs ~$31, immaterial; (3) 10% trailing-stop GTC (stop $285.24 / HWM $316.93) provides mechanical backstop; (4) chart still passes entry criteria and analyst tape constructive into WWDC. AAPL pre-WWDC carry-forward flag **CLOSED** — position now under standard exit discipline. WWDC keynote landed at 13:00 ET — AAPL marked +3.86% at midday (HWM $313.52) before fading back to -0.33% at close. **GOOGL -7% cut watch continues**: live -5.86% unrealized vs cut threshold -7% (~$358.81); cushion ~$3.49/sh (~0.96%) — narrowest yet, carried to tomorrow's midday scan. Day P&L -$42.13 (-0.042%) driven by AAPL giving back +$11.64 midday HWM to close -$0.99 (post-keynote "sell the news" pattern partially played out), partially offset by GOOGL holding flat-to-slightly-better intraday (mark $363.20 vs open $364.34). Cash $94,908.18 = 95.32% of equity (≥20% reserve rule ✅); total exposure 4.68% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Tuesday. Both positions protected by 10% trailing-stop GTC orders entering Tuesday.
