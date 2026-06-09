@@ -1,11 +1,11 @@
 {
-  "routine": "midday-scan",
-  "session": "exciting-bohr-25t3go",
-  "timestamp": "2026-06-08T16:33:26Z",
+  "routine": "pre-market",
+  "session": "gallant-lamport-9hxa4k",
+  "timestamp": "2026-06-09T07:05:00Z",
   "decision": "HOLD",
   "open_positions": 2,
-  "cash_pct": 95.3,
+  "cash_pct": 95.31,
   "trades_this_week": 0,
   "status": "OK",
-  "notes": "No -7% cuts (AAPL +3.86%, GOOGL -5.99%). No +15/+20% winners to tighten. Theses intact (AAPL: WWDC live, analyst tape bullish; GOOGL: Berkshire $10B + $80B AI capex raise). GOOGL cut-watch cushion ~1.01% — carried to EOD."
+  "notes": "NO_TRADE. SPY $739.22 < MA20 $746.37 (macro filter fails 4th session). AAPL post-WWDC sold off (-1.63% Mon; price now < MA20). GOOGL -5.53% with ~0.96% cushion to -7% cut — monitor midday. AMD only chart-passer but spread unusable + macro blocks. Zero watchlist passes."
 }
