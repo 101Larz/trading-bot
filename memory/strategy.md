@@ -10,24 +10,49 @@ This bot is a disciplined, trend-following momentum trader. We do not predict th
 
 ---
 
-## Primary Watchlist — Markov Screener (updated 2026-05-21)
+## Dynamic Screening Universe (50 stocks — re-screened every pre-market session)
 
-The following tickers passed all three Markov screener conditions on the full 80-ticker cross-asset screen:
-- **Bull stationary distribution > 50%** (long-run regime mix dominated by Bull)
-- **Walk-forward Sharpe > 0.3** (transition matrix signal adds value over 10-year backtest)
-- **Current regime = Bull** (most recent trading day confirmed in Bull regime)
+There is no fixed watchlist. Every pre-market session runs a live Markov + technical screen across 50 large-cap stocks and selects the top 3 candidates ranked by Sharpe. This ensures the bot always trades the best current opportunity rather than a stale list.
 
-| Ticker | Stat Bull% | Sharpe | Notes |
-|--------|-----------|--------|-------|
-| NVDA   | 59.4%     | +0.307 | Highest stat Bull in screen; 91.7% persistence |
-| AAPL   | 54.2%     | +0.692 | Strongest Sharpe of the five |
-| GOOGL  | 52.2%     | +0.347 | |
-| COST   | 51.5%     | +0.571 | Lowest Bear% (22.7%) — most asymmetric Bull bias |
-| AMD    | 51.0%     | +0.517 | |
+### Screening Universe
 
-These are the **primary candidates for entry** subject to the entry criteria below. Run the Markov regime check (Step 3B in pre-market routine) each session before acting on any of them. A ticker drops off the watchlist if its current regime shifts out of Bull.
+| Sector | Tickers |
+|--------|---------|
+| Technology | AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, INTC, CRM, ADBE, QCOM, TXN, NFLX |
+| Financials | JPM, V, MA, BAC, GS, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, MMC, AIG, MET, PYPL |
+| Healthcare | UNH, JNJ, ABBV, LLY, MRK, PFE |
+| Consumer | WMT, HD, PG, KO, PEP, COST, DIS |
+| Energy | XOM, CVX |
+| Industrials | HON, UPS, CAT, BA |
 
-Screener parameters: window=20 days, threshold=2%, 10-year history, stationary filter > 50%, Sharpe filter > 0.3, regime filter = Bull.
+### Screen Criteria (all four must pass)
+
+| Gate | Threshold | What it tests |
+|------|-----------|---------------|
+| Current regime | = Bull | Confirms the stock is in an uptrend regime right now |
+| Markov signal | > 0 | P(Bull\|current) > P(Bear\|current) — forward-looking bias is positive |
+| Stationary Bull% | ≥ 45% | Long-run regime mix favours Bull (structural, not just recent) |
+| Walk-forward Sharpe | > 0.30 | The Markov signal generated real alpha over a 10-year backtest |
+
+### Technical Entry Filter (applied after Markov screen)
+
+All Markov-qualified candidates are then checked against:
+- Price > MA20 **and** Price > MA50 (bullish alignment)
+- RSI-14 between 40 and 65 (momentum not overextended)
+- No earnings within the next 5 trading days
+
+### Output: Top 3 by Sharpe
+
+Candidates passing both screens are ranked by walk-forward Sharpe (descending). The top 3 are today's trade candidates. Step 6 of the pre-market routine performs deep research only on these three.
+
+### Last Screen Results
+
+The screener re-runs every session — check today's `memory/research/YYYY-MM-DD.md` for the current ranked candidates. The table below is a historical reference only.
+
+| Date | Rank 1 | Rank 2 | Rank 3 | Notes |
+|------|--------|--------|--------|-------|
+| 2026-05-21 | MSFT (Sharpe ~0.69 proxy) | GOOGL | — | Pre-dynamic-screen era; inferred from session logs |
+| 2026-05-26 | NVDA (RSI 62.5, Sharpe est.) | — | — | First session with NVDA post-earnings clear |
 
 ---
 
