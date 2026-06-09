@@ -1174,3 +1174,39 @@ No trades executed. Trailing stops continue mechanical exit discipline.
 | GOOGL | 12 | $385.82 | $363.20 | -$271.44 (-5.86%) |
 
 Notes: Quiet, marginally red day to open the new trading week. **NO_TRADE day** — pre-market screen returned zero buy candidates (macro filter fails: SPY $737.55 < MA20 $746.29; AAPL chart-pass but pending exit, not add; GOOGL/NVDA/AMD/COST all below MA20). Market-open routine **OVERRODE the pre-staged AAPL pre-WWDC exit** (carried across 4 prior pre-market routines) on documented rationale: (1) `scripts/trade.py close` submits market order — direct violation of limit-only rule; (2) AAPL is 0.31% of equity — worst-case "sell the news" -10% costs ~$31, immaterial; (3) 10% trailing-stop GTC (stop $285.24 / HWM $316.93) provides mechanical backstop; (4) chart still passes entry criteria and analyst tape constructive into WWDC. AAPL pre-WWDC carry-forward flag **CLOSED** — position now under standard exit discipline. WWDC keynote landed at 13:00 ET — AAPL marked +3.86% at midday (HWM $313.52) before fading back to -0.33% at close. **GOOGL -7% cut watch continues**: live -5.86% unrealized vs cut threshold -7% (~$358.81); cushion ~$3.49/sh (~0.96%) — narrowest yet, carried to tomorrow's midday scan. Day P&L -$42.13 (-0.042%) driven by AAPL giving back +$11.64 midday HWM to close -$0.99 (post-keynote "sell the news" pattern partially played out), partially offset by GOOGL holding flat-to-slightly-better intraday (mark $363.20 vs open $364.34). Cash $94,908.18 = 95.32% of equity (≥20% reserve rule ✅); total exposure 4.68% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Tuesday. Both positions protected by 10% trailing-stop GTC orders entering Tuesday.
+
+---
+
+## Midday Scan — 2026-06-09 (Tuesday — session: exciting-bohr-fm8nrl)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (12:30 ET) |
+| Cash | $94,908.18 |
+| Equity | $99,536.08 |
+| Long Market Value | $4,627.90 |
+| Open Positions | 2 / 10 (AAPL 1 sh, GOOGL 12 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $289.78 | -$12.11 (-4.01%) |
+| GOOGL | 12 | $385.82 | $361.48 | -$292.08 (-6.31%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL -4.01% ✅, GOOGL -6.31% ✅ — neither breaches the -7% cut threshold. GOOGL cushion to cut ≈ $0.66/sh (~0.69%) — tightest yet, **carried to EOD with high-priority watch**.
+- **Stop-tighten**: no position at +15% or +20% — no action. 10% trailing-stop GTC orders remain in force.
+- **Thesis check (web news, 48h)**:
+  - **AAPL**: WWDC 2026 post-event fade — Siri AI revealed (Google Gemini-powered, dedicated app) but rollout deferred to late 2026/2027. Stock -3.7% off intraday high. Wedbush reiterated **Outperform, $400 PT** post-keynote. P/E 36. **Thesis intact** — mechanical "sell the news" reaction, not fundamental break.
+  - **GOOGL**: $80B AI equity raise closed (incl. Berkshire $10B PP); 2026 capex guide lifted to $180–190B for AI infra; Waymo expansion + TPU order flow; **56 buy / 0 sell, Strong Buy** consensus. Weakness reflects capex-shock / dilution drag, not a thesis break. **Thesis intact**.
+
+Decision rationale:
+- Neither position breaches the mechanical -7% cut threshold per midday-scan rule. GOOGL is **tight** (-6.31%, cushion ~0.69%) but the cut-loser rule is a hard "≥ -7%" trigger — not approached-and-cut. Discipline = wait for the trigger.
+- No thesis broken on either name → no preemptive exit.
+- No winners at +15% or +20% → no stop tightening required.
+- Trailing-stop GTC orders continue mechanical exit discipline on both names.
+
+Risk posture: cash 95.35% of equity (≥20% reserve ✅), exposure 4.65% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Wed CPI. **GOOGL -7% cut watch escalated to EOD**: trigger price ≈ $358.81; current mark $361.48; intraday low risk on a soft afternoon. EOD must re-evaluate live.
+
+Trades executed: **none.**
