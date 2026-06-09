@@ -205,35 +205,81 @@ def parse_research_log() -> list[dict]:
         return []
 
     def _parse_text(text: str) -> list[dict]:
+        """
+        Handle two header formats written by different routine versions:
+
+        OLD FORMAT (multi-session files):
+          # Research Log — 2026-05-20          ← file header, ignored
+          ## 2026-05-20 (Wed) — Pre-Market     ← H2 = session header
+          ### Account Snapshot                  ← H3 = section header
+
+        NEW FORMAT (single-session files written by newer routines):
+          # 2026-06-09 (Tue) — Pre-Market …    ← H1 with date = session header
+          ## Account Snapshot                   ← H2 = section header
+          ### Sub-section                       ← H3 = body (folded into section)
+        """
+        _DATE = re.compile(r"(\d{4}-\d{2}-\d{2})(?:\s+\([^)]+\))?\s*[—–-]\s*(.+)")
+
         sessions: list[dict] = []
         current: dict | None = None
 
         for line in text.splitlines():
-            # Match session headers like:
-            #   ## 2026-05-18 (Monday) — Pre-Market
-            #   ## 2026-05-20 (Wednesday) — Market-Open (session: sweet-shannon)
-            m = re.match(r"^## (\d{4}-\d{2}-\d{2})(?:\s+\([^)]+\))?\s*[—–-]\s*(.+)", line)
-            if m:
-                if current:
-                    sessions.append(current)
-                current = {
-                    "date":     m.group(1),
-                    "title":    m.group(2).strip(),
-                    "sections": [],
-                    "_cur_sec": None,
-                }
+
+            # ── NEW FORMAT: H1 line containing a date (e.g. "# 2026-06-09 … — …")
+            if line.startswith("# ") and not line.startswith("## "):
+                m = _DATE.match(line[2:].strip())
+                if m:
+                    if current:
+                        sessions.append(current)
+                    current = {
+                        "date":     m.group(1),
+                        "title":    m.group(2).strip(),
+                        "sections": [],
+                        "_cur_sec": None,
+                        "_h2_is_section": True,   # H2 → section, H3 → body
+                    }
+                    continue
+                # H1 without a date = file-level title → skip
                 continue
+
+            # ── OLD FORMAT: H2 session header (e.g. "## 2026-05-18 … — …")
+            if line.startswith("## ") and not (current and current.get("_h2_is_section")):
+                m = _DATE.match(line[3:].strip())
+                if m:
+                    if current:
+                        sessions.append(current)
+                    current = {
+                        "date":     m.group(1),
+                        "title":    m.group(2).strip(),
+                        "sections": [],
+                        "_cur_sec": None,
+                        "_h2_is_section": False,  # H3 → section
+                    }
+                    continue
 
             if current is None:
                 continue
 
-            if line.startswith("### "):
-                heading = line.lstrip("# ").strip()
+            h2_is_sec = current.get("_h2_is_section", False)
+
+            # ── Section header
+            if h2_is_sec and line.startswith("## "):
+                # New format: H2 opens a section
+                heading = line[3:].strip()
                 sec: dict = {"heading": heading, "lines": []}
                 current["sections"].append(sec)
                 current["_cur_sec"] = sec
                 continue
 
+            if (not h2_is_sec) and line.startswith("### "):
+                # Old format: H3 opens a section
+                heading = line.lstrip("# ").strip()
+                sec = {"heading": heading, "lines": []}
+                current["sections"].append(sec)
+                current["_cur_sec"] = sec
+                continue
+
+            # ── Body: accumulate into current section (both formats)
             if current["_cur_sec"] is not None:
                 current["_cur_sec"]["lines"].append(line)
 
@@ -242,6 +288,7 @@ def parse_research_log() -> list[dict]:
 
         for s in sessions:
             s.pop("_cur_sec", None)
+            s.pop("_h2_is_section", None)
             for sec in s["sections"]:
                 sec["body"] = "\n".join(sec["lines"]).strip()
                 del sec["lines"]
