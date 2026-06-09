@@ -1,11 +1,11 @@
 {
-  "routine": "market-open",
-  "session": "sweet-shannon-obv5jg",
-  "timestamp": "2026-06-09T13:46:00Z",
-  "decision": "NO_TRADE",
+  "routine": "midday-scan",
+  "session": "exciting-bohr-fm8nrl",
+  "timestamp": "2026-06-09T16:32:50Z",
+  "decision": "HOLD",
   "open_positions": 2,
-  "cash_pct": 95.24,
+  "cash_pct": 95.35,
   "trades_this_week": 0,
   "status": "OK",
-  "notes": "NO_TRADE. Pre-market HOLD held — macro filter fails (SPY < MA20, 4th session), zero watchlist passes. AAPL -1.56%, GOOGL -4.05% (cushion widened from pre-market -5.53%). Defer GOOGL cut watch to midday."
+  "notes": "HOLD. AAPL -4.01%, GOOGL -6.31% — neither at -7% cut. No +15/+20% winners to tighten. AAPL/GOOGL theses intact (WWDC sell-the-news, GOOGL $80B raise dilution). GOOGL cushion to cut ~$0.66/sh — escalated to EOD watch."
 }
