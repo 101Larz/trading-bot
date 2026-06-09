@@ -1210,3 +1210,27 @@ Decision rationale:
 Risk posture: cash 95.35% of equity (≥20% reserve ✅), exposure 4.65% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Wed CPI. **GOOGL -7% cut watch escalated to EOD**: trigger price ≈ $358.81; current mark $361.48; intraday low risk on a soft afternoon. EOD must re-evaluate live.
 
 Trades executed: **none.**
+
+---
+
+## EOD Snapshot — 2026-06-09
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,570.94 |
+| Cash | $94,908.18 |
+| Long Market Value | $4,662.76 |
+| Day P&L ($) | +$3.47 |
+| Day P&L (%) | +0.0035% |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 2 / 6 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $291.04 | -$10.84 (-3.59%) |
+| GOOGL | 12 | $385.82 | $364.31 | -$258.12 (-5.58%) |
+
+Notes: Quiet, essentially flat day. **NO_TRADE day** — pre-market screen returned zero buy candidates (macro filter fails: SPY $739.22 < MA20 $746.37, 4th straight session; AAPL/GOOGL/NVDA/COST all below MA20; AMD only chart-passer but bar-based spread unusable + macro filter blocks). Market-open confirmed NO_TRADE on live re-validation. Midday scan held: GOOGL -6.31% intraday cushion ~0.69% (tightest yet) escalated to EOD watch. **GOOGL -7% cut watch resolution**: live -5.58% at close (improved from midday -6.31%) vs cut threshold ~$358.81; cushion ~$4.50/sh (~1.24%) — widened into close, no mechanical cut triggered. AAPL faded from morning -0.13% to -3.59% on continuing post-WWDC drag (Siri AI rollout deferred to late 2026/2027); position 0.29% of equity — immaterial. Day P&L +$3.47 (+0.0035%) — AAPL marked down ~$10 offset by GOOGL recovering ~$13 vs yesterday's close. Cash $94,908.18 = 95.32% of equity (≥20% reserve rule ✅); total exposure 4.68% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Wed CPI / Thu PPI / Fri sentiment. Both positions protected by 10% trailing-stop GTC orders entering Wednesday's CPI print.
