@@ -1,11 +1,11 @@
 {
-  "routine": "pre-market",
-  "session": "gallant-lamport-uxb6kv",
-  "timestamp": "2026-06-10T07:05:00Z",
-  "decision": "HOLD",
+  "routine": "market-open",
+  "session": "sweet-shannon-lf81nx",
+  "timestamp": "2026-06-10T13:48:00Z",
+  "decision": "NO_TRADE",
   "open_positions": 2,
-  "cash_pct": 95.35,
+  "cash_pct": 95.32,
   "trades_this_week": 0,
   "status": "OK",
-  "notes": "HOLD into May CPI (08:30 ET). AAPL -3.75%, GOOGL -6.34% (cushion to -7% cut ~$2.56/sh, 0.7%). Pre-market yfinance MA/RSI = NaN; defer all entry verification to market-open live snapshot. No new buy authorized pre-CPI. Market-open priorities: (1) verify SPY > MA20 post-CPI, (2) GOOGL -7% cut check, (3) NVDA/AMD live re-validation."
+  "notes": "NO_TRADE — SPY $735.72 < MA20 $746.26 post-CPI; macro filter fails universally. NVDA/AMD also < MA20. GOOGL -5.51% (cushion to -7% cut $5.74/sh, widened from pre-market). AAPL -4.15%. Trailing-stops active on both. Weekly budget 0/3."
 }
