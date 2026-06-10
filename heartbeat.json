@@ -1,11 +1,11 @@
 {
-  "routine": "midday-scan",
-  "session": "exciting-bohr-fm8nrl",
-  "timestamp": "2026-06-09T16:32:50Z",
+  "routine": "pre-market",
+  "session": "gallant-lamport-uxb6kv",
+  "timestamp": "2026-06-10T07:05:00Z",
   "decision": "HOLD",
   "open_positions": 2,
   "cash_pct": 95.35,
   "trades_this_week": 0,
   "status": "OK",
-  "notes": "HOLD. AAPL -4.01%, GOOGL -6.31% — neither at -7% cut. No +15/+20% winners to tighten. AAPL/GOOGL theses intact (WWDC sell-the-news, GOOGL $80B raise dilution). GOOGL cushion to cut ~$0.66/sh — escalated to EOD watch."
+  "notes": "HOLD into May CPI (08:30 ET). AAPL -3.75%, GOOGL -6.34% (cushion to -7% cut ~$2.56/sh, 0.7%). Pre-market yfinance MA/RSI = NaN; defer all entry verification to market-open live snapshot. No new buy authorized pre-CPI. Market-open priorities: (1) verify SPY > MA20 post-CPI, (2) GOOGL -7% cut check, (3) NVDA/AMD live re-validation."
 }
