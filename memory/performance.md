@@ -45,6 +45,8 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-04 | $99,666.86 | $99,875.87 | +$209.01 | +0.210% | 0 | EOD: NO_TRADE day (NVDA add blocked — price $213.68 < MA20 $218.88 and at 4.93% cap; AMD blocked — RSI 74.14 > 65, spread 2.73% > 0.5%; AAPL add blocked — pre-WWDC exit pre-staged). GOOGL -7% cut watch resolved favorably (-6.90% → -3.79%). AAPL +$9.22, GOOGL -$175.44, NVDA +$42.09 unrealized. |
 | 2026-06-05 | $99,875.87 | $99,609.60 | -$266.27 | -0.267% | 1 | EOD: NVDA trailing-stop fired 11:20 ET — 23 sh sold @ $209.04, realized -$160.08 / -3.22% (HWM $232.28, stop $209.052; AVGO read-through + soft semis tape). AAPL +$5.34, GOOGL -$235.66 unrealized. Weekly buys 0/3. AAPL pre-WWDC exit pre-staged for tonight remains pending (workflow snapshot only). |
 | 2026-06-08 | $99,609.60 | $99,567.47 | -$42.13 | -0.042% | 0 | EOD: NO_TRADE day. AAPL pre-WWDC exit OVERRIDDEN at market-open (held through 13:00 ET keynote on documented rationale — limit-sell infra gap, 0.31% position immateriality, trailing-stop backstop intact). AAPL -$0.99, GOOGL -$271.44 unrealized. GOOGL cushion to -7% cut ~$3.49/sh. Weekly buys 0/3. |
+| 2026-06-09 | $99,567.47 | $99,570.94 | +$3.47 | +0.0035% | 0 | EOD: NO_TRADE day (pre-market zero passes; macro filter SPY < MA20 4th straight session). AAPL -$10.84, GOOGL -$258.12 unrealized. GOOGL -7% cushion ~$4.50/sh into Wed CPI. Weekly buys 0/3. |
+| 2026-06-10 | $99,570.94 | $99,499.18 | -$71.76 | -0.072% | 1 | EOD: GOOGL CUT at midday (12 sh @ $358.25, realized -$330.84 / -7.15% — workflow cut-loser rule fired at -7.16%). Post-CPI tape risk-off; SPY < MA20. AAPL 1 sh -$9.88 unrealized; trailing-stop GTC active. Cash 99.71% of equity. Weekly buys 0/3 (sell does not consume buy budget). |
 
 ---
 
@@ -1312,3 +1314,26 @@ Realized P&L on GOOGL exit:
 - Hold: 19 calendar days (2026-05-22 → 2026-06-10)
 
 Post-exit risk posture: cash 99.71% of equity (≥20% reserve ✅), exposure 0.29% (AAPL 1 sh only). AAPL 10% trailing-stop GTC (order 5851cbb5, stop $285.66 / HWM $317.40) remains active. Daily-loss limit (3%) not approached — realized -0.33% of equity from the GOOGL cut. Weekly trade counter still 0/3 buys (sell does not consume buy budget).
+
+---
+
+## EOD Snapshot — 2026-06-10
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,499.18 |
+| Cash | $99,207.18 |
+| Long Market Value | $292.00 |
+| Day P&L ($) | -$71.76 |
+| Day P&L (%) | -0.072% |
+| Trades Today | 1 (GOOGL SELL) |
+| Trades This Week | 0 buys / 1 sell |
+| Open Positions | 1 / 6 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $292.00 | -$9.88 (-3.27%) |
+
+Notes: **GOOGL cut at midday — realized -$330.84 (-7.15%)** on 12 sh sold @ $358.25 after the cut-loser rule fired at -7.16% unrealized. Hold was 19 calendar days (2026-05-22 → 2026-06-10). Post-CPI tape stayed risk-off — SPY $735.72 < MA20 $746.26, the macro filter blocked all add-longs at market-open. Day P&L -$71.76 (-0.072%) — realized -$330.84 on GOOGL offset by GOOGL mark-up between yesterday's close (-$258.12) and midday exit (-$331.56) limiting incremental session damage, plus AAPL marking slightly higher into the close (-$10.84 → -$9.88). Cash $99,207.18 = 99.71% of equity (≥20% reserve rule ✅); total exposure 0.29% (AAPL 1 sh only). Daily-loss limit (3%) not approached — total session impact -0.072% well inside the 3% halt. AAPL trailing-stop GTC remains the sole mechanical exit (stop $285.66 / HWM $317.40). Weekly trade counter 0 buys / 1 sell — full 3-buy budget preserved into Thu PPI / Fri sentiment.
