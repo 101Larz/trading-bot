@@ -1,11 +1,11 @@
 {
-  "routine": "market-open",
-  "session": "sweet-shannon-lf81nx",
-  "timestamp": "2026-06-10T13:48:00Z",
-  "decision": "NO_TRADE",
-  "open_positions": 2,
-  "cash_pct": 95.32,
+  "routine": "midday-scan",
+  "session": "midday-cut-googl",
+  "timestamp": "2026-06-10T16:34:30Z",
+  "decision": "CUT_LOSER_GOOGL",
+  "open_positions": 1,
+  "cash_pct": 99.71,
   "trades_this_week": 0,
   "status": "OK",
-  "notes": "NO_TRADE — SPY $735.72 < MA20 $746.26 post-CPI; macro filter fails universally. NVDA/AMD also < MA20. GOOGL -5.51% (cushion to -7% cut $5.74/sh, widened from pre-market). AAPL -4.15%. Trailing-stops active on both. Weekly budget 0/3."
+  "notes": "GOOGL -7.16% triggered -7% cut rule — sold 12 sh @ $358.25 (limit $357.29 below bid $358.19). Realized -$330.84 (-7.15%). Cancelled trailing-stop GTC before exit. AAPL 1 sh -3.36% held; trailing-stop active. Equity $99,499.34, cash $99,207.18."
 }
