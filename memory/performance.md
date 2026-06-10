@@ -1272,3 +1272,43 @@ Trades executed: **none.**
 | GOOGL | 12 | $385.82 | $364.31 | -$258.12 (-5.58%) |
 
 Notes: Quiet, essentially flat day. **NO_TRADE day** — pre-market screen returned zero buy candidates (macro filter fails: SPY $739.22 < MA20 $746.37, 4th straight session; AAPL/GOOGL/NVDA/COST all below MA20; AMD only chart-passer but bar-based spread unusable + macro filter blocks). Market-open confirmed NO_TRADE on live re-validation. Midday scan held: GOOGL -6.31% intraday cushion ~0.69% (tightest yet) escalated to EOD watch. **GOOGL -7% cut watch resolution**: live -5.58% at close (improved from midday -6.31%) vs cut threshold ~$358.81; cushion ~$4.50/sh (~1.24%) — widened into close, no mechanical cut triggered. AAPL faded from morning -0.13% to -3.59% on continuing post-WWDC drag (Siri AI rollout deferred to late 2026/2027); position 0.29% of equity — immaterial. Day P&L +$3.47 (+0.0035%) — AAPL marked down ~$10 offset by GOOGL recovering ~$13 vs yesterday's close. Cash $94,908.18 = 95.32% of equity (≥20% reserve rule ✅); total exposure 4.68% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget into Wed CPI / Thu PPI / Fri sentiment. Both positions protected by 10% trailing-stop GTC orders entering Wednesday's CPI print.
+
+---
+
+## Midday Scan — 2026-06-10 (Wednesday — session: cut-loser GOOGL)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (~12:34 ET) |
+| Cash (pre-exit) | $94,908.18 |
+| Cash (post-exit) | $99,207.18 |
+| Equity | $99,499.34 |
+| Long Market Value | $292.16 |
+| Open Positions | 2 → 1 / 6 (AAPL 1 sh) |
+| Decision | **CUT LOSER — GOOGL SOLD** |
+
+Position snapshot at scan (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $291.75 | -$10.13 (-3.36%) |
+| GOOGL | 12 | $385.82 | $358.19 | -$331.56 (-7.16%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: GOOGL **-7.16%** triggers the workflow's cut rule — sold. AAPL -3.36%, no cut.
+- **Stop-tighten**: no position at +15% / +20% — none to tighten.
+- **Thesis check**: GOOGL exit on mechanical risk rule; no further thesis review needed.
+
+Exit executed:
+| Symbol | Side | Qty | Bid | Limit | Fill Price | Order ID |
+|--------|------|-----|-----|-------|-----------|----------|
+| GOOGL | SELL | 12 | $358.19 | $357.29 | **$358.25** | 87d37913-e7ad-41da-9997-2c791db8782b |
+
+Cancelled GOOGL 10% trailing-stop GTC (order a7fadae9, stop $354.49 / HWM $393.88) prior to placing the limit sell to prevent duplicate fill.
+
+Realized P&L on GOOGL exit:
+- Entry: 12 sh × $385.82 = $4,629.84
+- Exit: 12 sh × $358.25 = $4,299.00
+- **Realized: -$330.84 (-7.15%)**
+- Hold: 19 calendar days (2026-05-22 → 2026-06-10)
+
+Post-exit risk posture: cash 99.71% of equity (≥20% reserve ✅), exposure 0.29% (AAPL 1 sh only). AAPL 10% trailing-stop GTC (order 5851cbb5, stop $285.66 / HWM $317.40) remains active. Daily-loss limit (3%) not approached — realized -0.33% of equity from the GOOGL cut. Weekly trade counter still 0/3 buys (sell does not consume buy budget).
