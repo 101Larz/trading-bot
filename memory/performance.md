@@ -1337,3 +1337,26 @@ Post-exit risk posture: cash 99.71% of equity (≥20% reserve ✅), exposure 0.2
 | AAPL | 1 | $301.88 | $292.00 | -$9.88 (-3.27%) |
 
 Notes: **GOOGL cut at midday — realized -$330.84 (-7.15%)** on 12 sh sold @ $358.25 after the cut-loser rule fired at -7.16% unrealized. Hold was 19 calendar days (2026-05-22 → 2026-06-10). Post-CPI tape stayed risk-off — SPY $735.72 < MA20 $746.26, the macro filter blocked all add-longs at market-open. Day P&L -$71.76 (-0.072%) — realized -$330.84 on GOOGL offset by GOOGL mark-up between yesterday's close (-$258.12) and midday exit (-$331.56) limiting incremental session damage, plus AAPL marking slightly higher into the close (-$10.84 → -$9.88). Cash $99,207.18 = 99.71% of equity (≥20% reserve rule ✅); total exposure 0.29% (AAPL 1 sh only). Daily-loss limit (3%) not approached — total session impact -0.072% well inside the 3% halt. AAPL trailing-stop GTC remains the sole mechanical exit (stop $285.66 / HWM $317.40). Weekly trade counter 0 buys / 1 sell — full 3-buy budget preserved into Thu PPI / Fri sentiment.
+
+---
+
+## Midday Scan — 2026-06-11 (Thursday — session: exciting-bohr-ynysti)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Trades This Week | 1 / 3 |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $296.635 | -$5.245 (-1.74%) |
+
+Midday checks:
+- **Cut-loser (-7%)**: AAPL -1.74% — no action. Pre-market $276 illiquid print did not hold into regular hours; trailing-stop $285.66 did not fire.
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%) gain. 10% trailing-stop GTC remains in force.
+- **Thesis check (48h)**: AAPL post-WWDC "AI underwhelm" already priced in (6/8 -3-4% repricing absorbed). Morgan Stanley/BofA still constructive. Thesis weakened but not broken — trailing-stop GTC is the exit discipline.
+
+No trades executed. Trailing stop continues mechanical exit discipline.
