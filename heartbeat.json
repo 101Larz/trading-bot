@@ -1,11 +1,11 @@
 {
-  "routine": "midday-scan",
-  "session": "midday-cut-googl",
-  "timestamp": "2026-06-10T16:34:30Z",
-  "decision": "CUT_LOSER_GOOGL",
+  "routine": "pre-market-research",
+  "session": "gallant-lamport-bwf2py",
+  "timestamp": "2026-06-11T07:10:00Z",
+  "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.71,
-  "trades_this_week": 0,
+  "trades_this_week": 1,
   "status": "OK",
-  "notes": "GOOGL -7.16% triggered -7% cut rule — sold 12 sh @ $358.25 (limit $357.29 below bid $358.19). Realized -$330.84 (-7.15%). Cancelled trailing-stop GTC before exit. AAPL 1 sh -3.36% held; trailing-stop active. Equity $99,499.34, cash $99,207.18."
+  "notes": "Pre-market HOLD. Macro filter SPY $723.68 < MA20 ~$746 (6th session post-CPI). AAPL 1 sh at trailing-stop edge (yfinance pre-market print $276 < stop $285.66 — may fire at open). Zero candidates. PPI + ECB + ADBE earnings today. Weekly buys 1/3 (GOOGL cut)."
 }
