@@ -1,11 +1,11 @@
 {
-  "routine": "midday-scan",
+  "routine": "end-of-day",
   "session": "sweet-shannon-7gclam",
-  "timestamp": "2026-06-12T16:30:00Z",
+  "timestamp": "2026-06-12T20:15:00Z",
   "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.71,
   "trades_this_week": 1,
   "status": "OK",
-  "notes": "Midday HOLD. AAPL 1 sh -3.47% (mark $291.40) above -7% cut; trailing-stop $285.66 / HWM $317.40 / 1.97% cushion. Thesis intact (analyst Buy, PT $312.48). No winners to tighten. Macro filter still fails (SPY < MA20 8th session)."
+  "notes": "EOD 2026-06-12: PV $99,498.75, cash $99,207.16, day P&L -$4.21 (-0.0042%). 0 trades today. Week closes: 0 buys / 1 sell (GOOGL cut 6/10). AAPL 1 sh -$10.29 (-3.41%); trailing-stop $285.66 GTC active, $5.97 cushion (2.05%). Macro: SPY < MA20 8th session; AMD pre-staged for next SPY > MA20 reclaim."
 }
