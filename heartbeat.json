@@ -1,11 +1,11 @@
 {
-  "routine": "pre-market-research",
-  "session": "gallant-lamport-qsv9q5",
-  "timestamp": "2026-06-12T07:10:00Z",
-  "decision": "HOLD",
+  "routine": "market-open-execution",
+  "session": "sweet-shannon-7gclam",
+  "timestamp": "2026-06-12T13:46:00Z",
+  "decision": "NO_TRADE",
   "open_positions": 1,
   "cash_pct": 99.71,
   "trades_this_week": 1,
   "status": "OK",
-  "notes": "Pre-market HOLD. SPY $737.76 < MA20 $745.40 — macro filter fails 7th straight session post-CPI. Only chart-passer AMD (RSI 56, above MA stack) blocked by macro. AAPL 1 sh -2.08% under trailing-stop $285.66 / HWM $317.40 (3.4% cushion). Weekly buys 1/3."
+  "notes": "Market-open NO_TRADE. SPY $736.13 < MA20 $745.40 (8th session) — macro filter still fails post-CPI relief bounce. AMD gates all pass live (price > MAs, RSI 56, spread 0.43%) but blocked by macro per pre-market conditional. AAPL 1 sh -3.30% under trailing-stop $285.66 / HWM $317.40 (2.14% cushion). Weekly buys 1/3."
 }

@@ -1384,3 +1384,39 @@ No trades executed. Trailing stop continues mechanical exit discipline.
 | AAPL | 1 | $301.88 | $295.80 | -$6.08 (-2.01%) |
 
 Notes: **NO_TRADE day.** Quiet, essentially flat session — Day P&L +$3.78 (+0.0038%) driven by AAPL marking slightly higher from yesterday's close ($292.00 → $295.80, +$3.80). Midday scan held: AAPL -1.74% well above the -7% cut threshold; no position at +15/+20% gain to tighten; thesis weakened post-WWDC but trailing-stop is the exit discipline. Pre-market $276 illiquid print did not hold into regular hours — AAPL trailing-stop $285.66 did not fire. Cash $99,207.16 = 99.71% of equity (≥20% reserve rule ✅); total exposure 0.29% (AAPL 1 sh only). Daily-loss limit (3%) not approached. Weekly trade counter 0 buys / 1 sell (6/10 GOOGL cut) — full 3-buy budget preserved into Friday sentiment. AAPL 10% trailing-stop GTC (stop $285.66 / HWM $317.40) remains the sole mechanical exit.
+
+---
+
+## Market-Open Log — 2026-06-12 (Friday — session: sweet-shannon-7gclam)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $99,207.16 |
+| Equity | $99,499.15 |
+| Long Market Value | $291.99 |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Trades This Week | 1 / 3 (GOOGL cut on 2026-06-10) |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (1/3 — sell-only consumes counter)
+- Max 20% equity per position ✅ (AAPL 0.29%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD; zero actionable ideas (only chart-passer AMD blocked by macro filter)
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $291.91 | -$9.97 (-3.30%) |
+
+Entry-criteria re-validation (live, 60-bar snapshot):
+- **Macro (SPY)**: live last $736.13 < MA20 $745.40 → criterion #4 **FAILS** 8th straight session. Yesterday's relief rally did not produce a sustained reclaim.
+- **AMD** (pre-market conditional pre-authorization): live ask $505.58 > MA20 $478.88 & MA50 $380.75 ✅; RSI-14 56.48 in band ✅; spread $2.19 / 0.43% < 0.5% ✅. All ticker-level gates pass. **BLOCKED** — macro filter not met (pre-market required SPY > MA20 simultaneously with all three AMD gates; SPY still sub-MA20).
+- **AAPL add**: BLOCKED — bar current $295.63 < MA20 $304.24; macro also fails.
+- **GOOGL re-entry**: BLOCKED — live $357.77 < MA20 $378.31; RSI 30 oversold; macro fails.
+
+Trades executed: **none.**
+
+Risk posture: cash 99.71% of equity (≥20% reserve ✅), exposure 0.29% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 1/3 (sell-only) — 2 buy slots preserved into Friday close awaiting SPY > MA20 reclaim. **AAPL position**: -3.30% unrealized, trailing-stop GTC at $285.66 / HWM $317.40 — cushion ~$6.25/sh (2.14%); EOD will re-evaluate cut-loser status if drawdown deepens. SpaceX IPO debut is a liquidity event with no direct watchlist read-through.
+
