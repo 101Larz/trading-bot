@@ -1,11 +1,11 @@
 {
-  "routine": "midday-scan",
-  "session": "exciting-bohr-ynysti",
-  "timestamp": "2026-06-11T17:44:41Z",
+  "routine": "pre-market-research",
+  "session": "gallant-lamport-qsv9q5",
+  "timestamp": "2026-06-12T07:10:00Z",
   "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.71,
   "trades_this_week": 1,
   "status": "OK",
-  "notes": "Midday HOLD. AAPL -1.74% (no cut, no stop-tighten). Pre-market $276 illiquid print did not hold; trailing-stop $285.66 did not fire. Thesis post-WWDC weakened but intact; trailing-stop GTC is the exit discipline."
+  "notes": "Pre-market HOLD. SPY $737.76 < MA20 $745.40 — macro filter fails 7th straight session post-CPI. Only chart-passer AMD (RSI 56, above MA stack) blocked by macro. AAPL 1 sh -2.08% under trailing-stop $285.66 / HWM $317.40 (3.4% cushion). Weekly buys 1/3."
 }
