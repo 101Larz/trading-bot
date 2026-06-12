@@ -48,6 +48,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-09 | $99,567.47 | $99,570.94 | +$3.47 | +0.0035% | 0 | EOD: NO_TRADE day (pre-market zero passes; macro filter SPY < MA20 4th straight session). AAPL -$10.84, GOOGL -$258.12 unrealized. GOOGL -7% cushion ~$4.50/sh into Wed CPI. Weekly buys 0/3. |
 | 2026-06-10 | $99,570.94 | $99,499.18 | -$71.76 | -0.072% | 1 | EOD: GOOGL CUT at midday (12 sh @ $358.25, realized -$330.84 / -7.15% — workflow cut-loser rule fired at -7.16%). Post-CPI tape risk-off; SPY < MA20. AAPL 1 sh -$9.88 unrealized; trailing-stop GTC active. Cash 99.71% of equity. Weekly buys 0/3 (sell does not consume buy budget). |
 | 2026-06-11 | $99,499.18 | $99,502.96 | +$3.78 | +0.0038% | 0 | EOD: NO_TRADE day. Midday HOLD (AAPL -1.74%, no cut). AAPL 1 sh -$6.08 unrealized; trailing-stop $285.66 GTC active. Cash 99.71% of equity. Weekly buys 0/3 (1 sell on 6/10). |
+| 2026-06-12 | $99,502.96 | $99,498.75 | -$4.21 | -0.0042% | 0 | EOD: NO_TRADE day. Midday HOLD (AAPL -3.47%, no cut). AAPL 1 sh -$10.29 unrealized; trailing-stop $285.66 GTC active. Cash 99.71% of equity. Week closes: 0 buys / 1 sell (6/10 GOOGL cut). |
 
 ---
 
@@ -1442,4 +1443,27 @@ Midday checks:
 - **Thesis check (AAPL web news)**: Analyst tape constructive — average "Buy", 12-mo PT $312.48 (+7.42% upside). Post-WWDC dip digested; stock stable $290–$297 range. **Thesis intact.**
 
 No trades executed. AAPL trailing-stop cushion $5.74/sh (1.97%) — narrower than market-open (2.14%) on the small intraday slip from $291.91 → $291.40. EOD routine retains cut-loser monitoring.
+
+---
+
+## EOD Snapshot — 2026-06-12
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,498.75 |
+| Cash | $99,207.16 |
+| Long Market Value | $291.59 |
+| Day P&L ($) | -$4.21 |
+| Day P&L (%) | -0.0042% |
+| Trades Today | 0 |
+| Trades This Week | 1 (GOOGL cut on 2026-06-10) |
+| Open Positions | 1 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $291.59 | -$10.29 (-3.41%) |
+
+Notes: **NO_TRADE day; week closes.** Flat-to-slightly-red session — Day P&L -$4.21 (-0.0042%) driven entirely by AAPL marking down $0.32 vs Thursday's close ($291.91 → $291.59 intraday slip, then a touch lower into the bell). Pre-market HOLD (zero actionable ideas — only chart-passer AMD blocked by macro filter SPY < MA20 for 8th straight session). Market-open NO_TRADE (AMD all ticker gates passed but macro still failed; AAPL/GOOGL adds blocked by sub-MA20). Midday HOLD (AAPL -3.47% well above -7% cut; thesis intact, analyst Buy, PT $312.48). AAPL closed -3.41% unrealized — no -7% breach. Cash $99,207.16 = 99.71% of equity (≥20% reserve ✅); total exposure 0.29%. Daily-loss limit (3%) not approached. **Week summary:** 0 buys / 1 sell (GOOGL cut on 6/10 at -7.15%); weekly trade counter 1/3. AAPL 10% trailing-stop GTC (stop $285.66 / HWM $317.40) — $5.97/sh cushion (2.05%) into the weekend, sole mechanical exit. Macro posture going into Mon 6/15: SPY 8 sessions sub-MA20, Fed blackout through next week's FOMC, hot PPI digested but rate-uncertainty elevated. AMD remains pre-staged as front-runner pending sustained SPY > MA20 reclaim.
 
