@@ -64,14 +64,14 @@ These rules are **hardcoded**. No trade may bypass them.
 
 | Rule | Limit |
 |------|-------|
-| Max single-position size | 5% of portfolio value |
+| Max single-position size | 8% of portfolio value |
 | Max total exposure | 80% of portfolio value (keep ≥20% cash) |
 | Stop-loss per position | 8% below entry |
 | Daily loss limit | 3% of portfolio value — halt all trading if breached |
 | Order type | Limit orders only (within 0.25% of ask for buys) |
 | Market hours | 9:30 AM – 4:00 PM ET weekdays only |
 | Minimum confidence | Do not trade on LOW confidence signals |
-| Max concurrent positions | 10 |
+| Max concurrent positions | 8 |
 
 ---
 

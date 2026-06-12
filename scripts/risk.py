@@ -10,11 +10,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MAX_POSITION_PCT = float(os.getenv("MAX_POSITION_PCT", "0.05"))
+MAX_POSITION_PCT = float(os.getenv("MAX_POSITION_PCT", "0.08"))
 CASH_RESERVE_PCT = float(os.getenv("CASH_RESERVE_PCT", "0.20"))
 STOP_LOSS_PCT = float(os.getenv("STOP_LOSS_PCT", "0.08"))
 DAILY_LOSS_LIMIT_PCT = float(os.getenv("DAILY_LOSS_LIMIT_PCT", "0.03"))
-MAX_POSITIONS = int(os.getenv("MAX_POSITIONS", "10"))
+MAX_POSITIONS = int(os.getenv("MAX_POSITIONS", "8"))
 
 
 def check_position_size(

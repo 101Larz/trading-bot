@@ -151,7 +151,7 @@ def safe_sell(
 # Buy-side constants (stricter than the global risk.py defaults)
 # ---------------------------------------------------------------------------
 
-MAX_BUY_POSITIONS = 6        # max concurrent long positions
+MAX_BUY_POSITIONS = 8        # max concurrent long positions
 MAX_WEEKLY_BUYS = 3          # max buy-side executions Mon–Sun
 MAX_POSITION_EQUITY_PCT = 0.20  # max 20% of equity per position
 TRAILING_STOP_PCT = 10.0     # trailing stop percentage (GTC)

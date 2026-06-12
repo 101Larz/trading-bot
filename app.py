@@ -145,37 +145,51 @@ def parse_performance() -> dict:
                 except Exception:
                     pass
 
-    # ── Closed trade log ─────────────────────────────────────────────────────
+    # ── Trade Exit blocks (### Trade Exit — YYYY-MM-DD ... heading + vertical kv table)
+    # The bot logs exits as structured blocks; the ## Closed Trade Log table is never
+    # populated by the EOD routine, so we parse the blocks directly instead.
     trades = []
-    in_trades = False
-    for line in text.splitlines():
-        if "## Closed Trade Log" in line:
-            in_trades = True
-            continue
-        if in_trades:
-            if line.startswith("## "):
-                break
-            # | Date | Symbol | Side | Qty | Entry | Exit | P&L | Hold Days | Exit Reason |
-            cols = [c.strip() for c in line.split("|") if c.strip()]
-            if (
-                len(cols) >= 7
-                and cols[0] not in ("Date", "---", "—")
-                and not cols[0].startswith("---")
-            ):
-                try:
-                    trades.append({
-                        "date":        cols[0],
-                        "symbol":      cols[1],
-                        "side":        cols[2],
-                        "qty":         _to_float(cols[3]),
-                        "entry":       _to_float(cols[4]),
-                        "exit":        _to_float(cols[5]),
-                        "pnl":         _to_float(cols[6]),
-                        "hold_days":   _to_int(cols[7]) if len(cols) > 7 else 0,
-                        "exit_reason": cols[8] if len(cols) > 8 else "",
-                    })
-                except Exception:
-                    pass
+    lines_list = text.splitlines()
+    idx = 0
+    while idx < len(lines_list):
+        line = lines_list[idx]
+        if line.startswith("### Trade Exit"):
+            date_m = re.search(r"(\d{4}-\d{2}-\d{2})", line)
+            exit_date = date_m.group(1) if date_m else ""
+            kv: dict[str, str] = {}
+            idx += 1
+            while idx < len(lines_list):
+                row = lines_list[idx]
+                if not row.strip().startswith("|"):
+                    break
+                m = re.match(r"\|\s*(.+?)\s*\|\s*(.+?)\s*\|", row)
+                if m and m.group(1).strip() not in ("Field", "---", ""):
+                    kv[m.group(1).strip()] = m.group(2).strip()
+                idx += 1
+            if kv.get("Symbol"):
+                pnl_raw = kv.get("Realized P&L", "0")
+                pnl_m = re.search(r"([-+]?)\s*\$?([\d,]+\.?\d*)", pnl_raw)
+                if pnl_m:
+                    sign = -1 if pnl_m.group(1) == "-" else 1
+                    pnl_val = sign * float(pnl_m.group(2).replace(",", ""))
+                else:
+                    pnl_val = 0.0
+                hold_raw = kv.get("Hold Days", "0")
+                hold_m = re.search(r"(\d+)", hold_raw)
+                hold_days = int(hold_m.group(1)) if hold_m else 0
+                trades.append({
+                    "date":        exit_date,
+                    "symbol":      kv.get("Symbol", ""),
+                    "side":        "SELL",
+                    "qty":         _to_float(kv.get("Shares", "0")),
+                    "entry":       _to_float(kv.get("Avg Entry Price", "0")),
+                    "exit":        _to_float(kv.get("Avg Exit Price", "0")),
+                    "pnl":         pnl_val,
+                    "hold_days":   hold_days,
+                    "exit_reason": kv.get("Exit Reason", ""),
+                })
+        else:
+            idx += 1
 
     return {"stats": stats, "daily": daily, "trades": trades}
 

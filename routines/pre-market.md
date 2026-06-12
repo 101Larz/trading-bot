@@ -117,8 +117,8 @@ Keep only tickers passing **all four** of these gates:
 |------|-----------|--------|
 | Current regime | = Bull | Only ride confirmed uptrends |
 | Markov signal | > 0 | Next-state probability favours Bull over Bear |
-| Stat Bull% | ≥ 45% | Long-run regime mix has a Bull majority |
-| Walk-forward Sharpe | > 0.30 | Signal adds value over a 10-year backtest |
+| Stat Bull% | ≥ 40% | Long-run regime mix has a Bull majority |
+| Walk-forward Sharpe | > 0.20 | Signal adds value over a 10-year backtest |
 
 Tickers failing any gate → mark **MARKOV:FAIL** in the journal. Do not trade them today regardless of any other signal.
 
@@ -135,7 +135,7 @@ Apply the technical entry filter:
 |-------|-------------|----------|
 | Price vs MA20 | price > MA20 | TECH:FAIL |
 | Price vs MA50 | price > MA50 | TECH:FAIL |
-| RSI-14 | 40 ≤ RSI ≤ 65 | TECH:FAIL (RSI > 65 = chasing; RSI < 40 = falling knife) |
+| RSI-14 | 35 ≤ RSI ≤ 70 | TECH:FAIL (RSI > 70 = chasing; RSI < 35 = falling knife) |
 | Earnings window | No earnings in next 5 trading days | EARNINGS:BLOCKED |
 
 Check the earnings calendar via WebSearch: `"[TICKER] earnings date"`
@@ -200,7 +200,7 @@ Search: `"[SYMBOL] analyst rating"`
 **E. Calculate sizing for each LIKELY BUY:**
 ```
 limit_price = ask × 1.0025
-max_shares  = floor((portfolio_value × 0.05) / limit_price)
+max_shares  = floor((portfolio_value × 0.08) / limit_price)
 stop_price  = limit_price × 0.92   (8% hard stop)
 target_price = limit_price × 1.15  (15% profit target)
 ```

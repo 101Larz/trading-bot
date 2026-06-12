@@ -31,14 +31,14 @@ There is no fixed watchlist. Every pre-market session runs a live Markov + techn
 |------|-----------|---------------|
 | Current regime | = Bull | Confirms the stock is in an uptrend regime right now |
 | Markov signal | > 0 | P(Bull\|current) > P(Bear\|current) — forward-looking bias is positive |
-| Stationary Bull% | ≥ 45% | Long-run regime mix favours Bull (structural, not just recent) |
-| Walk-forward Sharpe | > 0.30 | The Markov signal generated real alpha over a 10-year backtest |
+| Stationary Bull% | ≥ 40% | Long-run regime mix favours Bull (structural, not just recent) |
+| Walk-forward Sharpe | > 0.20 | The Markov signal generated real alpha over a 10-year backtest |
 
 ### Technical Entry Filter (applied after Markov screen)
 
 All Markov-qualified candidates are then checked against:
 - Price > MA20 **and** Price > MA50 (bullish alignment)
-- RSI-14 between 40 and 65 (momentum not overextended)
+- RSI-14 between 35 and 70 (momentum not overextended)
 - No earnings within the next 5 trading days
 
 ### Output: Top 3 by Sharpe
@@ -59,7 +59,7 @@ The screener re-runs every session — check today's `memory/research/YYYY-MM-DD
 ## Entry Criteria (all must be true)
 
 1. **Trend confirmed**: Current price is above both the 20-day MA and 50-day MA (bullish alignment).
-2. **Momentum not overextended**: RSI-14 is between 40 and 65 at entry. Avoid chasing overbought setups (RSI > 70).
+2. **Momentum not overextended**: RSI-14 is between 35 and 70 at entry. Avoid chasing overbought setups (RSI > 70).
 3. **News sentiment**: No significant negative catalysts in the last 48 hours (check via WebSearch + Alpaca news).
 4. **Macro context**: S&P 500 (SPY) is not in a confirmed downtrend (SPY above its own 20-day MA).
 5. **Risk budget available**: Position would not violate any rule in the Non-Negotiable Risk Rules table in CLAUDE.md.
@@ -91,7 +91,7 @@ The screener re-runs every session — check today's `memory/research/YYYY-MM-DD
 ## Position Sizing Formula
 
 ```
-Max shares = floor((portfolio_value × 0.05) / limit_price)
+Max shares = floor((portfolio_value × 0.08) / limit_price)
 ```
 
 Never exceed this, even if confidence is HIGH.
