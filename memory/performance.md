@@ -1420,3 +1420,26 @@ Trades executed: **none.**
 
 Risk posture: cash 99.71% of equity (≥20% reserve ✅), exposure 0.29% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 1/3 (sell-only) — 2 buy slots preserved into Friday close awaiting SPY > MA20 reclaim. **AAPL position**: -3.30% unrealized, trailing-stop GTC at $285.66 / HWM $317.40 — cushion ~$6.25/sh (2.14%); EOD will re-evaluate cut-loser status if drawdown deepens. SpaceX IPO debut is a liquidity event with no direct watchlist read-through.
 
+---
+
+## Midday Scan — 2026-06-12 (Friday — session: sweet-shannon-7gclam)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Long Market Value | $291.40 |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $291.40 | -$10.48 (-3.47%) |
+
+Midday checks:
+- **Cut-loser (-7%)**: AAPL -3.47% — above the -7% cut threshold. No cut.
+- **Stop-tighten**: no position at +20% (→5%) or +15% (→7%). 10% trailing-stop GTC ($285.66 / HWM $317.40) remains.
+- **Thesis check (AAPL web news)**: Analyst tape constructive — average "Buy", 12-mo PT $312.48 (+7.42% upside). Post-WWDC dip digested; stock stable $290–$297 range. **Thesis intact.**
+
+No trades executed. AAPL trailing-stop cushion $5.74/sh (1.97%) — narrower than market-open (2.14%) on the small intraday slip from $291.91 → $291.40. EOD routine retains cut-loser monitoring.
+
