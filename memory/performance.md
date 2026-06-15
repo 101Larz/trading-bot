@@ -1467,3 +1467,39 @@ No trades executed. AAPL trailing-stop cushion $5.74/sh (1.97%) — narrower tha
 
 Notes: **NO_TRADE day; week closes.** Flat-to-slightly-red session — Day P&L -$4.21 (-0.0042%) driven entirely by AAPL marking down $0.32 vs Thursday's close ($291.91 → $291.59 intraday slip, then a touch lower into the bell). Pre-market HOLD (zero actionable ideas — only chart-passer AMD blocked by macro filter SPY < MA20 for 8th straight session). Market-open NO_TRADE (AMD all ticker gates passed but macro still failed; AAPL/GOOGL adds blocked by sub-MA20). Midday HOLD (AAPL -3.47% well above -7% cut; thesis intact, analyst Buy, PT $312.48). AAPL closed -3.41% unrealized — no -7% breach. Cash $99,207.16 = 99.71% of equity (≥20% reserve ✅); total exposure 0.29%. Daily-loss limit (3%) not approached. **Week summary:** 0 buys / 1 sell (GOOGL cut on 6/10 at -7.15%); weekly trade counter 1/3. AAPL 10% trailing-stop GTC (stop $285.66 / HWM $317.40) — $5.97/sh cushion (2.05%) into the weekend, sole mechanical exit. Macro posture going into Mon 6/15: SPY 8 sessions sub-MA20, Fed blackout through next week's FOMC, hot PPI digested but rate-uncertainty elevated. AMD remains pre-staged as front-runner pending sustained SPY > MA20 reclaim.
 
+---
+
+## Market-Open Log — 2026-06-15 (Monday — session: sweet-shannon-mc1ozv)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $99,207.16 |
+| Equity | $99,502.16 |
+| Long Market Value | $294.94 |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Trades This Week | 0 / 3 (new week) |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AAPL 0.30%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market decision was HOLD/NO_TRADE; macro filter SPY < MA20 (9th session) + FOMC Wed 6/17 event risk → universal block. No symbol pre-authorized.
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $294.94 | -$6.94 (-2.30%) |
+
+Entry-criteria re-validation (live, 60-bar SPY snapshot):
+- **Macro filter (SPY)**: live last $753.40, bar `current` $741.75 < MA20 $745.07 → criterion #4 **FAILS** universally. RSI-14 47.36 neutral. SPY < MA20 streak now 9th session.
+- **FOMC event risk Wed 6/17**: first Warsh meeting + SEP dots = binary tape risk; pre-market explicitly disciplined to defer entries until post-decision.
+- No symbol passes criterion #4; no per-ticker chart pass can override.
+
+AAPL hold under standard exit discipline: trailing-stop GTC order `5851cbb5` (stop $285.66, HWM $317.40, trail 10%). Live cushion $9.28/sh (3.15%). Unrealized -2.30% — well above -7% cut threshold; no exit trigger.
+
+Trades executed: **none.**
+
+Risk posture: cash 99.70% of equity (≥20% reserve ✅), exposure 0.30% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget preserved into Tue/Wed FOMC and any post-decision macro thaw.
+
