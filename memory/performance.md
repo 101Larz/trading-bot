@@ -1503,3 +1503,25 @@ Trades executed: **none.**
 
 Risk posture: cash 99.70% of equity (≥20% reserve ✅), exposure 0.30% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full budget preserved into Tue/Wed FOMC and any post-decision macro thaw.
 
+---
+
+## Midday Scan — 2026-06-15 (Monday)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $297.24 | -$4.64 (-1.54%) |
+
+Midday checks:
+- **Cut-loser (-7%)**: AAPL -1.54% — no cut trigger. Cushion to -7% threshold ~$16.49/sh (5.46%).
+- **Stop-tighten (+15/+20%)**: AAPL not at gain threshold. 10% trailing-stop GTC remains in force (stop $285.66 / HWM $317.40).
+- **Thesis check**: AAPL thesis covered in pre-market — WWDC slide absorbed; Morgan Stanley PT $330→$360 (Buy) 6/9; no fresh negative catalyst. Mark recovered $293.78 → $297.24 since pre-market. Thesis intact.
+
+Trades executed: **none.** Weekly trade counter 0/3 — full budget preserved into FOMC Wed.
+

@@ -1,11 +1,11 @@
 {
-  "routine": "pre-market",
+  "routine": "midday-scan",
   "session": "gallant-lamport-p6ito2",
-  "timestamp": "2026-06-15T07:10:00Z",
+  "timestamp": "2026-06-15T16:30:00Z",
   "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.71,
   "trades_this_week": 0,
   "status": "OK",
-  "notes": "Pre-market 2026-06-15: PV $99,500.91, cash $99,207.16. AAPL 1 sh -$8.10 (-2.68%); trailing-stop $285.66 GTC active. NO_TRADE: macro filter fails (SPY $741.75 < MA20 $745.07) AND FOMC Wed 6/17 (Warsh's first meeting) ahead. Weekly buys 0/3 preserved for post-FOMC."
+  "notes": "Midday 2026-06-15: AAPL 1 sh -$4.64 (-1.54%), mark $297.24 (recovered from pre-market $293.78). No -7% cut, no +15/+20% tighten. Trailing-stop $285.66 GTC active; cushion 5.46% to cut. Thesis intact. Weekly buys 0/3 preserved into FOMC Wed 6/17."
 }
