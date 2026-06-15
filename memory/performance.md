@@ -1525,3 +1525,26 @@ Midday checks:
 
 Trades executed: **none.** Weekly trade counter 0/3 — full budget preserved into FOMC Wed.
 
+---
+
+## EOD Snapshot — 2026-06-15 (Monday)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,503.31 |
+| Cash | $99,207.16 |
+| Long Market Value | $296.15 |
+| Day P&L ($) | +$4.56 |
+| Day P&L (%) | +0.0046% |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 1 / 6 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $296.15 | -$5.73 (-1.90%) |
+
+Notes: **NO_TRADE day.** Quiet, slightly green close — Day P&L +$4.56 (+0.0046%) vs Friday 6/12 close ($99,498.75 → $99,503.31). AAPL drifted $297.24 midday → $296.15 close (-$1.09/sh), unrealized improved net vs Friday's -3.41% (closed -1.90%). Pre-market HOLD (macro filter SPY < MA20 9th session + FOMC Wed 6/17 binary risk → universal entry block; no symbol pre-authorized). Market-open NO_TRADE (criterion #4 macro fail re-validated live; no per-ticker override possible). Midday HOLD (AAPL -1.54%, no -7% cut, no +15/+20% tighten; thesis intact). AAPL 10% trailing-stop GTC `5851cbb5` (stop $285.66 / HWM $317.40) remains active — close cushion $10.49/sh (3.54%), no exit trigger. Cash $99,207.16 = 99.70% of equity (≥20% reserve ✅); total exposure 0.30% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full buy budget preserved through FOMC Wed 6/17 (first Warsh meeting + SEP dots = binary tape risk; pre-market discipline defers entries until post-decision). Macro posture into Tue 6/16: SPY 9 sessions sub-MA20, RSI-14 47.36 neutral. AMD remains pre-staged front-runner pending sustained SPY > MA20 reclaim. No fresh AAPL catalyst; Morgan Stanley Buy / PT $360 (6/9) intact.
+
