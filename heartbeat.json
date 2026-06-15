@@ -1,11 +1,15 @@
 {
-  "routine": "midday-scan",
-  "session": "gallant-lamport-p6ito2",
-  "timestamp": "2026-06-15T16:30:00Z",
+  "routine": "end-of-day",
+  "session": "sleepy-goldberg-96qr9p",
+  "timestamp": "2026-06-15T20:34:00Z",
   "decision": "HOLD",
   "open_positions": 1,
-  "cash_pct": 99.71,
+  "cash_pct": 99.70,
+  "trades_today": 0,
   "trades_this_week": 0,
+  "day_pl_dollars": 4.56,
+  "day_pl_pct": 0.0046,
+  "portfolio_value": 99503.31,
   "status": "OK",
-  "notes": "Midday 2026-06-15: AAPL 1 sh -$4.64 (-1.54%), mark $297.24 (recovered from pre-market $293.78). No -7% cut, no +15/+20% tighten. Trailing-stop $285.66 GTC active; cushion 5.46% to cut. Thesis intact. Weekly buys 0/3 preserved into FOMC Wed 6/17."
+  "notes": "EOD 2026-06-15: Portfolio $99,503.31, Day P&L +$4.56 (+0.0046%). NO_TRADE day across all routines — macro filter (SPY 9 sessions sub-MA20) + FOMC Wed 6/17 binary risk. AAPL 1 sh closed $296.15 (-1.90% unrealized). Trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved."
 }
