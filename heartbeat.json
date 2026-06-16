@@ -1,15 +1,15 @@
 {
-  "routine": "end-of-day",
-  "session": "sleepy-goldberg-96qr9p",
-  "timestamp": "2026-06-15T20:34:00Z",
+  "routine": "pre-market",
+  "session": "gallant-lamport-o4z14q",
+  "timestamp": "2026-06-16T07:10:00Z",
   "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.70,
   "trades_today": 0,
   "trades_this_week": 0,
-  "day_pl_dollars": 4.56,
-  "day_pl_pct": 0.0046,
-  "portfolio_value": 99503.31,
+  "day_pl_dollars": 0.0,
+  "day_pl_pct": 0.0,
+  "portfolio_value": 99502.97,
   "status": "OK",
-  "notes": "EOD 2026-06-15: Portfolio $99,503.31, Day P&L +$4.56 (+0.0046%). NO_TRADE day across all routines — macro filter (SPY 9 sessions sub-MA20) + FOMC Wed 6/17 binary risk. AAPL 1 sh closed $296.15 (-1.90% unrealized). Trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved."
+  "notes": "Pre-market 2026-06-16: HOLD/NO_TRADE. Risk-on tape overnight (Iran ceasefire, semis lead, oil -5%) but FOMC Wed 6/17 binary one day out; market_data.py returns NaN for MA/RSI (technical re-validation blocked); SPY only one session back above MA20 after 9 below (not confirmed). AAPL 1 sh -2.01% unrealized, trailing-stop $285.66 GTC active. Weekly buys 0/3 preserved for post-FOMC."
 }
