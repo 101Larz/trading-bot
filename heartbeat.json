@@ -1,15 +1,15 @@
 {
-  "routine": "midday-scan",
+  "routine": "end-of-day",
   "session": "sweet-shannon-m3py1u",
-  "timestamp": "2026-06-16T16:30:00Z",
-  "decision": "HOLD",
+  "timestamp": "2026-06-16T20:15:00Z",
+  "decision": "NO_TRADE",
   "open_positions": 1,
   "cash_pct": 99.70,
   "trades_today": 0,
   "trades_this_week": 0,
-  "day_pl_dollars": 0.0,
-  "day_pl_pct": 0.0,
-  "portfolio_value": 99502.63,
+  "day_pl_dollars": 2.62,
+  "day_pl_pct": 0.0026,
+  "portfolio_value": 99505.93,
   "status": "OK",
-  "notes": "Midday 2026-06-16 HOLD. AAPL 1 sh -0.93% unrealized (improved from -2.13% at open). No cut (-7% threshold not hit, cushion ~6%), no stop-tighten (no winner at +15/+20%), thesis intact. Trailing-stop GTC $285.66 active. FOMC Wed 6/17 T-1 still dominates. Weekly buys 0/3 preserved."
+  "notes": "EOD 2026-06-16. Day P&L +$2.62 (+0.0026%) vs 6/15 close $99,503.31. AAPL 1 sh -1.03% unrealized; trailing-stop $285.66 GTC active. T-1 to FOMC Wed 6/17 binary. Weekly buys 0/3 preserved for post-FOMC."
 }

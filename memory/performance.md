@@ -49,6 +49,8 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-10 | $99,570.94 | $99,499.18 | -$71.76 | -0.072% | 1 | EOD: GOOGL CUT at midday (12 sh @ $358.25, realized -$330.84 / -7.15% — workflow cut-loser rule fired at -7.16%). Post-CPI tape risk-off; SPY < MA20. AAPL 1 sh -$9.88 unrealized; trailing-stop GTC active. Cash 99.71% of equity. Weekly buys 0/3 (sell does not consume buy budget). |
 | 2026-06-11 | $99,499.18 | $99,502.96 | +$3.78 | +0.0038% | 0 | EOD: NO_TRADE day. Midday HOLD (AAPL -1.74%, no cut). AAPL 1 sh -$6.08 unrealized; trailing-stop $285.66 GTC active. Cash 99.71% of equity. Weekly buys 0/3 (1 sell on 6/10). |
 | 2026-06-12 | $99,502.96 | $99,498.75 | -$4.21 | -0.0042% | 0 | EOD: NO_TRADE day. Midday HOLD (AAPL -3.47%, no cut). AAPL 1 sh -$10.29 unrealized; trailing-stop $285.66 GTC active. Cash 99.71% of equity. Week closes: 0 buys / 1 sell (6/10 GOOGL cut). |
+| 2026-06-15 | $99,498.75 | $99,503.31 | +$4.56 | +0.0046% | 0 | EOD: NO_TRADE day. Macro filter SPY < MA20 9th session + FOMC Wed 6/17 binary → universal entry block. AAPL 1 sh -$5.73 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3. |
+| 2026-06-16 | $99,503.31 | $99,505.93 | +$2.62 | +0.0026% | 0 | EOD: NO_TRADE day (T-1 to FOMC; pre-market MA/RSI unverifiable, SPY only 1-session above MA20). AAPL 1 sh -$3.11 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3 preserved through FOMC. |
 
 ---
 
@@ -1604,4 +1606,27 @@ Midday checks:
 - **Thesis check (48h)**: AAPL post-WWDC drift; Ternus CEO Sept 1 confirmed; $100B buyback intact; position 0.30% of equity. Thesis intact.
 
 No trades executed. FOMC Wed 6/17 T-1 binary continues to dominate. Weekly buys 0/3 preserved for post-FOMC re-evaluation.
+
+---
+
+## EOD Snapshot — 2026-06-16 (Tuesday)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,505.93 |
+| Cash | $99,207.16 |
+| Long Market Value | $298.77 |
+| Day P&L ($) | +$2.62 |
+| Day P&L (%) | +0.0026% |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 1 / 6 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $298.77 | -$3.11 (-1.03%) |
+
+Notes: **NO_TRADE day, T-1 to FOMC.** Quiet, marginally green close — Day P&L +$2.62 (+0.0026%) vs Monday 6/15 close ($99,503.31 → $99,505.93). AAPL drifted modestly intraday — market-open -2.13% → midday -0.93% → close -1.03% — net improvement from prior close (-1.90%). Pre-market HOLD/NO_TRADE (three independent stand-down reasons: FOMC Wed 6/17 binary T-1, technical re-validation blocked by `market_data.py` MA20/MA50/RSI-14 NaN, and macro filter only 1 session above MA20 after 9 below — not a confirmed regime flip). Market-open NO_TRADE (criterion #1/#2 unverifiable; criterion #4 marginal). Midday HOLD (AAPL -0.93%, no -7% cut, no +15/+20% tighten; thesis intact — post-WWDC drift, Ternus CEO Sept 1 confirmed, $100B buyback intact). AAPL 10% trailing-stop GTC `5851cbb5` (stop $285.66 / HWM $317.40) remains active — close cushion $13.11/sh (4.39%), no exit trigger. Cash $99,207.16 = 99.70% of equity (≥20% reserve ✅); total exposure 0.30% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — **full buy budget preserved through FOMC Wed 6/17** (first Warsh-chaired meeting + SEP dots = binary tape risk; pre-market discipline defers entries until post-decision Thursday/Friday given clean candidate with live MA/RSI confirmation and 2-session SPY > MA20 reclaim).
 
