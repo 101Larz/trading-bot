@@ -1548,3 +1548,36 @@ Trades executed: **none.** Weekly trade counter 0/3 — full budget preserved in
 
 Notes: **NO_TRADE day.** Quiet, slightly green close — Day P&L +$4.56 (+0.0046%) vs Friday 6/12 close ($99,498.75 → $99,503.31). AAPL drifted $297.24 midday → $296.15 close (-$1.09/sh), unrealized improved net vs Friday's -3.41% (closed -1.90%). Pre-market HOLD (macro filter SPY < MA20 9th session + FOMC Wed 6/17 binary risk → universal entry block; no symbol pre-authorized). Market-open NO_TRADE (criterion #4 macro fail re-validated live; no per-ticker override possible). Midday HOLD (AAPL -1.54%, no -7% cut, no +15/+20% tighten; thesis intact). AAPL 10% trailing-stop GTC `5851cbb5` (stop $285.66 / HWM $317.40) remains active — close cushion $10.49/sh (3.54%), no exit trigger. Cash $99,207.16 = 99.70% of equity (≥20% reserve ✅); total exposure 0.30% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — full buy budget preserved through FOMC Wed 6/17 (first Warsh meeting + SEP dots = binary tape risk; pre-market discipline defers entries until post-decision). Macro posture into Tue 6/16: SPY 9 sessions sub-MA20, RSI-14 47.36 neutral. AMD remains pre-staged front-runner pending sustained SPY > MA20 reclaim. No fresh AAPL catalyst; Morgan Stanley Buy / PT $360 (6/9) intact.
 
+---
+
+## Market-Open Log — 2026-06-16 (Tuesday — session: sweet-shannon-m3py1u)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $99,207.16 |
+| Equity | $99,502.63 |
+| Long Market Value | $295.47 |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AAPL 0.30%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market explicitly HOLD/NO_TRADE. All conditional ideas (NVDA, AMD, MSFT, GOOGL) flagged "NOT for today." Three independent stand-down reasons: FOMC Wed 6/17 binary (T-1 to first Warsh-chaired meeting + dot-plot), technical re-validation blocked (`market_data.py` returns NaN for MA20/MA50/RSI-14 on SPY/AAPL — yfinance bar enrichment broken), and macro filter only 1 session above MA20 after 9 below (not a confirmed regime flip).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $295.46 | -$6.42 (-2.13%) |
+
+Entry-criteria re-validation: criterion #1 (price > MA20 & MA50) and #2 (RSI 40–65) **unverifiable** — pre-market MA/RSI NaN persists; no live override possible without bar data. Macro criterion #4 marginal: SPY one-session reclaim of MA20 (not 2-session confirmation). Default under uncertainty + binary catalyst one trading day out = **NO_TRADE**.
+
+Position management — AAPL: -2.13% unrealized; cushion to -7% cut watch ~$13.65/sh (4.62%). Trailing-stop GTC `5851cbb5` (stop $285.66 / HWM $317.40) cushion ~$9.80/sh (3.32%) — no exit trigger. Hold under existing mechanical discipline.
+
+Trades executed: **none.**
+
+Risk posture: cash 99.70% of equity (≥20% reserve ✅), exposure 0.30% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — **full buy budget preserved** for post-FOMC Thursday/Friday if a clean candidate emerges with live MA/RSI confirmation and 2-session SPY > MA20 reclaim.
+
