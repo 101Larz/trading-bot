@@ -1,8 +1,8 @@
 {
-  "routine": "market-open",
+  "routine": "midday-scan",
   "session": "sweet-shannon-m3py1u",
-  "timestamp": "2026-06-16T13:46:00Z",
-  "decision": "NO_TRADE",
+  "timestamp": "2026-06-16T16:30:00Z",
+  "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.70,
   "trades_today": 0,
@@ -11,5 +11,5 @@
   "day_pl_pct": 0.0,
   "portfolio_value": 99502.63,
   "status": "OK",
-  "notes": "Market-open 2026-06-16 NO_TRADE. Pre-market HOLD inherited (FOMC Wed 6/17 T-1 binary, market_data MA/RSI NaN, SPY only 1 session above MA20). All conditional ideas flagged NOT for today. AAPL 1 sh -2.13% unrealized; trailing-stop GTC $285.66 active. Cash 99.70%. Weekly buys 0/3 preserved for post-FOMC Thu/Fri."
+  "notes": "Midday 2026-06-16 HOLD. AAPL 1 sh -0.93% unrealized (improved from -2.13% at open). No cut (-7% threshold not hit, cushion ~6%), no stop-tighten (no winner at +15/+20%), thesis intact. Trailing-stop GTC $285.66 active. FOMC Wed 6/17 T-1 still dominates. Weekly buys 0/3 preserved."
 }
