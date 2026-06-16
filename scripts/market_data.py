@@ -9,6 +9,7 @@ Bar data source priority:
 import os
 import sys
 import json
+import time
 from datetime import datetime, date, timedelta, timezone
 
 import pandas as pd
@@ -65,6 +66,16 @@ def get_bars_yfinance(symbol: str, limit: int = 60) -> list[dict]:
         return []
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = df.columns.get_level_values(0)
+    # Drop rows where Close is NaN — yfinance sometimes returns a partial bar for
+    # the current intraday session (volume present but OHLC not yet finalized).
+    nan_count = int(df["Close"].isna().sum())
+    if nan_count:
+        print(
+            f"[WARN market_data] {symbol}: dropped {nan_count} bar(s) with NaN Close"
+            " (partial intraday session discarded)",
+            file=sys.stderr,
+        )
+    df = df.dropna(subset=["Close"])
     df = df.tail(limit)
     return [
         {
@@ -83,13 +94,30 @@ def get_bars(symbol: str, limit: int = 60) -> tuple[list[dict], str]:
     """
     Returns (bars, source) where source is 'alpaca' or 'yfinance'.
     Alpaca free plan often returns only 1 bar (IEX real-time, no history).
-    Fall back to yfinance whenever Alpaca returns fewer than 20 bars so that
-    MA20, MA50, and RSI-14 always have enough data.
+    Falls back to yfinance with up to 3 attempts (2-second sleep between retries)
+    so transient network hiccups or rate-limits don't silently produce NaN indicators.
     """
     bars = get_bars_alpaca(symbol, limit)
     if len(bars) >= 20:
         return bars, "alpaca"
-    bars = get_bars_yfinance(symbol, limit)
+
+    for attempt in range(1, 4):
+        bars = get_bars_yfinance(symbol, limit)
+        if len(bars) >= 20:
+            return bars, "yfinance"
+        if attempt < 3:
+            print(
+                f"[WARN market_data] {symbol}: yfinance returned only {len(bars)} bars"
+                f" (attempt {attempt}/3) — retrying in 2 s",
+                file=sys.stderr,
+            )
+            time.sleep(2)
+
+    print(
+        f"[ERROR market_data] {symbol}: only {len(bars)} bars after 3 yfinance attempts."
+        " MA20/RSI may be unreliable — check yfinance availability.",
+        file=sys.stderr,
+    )
     return bars, "yfinance"
 
 
@@ -113,6 +141,16 @@ def compute_moving_averages(bars: list[dict]) -> dict:
     if not bars:
         return {"ma20": None, "ma50": None, "trend": None, "note": "No bar data"}
     closes = [float(b["c"]) for b in bars]
+    # Guard: filter out any NaN values that slipped through (should be caught upstream,
+    # but this prevents silent NaN propagation into MA calculations).
+    import math
+    nan_in_closes = sum(1 for c in closes if math.isnan(c))
+    if nan_in_closes:
+        print(
+            f"[WARN market_data] {nan_in_closes} NaN close(s) in bar data — dropping before MA calc",
+            file=sys.stderr,
+        )
+        closes = [c for c in closes if not math.isnan(c)]
     if len(closes) < 20:
         return {"ma20": None, "ma50": None, "trend": None, "note": f"Only {len(closes)} bars — need 20+"}
     current = closes[-1]
