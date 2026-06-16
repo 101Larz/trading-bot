@@ -1581,3 +1581,27 @@ Trades executed: **none.**
 
 Risk posture: cash 99.70% of equity (≥20% reserve ✅), exposure 0.30% (≤80% ✅), daily-loss limit (3%) not approached. Weekly trade counter 0/3 — **full buy budget preserved** for post-FOMC Thursday/Friday if a clean candidate emerges with live MA/RSI confirmation and 2-session SPY > MA20 reclaim.
 
+---
+
+## Midday Scan — 2026-06-16 (Tuesday — session: sweet-shannon-m3py1u)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Cash | $99,207.16 |
+| Long Market Value | $299.09 |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $299.085 | -$2.795 (-0.93%) |
+
+Midday checks:
+- **Cut-loser (-7%)**: AAPL -0.93% — no cut (improved from market-open -2.13%). Cushion to cut ~$18.05/sh (6.04%). Trailing-stop GTC $285.66 active; cushion ~$13.43/sh (4.49%).
+- **Stop-tighten**: no position at +15%/+20% gain. 10% trailing-stop GTC remains.
+- **Thesis check (48h)**: AAPL post-WWDC drift; Ternus CEO Sept 1 confirmed; $100B buyback intact; position 0.30% of equity. Thesis intact.
+
+No trades executed. FOMC Wed 6/17 T-1 binary continues to dominate. Weekly buys 0/3 preserved for post-FOMC re-evaluation.
+
