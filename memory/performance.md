@@ -86,6 +86,30 @@ AAPL trailing-stop GTC $285.66 cushion ~$15.06/sh (~5.0%). Trades executed: **no
 
 ---
 
+## Midday Scan — 2026-06-17 (Wednesday — session: sweet-shannon-l7x1cp)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (pre-FOMC) |
+| Cash | $99,206.02 |
+| Long Market Value | $298.57 |
+| Open Positions | 1 / 8 (AAPL 1 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $298.57 | -$3.31 (-1.10%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL -1.10% — no cut (cushion ~$5.79/sh to -7% threshold $280.75).
+- **Stop-tighten**: no position at +15%/+20% gain. Trailing-stop GTC $285.66 (10% trail) remains in force.
+- **Thesis check**: AAPL position is 0.30% of equity — immaterial. Pre-FOMC tape; no new negative catalyst for AAPL since pre-market. Thesis intact.
+
+No trades executed. Awaiting FOMC 2:00 PM ET decision + 2:30 PM ET Warsh debut presser. Weekly buys 0/3 preserved.
+
+---
+
 ## Market-Open Log — 2026-06-10 (Wednesday — session: sweet-shannon-lf81nx)
 
 | Field | Value |
