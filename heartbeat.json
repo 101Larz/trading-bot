@@ -1,15 +1,15 @@
 {
-  "routine": "end-of-day",
-  "session": "sweet-shannon-m3py1u",
-  "timestamp": "2026-06-16T20:15:00Z",
+  "routine": "pre-market",
+  "session": "gallant-lamport-hsc24o",
+  "timestamp": "2026-06-17T13:00:00Z",
   "decision": "NO_TRADE",
   "open_positions": 1,
   "cash_pct": 99.70,
   "trades_today": 0,
   "trades_this_week": 0,
-  "day_pl_dollars": 2.62,
-  "day_pl_pct": 0.0026,
-  "portfolio_value": 99505.93,
+  "day_pl_dollars": 0.78,
+  "day_pl_pct": 0.0008,
+  "portfolio_value": 99506.71,
   "status": "OK",
-  "notes": "EOD 2026-06-16. Day P&L +$2.62 (+0.0026%) vs 6/15 close $99,503.31. AAPL 1 sh -1.03% unrealized; trailing-stop $285.66 GTC active. T-1 to FOMC Wed 6/17 binary. Weekly buys 0/3 preserved for post-FOMC."
+  "notes": "Pre-market 2026-06-17 (FOMC day). HOLD/NO_TRADE: FOMC 2:00 PM ET + Warsh debut presser 2:30 PM ET binary intraday; dot-plot gap risk (market ~70% prob hike-by-year-end vs March SEP median 3.4%); MA/RSI re-validation still blocked (NaN); SPY only 2 sessions back above MA20. AAPL 1 sh -0.77% unrealized; trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved for post-FOMC Thu/Fri."
 }
