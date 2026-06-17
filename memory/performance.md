@@ -54,6 +54,38 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-06-17 (Wednesday — session: sweet-shannon-l7x1cp)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $99,207.16 |
+| Equity | $99,507.90 |
+| Long Market Value | $300.74 |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE — HOLD** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AAPL 0.30%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD; all trade ideas (NVDA, AMD, MSFT, GOOGL) explicitly tagged "NOT for today" pending post-FOMC re-evaluation.
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $300.72 | -$1.16 (-0.38%) |
+
+Three independent stand-down reasons (reaffirming pre-market):
+- **FOMC binary today** — 2:00 PM ET rate decision + 2:30 PM ET Warsh debut presser; market ~70% prob hike-by-year-end vs March SEP median 3.4% (dot-plot gap).
+- **Macro filter only tentatively reclaimed** — SPY 2 sessions above MA20 after 9 below.
+- **MA/RSI re-validation NaN-blocked** — yfinance bar enrichment unreliable.
+
+AAPL trailing-stop GTC $285.66 cushion ~$15.06/sh (~5.0%). Trades executed: **none.** Risk posture: cash 99.70% (≥20% ✅), exposure 0.30% (≤80% ✅), daily-loss limit untouched. Weekly buy budget 0/3 preserved for clean post-FOMC Thu/Fri.
+
+---
+
 ## Market-Open Log — 2026-06-10 (Wednesday — session: sweet-shannon-lf81nx)
 
 | Field | Value |
