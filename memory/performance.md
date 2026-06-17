@@ -51,6 +51,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-12 | $99,502.96 | $99,498.75 | -$4.21 | -0.0042% | 0 | EOD: NO_TRADE day. Midday HOLD (AAPL -3.47%, no cut). AAPL 1 sh -$10.29 unrealized; trailing-stop $285.66 GTC active. Cash 99.71% of equity. Week closes: 0 buys / 1 sell (6/10 GOOGL cut). |
 | 2026-06-15 | $99,498.75 | $99,503.31 | +$4.56 | +0.0046% | 0 | EOD: NO_TRADE day. Macro filter SPY < MA20 9th session + FOMC Wed 6/17 binary → universal entry block. AAPL 1 sh -$5.73 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3. |
 | 2026-06-16 | $99,503.31 | $99,505.93 | +$2.62 | +0.0026% | 0 | EOD: NO_TRADE day (T-1 to FOMC; pre-market MA/RSI unverifiable, SPY only 1-session above MA20). AAPL 1 sh -$3.11 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3 preserved through FOMC. |
+| 2026-06-17 | $99,505.93 | $99,503.11 | -$2.82 | -0.0028% | 0 | EOD: NO_TRADE day (FOMC). Pre-market/market-open/midday all HOLD. AAPL 1 sh -$5.68 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3 preserved. |
 
 ---
 
@@ -107,6 +108,29 @@ Midday checks:
 - **Thesis check**: AAPL position is 0.30% of equity — immaterial. Pre-FOMC tape; no new negative catalyst for AAPL since pre-market. Thesis intact.
 
 No trades executed. Awaiting FOMC 2:00 PM ET decision + 2:30 PM ET Warsh debut presser. Weekly buys 0/3 preserved.
+
+---
+
+## EOD Snapshot — 2026-06-17 (Wednesday — session: sleepy-goldberg-6zbgij)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,503.11 |
+| Cash | $99,207.16 |
+| Long Market Value | $295.95 |
+| Day P&L ($) | -$2.82 |
+| Day P&L (%) | -0.0028% |
+| Trades Today | 0 |
+| Trades This Week | 0 |
+| Open Positions | 1 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $296.20 | -$5.68 (-1.88%) |
+
+Notes: FOMC day — flat. NO_TRADE across pre-market, market-open, and midday routines (catalyst absent; all watchlist trade ideas tagged "NOT for today" pending post-FOMC re-evaluation). Day P&L -$2.82 driven entirely by AAPL marking down from -$3.11 to -$5.68 unrealized post-FOMC. AAPL 10% trailing-stop GTC $285.66 active (cushion ~$10.54/sh, ~3.5% to stop). Cash $99,207.16 = 99.70% of equity (≥20% reserve ✅); exposure 0.30% (≤80% ✅); daily-loss limit (3%) nowhere near. Weekly buy budget 0/3 preserved — full budget into Thu/Fri post-FOMC re-evaluation window.
 
 ---
 
