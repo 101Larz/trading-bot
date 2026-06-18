@@ -1,15 +1,15 @@
 {
-  "routine": "midday-scan",
-  "session": "midday-2026-06-18",
-  "timestamp": "2026-06-18T16:30:00Z",
-  "decision": "HOLD",
+  "routine": "end-of-day",
+  "session": "sleepy-goldberg-bnxu39",
+  "timestamp": "2026-06-18T20:15:00Z",
+  "decision": "EOD_SNAPSHOT",
   "open_positions": 1,
   "cash_pct": 99.70,
   "trades_today": 0,
   "trades_this_week": 0,
-  "day_pl_dollars": -0.65,
-  "day_pl_pct": -0.0007,
-  "portfolio_value": 99500.05,
+  "day_pl_dollars": 2.05,
+  "day_pl_pct": 0.0021,
+  "portfolio_value": 99505.16,
   "status": "OK",
-  "notes": "Midday-scan 2026-06-18 (Thu, T-1 Juneteenth). HOLD — no action. AAPL 1 sh -$4.72 (-1.56%) — cushion ~$16.41/sh to -7% cut. No winners at +15%/+20%; trailing-stop GTC $285.66 in force. Thesis intact. Weekly buys 0/3 preserved through Juneteenth."
+  "notes": "EOD 2026-06-18 (Thu, T-1 Juneteenth). Flat. NO_TRADE day. AAPL 1 sh -$3.88 (-1.28%); trailing-stop GTC $285.66 active. Day P&L +$2.05 vs yesterday $99,503.11. Cash 99.70% of equity. Weekly buys 0/3 — Fri 6/19 Juneteenth (closed). Next: Mon 2026-06-22 pre-market."
 }
