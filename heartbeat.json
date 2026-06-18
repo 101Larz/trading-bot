@@ -1,7 +1,7 @@
 {
-  "routine": "market-open",
-  "session": "sweet-shannon-5s42cu",
-  "timestamp": "2026-06-18T13:45:00Z",
+  "routine": "midday-scan",
+  "session": "midday-2026-06-18",
+  "timestamp": "2026-06-18T16:30:00Z",
   "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.70,
@@ -9,7 +9,7 @@
   "trades_this_week": 0,
   "day_pl_dollars": -0.65,
   "day_pl_pct": -0.0007,
-  "portfolio_value": 99504.82,
+  "portfolio_value": 99500.05,
   "status": "OK",
-  "notes": "Market-open 2026-06-18 (Thu, T-1 Juneteenth). NO_TRADE — macro filter still fails (SPY $740.96 < MA20 $746.80, live ask $744.61 also below); zero authorized catalysts in today's RESEARCH-LOG. AAPL 1 sh @ -1.39% unrealized — trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved."
+  "notes": "Midday-scan 2026-06-18 (Thu, T-1 Juneteenth). HOLD — no action. AAPL 1 sh -$4.72 (-1.56%) — cushion ~$16.41/sh to -7% cut. No winners at +15%/+20%; trailing-stop GTC $285.66 in force. Thesis intact. Weekly buys 0/3 preserved through Juneteenth."
 }

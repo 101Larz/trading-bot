@@ -55,6 +55,28 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-18 (Thursday)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 8 (AAPL 1 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $297.16 | -$4.72 (-1.56%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL -1.56% — no cut (cushion ~$16.41/sh to -7% threshold $280.75).
+- **Stop-tighten**: no position at +15%/+20% gain. Trailing-stop GTC $285.66 (10% trail) remains in force.
+- **Thesis check**: AAPL position is 0.30% of equity — immaterial. No new negative catalyst since pre-market. Thesis intact.
+
+No trades executed. T-1 to Juneteenth posture unchanged. Weekly buys 0/3 preserved.
+
+---
+
 ## Market-Open Log — 2026-06-18 (Thursday — session: sweet-shannon-5s42cu)
 
 | Field | Value |
