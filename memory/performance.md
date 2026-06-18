@@ -55,6 +55,38 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-06-18 (Thursday — session: sweet-shannon-5s42cu)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $99,207.16 |
+| Equity | $99,504.82 |
+| Long Market Value | $297.66 |
+| Open Positions | 1 / 6 (AAPL 1 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE — HOLD** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AAPL 0.30%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD; all trade ideas (NVDA, MSFT, KLAC/TSM) explicitly tagged "NOT FOR TODAY" pending post-Juneteenth re-screen.
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $297.69 | -$4.19 (-1.39%) |
+
+Three independent stand-down reasons (reaffirming pre-market):
+- **Macro filter still fails** — SPY bar-based $740.96 < MA20 $746.80 (live ask $744.61 also below). Post-FOMC hawkish drift unresolved.
+- **T-1 to Juneteenth** — Friday 6/19 closed; asymmetric gap risk over 3-day weekend on hawkish-Fed/geopolitical headlines.
+- **Zero authorized catalysts** — all watchlist ideas explicitly tagged "NOT FOR TODAY" in today's pre-market log.
+
+AAPL trailing-stop GTC $285.66 cushion ~$12.03/sh (~4.0%). Trades executed: **none.** Risk posture: cash 99.70% (≥20% ✅), exposure 0.30% (≤80% ✅), daily-loss limit untouched. Weekly buy budget 0/3 preserved through Juneteenth.
+
+---
+
 ## Market-Open Log — 2026-06-17 (Wednesday — session: sweet-shannon-l7x1cp)
 
 | Field | Value |

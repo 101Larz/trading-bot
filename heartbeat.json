@@ -1,15 +1,15 @@
 {
-  "routine": "pre-market",
-  "session": "gallant-lamport-wpw3a3",
-  "timestamp": "2026-06-18T13:00:00Z",
+  "routine": "market-open",
+  "session": "sweet-shannon-5s42cu",
+  "timestamp": "2026-06-18T13:45:00Z",
   "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.70,
   "trades_today": 0,
   "trades_this_week": 0,
-  "day_pl_dollars": 0.00,
-  "day_pl_pct": 0.00,
-  "portfolio_value": 99505.47,
+  "day_pl_dollars": -0.65,
+  "day_pl_pct": -0.0007,
+  "portfolio_value": 99504.82,
   "status": "OK",
-  "notes": "Pre-market 2026-06-18 (Thu, T-1 Juneteenth). HOLD — macro filter fails (SPY $740.96 < MA20 $746.80) post-hawkish-FOMC; T-1 to closed Friday adds gap-risk asymmetry. Zero watchlist passes. AAPL 1 sh @ -1.18% unrealized — trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved."
+  "notes": "Market-open 2026-06-18 (Thu, T-1 Juneteenth). NO_TRADE — macro filter still fails (SPY $740.96 < MA20 $746.80, live ask $744.61 also below); zero authorized catalysts in today's RESEARCH-LOG. AAPL 1 sh @ -1.39% unrealized — trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved."
 }
