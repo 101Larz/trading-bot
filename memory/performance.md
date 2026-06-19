@@ -56,6 +56,32 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-19 (Friday — Juneteenth)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Market | **CLOSED — Juneteenth** (next open Mon 2026-06-22 09:30 ET) |
+| Cash | $99,207.16 |
+| Long Market Value | $298.01 |
+| Equity | $99,505.17 |
+| Open Positions | 1 / 8 (AAPL 1 sh) |
+| Decision | **HOLD — no action (market closed)** |
+
+Position snapshot (last mark):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $298.01 | -$3.87 (-1.28%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL -1.28% — no cut (cushion ~$17.26/sh to -7% threshold $280.75). Market closed — order placement impossible regardless.
+- **Stop-tighten**: no position at +15%/+20% gain. 10% trailing-stop GTC $285.66 remains in force.
+- **Thesis check**: AAPL 0.30% of equity — immaterial. News tape constructive (BofA reiterates Buy $380 PT 6/18; Intel-Apple foundry pact powered semis Thursday rally; analyst notes on iPhone memory-cost pricing power). No thesis break.
+
+No trades executed (market closed for Juneteenth Federal Holiday). Weekly buys close 0/3. Next decision window: Monday 2026-06-22 pre-market.
+
+---
+
 ## EOD Snapshot — 2026-06-18 (Thursday — session: sleepy-goldberg-bnxu39)
 
 | Field | Value |
