@@ -53,6 +53,30 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-16 | $99,503.31 | $99,505.93 | +$2.62 | +0.0026% | 0 | EOD: NO_TRADE day (T-1 to FOMC; pre-market MA/RSI unverifiable, SPY only 1-session above MA20). AAPL 1 sh -$3.11 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3 preserved through FOMC. |
 | 2026-06-17 | $99,505.93 | $99,503.11 | -$2.82 | -0.0028% | 0 | EOD: NO_TRADE day (FOMC). Pre-market/market-open/midday all HOLD. AAPL 1 sh -$5.68 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3 preserved. |
 | 2026-06-18 | $99,503.11 | $99,505.16 | +$2.05 | +0.0021% | 0 | EOD: NO_TRADE day (T-1 Juneteenth). Pre-market/market-open/midday all HOLD. AAPL 1 sh -$3.88 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells (Fri 6/19 Juneteenth — market closed). |
+| 2026-06-19 | $99,505.16 | $99,505.17 | +$0.01 | +0.00001% | 0 | EOD: **Juneteenth — US markets CLOSED.** No trades possible. AAPL 1 sh -$3.87 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells. |
+
+---
+
+## EOD Snapshot — 2026-06-19 (Friday — Juneteenth — session: sleepy-goldberg-bmlats)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,505.17 |
+| Cash | $99,207.16 |
+| Long Market Value | $298.01 |
+| Day P&L ($) | +$0.01 |
+| Day P&L (%) | +0.00001% |
+| Trades Today | 0 |
+| Trades This Week | 0 |
+| Open Positions | 1 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $298.01 | -$3.87 (-1.28%) |
+
+Notes: **Juneteenth Federal Holiday — US equity markets CLOSED all session.** No pre-market, market-open, or midday trade decisions actionable; routines logged HOLD across the board. Portfolio value $99,505.17 vs yesterday $99,505.16 — Day P&L +$0.01 is broker mark-drift only (no real session activity). AAPL 1 sh -$3.87 unrealized (-1.28%); 10% trailing-stop GTC $285.66 active (cushion ~$12.35/sh, ~4.1% to stop). Cash $99,207.16 = 99.70% of equity (≥20% reserve ✅); exposure 0.30% (≤80% ✅); daily-loss limit (3%) untouched. **Week 6/15–6/19 closes: 0 buys / 0 sells / 0 net trades.** Next decision window: Monday 2026-06-22 pre-market.
 
 ---
 
