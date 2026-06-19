@@ -1,7 +1,7 @@
 {
-  "routine": "pre-market",
-  "session": "claude/gallant-lamport-b58071",
-  "timestamp": "2026-06-19T13:00:00Z",
+  "routine": "market-open",
+  "session": "claude/sweet-shannon-s8qdic",
+  "timestamp": "2026-06-19T13:45:00Z",
   "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.70,
@@ -11,5 +11,5 @@
   "day_pl_pct": 0.0,
   "portfolio_value": 99505.17,
   "status": "OK",
-  "notes": "Pre-market 2026-06-19 (Fri) — Juneteenth federal holiday; US equity markets CLOSED. NO_TRADE. AAPL 1 sh -$3.87 (-1.28%); trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved. Next: Mon 2026-06-22 pre-market."
+  "notes": "Market-open 2026-06-19 (Fri) — Juneteenth federal holiday; US equity markets CLOSED. NO_TRADE. AAPL 1 sh -$3.87 (-1.28%); trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved. Next: Mon 2026-06-22 pre-market."
 }
