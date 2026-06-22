@@ -10,7 +10,7 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 |--------|-------|
 | Start Date | — |
 | Total Trading Days | 0 |
-| Total Trades | 0 |
+| Total Trades | 1 |
 | Winning Trades | 0 |
 | Losing Trades | 0 |
 | Win Rate | — |
@@ -54,6 +54,52 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-17 | $99,505.93 | $99,503.11 | -$2.82 | -0.0028% | 0 | EOD: NO_TRADE day (FOMC). Pre-market/market-open/midday all HOLD. AAPL 1 sh -$5.68 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3 preserved. |
 | 2026-06-18 | $99,503.11 | $99,505.16 | +$2.05 | +0.0021% | 0 | EOD: NO_TRADE day (T-1 Juneteenth). Pre-market/market-open/midday all HOLD. AAPL 1 sh -$3.88 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells (Fri 6/19 Juneteenth — market closed). |
 | 2026-06-19 | $99,505.16 | $99,505.17 | +$0.01 | +0.00001% | 0 | EOD: **Juneteenth — US markets CLOSED.** No trades possible. AAPL 1 sh -$3.87 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells. |
+
+---
+
+## Market-Open Log — 2026-06-22 (Monday — session: sweet-shannon-4olcig)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash (pre-trade) | $99,207.16 |
+| Equity (pre-trade) | $99,508.49 |
+| Open Positions | 1 → 2 / 6 (AAPL 1 sh, AMD 14 sh) |
+| Trades This Week | 0 → 1 / 3 |
+| Decision | **TRADE — AMD 14 sh BUY** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6 → 2/6)
+- Max 3 trades this week ✅ (0/3 → 1/3)
+- Max 8% equity per position ✅ (AMD ~7.71%)
+- Catalyst in today's RESEARCH-LOG ✅ — AMD authorized conditional 14 sh BUY in pre-market log.
+
+Live gate re-validation (60-bar snapshot @ 09:46 ET):
+- **Macro (SPY)**: bar current $746.74 > MA20 $745.25 ✅ (live ask $748.65 also above). RSI 45.98 neutral.
+- **AMD price**: bar current $537.37 > MA20 $501.86 ✅ (live ask $546.48 also > MA20).
+- **AMD RSI-14**: 53.12 — inside 40–65 band ✅.
+- **AMD spread**: bid $545.78 / ask $546.48 → 0.128% ≤ 0.5% ✅.
+- All four gates pass → AMD trade fires.
+
+Position sizing (recomputed @ live ask $546.48):
+- Limit = ask × 1.0025 = $547.85
+- Max shares (8% cap) = floor(($99,508.49 × 0.08) / $547.85) = floor(14.53) = **14 shares**
+- Allocation = $7,646.66 ≈ 7.69% of equity (within 8% per-position rule).
+
+Trade executed:
+| Symbol | Side | Qty | Avg Fill | Order ID |
+|--------|------|-----|----------|----------|
+| AMD | BUY | 14 | $546.19 | b48c23e0-495e-490b-892d-78d38668b9cd |
+
+**Trailing-stop placement FAILED** — Alpaca returned 403 Forbidden on the GTC trailing-stop submit immediately after fill. AMD currently unprotected by a broker-side stop. **Flag for midday-scan / end-of-day routine: retry 10% trailing-stop GTC anchored to fill $546.19 → initial stop ~$491.57.**
+
+Position snapshot (post-trade, live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $301.05 | -$0.83 (-0.27%) |
+| AMD | 14 | $546.19 | $545.98 | -$3.00 (-0.04%) |
+
+Risk posture: cash ~$91,558 = 92.0% of equity (≥20% reserve ✅); exposure ~8.0% (≤80% ✅); daily-loss limit (3%) untouched. Weekly buy budget 1/3 used — 2 remaining into Tue–Fri.
 
 ---
 
@@ -1838,3 +1884,14 @@ No trades executed. FOMC Wed 6/17 T-1 binary continues to dominate. Weekly buys 
 
 Notes: **NO_TRADE day, T-1 to FOMC.** Quiet, marginally green close — Day P&L +$2.62 (+0.0026%) vs Monday 6/15 close ($99,503.31 → $99,505.93). AAPL drifted modestly intraday — market-open -2.13% → midday -0.93% → close -1.03% — net improvement from prior close (-1.90%). Pre-market HOLD/NO_TRADE (three independent stand-down reasons: FOMC Wed 6/17 binary T-1, technical re-validation blocked by `market_data.py` MA20/MA50/RSI-14 NaN, and macro filter only 1 session above MA20 after 9 below — not a confirmed regime flip). Market-open NO_TRADE (criterion #1/#2 unverifiable; criterion #4 marginal). Midday HOLD (AAPL -0.93%, no -7% cut, no +15/+20% tighten; thesis intact — post-WWDC drift, Ternus CEO Sept 1 confirmed, $100B buyback intact). AAPL 10% trailing-stop GTC `5851cbb5` (stop $285.66 / HWM $317.40) remains active — close cushion $13.11/sh (4.39%), no exit trigger. Cash $99,207.16 = 99.70% of equity (≥20% reserve ✅); total exposure 0.30% (≤80% ✅). Daily-loss limit (3%) not approached. Weekly trade counter 0/3 — **full buy budget preserved through FOMC Wed 6/17** (first Warsh-chaired meeting + SEP dots = binary tape risk; pre-market discipline defers entries until post-decision Thursday/Friday given clean candidate with live MA/RSI confirmation and 2-session SPY > MA20 reclaim).
 
+
+### Trade Entry — 2026-06-22 13:46
+| Field | Value |
+|-------|-------|
+| Symbol | AMD |
+| Side | BUY |
+| Shares | 14.0 |
+| Est. Price | $546.15 |
+| Est. Value | $7646.10 |
+| Order ID | b48c23e0-495e-490b-892d-78d38668b9cd |
+| Trailing Stop | 10% GTC placed immediately after fill |
