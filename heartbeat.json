@@ -1,7 +1,7 @@
 {
-  "routine": "market-open",
-  "session": "claude/sweet-shannon-s8qdic",
-  "timestamp": "2026-06-19T13:45:00Z",
+  "routine": "pre-market",
+  "session": "claude/gallant-lamport-mpn7xc",
+  "timestamp": "2026-06-22T13:05:00Z",
   "decision": "HOLD",
   "open_positions": 1,
   "cash_pct": 99.70,
@@ -9,7 +9,7 @@
   "trades_this_week": 0,
   "day_pl_dollars": 0.0,
   "day_pl_pct": 0.0,
-  "portfolio_value": 99505.17,
+  "portfolio_value": 99504.75,
   "status": "OK",
-  "notes": "Market-open 2026-06-19 (Fri) — Juneteenth federal holiday; US equity markets CLOSED. NO_TRADE. AAPL 1 sh -$3.87 (-1.28%); trailing-stop GTC $285.66 active. Weekly buys 0/3 preserved. Next: Mon 2026-06-22 pre-market."
+  "notes": "Pre-market 2026-06-22 (Mon, post-Juneteenth). Macro filter passes narrowly (SPY $746.74 > MA20 $745.25). Only AMD passes MA+RSI screen (price $537.37 > MA20 $501.86, RSI 53.12). AMD authorized for conditional 14-sh BUY at market-open if live gates pass (MA20, RSI 40-65, spread <=0.5%, SPY > MA20). AAPL 1 sh -$4.29 (-1.42%); trailing-stop GTC $285.66 active. Weekly buys 0/3."
 }
