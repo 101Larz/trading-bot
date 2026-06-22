@@ -54,6 +54,31 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-17 | $99,505.93 | $99,503.11 | -$2.82 | -0.0028% | 0 | EOD: NO_TRADE day (FOMC). Pre-market/market-open/midday all HOLD. AAPL 1 sh -$5.68 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Weekly buys 0/3 preserved. |
 | 2026-06-18 | $99,503.11 | $99,505.16 | +$2.05 | +0.0021% | 0 | EOD: NO_TRADE day (T-1 Juneteenth). Pre-market/market-open/midday all HOLD. AAPL 1 sh -$3.88 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells (Fri 6/19 Juneteenth — market closed). |
 | 2026-06-19 | $99,505.16 | $99,505.17 | +$0.01 | +0.00001% | 0 | EOD: **Juneteenth — US markets CLOSED.** No trades possible. AAPL 1 sh -$3.87 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells. |
+| 2026-06-22 | $99,505.17 | $99,573.48 | +$68.31 | +0.0687% | 1 | EOD: opened AMD 14 sh @ $546.19 at market-open (post-Juneteenth re-engagement). AAPL -$4.94, AMD +$69.38 unrealized. AMD broker-side trailing-stop placement FAILED (403) at fill — unprotected by GTC stop; flagged for tomorrow's pre-market to retry. AAPL 10% trailing-stop $285.66 GTC active. Weekly buys 1/3. |
+
+---
+
+## EOD Snapshot — 2026-06-22 (Monday — session: claude/sleepy-goldberg-udz4tn)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,573.48 |
+| Cash | $91,560.44 |
+| Long Market Value | $8,013.04 |
+| Day P&L ($) | +$68.31 |
+| Day P&L (%) | +0.0687% |
+| Trades Today | 1 |
+| Trades This Week | 1 |
+| Open Positions | 2 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $296.94 | -$4.94 (-1.64%) |
+| AMD | 14 | $546.19 | $551.15 | +$69.38 (+0.91%) |
+
+Notes: Post-Juneteenth re-engagement day. Market-open fired AMD 14 sh BUY @ $546.19 (live gates all passed: SPY > MA20, AMD price > MA20, RSI 53.12 in 40–65 band, spread 0.128%). Day P&L +$68.31 driven primarily by AMD marking up +$69.38 intraday (+$4.96/sh from fill to close), offset modestly by AAPL marking down -$1.07 vs prior close. **AMD remains unprotected by a broker-side trailing-stop** — Alpaca returned 403 Forbidden on the GTC submit immediately after fill; `scripts/trade.py` has no trailing-stop subcommand. Flagged for tomorrow's pre-market: retry 10% trailing-stop GTC anchored to fill $546.19 → initial stop ~$491.57. AAPL 10% trailing-stop GTC $285.66 active (cushion ~$11.28/sh, ~3.8% to stop). Cash $91,560.44 = 91.95% of equity (≥20% reserve ✅); exposure 8.05% (≤80% ✅); daily-loss limit (3%) untouched. Weekly buy budget 1/3 used — 2 remaining into Tue–Fri.
 
 ---
 
