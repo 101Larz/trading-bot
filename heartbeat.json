@@ -1,8 +1,8 @@
 {
-  "routine": "market-open",
-  "session": "claude/sweet-shannon-4olcig",
-  "timestamp": "2026-06-22T13:48:00Z",
-  "decision": "TRADE",
+  "routine": "midday-scan",
+  "session": "claude/exciting-bohr-ku5ten",
+  "timestamp": "2026-06-22T16:35:00Z",
+  "decision": "HOLD",
   "open_positions": 2,
   "cash_pct": 92.0,
   "trades_today": 1,
@@ -11,5 +11,5 @@
   "day_pl_pct": 0.0,
   "portfolio_value": 99508.49,
   "status": "OK",
-  "notes": "Market-open 2026-06-22 (Mon). AMD 14 sh BUY filled @ $546.19 avg (order b48c23e0); all 4 live gates passed (SPY > MA20, AMD > MA20, RSI 53.12 in band, spread 0.128%). Trailing-stop GTC FAILED with 403 — retry at midday/EOD. AAPL 1 sh trailing-stop GTC $285.66 still active. Weekly buys 1/3."
+  "notes": "Midday 2026-06-22 (Mon). AAPL 1 sh -0.45%, AMD 14 sh -0.89%. No cuts (both far from -7%); no winners to tighten; no thesis breaks (AMD: Rackspace AI partnership + MEXT; AAPL: iPhone pricing power). AMD trailing-stop GTC still missing (post-fill 403; trade.py has no trailing-stop subcommand) — deferred to EOD per market-open carry-forward. AAPL trailing-stop GTC $285.66 active."
 }

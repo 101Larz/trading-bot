@@ -57,6 +57,30 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-22 (Monday — session: claude/exciting-bohr-ku5ten)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 2 / 8 (AAPL 1 sh, AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $300.51 | -$1.37 (-0.45%) |
+| AMD | 14 | $546.19 | $541.355 | -$67.75 (-0.89%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL -0.45% (cushion ~$19.76/sh to $280.75); AMD -0.89% (cushion ~$33.40/sh to $507.96). No cuts.
+- **Stop-tighten (+15%/+20%)**: no position at gain. AAPL 10% trailing-stop GTC $285.66 / HWM $317.40 active.
+- **Trailing-stop infra gap**: AMD has no broker-side stop (post-fill 403 at 09:46 ET). `scripts/trade.py` has no trailing-stop subcommand — not patching trading infrastructure during a live routine; deferred to EOD per market-open carry-forward.
+- **Thesis**: Both intact. AMD constructive (Rackspace AI compute partnership, MEXT acquisition, bullish PT revisions); headwinds noted (Lisa Su 125k sh insider sale, tightened China export rules) — not a thesis break on entry day. AAPL constructive (iPhone pricing power on memory shortage, Intel foundry talks, $313.62 PT/Buy).
+
+No trades executed. Weekly buys 1/3 used. Risk posture: cash 92.0% (≥20% ✅), exposure ~7.9% (≤80% ✅), daily-loss limit (3%) untouched.
+
+---
+
 ## Market-Open Log — 2026-06-22 (Monday — session: sweet-shannon-4olcig)
 
 | Field | Value |
