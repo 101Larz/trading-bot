@@ -58,6 +58,52 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-06-23 (Tuesday — session: claude/sweet-shannon-fz3de7)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $91,560.43 |
+| Equity | $99,032.98 |
+| Long Market Value | $7,472.55 |
+| Open Positions | 2 / 6 (AAPL 1 sh, AMD 14 sh) |
+| Trades This Week | 1 / 3 |
+| Decision | **NO_TRADE — HOLD; AMD on close watch** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (2/6)
+- Max 3 trades this week ✅ (1/3)
+- Max 8% equity per position ✅ (AMD 7.25%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD; no new entries authorized; macro filter narrowly fails on bar-based SPY pre-market and decisively fails live at open.
+
+Live gate re-validation (60-bar snapshot @ 09:46 ET):
+- **Macro (SPY)**: bar current $744.39 < MA20 $745.43 ❌; **live last $735.44 << MA20 $745.43 (-1.34%)**. Hard fail — opposite of pre-market ES futures hint (+0.98% faded at open).
+- AMD chart-pass intact (bar $551.63 > MA20 $506.96; RSI 55.94 neutral) but **adding blocked**: position already 7.25% of equity, averaging-down on a -6.11% open position is barred by strategy precedent.
+- No other watchlist candidate live-validated (macro fails universally).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $300.965 | -$0.92 (-0.30%) |
+| AMD | 14 | $546.19 | $512.82 | -$467.24 (-6.11%) |
+
+**AMD risk management:**
+- **Cut-loser watch**: AMD -6.11% vs manual -7% threshold $507.96. **Cushion $4.86/sh (~0.94% to threshold)** — close watch. If breached at midday, execute `python scripts/trade.py close AMD` (one-time market-order exception under strategy stop-loss "no exceptions" rule; limit-sell tooling absent).
+- **Trailing-stop retry**: `scripts/trade.py` still has no `trailing-stop` subcommand (CLI: `clock|open|orders|cancel-all|close|buy`). Cannot place broker-side GTC trailing-stop from this routine. Infrastructure carry-forward to EOD (add `trailing-stop` subcommand) — not patching during a live market-open routine.
+- AMD remains 14 sh unprotected by broker-side stop; manual monitoring is the active control.
+
+AAPL: 1 sh / 0.30% of equity — immaterial. 10% trailing-stop GTC $285.66 active (HWM $317.40, cushion ~$15.31/sh / ~5.1% to stop).
+
+Trades executed: **none.**
+
+Risk posture: cash 92.46% of equity (≥20% reserve ✅); exposure 7.55% (≤80% ✅); daily-loss limit (3%) — day drift -0.43% from yesterday's EOD, well within. Weekly buy budget 1/3 used — 2 remaining into Wed–Fri (preserved through macro-fail day).
+
+**Flags for midday-scan:**
+1. **AMD manual cut at -7%** ($507.96) — close to threshold (~$5/sh cushion).
+2. **AMD broker-side trailing-stop retry** still gated on infrastructure (no `trailing-stop` subcommand in `trade.py`); not actionable until tooling lands.
+
+---
+
 ## EOD Snapshot — 2026-06-22 (Monday — session: claude/sleepy-goldberg-udz4tn)
 
 | Field | Value |
