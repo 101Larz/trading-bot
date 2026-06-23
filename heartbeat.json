@@ -1,15 +1,15 @@
 {
-  "routine": "midday-scan",
-  "session": "claude/exciting-bohr-ku5ten",
-  "timestamp": "2026-06-22T16:35:00Z",
+  "routine": "pre-market",
+  "session": "claude/gallant-lamport-ctwbuz",
+  "timestamp": "2026-06-23T07:10:00Z",
   "decision": "HOLD",
   "open_positions": 2,
-  "cash_pct": 92.0,
-  "trades_today": 1,
+  "cash_pct": 92.35,
+  "trades_today": 0,
   "trades_this_week": 1,
-  "day_pl_dollars": 0.0,
-  "day_pl_pct": 0.0,
-  "portfolio_value": 99508.49,
+  "day_pl_dollars": -426.83,
+  "day_pl_pct": -0.43,
+  "portfolio_value": 99146.65,
   "status": "OK",
-  "notes": "Midday 2026-06-22 (Mon). AAPL 1 sh -0.45%, AMD 14 sh -0.89%. No cuts (both far from -7%); no winners to tighten; no thesis breaks (AMD: Rackspace AI partnership + MEXT; AAPL: iPhone pricing power). AMD trailing-stop GTC still missing (post-fill 403; trade.py has no trailing-stop subcommand) — deferred to EOD per market-open carry-forward. AAPL trailing-stop GTC $285.66 active."
+  "notes": "Pre-market 2026-06-23 (Tue). Macro narrowly fails (SPY bar $744.39 < MA20 $745.43 by 0.14%). ES futures +0.98% pre-market — likely reclaim at open. AAPL -1.95% (trailing-stop $285.66 GTC active). AMD -4.66% — STILL UNPROTECTED (trade.py has no trailing-stop subcommand, broker 403 at fill 6/22). Flag for market-open: retry trailing-stop OR enforce manual cut at -7% breach $507.96. No new entries today (macro fail + AMD overhang). Weekly buys 1/3."
 }
