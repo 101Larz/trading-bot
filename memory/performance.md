@@ -58,6 +58,36 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-23 (Tuesday — session: claude/exciting-bohr-henotg)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 2 / 8 (AAPL 1 sh, AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $298.28 | -$3.60 (-1.19%) |
+| AMD | 14 | $546.19 | $525.17 | -$294.34 (-3.85%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL -1.19% (cushion ~$17.53/sh to $280.75); AMD -3.85% (cushion ~$17.21/sh to $507.96). No cuts. AMD cushion **widened** vs market-open -6.11% (~$5/sh → ~$17/sh).
+- **Stop-tighten (+15%/+20%)**: no position at gain. AAPL 10% trailing-stop GTC $285.66 / HWM $317.40 active. AMD still unprotected by broker-side stop (post-fill 403 carry-forward).
+- **Thesis check**:
+  - AMD: -5.46% intraday on broad semi sell-off + M Science Q2 GPU deployment report (Data Center sales below consensus) + HBM/GDDR6 cost pressure. Partial thesis pressure but underlying roadmap intact (HPC/supercomputing share). Not a clean break — hold with EOD re-evaluation.
+  - AAPL: BofA flags WWDC as "material positive AI reset, underappreciated." UK £3B iCloud suit is a known overhang. Thesis intact; position immaterial at 0.30% of equity.
+- **Trailing-stop infra gap**: AMD broker-side stop still gated on missing `trailing-stop` subcommand in `scripts/trade.py`. Carry-forward to EOD.
+
+No trades executed. Weekly buys 1/3 used. Risk posture: cash ~92.5% (≥20% ✅), exposure ~7.4% (≤80% ✅), daily-loss limit (3%) untouched.
+
+**Flags for end-of-day:**
+1. AMD thesis pressure (M Science Q2 GPU report + HBM cost) — re-evaluate hold conviction at EOD.
+2. AMD broker-side trailing-stop retry still infrastructure-gated.
+
+---
+
 ## Market-Open Log — 2026-06-23 (Tuesday — session: claude/sweet-shannon-fz3de7)
 
 | Field | Value |
