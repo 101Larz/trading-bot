@@ -55,6 +55,36 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-18 | $99,503.11 | $99,505.16 | +$2.05 | +0.0021% | 0 | EOD: NO_TRADE day (T-1 Juneteenth). Pre-market/market-open/midday all HOLD. AAPL 1 sh -$3.88 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells (Fri 6/19 Juneteenth — market closed). |
 | 2026-06-19 | $99,505.16 | $99,505.17 | +$0.01 | +0.00001% | 0 | EOD: **Juneteenth — US markets CLOSED.** No trades possible. AAPL 1 sh -$3.87 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells. |
 | 2026-06-22 | $99,505.17 | $99,573.48 | +$68.31 | +0.0687% | 1 | EOD: opened AMD 14 sh @ $546.19 at market-open (post-Juneteenth re-engagement). AAPL -$4.94, AMD +$69.38 unrealized. AMD broker-side trailing-stop placement FAILED (403) at fill — unprotected by GTC stop; flagged for tomorrow's pre-market to retry. AAPL 10% trailing-stop $285.66 GTC active. Weekly buys 1/3. |
+| 2026-06-23 | $99,573.48 | $99,166.59 | -$406.89 | -0.409% | 0 | EOD: NO_TRADE day. AMD marked down -$294.34 intraday on broad semi sell-off + M Science Q2 GPU report + HBM/GDDR6 cost pressure. AAPL 1 sh -$7.07; AMD 14 sh -$335.56 unrealized. AMD cushion to -7% cut $507.96 = ~$14.27/sh (~2.73%). AMD broker-side trailing-stop still infra-gated. AAPL trailing-stop $285.66 GTC active. Weekly buys 1/3. |
+
+---
+
+## EOD Snapshot — 2026-06-23 (Tuesday — session: claude/sleepy-goldberg-g54eag)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,166.59 |
+| Cash | $91,560.43 |
+| Long Market Value | $7,606.16 |
+| Day P&L ($) | -$406.89 |
+| Day P&L (%) | -0.409% |
+| Trades Today | 0 |
+| Trades This Week | 1 |
+| Open Positions | 2 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $294.81 | -$7.07 (-2.34%) |
+| AMD | 14 | $546.19 | $522.23 | -$335.56 (-4.39%) |
+
+Notes: NO_TRADE day across pre-market / market-open / midday (macro filter SPY < MA20 live at open -1.34%; AMD add blocked at 7.25% position cap; AMD averaging-down barred on -6.11% open position). Day P&L -$406.89 / -0.41% driven by AMD marking down -$294.34 intraday on broad semi sell-off + M Science Q2 GPU report (Data Center sales below consensus) + HBM/GDDR6 cost pressure; AAPL marked down -$2.13 vs prior close. AMD cushion to -7% cut threshold $507.96 = ~$14.27/sh (~2.73%) — widened vs market-open (~$5/sh) but worth close watch into Wednesday. AAPL 10% trailing-stop GTC $285.66 active (HWM $317.40, cushion ~$9.15/sh, ~3.1% to stop). **AMD remains unprotected by broker-side trailing-stop** — `scripts/trade.py` still lacks `trailing-stop` subcommand. Manual cut at -7% remains the active control. Cash $91,560.43 = 92.33% of equity (≥20% reserve ✅); exposure 7.67% (≤80% ✅); daily-loss limit (3%) — day drift -0.41%, comfortably within. Weekly buy budget 1/3 used — 2 remaining into Wed–Fri.
+
+**Carry-forward flags for Wednesday pre-market:**
+1. **AMD cut-watch** — -4.39% unrealized; cushion ~$14.27/sh (~2.73%) to manual -7% threshold $507.96. If breached, execute `python scripts/trade.py close AMD` (market-order strategy-stop exception; limit-sell tooling absent).
+2. **AMD broker-side trailing-stop retry** — still gated on missing `trailing-stop` subcommand in `scripts/trade.py`. Infrastructure carry-forward.
+3. **AMD thesis pressure** — M Science Q2 GPU deployment report + HBM/GDDR6 cost pressure. Roadmap (HPC/supercomputing share) intact but conviction softening. Re-evaluate at Wed pre-market.
 
 ---
 
