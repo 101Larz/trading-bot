@@ -56,6 +56,37 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-19 | $99,505.16 | $99,505.17 | +$0.01 | +0.00001% | 0 | EOD: **Juneteenth — US markets CLOSED.** No trades possible. AAPL 1 sh -$3.87 unrealized; trailing-stop $285.66 GTC active. Cash 99.70% of equity. Week closes: 0 buys / 0 sells. |
 | 2026-06-22 | $99,505.17 | $99,573.48 | +$68.31 | +0.0687% | 1 | EOD: opened AMD 14 sh @ $546.19 at market-open (post-Juneteenth re-engagement). AAPL -$4.94, AMD +$69.38 unrealized. AMD broker-side trailing-stop placement FAILED (403) at fill — unprotected by GTC stop; flagged for tomorrow's pre-market to retry. AAPL 10% trailing-stop $285.66 GTC active. Weekly buys 1/3. |
 | 2026-06-23 | $99,573.48 | $99,166.59 | -$406.89 | -0.409% | 0 | EOD: NO_TRADE day. AMD marked down -$294.34 intraday on broad semi sell-off + M Science Q2 GPU report + HBM/GDDR6 cost pressure. AAPL 1 sh -$7.07; AMD 14 sh -$335.56 unrealized. AMD cushion to -7% cut $507.96 = ~$14.27/sh (~2.73%). AMD broker-side trailing-stop still infra-gated. AAPL trailing-stop $285.66 GTC active. Weekly buys 1/3. |
+| 2026-06-24 | $99,166.59 | $99,359.87 | +$193.28 | +0.195% | 0 | EOD: NO_TRADE day. AMD partial recovery +$199.84 intraday ($522.23 → $536.50, +2.73%); AAPL marked down -$0.75. AMD 14 sh -$135.72 unrealized (-1.78%); cushion to -7% cut $507.96 = ~$28.54/sh (~5.32%) — materially widened vs prior EOD. AAPL 1 sh -$7.82 (-2.59%). AMD broker-side trailing-stop still infra-gated. AAPL trailing-stop $285.66 GTC active. Weekly buys 1/3. Micron earnings AMC tonight — AMD thesis read-through carries to Thursday pre-market. |
+
+---
+
+## EOD Snapshot — 2026-06-24 (Wednesday — session: claude/sleepy-goldberg-a8e3qh)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,359.87 |
+| Cash | $91,560.43 |
+| Long Market Value | $7,799.44 |
+| Day P&L ($) | +$193.28 |
+| Day P&L (%) | +0.195% |
+| Trades Today | 0 |
+| Trades This Week | 1 |
+| Open Positions | 2 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AAPL | 1 | $301.88 | $294.06 | -$7.82 (-2.59%) |
+| AMD | 14 | $546.19 | $536.50 | -$135.72 (-1.78%) |
+
+Notes: NO_TRADE day across pre-market / market-open / midday (macro filter SPY < MA20 live at open -1.34%; Micron earnings AMC binary read-through to AMD; yfinance bars TLS-broken — MA/RSI gates unverifiable; AMD already at 7.27% position cap blocked any add). Day P&L +$193.28 / +0.195% driven by AMD recovering +$199.84 intraday ($522.23 → $536.50, +2.73%) on broad semi-bid into Micron print; AAPL marked down -$0.75 vs prior close. AMD cushion to -7% cut threshold $507.96 = ~$28.54/sh (~5.32%) — materially widened from prior EOD (~$14.27/sh / ~2.73%). AAPL 10% trailing-stop GTC $285.66 active (HWM $317.40, cushion ~$8.40/sh, ~2.9% to stop). **AMD remains unprotected by broker-side trailing-stop** — `scripts/trade.py` still lacks `trailing-stop` subcommand. Manual cut at -7% remains the active control. Cash $91,560.43 = 92.15% of equity (≥20% reserve ✅); exposure 7.85% (≤80% ✅); daily-loss limit (3%) untouched. Weekly buy budget 1/3 used — 2 remaining into Thu–Fri.
+
+**Carry-forward flags for Thursday pre-market:**
+1. **Micron earnings AMC tonight** — direct read-through to AMD on memory/HBM pricing + AI-server channel. Assess thesis impact at pre-market and gate any AMD action accordingly.
+2. **AMD cut-watch** — -1.78% unrealized; cushion ~$28.54/sh (~5.32%) to manual -7% threshold $507.96. Materially widened; monitor at pre-market.
+3. **AMD broker-side trailing-stop retry** — still gated on missing `trailing-stop` subcommand in `scripts/trade.py`. Infrastructure carry-forward.
+4. **Macro filter** — SPY < MA20 at Wed open; re-validate at Thu pre-market.
 
 ---
 
