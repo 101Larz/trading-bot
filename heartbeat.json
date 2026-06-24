@@ -1,15 +1,15 @@
 {
-  "routine": "end-of-day",
-  "session": "claude/sleepy-goldberg-g54eag",
-  "timestamp": "2026-06-23T20:15:00Z",
-  "decision": "NO_TRADE",
+  "routine": "pre-market",
+  "session": "claude/gallant-lamport-0zu4im",
+  "timestamp": "2026-06-24T07:10:00Z",
+  "decision": "HOLD",
   "open_positions": 2,
-  "cash_pct": 92.33,
+  "cash_pct": 92.24,
   "trades_today": 0,
   "trades_this_week": 1,
-  "day_pl_dollars": -406.89,
-  "day_pl_pct": -0.409,
-  "portfolio_value": 99166.59,
+  "day_pl_dollars": 100.98,
+  "day_pl_pct": 0.10,
+  "portfolio_value": 99267.57,
   "status": "OK",
-  "notes": "EOD 2026-06-23 (Tue). NO_TRADE day. AAPL 1 sh -$7.07 (-2.34%); AMD 14 sh -$335.56 (-4.39%) on semi sell-off + M Science Q2 GPU report + HBM cost pressure. AMD cushion to -7% cut $507.96 = ~$14.27/sh (~2.73%) — widened from open ~$5/sh. AAPL trailing-stop $285.66 GTC active. AMD still unprotected — trade.py trailing-stop subcommand carry-forward. Cash 92.33%, exposure 7.67%, daily-loss -0.41% (within 3%). Weekly buys 1/3. Carry-forward: (1) AMD cut-watch; (2) trailing-stop infra; (3) AMD thesis pressure."
+  "notes": "Pre-market 2026-06-24 (Wed). HOLD. Macro filter fails (SPY -1.44% yesterday, live bid $733.49 below MA20 zone). Micron earnings AMC = binary risk for held AMD. Yfinance TLS-broken — MA/RSI unverifiable. AAPL 1 sh -$7.74 (-2.56%); AMD 14 sh -$233.72 (-3.06%) — cushion widened to ~$21.54/sh to -7% cut. Citi $575 PT on AMD partial offset. AAPL trailing-stop $285.66 GTC active. AMD broker-side trailing-stop still infra-gated. Weekly buys 1/3. Flags: AMD cut-watch, Micron print read-through, macro re-validation at open."
 }
