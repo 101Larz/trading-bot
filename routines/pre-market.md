@@ -32,7 +32,7 @@ Run: `python scripts/research.py positions`
 
 Record the portfolio value, cash balance, and all open positions in the journal's Portfolio Status section.
 
-## Step 3B — Dynamic Markov Screen (50-Stock Universe → Top 3 Candidates)
+## Step 3B — Dynamic Markov Screen (60-Stock Universe → Top 3 Candidates)
 
 This step replaces the fixed watchlist with a live daily screen. It runs every pre-market session and produces the ranked candidate list for Step 6.
 
@@ -44,7 +44,7 @@ Run the Markov regime analysis on every ticker in the screening universe. Execut
 cd ~/.claude/skills/markov-hedge-fund-method
 ```
 
-**Screening universe (run all 50 in order):**
+**Screening universe (run all 60 in order):**
 ```
 uv run python -m markov_hedge_fund_method.run --ticker AAPL --years 10
 uv run python -m markov_hedge_fund_method.run --ticker MSFT --years 10
@@ -96,6 +96,16 @@ uv run python -m markov_hedge_fund_method.run --ticker AON --years 10
 uv run python -m markov_hedge_fund_method.run --ticker MMC --years 10
 uv run python -m markov_hedge_fund_method.run --ticker AIG --years 10
 uv run python -m markov_hedge_fund_method.run --ticker MET --years 10
+uv run python -m markov_hedge_fund_method.run --ticker AMAT --years 10
+uv run python -m markov_hedge_fund_method.run --ticker LRCX --years 10
+uv run python -m markov_hedge_fund_method.run --ticker KLAC --years 10
+uv run python -m markov_hedge_fund_method.run --ticker MRVL --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ARM --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ASML --years 10
+uv run python -m markov_hedge_fund_method.run --ticker MU --years 10
+uv run python -m markov_hedge_fund_method.run --ticker WDC --years 10
+uv run python -m markov_hedge_fund_method.run --ticker SNDK --years 10
+uv run python -m markov_hedge_fund_method.run --ticker STX --years 10
 ```
 
 For each ticker, record these four values:

@@ -10,7 +10,7 @@ This bot is a disciplined, trend-following momentum trader. We do not predict th
 
 ---
 
-## Dynamic Screening Universe (50 stocks — re-screened every pre-market session)
+## Dynamic Screening Universe (60 stocks — re-screened every pre-market session)
 
 There is no fixed watchlist. Every pre-market session runs a live Markov + technical screen across 50 large-cap stocks and selects the top 3 candidates ranked by Sharpe. This ensures the bot always trades the best current opportunity rather than a stale list.
 
@@ -19,6 +19,7 @@ There is no fixed watchlist. Every pre-market session runs a live Markov + techn
 | Sector | Tickers |
 |--------|---------|
 | Technology | AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, INTC, CRM, ADBE, QCOM, TXN, NFLX |
+| Semis / Storage | AMAT, LRCX, KLAC, MRVL, ARM, ASML, MU, WDC, SNDK, STX |
 | Financials | JPM, V, MA, BAC, GS, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, MMC, AIG, MET, PYPL |
 | Healthcare | UNH, JNJ, ABBV, LLY, MRK, PFE |
 | Consumer | WMT, HD, PG, KO, PEP, COST, DIS |
