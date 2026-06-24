@@ -59,6 +59,34 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-24 (Wednesday — session: claude/exciting-bohr-jb81un)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 2 / 8 (AAPL 1 sh, AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AAPL | 1 | $301.88 | $297.54 | -$4.34 (-1.44%) |
+| AMD | 14 | $546.19 | $520.30 | -$362.52 (-4.74%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AAPL -1.44% (cushion ~$16.79/sh to $280.75); AMD -4.74% (cushion ~$12.34/sh to $507.96 — **widened** vs market-open ~$6.16/sh on AMD recovery $514.12 → $520.30). No cuts.
+- **Stop-tighten (+15%/+20%)**: no position at gain. AAPL 10% trailing-stop GTC $285.66 / HWM $317.40 active. AMD still unprotected by broker-side stop (post-fill 403 carry-forward).
+- **Thesis check**: AMD Buy consensus intact (35 analysts: 43% Strong Buy, 43% Buy); AI infra capex cycle (~$750B 2026) + 'Advancing AI 2026' event July 22–23 ahead. AAPL BofA constructive on AI reset; PT $314.42 consensus. No thesis breaks.
+- **Micron earnings AMC tonight** = binary AMD read-through. No pre-print action.
+
+No trades executed. Weekly buys 1/3 used. Risk posture: cash ~92.4% (≥20% ✅), exposure ~7.6% (≤80% ✅), daily-loss limit (3%) untouched.
+
+**Flags for end-of-day:**
+1. Micron earnings AMC — assess AMD thesis read-through at EOD.
+2. AMD broker-side trailing-stop retry still infra-gated.
+
+---
+
 ## Market-Open Log — 2026-06-24 (Wednesday — session: claude/sweet-shannon-f2paud)
 
 | Field | Value |
