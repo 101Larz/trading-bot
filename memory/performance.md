@@ -60,6 +60,53 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-06-25 (Thursday — session: claude/sweet-shannon-535i7k)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:48 ET) |
+| Cash | $91,845.95 |
+| Equity | $99,193.43 |
+| Long Market Value | $7,347.48 |
+| Open Positions | 1 / 6 (AMD 14 sh) |
+| Trades This Week | 1 / 3 |
+| Decision | **NO_TRADE — HOLD** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (1/3)
+- Max 8% equity per position ✅ (AMD 7.40%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD; AMD ADD blocked at cap, MU NEW LONG conditional on RSI validation that cannot be performed (TLS-broken yfinance).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AMD | 14 | $546.19 | $523.65 | -$315.56 (-4.13%) |
+
+**AAPL position CLOSED overnight** — trailing-stop GTC $285.66 fired (cash $91,560.43 → $91,845.95 = +$285.52 net of fees; realized P&L ≈ -$16.22 / -5.37% vs entry $301.88). Routine inherits 1 position (AMD only); to be reconciled in EOD with order-fill detail.
+
+Three independent stand-down reasons (reaffirming pre-market):
+- **Macro filter fails** — SPY live $732.78 << implied MA20 ~$745 (-1.64%). Universal buy block under strategy criterion #4. SPY closed 6/24 at ~$735.82; tape opened risk-off vs the pre-market futures hint.
+- **yfinance bars TLS-broken** — SPY/AMD/MU 60-bar requests all return `OPENSSL_internal:invalid library`. MA20/MA50/RSI-14 gates unverifiable from bar data; entry criteria #1 & #2 cannot be confirmed.
+- **AMD add blocked + MU gap-up unverifiable** — AMD position at -4.13% (averaging-down on a losing position is barred by strategy precedent); MU gapped to $1,197.37 post-blowout — without RSI confirmation, post-print gap-up almost certainly puts RSI > 70 (overbought entry filter ceiling).
+
+**AMD risk management:**
+- Unrealized -4.13% vs manual -7% threshold $507.96. **Cushion ~$15.69/sh (~3.0% to threshold)** — tightened from EOD ~$28.54/sh (~5.32%) on broad semi reversal at open despite Micron blowout read-through.
+- **Broker-side trailing-stop still infra-gated** — `scripts/trade.py` lacks `trailing-stop` subcommand. Manual cut at -7% remains active control.
+- Thesis intact: Micron HBM 2026 sold-out + UBS $670 PT (Arcuri 5-star) reaffirm AMD AI-DC unit-economics. Today's price action is macro/risk-off, not a thesis break.
+
+Trades executed: **none.**
+
+Risk posture: cash 92.60% of equity (≥20% reserve ✅); exposure 7.40% (≤80% ✅); daily-loss limit (3%) — day drift -$166.44 / -0.17%, well within. Weekly buy budget 1/3 used — 2 remaining preserved into Fri.
+
+**Flags for midday-scan:**
+1. **AMD manual cut at -7%** ($507.96) — cushion ~$15.69/sh (~3.0%). Re-check at midday; execute `python scripts/trade.py close AMD` if breached.
+2. **AAPL closure reconciliation** — confirm trailing-stop fill price/timestamp; update performance ledger at EOD with realized P&L.
+3. **AMD broker-side trailing-stop retry** — still infra-gated.
+4. **MU post-print** — if RSI validates inside 35–70 band intraday after gap-up fade (and TLS issue resolves), may become a Friday candidate.
+
+---
+
 ## EOD Snapshot — 2026-06-24 (Wednesday — session: claude/sleepy-goldberg-a8e3qh)
 
 | Field | Value |
