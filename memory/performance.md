@@ -57,6 +57,38 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-22 | $99,505.17 | $99,573.48 | +$68.31 | +0.0687% | 1 | EOD: opened AMD 14 sh @ $546.19 at market-open (post-Juneteenth re-engagement). AAPL -$4.94, AMD +$69.38 unrealized. AMD broker-side trailing-stop placement FAILED (403) at fill — unprotected by GTC stop; flagged for tomorrow's pre-market to retry. AAPL 10% trailing-stop $285.66 GTC active. Weekly buys 1/3. |
 | 2026-06-23 | $99,573.48 | $99,166.59 | -$406.89 | -0.409% | 0 | EOD: NO_TRADE day. AMD marked down -$294.34 intraday on broad semi sell-off + M Science Q2 GPU report + HBM/GDDR6 cost pressure. AAPL 1 sh -$7.07; AMD 14 sh -$335.56 unrealized. AMD cushion to -7% cut $507.96 = ~$14.27/sh (~2.73%). AMD broker-side trailing-stop still infra-gated. AAPL trailing-stop $285.66 GTC active. Weekly buys 1/3. |
 | 2026-06-24 | $99,166.59 | $99,359.87 | +$193.28 | +0.195% | 0 | EOD: NO_TRADE day. AMD partial recovery +$199.84 intraday ($522.23 → $536.50, +2.73%); AAPL marked down -$0.75. AMD 14 sh -$135.72 unrealized (-1.78%); cushion to -7% cut $507.96 = ~$28.54/sh (~5.32%) — materially widened vs prior EOD. AAPL 1 sh -$7.82 (-2.59%). AMD broker-side trailing-stop still infra-gated. AAPL trailing-stop $285.66 GTC active. Weekly buys 1/3. Micron earnings AMC tonight — AMD thesis read-through carries to Thursday pre-market. |
+| 2026-06-25 | $99,359.87 | $99,299.85 | -$60.02 | -0.060% | 1 | EOD: AAPL closed overnight via trailing-stop GTC ($285.66 fill, cash $91,560.43 → $91,845.95 = +$285.52; realized ≈ -$16.36 / -5.42% vs $301.88 entry). NO_TRADE during regular session (macro filter SPY << MA20 -1.64%; yfinance TLS-broken; AMD at 7.40% cap, MU gap-up unverifiable post-blowout). AMD intraday recovery: midday -$307.78 (-4.03%) → close -$192.82 (-2.52%). Cushion to -7% cut $507.96 = ~$24.05/sh (~4.52%). AMD broker-side trailing-stop still infra-gated. Single-position book now. Weekly buys 1/3, sells 1 (AAPL stop). |
+
+---
+
+## EOD Snapshot — 2026-06-25 (Thursday — session: claude/sleepy-goldberg-93g1e1)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,299.85 |
+| Cash | $91,845.95 |
+| Long Market Value | $7,453.90 |
+| Day P&L ($) | -$60.02 |
+| Day P&L (%) | -0.060% |
+| Trades Today | 1 (AAPL trailing-stop fill overnight) |
+| Trades This Week | 2 (AMD BUY 6/22 + AAPL SELL stop 6/25) |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AMD | 14 | $546.19 | $532.42 | -$192.82 (-2.52%) |
+
+Notes: AAPL closed overnight via 10% trailing-stop GTC ($285.66 fill, cash $91,560.43 → $91,845.95 = +$285.52 net; realized P&L ≈ -$16.36 / -5.42% vs $301.88 entry). Position was 0.30% of equity — immaterial — and trailing-stop fired as designed. Single-position book now: AMD only. Regular session NO_TRADE across pre-market / market-open / midday on three independent stand-downs: (1) macro filter SPY << MA20 ~-1.64% live at open; (2) yfinance bars TLS-broken — MA20/MA50/RSI-14 gates unverifiable; (3) AMD add blocked at 7.40% cap, MU post-blowout gap-up almost certainly RSI > 70. AMD recovered through afternoon — midday -$307.78 (-4.03%) → close -$192.82 (-2.52%), a +$114.96 intraday rebound (~+1.51% on AMD). Cushion to -7% cut threshold $507.96 = ~$24.05/sh (~4.52%) — materially widened vs market-open ~$15.69/sh / ~3.0%. **AMD remains unprotected by broker-side trailing-stop** — `scripts/trade.py` still lacks `trailing-stop` subcommand. Manual cut at -7% is the active control; carry-forward to Friday. Cash $91,845.95 = 92.49% of equity (≥20% reserve ✅); exposure 7.51% (≤80% ✅); daily-loss limit (3%) — day drift -0.06%, well within. Weekly buy budget 1/3 used (2 remaining into Friday); weekly sells 1 (AAPL stop).
+
+**Carry-forward flags for Friday pre-market:**
+1. **AMD cut-watch** — -2.52% unrealized; cushion ~$24.05/sh (~4.52%) to manual -7% threshold $507.96. Materially widened vs morning — monitor at pre-market.
+2. **AMD broker-side trailing-stop retry** — `scripts/trade.py` still missing `trailing-stop` subcommand. Infrastructure carry-forward.
+3. **Macro filter** — SPY << MA20 at Thu open (-1.64%); re-validate at Fri pre-market.
+4. **yfinance bars TLS-broken** — MA/RSI gates unverifiable. Investigate at pre-market or carry forward as infra block.
+5. **MU post-print** — gap-up to $1,197.37 on blowout; if RSI fades to 35–70 band intraday and TLS resolves, becomes a Friday candidate (weekly buy budget supports it: 2/3 remaining).
+6. **AAPL reconciliation complete** — trailing-stop fill confirmed via cash delta ($285.52 net inflow). Realized -$16.36 logged.
 
 ---
 
