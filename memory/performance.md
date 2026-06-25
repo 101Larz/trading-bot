@@ -60,6 +60,35 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-25 (Thursday — session: claude/exciting-bohr-zw1722)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AMD | 14 | $546.19 | $524.21 | -$307.78 (-4.03%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AMD -4.03% — no cut (cushion ~$16.25/sh to -7% threshold $507.96; widened vs market-open ~$15.69/sh on intraday +0.86% drift).
+- **Stop-tighten (+15%/+20%)**: no position at gain.
+- **Thesis check**: AMD thesis intact — UBS PT $670 (Arcuri 5-star) reaffirmed on agentic-AI CPU demand; Micron HBM 2026 sold-out read-through unchanged. This week's drawdown is macro/risk-off (hawkish-Fed-driven semi rotation), not a thesis break. Next earnings 2026-08-04.
+- **Trailing-stop infra gap**: AMD still unprotected by broker-side trailing-stop (`scripts/trade.py` lacks `trailing-stop` subcommand). Manual -7% cut remains the active control. Carry-forward.
+
+AAPL closed overnight via trailing-stop GTC (per market-open log) — single-position book now.
+
+No trades executed. Weekly buys 1/3 used. Risk posture: cash ~92.6% (≥20% ✅), exposure ~7.4% (≤80% ✅), daily-loss limit (3%) untouched.
+
+**Flags for end-of-day:**
+1. AMD broker-side trailing-stop retry still infra-gated.
+2. AAPL closure reconciliation — confirm fill price/timestamp; update ledger at EOD.
+
+---
+
 ## Market-Open Log — 2026-06-25 (Thursday — session: claude/sweet-shannon-535i7k)
 
 | Field | Value |
