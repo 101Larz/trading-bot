@@ -1,15 +1,15 @@
 {
   "routine": "pre-market",
-  "session": "claude/gallant-lamport-wb0x63",
-  "timestamp": "2026-06-25T07:10:00Z",
+  "session": "claude/gallant-lamport-uu8zgf",
+  "timestamp": "2026-06-26T07:10:00Z",
   "decision": "HOLD",
-  "open_positions": 2,
-  "cash_pct": 92.17,
+  "open_positions": 1,
+  "cash_pct": 92.66,
   "trades_today": 0,
   "trades_this_week": 1,
-  "day_pl_dollars": -18.32,
-  "day_pl_pct": -0.018,
-  "portfolio_value": 99341.55,
+  "day_pl_dollars": -173.90,
+  "day_pl_pct": -0.175,
+  "portfolio_value": 99125.95,
   "status": "OK",
-  "notes": "Pre-market 2026-06-25 (Thu). HOLD — no pre-market trades. AAPL 1 sh -$10.20 (-3.38%); AMD 14 sh -$157.28 (-2.06%, cushion ~$27/sh / ~5% to -7% cut $507.96). Strongly positive overnight AMD catalyst: Micron Q3 print blowout (rev $41.46B vs $35.59B est; 2026 HBM sold out; tightness through 2027) + UBS PT raise to $670 from $455. AAPL trailing-stop GTC $285.66 active. AMD broker-side trailing-stop still infra-gated (scripts/trade.py lacks trailing-stop subcommand). yfinance bars still TLS-broken — MA/RSI gates unverifiable bar-side; live re-validation required at market-open. Three trade ideas drafted; default verdict HOLD: macro filter likely fails (SPY ~$738 < est MA20 ~$745), AMD at 7.54% position cap (cannot add), MU post-earnings RSI likely > 70. Weekly buys 1/3 used."
+  "notes": "Pre-market 2026-06-26 (Fri). HOLD — three independent stand-downs: (1) macro filter SPY $734.96 << est MA20 ~$745 (-1.4%) post-PCE 4.1% YoY hot print; (2) yfinance bars TLS-broken Day 5 — MA/RSI gates unverifiable; (3) AMD at 7.34% cap, averaging-down barred. AMD 14 sh -4.79% / -$366.72; cushion to manual -7% cut $507.96 now ~$12.04/sh (~2.31%) — TIGHTENED from Thu EOD ~$24/sh. AMD broker-side trailing-stop still infra-gated (Day 5). Trade ideas: AMD ADD rejected (cap+avg-down+macro), GOOGL Dow-add 6/29 deferred (macro), MU post-blowout deferred (RSI+TLS+macro). Weekly buys 1/3 used, 2 remaining into Fri close."
 }
