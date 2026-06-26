@@ -61,6 +61,35 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-26 (Friday — session: claude/exciting-bohr-draf74)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AMD | 14 | $546.19 | $521.43 | -$346.70 (-4.53%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AMD -4.53% — no cut (cushion ~$13.47/sh to -7% threshold $507.96; **materially widened** vs market-open ~$2.75/sh on intraday recovery $510.71 → $521.43, +$10.72/sh / +2.10%).
+- **Stop-tighten (+15%/+20%)**: no position at gain.
+- **Thesis check**: AMD thesis intact — no company-specific break. Today's tape driven by macro/sector: chip rout dragging Nasdaq 100, Kashkari (Bloomberg) signaling Fed may need to hike on broad inflation, Iran/Strait-of-Hormuz drone strikes (ceasefire violation). UBS PT $670 (Arcuri 5-star) reaffirmed; Micron HBM 2026 sold-out read-through unchanged; next earnings 2026-08-04.
+- **Trailing-stop infra gap**: AMD broker-side stop still gated on missing `trailing-stop` subcommand in `scripts/trade.py` (Day 5 carry-forward). Manual -7% cut remains the active control.
+
+No trades executed. Weekly buys 1/3 used. Risk posture: cash 92.64% (≥20% ✅), exposure 7.36% (≤80% ✅), daily-loss limit (3%) — day drift -$152.92 / -0.15%, well within.
+
+**Flags for end-of-day:**
+1. AMD manual cut at -7% ($507.96) — cushion widened to ~$13.47/sh (~2.58%) on intraday recovery; monitor through close.
+2. AMD broker-side trailing-stop retry still infra-gated (Day 5).
+3. yfinance bars TLS-broken (Day 5) — carry-forward.
+4. Macro overhang — PCE hawkish + Iran/Hormuz + chip rout. Re-validate SPY vs MA20 at EOD.
+
+---
+
 ## Market-Open Log — 2026-06-26 (Friday — session: claude/sweet-shannon-y6038g)
 
 | Field | Value |
