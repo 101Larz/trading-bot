@@ -62,6 +62,34 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-29 (Monday — session: claude/exciting-bohr-rrlr3c)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AMD | 14 | $546.19 | $528.14 | -$252.76 (-3.31%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AMD -3.31% — no cut (cushion ~$20.18/sh to -7% threshold $507.96). Mark drifted modestly from market-open $529.22 → $528.14 (-$0.18% intraday); cushion essentially unchanged.
+- **Stop-tighten (+15%/+20%)**: no position at gain. AMD broker-side trailing-stop still infra-gated (Day 6 carry-forward) — `scripts/trade.py` lacks `trailing-stop` subcommand. Manual -7% cut remains sole protection.
+- **Thesis check**: AMD thesis intact — no company-specific news flow this routine. Macro tape constructive into midday (Trump admin US/Iran "stand down", futures up; offsetting headlines on Nasdaq 100 5-day slide + tech volatility 23-year high vs S&P). Bernstein $600 / UBS $670 PTs reaffirmed pre-market; Micron HBM 2026 sold-out read-through unchanged. Next AMD earnings 2026-08-04 (well outside 5-day exclusion).
+
+No trades executed. Weekly buys 0/3 used. Risk posture: cash ~92.5% (≥20% ✅), exposure ~7.5% (≤80% ✅), daily-loss limit (3%) — day drift +$143.13 / +0.14% from Fri EOD, well within.
+
+**Flags for end-of-day:**
+1. AMD manual cut at -7% ($507.96) — cushion ~$20.18/sh (~3.82%); monitor through close.
+2. AMD broker-side trailing-stop infra gap — Day 6 carry-forward.
+3. yfinance bars TLS-broken — Day 6 carry-forward; entry gates remain unverifiable.
+4. Macro filter — SPY MA20 status unverifiable script-side; re-validate at EOD.
+
+---
+
 ## Market-Open Log — 2026-06-29 (Monday — session: claude/sweet-shannon-4ynrly)
 
 | Field | Value |

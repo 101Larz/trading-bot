@@ -1,15 +1,15 @@
 {
-  "routine": "market-open",
-  "session": "claude/sweet-shannon-4ynrly",
-  "timestamp": "2026-06-29T13:47:22Z",
-  "decision": "NO_TRADE",
+  "routine": "midday-scan",
+  "session": "claude/exciting-bohr-rrlr3c",
+  "timestamp": "2026-06-29T16:34:01Z",
+  "decision": "HOLD",
   "open_positions": 1,
-  "cash_pct": 92.52,
+  "cash_pct": 92.55,
   "trades_today": 0,
   "trades_this_week": 0,
-  "day_pl_dollars": 172.76,
-  "day_pl_pct": 0.17,
-  "portfolio_value": 99270.69,
+  "day_pl_dollars": 143.13,
+  "day_pl_pct": 0.14,
+  "portfolio_value": 99241.06,
   "status": "OK",
-  "notes": "Market-open 2026-06-29 (Mon). NO_TRADE — three stand-downs reaffirmed: (1) macro filter likely still fails — SPY live $739.75 vs Fri MA20 ~$745 implied (-2.1% gap Friday + 0.53% ES bid not enough); (2) yfinance TLS-broken Day 6 — bar-based MA/RSI gates unverifiable, Markov screen un-runnable; (3) AMD at 7.46% cap + averaging-down barred on -3.11% loser, no other authorized catalyst. AMD 14 sh @ $529.22 / -$237.71 / -3.11%; cushion to manual -7% cut $507.96 = ~$21.26/sh (~4.02%) — materially widened vs Fri EOD ~$10.04/sh on overnight recovery. AMD broker-side trailing-stop infra gap Day 6 — manual cut sole protection. Weekly buys 0/3 preserved into Tue–Fri."
+  "notes": "Midday scan 2026-06-29 (Mon). HOLD — no action. AMD 14 sh -3.31% unrealized; cushion to -7% cut $507.96 = ~$20.18/sh (~3.82%) — essentially unchanged vs market-open. No winners to tighten. Thesis intact (Bernstein $600 / UBS $670 PTs; Micron HBM read-through unchanged). Macro tape constructive (US/Iran stand-down) but offset by Nasdaq 5-day slide + 23-yr-high tech vol. AMD broker-side trailing-stop infra gap Day 6 — manual cut sole protection. yfinance TLS-broken Day 6. Weekly buys 0/3 preserved."
 }
