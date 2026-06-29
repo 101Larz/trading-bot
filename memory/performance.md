@@ -59,6 +59,38 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-24 | $99,166.59 | $99,359.87 | +$193.28 | +0.195% | 0 | EOD: NO_TRADE day. AMD partial recovery +$199.84 intraday ($522.23 → $536.50, +2.73%); AAPL marked down -$0.75. AMD 14 sh -$135.72 unrealized (-1.78%); cushion to -7% cut $507.96 = ~$28.54/sh (~5.32%) — materially widened vs prior EOD. AAPL 1 sh -$7.82 (-2.59%). AMD broker-side trailing-stop still infra-gated. AAPL trailing-stop $285.66 GTC active. Weekly buys 1/3. Micron earnings AMC tonight — AMD thesis read-through carries to Thursday pre-market. |
 | 2026-06-25 | $99,359.87 | $99,299.85 | -$60.02 | -0.060% | 1 | EOD: AAPL closed overnight via trailing-stop GTC ($285.66 fill, cash $91,560.43 → $91,845.95 = +$285.52; realized ≈ -$16.36 / -5.42% vs $301.88 entry). NO_TRADE during regular session (macro filter SPY << MA20 -1.64%; yfinance TLS-broken; AMD at 7.40% cap, MU gap-up unverifiable post-blowout). AMD intraday recovery: midday -$307.78 (-4.03%) → close -$192.82 (-2.52%). Cushion to -7% cut $507.96 = ~$24.05/sh (~4.52%). AMD broker-side trailing-stop still infra-gated. Single-position book now. Weekly buys 1/3, sells 1 (AAPL stop). |
 | 2026-06-26 | $99,299.85 | $99,097.93 | -$201.92 | -0.203% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday (macro filter SPY << MA20 ~-2.1% live at open; yfinance TLS-broken Day 5; AMD at 7.36% cap, averaging-down barred). AMD marked down vs prior EOD ($532.42 → $518.00, -2.71%). AMD 14 sh -$394.72 unrealized (-5.16%); cushion to -7% cut $507.96 = ~$10.04/sh (~1.94%) — **tightened from midday ~$13.47/sh on late-session fade**. AMD broker-side trailing-stop still infra-gated (Day 5). Single-position book. **Week 6/22–6/26 closes: 1 buy / 1 sell / 2 events total.** |
+| 2026-06-29 | $99,097.93 | $99,382.46 | +$284.53 | +0.287% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday. AMD rallied vs Fri EOD ($518.00 → $538.32, +3.92%). AMD 14 sh -$110.19 unrealized (-1.44%); cushion to -7% cut $507.96 = ~$30.36/sh (~5.64%) — **materially widened from Fri ~$10.04/sh on overnight recovery**. AMD broker-side trailing-stop still infra-gated (Day 6). Single-position book. Week 6/29 buys 0/3 fresh budget. |
+
+---
+
+## EOD Snapshot — 2026-06-29 (Monday — session: claude/sleepy-goldberg-yvhbum)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,382.46 |
+| Cash | $91,845.93 |
+| Long Market Value | $7,536.53 |
+| Day P&L ($) | +$284.53 |
+| Day P&L (%) | +0.287% |
+| Trades Today | 0 |
+| Trades This Week | 0 (week of 6/29 — fresh budget) |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L |
+|--------|-----|-----------|---------|----------------|
+| AMD | 14 | $546.19 | $538.32 | -$110.19 (-1.44%) |
+
+Notes: NO_TRADE day across pre-market / market-open / midday. Day P&L +$284.53 / +0.287% driven entirely by AMD recovery vs Fri close ($518.00 → $538.32, +$20.32/sh × 14 = +$284.48). AMD cushion to manual -7% cut threshold $507.96 = ~$30.36/sh (~5.64%) — **materially widened from Fri EOD ~$10.04/sh (~1.94%)** on overnight rebound. Three independent stand-downs reaffirmed all session: (1) macro filter SPY << MA20 — universal buy block under strategy criterion #4; (2) yfinance bars TLS-broken **Day 6** — MA20/MA50/RSI-14 entry gates unverifiable script-side; (3) AMD already at 7.58% position cap with averaging-down on a losing position barred. AMD thesis intact (Bernstein $600, UBS $670 PTs reaffirmed; Micron HBM 2026 sold-out read-through unchanged; next earnings 2026-08-04). **AMD remains unprotected by broker-side trailing-stop (Day 6 infra carry-forward)** — `scripts/trade.py` still lacks `trailing-stop` subcommand. Manual -7% cut at $507.96 is the active control. Cash $91,845.93 = 92.42% of equity (≥20% reserve ✅); exposure 7.58% (≤80% ✅); daily-loss limit (3%) untouched. Weekly buy budget 0/3 fresh into Tue–Fri.
+
+**Carry-forward flags for Tuesday (6/30) pre-market:**
+1. **AMD cut-watch — RELAXED.** -1.44% unrealized; cushion widened to ~$30.36/sh (~5.64%) to manual -7% threshold $507.96. Continue monitoring at pre-market.
+2. **AMD broker-side trailing-stop infra gap — Day 6.** `scripts/trade.py` still lacks `trailing-stop` subcommand. Manual cut is sole protection. Escalate / patch.
+3. **yfinance bars TLS-broken — Day 6.** MA/RSI entry gates unverifiable script-side. Investigate at pre-market.
+4. **Macro filter** — SPY << MA20; re-validate at Tue pre-market.
+5. **Weekly buy budget 3/3 fresh** into Tue–Fri.
+6. **AMD next earnings 2026-08-04** — well outside 5-day exclusion.
 
 ---
 
