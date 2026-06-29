@@ -62,6 +62,52 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-06-29 (Monday — session: claude/sweet-shannon-4ynrly)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:47 ET) |
+| Cash | $91,845.93 |
+| Equity | $99,270.69 |
+| Long Market Value | $7,424.76 |
+| Open Positions | 1 / 6 (AMD 14 sh) |
+| Trades This Week | 0 / 3 (week of 6/29 — fresh budget) |
+| Decision | **NO_TRADE — HOLD** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AMD 7.46%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD reaffirmed; AMD ADD barred (cap + averaging-down on -3.11% loser), MU/GOOGL conditional on macro clear + RSI/MA verification.
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AMD | 14 | $546.19 | $529.22 | -$237.71 (-3.11%) |
+
+Three independent stand-downs (reaffirming pre-market):
+- **Macro filter likely still fails** — SPY live $739.75 (bid $739.13 / ask $739.75). Friday close ~-2.1% below MA20 (~$745 implied); a 0.53% ES bid does not clear MA20. Cannot verify MA20 directly: yfinance TLS-broken Day 6 (zero bars).
+- **yfinance bars TLS-broken — Day 6.** Both SPY and AMD bar requests return `OPENSSL_internal:invalid library`. MA20/MA50/RSI-14 entry gates (strategy criteria #1, #2) unverifiable script-side. Markov + technical screen un-runnable.
+- **AMD at cap + averaging-down barred** — position 7.46% of equity (close to 8% cap); strategy precedent bars averaging down on -3.11% loser. No other watchlist symbol passes macro filter + has verifiable entry gates.
+
+**AMD risk management:**
+- Unrealized -3.11% vs manual -7% threshold $507.96. **Cushion ~$21.26/sh (~4.02%)** — materially widened vs Fri EOD ~$10.04/sh (~1.94%) on overnight recovery (+$11.22/sh / +2.17% from $518.00 close).
+- **Broker-side trailing-stop still infra-gated — Day 6.** `scripts/trade.py` lacks `trailing-stop` subcommand. Manual -7% cut at $507.96 remains sole protection. Escalation flagged.
+- Thesis intact — Bernstein $600, UBS $670 PTs reaffirmed; Micron HBM 2026 sold-out read-through unchanged. Next AMD earnings 2026-08-04 (outside 5-day exclusion).
+
+Trades executed: **none.**
+
+Risk posture: cash 92.52% of equity (≥20% reserve ✅); exposure 7.48% (≤80% ✅); daily-loss limit (3%) — day drift +$172.76 / +0.17% from Fri EOD, well within. Weekly buy budget 0/3 used — 3 remaining preserved into Tue–Fri.
+
+**Flags for midday-scan:**
+1. **AMD manual cut at $507.96.** Cushion ~$21.26/sh (~4.02%) — comfortable but monitor. If breached, execute `python scripts/trade.py close AMD`.
+2. **AMD broker-side trailing-stop infra gap — Day 6.** Carry-forward.
+3. **yfinance TLS-broken — Day 6.** Carry-forward; entry gates remain unverifiable.
+4. **Macro filter live re-check at midday.** If SPY clears MA20 and TLS resolves, evaluate MU/GOOGL per pre-market conditionals.
+5. **Weekly buy budget 3/3 fresh** — preserve for high-conviction post-screen candidate.
+
+---
+
 ## EOD Snapshot — 2026-06-26 (Friday — session: claude/sleepy-goldberg-c1ymyq)
 
 | Field | Value |
