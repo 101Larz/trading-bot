@@ -1,15 +1,15 @@
 {
-  "routine": "pre-market",
-  "session": "claude/gallant-lamport-btpdsh",
-  "timestamp": "2026-06-29T13:00:00Z",
-  "decision": "HOLD",
+  "routine": "market-open",
+  "session": "claude/sweet-shannon-4ynrly",
+  "timestamp": "2026-06-29T13:47:22Z",
+  "decision": "NO_TRADE",
   "open_positions": 1,
-  "cash_pct": 92.56,
+  "cash_pct": 92.52,
   "trades_today": 0,
   "trades_this_week": 0,
-  "day_pl_dollars": 131.74,
-  "day_pl_pct": 0.13,
-  "portfolio_value": 99229.67,
+  "day_pl_dollars": 172.76,
+  "day_pl_pct": 0.17,
+  "portfolio_value": 99270.69,
   "status": "OK",
-  "notes": "Pre-market 2026-06-29 (Mon). Portfolio $99,229.67, cash $91,845.93 (92.56%), AMD 14 sh $527.41 / -3.44% / -$262.98; cushion to manual -7% cut $507.96 widened to ~$19.45/sh (~3.69%) vs Fri ~$10.04/sh. NO_TRADE pre-market — three stand-downs: (1) macro filter likely still fails (SPY -2.1% < MA20 Fri; ES futures +0.53% won't clear), (2) yfinance TLS-broken Day 6 — Markov screen un-runnable, (3) AMD at 7.44% cap, no other authorized catalyst. Macro: ES +0.53% on Middle East de-escalation but Fed hawkish (BofA: 3 hikes to 4.25-4.5%, core PCE 3.3%, supercore 3.9%). Weekly buy budget 3/3 fresh. Carry-forward: AMD trailing-stop infra gap Day 6, yfinance TLS Day 6 — both need escalation."
+  "notes": "Market-open 2026-06-29 (Mon). NO_TRADE — three stand-downs reaffirmed: (1) macro filter likely still fails — SPY live $739.75 vs Fri MA20 ~$745 implied (-2.1% gap Friday + 0.53% ES bid not enough); (2) yfinance TLS-broken Day 6 — bar-based MA/RSI gates unverifiable, Markov screen un-runnable; (3) AMD at 7.46% cap + averaging-down barred on -3.11% loser, no other authorized catalyst. AMD 14 sh @ $529.22 / -$237.71 / -3.11%; cushion to manual -7% cut $507.96 = ~$21.26/sh (~4.02%) — materially widened vs Fri EOD ~$10.04/sh on overnight recovery. AMD broker-side trailing-stop infra gap Day 6 — manual cut sole protection. Weekly buys 0/3 preserved into Tue–Fri."
 }
