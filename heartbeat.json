@@ -1,15 +1,15 @@
 {
-  "routine": "end-of-day",
-  "session": "claude/sleepy-goldberg-c1ymyq",
-  "timestamp": "2026-06-26T20:15:00Z",
-  "decision": "EOD_SNAPSHOT",
+  "routine": "pre-market",
+  "session": "claude/gallant-lamport-btpdsh",
+  "timestamp": "2026-06-29T13:00:00Z",
+  "decision": "HOLD",
   "open_positions": 1,
-  "cash_pct": 92.68,
+  "cash_pct": 92.56,
   "trades_today": 0,
-  "trades_this_week": 2,
-  "day_pl_dollars": -201.92,
-  "day_pl_pct": -0.203,
-  "portfolio_value": 99097.93,
+  "trades_this_week": 0,
+  "day_pl_dollars": 131.74,
+  "day_pl_pct": 0.13,
+  "portfolio_value": 99229.67,
   "status": "OK",
-  "notes": "EOD 2026-06-26 (Fri). Portfolio $99,097.93, cash $91,845.93 (92.68%), AMD 14 sh $518.00 / -5.16% / -$394.72; cushion to manual -7% cut $507.96 now ~$10.04/sh (~1.94%) — tightened on late-session fade from midday ~$13.47/sh. NO_TRADE day (macro SPY << MA20 ~-2.1%, yfinance TLS-broken Day 5, AMD at cap). AMD broker-side trailing-stop still infra-gated (Day 5) — manual cut is sole protection. Week closes 1 buy / 1 sell / 2 events. AAPL realized -$16.36 on 6/25 stop-out logged."
+  "notes": "Pre-market 2026-06-29 (Mon). Portfolio $99,229.67, cash $91,845.93 (92.56%), AMD 14 sh $527.41 / -3.44% / -$262.98; cushion to manual -7% cut $507.96 widened to ~$19.45/sh (~3.69%) vs Fri ~$10.04/sh. NO_TRADE pre-market — three stand-downs: (1) macro filter likely still fails (SPY -2.1% < MA20 Fri; ES futures +0.53% won't clear), (2) yfinance TLS-broken Day 6 — Markov screen un-runnable, (3) AMD at 7.44% cap, no other authorized catalyst. Macro: ES +0.53% on Middle East de-escalation but Fed hawkish (BofA: 3 hikes to 4.25-4.5%, core PCE 3.3%, supercore 3.9%). Weekly buy budget 3/3 fresh. Carry-forward: AMD trailing-stop infra gap Day 6, yfinance TLS Day 6 — both need escalation."
 }
