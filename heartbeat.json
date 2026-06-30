@@ -1,13 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-06-30T07:10:00Z",
-  "last_run_et": "2026-06-30T03:10:00-04:00",
-  "session": "claude/gallant-lamport-pxz9o7",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-06-30T13:47:00Z",
+  "last_run_et": "2026-06-30T09:47:00-04:00",
+  "session": "claude/sweet-shannon-8obmmw",
   "status": "ok",
-  "decision": "HOLD",
-  "portfolio_value": 99435.05,
+  "decision": "NO_TRADE",
+  "portfolio_value": 99577.99,
   "cash": 91845.93,
   "open_positions": 1,
   "trades_executed": 0,
-  "notes": "Pre-market research complete. AMD recovery continuing ($542.08, -0.75% from entry; cushion to -7% cut ~$34.12/sh / ~6.30%). Cantor PT $700 fresh upgrade. Macro filter borderline (SPY ~$740.99 vs est MA20 ~$740-742). yfinance TLS-broken Day 7; AMD broker-trailing-stop infra-gated Day 7."
+  "notes": "AMD crossed back to GREEN (+1.04%, +$79.74). No catalyst cleared: yfinance TLS-broken Day 7+ blocks MU/GOOGL RSI gates; AMD at 7.76% cap. Weekly buys 0/3 preserved. Cushion to manual cut $507.96 = $43.93/sh (7.96%)."
 }

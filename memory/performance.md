@@ -2480,3 +2480,34 @@ Notes: **NO_TRADE day, T-1 to FOMC.** Quiet, marginally green close — Day P&L 
 | Est. Value | $7646.10 |
 | Order ID | b48c23e0-495e-490b-892d-78d38668b9cd |
 | Trailing Stop | 10% GTC placed immediately after fill |
+
+### Market-Open Log — 2026-06-30 (Tuesday — session: claude/sweet-shannon-8obmmw)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:46 ET) |
+| Cash | $91,845.93 |
+| Equity | $99,577.99 |
+| Long Market Value | $7,732.06 |
+| Open Positions | 1 / 6 (AMD 14 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AMD 7.76%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD; MU & GOOGL conditional ideas both gated on (a) live macro filter + (b) yfinance bar-data resolution. yfinance still TLS-broken Day 7+ (`market_data.py SPY` → 0 bars, MA/RSI = null). RSI 35–70 verification impossible. AMD already at 7.76% cap — no ADD possible.
+
+Position snapshot (live, 09:46 ET):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AMD | 14 | $546.19 | $551.89 | +$79.74 (+1.04%) |
+
+**AMD CROSSED BACK TO GREEN** for first time since drawdown — pre-mkt $542.08 → open $551.89 (+$9.81/sh / +1.81%). Cushion to manual -7% cut $507.96 = $43.93/sh (~7.96%) — most comfortable since entry. Cantor PT $700 / UBS $670 / Bernstein $600 thesis intact.
+
+Trades executed: **none.**
+
+Risk posture: cash 92.24% (≥20% ✅), exposure 7.76% (≤80% ✅), daily-loss limit (3%) not approached (day drift +0.144%). Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 7+ (escalation), AMD broker-trailing-stop infra gap Day 7+ (escalation), AMC earnings STZ/NKE/PRGS tonight, Chicago PMI + Consumer Confidence today.
