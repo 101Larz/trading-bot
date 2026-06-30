@@ -63,6 +63,35 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-06-30 (Tuesday — session: claude/exciting-bohr-df3ozl)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AMD | 14 | $546.19 | $576.44 | +$423.37 (+5.54%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AMD +5.54% — no cut. Position is in profit.
+- **Stop-tighten (+15%/+20%)**: AMD +5.54%, below +15% trigger. No tighten yet (cushion ~$68/sh to +15% at $628.12).
+- **Thesis check**: AMD thesis **materially strengthened** today — Wells Fargo (Rakers) raised PT to $615 from $505 (Overweight); Cantor Fitzgerald raised PT to $700 from $500 (Overweight). Rakers projects server CPU revenue +68% YoY 2026, +28% 2027, +22% 2028 — meaningfully above consensus. AMD hit all-time high $563.25 intraday; mark now $576.44 (+6.85% day change). No thesis break — opposite, accelerating.
+- **Trailing-stop infra gap (Day 7)**: AMD still unprotected by broker-side trailing-stop (`scripts/trade.py` lacks `trailing-stop` subcommand). Manual -7% cut at $507.96 remains active control, but mark is well above ($68.48/sh / +13.5% cushion).
+
+No trades executed. Weekly buys 0/3 used. Risk posture: cash $91,845.93 ≈ 91.9% (≥20% ✅), exposure ~8.07% (just over 8% per-position cap on appreciation — not a violation since size-at-entry was compliant), daily-loss limit (3%) — day P&L strongly positive.
+
+**Flags for end-of-day:**
+1. AMD position appreciated above 8% size cap due to gains (8.07%) — no action required (cap is at-entry), but flag for sizing context if any add is considered.
+2. AMD broker-side trailing-stop infra gap — Day 7 carry-forward; consider patching `scripts/trade.py` to add `trailing-stop` subcommand given AMD now has meaningful unrealized gain to protect.
+3. Strategy note: at +15% (~$628.12) consider trimming 50% per strategy.md exit criteria.
+4. yfinance bars TLS-broken — Day 7 carry-forward.
+
+---
+
 ## EOD Snapshot — 2026-06-29 (Monday — session: claude/sleepy-goldberg-yvhbum)
 
 | Field | Value |
