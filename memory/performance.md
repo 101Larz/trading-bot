@@ -64,6 +64,38 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-07-01 (Wednesday — session: claude/exciting-bohr-9x1tub)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L | Day Change |
+|--------|-----|-----------|------|----------------|-----------|
+| AMD | 14 | $546.19 | $552.33 | +$85.90 (+1.12%) | -4.92% |
+
+Midday checks:
+- **Cut-loser (−7%)**: AMD +1.12% — no cut. Position in profit; cushion ~$44.37/sh (~8.03%) to manual -7% threshold $507.96.
+- **Stop-tighten (+15%/+20%)**: AMD +1.12%, below +15% trigger ($628.12). No tighten. Cushion ~$75.79/sh to +15% trim.
+- **Thesis check**: AMD thesis intact / strengthening per market-open log — WFC PT $615, Cantor $700 (both Overweight); DC GPU revenue $15.6B/$40.6B/$63B for 2026/27/28; 2nm EPYC Venice ramp H2 2026. Next earnings 2026-08-04 (outside 5-day exclusion). No thesis break.
+- **Trailing-stop infra gap (Day 8)**: AMD still unprotected by broker-side trailing-stop (`scripts/trade.py` lacks `trailing-stop` subcommand). Manual -7% cut at $507.96 remains sole protection.
+
+Day drift vs market-open: mark $556.24 → $552.33 (-$3.91/sh, -0.70% intra-session); AMD day change -4.92% reflects pullback from Tue $578.01 close. Still comfortably above cut threshold.
+
+No trades executed. Weekly buys 0/3 used. Risk posture: cash 92.24% of equity (≥20% ✅), exposure 7.76% (≤80% ✅), daily-loss limit (3%) untouched.
+
+**Flags for end-of-day:**
+1. AMD manual cut at $507.96 — cushion ~$44.37/sh (~8.03%); monitor through close.
+2. AMD +15% trim staging — mark $552.33 vs $628.12; cushion ~$75.79/sh. Not yet actionable.
+3. AMD broker-side trailing-stop infra gap — Day 8 carry-forward.
+4. yfinance bars TLS-broken — Day 8 carry-forward.
+5. Weekly buy budget 3/3 preserved.
+
+---
+
 ## Market-Open Log — 2026-07-01 (Wednesday — session: claude/sweet-shannon-0fbyuo)
 
 | Field | Value |
