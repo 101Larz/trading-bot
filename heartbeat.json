@@ -1,13 +1,13 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-06-30T13:47:00Z",
-  "last_run_et": "2026-06-30T09:47:00-04:00",
-  "session": "claude/sweet-shannon-8obmmw",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-01T13:00:00Z",
+  "last_run_et": "2026-07-01T09:00:00-04:00",
+  "session": "claude/gallant-lamport-oyf5jj",
   "status": "ok",
-  "decision": "NO_TRADE",
-  "portfolio_value": 99577.99,
+  "decision": "HOLD",
+  "portfolio_value": 99923.93,
   "cash": 91845.93,
   "open_positions": 1,
   "trades_executed": 0,
-  "notes": "AMD crossed back to GREEN (+1.04%, +$79.74). No catalyst cleared: yfinance TLS-broken Day 7+ blocks MU/GOOGL RSI gates; AMD at 7.76% cap. Weekly buys 0/3 preserved. Cushion to manual cut $507.96 = $43.93/sh (7.96%)."
+  "notes": "Pre-market HOLD. AMD 14 sh mark $577.00 (+5.64%, +$431.28); position 8.09% of equity (above 8% cap on appreciation — add barred). Wells Fargo PT $615 / Cantor $700 reaffirmed. Macro constructive (Q2 S&P +14%, buy-dip bias) but Warsh Sintra binary today. yfinance TLS Day 8 — screen un-runnable. Weekly buys 3/3 fresh."
 }
