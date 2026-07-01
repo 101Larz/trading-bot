@@ -64,6 +64,54 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-07-01 (Wednesday — session: claude/sweet-shannon-0fbyuo)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $91,845.93 |
+| Equity | $99,632.59 |
+| Long Market Value | $7,786.66 |
+| Open Positions | 1 / 6 (AMD 14 sh) |
+| Trades This Week | 0 / 3 (week of 6/29) |
+| Decision | **NO_TRADE — HOLD** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AMD 7.82%; below 8% cap post-pullback)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD reaffirmed; AMD trim-watch not add, MU/GOOGL DEFERRED (TLS Day 8).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L | Day Change |
+|--------|-----|-----------|------|----------------|-----------|
+| AMD | 14 | $546.19 | $556.24 | +$140.64 (+1.84%) | -4.25% |
+
+Three independent stand-downs (matching pre-market):
+- **No new-candidate catalyst.** yfinance TLS-broken **Day 8** — MA20/MA50/RSI-14 gates unverifiable for any symbol. MU and GOOGL deferred at pre-market on the same block.
+- **AMD add not indicated.** Position pulled back to 7.82% (below 8% cap), but no add trigger in today's research log — averaging into an existing winner is not a documented catalyst. Position +1.84% unrealized; not distressed.
+- **Warsh Sintra binary today.** Fed Chair speaking; asymmetric downside on any hawkish surprise given SPY-vs-MA20 macro re-tighten risk from mid-June. Reserve weekly buy budget.
+
+**AMD risk management:**
+- Unrealized +$140.64 (+1.84%) vs manual -7% cut $507.96. **Cushion ~$48.28/sh (~8.68%)** — comfortable; well off Fri 6/26 tight zone (~$10/sh).
+- +15% trim trigger ~$628.12; mark $556.24 = cushion ~$71.88/sh (~12.9%). Not actionable.
+- **Broker-side trailing-stop still infra-gated — Day 8.** `scripts/trade.py` lacks `trailing-stop` subcommand. Manual -7% cut at $507.96 remains sole protection.
+- Thesis intact / strengthening: WFC PT $615, Cantor $700 both Overweight; DC GPU $15.6B/$40.6B/$63B for 2026/27/28; 2nm EPYC Venice ramp H2 2026. Next earnings 2026-08-04.
+
+Trades executed: **none.**
+
+Risk posture: cash 92.18% of equity (≥20% ✅); exposure 7.82% (≤80% ✅); daily-loss limit (3%) — day drift -$305.48 / -0.31% from Tue EOD, well within. Weekly buys 0/3 used — 3 remaining preserved into Wed–Fri.
+
+**Flags for midday-scan:**
+1. **AMD manual cut at $507.96.** Cushion ~$48.28/sh (~8.68%) — comfortable; monitor for Warsh-hawkish sell-off risk.
+2. **AMD +15% trim staging** — mark $556.24 vs $628.12; cushion ~$71.88/sh. Not yet actionable.
+3. **AMD broker-side trailing-stop infra gap — Day 8.** Carry-forward.
+4. **yfinance bars TLS-broken — Day 8.** Carry-forward.
+5. **Warsh Sintra headline flow** — hawkish surprise → macro filter re-tighten risk.
+6. **Weekly buy budget 3/3** — preserved.
+
+---
+
 ## EOD Snapshot — 2026-06-30 (Tuesday — session: claude/sleepy-goldberg-0mjjkc)
 
 | Field | Value |
