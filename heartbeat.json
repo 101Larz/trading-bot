@@ -1,13 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-01T13:00:00Z",
-  "last_run_et": "2026-07-01T09:00:00-04:00",
-  "session": "claude/gallant-lamport-oyf5jj",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-07-01T13:45:00Z",
+  "last_run_et": "2026-07-01T09:45:00-04:00",
+  "session": "claude/sweet-shannon-0fbyuo",
   "status": "ok",
-  "decision": "HOLD",
-  "portfolio_value": 99923.93,
+  "decision": "NO_TRADE",
+  "portfolio_value": 99632.59,
   "cash": 91845.93,
   "open_positions": 1,
   "trades_executed": 0,
-  "notes": "Pre-market HOLD. AMD 14 sh mark $577.00 (+5.64%, +$431.28); position 8.09% of equity (above 8% cap on appreciation — add barred). Wells Fargo PT $615 / Cantor $700 reaffirmed. Macro constructive (Q2 S&P +14%, buy-dip bias) but Warsh Sintra binary today. yfinance TLS Day 8 — screen un-runnable. Weekly buys 3/3 fresh."
+  "notes": "Market-open HOLD (reaffirming pre-market). AMD 14 sh mark $556.24 (+1.84%, +$140.64); position back to 7.82% of equity on -4.25% day pullback. Manual -7% cut cushion ~$48.28/sh (~8.68%) — comfortable. +15% trim trigger $628.12 (~$72/sh away). Three stand-downs: no new-candidate catalyst (TLS Day 8 → gates unverifiable), AMD add not indicated, Warsh Sintra binary today. Weekly buys 0/3 preserved."
 }
