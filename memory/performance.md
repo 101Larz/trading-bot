@@ -65,6 +65,36 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-07-02 (Thursday — session: claude/exciting-bohr-fjo434)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L |
+|--------|-----|-----------|------|----------------|
+| AMD | 14 | $546.19 | $513.25 | -$461.17 (-6.03%) |
+
+Midday checks:
+- **Cut-loser (−7%)**: AMD -6.03% — **no cut** (cushion ~$5.29/sh to -7% threshold $507.96, ~1.03%). **Tightened materially** from pre-market ~$24.91/sh (~4.68%) on intraday selloff (mark $532.87 → $513.25, -3.68% intraday). Day change -5.11%.
+- **Stop-tighten (+15%/+20%)**: no position at gain.
+- **Thesis check**: **INTACT.** Today's -5% is macro/sector profit-taking after AMD's ATH $580.91 on Tue + BoA "bubble risk" flag on AI trade (Intel -7%, AMD -5%, TSM -6%). Not a company-specific break. Cantor $700 PT (up from $500) + WFC $615 PT reaffirmed pre-market — bullish PT revisions intact. Prior UBS $670 PT still standing. Next AMD earnings 2026-08-04 (outside 5-day exclusion). NFP print + pre-holiday illiquidity likely amplifying moves.
+- **Trailing-stop infra gap**: AMD broker-side stop still unprotected (Day 9 carry-forward). Manual -7% cut at $507.96 is sole control.
+- **Early close 1 PM ET today, market closed Fri 7/3** — 3-day weekend headline risk if not cut before close. But thesis intact and -7% not breached — hold.
+
+No trades executed. Risk posture: cash ~92.8% of equity (≥20% ✅), exposure ~7.2% (≤80% ✅), daily-loss limit (3%) — AMD -5.11% day = ~-0.38% portfolio, well within.
+
+**Flags for end-of-day (or before 1 PM early close):**
+1. **AMD cut-watch CRITICAL TIGHT** — cushion $5.29/sh (~1.03%) to $507.96. Re-check at EOD/early-close; if breached, execute `python scripts/trade.py sell AMD` immediately (limit-sell tooling absent — market-order strategy-stop exception per CLAUDE.md).
+2. AMD broker-side trailing-stop infra gap — Day 9 carry-forward.
+3. Thesis intact (Cantor $700 + WFC $615 + UBS $670 PTs) — hold conviction supported despite tape weakness.
+4. **3-day weekend gap risk** ahead — if AMD closes near cut threshold, evaluate defensive close before 1 PM.
+
+---
+
 ## EOD Snapshot — 2026-07-01 (Wednesday — session: claude/sleepy-goldberg-bsvsom)
 
 | Field | Value |
