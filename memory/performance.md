@@ -62,6 +62,40 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-06-29 | $99,097.93 | $99,382.46 | +$284.53 | +0.287% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday. AMD rallied vs Fri EOD ($518.00 → $538.32, +3.92%). AMD 14 sh -$110.19 unrealized (-1.44%); cushion to -7% cut $507.96 = ~$30.36/sh (~5.64%) — **materially widened from Fri ~$10.04/sh on overnight recovery**. AMD broker-side trailing-stop still infra-gated (Day 6). Single-position book. Week 6/29 buys 0/3 fresh budget. |
 | 2026-06-30 | $99,382.46 | $99,938.07 | +$555.61 | +0.559% | 0 | EOD: NO_TRADE day. AMD rallied $538.32 → $578.01 (+7.37%); intraday ATH $563.25 cleared, mark closed above. AMD 14 sh +$445.42 unrealized (+5.83%); cushion to -7% cut $507.96 = ~$70.05/sh (~12.12%) — materially widened from Mon ~$30.36/sh. Catalysts: Wells Fargo PT $505→$615, Cantor PT $500→$700 (both Overweight reaffirmed). Position now 8.10% of equity (above 8% size cap on appreciation — not a violation since size-at-entry was compliant). AMD broker-side trailing-stop still infra-gated (Day 7). Single-position book. Week 6/29 buys 0/3. |
 | 2026-07-01 | $99,938.07 | $99,395.43 | -$542.64 | -0.543% | 0 | EOD: NO_TRADE day. AMD gave back Tue rally: $578.01 → $539.25 (-6.71% day change). AMD 14 sh -$97.22 unrealized (-1.27%); cushion to -7% cut $507.96 = ~$31.29/sh (~5.80%) — materially tightened from Tue ~$70.05/sh but still comfortable. Position sized back to 7.60% of equity (below 8% cap). AMD broker-side trailing-stop still infra-gated (Day 8). yfinance TLS-broken (Day 8). Single-position book. Week 6/29 buys 0/3. |
+| 2026-07-02 | $99,395.43 | $99,101.57 | -$293.86 | -0.296% | 0 | EOD: NO_TRADE day (early close 1 PM ET ahead of Fri 7/3 Independence Day observed). AMD $539.25 → $518.26 (Alpaca day change -4.18%). AMD 14 sh -$391.08 unrealized (-5.11%); cushion to -7% cut $507.96 = ~$10.30/sh (~1.99%) — **TIGHT** vs Wed ~$31.29/sh on macro/sector profit-taking (BoA AI-bubble flag; Intel -7%, TSM -6%). Thesis INTACT (Cantor $700, WFC $615, UBS $670 PTs; next earnings 8/4). AMD broker-side trailing-stop still infra-gated (Day 9). Single-position book. Week 6/29 buys 0/3 (Fri 7/3 CLOSED — week ends today). |
+
+---
+
+## EOD Snapshot — 2026-07-02 (Thursday — session: claude/sleepy-goldberg-spwv7d)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,101.57 |
+| Cash | $91,845.93 |
+| Long Market Value | $7,255.64 |
+| Day P&L ($) | -$293.86 |
+| Day P&L (%) | -0.296% |
+| Trades Today | 0 |
+| Trades This Week | 0 (week of 6/29 — ends today; Fri 7/3 CLOSED) |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Day Change |
+|--------|-----|-----------|---------|----------------|-----------|
+| AMD | 14 | $546.19 | $518.26 | -$391.08 (-5.11%) | -4.18% |
+
+Notes: NO_TRADE day across pre-market / market-open / midday. **Short session (early close 1 PM ET) ahead of Fri 7/3 Independence Day observed — US markets CLOSED Fri.** Day P&L -$293.86 / -0.296% driven entirely by AMD markdown vs prior close ($539.25 → $518.26, -$20.99/sh × 14 = -$293.86). AMD intraday: pre-market cushion ~$24.91/sh → midday $513.25 (-6.03%, cushion tightened to ~$5.29/sh / ~1.03%) → close $518.26 (-5.11%, cushion recovered to ~$10.30/sh / ~1.99%) on modest late-session bounce off midday low. Position sized to 7.32% of equity (below 8% cap). Today's drawdown is macro/sector profit-taking — BoA "bubble risk" flag on AI trade dragged Intel -7%, TSM -6%, AMD -5% in sympathy; not a company-specific thesis break. **Thesis INTACT / strengthening:** Cantor PT $700 (raised from $500 pre-market), Wells Fargo PT $615 (raised from $505 6/30), UBS $670 all Overweight/Buy reaffirmed; DC GPU revenue $15.6B/$40.6B/$63B for 2026/27/28; 2nm EPYC Venice ramp H2 2026 intact. Next AMD earnings 2026-08-04 (outside 5-day exclusion). **AMD remains unprotected by broker-side trailing-stop (Day 9 infra carry-forward)** — `scripts/trade.py` still lacks `trailing-stop` subcommand. Manual -7% cut at $507.96 is the sole active control. Cash $91,845.93 = 92.68% of equity (≥20% reserve ✅); exposure 7.32% (≤80% ✅); daily-loss limit (3%) — day drift -0.30%, well within. **Week 6/29–7/2 closes: 0 buys / 0 sells / 0 events (4-day short week; Fri 7/3 CLOSED).**
+
+**Carry-forward flags for Monday (7/6) pre-market:**
+1. **AMD cut-watch — TIGHT into 3-day weekend.** -5.11% unrealized; cushion narrowed to ~$10.30/sh (~1.99%) to manual -7% threshold $507.96. **Monday pre-market: re-check immediately on cash open; if mark/last breaches $507.96, execute `python scripts/trade.py close AMD`.** 3-day weekend headline/gap risk elevated (Independence Day + weekend AI-trade sentiment).
+2. **AMD broker-side trailing-stop infra gap — Day 9.** `scripts/trade.py` still lacks `trailing-stop` subcommand. **Position that swung from +$445 (6/30) to -$391 (7/2) unrealized in 3 sessions without a broker-side stop — infra patch materially overdue.** Escalate.
+3. **AMD position 7.32% of equity** — below 8% size cap on pullback; any add still barred (averaging-down on a losing position + Day 9 broker-side stop gap).
+4. **yfinance bars TLS-broken — Day 9.** MA/RSI entry gates unverifiable script-side. Investigate at Mon pre-market.
+5. **Macro filter** — SPY vs MA20 status heading into 3-day weekend uncertain; re-validate at Mon pre-market. BoA AI-bubble note is potential lingering overhang.
+6. **Weekly buy budget resets Monday (7/6)** — 3/3 fresh.
+7. **AMD next earnings 2026-08-04** — well outside 5-day exclusion; no near-term binary on the position.
+8. **AAPL exit context**: single-position book since 6/25 AAPL trailing-stop fill; AMD is sole active position.
 
 ---
 
