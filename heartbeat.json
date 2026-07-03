@@ -1,13 +1,13 @@
 {
   "last_routine": "pre-market",
-  "last_run_utc": "2026-07-02T13:00:00Z",
-  "last_run_et": "2026-07-02T09:00:00-04:00",
-  "session": "claude/gallant-lamport-mgafwx",
+  "last_run_utc": "2026-07-03T13:00:00Z",
+  "last_run_et": "2026-07-03T09:00:00-04:00",
+  "session": "claude/gallant-lamport-7xgedg",
   "status": "ok",
   "decision": "NO_TRADE",
-  "portfolio_value": 99306.11,
+  "portfolio_value": 99095.41,
   "cash": 91845.93,
   "open_positions": 1,
   "trades_executed": 0,
-  "notes": "Pre-market HOLD. AMD 14 sh mark $532.87 (-2.44%, -$186.54); cushion to -7% cut ~$24.91/sh (~4.68%). Three stand-downs: (1) NFP 8:30 ET binary (consensus +115K; ADP soft +98K); (2) early close 1 PM ET today + Fri 7/3 CLOSED (3-day weekend gap risk); (3) yfinance TLS-broken Day 9 — entry gates unverifiable. Semi tape shaky post -4.5% chip rout + Burry short disclosures. Weekly buys 0/3 preserved."
+  "notes": "US MARKETS CLOSED — Independence Day observed. No trades possible. Account state = Thu 7/2 close. AMD 14 sh mark $517.82 (-5.20%, -$397.24); cushion to -7% cut $507.96 tight at ~$9.86/sh (~1.90%) heading into 3-day weekend. Monday 7/6 pre-market must re-check AMD mark immediately on open; execute close if breached. WebSearch skipped by design — closed session, no action possible; Monday pre-market will refresh. Weekly buys reset Monday 3/3 fresh."
 }
