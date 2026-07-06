@@ -1,13 +1,13 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-07-03T16:30:00Z",
-  "last_run_et": "2026-07-03T12:30:00-04:00",
-  "session": "claude/exciting-bohr-t857ot",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-06T13:00:00Z",
+  "last_run_et": "2026-07-06T09:00:00-04:00",
+  "session": "claude/gallant-lamport-4u0fhs",
   "status": "ok",
-  "decision": "NO_TRADE",
-  "portfolio_value": 99095.41,
+  "decision": "HOLD",
+  "portfolio_value": 99293.93,
   "cash": 91845.93,
   "open_positions": 1,
   "trades_executed": 0,
-  "notes": "US MARKETS CLOSED — Independence Day observed. Midday scan is a no-op: no fills possible, account state unchanged since Thu 7/2 close. AMD 14 sh mark $517.82 (-5.20%); cushion to -7% cut $507.96 tight at ~$9.86/sh (~1.90%) heading into weekend. No cut trigger (-7% not reached and market closed). No thesis break possible. Monday 7/6 pre-market: re-check AMD mark immediately on cash open; execute close if $507.96 breached. Weekly buys reset Monday 3/3 fresh."
+  "notes": "Pre-market HOLD. AMD 14 sh mark $532.00 (+2.74% day); unrealized -$198.72 (-2.60%); cushion to -7% cut $507.96 widened to ~$24.04/sh (~4.52%) from Thu EOD ~$9.86/sh. SPY futures +0.32%; Fed minutes later this week; light earnings week. yfinance TLS-broken presumed Day 11 → MA/RSI entry gates unverifiable script-side. AMD broker-side trailing-stop still infra-gated Day 11 — materially overdue. No new entries; weekly buys 3/3 fresh. Market-open must verify SPY vs MA20 live before any buy. AMD cut at $507.96 remains sole protection."
 }
