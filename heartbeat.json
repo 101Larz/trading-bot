@@ -1,13 +1,13 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-07-06T13:45:00Z",
-  "last_run_et": "2026-07-06T09:45:00-04:00",
-  "session": "claude/sweet-shannon-sgyib5",
+  "last_routine": "midday-scan",
+  "last_run_utc": "2026-07-06T16:30:00Z",
+  "last_run_et": "2026-07-06T12:30:00-04:00",
+  "session": "claude/exciting-bohr-wlak79",
   "status": "ok",
   "decision": "HOLD",
-  "portfolio_value": 99628.11,
+  "portfolio_value": 99848.11,
   "cash": 91845.93,
   "open_positions": 1,
   "trades_executed": 0,
-  "notes": "Market-open HOLD. AMD 14 sh mark $555.76 (+7.33% day change); unrealized +$133.92 (+1.75%) — first time above breakeven since 6/23. Cushion to -7% cut $507.96 widened to ~$47.80/sh (~8.60%) from pre-market ~$24.04/sh. Dow ATH tape constructive. yfinance TLS-broken Day 11 confirmed — macro filter SPY>MA20 unverifiable + per-candidate MA/RSI unverifiable → both entry gates fail; no buys can fire per pre-market carry-forward rule. AMD add barred (7.81% cap, broker-side stop gap Day 11). Weekly buys 0/3 preserved. Single-position book."
+  "notes": "Midday HOLD. AMD 14 sh mark $560.67 (+8.28% day change); unrealized +$202.66 (+2.65%). Cushion to -7% cut $507.96 widened to ~$52.71/sh (~9.40%) — widest since 6/30 EOD. No cut, no stop-tighten (below +15% at $628.12). Thesis STRENGTHENING: Turing customer win (10% AI training from NVDA to AMD), Goldman raised PT to $640, Cantor $700 / WFC $615 / UBS $670 intact, Advancing AI event late July. AMD 8.17% of equity (above 8% cap on appreciation — no add). Broker-side trailing-stop infra gap Day 11 unchanged. Weekly buys 0/3 preserved."
 }
