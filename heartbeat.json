@@ -1,13 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-06T13:00:00Z",
-  "last_run_et": "2026-07-06T09:00:00-04:00",
-  "session": "claude/gallant-lamport-4u0fhs",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-07-06T13:45:00Z",
+  "last_run_et": "2026-07-06T09:45:00-04:00",
+  "session": "claude/sweet-shannon-sgyib5",
   "status": "ok",
   "decision": "HOLD",
-  "portfolio_value": 99293.93,
+  "portfolio_value": 99628.11,
   "cash": 91845.93,
   "open_positions": 1,
   "trades_executed": 0,
-  "notes": "Pre-market HOLD. AMD 14 sh mark $532.00 (+2.74% day); unrealized -$198.72 (-2.60%); cushion to -7% cut $507.96 widened to ~$24.04/sh (~4.52%) from Thu EOD ~$9.86/sh. SPY futures +0.32%; Fed minutes later this week; light earnings week. yfinance TLS-broken presumed Day 11 → MA/RSI entry gates unverifiable script-side. AMD broker-side trailing-stop still infra-gated Day 11 — materially overdue. No new entries; weekly buys 3/3 fresh. Market-open must verify SPY vs MA20 live before any buy. AMD cut at $507.96 remains sole protection."
+  "notes": "Market-open HOLD. AMD 14 sh mark $555.76 (+7.33% day change); unrealized +$133.92 (+1.75%) — first time above breakeven since 6/23. Cushion to -7% cut $507.96 widened to ~$47.80/sh (~8.60%) from pre-market ~$24.04/sh. Dow ATH tape constructive. yfinance TLS-broken Day 11 confirmed — macro filter SPY>MA20 unverifiable + per-candidate MA/RSI unverifiable → both entry gates fail; no buys can fire per pre-market carry-forward rule. AMD add barred (7.81% cap, broker-side stop gap Day 11). Weekly buys 0/3 preserved. Single-position book."
 }
