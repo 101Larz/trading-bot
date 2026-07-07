@@ -1,13 +1,17 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-07T13:00:00Z",
-  "last_run_et": "2026-07-07T09:00:00-04:00",
-  "session": "claude/gallant-lamport-vj25lq",
-  "status": "ok",
-  "decision": "HOLD",
-  "portfolio_value": 99443.31,
-  "cash": 91845.93,
-  "open_positions": 1,
+  "last_routine": "market-open",
+  "last_run_utc": "2026-07-07T13:45:00Z",
+  "last_run_et": "2026-07-07 09:45 ET",
+  "session_id": "claude/sweet-shannon-he3epy",
+  "status": "success",
+  "decision": "NO_TRADE",
   "trades_executed": 0,
-  "notes": "Pre-market HOLD. yfinance TLS-broken Day 12 → MA/RSI entry gates unverifiable → any buy violates strategy criteria #1&2. AMD 14 sh mark $542.67 (-0.65% unrealized, day -1.70%); cushion to -7% cut $507.96 ~$34.71/sh (~6.40%). Live pre-market ask $585.52 / bid $530.10 (wide spread); web reports AMD +2.5% on NVDA Kyber NVL144 delay to 2028. AMD thesis STRENGTHENING: Goldman raised PT to $640, Turing customer win, Advancing AI summit Jul 22-23. AMD add barred: 7.64% position cap-adjacent + broker-side trailing-stop infra gap Day 12. Weekly buys 0/3 fresh."
+  "open_positions": 1,
+  "portfolio_value": 99096.81,
+  "cash": 91845.93,
+  "flags": [
+    "AMD manual cut at $507.96 - CRITICAL TIGHT (cushion ~$10.17/sh, ~1.96%)",
+    "AMD broker-side trailing-stop infra gap - Day 12",
+    "yfinance bars TLS-broken - Day 12"
+  ]
 }
