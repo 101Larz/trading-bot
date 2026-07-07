@@ -70,6 +70,39 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Midday Scan — 2026-07-07 (Tuesday — session: claude/exciting-bohr-2kpn9m)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+| Decision | **HOLD — no action** |
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L | Day Change |
+|--------|-----|-----------|------|----------------|-----------|
+| AMD | 14 | $546.19 | $521.00 | -$352.72 (-4.61%) | -5.62% |
+
+Midday checks:
+- **Cut-loser (−7%)**: AMD -4.61% — **no cut**. Cushion ~$13.04/sh (~2.50%) to manual -7% threshold $507.96 — modestly widened from market-open ~$10.17/sh (~1.96%) on small intraday bounce ($518.13 → $521.00).
+- **Stop-tighten (+15%/+20%)**: no position at gain.
+- **Thesis check**: **INTACT.** AMD day -7.08% is macro/sector profit-taking (AI-trade unwind, consistent with BoA "AI bubble" flag pattern) — not company-specific. Reaffirmed: GS $640, Cantor $700, WFC $615, UBS $670 PTs all Overweight/Buy; DC revenue +57% YoY Q1 ($5.8B); Advancing AI summit Jul 22–23 upcoming binary; next earnings 2026-08-04 (outside 5-day exclusion).
+- **Trailing-stop infra gap (Day 12)**: AMD unprotected by broker-side stop. `scripts/trade.py` still lacks `trailing-stop` subcommand. Manual -7% cut at $507.96 is sole control.
+
+No trades executed. Risk posture: cash 92.65% (≥20% ✅), exposure 7.35% (≤80% ✅), daily-loss limit (3%) — AMD day -5.62% × 7.35% ≈ -0.41% portfolio, within.
+
+**Flags for end-of-day:**
+1. **AMD cut-watch — TIGHT but stable.** Cushion ~$13.04/sh (~2.50%) to $507.96. Re-check at EOD; if breached execute close immediately.
+2. AMD broker-side trailing-stop infra gap — Day 12 carry-forward.
+3. AMD +15% trim staging — cushion ~$107/sh to $628.12; not actionable.
+4. yfinance bars TLS-broken — Day 12 carry-forward.
+5. Weekly buys 0/3 preserved.
+6. June FOMC minutes later this week — hawkish risk.
+7. AMD "Advancing AI" summit Jul 22–23 — near-term binary catalyst.
+8. Single-position book unchanged.
+
+---
+
 ## Market-Open Log — 2026-07-07 (Tuesday — session: claude/sweet-shannon-he3epy)
 
 | Field | Value |
