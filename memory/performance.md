@@ -67,6 +67,56 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-07-06 (market-open) | $99,293.93 (pre-mkt) | $99,628.11 | +$334.18 intraday | +0.336% | 0 | Market-open: **HOLD — no trades**. AMD rallied at open ($532.00 → $555.76, +7.33% day change); unrealized flipped to +$133.92 (+1.75%), **first time above breakeven since 6/23**. Cushion to -7% cut $507.96 widened to ~$47.80/sh (~8.60%). Both entry gates (macro SPY>MA20 + per-candidate MA/RSI) UNVERIFIED (yfinance TLS Day 11 confirmed); per pre-market carry-forward rule no buys can fire. AMD add still barred (7.81% cap, broker-side stop gap Day 11). Weekly buys 0/3, budget preserved. Single-position book. |
 | 2026-07-06 (midday) | — | — | — | — | 0 | Midday: **HOLD — no trades**. AMD extended rally ($555.76 → $560.67, +8.28% day change); unrealized +$202.66 (+2.65%). Cushion to -7% cut $507.96 widened to ~$52.71/sh (~9.40%) — widest since 6/30 EOD. Thesis STRENGTHENING: (1) Turing (JP self-driving) customer win — moving 10% of AI training from NVDA to AMD; (2) Goldman Sachs raised PT to $640; (3) Cantor $700 / WFC $615 / UBS $670 PTs all intact; (4) "Advancing AI" event catalyst late July. No cut, no stop-tighten (below +15% at $628.12). AMD 8.17% of equity — appreciated above 8% cap; no add possible. Broker-side trailing-stop infra gap Day 11 unchanged. Weekly buys 0/3 preserved. |
 | 2026-07-06 | $99,095.41 | $99,576.17 | +$480.76 | +0.485% | 0 | EOD: NO_TRADE day (pre-market/market-open/midday all HOLD; TLS Day 11 → entry gates unverifiable). AMD rallied $517.82 → $552.16 (+6.63% day change per Alpaca); intraday high $560.67 faded ~$8.51/sh into close. AMD 14 sh +$83.52 unrealized (+1.09%) — first EOD in the green since 6/23 sell-off. Cushion to -7% cut $507.96 widened to ~$44.20/sh (~8.00%) — comfortable, materially off Fri 7/3 ~$9.86/sh tight. Thesis strengthened: Goldman Sachs PT $640, Turing (JP self-driving) 10% AI-training migration NVDA→AMD; Cantor $700 / WFC $615 / UBS $670 PTs intact. Position 7.76% of equity (below 8% cap after intraday fade). AMD broker-side trailing-stop still infra-gated (Day 11). Single-position book. Week 7/6 buys 0/3 preserved. |
+| 2026-07-07 | $99,576.17 | $91,845.93 | -$7,730.24 | -7.77% | 0 | **EOD ANOMALY: AMD 14-sh position VANISHED from Alpaca between market-open ($7,250.88 LMV) and post-close (0 positions) with NO cash change — no sell order recorded, no proceeds credited.** Portfolio value = cash exactly ($91,845.93). Most likely Alpaca paper account reset/desync, not a real trade. `research.py orders` returns empty. **3% daily-loss limit BREACHED** (-7.77%) — trading halted per non-negotiable rules pending reconciliation. See EOD snapshot below for full details. |
+
+---
+
+## EOD Snapshot — 2026-07-07 (Tuesday — session: claude/sleepy-goldberg-q1fj91)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $91,845.93 |
+| Cash | $91,845.93 |
+| Long Market Value | $0.00 |
+| Day P&L ($) | **-$7,730.24** |
+| Day P&L (%) | **-7.77%** (breaches 3% daily-loss limit) |
+| Trades Today | 0 (no orders recorded) |
+| Trades This Week | 0 (week of 7/6) |
+| Open Positions | **0 / 8** (AMD 14 sh position vanished — see anomaly below) |
+
+### Open Positions
+
+*(none — AMD 14-sh position no longer present in Alpaca)*
+
+### CRITICAL ANOMALY — AMD position vanished without a trade
+
+**Observed state:**
+- **Market-open (09:45 ET, per heartbeat.json):** portfolio_value $99,096.81, cash $91,845.93, long_market_value $7,250.88, 1 open position (AMD 14 sh @ $518.13 mark, -$392.90 unrealized).
+- **Midday scan (12:30 ET, per memory/performance.md):** AMD 14 sh @ $521.00 mark, -$352.72 unrealized. Cushion ~$13.04/sh to manual -7% cut $507.96.
+- **Post-close (16:36 ET, this snapshot):** portfolio_value $91,845.93, cash $91,845.93 (**unchanged from market-open**), long_market_value **$0.00**, **0 open positions**. `research.py orders` returns `[]`.
+
+**Analysis:**
+- Yesterday's EOD (7/6): $99,576.17. Today's close: $91,845.93. Delta: **-$7,730.24 / -7.77%** — exactly the value of the missing AMD LMV.
+- Cash is IDENTICAL to yesterday's EOD cash ($91,845.93) and to today's market-open cash. **No cash transaction occurred.**
+- If AMD had been sold near the manual -7% cut $507.96, cash should have increased by ~14 × $507.96 = ~$7,111 to ~$98,957. It did not.
+- If the trailing-stop had fired at any intraday price, proceeds would be reflected in cash. They are not.
+- **Conclusion:** this is not a real trade close. The most likely cause is an **Alpaca paper account state reset or synchronization anomaly** where the position was removed from the book without a matching cash credit. Paper accounts are known to reset periodically.
+
+**Actions taken:**
+1. Push notification sent to the user immediately upon detection.
+2. This EOD snapshot logs the anomaly rather than pretending it was a normal trading day.
+3. No new trades executed (would be blocked by the 3% daily-loss limit regardless).
+4. Weekly buy budget preserved at 0/3.
+
+**Carry-forward flags for Wednesday (7/8) pre-market:**
+1. **AMD DISAPPEARANCE UNRECONCILED — HIGHEST PRIORITY.** Before any further trading activity, manually inspect the Alpaca paper dashboard to determine whether: (a) paper account was reset (proceed to re-baseline the performance log and consider re-establishing the AMD thesis position if still valid), (b) the position was closed with proceeds still pending settlement (unlikely — Alpaca paper settles instantly), or (c) some other bug/desync. Do not re-open AMD until root cause is clear.
+2. **3% daily-loss limit BREACHED (-7.77%) — trading is HALTED** per the non-negotiable risk rules. Pre-market Wed must not open new positions until the anomaly is reconciled with the user.
+3. **Long_market_value $0** — book is now empty. Risk posture is 100% cash by default until reconciliation.
+4. **`scripts/trade.py` trailing-stop infra gap — Day 13.** No longer relevant to a live position, but the missing subcommand meant AMD had zero broker-side protection through this event; if the account was reset, this remains a top priority to patch before re-opening any position.
+5. **yfinance TLS-broken — Day 13.** Alpaca-bars fallback in `market_data.py` remains the priority infra fix.
+6. **Realized-P&L accounting hold.** Do not treat the -$7,730.24 delta as a realized loss until reconciled — it may be a bookkeeping artifact rather than a real trading loss. The performance log's `Total P&L` field must not be updated until the user confirms disposition.
+7. Weekly buy budget 0/3 preserved into Wed–Fri (blocked regardless by daily-loss halt until reconciled).
+8. Single-position book was AMD only; now zero-position book.
 
 ---
 
