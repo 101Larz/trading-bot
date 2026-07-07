@@ -1,17 +1,22 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-07-07T13:45:00Z",
-  "last_run_et": "2026-07-07 09:45 ET",
-  "session_id": "claude/sweet-shannon-he3epy",
-  "status": "success",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-07-07T20:40:00Z",
+  "last_run_et": "2026-07-07 16:40 ET",
+  "session_id": "claude/sleepy-goldberg-q1fj91",
+  "status": "anomaly",
   "decision": "NO_TRADE",
   "trades_executed": 0,
-  "open_positions": 1,
-  "portfolio_value": 99096.81,
+  "open_positions": 0,
+  "portfolio_value": 91845.93,
   "cash": 91845.93,
+  "day_pnl_dollars": -7730.24,
+  "day_pnl_percent": -7.77,
   "flags": [
-    "AMD manual cut at $507.96 - CRITICAL TIGHT (cushion ~$10.17/sh, ~1.96%)",
-    "AMD broker-side trailing-stop infra gap - Day 12",
-    "yfinance bars TLS-broken - Day 12"
+    "CRITICAL ANOMALY: AMD 14-sh position vanished from Alpaca between market-open and post-close with NO cash change - no sell order, no proceeds credited",
+    "3% daily-loss limit BREACHED (-7.77%) - trading HALTED per non-negotiable rules until reconciled",
+    "Most likely Alpaca paper account reset/desync, not a real trade close",
+    "Push notification sent - user must manually verify Alpaca dashboard before Wed 7/8 pre-market",
+    "yfinance TLS-broken Day 13",
+    "scripts/trade.py trailing-stop subcommand still missing Day 13"
   ]
 }
