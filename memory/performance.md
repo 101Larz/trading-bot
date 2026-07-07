@@ -70,6 +70,55 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 
 ---
 
+## Market-Open Log — 2026-07-07 (Tuesday — session: claude/sweet-shannon-he3epy)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $91,845.93 |
+| Equity | $99,096.81 |
+| Long Market Value | $7,250.88 |
+| Open Positions | 1 / 6 (AMD 14 sh) |
+| Trades This Week | 0 / 3 (week of 7/6) |
+| Decision | **NO_TRADE — HOLD** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AMD 7.32%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD reaffirmed; AMD add BLOCKED, MSFT/GOOGL DEFERRED (TLS Day 12).
+
+Position snapshot (live):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L | Day Change |
+|--------|-----|-----------|------|----------------|-----------|
+| AMD | 14 | $546.19 | $518.13 | -$392.90 (-5.14%) | -6.14% |
+
+Three independent stand-downs (reaffirming pre-market):
+- **Entry gates unverifiable — Day 12.** yfinance TLS-broken; MA20/MA50/RSI-14 unverifiable script-side. Strategy criteria #1 & #2 procedurally fail → any buy violates rules.
+- **AMD add barred.** Position 7.32% (below 8% cap on intraday markdown); broker-side stop gap Day 12; averaging down into -6.14% intraday weakness not a documented catalyst.
+- **No qualified new-candidate catalyst.** MSFT / GOOGL DEFERRED at pre-market on same gate block.
+
+**AMD risk management — CRITICAL TIGHT:**
+- Unrealized -5.14% vs manual -7% cut $507.96. **Cushion ~$10.17/sh (~1.96%)** — tightened from pre-market ~$34.71/sh (~6.40%) on intraday markdown ($542.67 → $518.13, -4.52% intra-session).
+- +15% trim trigger ~$628.12; mark cushion ~$110/sh. Not actionable.
+- **Broker-side trailing-stop still infra-gated — Day 12.** `scripts/trade.py` lacks `trailing-stop` subcommand. Manual -7% cut at $507.96 is sole protection.
+- Thesis INTACT (GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight; NVDA Kyber delay; Turing win; "Advancing AI" summit Jul 22–23). Sell-off is macro / semis-sector give-back, not company-specific.
+
+Trades executed: **none.**
+
+Risk posture: cash 92.68% (≥20% ✅); exposure 7.32% (≤80% ✅); daily-loss limit (3%) — day drift -0.48% from Mon EOD, within. Weekly buys 0/3 preserved.
+
+**Flags for midday-scan:**
+1. **AMD manual cut at $507.96 — CRITICAL TIGHT.** Cushion ~$10.17/sh (~1.96%). If breached execute close immediately.
+2. **AMD broker-side trailing-stop infra gap — Day 12.** Position -$393 unrealized, unprotected — escalate.
+3. **AMD +15% trim staging** — mark cushion ~$110/sh. Not actionable.
+4. **yfinance bars TLS-broken — Day 12.** Priority infra fix (Alpaca-bars fallback).
+5. **Weekly buy budget 3/3** preserved.
+6. **June FOMC minutes** later this week — hawkish risk.
+7. **AMD "Advancing AI" summit — Jul 22–23** — near-term binary inside position window.
+
+---
+
 ## EOD Snapshot — 2026-07-06 (Monday — session: claude/sleepy-goldberg-dl3rmg)
 
 | Field | Value |
