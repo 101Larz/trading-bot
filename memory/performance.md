@@ -70,6 +70,62 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-07-07 | $99,576.17 | $91,845.93 | -$7,730.24 | -7.77% | 0 | **EOD ANOMALY: AMD 14-sh position VANISHED from Alpaca between market-open ($7,250.88 LMV) and post-close (0 positions) with NO cash change — no sell order recorded, no proceeds credited.** Portfolio value = cash exactly ($91,845.93). Most likely Alpaca paper account reset/desync, not a real trade. `research.py orders` returns empty. **3% daily-loss limit BREACHED** (-7.77%) — trading halted per non-negotiable rules pending reconciliation. See EOD snapshot below for full details. |
 | 2026-07-08 (market-open) | $99,039.55 (pre-mkt) | $99,102.14 | +$62.59 intraday | +0.063% | 0 | Market-open: **HOLD — no trades**. AMD 14 sh mark $518.20, -$391.92 unrealized (-5.12%). Cushion to manual -7% cut $507.96 widened to ~$10.24/sh (~1.98%) from pre-market ~$5.87/sh — still CRITICAL TIGHT. Six independent stand-downs converge (FOMC minutes 2 PM ET binary; SOXX -12.9% 2-day; AMD cushion tight; yfinance TLS Day 13; broker-side stop gap Day 13; fresh off Alpaca desync anomaly). Pre-market's HOLD reaffirmed. Weekly buys 0/3 preserved. Single-position book. |
 | 2026-07-08 (midday) | — | $98,974.94 | -$127.20 intraday | -0.128% | 0 | Midday: **HOLD — no action** (position -6.77%, rule fires at -7%). AMD 14 sh mark $509.22, -$517.71 unrealized (-6.77%). **Cushion CRITICAL TIGHT: ~$1.26/sh (~0.25%)** to manual -7% cut $507.96 — tightened from market-open ~$10.24/sh on continued semi pressure. **AMD intraday low $503.11 already BELOW cut threshold — broker-side stop would have fired; only reason position still open is Day 13 infra gap.** Thesis INTACT (Goldman raised PT today on "strong server CPU demand"; Micro Center × Ryzen AI Halo partnership; GS $640/Cantor $700/WFC $615/UBS $670 Overweight PTs intact). FOMC minutes 2 PM ET binary in ~1 hr — hawkish surprise likely triggers cut. Weekly buys 0/3 preserved. Single-position book. |
+| 2026-07-08 | $91,845.93 (7/7 anomaly) | $99,047.53 | +$7,201.60* | +7.84%* | 0 | EOD: NO_TRADE day. AMD 14 sh present ($514.40 mark, -$445.12 unrealized / -5.82%). *Day P&L vs 7/7 recorded EOD reflects **restoration of AMD position** (7/7 anomaly reconciled — position AND cash both present); real intraday drift vs 7/8 market-open $99,102.14 = -$54.61 / -0.055%; drift vs 7/6 EOD (last clean) $99,576.17 = -$528.64 / -0.531%. AMD recovered off midday $509.22 low → $514.40 close (+$5.18/sh). Cushion to manual -7% cut $507.96 widened to ~$6.44/sh (~1.25%) from midday CRITICAL TIGHT ~$1.26/sh. Thesis INTACT (Goldman PT raise, Micro Center × Ryzen AI Halo, GS $640/Cantor $700/WFC $615/UBS $670 Overweight PTs). AMD broker-side trailing-stop still infra-gated (Day 13). yfinance TLS-broken (Day 13). Single-position book. Weekly buys 0/3 preserved. |
+
+---
+
+## EOD Snapshot — 2026-07-08 (Wednesday — session: claude/sleepy-goldberg-bj5x2f)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,047.53 |
+| Cash | $91,845.93 |
+| Long Market Value | $7,201.60 |
+| Day P&L ($) vs 7/7 EOD | +$7,201.60 (position restoration — NOT real trading P&L; see notes) |
+| Day P&L (%) vs 7/7 EOD | +7.84% (position restoration) |
+| Drift vs 7/8 market-open ($99,102.14) | -$54.61 / -0.055% |
+| Drift vs 7/6 EOD ($99,576.17, last clean) | -$528.64 / -0.531% (2-session) |
+| Trades Today | 0 |
+| Trades This Week | 0 (week of 7/6) |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Day Change |
+|--------|-----|-----------|---------|----------------|-----------|
+| AMD | 14 | $546.19 | $514.40 | -$445.12 (-5.82%) | -0.33% |
+
+### 7/7 Anomaly Reconciliation
+
+The 7/7 EOD snapshot recorded an **AMD position vanished without cash credit** anomaly (portfolio value $91,845.93 = cash only). Today's account state shows the AMD 14-sh position IS present with cash unchanged from 7/7 ($91,845.93). Interpretation:
+
+- The 7/7 "vanished position" appears to have been an **Alpaca paper account state snapshot anomaly** (transient desync at read-time), not a real position loss.
+- Cash ($91,845.93) is identical across 7/6 EOD → 7/7 EOD anomaly → 7/8 EOD, consistent with no cash transaction ever occurring.
+- Position (AMD 14 sh, avg entry $546.19) is unchanged from pre-anomaly baseline — same lot, same cost basis.
+- **Total P&L in the summary header remains uncorrupted** (no realized -$7,730 loss was ever booked).
+- 3% daily-loss halt from 7/7 no longer applicable — 7/8 real drift is -0.055% intraday, -0.531% vs last clean EOD (7/6). Within limits.
+
+### Session Notes
+
+NO_TRADE day across pre-market / market-open / midday / EOD. Six independent stand-downs converged: (1) macro filter SPY vs MA20 uncertain post-anomaly + FOMC minutes 2 PM ET binary; (2) SOXX -12.9% 2-day sell-off (AMD in blast radius); (3) AMD position cushion CRITICAL TIGHT through midday; (4) yfinance TLS-broken Day 13 (MA20/MA50/RSI-14 entry gates unverifiable script-side); (5) `scripts/trade.py` trailing-stop subcommand missing Day 13 (AMD unprotected broker-side); (6) fresh off Alpaca desync anomaly — heightened caution.
+
+AMD intraday arc: pre-market cushion ~$5.87/sh → market-open $518.20 (cushion ~$10.24/sh) → midday $509.22 (CRITICAL TIGHT ~$1.26/sh, intraday low $503.11 BELOW cut threshold) → close $514.40 (cushion ~$6.44/sh). Position ended above manual -7% cut threshold $507.96 despite penetrating it intraday (broker-side stop would have fired at $503.11 low if infra-gate not present). Alpaca day change -0.33%.
+
+Thesis INTACT: Goldman Sachs PT raised today on "strong server CPU demand" (adds to $640 PT); Micro Center × Ryzen AI Halo partnership headline; GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs all standing; "Advancing AI" summit Jul 22–23 upcoming binary; next earnings 2026-08-04.
+
+Cash $91,845.93 = 92.73% of equity (≥20% reserve ✅); exposure 7.27% (≤80% ✅); daily-loss limit (3%) — real intraday drift -0.055%, well within. Weekly buy budget 0/3 preserved (single-position book unchanged).
+
+**Carry-forward flags for Thursday (7/9) pre-market:**
+1. **7/7 anomaly RECONCILED** — position + cash both present at 7/8 EOD; total P&L header untouched. No further reconciliation needed but flag pattern for future recurrence.
+2. **AMD cut-watch — TIGHT (recovered from midday CRITICAL).** -5.82% unrealized; cushion ~$6.44/sh (~1.25%) to manual -7% threshold $507.96. **Thursday pre-market: re-check immediately on cash open; if mark/last breaches $507.96, execute cut.** FOMC minutes reaction + SOXX continuation risk overnight.
+3. **AMD broker-side trailing-stop infra gap — Day 13.** `scripts/trade.py` still lacks `trailing-stop` subcommand. **Position penetrated cut threshold intraday ($503.11 low) with no broker-side protection — infra patch materially overdue.** Escalate.
+4. **yfinance bars TLS-broken — Day 13.** MA/RSI entry gates unverifiable script-side. **Priority infra fix: implement Alpaca-bars fallback in `market_data.py`.**
+5. **AMD 7.27% of equity** — below 8% size cap; any add still barred (broker-side stop gap, averaging down into losing position, TLS-blocked gates).
+6. **AMD +15% trim watch** — mark $514.40 vs +15% trim trigger ~$628.12; cushion ~$113.72/sh. Not actionable.
+7. **Weekly buy budget 3/3** preserved into Thu–Fri.
+8. **FOMC minutes** released 2 PM ET today — check post-close market reaction / Thursday pre-market for hawkish tilt implications.
+9. **AMD next earnings 2026-08-04** — outside 5-day exclusion; no near-term binary.
+10. **Single-position book** since 6/25 AAPL trailing-stop fill; AMD is sole active position.
 
 ---
 
