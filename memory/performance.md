@@ -73,6 +73,50 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-07-08 | $91,845.93 (7/7 anomaly) | $99,047.53 | +$7,201.60* | +7.84%* | 0 | EOD: NO_TRADE day. AMD 14 sh present ($514.40 mark, -$445.12 unrealized / -5.82%). *Day P&L vs 7/7 recorded EOD reflects **restoration of AMD position** (7/7 anomaly reconciled — position AND cash both present); real intraday drift vs 7/8 market-open $99,102.14 = -$54.61 / -0.055%; drift vs 7/6 EOD (last clean) $99,576.17 = -$528.64 / -0.531%. AMD recovered off midday $509.22 low → $514.40 close (+$5.18/sh). Cushion to manual -7% cut $507.96 widened to ~$6.44/sh (~1.25%) from midday CRITICAL TIGHT ~$1.26/sh. Thesis INTACT (Goldman PT raise, Micro Center × Ryzen AI Halo, GS $640/Cantor $700/WFC $615/UBS $670 Overweight PTs). AMD broker-side trailing-stop still infra-gated (Day 13). yfinance TLS-broken (Day 13). Single-position book. Weekly buys 0/3 preserved. |
 | 2026-07-09 (market-open) | $99,164.43 (pre-mkt) | $99,540.40 | +$375.97 intraday | +0.379% | 0 | Market-open: **HOLD — no trades**. AMD rallied hard at open ($516.11 → $549.60, day +6.22%); unrealized flipped from pre-market -$328.22 (-4.29%) to +$47.75 (+0.62%). **Cushion to manual -7% cut $507.96 widened to ~$41.65/sh (~8.20%)** from pre-market CRITICAL TIGHT $1.00/sh (~0.20%) — position no longer on cut-watch. Buy-rule check: **no qualified catalyst in RESEARCH-LOG** (macro filter unverifiable TLS Day 14 → carry-forward rule blocks buys; MSFT/GOOGL DEFERRED at pre-market). AMD add barred (broker-side stop gap Day 14, no averaging-up catalyst). Weekly buys 0/3 preserved. Single-position book. |
 | 2026-07-09 (midday) | — | — | — | — | 0 | Midday: **HOLD — no action**. AMD 14 sh mark $549.52 (+0.61% unrealized, +$46.49); day +6.21%. Cushion to manual -7% cut $507.96 held at ~$41.56/sh (~7.94%) — essentially unchanged from market-open ~$41.65/sh (position flat intra-session $549.60 → $549.52). No cut (well below -7%), no stop-tighten (well below +15% trigger $628.12; cushion ~$78.60/sh). Thesis INTACT: GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs; Goldman PT raised 7/8; Micro Center × Ryzen AI Halo; "Advancing AI" Jul 22–23. AMD broker-side trailing-stop still infra-gated (Day 14). yfinance TLS-broken (Day 14). Weekly buys 0/3 preserved. Single-position book. |
+| 2026-07-09 | $99,047.53 | $99,485.03 | +$437.50 | +0.442% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday / EOD. AMD 14 sh mark $545.65 (-$7.62 unrealized, -0.10%); day +0.055% (essentially flat vs 7/8 close). Cushion to manual -7% cut $507.96 = ~$37.69/sh (~6.91%) — modestly tightened from midday ~$41.56/sh on late-session fade off $549.52. Position remains comfortably above cut threshold. Thesis INTACT (GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs; Goldman PT raise 7/8; Micro Center × Ryzen AI Halo; "Advancing AI" Jul 22–23 binary). AMD broker-side trailing-stop still infra-gated (Day 14). yfinance TLS-broken (Day 14). Weekly buys 0/3 preserved. Single-position book. |
+
+---
+
+## EOD Snapshot — 2026-07-09 (Thursday — session: claude/sleepy-goldberg-gpeylk)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,485.03 |
+| Cash | $91,845.93 |
+| Long Market Value | $7,639.10 |
+| Day P&L ($) | +$437.50 |
+| Day P&L (%) | +0.442% |
+| Trades Today | 0 |
+| Trades This Week | 0 (week of 7/6) |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Day Change |
+|--------|-----|-----------|---------|----------------|-----------|
+| AMD | 14 | $546.19 | $545.65 | -$7.62 (-0.10%) | +0.055% |
+
+### Session Notes
+
+NO_TRADE day across pre-market / market-open / midday / EOD. Portfolio value +$437.50 / +0.442% from 7/8 EOD $99,047.53 → $99,485.03, driven entirely by AMD mark move ($514.40 → $545.65, +$31.25/sh × 14 = +$437.50). Position moved from -5.82% unrealized (7/8 EOD) to -0.10% unrealized (7/9 EOD) — near breakeven at close.
+
+AMD intraday arc: pre-market $516.11 (-4.29% unrealized, cushion ~$1.00/sh CRITICAL TIGHT) → market-open $549.60 (+0.62%, cushion ~$41.65/sh) → midday $549.52 (+0.61%, cushion ~$41.56/sh) → close $545.65 (-0.10%, cushion ~$37.69/sh). Intraday high near midday; modest late-session fade of ~$3.87/sh into close.
+
+Thesis INTACT and strengthening: Goldman Sachs PT raise 7/8 (adds to $640 PT), Micro Center × Ryzen AI Halo partnership; GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs all standing; "Advancing AI" summit Jul 22–23 upcoming binary; next earnings 2026-08-04.
+
+Cash $91,845.93 = 92.32% of equity (≥20% reserve ✅); exposure 7.68% (≤80% ✅); daily-loss limit (3%) — day P&L strongly positive at +0.442%, well within. Weekly buy budget 0/3 preserved into Friday.
+
+**Carry-forward flags for Friday (7/10) pre-market:**
+1. **AMD cut-watch — RELAXED.** -0.10% unrealized; cushion ~$37.69/sh (~6.91%) to manual -7% threshold $507.96. Position near breakeven; monitor for AMD-specific or macro semi-sector headline flow.
+2. **AMD broker-side trailing-stop infra gap — Day 14.** `scripts/trade.py` still lacks `trailing-stop` subcommand. Position remains unprotected broker-side; manual -7% cut at $507.96 is sole active control. **Infra patch materially overdue — escalate.**
+3. **yfinance bars TLS-broken — Day 14.** MA20/MA50/RSI-14 entry gates unverifiable script-side. **Priority infra fix: implement Alpaca-bars fallback in `market_data.py`** — 14 consecutive sessions of buy-side gate blocks.
+4. **AMD 7.68% position** — below 8% size cap; any add still barred (broker-side stop gap; TLS-blocked gates; no averaging-up catalyst).
+5. **AMD +15% trim watch** — mark $545.65 vs +15% trim trigger ~$628.12. Cushion ~$82.47/sh (~15.1%). Not actionable.
+6. **Weekly buy budget 3/3 preserved** into Friday (final day of week).
+7. **AMD "Advancing AI" summit — Jul 22–23** — near-term binary catalyst.
+8. **AMD next earnings 2026-08-04** — outside 5-day exclusion; no near-term binary.
+9. **Single-position book** since 6/25 AAPL trailing-stop fill; AMD is sole active position.
+10. **Macro filter** — SPY vs MA20 still TLS-blocked script-side; revalidate at Fri pre-market.
 
 ---
 

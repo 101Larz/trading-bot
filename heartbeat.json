@@ -1,24 +1,25 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-07-09T13:45:00Z",
-  "last_run_et": "2026-07-09 09:45 ET",
-  "session_id": "claude/sweet-shannon-majarr",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-07-09T20:15:00Z",
+  "last_run_et": "2026-07-09 16:15 ET",
+  "session_id": "claude/sleepy-goldberg-gpeylk",
   "status": "ok",
   "decision": "HOLD",
   "trades_executed": 0,
+  "trades_this_week": 0,
   "open_positions": 1,
-  "portfolio_value": 99540.4,
+  "portfolio_value": 99485.03,
   "cash": 91845.93,
-  "long_market_value": 7694.47,
-  "day_pnl_dollars": null,
-  "day_pnl_percent": null,
+  "long_market_value": 7639.10,
+  "day_pnl_dollars": 437.50,
+  "day_pnl_percent": 0.442,
   "flags": [
-    "AMD 14 sh mark $549.60, +$47.75 unrealized (+0.62%), day +6.22%. Cushion to $507.96 cut widened to ~$41.65/sh (~8.20%) from pre-market CRITICAL TIGHT $1.00/sh.",
-    "NO_TRADE at market-open — no qualified catalyst in RESEARCH-LOG (macro filter TLS-blocked Day 14; MSFT/GOOGL deferred).",
-    "AMD add barred (broker-side stop gap Day 14, no averaging-up catalyst).",
-    "Thesis INTACT: Goldman PT raise 7/8; GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight.",
+    "EOD: NO_TRADE day. Day P&L +$437.50 / +0.442% (7/8 $99,047.53 → 7/9 $99,485.03).",
+    "AMD 14 sh mark $545.65, -$7.62 unrealized (-0.10%), day +0.055%. Near breakeven at close.",
+    "Cushion to manual -7% cut $507.96 = ~$37.69/sh (~6.91%) — relaxed, off cut-watch.",
+    "Thesis INTACT: GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs; Goldman PT raise 7/8; Micro Center × Ryzen AI Halo; 'Advancing AI' Jul 22-23.",
     "AMD broker-side trailing-stop infra gap — Day 14. Escalate.",
     "yfinance TLS-broken — Day 14. Alpaca-bars fallback priority.",
-    "Weekly buys 0/3 preserved. Single-position book."
+    "Weekly buys 0/3 preserved into Friday. Single-position book."
   ]
 }
