@@ -3106,3 +3106,35 @@ Trades executed: **none.**
 Risk posture: cash 92.24% (≥20% ✅), exposure 7.76% (≤80% ✅), daily-loss limit (3%) not approached (day drift +0.144%). Weekly buy budget 3/3 preserved.
 
 Carry-forward: yfinance TLS Day 7+ (escalation), AMD broker-trailing-stop infra gap Day 7+ (escalation), AMC earnings STZ/NKE/PRGS tonight, Chicago PMI + Consumer Confidence today.
+
+
+### Market-Open Log — 2026-07-13 (Monday — session: claude/sweet-shannon-mqlw6w)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $91,845.93 |
+| Equity | $99,229.88 |
+| Long Market Value | $7,383.95 |
+| Open Positions | 1 / 6 (AMD 14 sh) |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (AMD 7.44%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market NO_TRADE stands; MSFT/GOOGL/NVDA deferred conditional on macro reclaim + TLS gate patch. Neither cleared.
+
+Position (09:45 ET cash-open):
+| Symbol | Qty | Avg Entry | Mark | Unrealized P&L | Day Change |
+|--------|-----|-----------|------|----------------|-----------|
+| AMD | 14 | $546.19 | $527.41 | -$263.05 (-3.44%) | -5.46% |
+
+AMD deteriorated 2.12pp vs pre-market ($538.99 → $527.41). Cushion to -7% cut $507.96 halved from $31.03/sh → $19.44/sh (3.69%). No cut trigger yet. Watch $520 (flag) / $510 (manual cut) at midday.
+
+Trades executed: **none.**
+
+Risk posture: cash 92.56% (≥20% ✅), exposure 7.44% (≤80% ✅), daily-loss halt not approached (-0.163% intraday). Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 16, AMD broker-trailing-stop infra gap Day 16, Iran/US strikes + Strait of Hormuz risk-off tape, AMD Advancing AI summit 7/22-23 binary in position window.
