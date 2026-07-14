@@ -79,6 +79,54 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-07-10 | $99,485.03 | $99,659.61 | +$174.58 | +0.176% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday / EOD. AMD 14 sh mark $558.12 (+$166.96 unrealized, +2.18%); day +2.085%. Cushion to manual -7% cut $507.96 widened to ~$50.16/sh (~8.99%) — RELAXED, materially off cut-watch. Position 7.84% of equity (below 8% cap). Thesis INTACT: GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs standing; Fed July monetary policy report constructive for AI/semis; "Advancing AI" summit Jul 22–23 upcoming binary; next earnings 8/4. AMD broker-side trailing-stop still infra-gated (Day 15). yfinance TLS-broken (Day 15). Single-position book. **Week 7/6–7/10 closes: 0 buys / 0 sells / 0 events.** |
 | 2026-07-13 | $99,659.61 | $99,327.39 | -$332.22 | -0.333% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday / EOD (macro RISK-OFF from Iran/US strikes + Strait of Hormuz shock; TLS Day 16 blocks MA/RSI entry gates; MSFT/GOOGL/NVDA deferred). AMD 14 sh mark $534.39 (-$165.26 unrealized, -2.16%); day -4.21%. Cushion to manual -7% cut $507.96 = ~$26.43/sh (~4.94%) — modestly tightened from midday ~$27.82/sh on small late-session fade off $535.78. Position 7.53% of equity (below 8% cap). Thesis INTACT (GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs standing; "Advancing AI" summit Jul 22–23 upcoming binary; next earnings 8/4). AMD broker-side trailing-stop still infra-gated (Day 16). yfinance TLS-broken (Day 16). Single-position book. Weekly buys 0/3 preserved. |
 | 2026-07-14 (market-open) | $99,442.33 (pre-mkt) | $99,674.59 | +$347.20 intraday | +0.350% | 0 | Market-open: **HOLD — no trades**. AMD 14 sh mark $558.61 (+$173.82 unrealized, +2.27%); day +4.53% post-CPI relief rally. Cushion to manual -7% cut $507.96 widened to ~$50.65/sh (~9.07%) from pre-market ~$34.64/sh — RELAXED. CPI print landed constructive; Warsh testimony 10:00 ET still ahead (binary) — new-entry blocked into it. TLS Day 17 blocks MA/RSI entry gates → strategy criteria #1 & #2 procedurally fail; MSFT/GOOGL/NVDA remain DEFERRED. AMD add barred (7.86% cap, broker-side stop gap Day 17, no averaging-up catalyst; chasing +4.53% intraday pop is not documented). Weekly buys 0/3 preserved. Single-position book. |
+| 2026-07-14 (midday) | — | $99,598.57 | +$271.18 intraday | +0.273% | 0 | Midday: **HOLD — no action**. AMD 14 sh mark $553.76 (+$105.92 unrealized, +1.385%); day +3.625%. Cushion to manual -7% cut $507.96 = ~$45.80/sh (~8.27%) — RELAXED. Faded modestly off market-open $558.61 → $553.76 (-0.87% intra-session). No cut (well above -7%); no stop-tighten (below +15%/+20% triggers). Thesis INTACT/STRENGTHENING: CPI cooling drove chip rally; Advancing AI Jul 22–23 upcoming; 42 Buy / 9 Hold analyst deck. AMD add barred (broker-side stop gap Day 17, TLS Day 17, no averaging-up catalyst). Weekly buys 0/3 preserved. |
+| 2026-07-14 | $99,327.39 | $99,520.03 | +$192.64 | +0.194% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday / EOD (CPI print constructive → post-CPI relief rally; Warsh testimony 10:00 ET binary passed; TLS Day 17 blocks MA/RSI entry gates; MSFT/GOOGL/NVDA remain DEFERRED). AMD 14 sh mark $548.15 (+$27.38 unrealized, +0.36%); day +2.575%. Cushion to manual -7% cut $507.96 = ~$40.19/sh (~7.33%) — RELAXED, materially widened from 7/13 EOD ~$26.43/sh on post-CPI reclaim. Position 7.71% of equity (below 8% cap). Thesis INTACT/STRENGTHENING (June core CPI flat vs 2.9% forecast → chip rally; GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs standing; "Advancing AI" summit Jul 22–23 upcoming binary; next earnings 8/4). AMD broker-side trailing-stop still infra-gated (Day 17). yfinance TLS-broken (Day 17). Single-position book. Weekly buys 0/3 preserved. |
+
+---
+
+## EOD Snapshot — 2026-07-14 (Tuesday — session: claude/sleepy-goldberg-otqm0x)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,520.03 |
+| Cash | $91,845.93 |
+| Long Market Value | $7,674.10 |
+| Day P&L ($) | +$192.64 |
+| Day P&L (%) | +0.194% |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 (week of 7/13; Mon 0 + Tue 0) |
+| Open Positions | 1 / 8 (AMD 14 sh) |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Day Change |
+|--------|-----|-----------|---------|----------------|-----------|
+| AMD | 14 | $546.19 | $548.15 | +$27.38 (+0.36%) | +2.575% |
+
+### Session Notes
+
+NO_TRADE day across pre-market / market-open / midday / EOD. Portfolio value +$192.64 / +0.194% from 7/13 EOD $99,327.39 → $99,520.03, driven entirely by AMD mark move ($534.39 → $548.15, +$13.76/sh × 14 = +$192.64). Position flipped from -2.16% unrealized (7/13 EOD) to +0.36% unrealized (7/14 EOD) — reclaimed breakeven on CPI relief rally.
+
+AMD intraday arc: pre-market $542.30 (cushion ~$34.64/sh) → market-open $558.61 (+2.27%, cushion ~$50.65/sh, +4.53% day) → midday $553.76 (+1.385%, cushion ~$45.80/sh) → close $548.15 (+0.36%, cushion ~$40.19/sh, +2.575% day). Peak at market-open; modest monotonic fade through midday and into close (~$10.46/sh off intraday high). Position closed comfortably above cut threshold on session-net gain.
+
+Macro RELIEF: June core CPI printed flat vs 2.9% forecast → post-CPI chip rally (AMD +5% intraday spike, Intel +4%); Warsh testimony 10:00 ET passed as non-event (no fresh hawkish shock). Semis rebounded broadly from Monday RISK-OFF drawdown. Iran/Hormuz risk-off tape partially unwound.
+
+Thesis INTACT and STRENGTHENING: CPI cooling → chip rally read-through; GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs all standing; 42 Buy / 9 Hold / 0 Sell across 51 analysts; "Advancing AI" summit Jul 22–23 upcoming binary catalyst inside position window (8 sessions away — Zen 6 Venice on TSMC 2nm launch + Helios rack-scale customer deployments); next earnings 2026-08-04.
+
+Cash $91,845.93 = 92.29% of equity (≥20% reserve ✅); exposure 7.71% (≤80% ✅); daily-loss limit (3%) — day P&L +0.194%, well within. Week 7/13: 0 buys / 0 sells / 0 events through Tuesday. Weekly buy budget 3/3 preserved.
+
+**Carry-forward flags for Wednesday (7/15) pre-market:**
+1. **AMD cut-watch — RELAXED.** +0.36% unrealized; cushion ~$40.19/sh (~7.33%) to manual -7% threshold $507.96. Materially widened from 7/13 EOD ~$26.43/sh on post-CPI reclaim.
+2. **AMD broker-side trailing-stop infra gap — Day 17.** `scripts/trade.py` still lacks `trailing-stop` subcommand. Position remains unprotected broker-side; manual -7% cut $507.96 is sole active control. **Infra patch materially overdue — escalate.**
+3. **yfinance bars TLS-broken — Day 17.** MA20/MA50/RSI-14 entry gates unverifiable script-side. **Priority infra fix: implement Alpaca-bars fallback in `market_data.py`.**
+4. **AMD 7.71% position** — below 8% size cap; any add barred (broker-side stop gap; TLS-blocked gates; no averaging-up catalyst; chasing intraday pop not documented).
+5. **AMD +15% trim watch** — mark $548.15 vs +15% trim trigger ~$628.12. Cushion ~$79.97/sh (~14.6%). Not actionable.
+6. **Weekly buy budget 3/3 preserved** into Wed–Fri (3 remaining sessions).
+7. **AMD "Advancing AI" summit — Jul 22–23** — 6 sessions away; inside position window.
+8. **AMD next earnings 2026-08-04** — outside 5-day exclusion; no near-term binary yet.
+9. **Post-CPI regime** — inflation cooling constructive for risk assets; monitor for Warsh follow-through, Iran/Hormuz de-escalation continuation, semi-sector momentum.
+10. **Single-position book** since 6/25 AAPL trailing-stop fill; AMD is sole active position.
+11. **MSFT / GOOGL / NVDA remain deferred** — TLS-blocked gates prevent qualifying entry; carry to Wed pre-market.
 
 ---
 
