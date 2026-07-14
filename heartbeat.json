@@ -1,28 +1,14 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-07-13T20:15:00Z",
-  "last_run_et": "2026-07-13 16:15 ET",
-  "session_id": "claude/sleepy-goldberg-rg3251",
-  "status": "ok",
-  "decision": "NO_TRADE",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-14T13:00:00Z",
+  "last_run_et": "2026-07-14T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-ypf65a",
+  "decision": "HOLD",
   "trades_executed": 0,
-  "trades_this_week": 0,
-  "open_positions": 1,
-  "portfolio_value": 99327.39,
+  "portfolio_value": 99442.33,
   "cash": 91845.93,
-  "long_market_value": 7481.46,
-  "day_pnl_dollars": -332.22,
-  "day_pnl_percent": -0.333,
-  "flags": [
-    "EOD 7/13: NO_TRADE day across pre-market / market-open / midday / EOD (macro RISK-OFF; catalyst gates fail; TLS Day 16).",
-    "AMD 14 sh mark $534.39, -$165.26 unrealized (-2.16%); day -4.21%. Cushion to -7% cut $507.96 = $26.43/sh (~4.94%).",
-    "Position 7.53% of equity (below 8% cap). +15% trim trigger $628.12; cushion ~$93.73/sh (~17.5%) — not actionable.",
-    "Portfolio flipped from +2.18% unrealized (7/10 EOD) to -2.16% (7/13 EOD) on macro shock — thesis INTACT.",
-    "Macro RISK-OFF: Iran/US strikes + Strait of Hormuz shock, Brent +7% / WTI +6%; Fed's Waller hawkish into CPI print this week.",
-    "AMD broker-side trailing-stop infra gap — Day 16. Manual -7% cut $507.96 sole control.",
-    "yfinance TLS-broken Day 16 — MA20/MA50/RSI-14 entry gates unverifiable.",
-    "Weekly buy budget 3/3 preserved (week of 7/13 opens today).",
-    "MSFT / GOOGL / NVDA remain deferred — carry-forward to Tue pre-market.",
-    "Catalysts: AMD Advancing AI summit 7/22-23 (binary in position window); AMD next earnings 8/4."
-  ]
+  "long_market_value": 7596.40,
+  "open_positions": 1,
+  "weekly_buys": 0,
+  "notes": "Pre-market HOLD. CPI 8:30 ET binary + Warsh 10:00 ET testimony + bank earnings. yfinance TLS Day 17, broker-side stop infra gap Day 17. AMD 14 sh -0.66% unrealized, cushion ~$34.64/sh to -7% cut $507.96."
 }
