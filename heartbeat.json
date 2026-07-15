@@ -1,16 +1,16 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-15T13:00:00Z",
-  "last_run_et": "2026-07-15T09:00:00-04:00",
-  "session_id": "claude/gallant-lamport-e8scaz",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-07-15T13:45:00Z",
+  "last_run_et": "2026-07-15T09:45:00-04:00",
+  "session_id": "claude/sweet-shannon-60zzwi",
   "decision": "HOLD",
   "trades_executed": 0,
-  "portfolio_value": 99674.59,
+  "portfolio_value": 99573.37,
   "cash": 91845.93,
-  "long_market_value": 7828.66,
+  "long_market_value": 7727.44,
   "open_positions": 1,
   "weekly_buys": 0,
-  "day_pnl_dollars": null,
-  "day_pnl_pct": null,
-  "notes": "Pre-market 7/15: HOLD. AMD 14 sh +2.38% unrealized, cushion ~$51.23/sh RELAXED. ASML Q2 AMC binary for semi sector; TLS Day 18 blocks MA/RSI gates; broker-side trailing-stop infra gap Day 18. AMD add barred. Weekly buys 0/3 preserved. TD Cowen PT AMD $600→$675. Advancing AI 7/22-23 upcoming."
+  "day_pnl_dollars": -101.22,
+  "day_pnl_pct": -0.102,
+  "notes": "Market-open 7/15: HOLD. AMD 14 sh +1.12% unrealized ($552.29), cushion ~$44.33/sh (~8.03%) RELAXED. No qualified catalyst in RESEARCH-LOG for new entry — MSFT/GOOGL/NVDA deferred (TLS Day 18 blocks MA/RSI gates). AMD add barred (7.76% cap thin, broker-side stop gap Day 18, no averaging-up catalyst; ASML Q2 AMC binary tonight adds stand-down). Weekly buys 0/3 preserved."
 }
