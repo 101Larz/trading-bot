@@ -1,11 +1,11 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-07-15T16:30:00Z",
-  "last_run_et": "2026-07-15T12:30:00-04:00",
-  "session_id": "claude/exciting-bohr-g9qg14",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-16T13:00:00Z",
+  "last_run_et": "2026-07-16T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-8tnm14",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 1,
   "weekly_buys": 0,
-  "notes": "Midday 7/15: HOLD. AMD 14 sh -6.39% unrealized ($511.30 vs $546.19 entry), cushion CRITICAL TIGHT ~$3.34/sh (~0.65%) to manual -7% cut $507.96. Position collapsed from market-open +1.12% ($552.29) — $40.99/sh drop (-7.42% intra-session) on semi-sector rotation ahead of ASML AMC binary. NOT AT -7% cut threshold yet (~0.61pp headroom); rule not triggered. Thesis INTACT/STRENGTHENING: KeyBanc PT $725 (Street high), BofA PT $620, China ZTE/Kingsoft AI chip approvals, Meta/OpenAI 6GW deals, Advancing AI Jul 22-23, earnings 8/4. No stop-tighten (position not up +15/+20%). No thesis break. AMD broker-side trailing-stop infra gap Day 18 (sole reason position still open if intraday low touched $507.96). Weekly buys 0/3 preserved. Single-position book."
+  "notes": "Pre-market 7/16: HOLD. AMD 14 sh -3.94% ($524.65 vs $546.19), cushion MODERATELY TIGHT ~$16.69/sh (~3.18%) to -7% cut $507.96. TSMC Q2 earnings pre-market TODAY = semi-sector binary stand-down. Entry gates unverifiable (TLS Day 19); MSFT/NVDA/GOOGL deferred. ASML raised guidance 7/15 (bullish long-term) but Wed tape sold the news (profit-taking in AI/memory). Thesis INTACT: GS/Cantor/WFC/UBS/KeyBanc/BofA PTs all standing; Advancing AI Jul 22-23 (4 sessions); earnings 8/4. Broker-side trailing-stop infra gap Day 19. Weekly buys 0/3 preserved."
 }
