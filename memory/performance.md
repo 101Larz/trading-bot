@@ -84,6 +84,63 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-07-15 (market-open) | $99,674.59 (pre-mkt) | $99,573.37 | -$101.22 intraday | -0.102% | 0 | Market-open: **HOLD — no trades**. AMD 14 sh mark $552.29 (+$85.34 unrealized, +1.12%); day +0.759%. Cushion to manual -7% cut $507.96 = ~$44.33/sh (~8.03%) — RELAXED, tightened from pre-mkt ~$51.23/sh on modest fade off pre-mkt $559.19 → $552.29. Buy-rule check: **no qualified catalyst in RESEARCH-LOG** (all fresh candidates DEFERRED — TLS Day 18 blocks MA/RSI entry gates; MSFT/GOOGL/NVDA remain deferred). AMD add barred (7.76% cap thin, broker-side stop gap Day 18, no averaging-up catalyst, chasing pop into ASML AMC binary undocumented). ASML Q2 earnings AMC tonight = semi-sector binary (~8% implied move) — additional stand-down. Weekly buys 0/3 preserved. Single-position book. |
 | 2026-07-15 | $99,520.03 | $99,255.40 | -$264.63 | -0.266% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday / EOD (TLS Day 18 blocks MA/RSI entry gates; MSFT/GOOGL/NVDA remain DEFERRED; ASML AMC binary tonight = additional stand-down). AMD 14 sh mark $529.248 (-$237.25 unrealized, -3.10%); day -3.445%. Cushion to manual -7% cut $507.96 = ~$21.29/sh (~4.02%) — MODERATELY TIGHT, materially tightened from mkt-open ~$44.33/sh on sector fade into ASML. Position 7.46% of equity (below 8% cap). Thesis INTACT (GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs standing; "Advancing AI" summit Jul 22–23 upcoming binary; next earnings 8/4). AMD broker-side trailing-stop still infra-gated (Day 18). yfinance TLS-broken (Day 18). Single-position book. Weekly buys 0/3 preserved. |
 | 2026-07-16 (market-open) | $99,191.03 (pre-mkt) | $98,972.21 | -$218.82 intraday | -0.221% | 1 | Market-open: **AMD 14 sh CUT** at 9:48 ET — limit-sell filled $509.02 (limit $504.20 = bid $505.46 − 0.25%; price improvement +$4.82/sh vs limit). Realized -$520.38 / -6.80% vs $546.19 avg entry. **Manual -7% cut fired at open**: mark hit $506.83 (-7.208%) below $507.96 threshold on TSMC-driven gap-down; broker-side trailing-stop infra-gated Day 20 so manual control was sole active brake. Fill actually landed at -6.80% on price improvement (better than -7.208% mid at time of order). Post-cut book: 100% cash ($98,972.21), zero positions. TSMC Q2 pre-market binary today; wide 2.55% spread ($505.46 / $518.66) at fill. No new-entry: entry gates procedurally BLOCKED (TLS Day 20 → MA/RSI unverifiable), no qualified catalyst. Weekly buys 0/3 preserved, sells 1. Advancing AI Jul 22–23 (4 sessions) thesis catalyst forfeited on process discipline. **Broker-side trailing-stop infra gap = root cause of manual-cut requirement — patch materially overdue.** |
+| 2026-07-16 | $99,255.40 | $98,972.21 | -$283.19 | -0.285% | 1 | EOD: AMD 14 sh CUT at market-open 9:48 ET — limit-sell filled $509.02 (realized -$520.38 / -6.80% vs $546.19 entry). Manual -7% cut fired on TSMC-driven gap-down; broker-side trailing-stop infra-gated Day 20. Post-cut: **100% cash $98,972.21, zero positions** (first cash-only book since 6/25 AAPL trailing-stop). No new-entry (TLS Day 20 blocks MA/RSI entry gates; no qualified catalyst; TSMC binary today). Week 7/13–7/16: 0 buys / 1 sell (AMD cut) / 1 event through Thu. Weekly buys 0/3 preserved. **AMD position closed → all cut-watch, size-cap, +15% trim, and cushion flags CLEARED.** Portfolio -1.03% vs 5/19 baseline $100k. Cash-parked heading into Fri 7/17. |
+
+---
+
+## EOD Snapshot — 2026-07-16 (Thursday — session: claude/sleepy-goldberg-31lhlf)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,972.21 |
+| Cash | $98,972.21 |
+| Long Market Value | $0.00 |
+| Day P&L ($) | -$283.19 |
+| Day P&L (%) | -0.285% |
+| Trades Today | 1 (AMD 14 sh sold @ $509.02 @ 9:48 ET; realized -$520.38 / -6.80%) |
+| Trades This Week | 1 (week of 7/13; Mon 0 / Tue 0 / Wed 0 / Thu 1 sell) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+*(none — 100% cash)*
+
+### Trades Executed Today
+
+| Time (ET) | Symbol | Side | Qty | Fill | Limit | Realized P&L | Notes |
+|-----------|--------|------|-----|------|-------|--------------|-------|
+| 09:48 | AMD | SELL | 14 | $509.02 | $504.20 | -$520.38 (-6.80%) | Manual -7% cut fired at open ($506.83 breached $507.96 threshold on TSMC-driven gap-down); limit-sell filled with +$4.82/sh price improvement inside -7%. |
+
+### Session Notes
+
+**Structural regime change day.** AMD 14 sh position — held since 6/22 through the 6/23 semi sell-off, the 7/7 Alpaca desync anomaly, the 7/8 CRITICAL TIGHT cushion, the 7/13 Iran/Hormuz risk-off, and the 7/14 CPI reclaim — was cut at market-open 9:48 ET on TSMC Q2 pre-market gap-down. Manual -7% control fired ($506.83 mark breached $507.96 threshold); broker-side trailing-stop infra-gated Day 20 so manual limit-sell was the sole active brake. Fill landed at $509.02 (limit $504.20 = bid $505.46 − 0.25%) with +$4.82/sh price improvement, so realized loss came in at -6.80% instead of the -7.208% mid at order-send. Book: **100% cash $98,972.21, zero positions** — first cash-only state since 6/25 AAPL trailing-stop fill.
+
+Day arc: pre-market $99,191.03 (AMD 14 sh mark $522.36, -$333.62 unrealized) → market-open cut at 9:48 ET → post-cut $98,972.21 (100% cash). Portfolio value -$283.19 / -0.285% from 7/15 EOD $99,255.40 → $98,972.21 = realized loss on AMD (-$520.38) partially offset by pre-cut mark recovery vs 7/15 close $529.248 (mark $529.248 → fill $509.02 fund-flow accounting: sold 14 sh worth ~$7,409.47 at close-mark → received $7,126.28 gross; ~$283 of the day's drawdown is the fill-vs-close-mark gap).
+
+Post-cut session (market-open forward through midday and EOD): NO new-entry across the full day. Entry gates procedurally BLOCKED — TLS Day 20 leaves MA20/MA50/RSI-14 unverifiable script-side (20 consecutive sessions); no qualified catalyst in RESEARCH-LOG; MSFT/GOOGL/NVDA remain DEFERRED; TSMC Q2 pre-market binary carried through session. Cash parked at 100% into Fri 7/17 open.
+
+Cash $98,972.21 = 100.00% of equity (≥20% reserve ✅ — abundantly); exposure 0.00% (≤80% ✅); daily-loss limit (3%) — day P&L -0.285%, well within. **Week 7/13–7/16 through Thu: 0 buys / 1 sell (AMD cut) / 1 event.** Weekly buy budget 3/3 preserved (sells do not consume buy budget).
+
+Cumulative P&L since 5/19 $100k baseline: **-$1,027.79 / -1.03%.** Realized ledger update — AMD 6/22 buy → 7/16 cut: total P&L -$520.38 / -6.80% held 18 trading days (best mark +$1,015.02 on 6/30 at $578.01, worst mark -$517.71 on 7/8 midday at $509.22, exited near worst on TSMC gap). Position underperformed vs entry despite thesis remaining intact (GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs standing at exit; Advancing AI Jul 22–23 catalyst inside position window forfeited).
+
+**Post-mortem — AMD 6/22–7/16 (realized -$520.38 / -6.80%, 18 sessions held):**
+- **Entry (6/22):** market-open post-Juneteenth re-engagement, sized 8% at $546.19; broker-side trailing-stop placement FAILED (403) at fill — position never had broker-side downside protection.
+- **High-water mark (6/30):** +$1,015.02 unrealized (+12.4%) on Wells Fargo PT $505→$615 + Cantor PT $500→$700 double-upgrade; +15% trim trigger ~$628.12 was ~$50/sh away (~8%) but not hit — position never triggered documented trim rule.
+- **Cushion trajectory:** widened to ~$70/sh (6/30) → tightened to ~$10/sh (7/3) → 7/6 rally re-widened to ~$50/sh (7/6–7/10) → 7/13 Iran/Hormuz shock ~$26/sh → 7/14 CPI reclaim ~$40/sh → 7/15 ASML fade ~$21/sh → 7/16 gap-down breached threshold.
+- **Exit (7/16 9:48 ET):** manual -7% cut fired on TSMC Q2 pre-market gap-down; broker-side infra-gated 20 sessions in a row so manual control was sole brake. Price improvement +$4.82/sh vs limit saved -$67.48 vs worst-case fill.
+- **Lessons:** (1) Broker-side trailing-stop infra gap = root cause of manual-cut dependence — 20-session infra debt materially compromised position management. (2) +15% trim rule was live at 6/30 peak (+12.4%) but never triggered — trim window opened and closed without action; document rule as "trim on touch" vs "trim on close-above" to disambiguate. (3) Thesis-intact-but-exit-on-price-rule is correct discipline; forfeited Advancing AI Jul 22–23 catalyst on process, not on thesis — no regret.
+
+**Carry-forward flags for Friday (7/17) pre-market:**
+1. **100% cash book — full 3/3 weekly buy budget available.** Cash $98,972.21 = 100% of equity. Any qualified entry has abundant sizing headroom (8% cap = ~$7,918).
+2. **Zero open positions — all cut-watch, cushion, +15% trim, and size-cap flags CLEARED.** No downside protection needed until first new-entry.
+3. **AMD may re-qualify after Advancing AI Jul 22–23 catalyst** (5 sessions away). Not eligible for immediate re-entry — need documented catalyst + entry-gate pass. Watch for TSMC read-through, semi-sector direction over the next 2 sessions.
+4. **Broker-side trailing-stop infra gap — Day 20.** `scripts/trade.py` still lacks `trailing-stop` subcommand. Immaterial while cash-parked but **must be patched before next entry** — 20-session infra debt was proximate cause of today's manual-cut exposure. **Escalate: highest-priority infra fix.**
+5. **yfinance bars TLS-broken — Day 20.** MA20/MA50/RSI-14 entry gates unverifiable script-side. **Priority infra fix: Alpaca-bars fallback in `market_data.py`** — 20 consecutive sessions of buy-side gate blocks. Cash-parked state is a mercy: no misses to relitigate today. **Escalate: co-highest priority with broker-side stop.**
+6. **MSFT / GOOGL / NVDA remain deferred** — TLS-blocked gates prevent qualifying entry. If TLS-fallback ships, these are the ready candidates.
+7. **TSMC Q2 aftermath** — read-through material to Fri semi-sector tape and any AMD/NVDA re-qualification. Full reassessment at pre-market.
+8. **Week 7/13–7/17 through Thu:** 0 buys / 1 sell / 1 event. Fri (7/17) is 5th and final session; weekly buy budget 3/3 preserved into it.
+9. **Cumulative P&L since 5/19:** -$1,027.79 / -1.03%. AAPL cut -$16.36 (6/25), GOOGL cut -$330.84 (6/10), NVDA trailing-stop -$160.08 (6/5), AMD cut -$520.38 (7/16) = 4 losing exits totaling -$1,027.66 realized; unrealized carry now nil (cash-parked).
+10. **Regime posture:** post-CPI relief regime intact but semi-sector on defensive tape (TSMC gap-down catalyzing single-name cascades); risk-management first, entry second.
 
 ---
 
