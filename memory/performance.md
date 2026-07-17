@@ -85,6 +85,59 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-07-15 | $99,520.03 | $99,255.40 | -$264.63 | -0.266% | 0 | EOD: NO_TRADE day across pre-market / market-open / midday / EOD (TLS Day 18 blocks MA/RSI entry gates; MSFT/GOOGL/NVDA remain DEFERRED; ASML AMC binary tonight = additional stand-down). AMD 14 sh mark $529.248 (-$237.25 unrealized, -3.10%); day -3.445%. Cushion to manual -7% cut $507.96 = ~$21.29/sh (~4.02%) — MODERATELY TIGHT, materially tightened from mkt-open ~$44.33/sh on sector fade into ASML. Position 7.46% of equity (below 8% cap). Thesis INTACT (GS $640 / Cantor $700 / WFC $615 / UBS $670 Overweight PTs standing; "Advancing AI" summit Jul 22–23 upcoming binary; next earnings 8/4). AMD broker-side trailing-stop still infra-gated (Day 18). yfinance TLS-broken (Day 18). Single-position book. Weekly buys 0/3 preserved. |
 | 2026-07-16 (market-open) | $99,191.03 (pre-mkt) | $98,972.21 | -$218.82 intraday | -0.221% | 1 | Market-open: **AMD 14 sh CUT** at 9:48 ET — limit-sell filled $509.02 (limit $504.20 = bid $505.46 − 0.25%; price improvement +$4.82/sh vs limit). Realized -$520.38 / -6.80% vs $546.19 avg entry. **Manual -7% cut fired at open**: mark hit $506.83 (-7.208%) below $507.96 threshold on TSMC-driven gap-down; broker-side trailing-stop infra-gated Day 20 so manual control was sole active brake. Fill actually landed at -6.80% on price improvement (better than -7.208% mid at time of order). Post-cut book: 100% cash ($98,972.21), zero positions. TSMC Q2 pre-market binary today; wide 2.55% spread ($505.46 / $518.66) at fill. No new-entry: entry gates procedurally BLOCKED (TLS Day 20 → MA/RSI unverifiable), no qualified catalyst. Weekly buys 0/3 preserved, sells 1. Advancing AI Jul 22–23 (4 sessions) thesis catalyst forfeited on process discipline. **Broker-side trailing-stop infra gap = root cause of manual-cut requirement — patch materially overdue.** |
 | 2026-07-16 | $99,255.40 | $98,972.21 | -$283.19 | -0.285% | 1 | EOD: AMD 14 sh CUT at market-open 9:48 ET — limit-sell filled $509.02 (realized -$520.38 / -6.80% vs $546.19 entry). Manual -7% cut fired on TSMC-driven gap-down; broker-side trailing-stop infra-gated Day 20. Post-cut: **100% cash $98,972.21, zero positions** (first cash-only book since 6/25 AAPL trailing-stop). No new-entry (TLS Day 20 blocks MA/RSI entry gates; no qualified catalyst; TSMC binary today). Week 7/13–7/16: 0 buys / 1 sell (AMD cut) / 1 event through Thu. Weekly buys 0/3 preserved. **AMD position closed → all cut-watch, size-cap, +15% trim, and cushion flags CLEARED.** Portfolio -1.03% vs 5/19 baseline $100k. Cash-parked heading into Fri 7/17. |
+| 2026-07-17 | $98,972.21 | $98,972.19 | -$0.02 | -0.00002% | 0 | EOD: NO_TRADE day (pre-market + market-open both HOLD; cash-parked full session). Zero positions, 100% cash $98,972.19; portfolio essentially flat (2-cent Alpaca rounding noise). Entry gates procedurally BLOCKED (yfinance TLS Day 21 → MA20/MA50/RSI-14 unverifiable); broker-side trailing-stop infra-gated Day 21; AMD re-entry chase-blocked same-session-post-cut despite KeyBanc PT $725 / UBS PT $700 overnight upgrades; MSFT/GOOGL/NVDA remain DEFERRED on gates. Semi-sector defensive tape (TSMC capex signal + NFLX AH -8%); S&P/NDX futures -0.30%. **Week 7/13–7/17 closes: 0 buys / 1 sell (AMD cut) / 1 event across 5 sessions.** Weekly buy budget 3/3 preserved (unused). Cumulative P&L since 5/19: -$1,027.81 / -1.03%. |
+
+---
+
+## EOD Snapshot — 2026-07-17 (Friday — session: claude/sleepy-goldberg-akka5r)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,972.19 |
+| Cash | $98,972.19 |
+| Long Market Value | $0.00 |
+| Day P&L ($) | -$0.02 |
+| Day P&L (%) | -0.00002% |
+| Trades Today | 0 |
+| Trades This Week | 1 (week of 7/13; Mon 0 / Tue 0 / Wed 0 / Thu 1 sell / Fri 0) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+*(none — 100% cash)*
+
+### Trades Executed Today
+
+*(none)*
+
+### Session Notes
+
+Cash-parked full session. Portfolio essentially flat: $98,972.21 → $98,972.19 = -$0.02 (fractional-cent Alpaca equity-field rounding on cash-only book, effectively zero). Zero positions, zero orders. First full-day cash-parked session since 6/25 AAPL trailing-stop (~3 weeks) — clean-book state persisted through both scheduled routines (pre-market + market-open).
+
+Day arc: pre-market $98,972.19 HOLD → market-open $98,972.19 HOLD → EOD $98,972.19. No mark drift (no exposure); only trivial 2-cent variance from Alpaca equity-field rounding. Weekly buy budget 3/3 preserved (unused).
+
+NO_TRADE decision rationale carried across both routines:
+1. **Entry gates procedurally BLOCKED — yfinance TLS Day 21.** MA20/MA50/RSI-14 unverifiable script-side; per pre-market carry-forward rule this blocks all new-entry irrespective of catalyst quality.
+2. **Broker-side trailing-stop infra gap — Day 21.** `scripts/trade.py` still lacks `trailing-stop` subcommand; any new position would ship without automated downside protection. Yesterday's AMD manual-cut is the fresh lesson.
+3. **AMD re-entry chase-blocked** despite KeyBanc PT $725 (from $530) / UBS PT $700 (from $670) overnight upgrades — same-session-post-cut re-entry violates discipline; AMD may re-qualify after Advancing AI Jul 22–23 catalyst resolves on documented catalyst + fresh entry-gate pass.
+4. **MSFT / GOOGL / NVDA remain DEFERRED** — infra-gates unresolved.
+5. **Tape defensive:** S&P/NDX futures -0.30% at open; NFLX AH -8% (Q3 slowing-growth guide) weighed comm services; TSMC capex signal (fundamentals-positive, sentiment-negative) continued to weigh on semis.
+6. **Weekend risk elevated** — Middle East backdrop unchanged; 100% cash into weekend is high-value optionality; no forced action.
+
+Cash $98,972.19 = 100.00% of equity (≥20% reserve ✅ abundantly); exposure 0.00% (≤80% ✅); daily-loss limit (3%) — day P&L -0.00002%, well within. **Week 7/13–7/17 closes: 0 buys / 1 sell (AMD cut 7/16) / 1 event across 5 sessions.** Weekly buy budget 3/3 preserved and unused.
+
+Cumulative P&L since 5/19 $100k baseline: **-$1,027.81 / -1.03%.** Realized ledger unchanged from 7/16 close — AAPL cut -$16.36 (6/25), GOOGL cut -$330.84 (6/10), NVDA trailing-stop -$160.08 (6/5), AMD cut -$520.38 (7/16) = 4 losing exits totaling -$1,027.66 realized (~$0.15 residual reflects idle cash rounding). Unrealized carry nil (cash-parked).
+
+**Carry-forward flags for Monday (7/20) pre-market:**
+1. **100% cash book — full 3/3 weekly buy budget available on Mon (new week).** Cash $98,972.19; 8% size cap ~$7,918. No downside protection needed until first new-entry.
+2. **Broker-side trailing-stop infra gap — Day 21 into weekend.** `scripts/trade.py` still lacks `trailing-stop` subcommand. Immaterial while cash-parked but **must be patched before next entry** — 21-session infra debt was proximate cause of 7/16 manual-cut exposure. **Escalate: highest-priority infra fix.**
+3. **yfinance bars TLS-broken — Day 21 into weekend.** MA20/MA50/RSI-14 entry gates unverifiable script-side. **Priority infra fix: Alpaca-bars fallback in `market_data.py`** — 21 consecutive sessions of buy-side gate blocks. **Escalate: co-highest priority.**
+4. **AMD re-qualification window — Advancing AI Jul 22–23** (Tue–Wed next week). Not eligible for immediate re-entry (chase-block); after catalyst resolves, on documented catalyst + fresh entry-gate pass, re-qualification is possible. KeyBanc $725 / UBS $700 / Cantor $700 / GS $640 / WFC $615 PT stack extends analyst-support runway.
+5. **MSFT / GOOGL / NVDA remain deferred** — TLS-blocked gates prevent qualifying entry. If TLS-fallback ships over the weekend, these are the ready candidates.
+6. **Weekend tape watch:** NFLX AH -8% (streaming/comm services); TSMC capex signal read-through; Middle East backdrop; any Sunday-night futures gap.
+7. **Cumulative P&L since 5/19:** -$1,027.81 / -1.03%. Realized: AAPL -$16.36 + GOOGL -$330.84 + NVDA -$160.08 + AMD -$520.38 = -$1,027.66 across 4 losing exits.
+8. **Regime posture:** post-CPI relief regime intact but semi-sector on defensive tape (TSMC capex ripple + NFLX AH streamer weight); risk-management first, entry second.
+9. **Clean cash-only book** — clean sheet into new week; all cut-watch, cushion, +15% trim, and size-cap flags CLEARED.
 
 ---
 
