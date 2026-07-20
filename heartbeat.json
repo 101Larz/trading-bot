@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-20T13:00:00Z",
-  "last_run_et": "2026-07-20T09:00:00-04:00",
-  "session_id": "claude/gallant-lamport-sw1hqn",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-07-20T20:15:00Z",
+  "last_run_et": "2026-07-20T16:15:00-04:00",
+  "session_id": "claude/sleepy-goldberg-lxn7je",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Pre-market 7/20 (Mon): Portfolio $98,972.19 (100% cash), zero positions. HOLD — NO_TRADE. Six stand-downs: (1) yfinance TLS Day 22 blocks MA/RSI entry gates; (2) broker-side trailing-stop infra gap Day 22 — no downside protection ships; (3) SOX RSI 79 = most overbought in 3 years (chase-block); (4) AMD chase-block active until Advancing AI Wed–Thu 7/22–7/23; (5) Iran/Hormuz escalation, Brent $90+/bbl; (6) GOOGL earnings next week likely inside 5-day exclusion. Tape: S&P futures +0.13-0.20%, Nasdaq +0.5%, 68% up-open bias. Semis $2T market-cap surge; BofA global TAM $1.3T; AMD analyst PT stack strengthened (KeyBanc $725 / UBS $700 / Cantor $700 / GS $640 / WFC $615). Fresh week 7/20-7/24: weekly buys 0/3 preserved, full budget available. Cumulative P&L since 5/19: -$1,027.81 / -1.03%. Infra debt = 22-session escalation."
+  "notes": "EOD 7/20 (Mon): Portfolio $98,972.19 (100% cash), zero positions. Day P&L $0.00 / 0.000% — cash-parked full session, dead-flat. 2nd consecutive full-day cash-only book (7/17 + 7/20). All six stand-downs persisted intraday: (1) yfinance TLS Day 22 blocks MA/RSI entry gates; (2) broker-side trailing-stop infra gap Day 22 (root cause of 7/16 AMD manual-cut); (3) SOX RSI 79 = 3-yr overbought extreme above strategy 70 cap; (4) AMD chase-block through Advancing AI Wed–Thu 7/22–7/23; (5) Iran/Hormuz risk-off, Brent $90+/bbl; (6) GOOGL inside 5-day earnings exclusion. Cumulative P&L since 5/19: -$1,027.81 / -1.03%. Week 7/20–7/24 opens: 0 buys / 0 sells / 0 events through Mon. Weekly buy budget 3/3 preserved into Tue–Fri. Infra debt = 22-session escalation."
 }

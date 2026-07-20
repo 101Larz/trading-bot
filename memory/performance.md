@@ -87,6 +87,63 @@ Updated after every end-of-day routine. Agent writes new entries; do not manuall
 | 2026-07-16 | $99,255.40 | $98,972.21 | -$283.19 | -0.285% | 1 | EOD: AMD 14 sh CUT at market-open 9:48 ET — limit-sell filled $509.02 (realized -$520.38 / -6.80% vs $546.19 entry). Manual -7% cut fired on TSMC-driven gap-down; broker-side trailing-stop infra-gated Day 20. Post-cut: **100% cash $98,972.21, zero positions** (first cash-only book since 6/25 AAPL trailing-stop). No new-entry (TLS Day 20 blocks MA/RSI entry gates; no qualified catalyst; TSMC binary today). Week 7/13–7/16: 0 buys / 1 sell (AMD cut) / 1 event through Thu. Weekly buys 0/3 preserved. **AMD position closed → all cut-watch, size-cap, +15% trim, and cushion flags CLEARED.** Portfolio -1.03% vs 5/19 baseline $100k. Cash-parked heading into Fri 7/17. |
 | 2026-07-17 | $98,972.21 | $98,972.19 | -$0.02 | -0.00002% | 0 | EOD: NO_TRADE day (pre-market + market-open both HOLD; cash-parked full session). Zero positions, 100% cash $98,972.19; portfolio essentially flat (2-cent Alpaca rounding noise). Entry gates procedurally BLOCKED (yfinance TLS Day 21 → MA20/MA50/RSI-14 unverifiable); broker-side trailing-stop infra-gated Day 21; AMD re-entry chase-blocked same-session-post-cut despite KeyBanc PT $725 / UBS PT $700 overnight upgrades; MSFT/GOOGL/NVDA remain DEFERRED on gates. Semi-sector defensive tape (TSMC capex signal + NFLX AH -8%); S&P/NDX futures -0.30%. **Week 7/13–7/17 closes: 0 buys / 1 sell (AMD cut) / 1 event across 5 sessions.** Weekly buy budget 3/3 preserved (unused). Cumulative P&L since 5/19: -$1,027.81 / -1.03%. |
 | 2026-07-20 (market-open) | $98,972.19 (pre-mkt) | $98,972.19 | $0.00 intraday | 0.000% | 0 | Market-open: **HOLD — no trades**. 100% cash $98,972.19; zero positions (0 / 6). Pre-market's HOLD reaffirmed — all six stand-downs persist ~45 min later: (1) yfinance TLS Day 22 → MA20/MA50/RSI-14 entry gates unverifiable; (2) broker-side trailing-stop infra gap Day 22 (root cause of 7/16 AMD manual-cut); (3) SOX RSI 79 = most overbought in 3 yrs, above strategy 70 cap; (4) AMD chase-block active through Advancing AI Jul 22–23 resolution; (5) Iran/Hormuz risk-off backdrop, Brent $90+/bbl; (6) GOOGL inside 5-day earnings exclusion. AMD / MSFT / GOOGL all BARRED. Weekly buys 0/3 preserved; buy-rule check: **no qualified catalyst in RESEARCH-LOG**. |
+| 2026-07-20 | $98,972.19 | $98,972.19 | $0.00 | 0.000% | 0 | EOD: NO_TRADE day (pre-market + market-open both HOLD; cash-parked full session — 2nd consecutive full-day cash-only). Zero positions, 100% cash $98,972.19; portfolio dead-flat ($0.00 change, zero mark drift on no exposure). All six stand-downs persisted intraday: (1) yfinance TLS Day 22 blocks MA/RSI entry gates; (2) broker-side trailing-stop infra gap Day 22 (root cause of 7/16 AMD manual-cut); (3) SOX RSI 79 = 3-yr overbought extreme above strategy 70 cap; (4) AMD chase-block through Advancing AI Wed–Thu 7/22–7/23; (5) Iran/Hormuz risk-off, Brent $90+/bbl; (6) GOOGL inside 5-day earnings exclusion. Cumulative P&L since 5/19: **-$1,027.81 / -1.03%**. **Week 7/20–7/24 opens: 0 buys / 0 sells / 0 events through Mon.** Weekly buy budget 3/3 preserved. |
+
+---
+
+## EOD Snapshot — 2026-07-20 (Monday — session: claude/sleepy-goldberg-lxn7je)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,972.19 |
+| Cash | $98,972.19 |
+| Long Market Value | $0.00 |
+| Day P&L ($) | $0.00 |
+| Day P&L (%) | 0.000% |
+| Trades Today | 0 |
+| Trades This Week | 0 (week of 7/20; Mon 0) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+*(none — 100% cash)*
+
+### Trades Executed Today
+
+*(none)*
+
+### Session Notes
+
+Cash-parked full session — 2nd consecutive full-day cash-only book (7/17 → 7/20). Portfolio dead-flat: $98,972.19 → $98,972.19 = $0.00 (zero mark drift on zero exposure; no Alpaca rounding artifact today). Zero positions, zero orders. Weekly buy budget 3/3 preserved into week 7/20–7/24 (fresh week).
+
+Day arc: pre-market $98,972.19 HOLD → market-open $98,972.19 HOLD → EOD $98,972.19. Both scheduled routines (pre-market + market-open) landed on HOLD with identical rationale.
+
+NO_TRADE decision rationale — all six stand-downs from pre-market persisted intraday:
+
+1. **yfinance TLS Day 22 → entry gates unverifiable.** MA20/MA50/RSI-14 script-side blocked; carry-forward rule bars all new-entry regardless of catalyst quality. 22 consecutive sessions.
+2. **Broker-side trailing-stop infra gap — Day 22.** `scripts/trade.py` still lacks `trailing-stop` subcommand. Any new position ships without automated downside protection — root cause of 7/16 AMD manual-cut.
+3. **SOX RSI 79 = most overbought in 3 years.** Strategy caps single-name entries at RSI 70; semi-sector at 3-year RSI extreme is a chase, out of policy.
+4. **AMD chase-block active** through Advancing AI Wed–Thu 7/22–7/23 catalyst resolution. Not eligible for immediate re-entry despite KeyBanc $725 / UBS $700 / Cantor $700 / GS $640 / WFC $615 PT stack.
+5. **Iran/Hormuz risk-off backdrop.** Brent $90+/bbl; escalation risk premium unchanged.
+6. **GOOGL earnings inside 5-day exclusion window** — defer until after print.
+
+MSFT / GOOGL / NVDA remain DEFERRED on infra gates.
+
+Cash $98,972.19 = 100.00% of equity (≥20% reserve ✅ abundantly); exposure 0.00% (≤80% ✅); daily-loss limit (3%) — day P&L 0.000%, untested. **Week 7/20–7/24 opens: 0 buys / 0 sells / 0 events through Mon.** Weekly buy budget 3/3 preserved into Tue–Fri (4 remaining sessions).
+
+Cumulative P&L since 5/19 $100k baseline: **-$1,027.81 / -1.03%.** Realized ledger unchanged: AAPL cut -$16.36 (6/25), GOOGL cut -$330.84 (6/10), NVDA trailing-stop -$160.08 (6/5), AMD cut -$520.38 (7/16) = 4 losing exits totaling -$1,027.66 realized (~$0.15 residual reflects idle cash rounding). Unrealized carry nil (cash-parked).
+
+**Carry-forward flags for Tuesday (7/21) pre-market:**
+1. **100% cash book — full 3/3 weekly buy budget available.** Cash $98,972.19; 8% size cap ~$7,918.
+2. **Broker-side trailing-stop infra gap — Day 22.** `scripts/trade.py` lacks `trailing-stop` subcommand. **Escalate: highest-priority infra fix** — 22-session debt was proximate cause of 7/16 AMD manual-cut.
+3. **yfinance bars TLS-broken — Day 22.** MA20/MA50/RSI-14 entry gates unverifiable. **Priority infra fix: Alpaca-bars fallback in `market_data.py`** — 22 consecutive sessions of buy-side gate blocks. **Escalate: co-highest priority.**
+4. **AMD re-qualification window opens post-Advancing-AI (Thu 7/23 close).** Not eligible before; after catalyst, on documented catalyst + fresh entry-gate pass. Analyst PT stack: KeyBanc $725 / UBS $700 / Cantor $700 / GS $640 / WFC $615.
+5. **SOX RSI 79 chase-block** — even if gates clear, single-name semi long into 3-year RSI extreme remains out of policy.
+6. **GOOGL earnings inside 5-day exclusion** — defer until after print (approaching hyperscaler earnings cycle).
+7. **MSFT / GOOGL / NVDA remain deferred** on TLS-blocked gates.
+8. **Iran/Hormuz backdrop** — Brent $90+/bbl, escalation risk premium persists.
+9. **Cumulative P&L since 5/19:** -$1,027.81 / -1.03%. Realized ledger unchanged.
+10. **Clean cash-only book** — all cut-watch, cushion, +15% trim, and size-cap flags CLEARED.
 
 ---
 
