@@ -1,11 +1,11 @@
 {
   "last_routine": "pre-market",
-  "last_run_utc": "2026-07-17T13:00:00Z",
-  "last_run_et": "2026-07-17T09:00:00-04:00",
-  "session_id": "claude/gallant-lamport-kg6qmv",
+  "last_run_utc": "2026-07-20T13:00:00Z",
+  "last_run_et": "2026-07-20T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-sw1hqn",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Pre-market 7/17: Portfolio $98,972.19 (100% cash), zero positions. HOLD — NO_TRADE. Entry gates procedurally blocked (yfinance TLS Day 21 → MA20/MA50/RSI-14 unverifiable); broker-side trailing-stop infra-gated Day 21. Overnight tape: S&P/NDX futures -0.30% on Thursday chip sell-off; NFLX -8% AH on Q3 slowing-growth guide; TSMC beat but raised 2026 capex $60-64B (sentiment-negative, fundamentals-positive); AMD PT hikes wave (KeyBanc $725, UBS $700) but same-session-post-cut = chase-block. MSFT/GOOGL/NVDA remain DEFERRED on gates. Week 7/13-7/17 (Fri final session): 0 buys / 1 sell / 3/3 buy budget preserved. Cumulative P&L since 5/19: -$1,027.81 / -1.03%. Infra debt escalated: broker-side stop + yfinance TLS Day 21 both must patch before next entry."
+  "notes": "Pre-market 7/20 (Mon): Portfolio $98,972.19 (100% cash), zero positions. HOLD — NO_TRADE. Six stand-downs: (1) yfinance TLS Day 22 blocks MA/RSI entry gates; (2) broker-side trailing-stop infra gap Day 22 — no downside protection ships; (3) SOX RSI 79 = most overbought in 3 years (chase-block); (4) AMD chase-block active until Advancing AI Wed–Thu 7/22–7/23; (5) Iran/Hormuz escalation, Brent $90+/bbl; (6) GOOGL earnings next week likely inside 5-day exclusion. Tape: S&P futures +0.13-0.20%, Nasdaq +0.5%, 68% up-open bias. Semis $2T market-cap surge; BofA global TAM $1.3T; AMD analyst PT stack strengthened (KeyBanc $725 / UBS $700 / Cantor $700 / GS $640 / WFC $615). Fresh week 7/20-7/24: weekly buys 0/3 preserved, full budget available. Cumulative P&L since 5/19: -$1,027.81 / -1.03%. Infra debt = 22-session escalation."
 }
