@@ -1,11 +1,11 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-07-20T20:15:00Z",
-  "last_run_et": "2026-07-20T16:15:00-04:00",
-  "session_id": "claude/sleepy-goldberg-lxn7je",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-21T13:00:00Z",
+  "last_run_et": "2026-07-21T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-ehxc9c",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "EOD 7/20 (Mon): Portfolio $98,972.19 (100% cash), zero positions. Day P&L $0.00 / 0.000% — cash-parked full session, dead-flat. 2nd consecutive full-day cash-only book (7/17 + 7/20). All six stand-downs persisted intraday: (1) yfinance TLS Day 22 blocks MA/RSI entry gates; (2) broker-side trailing-stop infra gap Day 22 (root cause of 7/16 AMD manual-cut); (3) SOX RSI 79 = 3-yr overbought extreme above strategy 70 cap; (4) AMD chase-block through Advancing AI Wed–Thu 7/22–7/23; (5) Iran/Hormuz risk-off, Brent $90+/bbl; (6) GOOGL inside 5-day earnings exclusion. Cumulative P&L since 5/19: -$1,027.81 / -1.03%. Week 7/20–7/24 opens: 0 buys / 0 sells / 0 events through Mon. Weekly buy budget 3/3 preserved into Tue–Fri. Infra debt = 22-session escalation."
+  "notes": "Pre-market 7/21 (Tue): $98,972.19 (100% cash), zero positions. HOLD — no qualified catalysts. All six stand-downs persist: (1) yfinance TLS Day 23 blocks MA/RSI entry gates (SPY test returned 0 bars this run); (2) broker-side trailing-stop infra gap Day 23; (3) SOX RSI ~79 = 3-yr overbought extreme; (4) AMD chase-block through Advancing AI Wed-Thu 7/22-7/23; (5) Iran/Hormuz backdrop, Brent $90+/bbl; (6) GOOGL inside 5-day earnings exclusion (AMC Wed). Trade ideas recorded (AMD post-event re-qual, GOOGL post-print, MSFT/NVDA on TLS-fix) but none actionable. Weekly buys 0/3 preserved into Tue-Fri. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
 }
