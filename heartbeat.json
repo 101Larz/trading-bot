@@ -1,11 +1,11 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-07-21T16:35:00Z",
-  "last_run_et": "2026-07-21T12:35:00-04:00",
-  "session_id": "claude/exciting-bohr-u50f0g",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-22T13:00:00Z",
+  "last_run_et": "2026-07-22T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-dvi5rt",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Midday 7/21 (Tue): HOLD — reaffirmed pre-market and market-open. 100% cash $98,972.19, zero positions (0/8). Steps 3-5 N/A (no positions to cut, tighten, or thesis-check). All six stand-downs persist: (1) yfinance TLS Day 23; (2) broker-side trailing-stop infra gap Day 23; (3) SOX RSI ~79 3-yr overbought; (4) AMD chase-block through Advancing AI Wed-Thu 7/22-7/23; (5) Iran/Hormuz backdrop; (6) GOOGL inside 5-day earnings exclusion (AMC Wed). Weekly buys 0/3 preserved into Wed catalyst-heavy tape (AMD Advancing AI Day 1 + Alphabet Q2 AMC). Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
+  "notes": "Pre-market 7/22 (Wed): HOLD. 100% cash $98,972.19, zero positions (0/8). All six stand-downs persist into Advancing-AI/GOOGL-earnings tape: (1) yfinance TLS Day 24 (SPY snapshot 0 bars); (2) broker-side trailing-stop infra gap Day 24; (3) SOX RSI ~79 3-yr overbought; (4) AMD chase-block through Advancing AI Wed-Thu 7/22-7/23; (5) Iran/Hormuz backdrop, Brent $90+/bbl; (6) GOOGL inside 5-day earnings exclusion (AMC tonight). SPY futures -0.3% pre-mkt; chips extending AI rally. Weekly buys 0/3 preserved. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
 }
