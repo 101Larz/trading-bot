@@ -1,11 +1,11 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-07-23T13:45:00Z",
-  "last_run_et": "2026-07-23T09:45:00-04:00",
-  "session_id": "claude/sweet-shannon-6x9vgm",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-07-23T20:15:00Z",
+  "last_run_et": "2026-07-23T16:15:00-04:00",
+  "session_id": "claude/sleepy-goldberg-xdlwqi",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Market-open 7/23 (Thu): HOLD. 100% cash $98,972.19, zero positions (0/6). Pre-market HOLD reaffirmed; all six stand-downs persist: (1) yfinance TLS Day 25 blocks MA/RSI entry gates; (2) broker-side trailing-stop infra gap Day 25; (3) SOX RSI ~79 3-yr overbought; (4) AMD chase-block through Advancing AI Day 2 close today; (5) Iran/Hormuz backdrop Brent $85+/bbl; (6) triple binary tonight (INTC + TSLA AMC + AMD event close). GOOGL -4% Thu post-print (capex $44.9B undermined beat). All three RESEARCH-LOG candidates (AMD/GOOGL/MSFT) marked DEFER → buy-rule catalyst gate FAILS. Weekly buys 0/3 preserved into Fri 7/24. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
+  "notes": "EOD 7/23 (Thu): NO_TRADE. Portfolio $98,972.19 dead-flat ($0.00 / 0.000% day P&L). 5th consecutive full-day cash-only book (7/17 → 7/20 → 7/21 → 7/22 → 7/23). Zero positions, zero orders across pre-market + market-open + EOD. All six stand-downs persisted intraday: (1) yfinance TLS Day 25 blocks MA/RSI gates; (2) broker-side trailing-stop infra gap Day 25; (3) SOX RSI ~79 3-yr overbought; (4) AMD chase-block through Advancing AI Day 2 close today; (5) Iran/Hormuz Brent $85+/bbl; (6) triple binary AMC tonight INTC + TSLA earnings + AMD event close. GOOGL -4% Thu post-print (capex $44.9B undermined beat). Week 7/20–7/24 through Thu: 0 buys / 0 sells / 0 events. Weekly buy budget 3/3 preserved into Fri 7/24 (final session). Cumulative P&L since 5/19: -$1,027.81 / -1.03%. AMD re-qualification window opens Fri 7/24 pre-market on documented catalyst + fresh entry-gate pass."
 }
