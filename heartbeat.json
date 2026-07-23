@@ -1,11 +1,11 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-07-22T13:45:00Z",
-  "last_run_et": "2026-07-22T09:45:00-04:00",
-  "session_id": "claude/sweet-shannon-mhkjsz",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-23T13:00:00Z",
+  "last_run_et": "2026-07-23T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-jgo0kf",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Market-open 7/22 (Wed): HOLD reaffirmed. 100% cash $98,972.19, zero positions (0/6). Buy-rule check fails on catalyst gate — no qualified catalyst in RESEARCH-LOG; all three ideas (AMD/GOOGL/MSFT) barred. All six stand-downs persist: (1) yfinance TLS Day 24; (2) broker-side trailing-stop infra gap Day 24; (3) SOX RSI ~79 3-yr overbought; (4) AMD chase-block through Advancing AI Wed-Thu 7/22-7/23; (5) Iran/Hormuz backdrop; (6) GOOGL 5-day earnings exclusion (AMC tonight). Weekly buys 0/3 preserved. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
+  "notes": "Pre-market 7/23 (Thu): HOLD. 100% cash $98,972.19, zero positions. All six stand-downs persist: (1) yfinance TLS Day 25 (SPY 0 bars confirmed); (2) broker-side trailing-stop infra gap Day 25; (3) SOX RSI ~79 3-yr overbought; (4) AMD chase-block through today's Advancing AI Day 2 close; (5) Iran/Hormuz backdrop Brent $85+; (6) triple binary tonight (INTC + TSLA earnings AMC + AMD event close). GOOGL Q2 beat records ($9.11 EPS, +82% Cloud) but capex doubled $44.9B — post-print reaction developing. Weekly buys 0/3 preserved into Fri 7/24. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
 }
