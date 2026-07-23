@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-23T13:00:00Z",
-  "last_run_et": "2026-07-23T09:00:00-04:00",
-  "session_id": "claude/gallant-lamport-jgo0kf",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-07-23T13:45:00Z",
+  "last_run_et": "2026-07-23T09:45:00-04:00",
+  "session_id": "claude/sweet-shannon-6x9vgm",
   "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Pre-market 7/23 (Thu): HOLD. 100% cash $98,972.19, zero positions. All six stand-downs persist: (1) yfinance TLS Day 25 (SPY 0 bars confirmed); (2) broker-side trailing-stop infra gap Day 25; (3) SOX RSI ~79 3-yr overbought; (4) AMD chase-block through today's Advancing AI Day 2 close; (5) Iran/Hormuz backdrop Brent $85+; (6) triple binary tonight (INTC + TSLA earnings AMC + AMD event close). GOOGL Q2 beat records ($9.11 EPS, +82% Cloud) but capex doubled $44.9B — post-print reaction developing. Weekly buys 0/3 preserved into Fri 7/24. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
+  "notes": "Market-open 7/23 (Thu): HOLD. 100% cash $98,972.19, zero positions (0/6). Pre-market HOLD reaffirmed; all six stand-downs persist: (1) yfinance TLS Day 25 blocks MA/RSI entry gates; (2) broker-side trailing-stop infra gap Day 25; (3) SOX RSI ~79 3-yr overbought; (4) AMD chase-block through Advancing AI Day 2 close today; (5) Iran/Hormuz backdrop Brent $85+/bbl; (6) triple binary tonight (INTC + TSLA AMC + AMD event close). GOOGL -4% Thu post-print (capex $44.9B undermined beat). All three RESEARCH-LOG candidates (AMD/GOOGL/MSFT) marked DEFER → buy-rule catalyst gate FAILS. Weekly buys 0/3 preserved into Fri 7/24. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
 }
