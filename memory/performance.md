@@ -3654,3 +3654,26 @@ Trades executed: **none.**
 Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
 
 Carry-forward: yfinance TLS Day 26, broker-side trailing-stop infra gap Day 26, SOX RSI ~79, AMD chase-block, Brent >$100/bbl, tech-capex angst, MSFT earnings Jul 30 (inside 5-day exclusion).
+
+
+## EOD Snapshot — 2026-07-24 (Friday)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,972.19 |
+| Cash | $98,972.19 |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 0 |
+
+Open positions: **none** (7th consecutive cash-only close; 100% cash).
+
+Prior close (2026-07-23): $98,972.19 → today's close $98,972.19 → **flat day** (no positions to mark).
+
+Session cadence today: pre-market HOLD → market-open NO_TRADE (7th consecutive) → midday NO_TRADE → EOD flat. Six stand-downs persisted intact all session (yfinance TLS Day 26, trailing-stop infra gap Day 26, SOX RSI ~79, AMD chase-block, Brent >$100/bbl Houthi attacks, tech-capex angst GOOGL/TSLA). MSFT earnings Jul 30 inside 5-day exclusion. Weekly buy budget 3/3 unused — **rolls over spent (Friday final session; not carried into next week)**.
+
+Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
+
+Carry-forward into next week: yfinance TLS Day 26+ (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 26+, SOX RSI ~79 (overbought), AMD post-Advancing AI chase-block, Brent >$100/bbl (Houthi/Hormuz risk-off), tech-capex angst, MSFT earnings Jul 30 (5-day exclusion window active Mon–Tue).
