@@ -3627,3 +3627,30 @@ Trades executed: **none.**
 Risk posture: cash 92.56% (≥20% ✅), exposure 7.44% (≤80% ✅), daily-loss halt not approached (-0.163% intraday). Weekly buy budget 3/3 preserved.
 
 Carry-forward: yfinance TLS Day 16, AMD broker-trailing-stop infra gap Day 16, Iran/US strikes + Strait of Hormuz risk-off tape, AMD Advancing AI summit 7/22-23 binary in position window.
+
+
+### Market-Open Log — 2026-07-24 (Friday — session: claude/sweet-shannon-7ozrrd)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** (7th consecutive HOLD) |
+
+Buy-rule check:
+- Max 6 open positions ✅ (0/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (n/a)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD stands; six stand-downs persist (yfinance TLS Day 26 blocks MA/RSI gates; trailing-stop infra gap Day 26; SOX RSI ~79; AMD post-Advancing AI chase-block; Brent >$100/bbl Houthi attacks; tech-capex angst GOOGL -7% / TSLA -14% Thu).
+
+Position snapshot: **none** (100% cash, 6th consecutive cash-only book).
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 26, broker-side trailing-stop infra gap Day 26, SOX RSI ~79, AMD chase-block, Brent >$100/bbl, tech-capex angst, MSFT earnings Jul 30 (inside 5-day exclusion).
