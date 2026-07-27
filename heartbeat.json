@@ -1,11 +1,11 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-07-24T16:30:00Z",
-  "last_run_et": "2026-07-24T12:30:00-04:00",
-  "session_id": "claude/exciting-bohr-n8p9ms",
-  "decision": "NO_ACTION",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-27T13:00:00Z",
+  "last_run_et": "2026-07-27T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-c2vkaw",
+  "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Midday scan 7/24 (Fri): NO_ACTION. Portfolio $98,972.19 / 100% cash / 0 positions. No losers to cut, no winners to protect, no theses to reassess. Book unchanged since market-open cash-only stance (7th consecutive HOLD). Six pre-market stand-downs persist unchanged: yfinance TLS Day 26, broker trailing-stop infra gap Day 26, SOX RSI ~79, AMD chase-block, Brent >$100/bbl, tech-capex angst. MSFT earnings Jul 30 inside 5-day exclusion. Weekly buys 0/3 preserved (final session — rolls over unused). Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
+  "notes": "Pre-market 7/27 (Mon): HOLD (8th consecutive). Portfolio $98,972.19 / 100% cash / 0 positions. SPX futures +0.79% risk-on (Iran de-escalation, oil down). Stand-downs unchanged Day 29+: yfinance TLS blocks MA20/MA50/RSI gates; broker trailing-stop infra gap; SOX RSI ~79 overbought; AMD chase-block; tech-capex angst. Mega-cap earnings cluster this week (MSFT+META Wed, AAPL+AMZN Thu, QCOM Wed) puts 8+ screening-universe names inside 5-day earnings exclusion. Weekly buys 0/3 fresh. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
 }
