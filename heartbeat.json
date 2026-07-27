@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-27T13:00:00Z",
-  "last_run_et": "2026-07-27T09:00:00-04:00",
-  "session_id": "claude/gallant-lamport-c2vkaw",
-  "decision": "HOLD",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-07-27T13:45:00Z",
+  "last_run_et": "2026-07-27T09:45:00-04:00",
+  "session_id": "claude/sweet-shannon-8fxshp",
+  "decision": "NO_TRADE",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Pre-market 7/27 (Mon): HOLD (8th consecutive). Portfolio $98,972.19 / 100% cash / 0 positions. SPX futures +0.79% risk-on (Iran de-escalation, oil down). Stand-downs unchanged Day 29+: yfinance TLS blocks MA20/MA50/RSI gates; broker trailing-stop infra gap; SOX RSI ~79 overbought; AMD chase-block; tech-capex angst. Mega-cap earnings cluster this week (MSFT+META Wed, AAPL+AMZN Thu, QCOM Wed) puts 8+ screening-universe names inside 5-day earnings exclusion. Weekly buys 0/3 fresh. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
+  "notes": "Market-open 7/27 (Mon): NO_TRADE (9th consecutive HOLD). Portfolio $98,972.19 / 100% cash / 0 positions. Pre-market HOLD confirmed — GOOGL/JPM/LLY all conditional on yfinance TLS repair (Day 29+) + broker trailing-stop infra gap (Day 29+); neither cleared. Mega-cap earnings cluster this week (MSFT+META Wed, AAPL+AMZN Thu, QCOM Wed) + FOMC stacks binary risk into Wed-Thu — cash posture defensible even absent infra blockers. Weekly buys 0/3 preserved. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
 }
