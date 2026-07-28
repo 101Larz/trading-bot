@@ -3754,3 +3754,30 @@ Trades executed: **none.**
 Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
 
 Carry-forward: yfinance TLS Day 31, broker trailing-stop infra Day 31, SOX RSI ~79, AMD chase-block, tech-capex angst, MSFT+META+QCOM Wed AH earnings, AAPL+AMZN Thu AH earnings, FOMC Wed decision.
+
+
+### Market-Open Log — 2026-07-28 (Tuesday — session: claude/sweet-shannon-djgbou)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** (10th consecutive HOLD) |
+
+Buy-rule check:
+- Max 6 open positions ✅ (0/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (n/a)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD stands (9th consecutive). All three conditional ideas (GOOGL, JPM, LLY) gated on yfinance TLS repair (blocks MA20/MA50/RSI-14 verification) and broker trailing-stop infra gap. Neither resolved Day 31.
+
+Position snapshot: **none** (10th consecutive cash-only book; unchanged since AMD exit).
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 31, broker trailing-stop infra gap Day 31, SOX RSI ~79, AMD post-Advancing AI chase-block, tech-capex angst, mega-cap earnings cluster (MSFT+META+QCOM Wed 7/29 AH, AAPL+AMZN Thu 7/30 AH — all inside 5-day exclusion), FOMC Wed 7/29 decision.
