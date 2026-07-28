@@ -1,11 +1,11 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-07-27T20:15:00Z",
-  "last_run_et": "2026-07-27T16:15:00-04:00",
-  "session_id": "claude/sleepy-goldberg-qeiq5k",
-  "decision": "FLAT",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-28T13:00:00Z",
+  "last_run_et": "2026-07-28T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-lsvw86",
+  "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "EOD 7/27 (Mon): flat day — portfolio $98,972.19 / 100% cash / 0 positions. Day P&L $0.00 (0.00%) vs Fri 7/24 close $98,972.19. 9th consecutive cash-only close. Sessions today: pre-market HOLD → market-open NO_TRADE (9th consecutive) → EOD flat. Standing blockers Day 29+: yfinance TLS (MA/RSI gates), broker trailing-stop infra, SOX RSI ~79, AMD chase-block, tech-capex angst. Mega-cap earnings + FOMC stack Wed/Thu (MSFT+META+QCOM Wed, AAPL+AMZN Thu). Weekly buys 0/3 preserved. Cumulative P&L since 5/19: -$1,027.81 / -1.03%."
+  "notes": "Pre-market 7/28 (Tue): HOLD (9th consecutive). Portfolio $98,972.19 / 100% cash / 0 positions. Blockers Day 31: yfinance TLS still broken (SPY snapshot 0 bars — MA/RSI gates unverifiable), broker trailing-stop infra gap, SOX RSI ~79, AMD chase-block. Event stack: FOMC Wed 7/29 (62% no-change consensus, hawkish tilt risk), MSFT+META+QCOM Wed AH, AAPL+AMZN Thu AH — every large-cap in universe inside 5-day exclusion. Futures -0.17%, Kospi -8% chip contagion, Treasuries + oil rising. GOOGL/JPM/LLY remain conditional ideas gated on TLS + trailing-stop repair. Weekly buys 0/3. Cumulative P&L: -$1,027.81 / -1.03%."
 }

@@ -3729,3 +3729,28 @@ Session cadence today: pre-market HOLD (8th consecutive) → market-open NO_TRAD
 Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
 
 Carry-forward into Tuesday: yfinance TLS Day 30+ (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 30+, SOX RSI ~79 (overbought), AMD chase-block, tech-capex angst, MSFT+META earnings Wed 7/29 (5-day exclusion active Mon–Wed AM), AAPL+AMZN Thu 7/30 (exclusion active Mon–Thu AM), QCOM Wed (exclusion active), FOMC Wed decision.
+
+
+### Pre-Market Log — 2026-07-28 (Tuesday — session: claude/gallant-lamport-lsvw86)
+
+| Field | Value |
+|-------|-------|
+| Routine | Pre-Market Research (09:00 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **HOLD** (9th consecutive pre-market) |
+
+Screen status: dynamic Markov + technical screen **could not execute** — yfinance TLS handshake failing on all tickers Day 31 (SPY snapshot returned 0 bars this AM). MA20/MA50/RSI-14 gates unverifiable → Entry Rules #1 and #2 cannot be satisfied.
+
+Market context: futures lower (US500 ~7,400, -0.17%), semi rout persisting (Kospi -8% overnight), Treasuries + oil rising. FOMC Wed 7/29 (62% no-change consensus at 3.50–3.75%, hawkish tilt risk with inflation ~4.2%). Mega-cap earnings cluster: MSFT + META + QCOM Wed AH, AAPL + AMZN Thu AH — every large-cap in screening universe inside 5-day exclusion.
+
+Conditional trade ideas (all gated on TLS + trailing-stop repair): GOOGL, JPM, LLY.
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 31, broker trailing-stop infra Day 31, SOX RSI ~79, AMD chase-block, tech-capex angst, MSFT+META+QCOM Wed AH earnings, AAPL+AMZN Thu AH earnings, FOMC Wed decision.
