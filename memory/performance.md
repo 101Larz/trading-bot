@@ -3832,3 +3832,28 @@ Session cadence today: pre-market HOLD (9th consecutive) → market-open NO_TRAD
 Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
 
 Carry-forward into Wednesday: yfinance TLS Day 32 (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 32, SOX RSI ~79 (overbought), AMD chase-block, tech-capex angst, MSFT+META+QCOM Wed 7/29 AH earnings (event day), AAPL+AMZN Thu 7/30 AH earnings (exclusion active), FOMC Wed 7/29 decision (event day).
+
+
+### Pre-Market Log — 2026-07-29 (Wednesday — session: claude/gallant-lamport-3yfay8)
+
+| Field | Value |
+|-------|-------|
+| Routine | Pre-Market Research (09:00 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **HOLD** (11th consecutive pre-market) |
+
+Screen status: yfinance TLS Day 32 — SPY + all screening-universe tickers return 0 bars. MA20/MA50/RSI-14 gates unverifiable → Entry Rules #1 and #2 fail by default. Dynamic Markov + technical screen could not execute.
+
+Market context: FOMC decision day 2 PM ET (~83–85% no-change consensus at 3.50–3.75%, hawkish surprise risk). Mega-cap earnings tonight AH: MSFT + META + QCOM. Geopolitics: Iran IRGC ballistic missile attack on US ME bases 5:45 PM Tue — all intercepted; oil spiked then reversed. Semi rout deepens (SMH -3%, MU/AMD -8% on China DUV lithography breakthrough report). Rotation from chips into industrials/financials; Treasuries bid as oil retreats.
+
+Conditional trade ideas (all gated on TLS + trailing-stop repair AND FOMC/earnings resolution): JPM, LLY. GOOGL now BLOCKED — reports 7/30 AH (inside 5-day exclusion).
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 32, broker trailing-stop infra gap Day 32, FOMC decision 2 PM, MSFT+META+QCOM AH earnings tonight, AAPL+AMZN Thu AH earnings, Iran tail risk, SOX rout / MU+AMD -8%, tech-capex angst, GOOGL earnings exclusion active.
