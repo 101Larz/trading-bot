@@ -3884,3 +3884,28 @@ Trades executed: **none.**
 Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
 
 Carry-forward: yfinance TLS Day 32, broker trailing-stop infra gap Day 32, FOMC 2 PM decision, MSFT+META+QCOM AH earnings tonight, AAPL+AMZN Thu AH earnings, Iran tail risk, SOX rout / MU+AMD -8%, GOOGL earnings exclusion active.
+
+
+## EOD Snapshot — 2026-07-29 (Wednesday)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,972.19 |
+| Cash | $98,972.19 |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 0 / 6 |
+
+### Open Positions
+
+None (11th consecutive cash-only close; 100% cash).
+
+Prior close (2026-07-28 Tue): $98,972.19 → today's close $98,972.19 → **flat day** (no positions to mark).
+
+Session cadence today: pre-market HOLD (11th consecutive) → market-open NO_TRADE (11th consecutive) → EOD flat. Stand-downs intact all session (yfinance TLS Day 32, broker trailing-stop infra gap Day 32, FOMC 2 PM decision, MSFT+META+QCOM AH earnings tonight, AAPL+AMZN Thu AH earnings, Iran tail risk, SOX rout / MU+AMD -8% on China DUV lithography news, GOOGL earnings exclusion active). JPM + LLY remain conditional ideas gated on TLS repair + broker-side trailing-stop infrastructure + FOMC/earnings resolution — neither prerequisite cleared today. Weekly buy budget 3/3 preserved.
+
+Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
+
+Carry-forward into Thursday: yfinance TLS Day 33 (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 33, FOMC decision digest, MSFT+META+QCOM AH earnings reaction (event day fallout), AAPL+AMZN Thu 7/30 AH earnings (exclusion active — event day), SOX rout continuation risk, Iran tail risk, tech-capex angst.
