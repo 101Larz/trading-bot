@@ -1,11 +1,11 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-07-28T20:15:00Z",
-  "last_run_et": "2026-07-28T16:15:00-04:00",
-  "session_id": "claude/sleepy-goldberg-vejcii",
-  "decision": "EOD_SNAPSHOT",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-07-29T13:00:00Z",
+  "last_run_et": "2026-07-29T09:00:00-04:00",
+  "session_id": "claude/gallant-lamport-3yfay8",
+  "decision": "HOLD",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "EOD 7/28 (Tue): flat day, portfolio $98,972.19 / 100% cash / 0 positions. Prior close $98,972.19 → today $98,972.19 = $0.00 (0.00%) day P&L. 10th consecutive cash-only close. Trades today 0, week 0/3. Cumulative since 5/19: -$1,027.81 (-1.03%). Blockers into Wed: yfinance TLS Day 32, broker trailing-stop infra gap Day 32, FOMC Wed 7/29 decision, mega-cap earnings cluster Wed AH (MSFT+META+QCOM) & Thu AH (AAPL+AMZN), SOX RSI ~79 overbought, AMD chase-block, tech-capex angst."
+  "notes": "Pre-market 7/29 (Wed): HOLD (11th consecutive pre-market). Cash 100% at $98,972.19, 0 positions, weekly buys 0/3. Blockers: yfinance TLS Day 32 (MA/RSI gates unverifiable), broker trailing-stop infra Day 32, FOMC 2PM decision today, MSFT+META+QCOM AH earnings tonight, AAPL+AMZN Thu AH, Iran missile intercept tail risk, semi rout (SMH -3%, MU/AMD -8% on China DUV report). Conditional ideas JPM, LLY — GOOGL now blocked (7/30 AH earnings)."
 }
