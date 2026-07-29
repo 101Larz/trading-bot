@@ -1,11 +1,11 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-29T13:00:00Z",
-  "last_run_et": "2026-07-29T09:00:00-04:00",
-  "session_id": "claude/gallant-lamport-3yfay8",
-  "decision": "HOLD",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-07-29T13:45:00Z",
+  "last_run_et": "2026-07-29T09:45:00-04:00",
+  "session_id": "claude/sweet-shannon-12nh62",
+  "decision": "NO_TRADE",
   "trades_executed": 0,
   "open_positions": 0,
   "weekly_buys": 0,
-  "notes": "Pre-market 7/29 (Wed): HOLD (11th consecutive pre-market). Cash 100% at $98,972.19, 0 positions, weekly buys 0/3. Blockers: yfinance TLS Day 32 (MA/RSI gates unverifiable), broker trailing-stop infra Day 32, FOMC 2PM decision today, MSFT+META+QCOM AH earnings tonight, AAPL+AMZN Thu AH, Iran missile intercept tail risk, semi rout (SMH -3%, MU/AMD -8% on China DUV report). Conditional ideas JPM, LLY — GOOGL now blocked (7/30 AH earnings)."
+  "notes": "Market-open 7/29 (Wed): NO_TRADE (11th consecutive). Cash 100% at $98,972.19, 0 positions, weekly buys 0/3. Blockers unchanged from pre-market: yfinance TLS Day 32 (MA/RSI gates unverifiable), broker trailing-stop infra Day 32, FOMC 2PM decision today, MSFT+META+QCOM AH earnings tonight, AAPL+AMZN Thu AH, Iran tail risk, semi rout (SMH -3%, MU/AMD -8%). GOOGL BLOCKED (7/30 AH earnings); JPM/LLY conditional-only."
 }
