@@ -1,11 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-30T13:00:00Z",
-  "last_run_et": "2026-07-30T09:00:00-04:00",
-  "session_id": "claude/gallant-lamport-p4ijrr",
-  "decision": "HOLD",
-  "trades_executed": 0,
+  "last_routine": "Market-Open Execution",
+  "last_run_iso": "2026-07-30T09:45:00-04:00",
+  "session_branch": "claude/sweet-shannon-p1pp5r",
+  "status": "ok",
+  "decision": "NO_TRADE",
+  "consecutive_no_trade_market_open": 12,
+  "cash": 98972.19,
+  "equity": 98972.19,
   "open_positions": 0,
-  "weekly_buys": 0,
-  "notes": "Pre-market 7/30 (Thu): HOLD (12th consecutive). Cash 100% at $98,972.19, 0 positions, weekly buys 0/3. Blockers: yfinance TLS Day 33 (MA/RSI gates unverifiable), broker trailing-stop infra Day 33, AAPL+AMZN+GOOGL AH earnings tonight (all in 5-day exclusion), MSFT+META+QCOM post-earnings dust (MSFT +2% Azure +43%; META -6% capex-raise; QCOM -4% light guide), FOMC hawkish digest (Warsh held 3.50-3.75% but rejected soft inflation target), SOX rout (MU/AMD -8% China DUV lithography), Iran tail risk / oil +7%. JPM + LLY conditional-only."
+  "trades_this_week": 0,
+  "notes": "12th consecutive NO_TRADE. All catalysts blocked (AAPL/AMZN/GOOGL AH earnings today; MSFT/META/QCOM <24h post-earnings; JPM/LLY still gated on yfinance TLS Day 33 + trailing-stop infra + FOMC digest + SOX rout)."
 }
