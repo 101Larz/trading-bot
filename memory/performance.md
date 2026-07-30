@@ -3987,3 +3987,28 @@ Trades executed: **none.**
 Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
 
 Carry-forward unchanged from AM: yfinance TLS Day 33, broker trailing-stop infra gap Day 33, AAPL+AMZN+GOOGL AH earnings tonight (exclusion active), MSFT/META/QCOM post-earnings <24h exclusion active, FOMC hawkish digest ongoing, SOX rout continuation risk (MU/AMD -8%), Iran tail risk / oil overhang, JPM/LLY conditional only.
+
+
+### EOD Snapshot — 2026-07-30 (Thursday — session: claude/sleepy-goldberg-8bhfn0)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,972.19 |
+| Cash | $98,972.19 |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 0 / 6 |
+
+### Open Positions
+
+None (12th consecutive cash-only close; 100% cash).
+
+Prior close (2026-07-29 Wed): $98,972.19 → today's close $98,972.19 → **flat day** (no positions to mark).
+
+Session cadence today: pre-market HOLD (12th consecutive) → market-open NO_TRADE (12th consecutive) → midday NO_ACTION → EOD flat. Stand-downs intact all session (yfinance TLS Day 33, broker trailing-stop infra gap Day 33, AAPL+AMZN+GOOGL AH earnings tonight — 5-day exclusion active, MSFT+META+QCOM post-earnings <24h exclusion active, FOMC hawkish digest ongoing, SOX rout continuation risk MU/AMD -8%, Iran tail risk / oil overhang). JPM + LLY remain conditional ideas gated on TLS repair + trailing-stop infra + FOMC/earnings settling — neither prerequisite cleared today. Weekly buy budget 3/3 preserved.
+
+Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
+
+Carry-forward into Friday: yfinance TLS Day 34 (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 34, AAPL+AMZN+GOOGL post-earnings reaction (event day fallout, exclusion active), MSFT/META/QCOM exclusion rolls off Fri AM, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk, tech-capex angst, Friday weekly-review routine at 17:00 ET.
