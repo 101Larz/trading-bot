@@ -3909,3 +3909,28 @@ Session cadence today: pre-market HOLD (11th consecutive) → market-open NO_TRA
 Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
 
 Carry-forward into Thursday: yfinance TLS Day 33 (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 33, FOMC decision digest, MSFT+META+QCOM AH earnings reaction (event day fallout), AAPL+AMZN Thu 7/30 AH earnings (exclusion active — event day), SOX rout continuation risk, Iran tail risk, tech-capex angst.
+
+
+### Pre-Market Log — 2026-07-30 (Thursday — session: claude/gallant-lamport-p4ijrr)
+
+| Field | Value |
+|-------|-------|
+| Routine | Pre-Market Research (09:00 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **HOLD** (12th consecutive pre-market) |
+
+Screen status: yfinance TLS Day 33 — SPY + all screening-universe tickers return 0 bars (SSL "Recv failure: Connection reset by peer"). MA20/MA50/RSI-14 gates unverifiable → Entry Rules #1 and #2 fail by default. Dynamic Markov + technical screen could not execute.
+
+Market context: FOMC digest (Warsh held 3.50–3.75% Wed but hawkish inflation-target rejection → S&P 500 -1.5% Wed). Last night AH earnings: MSFT +2% (Azure +43%, Copilot 30M seats), META -6% ($2.4B legal charge + capex raised to $130–145B), QCOM -4% (miss + light Q4 guide). Tonight AH: AAPL (options implying 3.8% move, ATH into print), AMZN (options implying 6.04% move, ~$150B at stake), GOOGL — all inside 5-day exclusion. Semis rout continues (MU/AMD -8% Wed). Iran tail risk elevated (Trump strike vow drove oil +7% Wed).
+
+Conditional trade ideas: JPM + LLY (both gated on TLS repair + trailing-stop infra + FOMC/earnings settling). AAPL/AMZN/GOOGL BLOCKED (7/30 AH earnings, exclusion active). MSFT/META/QCOM BLOCKED (reported <24h ago).
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 33, broker trailing-stop infra gap Day 33, AAPL+AMZN+GOOGL AH earnings tonight (5-day exclusion active), MSFT/META/QCOM post-earnings exclusion still active, FOMC hawkish digest ongoing, SOX rout continuation risk (MU/AMD -8%), Iran tail risk / oil +7% overhang.
