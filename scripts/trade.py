@@ -322,10 +322,33 @@ if __name__ == "__main__":
         code = cancel_all_orders()
         print(f"Cancel all orders — HTTP {code}")
     elif action == "close" and len(sys.argv) > 2:
+        # Liquidate an entire position via Alpaca's DELETE endpoint (market order).
+        # Use only for emergency cut-loser exits when a limit-close is not practical.
         print(json.dumps(close_position(sys.argv[2]), indent=2))
+    elif action == "limit-close" and len(sys.argv) == 5:
+        # Preferred exit: limit sell at bid − 0.25%.
+        # Usage: python trade.py limit-close SYMBOL SHARES BID_PRICE
+        sym = sys.argv[2].upper()
+        shares = float(sys.argv[3])
+        bid = float(sys.argv[4])
+        print(json.dumps(safe_sell(sym, shares, bid), indent=2))
+    elif action == "trail" and len(sys.argv) >= 4:
+        # Place a 10% trailing-stop GTC on an existing position.
+        # Usage: python trade.py trail SYMBOL SHARES [TRAIL_PCT]
+        sym = sys.argv[2].upper()
+        shares = float(sys.argv[3])
+        pct = float(sys.argv[4]) if len(sys.argv) > 4 else TRAILING_STOP_PCT
+        print(json.dumps(place_trailing_stop(sym, shares, pct), indent=2))
     elif action == "buy" and len(sys.argv) == 4:
         sym = sys.argv[2].upper()
         shares = float(sys.argv[3])
         print(json.dumps(buy(sym, shares), indent=2))
     else:
-        print("Usage: python trade.py [clock|open|orders|cancel-all|close SYMBOL|buy SYMBOL SHARES]")
+        print(
+            "Usage: python trade.py "
+            "[clock|open|orders|cancel-all"
+            "|close SYMBOL"
+            "|limit-close SYMBOL SHARES BID"
+            "|trail SYMBOL SHARES [TRAIL_PCT]"
+            "|buy SYMBOL SHARES]"
+        )

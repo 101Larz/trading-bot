@@ -45,7 +45,7 @@ def get_bars_alpaca(symbol: str, limit: int = 60) -> list[dict]:
 
 
 def get_bars_yfinance(symbol: str, limit: int = 60) -> list[dict]:
-    """Fetch daily bars from yfinance. Returns list of {t, o, h, l, c, v} dicts.
+    """Fetch daily bars from yfinance (uses curl_cffi TLS in v1.5+).
 
     Uses explicit start/end dates so that today's incomplete intraday session
     is never counted as a daily bar — the bug that caused only 1 bar to be
@@ -61,6 +61,7 @@ def get_bars_yfinance(symbol: str, limit: int = 60) -> list[dict]:
         interval="1d",
         auto_adjust=True,
         progress=False,
+        multi_level_index=False,  # yfinance 1.5+ option: flat columns for single ticker
     )
     if df.empty:
         return []
@@ -90,34 +91,122 @@ def get_bars_yfinance(symbol: str, limit: int = 60) -> list[dict]:
     ]
 
 
-def get_bars(symbol: str, limit: int = 60) -> tuple[list[dict], str]:
+_YF_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+_YF_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/126.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/json",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+
+def get_bars_yahoo_direct(symbol: str, limit: int = 60) -> list[dict]:
+    """Fetch daily bars via raw Yahoo Finance v8 chart JSON API.
+
+    Used as a fallback when yfinance itself fails (TLS/network issue in cloud).
+    Makes a plain requests.get with browser headers — avoids yfinance's internal
+    session handling entirely.
     """
-    Returns (bars, source) where source is 'alpaca' or 'yfinance'.
-    Alpaca free plan often returns only 1 bar (IEX real-time, no history).
-    Falls back to yfinance with up to 3 attempts (2-second sleep between retries)
-    so transient network hiccups or rate-limits don't silently produce NaN indicators.
+    # Request extra history so we always have `limit` trading bars after filtering
+    calendar_days = limit * 3
+    end_ts = int(time.time())
+    start_ts = end_ts - calendar_days * 86400
+    url = _YF_CHART_URL.format(symbol=symbol)
+    params = {
+        "interval": "1d",
+        "period1": str(start_ts),
+        "period2": str(end_ts),
+        "events": "div,splits",
+    }
+    try:
+        r = requests.get(url, headers=_YF_HEADERS, params=params, timeout=15)
+        r.raise_for_status()
+        data = r.json()
+        result = data.get("chart", {}).get("result") or []
+        if not result:
+            return []
+        chart = result[0]
+        timestamps = chart.get("timestamp", [])
+        quotes = chart.get("indicators", {}).get("quote", [{}])[0]
+        adj_close = chart.get("indicators", {}).get("adjclose", [{}])[0].get("adjclose", [])
+        bars = []
+        for i, ts in enumerate(timestamps):
+            c = (adj_close[i] if adj_close else None) or (quotes.get("close") or [None])[i]
+            o = (quotes.get("open") or [None])[i]
+            h = (quotes.get("high") or [None])[i]
+            l = (quotes.get("low") or [None])[i]
+            v = (quotes.get("volume") or [0])[i]
+            if c is None or o is None:
+                continue
+            bars.append({
+                "t": str(date.fromtimestamp(ts)),
+                "o": round(float(o), 4),
+                "h": round(float(h), 4) if h is not None else round(float(o), 4),
+                "l": round(float(l), 4) if l is not None else round(float(o), 4),
+                "c": round(float(c), 4),
+                "v": int(v) if v else 0,
+            })
+        # Exclude today's incomplete bar (same date as today)
+        today_str = str(date.today())
+        bars = [b for b in bars if b["t"] != today_str]
+        return bars[-limit:]
+    except Exception as exc:
+        print(f"[ERROR market_data] {symbol}: yahoo-direct fallback failed — {exc}", file=sys.stderr)
+        return []
+
+
+def get_bars(symbol: str, limit: int = 60) -> tuple[list[dict], str]:
+    """Returns (bars, source) with a 3-tier fallback chain.
+
+    1. Alpaca IEX — skipped if <20 bars (free plan has no history)
+    2. yfinance — uses curl_cffi TLS (v1.5+) to avoid Yahoo Finance bot-blocks
+    3. Yahoo Finance v8 chart API (direct requests, browser headers) — used when
+       yfinance itself is blocked at the TLS/network layer in cloud environments
     """
     bars = get_bars_alpaca(symbol, limit)
     if len(bars) >= 20:
         return bars, "alpaca"
 
-    for attempt in range(1, 4):
-        bars = get_bars_yfinance(symbol, limit)
+    for attempt in range(1, 3):
+        try:
+            bars = get_bars_yfinance(symbol, limit)
+        except Exception as exc:
+            print(
+                f"[WARN market_data] {symbol}: yfinance raised exception"
+                f" (attempt {attempt}/2): {exc}",
+                file=sys.stderr,
+            )
+            bars = []
         if len(bars) >= 20:
             return bars, "yfinance"
-        if attempt < 3:
+        if attempt == 1:
             print(
                 f"[WARN market_data] {symbol}: yfinance returned only {len(bars)} bars"
-                f" (attempt {attempt}/3) — retrying in 2 s",
+                f" (attempt {attempt}/2) — retrying in 2 s",
                 file=sys.stderr,
             )
             time.sleep(2)
 
-    print(
-        f"[ERROR market_data] {symbol}: only {len(bars)} bars after 3 yfinance attempts."
-        " MA20/RSI may be unreliable — check yfinance availability.",
-        file=sys.stderr,
-    )
+    if len(bars) < 20:
+        print(
+            f"[WARN market_data] {symbol}: yfinance gave {len(bars)} bars — trying"
+            " yahoo-direct fallback",
+            file=sys.stderr,
+        )
+        direct_bars = get_bars_yahoo_direct(symbol, limit)
+        if len(direct_bars) >= 20:
+            return direct_bars, "yahoo-direct"
+        bars = direct_bars or bars  # use whichever has more data
+
+    if len(bars) < 20:
+        print(
+            f"[ERROR market_data] {symbol}: only {len(bars)} bars after all 3 sources."
+            " MA20/RSI will be unreliable.",
+            file=sys.stderr,
+        )
     return bars, "yfinance"
 
 
