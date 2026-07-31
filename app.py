@@ -494,7 +494,7 @@ PERSONAL_HOLDINGS = [
     {"ticker": "LRCX",    "name": "Lam Research",             "shares": 0.26794250,  "buy_price": 240.61,  "currency": "USD"},
     {"ticker": "SNDK",    "name": "SanDisk",                  "shares": 0.05929092,  "buy_price": 644.45,  "currency": "USD"},
     {"ticker": "STX",     "name": "Seagate Technology",       "shares": 0.05853506,  "buy_price": 419.58,  "currency": "USD"},
-    {"ticker": "SPY",     "name": "S&P 500 ETF",              "shares": 5.37787128,  "buy_price": 101.743, "currency": "GBP"},
+    {"ticker": "VUAG.L",  "name": "Vanguard S&P 500 (GBP Acc)","shares": 5.37787128, "buy_price": 101.743, "currency": "GBP"},
     {"ticker": "PANW",    "name": "Palo Alto Networks",       "shares": 1.00000000,  "buy_price": 174.83,  "currency": "USD"},
     {"ticker": "VFEM.L",  "name": "Vanguard FTSE EM ETF",    "shares": 1.33739782,  "buy_price": 61.044,  "currency": "GBP"},
     {"ticker": "VEUR.L",  "name": "Vanguard FTSE Europe ETF","shares": 1.04178269,  "buy_price": 49.98,   "currency": "GBP"},
