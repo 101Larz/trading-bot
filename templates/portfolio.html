@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}My Portfolio{% endblock %}
 {% block page_title %}My Portfolio{% endblock %}
-{% block page_subtitle %}12 personal holdings · all values in EUR · refreshes every 5 min{% endblock %}
+{% block page_subtitle %}12 personal holdings · all values in EUR · click a row for detail · refreshes every 5 min{% endblock %}
 
 {% block content %}
 
@@ -125,7 +125,10 @@
       </thead>
       <tbody>
         {% for h in holdings %}
-        <tr class="{{ 'positive-row' if h.pnl_eur is not none and h.pnl_eur >= 0 else 'negative-row' if h.pnl_eur is not none else '' }}">
+        <tr class="{{ 'positive-row' if h.pnl_eur is not none and h.pnl_eur >= 0 else 'negative-row' if h.pnl_eur is not none else '' }}"
+            onclick="window.location='{{ url_for('portfolio_detail', ticker=h.symbol) }}'"
+            style="cursor:pointer;"
+            title="View {{ h.name }} detail">
 
           <td><span class="symbol-badge">{{ h.symbol }}</span></td>
 
@@ -251,40 +254,6 @@
   <span>Buy price shown in original currency · current value and P&amp;L always in €</span>
 </div>
 
-<!-- ── News feed ─────────────────────────────────────────────────── -->
-<div class="card">
-  <div class="card-header">
-    <span class="card-title">Latest News</span>
-    <span class="card-badge">via yfinance</span>
-  </div>
-  <div class="card-body">
-    <div class="news-grid">
-      {% for h in holdings %}
-      <div class="news-ticker-card">
-        <div class="news-ticker-header">
-          <span class="symbol-badge">{{ h.symbol }}</span>
-          <span class="news-ticker-name">{{ h.name }}</span>
-        </div>
-        {% if h.news %}
-          {% for article in h.news %}
-          <div class="news-item">
-            <a class="news-title"
-               {% if article.link %}href="{{ article.link }}" target="_blank" rel="noopener"{% endif %}>
-              {{ article.title }}
-            </a>
-            <span class="news-meta">
-              {{ article.publisher }}{% if article.publisher and article.date %} · {% endif %}{{ article.date }}
-            </span>
-          </div>
-          {% endfor %}
-        {% else %}
-          <div class="news-empty">No recent news available.</div>
-        {% endif %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
 
 {% endblock %}
 

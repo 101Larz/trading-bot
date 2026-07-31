@@ -1,0 +1,412 @@
+{% extends "base.html" %}
+{% block title %}{{ h.symbol }} Detail{% endblock %}
+{% block page_title %}{{ h.symbol }}{% endblock %}
+{% block page_subtitle %}{{ h.name }} · detail view{% endblock %}
+
+{% block content %}
+
+<style>
+  /* ── Signal / regime badges (reused from portfolio.html) ── */
+  .sig-badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: .07em; border-radius: 4px; padding: 2px 8px;
+  }
+  .sig-buy  { background: rgba(63,185,80,.15);  color: #3fb950; border: 1px solid rgba(63,185,80,.3); }
+  .sig-sell { background: rgba(248,81,73,.15);  color: #f85149; border: 1px solid rgba(248,81,73,.3); }
+  .sig-hold { background: rgba(56,189,248,.10); color: #38bdf8; border: 1px solid rgba(56,189,248,.25); }
+  .sig-unk  { background: rgba(139,148,158,.1); color: #8b949e; border: 1px solid rgba(139,148,158,.2); }
+
+  .reg-badge {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    letter-spacing: .05em; border-radius: 4px; padding: 3px 10px;
+  }
+  .reg-bull { background: rgba(63,185,80,.12);  color: #3fb950; border: 1px solid rgba(63,185,80,.25); }
+  .reg-bear { background: rgba(248,81,73,.12);  color: #f85149; border: 1px solid rgba(248,81,73,.25); }
+  .reg-side { background: rgba(227,179,65,.10); color: #e3b341; border: 1px solid rgba(227,179,65,.25); }
+  .reg-unk  { background: rgba(139,148,158,.1); color: #8b949e; border: 1px solid rgba(139,148,158,.2); }
+
+  .ccy-tag {
+    font-size: 9px; font-weight: 700; letter-spacing: .05em;
+    color: var(--text-lo); background: rgba(48,54,61,.6);
+    border-radius: 3px; padding: 1px 4px; margin-left: 3px;
+    vertical-align: middle;
+  }
+
+  /* ── Back button ── */
+  .btn-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 500;
+    color: var(--text-lo); border: 1px solid var(--border);
+    text-decoration: none; transition: all .15s;
+  }
+  .btn-back:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* ── Price hero ── */
+  .hero-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .hero-left { display: flex; flex-direction: column; gap: 6px; }
+  .hero-price {
+    font-size: 38px; font-weight: 700; font-family: var(--font); line-height: 1;
+    color: var(--text-hi);
+  }
+  .hero-change { font-size: 15px; font-weight: 600; font-family: var(--font); }
+  .hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+
+  /* ── 6-card KPI row ── */
+  .kpi-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 1200px) { .kpi-grid-6 { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 700px)  { .kpi-grid-6 { grid-template-columns: repeat(2, 1fr); } }
+
+  .kpi-card-sm {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px 16px;
+  }
+  .kpi-card-sm .kpi-label {
+    font-size: 10px; font-weight: 600; letter-spacing: .06em;
+    color: var(--text-lo); text-transform: uppercase; margin-bottom: 6px;
+  }
+  .kpi-card-sm .kpi-val {
+    font-size: 18px; font-weight: 700; font-family: var(--font); line-height: 1.2;
+  }
+  .kpi-card-sm .kpi-sub {
+    font-size: 11px; color: var(--text-lo); margin-top: 4px;
+  }
+
+  /* ── Chart ── */
+  .chart-container { position: relative; height: 340px; }
+
+  /* ── News list ── */
+  .news-list { display: flex; flex-direction: column; }
+  .news-row {
+    display: flex; flex-direction: column; gap: 3px;
+    padding: 12px 18px; border-bottom: 1px solid rgba(48,54,61,.45);
+  }
+  .news-row:last-child { border-bottom: none; }
+  .news-headline {
+    font-size: 13px; color: var(--text-hi); line-height: 1.45;
+    text-decoration: none;
+  }
+  .news-headline:hover { color: var(--blue); }
+  .news-meta { font-size: 11px; color: var(--text-lo); }
+  .news-empty { padding: 18px; font-size: 13px; color: var(--text-lo); }
+</style>
+
+<!-- ── Back button + regime ───────────────────────────────── -->
+<div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+  <a href="{{ url_for('portfolio_page') }}" class="btn-back">&#8592; Back to Portfolio</a>
+  <div style="display:flex; align-items:center; gap:10px;">
+    {% if h.signal == "BUY" %}<span class="sig-badge sig-buy">BUY</span>
+    {% elif h.signal == "SELL" %}<span class="sig-badge sig-sell">SELL</span>
+    {% elif h.signal == "HOLD" %}<span class="sig-badge sig-hold">HOLD</span>
+    {% else %}<span class="sig-badge sig-unk">{{ h.signal }}</span>{% endif %}
+
+    {% if h.regime == "Bull" %}<span class="reg-badge reg-bull">Bull regime</span>
+    {% elif h.regime == "Bear" %}<span class="reg-badge reg-bear">Bear regime</span>
+    {% elif h.regime == "Sideways" %}<span class="reg-badge reg-side">Sideways regime</span>
+    {% else %}<span class="reg-badge reg-unk">{{ h.regime }}</span>{% endif %}
+
+    <span style="font-size:10px; color:var(--text-lo);">via {{ h.source }}</span>
+  </div>
+</div>
+
+<!-- ── Price hero ─────────────────────────────────────────── -->
+<div class="hero-card">
+  <div class="hero-left">
+    <div class="hero-price">
+      {% if h.current_price is not none %}
+        {{ h.current_price_symbol }}{{ "%.2f"|format(h.current_price) }}
+        <span class="ccy-tag" style="font-size:11px;">{{ h.current_price_currency }}</span>
+      {% else %}
+        <span style="color:var(--text-lo); font-size:22px;">Price unavailable</span>
+      {% endif %}
+    </div>
+    <div>
+      {% if h.daily_change_pct is not none %}
+        <span class="hero-change {{ h.daily_change_class }}">
+          {% if h.daily_change_pct >= 0 %}+{% endif %}{{ "%.2f"|format(h.daily_change_pct) }}% today
+        </span>
+      {% endif %}
+    </div>
+  </div>
+  <div class="hero-right">
+    <div style="font-size:12px; color:var(--text-lo);">MA20 / MA50</div>
+    <div style="font-family:var(--font); font-size:14px;">
+      {% if h.ma20 is not none %}
+        <span style="color:#e3b341;">{{ h.current_price_symbol }}{{ "%.2f"|format(h.ma20) }}</span>
+      {% else %}&mdash;{% endif %}
+      &nbsp;/&nbsp;
+      {% if h.ma50 is not none %}
+        <span style="color:#3fb950;">{{ h.current_price_symbol }}{{ "%.2f"|format(h.ma50) }}</span>
+      {% else %}&mdash;{% endif %}
+    </div>
+    {% if h.error %}
+      <div style="font-size:11px; color:var(--red);">&#9888; {{ h.error[:80] }}</div>
+    {% endif %}
+  </div>
+</div>
+
+<!-- ── 6 KPI cards ────────────────────────────────────────── -->
+<div class="kpi-grid-6">
+
+  <div class="kpi-card-sm">
+    <div class="kpi-label">Shares</div>
+    <div class="kpi-val" style="font-size:15px;">{{ "%.6f"|format(h.shares) }}</div>
+    <div class="kpi-sub">units held</div>
+  </div>
+
+  <div class="kpi-card-sm">
+    <div class="kpi-label">Buy Price</div>
+    <div class="kpi-val">{{ h.buy_symbol }}{{ "%.2f"|format(h.buy_price) }}</div>
+    <div class="kpi-sub">{{ h.buy_currency }} · cost per share</div>
+  </div>
+
+  <div class="kpi-card-sm">
+    <div class="kpi-label">Current Value</div>
+    <div class="kpi-val">
+      {% if h.current_value_eur is not none %}
+        &euro;{{ "%.2f"|format(h.current_value_eur) }}
+      {% else %}&mdash;{% endif %}
+    </div>
+    <div class="kpi-sub">in EUR · live price</div>
+  </div>
+
+  <div class="kpi-card-sm">
+    <div class="kpi-label">P&amp;L</div>
+    <div class="kpi-val {{ h.pnl_class }}">
+      {% if h.pnl_eur is not none %}
+        {% if h.pnl_eur >= 0 %}+{% endif %}&euro;{{ "%.2f"|format(h.pnl_eur) }}
+      {% else %}&mdash;{% endif %}
+    </div>
+    <div class="kpi-sub {{ h.pnl_class }}">
+      {% if h.pnl_pct is not none %}
+        {% if h.pnl_pct >= 0 %}+{% endif %}{{ "%.2f"|format(h.pnl_pct) }}% vs cost basis
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="kpi-card-sm">
+    <div class="kpi-label">RSI-14</div>
+    <div class="kpi-val {{ h.rsi_class }}">
+      {% if h.rsi is not none %}{{ h.rsi }}{% else %}&mdash;{% endif %}
+    </div>
+    <div class="kpi-sub">
+      {% if h.rsi is not none %}
+        {% if h.rsi < 30 %}Oversold
+        {% elif h.rsi > 70 %}Overbought
+        {% elif 35 <= h.rsi <= 70 %}Neutral zone
+        {% else %}Borderline{% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="kpi-card-sm">
+    <div class="kpi-label">52-Week Range</div>
+    <div class="kpi-val" style="font-size:13px; line-height:1.6;">
+      {% if h.week52_high is not none %}
+        <span style="color:#3fb950;">{{ h.current_price_symbol }}{{ "%.2f"|format(h.week52_high) }}</span>
+        <span style="color:var(--text-lo); font-size:11px; font-weight:400;"> high</span><br>
+        <span style="color:#f85149;">{{ h.current_price_symbol }}{{ "%.2f"|format(h.week52_low) }}</span>
+        <span style="color:var(--text-lo); font-size:11px; font-weight:400;"> low</span>
+      {% else %}&mdash;{% endif %}
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Price chart ────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Price History &mdash; 6 months</span>
+    <span class="card-badge">
+      <span style="color:#38bdf8;">&#9644;</span> Price &nbsp;
+      <span style="color:#e3b341;">&#9644;</span> MA20 &nbsp;
+      <span style="color:#3fb950;">&#9644;</span> MA50 &nbsp;
+      <span style="color:#f85149;">- -</span> Buy
+    </span>
+  </div>
+  <div class="card-body" style="padding: 12px 18px 18px;">
+    <div class="chart-container">
+      <canvas id="priceChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ── News ───────────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Latest News &mdash; {{ h.symbol }}</span>
+    <span class="card-badge">{{ h.news | length }} articles · via yfinance</span>
+  </div>
+  {% if h.news %}
+  <div class="news-list">
+    {% for article in h.news %}
+    <div class="news-row">
+      <a class="news-headline"
+         {% if article.link %}href="{{ article.link }}" target="_blank" rel="noopener"{% endif %}>
+        {{ article.title }}
+      </a>
+      <span class="news-meta">
+        {{ article.publisher }}{% if article.publisher and article.date %} &middot; {% endif %}{{ article.date }}
+      </span>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="news-empty">No recent news available for {{ h.symbol }}.</div>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  // ── Pass data from Python ──────────────────────────────────────────
+  const dates         = {{ h.chart_dates  | tojson }};
+  const prices        = {{ h.chart_prices | tojson }};
+  const ma20          = {{ h.chart_ma20   | tojson }};
+  const ma50          = {{ h.chart_ma50   | tojson }};
+  const buyPriceChart = {{ h.buy_price_chart | tojson }};
+  const priceSym      = {{ h.current_price_symbol | tojson }};
+  const buySym        = {{ h.buy_symbol | tojson }};
+  const buyPrice      = {{ h.buy_price  | tojson }};
+  const buyCcy        = {{ h.buy_currency | tojson }};
+
+  // ── Build Chart.js datasets ────────────────────────────────────────
+  const canvas = document.getElementById('priceChart');
+  const ctx    = canvas.getContext('2d');
+
+  // Gradient fill under price line
+  const grad = ctx.createLinearGradient(0, 0, 0, 320);
+  grad.addColorStop(0, 'rgba(56,189,248,0.18)');
+  grad.addColorStop(1, 'rgba(56,189,248,0.00)');
+
+  const datasets = [
+    {
+      label: 'Price',
+      data: prices,
+      borderColor: '#38bdf8',
+      borderWidth: 2,
+      backgroundColor: grad,
+      fill: true,
+      tension: 0.25,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      pointHoverBackgroundColor: '#38bdf8',
+    },
+    {
+      label: 'MA20',
+      data: ma20,
+      borderColor: '#e3b341',
+      borderWidth: 1.5,
+      fill: false,
+      tension: 0.2,
+      pointRadius: 0,
+      spanGaps: true,
+    },
+    {
+      label: 'MA50',
+      data: ma50,
+      borderColor: '#3fb950',
+      borderWidth: 1.5,
+      fill: false,
+      tension: 0.2,
+      pointRadius: 0,
+      spanGaps: true,
+    },
+  ];
+
+  // Add buy-price horizontal dashed line only when we have chart-native price
+  if (buyPriceChart !== null) {
+    datasets.push({
+      label: `Buy (${buySym}${buyPrice.toFixed(2)} ${buyCcy})`,
+      data: Array(dates.length).fill(buyPriceChart),
+      borderColor: '#f85149',
+      borderWidth: 1.5,
+      borderDash: [6, 4],
+      fill: false,
+      pointRadius: 0,
+      spanGaps: true,
+    });
+  }
+
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels: dates, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'top',
+          align: 'end',
+          labels: {
+            color: '#8b949e',
+            font: { size: 11 },
+            boxWidth: 20,
+            padding: 14,
+            usePointStyle: true,
+            pointStyleWidth: 14,
+          },
+        },
+        tooltip: {
+          backgroundColor: '#1c2128',
+          borderColor: '#30363d',
+          borderWidth: 1,
+          titleColor: '#e6edf3',
+          titleFont: { size: 11 },
+          bodyColor: '#8b949e',
+          bodyFont: { size: 11, family: "'SF Mono', monospace" },
+          padding: 10,
+          callbacks: {
+            label: function (ctx) {
+              if (ctx.parsed.y === null || ctx.parsed.y === undefined) return null;
+              return ` ${ctx.dataset.label}: ${priceSym}${ctx.parsed.y.toFixed(2)}`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: '#8b949e',
+            font: { size: 10 },
+            maxTicksLimit: 9,
+            maxRotation: 0,
+          },
+          grid: { color: 'rgba(48,54,61,0.4)' },
+        },
+        y: {
+          position: 'right',
+          ticks: {
+            color: '#8b949e',
+            font: { size: 10, family: "'SF Mono', monospace" },
+            callback: (v) => priceSym + v.toFixed(2),
+          },
+          grid: { color: 'rgba(48,54,61,0.4)' },
+        },
+      },
+    },
+  });
+
+  // Disable auto-refresh — this is a detail page with a single fetch
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof clearInterval !== 'undefined' && typeof refreshTimer !== 'undefined') {
+      clearInterval(refreshTimer);
+    }
+    const el = document.getElementById('refresh-timer');
+    if (el) el.textContent = '—';
+  });
+  window.refreshData = function () { location.reload(); };
+})();
+</script>
+{% endblock %}

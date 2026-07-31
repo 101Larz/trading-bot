@@ -14,7 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 import yfinance as yf
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, abort
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -726,6 +726,138 @@ def get_personal_portfolio_data() -> tuple[list[dict], dict]:
     return holdings, totals
 
 
+def _rolling_ma(closes: list, period: int) -> list:
+    result: list = [None] * len(closes)
+    for i in range(period - 1, len(closes)):
+        result[i] = round(sum(closes[i - period + 1:i + 1]) / period, 4)
+    return result
+
+
+def _fetch_ticker_detail(symbol: str, name: str, shares: float,
+                         buy_price: float, buy_currency: str,
+                         fx_rates: dict) -> dict:
+    """Like _fetch_ticker_data but fetches 200 bars for 6-month chart,
+    rolling MA arrays, 52-week high/low, and up to 10 news items."""
+    from market_data import get_bars, compute_moving_averages, compute_rsi
+
+    buy_to_eur     = fx_rates.get(buy_currency, 1.0)
+    cost_basis_eur = round(shares * buy_price * buy_to_eur, 2)
+
+    base: dict = {
+        "symbol": symbol, "name": name,
+        "shares": shares,
+        "buy_price": buy_price, "buy_currency": buy_currency,
+        "buy_symbol": _CCY_SYMBOL.get(buy_currency, buy_currency),
+        "cost_basis_eur": cost_basis_eur,
+        "current_price": None,
+        "current_price_currency": "USD", "current_price_symbol": "$",
+        "current_value_eur": None,
+        "pnl_eur": None, "pnl_pct": None, "pnl_class": "neutral",
+        "daily_change_pct": None, "daily_change_class": "neutral",
+        "ma20": None, "ma50": None, "rsi": None, "rsi_class": "neutral",
+        "signal": "UNKNOWN", "signal_class": "neutral",
+        "regime": "Unknown", "regime_class": "neutral",
+        "chart_dates": [], "chart_prices": [],
+        "chart_ma20": [], "chart_ma50": [],
+        "buy_price_chart": None,
+        "week52_high": None, "week52_low": None,
+        "source": "—", "news": [], "error": None,
+    }
+
+    try:
+        bars, source = get_bars(symbol, limit=200)
+        base["source"] = source
+
+        mas = compute_moving_averages(bars)
+        rsi = compute_rsi(bars)
+        base["ma20"] = mas.get("ma20")
+        base["ma50"] = mas.get("ma50")
+        base["rsi"]  = rsi
+        if rsi is not None:
+            base["rsi_class"] = "positive" if 35 <= rsi <= 70 else "negative"
+
+        base["signal"], base["signal_class"] = _classify_signal(rsi, mas)
+        base["regime"], base["regime_class"] = _classify_regime(bars)
+
+        # Build rolling MA arrays for the chart (last 130 bars ≈ 6 months)
+        closes   = [b["c"] for b in bars]
+        dates    = [b["t"] for b in bars]
+        ma20_arr = _rolling_ma(closes, 20)
+        ma50_arr = _rolling_ma(closes, 50)
+        N = min(130, len(bars))
+        base["chart_dates"]  = dates[-N:]
+        base["chart_prices"] = closes[-N:]
+        base["chart_ma20"]   = ma20_arr[-N:]
+        base["chart_ma50"]   = ma50_arr[-N:]
+
+        ticker_obj  = yf.Ticker(symbol)
+        yf_currency = "USD"
+        raw_ccy     = "USD"
+        try:
+            fi      = ticker_obj.fast_info
+            raw_ccy = (fi.currency or "USD").upper()
+            yf_currency = raw_ccy
+            lp, pc  = fi.last_price, fi.previous_close
+            if raw_ccy == "GBX":
+                lp = (lp or 0) / 100.0
+                pc = (pc or 0) / 100.0
+                yf_currency = "GBP"
+            if lp and pc:
+                base["current_price"]    = round(float(lp), 4)
+                base["daily_change_pct"] = round((lp - pc) / pc * 100, 2)
+            # 52-week high / low (convert GBX → GBP if needed)
+            wh = getattr(fi, "year_high", None)
+            wl = getattr(fi, "year_low",  None)
+            if raw_ccy == "GBX":
+                if wh: wh = wh / 100.0
+                if wl: wl = wl / 100.0
+            base["week52_high"] = round(float(wh), 4) if wh else None
+            base["week52_low"]  = round(float(wl), 4) if wl else None
+        except Exception:
+            pass
+
+        if base["current_price"] is None and bars:
+            base["current_price"] = bars[-1]["c"]
+            if len(bars) >= 2:
+                base["daily_change_pct"] = round(
+                    (bars[-1]["c"] - bars[-2]["c"]) / bars[-2]["c"] * 100, 2)
+
+        base["current_price_currency"] = yf_currency
+        base["current_price_symbol"]   = _CCY_SYMBOL.get(yf_currency, yf_currency)
+
+        if base["daily_change_pct"] is not None:
+            base["daily_change_class"] = "positive" if base["daily_change_pct"] >= 0 else "negative"
+
+        # Buy-price in chart's native currency (for the dashed horizontal line)
+        buy_price_eur = buy_price * fx_rates.get(buy_currency, 1.0)
+        curr_to_eur   = fx_rates.get(yf_currency, 1.0)
+        if curr_to_eur:
+            base["buy_price_chart"] = round(buy_price_eur / curr_to_eur, 4)
+
+        # P&L in EUR
+        if base["current_price"] is not None:
+            curr_to_eur = fx_rates.get(yf_currency, 1.0)
+            cv_eur  = round(shares * base["current_price"] * curr_to_eur, 2)
+            pnl_eur = round(cv_eur - cost_basis_eur, 2)
+            base["current_value_eur"] = cv_eur
+            base["pnl_eur"]           = pnl_eur
+            base["pnl_pct"]           = round(pnl_eur / cost_basis_eur * 100, 2) if cost_basis_eur else None
+            base["pnl_class"]         = "positive" if pnl_eur >= 0 else "negative"
+
+        # News — top 10
+        try:
+            raw_news = ticker_obj.news or []
+            parsed   = [_parse_news_item(a) for a in raw_news[:10]]
+            base["news"] = [n for n in parsed if n["title"]]
+        except Exception:
+            pass
+
+    except Exception as exc:
+        base["error"] = str(exc)
+
+    return base
+
+
 @app.route("/portfolio")
 def portfolio_page():
     holdings, totals = get_personal_portfolio_data()
@@ -734,6 +866,26 @@ def portfolio_page():
         "portfolio.html",
         holdings=holdings,
         totals=totals,
+        clock=clock,
+        last_updated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+    )
+
+
+@app.route("/portfolio/<ticker>")
+def portfolio_detail(ticker: str):
+    ticker = ticker.upper()
+    meta = next((h for h in PERSONAL_HOLDINGS if h["ticker"] == ticker), None)
+    if meta is None:
+        abort(404)
+    fx_rates = _get_fx_rates()
+    data = _fetch_ticker_detail(
+        meta["ticker"], meta["name"], meta["shares"],
+        meta["buy_price"], meta["currency"], fx_rates,
+    )
+    clock = get_clock()
+    return render_template(
+        "portfolio_detail.html",
+        h=data,
         clock=clock,
         last_updated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     )
