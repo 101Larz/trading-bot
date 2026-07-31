@@ -3934,3 +3934,81 @@ Trades executed: **none.**
 Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
 
 Carry-forward: yfinance TLS Day 33, broker trailing-stop infra gap Day 33, AAPL+AMZN+GOOGL AH earnings tonight (5-day exclusion active), MSFT/META/QCOM post-earnings exclusion still active, FOMC hawkish digest ongoing, SOX rout continuation risk (MU/AMD -8%), Iran tail risk / oil +7% overhang.
+
+
+### Market-Open Log — 2026-07-30 (Thursday — session: claude/sweet-shannon-p1pp5r)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** (12th consecutive) |
+
+Buy-rule check:
+- Max 6 open positions ✅ (0/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (n/a)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD stands (12th consecutive). AAPL/AMZN/GOOGL BLOCKED (7/30 AH earnings exclusion active). MSFT/META/QCOM BLOCKED (reported <24h ago). JPM/LLY conditional only — still gated on yfinance TLS Day 33, broker trailing-stop infra, FOMC hawkish digest, SOX contagion. Screener empty.
+
+Position snapshot: **none** (12th consecutive cash-only book; unchanged since AMD exit).
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 33, broker trailing-stop infra gap Day 33, AAPL+AMZN+GOOGL AH earnings tonight (event day, exclusion active), MSFT/META/QCOM post-earnings exclusion active, FOMC hawkish digest ongoing, SOX rout continuation risk (MU/AMD -8%), Iran tail risk / oil overhang, JPM/LLY conditional only.
+
+
+### Midday-Scan Log — 2026-07-30 (Thursday — session: claude/exciting-bohr-2spfv3)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (12:30 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_ACTION** — no positions to manage |
+
+Steps 3-5 all N/A (no open positions):
+- Cut losers ≤ -7% ✅ n/a
+- Tighten stops on winners ≥ +15/+20% ✅ n/a
+- Thesis-break scan ✅ n/a
+
+Position snapshot: **none** (12th consecutive cash-only book; unchanged since AMD exit).
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward unchanged from AM: yfinance TLS Day 33, broker trailing-stop infra gap Day 33, AAPL+AMZN+GOOGL AH earnings tonight (exclusion active), MSFT/META/QCOM post-earnings <24h exclusion active, FOMC hawkish digest ongoing, SOX rout continuation risk (MU/AMD -8%), Iran tail risk / oil overhang, JPM/LLY conditional only.
+
+
+### EOD Snapshot — 2026-07-30 (Thursday — session: claude/sleepy-goldberg-8bhfn0)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,972.19 |
+| Cash | $98,972.19 |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 0 / 6 |
+
+### Open Positions
+
+None (12th consecutive cash-only close; 100% cash).
+
+Prior close (2026-07-29 Wed): $98,972.19 → today's close $98,972.19 → **flat day** (no positions to mark).
+
+Session cadence today: pre-market HOLD (12th consecutive) → market-open NO_TRADE (12th consecutive) → midday NO_ACTION → EOD flat. Stand-downs intact all session (yfinance TLS Day 33, broker trailing-stop infra gap Day 33, AAPL+AMZN+GOOGL AH earnings tonight — 5-day exclusion active, MSFT+META+QCOM post-earnings <24h exclusion active, FOMC hawkish digest ongoing, SOX rout continuation risk MU/AMD -8%, Iran tail risk / oil overhang). JPM + LLY remain conditional ideas gated on TLS repair + trailing-stop infra + FOMC/earnings settling — neither prerequisite cleared today. Weekly buy budget 3/3 preserved.
+
+Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
+
+Carry-forward into Friday: yfinance TLS Day 34 (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 34, AAPL+AMZN+GOOGL post-earnings reaction (event day fallout, exclusion active), MSFT/META/QCOM exclusion rolls off Fri AM, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk, tech-capex angst, Friday weekly-review routine at 17:00 ET.

@@ -1,11 +1,13 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-07-30T13:00:00Z",
-  "last_run_et": "2026-07-30T09:00:00-04:00",
-  "session_id": "claude/gallant-lamport-p4ijrr",
+  "last_routine": "Pre-Market Research",
+  "last_run_iso": "2026-07-31T09:00:00-04:00",
+  "session_branch": "claude/gallant-lamport-ctfbc8",
+  "status": "ok",
   "decision": "HOLD",
-  "trades_executed": 0,
+  "consecutive_no_trade_market_open": 12,
+  "cash": 98972.19,
+  "equity": 98972.19,
   "open_positions": 0,
-  "weekly_buys": 0,
-  "notes": "Pre-market 7/30 (Thu): HOLD (12th consecutive). Cash 100% at $98,972.19, 0 positions, weekly buys 0/3. Blockers: yfinance TLS Day 33 (MA/RSI gates unverifiable), broker trailing-stop infra Day 33, AAPL+AMZN+GOOGL AH earnings tonight (all in 5-day exclusion), MSFT+META+QCOM post-earnings dust (MSFT +2% Azure +43%; META -6% capex-raise; QCOM -4% light guide), FOMC hawkish digest (Warsh held 3.50-3.75% but rejected soft inflation target), SOX rout (MU/AMD -8% China DUV lithography), Iran tail risk / oil +7%. JPM + LLY conditional-only."
+  "trades_this_week": 0,
+  "notes": "Pre-market HOLD (13th consecutive). Macro gate fails: SPY 741.69 below MA20 745.58 and MA50 743.92, RSI 40. AAPL/AMZN/GOOGL in 5-day earnings exclusion (reported 7/30 AH: AAPL -1.4%, GOOGL -0.6%, AMZN +3.9%). MSFT RSI 73.6 overextended. XOM/CVX/ABBV report today. JPM + LLY technicals pass but gated on SPY macro reclaim + trailing-stop infra. yfinance TLS Day 35 (yahoo-direct fallback working). Weekly buy budget 3/3 preserved."
 }
