@@ -487,19 +487,21 @@ def api_clock():
 # ---------------------------------------------------------------------------
 
 PERSONAL_HOLDINGS = [
-    {"ticker": "WDC",     "name": "Western Digital",          "shares": 0.43003312,  "buy_price": 268.82},
-    {"ticker": "ASML",    "name": "ASML Holding",             "shares": 0.13747919,  "buy_price": 1252.60},
-    {"ticker": "MU",      "name": "Micron Technology",        "shares": 0.20603656,  "buy_price": 163.62},
-    {"ticker": "AMAT",    "name": "Applied Materials",        "shares": 0.16546614,  "buy_price": 350.34},
-    {"ticker": "LRCX",    "name": "Lam Research",             "shares": 0.26794250,  "buy_price": 240.61},
-    {"ticker": "SNDK",    "name": "SanDisk",                  "shares": 0.05929092,  "buy_price": 644.45},
-    {"ticker": "STX",     "name": "Seagate Technology",       "shares": 0.05853506,  "buy_price": 419.58},
-    {"ticker": "SPY",     "name": "S&P 500 ETF",              "shares": 5.37787128,  "buy_price": 101.743},
-    {"ticker": "PANW",    "name": "Palo Alto Networks",       "shares": 1.00000000,  "buy_price": 174.83},
-    {"ticker": "VFEM.L",  "name": "Vanguard FTSE EM ETF",    "shares": 1.33739782,  "buy_price": 61.044},
-    {"ticker": "VEUR.L",  "name": "Vanguard FTSE Europe ETF","shares": 1.04178269,  "buy_price": 49.98},
-    {"ticker": "XNAS.DE", "name": "Xtrackers NASDAQ 100",    "shares": 0.24306270,  "buy_price": 43.322},
+    {"ticker": "WDC",     "name": "Western Digital",          "shares": 0.43003312,  "buy_price": 268.82,  "currency": "USD"},
+    {"ticker": "ASML",    "name": "ASML Holding",             "shares": 0.13747919,  "buy_price": 1252.60, "currency": "EUR"},
+    {"ticker": "MU",      "name": "Micron Technology",        "shares": 0.20603656,  "buy_price": 163.62,  "currency": "USD"},
+    {"ticker": "AMAT",    "name": "Applied Materials",        "shares": 0.16546614,  "buy_price": 350.34,  "currency": "USD"},
+    {"ticker": "LRCX",    "name": "Lam Research",             "shares": 0.26794250,  "buy_price": 240.61,  "currency": "USD"},
+    {"ticker": "SNDK",    "name": "SanDisk",                  "shares": 0.05929092,  "buy_price": 644.45,  "currency": "USD"},
+    {"ticker": "STX",     "name": "Seagate Technology",       "shares": 0.05853506,  "buy_price": 419.58,  "currency": "USD"},
+    {"ticker": "SPY",     "name": "S&P 500 ETF",              "shares": 5.37787128,  "buy_price": 101.743, "currency": "GBP"},
+    {"ticker": "PANW",    "name": "Palo Alto Networks",       "shares": 1.00000000,  "buy_price": 174.83,  "currency": "USD"},
+    {"ticker": "VFEM.L",  "name": "Vanguard FTSE EM ETF",    "shares": 1.33739782,  "buy_price": 61.044,  "currency": "GBP"},
+    {"ticker": "VEUR.L",  "name": "Vanguard FTSE Europe ETF","shares": 1.04178269,  "buy_price": 49.98,   "currency": "GBP"},
+    {"ticker": "XNAS.DE", "name": "Xtrackers NASDAQ 100",    "shares": 0.24306270,  "buy_price": 43.322,  "currency": "GBP"},
 ]
+
+_CCY_SYMBOL = {"USD": "$", "EUR": "€", "GBP": "£", "GBX": "p"}
 
 
 def _classify_signal(rsi, mas: dict) -> tuple[str, str]:
@@ -564,16 +566,50 @@ def _parse_news_item(article: dict) -> dict:
     return {"title": title, "link": link, "publisher": publisher, "date": pub_date}
 
 
-def _fetch_ticker_data(symbol: str, name: str, shares: float, buy_price: float) -> dict:
-    """Fetch price, indicators, signal, regime, news, and P&L for one ticker."""
+def _get_fx_rates() -> dict:
+    """
+    Fetch live EUR conversion rates via yfinance.
+    EURUSD=X  → how many USD per 1 EUR  (e.g. 1.08)  → 1 USD = 1/1.08 EUR
+    GBPEUR=X  → how many EUR per 1 GBP  (e.g. 1.17)  → 1 GBP = 1.17 EUR
+    GBX is pence (1/100 of GBP), so GBX→EUR = GBPEUR / 100.
+    Falls back to reasonable defaults if yfinance is unavailable.
+    """
+    rates = {"EUR": 1.0, "USD": 0.926, "GBP": 1.165, "GBX": 0.01165}
+    try:
+        eurusd = float(yf.Ticker("EURUSD=X").fast_info.last_price or 0)
+        if eurusd > 0:
+            rates["USD"] = round(1.0 / eurusd, 6)
+    except Exception:
+        pass
+    try:
+        gbpeur = float(yf.Ticker("GBPEUR=X").fast_info.last_price or 0)
+        if gbpeur > 0:
+            rates["GBP"] = round(gbpeur, 6)
+            rates["GBX"] = round(gbpeur / 100.0, 6)
+    except Exception:
+        pass
+    return rates
+
+
+def _fetch_ticker_data(symbol: str, name: str, shares: float,
+                        buy_price: float, buy_currency: str,
+                        fx_rates: dict) -> dict:
+    """Fetch price, indicators, signal, regime, news, and P&L (all in EUR)."""
     from market_data import get_bars, compute_moving_averages, compute_rsi
 
-    cost_basis = round(shares * buy_price, 2)
+    buy_to_eur     = fx_rates.get(buy_currency, 1.0)
+    cost_basis_eur = round(shares * buy_price * buy_to_eur, 2)
+
     base: dict = {
         "symbol": symbol, "name": name,
-        "shares": shares, "buy_price": buy_price, "cost_basis": cost_basis,
-        "current_price": None, "current_value": None,
-        "pnl": None, "pnl_pct": None, "pnl_class": "neutral",
+        "shares": shares,
+        "buy_price": buy_price, "buy_currency": buy_currency,
+        "buy_symbol": _CCY_SYMBOL.get(buy_currency, buy_currency),
+        "cost_basis_eur": cost_basis_eur,
+        "current_price": None,
+        "current_price_currency": "USD", "current_price_symbol": "$",
+        "current_value_eur": None,
+        "pnl_eur": None, "pnl_pct": None, "pnl_class": "neutral",
         "daily_change_pct": None, "daily_change_class": "neutral",
         "ma20": None, "ma50": None, "rsi": None, "rsi_class": "neutral",
         "signal": "UNKNOWN", "signal_class": "neutral",
@@ -589,43 +625,55 @@ def _fetch_ticker_data(symbol: str, name: str, shares: float, buy_price: float) 
         base["ma20"] = mas.get("ma20")
         base["ma50"] = mas.get("ma50")
         base["rsi"]  = rsi
-
         if rsi is not None:
             base["rsi_class"] = "positive" if 35 <= rsi <= 70 else "negative"
 
         base["signal"], base["signal_class"] = _classify_signal(rsi, mas)
         base["regime"], base["regime_class"] = _classify_regime(bars)
 
-        # Current price + daily change via yfinance fast_info; fall back to bars
+        # Current price via yfinance fast_info; detect native currency for FX conversion
+        ticker_obj  = yf.Ticker(symbol)
+        yf_currency = "USD"
         try:
-            fi = yf.Ticker(symbol).fast_info
+            fi = ticker_obj.fast_info
+            yf_currency = (fi.currency or "USD").upper()
             lp, pc = fi.last_price, fi.previous_close
+            # GBX (pence) → convert to GBP for display and maths
+            if yf_currency == "GBX":
+                lp = (lp or 0) / 100.0
+                pc = (pc or 0) / 100.0
+                yf_currency = "GBP"
             if lp and pc:
                 base["current_price"]    = round(float(lp), 4)
                 base["daily_change_pct"] = round((lp - pc) / pc * 100, 2)
         except Exception:
             pass
+        # Bar fallback if fast_info gave nothing
         if base["current_price"] is None and bars:
             base["current_price"] = bars[-1]["c"]
             if len(bars) >= 2:
                 base["daily_change_pct"] = round(
                     (bars[-1]["c"] - bars[-2]["c"]) / bars[-2]["c"] * 100, 2
                 )
+        base["current_price_currency"] = yf_currency
+        base["current_price_symbol"]   = _CCY_SYMBOL.get(yf_currency, yf_currency)
+
         if base["daily_change_pct"] is not None:
             base["daily_change_class"] = "positive" if base["daily_change_pct"] >= 0 else "negative"
 
-        # P&L (requires a valid current price)
+        # P&L in EUR
         if base["current_price"] is not None:
-            cv  = round(shares * base["current_price"], 2)
-            pnl = round(cv - cost_basis, 2)
-            base["current_value"] = cv
-            base["pnl"]           = pnl
-            base["pnl_pct"]       = round(pnl / cost_basis * 100, 2) if cost_basis else None
-            base["pnl_class"]     = "positive" if pnl >= 0 else "negative"
+            curr_to_eur = fx_rates.get(yf_currency, 1.0)
+            cv_eur  = round(shares * base["current_price"] * curr_to_eur, 2)
+            pnl_eur = round(cv_eur - cost_basis_eur, 2)
+            base["current_value_eur"] = cv_eur
+            base["pnl_eur"]           = pnl_eur
+            base["pnl_pct"]           = round(pnl_eur / cost_basis_eur * 100, 2) if cost_basis_eur else None
+            base["pnl_class"]         = "positive" if pnl_eur >= 0 else "negative"
 
-        # News — top 4 headlines via yfinance
+        # News — top 4 via yfinance
         try:
-            raw_news = yf.Ticker(symbol).news or []
+            raw_news = ticker_obj.news or []
             parsed   = [_parse_news_item(a) for a in raw_news[:4]]
             base["news"] = [n for n in parsed if n["title"]]
         except Exception:
@@ -638,12 +686,21 @@ def _fetch_ticker_data(symbol: str, name: str, shares: float, buy_price: float) 
 
 
 def get_personal_portfolio_data() -> tuple[list[dict], dict]:
-    """Fetch all 12 personal holdings in parallel. Returns (holdings, totals)."""
-    order   = {h["ticker"]: i for i, h in enumerate(PERSONAL_HOLDINGS)}
-    results = {}
+    """
+    1. Fetch live FX rates (USD→EUR, GBP→EUR).
+    2. Fetch all 12 holdings in parallel (6 workers).
+    3. Compute EUR totals and return (holdings, totals).
+    """
+    fx_rates = _get_fx_rates()
+    order    = {h["ticker"]: i for i, h in enumerate(PERSONAL_HOLDINGS)}
+    results  = {}
     with ThreadPoolExecutor(max_workers=6) as pool:
         futures = {
-            pool.submit(_fetch_ticker_data, h["ticker"], h["name"], h["shares"], h["buy_price"]): h["ticker"]
+            pool.submit(
+                _fetch_ticker_data,
+                h["ticker"], h["name"], h["shares"],
+                h["buy_price"], h["currency"], fx_rates,
+            ): h["ticker"]
             for h in PERSONAL_HOLDINGS
         }
         for future in as_completed(futures):
@@ -652,16 +709,19 @@ def get_personal_portfolio_data() -> tuple[list[dict], dict]:
 
     holdings = sorted(results.values(), key=lambda d: order.get(d["symbol"], 99))
 
-    total_invested     = sum(h["cost_basis"] for h in holdings)
-    total_value        = sum(h["current_value"] for h in holdings if h["current_value"] is not None)
-    total_pnl          = round(total_value - total_invested, 2)
-    total_pnl_pct      = round(total_pnl / total_invested * 100, 2) if total_invested else 0
+    total_invested_eur = sum(h["cost_basis_eur"] for h in holdings)
+    total_value_eur    = sum(h["current_value_eur"] for h in holdings
+                             if h["current_value_eur"] is not None)
+    total_pnl_eur      = round(total_value_eur - total_invested_eur, 2)
+    total_pnl_pct      = round(total_pnl_eur / total_invested_eur * 100, 2) if total_invested_eur else 0
     totals = {
-        "total_invested":  round(total_invested, 2),
-        "total_value":     round(total_value, 2),
-        "total_pnl":       total_pnl,
-        "total_pnl_pct":   total_pnl_pct,
-        "total_pnl_class": "positive" if total_pnl >= 0 else "negative",
+        "total_invested_eur": round(total_invested_eur, 2),
+        "total_value_eur":    round(total_value_eur, 2),
+        "total_pnl_eur":      total_pnl_eur,
+        "total_pnl_pct":      total_pnl_pct,
+        "total_pnl_class":    "positive" if total_pnl_eur >= 0 else "negative",
+        "fx_usd_eur":         round(fx_rates["USD"], 4),
+        "fx_gbp_eur":         round(fx_rates["GBP"], 4),
     }
     return holdings, totals
 
