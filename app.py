@@ -496,8 +496,8 @@ PERSONAL_HOLDINGS = [
     {"ticker": "STX",     "name": "Seagate Technology",       "shares": 0.05853506,  "buy_price": 419.58,  "currency": "USD"},
     {"ticker": "VUAG.L",  "name": "Vanguard S&P 500 (GBP Acc)","shares": 5.37787128, "buy_price": 101.743, "currency": "GBP"},
     {"ticker": "PANW",    "name": "Palo Alto Networks",       "shares": 1.00000000,  "buy_price": 174.83,  "currency": "USD"},
-    {"ticker": "VFEM.L",  "name": "Vanguard FTSE EM ETF",    "shares": 1.33739782,  "buy_price": 61.044,  "currency": "GBP"},
-    {"ticker": "VEUR.L",  "name": "Vanguard FTSE Europe ETF","shares": 1.04178269,  "buy_price": 49.98,   "currency": "GBP"},
+    {"ticker": "VFEG.L",  "name": "Vanguard FTSE EM ETF (Acc)", "shares": 1.33739782, "buy_price": 61.044,  "currency": "GBP"},
+    {"ticker": "VEUA.L",  "name": "Vanguard FTSE Europe ETF (Acc)","shares": 1.04178269,"buy_price": 49.98,   "currency": "GBP"},
     {"ticker": "XNAS.DE", "name": "Xtrackers NASDAQ 100",    "shares": 0.24306270,  "buy_price": 43.322,  "currency": "GBP"},
 ]
 
