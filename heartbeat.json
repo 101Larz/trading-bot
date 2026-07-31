@@ -1,13 +1,13 @@
 {
-  "last_routine": "Pre-Market Research",
-  "last_run_iso": "2026-07-31T09:00:00-04:00",
-  "session_branch": "claude/gallant-lamport-ctfbc8",
+  "last_routine": "Market Open Execution",
+  "last_run_iso": "2026-07-31T09:45:00-04:00",
+  "session_branch": "claude/sweet-shannon-4w6gxy",
   "status": "ok",
-  "decision": "HOLD",
-  "consecutive_no_trade_market_open": 12,
+  "decision": "NO_TRADE",
+  "consecutive_no_trade_market_open": 13,
   "cash": 98972.19,
   "equity": 98972.19,
   "open_positions": 0,
   "trades_this_week": 0,
-  "notes": "Pre-market HOLD (13th consecutive). Macro gate fails: SPY 741.69 below MA20 745.58 and MA50 743.92, RSI 40. AAPL/AMZN/GOOGL in 5-day earnings exclusion (reported 7/30 AH: AAPL -1.4%, GOOGL -0.6%, AMZN +3.9%). MSFT RSI 73.6 overextended. XOM/CVX/ABBV report today. JPM + LLY technicals pass but gated on SPY macro reclaim + trailing-stop infra. yfinance TLS Day 35 (yahoo-direct fallback working). Weekly buy budget 3/3 preserved."
+  "notes": "Market-open NO_TRADE (13th consecutive). Pre-market HOLD stands: SPY $741.69 below MA20 $745.58 and MA50 $743.92 (macro gate fails). AAPL/AMZN/GOOGL in 5-day earnings exclusion, MSFT RSI 73.6 overextended, XOM/CVX/ABBV report today. JPM+LLY conditional only. yfinance TLS Day 35. Weekly buy budget 3/3 preserved."
 }

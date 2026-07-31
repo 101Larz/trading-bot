@@ -4012,3 +4012,30 @@ Session cadence today: pre-market HOLD (12th consecutive) → market-open NO_TRA
 Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
 
 Carry-forward into Friday: yfinance TLS Day 34 (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 34, AAPL+AMZN+GOOGL post-earnings reaction (event day fallout, exclusion active), MSFT/META/QCOM exclusion rolls off Fri AM, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk, tech-capex angst, Friday weekly-review routine at 17:00 ET.
+
+
+### Market-Open Log — 2026-07-31 (Friday — session: claude/sweet-shannon-4w6gxy)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_TRADE** (13th consecutive) |
+
+Buy-rule check:
+- Max 6 open positions ✅ (0/6)
+- Max 3 trades this week ✅ (0/3)
+- Max 20% equity per position ✅ (n/a)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD stands (13th consecutive). SPY below MA20 ($741.69 vs $745.58) → macro gate fails. AAPL/AMZN/GOOGL BLOCKED (5-day earnings exclusion through ~8/6). MSFT RSI 73.6 overextended. XOM/CVX/ABBV BLOCKED (report today). JPM + LLY technicals pass but gated on SPY reclaim + trailing-stop infra + yfinance TLS Day 35.
+
+Position snapshot: **none** (13th consecutive cash-only book; unchanged since AMD exit).
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 35, broker trailing-stop infra gap Day 35, SPY macro gate (needs reclaim of $745.58), AAPL/AMZN/GOOGL 5-day earnings exclusion, MSFT RSI overextended, XOM/CVX/ABBV earnings-day exclusion, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk / oil overhang, month-end positioning, Weekly Review at 17:00 ET.
