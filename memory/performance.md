@@ -4065,3 +4065,28 @@ Trades executed: **none.**
 Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
 
 Carry-forward: yfinance TLS Day 35, broker trailing-stop infra gap Day 35, SPY macro gate (needs reclaim of $745.58 MA20), AAPL/AMZN/GOOGL 5-day earnings exclusion (through ~8/6), MSFT RSI overextended, XOM/CVX/ABBV earnings-day exclusion, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk / oil overhang, month-end positioning, Weekly Review at 17:00 ET.
+
+
+### EOD Snapshot — 2026-07-31 (Friday — session: claude/sleepy-goldberg-lgrsdh)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,972.19 |
+| Cash | $98,972.19 |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 0 / 6 |
+
+### Open Positions
+
+None (13th consecutive cash-only close; 100% cash).
+
+Prior close (2026-07-30 Thu): $98,972.19 → today's close $98,972.19 → **flat day** (no positions to mark).
+
+Session cadence today: pre-market HOLD (13th consecutive) → market-open NO_TRADE (13th consecutive) → midday NO_ACTION → EOD flat. Stand-downs intact all session (yfinance TLS Day 35, broker trailing-stop infra gap Day 35, SPY macro gate fail — $741.69 < MA20 $745.58, AAPL+AMZN+GOOGL 5-day earnings exclusion through ~8/6, MSFT RSI 73.6 overextended, XOM/CVX/ABBV earnings-day exclusion, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk / oil overhang, month-end positioning). JPM + LLY remain conditional ideas gated on TLS repair + trailing-stop infra + SPY reclaim — none cleared today. Weekly buy budget 3/3 preserved.
+
+Cumulative P&L since inception (5/19): -$1,027.81 (-1.03%). No change vs prior EOD — book unchanged since AMD exit.
+
+Carry-forward into Monday (8/3): yfinance TLS Day 36 (blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra gap Day 36, SPY macro gate (needs reclaim of $745.58 MA20), AAPL+AMZN+GOOGL post-earnings 5-day exclusion (through ~8/6), MSFT RSI overextended, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk / oil overhang. Weekly Review at 17:00 ET (Friday routine).
