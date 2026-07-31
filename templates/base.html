@@ -40,6 +40,11 @@
       <span class="nav-icon">⇅</span>
       <span class="nav-label">Trade History</span>
     </a>
+    <a href="{{ url_for('portfolio_page') }}"
+       class="nav-item {% if request.endpoint == 'portfolio_page' %}active{% endif %}">
+      <span class="nav-icon">◎</span>
+      <span class="nav-label">My Portfolio</span>
+    </a>
   </nav>
 
   <div class="sidebar-footer">

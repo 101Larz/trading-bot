@@ -6,11 +6,14 @@ endpoints that the frontend polls every 60 seconds for live data.
 
 import os
 import re
+import sys
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
+import yfinance as yf
 from flask import Flask, render_template, jsonify
 from dotenv import load_dotenv
 
@@ -19,6 +22,8 @@ load_dotenv()
 app = Flask(__name__)
 
 ROOT = Path(__file__).parent
+sys.path.insert(0, str(ROOT / "scripts"))
+
 MEMORY_DIR   = ROOT / "memory"
 RESEARCH_DIR = MEMORY_DIR / "research"   # per-day research files: YYYY-MM-DD.md
 JOURNAL_DIR  = ROOT / "journal"
@@ -475,6 +480,182 @@ def api_positions():
 @app.route("/api/clock")
 def api_clock():
     return jsonify(get_clock())
+
+
+# ---------------------------------------------------------------------------
+# Personal portfolio — tickers, signals, regime, news
+# ---------------------------------------------------------------------------
+
+PERSONAL_TICKERS = [
+    ("WDC",     "Western Digital"),
+    ("ASML",    "ASML Holding"),
+    ("MU",      "Micron Technology"),
+    ("AMAT",    "Applied Materials"),
+    ("LRCX",    "Lam Research"),
+    ("SNDK",    "SanDisk"),
+    ("STX",     "Seagate Technology"),
+    ("PANW",    "Palo Alto Networks"),
+    ("SPY",     "S&P 500 ETF"),
+    ("VFEM.L",  "Vanguard FTSE EM ETF"),
+    ("VEUR.L",  "Vanguard FTSE Europe ETF"),
+    ("XNAS.DE", "Xtrackers NASDAQ 100"),
+]
+
+
+def _classify_signal(rsi, mas: dict) -> tuple[str, str]:
+    """Return (signal_label, css_class) based on RSI and MA alignment."""
+    if rsi is None or mas.get("ma20") is None:
+        return "UNKNOWN", "neutral"
+    price = mas.get("current_price") or 0
+    ma20  = mas["ma20"]
+    ma50  = mas.get("ma50")
+    if rsi > 70:
+        return "SELL", "negative"   # overbought
+    if price > ma20 and (ma50 is None or ma20 > ma50):
+        return "BUY", "positive"    # uptrend + RSI in range
+    if price < ma20 and ma50 is not None and ma20 < ma50:
+        return "SELL", "negative"   # downtrend
+    return "HOLD", "neutral"
+
+
+def _classify_regime(bars: list[dict]) -> tuple[str, str]:
+    """
+    Label the current Markov regime by looking at the majority of return-day
+    classifications over the last 20 trading sessions.
+    Bull >+0.5% | Bear <-0.5% | Sideways otherwise
+    """
+    if len(bars) < 5:
+        return "Unknown", "neutral"
+    window = bars[-21:]
+    bull = bear = side = 0
+    for i in range(1, len(window)):
+        ret = (window[i]["c"] - window[i - 1]["c"]) / window[i - 1]["c"]
+        if ret > 0.005:
+            bull += 1
+        elif ret < -0.005:
+            bear += 1
+        else:
+            side += 1
+    total = bull + bear + side
+    if total == 0:
+        return "Unknown", "neutral"
+    if bull / total > 0.55:
+        return "Bull", "positive"
+    if bear / total > 0.40:
+        return "Bear", "negative"
+    return "Sideways", "neutral"
+
+
+def _parse_news_item(article: dict) -> dict:
+    """Handle both old yfinance (flat) and new yfinance 1.5+ (nested content) formats."""
+    content   = article.get("content") or {}
+    title     = content.get("title") or article.get("title", "")
+    canonical = content.get("canonicalUrl") or {}
+    link      = (canonical.get("url", "") if isinstance(canonical, dict) else "") \
+                or article.get("link", "")
+    provider  = content.get("provider") or {}
+    publisher = (provider.get("displayName", "") if isinstance(provider, dict) else "") \
+                or article.get("publisher", "")
+    raw_time  = content.get("pubDate") or article.get("providerPublishTime") or ""
+    if isinstance(raw_time, (int, float)):
+        pub_date = datetime.fromtimestamp(raw_time).strftime("%Y-%m-%d")
+    else:
+        pub_date = str(raw_time)[:10]
+    return {"title": title, "link": link, "publisher": publisher, "date": pub_date}
+
+
+def _fetch_ticker_data(symbol: str, name: str) -> dict:
+    """Fetch price, indicators, signal, regime, and news for one ticker."""
+    from market_data import get_bars, compute_moving_averages, compute_rsi
+
+    base: dict = {
+        "symbol": symbol, "name": name,
+        "current_price": None, "daily_change_pct": None, "daily_change_class": "neutral",
+        "ma20": None, "ma50": None, "rsi": None, "rsi_class": "neutral",
+        "signal": "UNKNOWN", "signal_class": "neutral",
+        "regime": "Unknown", "regime_class": "neutral",
+        "source": "—", "news": [], "error": None,
+    }
+    try:
+        bars, source = get_bars(symbol, limit=60)
+        base["source"] = source
+
+        mas = compute_moving_averages(bars)
+        rsi = compute_rsi(bars)
+        base["ma20"] = mas.get("ma20")
+        base["ma50"] = mas.get("ma50")
+        base["rsi"]  = rsi
+
+        if rsi is not None:
+            base["rsi_class"] = "positive" if 35 <= rsi <= 70 else "negative"
+
+        base["signal"], base["signal_class"] = _classify_signal(rsi, mas)
+        base["regime"], base["regime_class"] = _classify_regime(bars)
+
+        # Current price + daily change via yfinance fast_info; fall back to bars
+        try:
+            fi = yf.Ticker(symbol).fast_info
+            lp, pc = fi.last_price, fi.previous_close
+            if lp and pc:
+                base["current_price"]     = round(float(lp), 4)
+                base["daily_change_pct"]  = round((lp - pc) / pc * 100, 2)
+        except Exception:
+            pass
+        if base["current_price"] is None and bars:
+            base["current_price"] = bars[-1]["c"]
+            if len(bars) >= 2:
+                base["daily_change_pct"] = round(
+                    (bars[-1]["c"] - bars[-2]["c"]) / bars[-2]["c"] * 100, 2
+                )
+        if base["daily_change_pct"] is not None:
+            base["daily_change_class"] = "positive" if base["daily_change_pct"] >= 0 else "negative"
+
+        # News — top 4 headlines via yfinance
+        try:
+            raw_news = yf.Ticker(symbol).news or []
+            parsed   = [_parse_news_item(a) for a in raw_news[:4]]
+            base["news"] = [n for n in parsed if n["title"]]
+        except Exception:
+            pass
+
+    except Exception as exc:
+        base["error"] = str(exc)
+
+    return base
+
+
+def get_personal_portfolio_data() -> list[dict]:
+    """Fetch all 12 personal tickers in parallel (6 workers)."""
+    order   = {sym: i for i, (sym, _) in enumerate(PERSONAL_TICKERS)}
+    results = {}
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        futures = {pool.submit(_fetch_ticker_data, sym, name): sym
+                   for sym, name in PERSONAL_TICKERS}
+        for future in as_completed(futures):
+            data = future.result()
+            results[data["symbol"]] = data
+    return sorted(results.values(), key=lambda d: order.get(d["symbol"], 99))
+
+
+@app.route("/portfolio")
+def portfolio_page():
+    holdings = get_personal_portfolio_data()
+    clock    = get_clock()
+    return render_template(
+        "portfolio.html",
+        holdings=holdings,
+        clock=clock,
+        last_updated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+    )
+
+
+@app.route("/api/my-portfolio")
+def api_my_portfolio():
+    holdings = get_personal_portfolio_data()
+    return jsonify({
+        "holdings":     holdings,
+        "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+    })
 
 
 # ---------------------------------------------------------------------------

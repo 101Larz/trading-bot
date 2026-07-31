@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+{% block title %}My Portfolio{% endblock %}
+{% block page_title %}My Portfolio{% endblock %}
+{% block page_subtitle %}12 personal holdings · live data via yfinance · refreshes every 5 min{% endblock %}
+
+{% block content %}
+
+<style>
+  /* ── Signal badges ─────────────────────────────────── */
+  .sig-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    border-radius: 4px;
+    padding: 2px 8px;
+  }
+  .sig-buy  { background: rgba(63,185,80,.15);  color: #3fb950; border: 1px solid rgba(63,185,80,.3); }
+  .sig-sell { background: rgba(248,81,73,.15);  color: #f85149; border: 1px solid rgba(248,81,73,.3); }
+  .sig-hold { background: rgba(56,189,248,.10); color: #38bdf8; border: 1px solid rgba(56,189,248,.25); }
+  .sig-unk  { background: rgba(139,148,158,.1); color: #8b949e; border: 1px solid rgba(139,148,158,.2); }
+
+  /* ── Regime badges ─────────────────────────────────── */
+  .reg-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    border-radius: 4px;
+    padding: 2px 8px;
+  }
+  .reg-bull { background: rgba(63,185,80,.12);  color: #3fb950; border: 1px solid rgba(63,185,80,.25); }
+  .reg-bear { background: rgba(248,81,73,.12);  color: #f85149; border: 1px solid rgba(248,81,73,.25); }
+  .reg-side { background: rgba(227,179,65,.10); color: #e3b341; border: 1px solid rgba(227,179,65,.25); }
+  .reg-unk  { background: rgba(139,148,158,.1); color: #8b949e; border: 1px solid rgba(139,148,158,.2); }
+
+  /* ── RSI colouring ─────────────────────────────────── */
+  .rsi-ok  { color: #3fb950; font-weight: 600; }
+  .rsi-bad { color: #f85149; font-weight: 600; }
+
+  /* ── News feed ─────────────────────────────────────── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+  .news-ticker-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .news-ticker-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,17,23,.35);
+  }
+  .news-ticker-name { font-size: 12px; color: var(--text-lo); }
+  .news-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(48,54,61,.45);
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-title {
+    font-size: 12.5px;
+    color: var(--text-hi);
+    line-height: 1.45;
+    text-decoration: none;
+  }
+  .news-title:hover { color: var(--blue); }
+  .news-meta { font-size: 11px; color: var(--text-lo); }
+  .news-empty { padding: 14px; font-size: 12px; color: var(--text-lo); }
+
+  /* ── Source chip ───────────────────────────────────── */
+  .src-chip {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: var(--text-lo);
+    background: rgba(48,54,61,.5);
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+
+  /* ── Error row ─────────────────────────────────────── */
+  .error-cell { font-size: 11px; color: var(--red); max-width: 180px;
+                overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+</style>
+
+<!-- ── Holdings table ─────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Holdings — Live Market Data</span>
+    <span class="card-badge">{{ holdings | length }} tickers</span>
+  </div>
+  <div class="table-wrap">
+    <table class="data-table" id="holdings-table">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Name</th>
+          <th class="num">Price</th>
+          <th class="num">Day %</th>
+          <th class="num">MA20</th>
+          <th class="num">MA50</th>
+          <th class="num">RSI-14</th>
+          <th>Signal</th>
+          <th>Regime</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for h in holdings %}
+        <tr {% if h.error %}class="negative-row"{% endif %}>
+
+          {# Symbol #}
+          <td><span class="symbol-badge">{{ h.symbol }}</span></td>
+
+          {# Name #}
+          <td style="color: var(--text-lo); font-size: 12px;">{{ h.name }}</td>
+
+          {# Price #}
+          <td class="num">
+            {% if h.current_price is not none %}
+              {{ "%.2f"|format(h.current_price) }}
+            {% else %}
+              <span style="color:var(--text-lo)">—</span>
+            {% endif %}
+          </td>
+
+          {# Day % #}
+          <td class="num {{ h.daily_change_class }}">
+            {% if h.daily_change_pct is not none %}
+              {% if h.daily_change_pct >= 0 %}+{% endif %}{{ "%.2f"|format(h.daily_change_pct) }}%
+            {% else %}
+              <span style="color:var(--text-lo)">—</span>
+            {% endif %}
+          </td>
+
+          {# MA20 #}
+          <td class="num">
+            {% if h.ma20 is not none %}{{ "%.2f"|format(h.ma20) }}{% else %}<span style="color:var(--text-lo)">—</span>{% endif %}
+          </td>
+
+          {# MA50 #}
+          <td class="num">
+            {% if h.ma50 is not none %}{{ "%.2f"|format(h.ma50) }}{% else %}<span style="color:var(--text-lo)">—</span>{% endif %}
+          </td>
+
+          {# RSI #}
+          <td class="num">
+            {% if h.rsi is not none %}
+              {% if 35 <= h.rsi <= 70 %}
+                <span class="rsi-ok">{{ h.rsi }}</span>
+              {% else %}
+                <span class="rsi-bad">{{ h.rsi }}</span>
+              {% endif %}
+            {% else %}
+              <span style="color:var(--text-lo)">—</span>
+            {% endif %}
+          </td>
+
+          {# Signal #}
+          <td>
+            {% if h.signal == "BUY" %}
+              <span class="sig-badge sig-buy">BUY</span>
+            {% elif h.signal == "SELL" %}
+              <span class="sig-badge sig-sell">SELL</span>
+            {% elif h.signal == "HOLD" %}
+              <span class="sig-badge sig-hold">HOLD</span>
+            {% else %}
+              <span class="sig-badge sig-unk">{{ h.signal }}</span>
+            {% endif %}
+          </td>
+
+          {# Regime #}
+          <td>
+            {% if h.regime == "Bull" %}
+              <span class="reg-badge reg-bull">Bull</span>
+            {% elif h.regime == "Bear" %}
+              <span class="reg-badge reg-bear">Bear</span>
+            {% elif h.regime == "Sideways" %}
+              <span class="reg-badge reg-side">Sideways</span>
+            {% else %}
+              <span class="reg-badge reg-unk">{{ h.regime }}</span>
+            {% endif %}
+          </td>
+
+          {# Source / Error #}
+          <td>
+            {% if h.error %}
+              <span class="error-cell" title="{{ h.error }}">⚠ {{ h.error }}</span>
+            {% else %}
+              <span class="src-chip">{{ h.source }}</span>
+            {% endif %}
+          </td>
+
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── Signal legend ──────────────────────────────────────────── -->
+<div style="display:flex; gap:20px; font-size:11px; color:var(--text-lo); padding: 0 2px;">
+  <span><span class="sig-badge sig-buy">BUY</span> RSI 35–70 + price above MA20 in uptrend</span>
+  <span><span class="sig-badge sig-sell">SELL</span> RSI &gt; 70 (overbought) or price below MA20 in downtrend</span>
+  <span><span class="sig-badge sig-hold">HOLD</span> Everything else — no clear edge</span>
+  <span><span class="rsi-ok" style="font-size:11px;">green RSI</span> = 35–70 entry zone</span>
+</div>
+
+<!-- ── News feed ──────────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Latest News</span>
+    <span class="card-badge">via yfinance</span>
+  </div>
+  <div class="card-body">
+    <div class="news-grid">
+      {% for h in holdings %}
+      <div class="news-ticker-card">
+        <div class="news-ticker-header">
+          <span class="symbol-badge">{{ h.symbol }}</span>
+          <span class="news-ticker-name">{{ h.name }}</span>
+        </div>
+        {% if h.news %}
+          {% for article in h.news %}
+          <div class="news-item">
+            <a class="news-title"
+               {% if article.link %}href="{{ article.link }}" target="_blank" rel="noopener"{% endif %}>
+              {{ article.title }}
+            </a>
+            <span class="news-meta">
+              {{ article.publisher }}{% if article.publisher and article.date %} · {% endif %}{{ article.date }}
+            </span>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="news-empty">No recent news available.</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  // Override the 60 s default to 5 minutes — this page makes 12 yfinance calls.
+  document.addEventListener("DOMContentLoaded", () => {
+    countdown = 300;
+    clearInterval(refreshTimer);
+    refreshTimer = setInterval(() => {
+      countdown--;
+      const el = document.getElementById("refresh-timer");
+      if (el) el.textContent = countdown + "s";
+      if (countdown <= 0) {
+        location.reload();
+      }
+    }, 1000);
+  });
+
+  window.refreshData = function () { location.reload(); };
+})();
+</script>
+{% endblock %}
