@@ -4039,3 +4039,29 @@ Trades executed: **none.**
 Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
 
 Carry-forward: yfinance TLS Day 35, broker trailing-stop infra gap Day 35, SPY macro gate (needs reclaim of $745.58), AAPL/AMZN/GOOGL 5-day earnings exclusion, MSFT RSI overextended, XOM/CVX/ABBV earnings-day exclusion, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk / oil overhang, month-end positioning, Weekly Review at 17:00 ET.
+
+
+### Midday-Scan Log — 2026-07-31 (Friday — session: claude/exciting-bohr-t0rjr5)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (12:30 ET) |
+| Cash | $98,972.19 |
+| Equity | $98,972.19 |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Trades This Week | 0 / 3 |
+| Decision | **NO_ACTION** — no positions to manage |
+
+Steps 3-5 all N/A (no open positions):
+- Cut losers ≤ -7% ✅ n/a
+- Tighten stops on winners ≥ +15/+20% ✅ n/a
+- Thesis-break scan ✅ n/a
+
+Position snapshot: **none** (13th consecutive cash-only book; unchanged since AMD exit).
+
+Trades executed: **none.**
+
+Risk posture: cash 100% (≥20% ✅), exposure 0% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 3/3 preserved.
+
+Carry-forward: yfinance TLS Day 35, broker trailing-stop infra gap Day 35, SPY macro gate (needs reclaim of $745.58 MA20), AAPL/AMZN/GOOGL 5-day earnings exclusion (through ~8/6), MSFT RSI overextended, XOM/CVX/ABBV earnings-day exclusion, FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk / oil overhang, month-end positioning, Weekly Review at 17:00 ET.

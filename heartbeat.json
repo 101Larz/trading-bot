@@ -1,13 +1,13 @@
 {
-  "last_routine": "Market Open Execution",
-  "last_run_iso": "2026-07-31T09:45:00-04:00",
-  "session_branch": "claude/sweet-shannon-4w6gxy",
+  "last_routine": "Midday Scan",
+  "last_run_iso": "2026-07-31T12:30:00-04:00",
+  "session_branch": "claude/exciting-bohr-t0rjr5",
   "status": "ok",
-  "decision": "NO_TRADE",
+  "decision": "NO_ACTION",
   "consecutive_no_trade_market_open": 13,
   "cash": 98972.19,
   "equity": 98972.19,
   "open_positions": 0,
   "trades_this_week": 0,
-  "notes": "Market-open NO_TRADE (13th consecutive). Pre-market HOLD stands: SPY $741.69 below MA20 $745.58 and MA50 $743.92 (macro gate fails). AAPL/AMZN/GOOGL in 5-day earnings exclusion, MSFT RSI 73.6 overextended, XOM/CVX/ABBV report today. JPM+LLY conditional only. yfinance TLS Day 35. Weekly buy budget 3/3 preserved."
+  "notes": "Midday NO_ACTION — no positions to manage (13th consecutive cash-only book since AMD exit). Steps 3-5 all N/A. Pre-market HOLD + market-open NO_TRADE stand. SPY macro gate still fails ($741.69 < MA20 $745.58). AAPL/AMZN/GOOGL 5-day exclusion, MSFT RSI 73.6 overextended, XOM/CVX/ABBV report today, JPM+LLY conditional. Weekly Review at 17:00 ET."
 }
