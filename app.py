@@ -486,19 +486,19 @@ def api_clock():
 # Personal portfolio — tickers, signals, regime, news
 # ---------------------------------------------------------------------------
 
-PERSONAL_TICKERS = [
-    ("WDC",     "Western Digital"),
-    ("ASML",    "ASML Holding"),
-    ("MU",      "Micron Technology"),
-    ("AMAT",    "Applied Materials"),
-    ("LRCX",    "Lam Research"),
-    ("SNDK",    "SanDisk"),
-    ("STX",     "Seagate Technology"),
-    ("PANW",    "Palo Alto Networks"),
-    ("SPY",     "S&P 500 ETF"),
-    ("VFEM.L",  "Vanguard FTSE EM ETF"),
-    ("VEUR.L",  "Vanguard FTSE Europe ETF"),
-    ("XNAS.DE", "Xtrackers NASDAQ 100"),
+PERSONAL_HOLDINGS = [
+    {"ticker": "WDC",     "name": "Western Digital",          "shares": 0.43003312,  "buy_price": 268.82},
+    {"ticker": "ASML",    "name": "ASML Holding",             "shares": 0.13747919,  "buy_price": 1252.60},
+    {"ticker": "MU",      "name": "Micron Technology",        "shares": 0.20603656,  "buy_price": 163.62},
+    {"ticker": "AMAT",    "name": "Applied Materials",        "shares": 0.16546614,  "buy_price": 350.34},
+    {"ticker": "LRCX",    "name": "Lam Research",             "shares": 0.26794250,  "buy_price": 240.61},
+    {"ticker": "SNDK",    "name": "SanDisk",                  "shares": 0.05929092,  "buy_price": 644.45},
+    {"ticker": "STX",     "name": "Seagate Technology",       "shares": 0.05853506,  "buy_price": 419.58},
+    {"ticker": "SPY",     "name": "S&P 500 ETF",              "shares": 5.37787128,  "buy_price": 101.743},
+    {"ticker": "PANW",    "name": "Palo Alto Networks",       "shares": 1.00000000,  "buy_price": 174.83},
+    {"ticker": "VFEM.L",  "name": "Vanguard FTSE EM ETF",    "shares": 1.33739782,  "buy_price": 61.044},
+    {"ticker": "VEUR.L",  "name": "Vanguard FTSE Europe ETF","shares": 1.04178269,  "buy_price": 49.98},
+    {"ticker": "XNAS.DE", "name": "Xtrackers NASDAQ 100",    "shares": 0.24306270,  "buy_price": 43.322},
 ]
 
 
@@ -564,13 +564,17 @@ def _parse_news_item(article: dict) -> dict:
     return {"title": title, "link": link, "publisher": publisher, "date": pub_date}
 
 
-def _fetch_ticker_data(symbol: str, name: str) -> dict:
-    """Fetch price, indicators, signal, regime, and news for one ticker."""
+def _fetch_ticker_data(symbol: str, name: str, shares: float, buy_price: float) -> dict:
+    """Fetch price, indicators, signal, regime, news, and P&L for one ticker."""
     from market_data import get_bars, compute_moving_averages, compute_rsi
 
+    cost_basis = round(shares * buy_price, 2)
     base: dict = {
         "symbol": symbol, "name": name,
-        "current_price": None, "daily_change_pct": None, "daily_change_class": "neutral",
+        "shares": shares, "buy_price": buy_price, "cost_basis": cost_basis,
+        "current_price": None, "current_value": None,
+        "pnl": None, "pnl_pct": None, "pnl_class": "neutral",
+        "daily_change_pct": None, "daily_change_class": "neutral",
         "ma20": None, "ma50": None, "rsi": None, "rsi_class": "neutral",
         "signal": "UNKNOWN", "signal_class": "neutral",
         "regime": "Unknown", "regime_class": "neutral",
@@ -597,8 +601,8 @@ def _fetch_ticker_data(symbol: str, name: str) -> dict:
             fi = yf.Ticker(symbol).fast_info
             lp, pc = fi.last_price, fi.previous_close
             if lp and pc:
-                base["current_price"]     = round(float(lp), 4)
-                base["daily_change_pct"]  = round((lp - pc) / pc * 100, 2)
+                base["current_price"]    = round(float(lp), 4)
+                base["daily_change_pct"] = round((lp - pc) / pc * 100, 2)
         except Exception:
             pass
         if base["current_price"] is None and bars:
@@ -609,6 +613,15 @@ def _fetch_ticker_data(symbol: str, name: str) -> dict:
                 )
         if base["daily_change_pct"] is not None:
             base["daily_change_class"] = "positive" if base["daily_change_pct"] >= 0 else "negative"
+
+        # P&L (requires a valid current price)
+        if base["current_price"] is not None:
+            cv  = round(shares * base["current_price"], 2)
+            pnl = round(cv - cost_basis, 2)
+            base["current_value"] = cv
+            base["pnl"]           = pnl
+            base["pnl_pct"]       = round(pnl / cost_basis * 100, 2) if cost_basis else None
+            base["pnl_class"]     = "positive" if pnl >= 0 else "negative"
 
         # News — top 4 headlines via yfinance
         try:
@@ -624,26 +637,43 @@ def _fetch_ticker_data(symbol: str, name: str) -> dict:
     return base
 
 
-def get_personal_portfolio_data() -> list[dict]:
-    """Fetch all 12 personal tickers in parallel (6 workers)."""
-    order   = {sym: i for i, (sym, _) in enumerate(PERSONAL_TICKERS)}
+def get_personal_portfolio_data() -> tuple[list[dict], dict]:
+    """Fetch all 12 personal holdings in parallel. Returns (holdings, totals)."""
+    order   = {h["ticker"]: i for i, h in enumerate(PERSONAL_HOLDINGS)}
     results = {}
     with ThreadPoolExecutor(max_workers=6) as pool:
-        futures = {pool.submit(_fetch_ticker_data, sym, name): sym
-                   for sym, name in PERSONAL_TICKERS}
+        futures = {
+            pool.submit(_fetch_ticker_data, h["ticker"], h["name"], h["shares"], h["buy_price"]): h["ticker"]
+            for h in PERSONAL_HOLDINGS
+        }
         for future in as_completed(futures):
             data = future.result()
             results[data["symbol"]] = data
-    return sorted(results.values(), key=lambda d: order.get(d["symbol"], 99))
+
+    holdings = sorted(results.values(), key=lambda d: order.get(d["symbol"], 99))
+
+    total_invested     = sum(h["cost_basis"] for h in holdings)
+    total_value        = sum(h["current_value"] for h in holdings if h["current_value"] is not None)
+    total_pnl          = round(total_value - total_invested, 2)
+    total_pnl_pct      = round(total_pnl / total_invested * 100, 2) if total_invested else 0
+    totals = {
+        "total_invested":  round(total_invested, 2),
+        "total_value":     round(total_value, 2),
+        "total_pnl":       total_pnl,
+        "total_pnl_pct":   total_pnl_pct,
+        "total_pnl_class": "positive" if total_pnl >= 0 else "negative",
+    }
+    return holdings, totals
 
 
 @app.route("/portfolio")
 def portfolio_page():
-    holdings = get_personal_portfolio_data()
-    clock    = get_clock()
+    holdings, totals = get_personal_portfolio_data()
+    clock = get_clock()
     return render_template(
         "portfolio.html",
         holdings=holdings,
+        totals=totals,
         clock=clock,
         last_updated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     )
@@ -651,9 +681,10 @@ def portfolio_page():
 
 @app.route("/api/my-portfolio")
 def api_my_portfolio():
-    holdings = get_personal_portfolio_data()
+    holdings, totals = get_personal_portfolio_data()
     return jsonify({
         "holdings":     holdings,
+        "totals":       totals,
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     })
 

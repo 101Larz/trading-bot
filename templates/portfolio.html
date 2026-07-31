@@ -6,14 +6,13 @@
 {% block content %}
 
 <style>
+  /* ── Summary KPIs ──────────────────────────────────── */
+  .kpi-pnl { font-size: 22px; font-weight: 700; font-family: var(--font); line-height: 1; }
+
   /* ── Signal badges ─────────────────────────────────── */
   .sig-badge {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: .07em;
-    border-radius: 4px;
-    padding: 2px 8px;
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: .07em; border-radius: 4px; padding: 2px 8px;
   }
   .sig-buy  { background: rgba(63,185,80,.15);  color: #3fb950; border: 1px solid rgba(63,185,80,.3); }
   .sig-sell { background: rgba(248,81,73,.15);  color: #f85149; border: 1px solid rgba(248,81,73,.3); }
@@ -22,12 +21,8 @@
 
   /* ── Regime badges ─────────────────────────────────── */
   .reg-badge {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: .05em;
-    border-radius: 4px;
-    padding: 2px 8px;
+    display: inline-block; font-size: 10px; font-weight: 600;
+    letter-spacing: .05em; border-radius: 4px; padding: 2px 8px;
   }
   .reg-bull { background: rgba(63,185,80,.12);  color: #3fb950; border: 1px solid rgba(63,185,80,.25); }
   .reg-bear { background: rgba(248,81,73,.12);  color: #f85149; border: 1px solid rgba(248,81,73,.25); }
@@ -38,6 +33,20 @@
   .rsi-ok  { color: #3fb950; font-weight: 600; }
   .rsi-bad { color: #f85149; font-weight: 600; }
 
+  /* ── P&L divider in summary row ────────────────────── */
+  .summary-divider { border-top: 2px solid var(--border); margin-top: 2px; padding-top: 10px; }
+
+  /* ── Source chip ───────────────────────────────────── */
+  .src-chip {
+    font-size: 9px; font-weight: 600; letter-spacing: .05em;
+    color: var(--text-lo); background: rgba(48,54,61,.5);
+    border-radius: 3px; padding: 1px 5px;
+  }
+
+  /* ── Error cell ────────────────────────────────────── */
+  .error-cell { font-size: 11px; color: var(--red); max-width: 160px;
+                overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
   /* ── News feed ─────────────────────────────────────── */
   .news-grid {
     display: grid;
@@ -45,58 +54,74 @@
     gap: 16px;
   }
   .news-ticker-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
   }
   .news-ticker-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
     background: rgba(13,17,23,.35);
   }
   .news-ticker-name { font-size: 12px; color: var(--text-lo); }
   .news-item {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding: 10px 14px;
-    border-bottom: 1px solid rgba(48,54,61,.45);
+    display: flex; flex-direction: column; gap: 3px;
+    padding: 10px 14px; border-bottom: 1px solid rgba(48,54,61,.45);
   }
   .news-item:last-child { border-bottom: none; }
   .news-title {
-    font-size: 12.5px;
-    color: var(--text-hi);
-    line-height: 1.45;
-    text-decoration: none;
+    font-size: 12.5px; color: var(--text-hi); line-height: 1.45; text-decoration: none;
   }
   .news-title:hover { color: var(--blue); }
   .news-meta { font-size: 11px; color: var(--text-lo); }
   .news-empty { padding: 14px; font-size: 12px; color: var(--text-lo); }
-
-  /* ── Source chip ───────────────────────────────────── */
-  .src-chip {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: .05em;
-    color: var(--text-lo);
-    background: rgba(48,54,61,.5);
-    border-radius: 3px;
-    padding: 1px 5px;
-  }
-
-  /* ── Error row ─────────────────────────────────────── */
-  .error-cell { font-size: 11px; color: var(--red); max-width: 180px;
-                overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 </style>
 
-<!-- ── Holdings table ─────────────────────────────────────────── -->
+<!-- ── Portfolio summary KPIs ────────────────────────────────────── -->
+<div class="kpi-grid">
+
+  <div class="kpi-card">
+    <div class="kpi-label">Total Invested</div>
+    <div class="kpi-value">${{ "{:,.2f}".format(totals.total_invested) }}</div>
+    <div class="kpi-sub">{{ holdings | length }} positions</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-label">Current Value</div>
+    <div class="kpi-value">${{ "{:,.2f}".format(totals.total_value) }}</div>
+    <div class="kpi-sub">Live market prices</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-label">Total P&amp;L</div>
+    <div class="kpi-pnl {{ totals.total_pnl_class }}">
+      {% if totals.total_pnl >= 0 %}+{% endif %}${{ "{:,.2f}".format(totals.total_pnl) }}
+    </div>
+    <div class="kpi-sub {{ totals.total_pnl_class }}">
+      {% if totals.total_pnl_pct >= 0 %}+{% endif %}{{ "%.2f"|format(totals.total_pnl_pct) }}% vs cost basis
+    </div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-label">Return</div>
+    <div class="kpi-pnl {{ totals.total_pnl_class }}">
+      {% if totals.total_pnl_pct >= 0 %}+{% endif %}{{ "%.2f"|format(totals.total_pnl_pct) }}%
+    </div>
+    <div class="kpi-sub">
+      {% if totals.total_pnl >= 0 %}
+        <span class="positive">Profit</span>
+      {% else %}
+        <span class="negative">Loss</span>
+      {% endif %}
+      on total portfolio
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Holdings table ─────────────────────────────────────────────── -->
 <div class="card">
   <div class="card-header">
-    <span class="card-title">Holdings — Live Market Data</span>
+    <span class="card-title">Holdings — Positions &amp; P&amp;L</span>
     <span class="card-badge">{{ holdings | length }} tickers</span>
   </div>
   <div class="table-wrap">
@@ -105,30 +130,71 @@
         <tr>
           <th>Symbol</th>
           <th>Name</th>
-          <th class="num">Price</th>
+          <th class="num">Shares</th>
+          <th class="num">Buy Price</th>
+          <th class="num">Current Price</th>
+          <th class="num">Current Value</th>
+          <th class="num">P&amp;L $</th>
+          <th class="num">P&amp;L %</th>
           <th class="num">Day %</th>
           <th class="num">MA20</th>
           <th class="num">MA50</th>
           <th class="num">RSI-14</th>
           <th>Signal</th>
           <th>Regime</th>
-          <th>Source</th>
         </tr>
       </thead>
       <tbody>
         {% for h in holdings %}
-        <tr {% if h.error %}class="negative-row"{% endif %}>
+        <tr class="{{ 'positive-row' if h.pnl is not none and h.pnl >= 0 else 'negative-row' if h.pnl is not none else '' }}">
 
           {# Symbol #}
           <td><span class="symbol-badge">{{ h.symbol }}</span></td>
 
           {# Name #}
-          <td style="color: var(--text-lo); font-size: 12px;">{{ h.name }}</td>
+          <td style="color: var(--text-lo); font-size: 12px; white-space: nowrap;">{{ h.name }}</td>
 
-          {# Price #}
+          {# Shares #}
+          <td class="num" style="color: var(--text-lo);">{{ "%.4f"|format(h.shares) }}</td>
+
+          {# Buy Price #}
+          <td class="num" style="color: var(--text-lo);">${{ "%.2f"|format(h.buy_price) }}</td>
+
+          {# Current Price #}
           <td class="num">
             {% if h.current_price is not none %}
-              {{ "%.2f"|format(h.current_price) }}
+              ${{ "%.2f"|format(h.current_price) }}
+            {% else %}
+              {% if h.error %}
+                <span class="error-cell" title="{{ h.error }}">⚠ error</span>
+              {% else %}
+                <span style="color:var(--text-lo)">—</span>
+              {% endif %}
+            {% endif %}
+          </td>
+
+          {# Current Value #}
+          <td class="num">
+            {% if h.current_value is not none %}
+              ${{ "%.2f"|format(h.current_value) }}
+            {% else %}
+              <span style="color:var(--text-lo)">—</span>
+            {% endif %}
+          </td>
+
+          {# P&L $ #}
+          <td class="num {{ h.pnl_class }}">
+            {% if h.pnl is not none %}
+              {% if h.pnl >= 0 %}+{% endif %}${{ "%.2f"|format(h.pnl) }}
+            {% else %}
+              <span style="color:var(--text-lo)">—</span>
+            {% endif %}
+          </td>
+
+          {# P&L % #}
+          <td class="num {{ h.pnl_class }}">
+            {% if h.pnl_pct is not none %}
+              {% if h.pnl_pct >= 0 %}+{% endif %}{{ "%.2f"|format(h.pnl_pct) }}%
             {% else %}
               <span style="color:var(--text-lo)">—</span>
             {% endif %}
@@ -144,13 +210,13 @@
           </td>
 
           {# MA20 #}
-          <td class="num">
-            {% if h.ma20 is not none %}{{ "%.2f"|format(h.ma20) }}{% else %}<span style="color:var(--text-lo)">—</span>{% endif %}
+          <td class="num" style="color:var(--text-lo);">
+            {% if h.ma20 is not none %}{{ "%.2f"|format(h.ma20) }}{% else %}—{% endif %}
           </td>
 
           {# MA50 #}
-          <td class="num">
-            {% if h.ma50 is not none %}{{ "%.2f"|format(h.ma50) }}{% else %}<span style="color:var(--text-lo)">—</span>{% endif %}
+          <td class="num" style="color:var(--text-lo);">
+            {% if h.ma50 is not none %}{{ "%.2f"|format(h.ma50) }}{% else %}—{% endif %}
           </td>
 
           {# RSI #}
@@ -192,31 +258,37 @@
             {% endif %}
           </td>
 
-          {# Source / Error #}
-          <td>
-            {% if h.error %}
-              <span class="error-cell" title="{{ h.error }}">⚠ {{ h.error }}</span>
-            {% else %}
-              <span class="src-chip">{{ h.source }}</span>
-            {% endif %}
-          </td>
-
         </tr>
         {% endfor %}
+
+        {# Totals summary row #}
+        <tr style="background: rgba(56,189,248,.04); border-top: 2px solid var(--border);">
+          <td colspan="5" style="font-size:12px; font-weight:700; color:var(--text-lo); padding: 12px 14px;">
+            TOTAL
+          </td>
+          <td class="num" style="font-weight:700;">${{ "{:,.2f}".format(totals.total_value) }}</td>
+          <td class="num {{ totals.total_pnl_class }}" style="font-weight:700;">
+            {% if totals.total_pnl >= 0 %}+{% endif %}${{ "{:,.2f}".format(totals.total_pnl) }}
+          </td>
+          <td class="num {{ totals.total_pnl_class }}" style="font-weight:700;">
+            {% if totals.total_pnl_pct >= 0 %}+{% endif %}{{ "%.2f"|format(totals.total_pnl_pct) }}%
+          </td>
+          <td colspan="6"></td>
+        </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<!-- ── Signal legend ──────────────────────────────────────────── -->
-<div style="display:flex; gap:20px; font-size:11px; color:var(--text-lo); padding: 0 2px;">
+<!-- ── Signal legend ──────────────────────────────────────────────── -->
+<div style="display:flex; gap:20px; flex-wrap:wrap; font-size:11px; color:var(--text-lo); padding: 0 2px;">
   <span><span class="sig-badge sig-buy">BUY</span> RSI 35–70 + price above MA20 in uptrend</span>
-  <span><span class="sig-badge sig-sell">SELL</span> RSI &gt; 70 (overbought) or price below MA20 in downtrend</span>
-  <span><span class="sig-badge sig-hold">HOLD</span> Everything else — no clear edge</span>
-  <span><span class="rsi-ok" style="font-size:11px;">green RSI</span> = 35–70 entry zone</span>
+  <span><span class="sig-badge sig-sell">SELL</span> RSI &gt; 70 or price below MA20 in downtrend</span>
+  <span><span class="sig-badge sig-hold">HOLD</span> No clear edge</span>
+  <span style="color:var(--text-lo);">Row color = green if P&amp;L positive, red if negative</span>
 </div>
 
-<!-- ── News feed ──────────────────────────────────────────────── -->
+<!-- ── News feed ─────────────────────────────────────────────────── -->
 <div class="card">
   <div class="card-header">
     <span class="card-title">Latest News</span>
@@ -264,9 +336,7 @@
       countdown--;
       const el = document.getElementById("refresh-timer");
       if (el) el.textContent = countdown + "s";
-      if (countdown <= 0) {
-        location.reload();
-      }
+      if (countdown <= 0) { location.reload(); }
     }, 1000);
   });
 
