@@ -1,13 +1,13 @@
 {
-  "last_routine": "Midday Scan",
-  "last_run_iso": "2026-07-30T12:30:00-04:00",
-  "session_branch": "claude/exciting-bohr-2spfv3",
+  "last_routine": "Pre-Market Research",
+  "last_run_iso": "2026-07-31T09:00:00-04:00",
+  "session_branch": "claude/gallant-lamport-ctfbc8",
   "status": "ok",
-  "decision": "NO_ACTION",
+  "decision": "HOLD",
   "consecutive_no_trade_market_open": 12,
   "cash": 98972.19,
   "equity": 98972.19,
   "open_positions": 0,
   "trades_this_week": 0,
-  "notes": "Midday scan — no positions to manage; Steps 3-5 all N/A. 12th consecutive cash-only book since AMD exit. All actionable candidates still blocked (AAPL/AMZN/GOOGL AH earnings tonight; MSFT/META/QCOM <24h post-earnings; JPM/LLY gated on yfinance TLS Day 33 + trailing-stop infra + FOMC digest + SOX rout)."
+  "notes": "Pre-market HOLD (13th consecutive). Macro gate fails: SPY 741.69 below MA20 745.58 and MA50 743.92, RSI 40. AAPL/AMZN/GOOGL in 5-day earnings exclusion (reported 7/30 AH: AAPL -1.4%, GOOGL -0.6%, AMZN +3.9%). MSFT RSI 73.6 overextended. XOM/CVX/ABBV report today. JPM + LLY technicals pass but gated on SPY macro reclaim + trailing-stop infra. yfinance TLS Day 35 (yahoo-direct fallback working). Weekly buy budget 3/3 preserved."
 }
