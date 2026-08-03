@@ -1,13 +1,13 @@
 {
-  "last_routine": "Pre-Market Research",
-  "last_run_iso": "2026-08-03T09:00:00-04:00",
-  "session_branch": "claude/gallant-lamport-gkk92x",
+  "last_routine": "Market Open Execution",
+  "last_run_iso": "2026-08-03T09:45:00-04:00",
+  "session_branch": "claude/sweet-shannon-ofckvs",
   "status": "ok",
-  "decision": "HOLD",
-  "consecutive_no_trade_market_open": 13,
-  "cash": 98972.19,
-  "equity": 98972.19,
-  "open_positions": 0,
-  "trades_this_week": 0,
-  "notes": "Pre-market HOLD (14th consecutive). yfinance TLS Day 37 — MA20/MA50/RSI-14 unreadable; SPY macro gate unverifiable (last 7/31 $741.69 < MA20 $745.58). Broker trailing-stop infra Day 37. ES +0.63% on Iran de-escalation, WTI -6%. Rotation: Tech/Semis → Financials/Healthcare (SOX rout continuing). Earnings this week: PLTR (tonight), AMD (Tue), LLY/CAT/DIS. AAPL/AMZN/GOOGL still in 5-day exclusion. Weekly buy budget fresh 3/3. No trade ideas cleared gates."
+  "decision": "NO_TRADE",
+  "consecutive_no_trade_market_open": 14,
+  "cash": 97882.83,
+  "equity": 98972.61,
+  "open_positions": 1,
+  "trades_this_week": 1,
+  "notes": "Market-open NO_TRADE (14th consecutive). Catalyst gate fails — pre-market HOLD. UNEXPECTED STATE: 12 VGK shares filled at $90.78 (+$0.42 unrealized) plus open trailing_stop BUY for 14 more VGK (hwm 90.775, trail 10%, TIF day) — neither pre-approved in today's RESEARCH-LOG. Flagged for midday reconciliation. Infra blockers persist: yfinance TLS Day 37, SPY macro unverifiable (last 7/31 $741.69 < MA20 $745.58), broker trailing-stop infra Day 37. Earnings exclusions: AAPL/AMZN/GOOGL through ~8/6, PLTR AH tonight, AMD Tue AH, LLY/CAT/DIS this week. Weekly buy budget 2/3 remaining."
 }
