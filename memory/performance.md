@@ -4117,3 +4117,29 @@ Trades executed: **none.**
 Risk posture: cash 98.9% (≥20% ✅), exposure 1.1% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 2/3 remaining.
 
 Carry-forward: RECONCILE VGK position + open 14-share buy order (no catalyst), yfinance TLS Day 37, broker trailing-stop infra Day 37, SPY macro gate, AAPL/AMZN/GOOGL 5-day earnings exclusion, PLTR AH tonight, AMD Tue AH, LLY/CAT/DIS this week, SOX rout continuation risk, NFP Fri.
+
+
+### Midday-Scan Log — 2026-08-03 (Monday — session: claude/exciting-bohr-c4i73o)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (12:30 ET) |
+| Cash | ~$97,882 |
+| Equity | ~$99,153 |
+| Long Market Value | $1,270.08 |
+| Open Positions | 1 / 6 (VGK 14 sh @ $90.79, -$0.96 unrealized / -0.08%) |
+| Trades This Week | 1 / 3 |
+| Decision | **NO_TRADE** — position holds, one defensive cancel executed |
+
+Midday rule checks:
+- Cut losers ≤ -7% ✅ N/A (VGK -0.08%, well within tolerance)
+- Tighten stops on winners ≥ +15/+20% ✅ N/A (VGK not at profit thresholds)
+- Thesis-break scan ✅ VGK near 52-week high $91.07, no negative catalysts, EU rotation intact
+
+Reconciliation action: Market-open flagged an open 14-share trailing_stop BUY on VGK (GTC through 2026-10-30, hwm $90.685, trail 10%, would trigger BUY at ~$99.75) with no pre-approved catalyst. **CANCELED via `trade.py cancel-all`** (HTTP 207); post-cancel `research.py orders` returned `[]`. Position itself (14 VGK shares) retained — no cut trigger, thesis intact — but flagged for weekly review to identify unauthorized entry session.
+
+Trades executed: **none** (only order cancellation).
+
+Risk posture: cash 98.9% (≥20% ✅), exposure 1.3% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 2/3 remaining.
+
+Carry-forward: unauthorized-entry investigation for VGK (weekly review agenda), yfinance TLS Day 37, broker trailing-stop infra Day 37, SPY macro gate, PLTR earnings AH tonight, AMD Tue AH, LLY/CAT/DIS this week, AAPL/AMZN/GOOGL 5-day earnings exclusion through ~8/6, SOX rout continuation risk, NFP Friday.
