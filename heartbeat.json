@@ -1,13 +1,13 @@
 {
-  "last_routine": "End of Day",
-  "last_run_iso": "2026-07-31T16:15:00-04:00",
-  "session_branch": "claude/sleepy-goldberg-lgrsdh",
+  "last_routine": "Pre-Market Research",
+  "last_run_iso": "2026-08-03T09:00:00-04:00",
+  "session_branch": "claude/gallant-lamport-gkk92x",
   "status": "ok",
-  "decision": "FLAT_EOD",
+  "decision": "HOLD",
   "consecutive_no_trade_market_open": 13,
   "cash": 98972.19,
   "equity": 98972.19,
   "open_positions": 0,
   "trades_this_week": 0,
-  "notes": "EOD flat — 13th consecutive cash-only close since AMD exit. Day P&L $0.00 (0.00%). Yesterday close $98,972.19 → today $98,972.19. Zero trades today, 0/3 weekly buys used. Cumulative -$1,027.81 (-1.03%) since inception. Carry-forward: yfinance TLS Day 36, broker trailing-stop gap Day 36, SPY macro gate fail, AAPL/AMZN/GOOGL 5-day earnings exclusion, MSFT RSI overextended, FOMC hawkish digest. Weekly Review at 17:00 ET."
+  "notes": "Pre-market HOLD (14th consecutive). yfinance TLS Day 37 — MA20/MA50/RSI-14 unreadable; SPY macro gate unverifiable (last 7/31 $741.69 < MA20 $745.58). Broker trailing-stop infra Day 37. ES +0.63% on Iran de-escalation, WTI -6%. Rotation: Tech/Semis → Financials/Healthcare (SOX rout continuing). Earnings this week: PLTR (tonight), AMD (Tue), LLY/CAT/DIS. AAPL/AMZN/GOOGL still in 5-day exclusion. Weekly buy budget fresh 3/3. No trade ideas cleared gates."
 }
