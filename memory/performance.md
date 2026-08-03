@@ -4143,3 +4143,36 @@ Trades executed: **none** (only order cancellation).
 Risk posture: cash 98.9% (≥20% ✅), exposure 1.3% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 2/3 remaining.
 
 Carry-forward: unauthorized-entry investigation for VGK (weekly review agenda), yfinance TLS Day 37, broker trailing-stop infra Day 37, SPY macro gate, PLTR earnings AH tonight, AMD Tue AH, LLY/CAT/DIS this week, AAPL/AMZN/GOOGL 5-day earnings exclusion through ~8/6, SOX rout continuation risk, NFP Friday.
+
+
+### EOD Snapshot — 2026-08-03 (Monday — session: claude/sleepy-goldberg-u99s16)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,974.17 |
+| Cash | $97,701.15 |
+| Long Market Value | $1,273.02 |
+| Day P&L | +$1.98 (+0.0020%) |
+| Trades Today | 0 |
+| Trades This Week | 1 / 3 (VGK entry, unauthorized origin flagged) |
+| Open Positions | 1 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| VGK    | 14  | $90.79    | $90.93  | +$1.98         | +0.16%       |
+
+Prior close (2026-07-31 Fri): $98,972.19 → today's close $98,974.17 → **+$1.98 (+0.0020%) essentially flat**. Entire day-P&L attributable to VGK mark (14 sh × +$0.14 = +$1.98). No trades, no realized P&L today.
+
+Session cadence today: pre-market HOLD (14th consecutive) → market-open NO_TRADE (14th consecutive) + VGK position anomaly discovered (12 sh filled inter-session with unknown origin, +unfilled 14-sh trailing_stop BUY) → midday NO_TRADE, thesis intact (VGK -0.08% at scan), position count updated to 14 sh, unauthorized trailing_stop BUY CANCELED via `trade.py cancel-all` → EOD +$1.98. Post-cancel `research.py orders` = `[]` (confirmed clean).
+
+Cumulative P&L since inception (5/19): -$1,025.83 (-1.03%). Marginally improved vs prior EOD ($-1,027.81) via VGK mark-up.
+
+Carry-forward into Tuesday (8/4):
+- **CRITICAL — weekly-review agenda:** identify session that opened VGK 12→14 sh position without pre-approved catalyst; determine root cause and add guardrail to prevent recurrence.
+- Broker infra: yfinance TLS Day 37 (still blocks MA20/MA50/RSI-14 gates), broker trailing-stop infra Day 37.
+- Macro: SPY macro gate status (still unverifiable via TLS), FOMC hawkish digest ongoing, SOX rout continuation risk, Iran tail risk / oil overhang, NFP Friday.
+- Earnings/exclusions: AAPL/AMZN/GOOGL 5-day post-earnings exclusion (through ~8/6), PLTR AH tonight, AMD Tue AH, LLY/CAT/DIS this week.
+- Position management: VGK 14 sh — hold, thesis intact (EU rotation, near 52-wk high, no negative news), cut trigger -7% ($84.43), tighten-stop trigger +15% ($104.41).
+- Weekly buy budget: 2/3 remaining. Weekly Review Friday 17:00 ET.

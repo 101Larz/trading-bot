@@ -1,13 +1,13 @@
 {
-  "last_routine": "Midday Scan",
-  "last_run_iso": "2026-08-03T12:30:00-04:00",
-  "session_branch": "claude/exciting-bohr-c4i73o",
+  "last_routine": "End of Day",
+  "last_run_iso": "2026-08-03T16:15:00-04:00",
+  "session_branch": "claude/sleepy-goldberg-u99s16",
   "status": "ok",
-  "decision": "NO_TRADE",
+  "decision": "EOD_SNAPSHOT",
   "consecutive_no_trade_market_open": 14,
-  "cash": 97882.83,
-  "equity": 99152.91,
+  "cash": 97701.15,
+  "equity": 98974.17,
   "open_positions": 1,
   "trades_this_week": 1,
-  "notes": "Midday scan: VGK 14 sh @ $90.79 (-0.08%, -$0.96) — no cut (well above -7%), no stop tighten (not at +15/+20%), thesis intact (near 52-wk high, no negative news). Defensive action: CANCELED unauthorized open trailing_stop BUY for 14 more VGK shares (GTC through 10/30, hwm $90.685, trail 10%, would trigger BUY at ~$99.75) via cancel-all — no pre-approved catalyst. Post-cancel orders=[]. Position retained pending weekly-review investigation of unauthorized entry origin. Weekly buy budget 2/3 remaining. Infra blockers persist: yfinance TLS Day 37, SPY macro gate, broker trailing-stop infra."
+  "notes": "EOD 8/3: Portfolio $98,974.17 (+$1.98 / +0.0020% vs Fri close $98,972.19). VGK 14 sh @ $90.79 → $90.93 (+$1.98 / +0.16%). No trades today, no open orders (post-midday cancel-all clean). Weekly buy budget 2/3. Cum P&L -$1,025.83 (-1.03%). Carry-forward: weekly-review must investigate unauthorized VGK entry session; yfinance TLS Day 37, broker trailing-stop infra Day 37, AAPL/AMZN/GOOGL earnings exclusion through ~8/6, PLTR AH tonight, AMD Tue AH, NFP Fri."
 }
