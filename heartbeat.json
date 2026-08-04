@@ -1,13 +1,15 @@
 {
-  "last_routine": "Pre-Market Research",
-  "last_run_iso": "2026-08-04T09:00:00-04:00",
-  "session_branch": "claude/gallant-lamport-2m5t0g",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-08-04T13:45:00Z",
+  "last_run_et": "2026-08-04T09:45:00-04:00",
+  "session": "claude/sweet-shannon-vnfmgt",
   "status": "ok",
-  "decision": "HOLD",
-  "consecutive_no_trade_market_open": 14,
-  "cash": 97701.15,
-  "equity": 98975.15,
+  "decision": "NO_TRADE",
+  "consecutive_market_open_no_trades": 15,
+  "portfolio_value": 98982.98,
+  "cash": 97701.14,
+  "long_market_value": 1281.84,
   "open_positions": 1,
   "trades_this_week": 1,
-  "notes": "Pre-market 8/4: HOLD (15th consecutive). Portfolio $98,975.15, VGK 14 sh @ $91.00 (+$2.96/+0.23%). SPY macro gate PASSES first time in ~2 wks (747.03>MA20 745.69>MA50 744.22, RSI 48.4). yahoo-direct fallback working — MA/RSI gates operable. Broker trailing-stop infra Day 38 still hard blocker. Spot-checks: JPM passes gates (px 351.79, RSI 64.7); MSFT overbought (RSI 75); NVDA bearish. Not entering — infra gap + unresolved unauthorized VGK entry investigation. ES +0.6% pre-mkt, 335 earnings today, PLTR AH tonight, AMD AH Tue, NFP Fri. AAPL/AMZN/GOOGL exclusion through ~8/6. Weekly buy budget 2/3."
+  "notes": "Broker trailing-stop infra Day 38 hard blocker; unauthorized VGK entry pending weekly review. VGK held +0.85%."
 }

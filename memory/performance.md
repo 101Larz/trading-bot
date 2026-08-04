@@ -4176,3 +4176,31 @@ Carry-forward into Tuesday (8/4):
 - Earnings/exclusions: AAPL/AMZN/GOOGL 5-day post-earnings exclusion (through ~8/6), PLTR AH tonight, AMD Tue AH, LLY/CAT/DIS this week.
 - Position management: VGK 14 sh — hold, thesis intact (EU rotation, near 52-wk high, no negative news), cut trigger -7% ($84.43), tighten-stop trigger +15% ($104.41).
 - Weekly buy budget: 2/3 remaining. Weekly Review Friday 17:00 ET.
+
+
+### Market-Open Log — 2026-08-04 (Tuesday — session: claude/sweet-shannon-vnfmgt)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market-Open Execution (09:45 ET) |
+| Cash | $97,701.14 |
+| Equity | $98,982.98 |
+| Long Market Value | $1,281.84 |
+| Open Positions | 1 / 6 (VGK 14 sh @ $90.79 → $91.56, +$10.80 / +0.85%) |
+| Trades This Week | 1 / 3 |
+| Decision | **NO_TRADE** (15th consecutive market-open no-trade) |
+
+Buy-rule check:
+- Max 6 open positions ✅ (1/6)
+- Max 3 trades this week ✅ (1/3 consumed, 2 remaining)
+- Max 20% equity per position ✅ (VGK ~1.3%)
+- **Catalyst in today's RESEARCH-LOG ❌** — pre-market HOLD (15th consecutive). Only JPM cleared spot-check gates but was explicitly gated on broker trailing-stop infra (Day 38) + unresolved unauthorized-VGK-entry investigation.
+
+Position management:
+- VGK +0.85% ($10.80 unrealized) — well within cut trigger (-7% @ $84.43); nowhere near trim trigger (+15% @ $104.41). Hold.
+
+Trades executed: **none.**
+
+Risk posture: cash 98.7% (≥20% ✅), exposure 1.3% (≤80% ✅), daily-loss halt n/a. Weekly buy budget 2/3 remaining.
+
+Carry-forward: broker trailing-stop infra Day 38 (hard blocker on new entries), unauthorized-VGK-entry investigation (weekly-review agenda), PLTR AH tonight, AMD AH Wed, AAPL/AMZN/GOOGL post-earnings exclusion through ~8/6, SPY macro gate PASSING (rare — flag for midday), NFP Friday. yfinance TLS Day 38 but `yahoo-direct` fallback operational for MA/RSI.
