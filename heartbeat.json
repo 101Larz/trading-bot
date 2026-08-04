@@ -1,14 +1,17 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-08-04T16:37:45Z",
-  "last_run_et": "2026-08-04T12:37:45-04:00",
-  "session": "claude/exciting-bohr-yxhckc",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-08-04T20:15:00Z",
+  "last_run_et": "2026-08-04T16:15:00-04:00",
+  "session": "claude/sleepy-goldberg-xnn4vk",
   "status": "ok",
   "decision": "NO_ACTION",
-  "portfolio_value": 98985.22,
+  "portfolio_value": 98986.34,
   "cash": 97701.14,
-  "long_market_value": 1284.08,
+  "long_market_value": 1285.20,
   "open_positions": 1,
+  "trades_today": 0,
   "trades_this_week": 1,
-  "notes": "VGK 14 sh +1.03% ($13.04) — no cut/tighten triggered, thesis intact. Broker trailing-stop infra Day 38 still hard-blocker on new entries."
+  "day_pnl_dollars": 12.17,
+  "day_pnl_percent": 0.0123,
+  "notes": "EOD +$12.17 (+0.0123%) — VGK 14sh +1.11%/+$14.16 unrealized, no trades today. Carry: unauthorized-VGK-entry investigation Fri, broker trailing-stop infra Day 38, PLTR AH tonight, AMD AH Wed, NFP Fri."
 }
