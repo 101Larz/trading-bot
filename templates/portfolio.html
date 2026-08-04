@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}My Portfolio{% endblock %}
 {% block page_title %}My Portfolio{% endblock %}
-{% block page_subtitle %}12 personal holdings · all values in EUR · click a row for detail · refreshes every 5 min{% endblock %}
+{% block page_subtitle %}{{ holdings | length }} holdings · all values in EUR · click a row for detail · refreshes every 5 min{% endblock %}
 
 {% block content %}
 
@@ -56,6 +56,13 @@
   .news-meta { font-size: 11px; color: var(--text-lo); }
   .news-empty { padding: 14px; font-size: 12px; color: var(--text-lo); }
 </style>
+
+<!-- ── Toolbar ────────────────────────────────────────────────────── -->
+<div style="display:flex; justify-content:flex-end;">
+  <a href="{{ url_for('portfolio_manage') }}" class="btn-refresh" style="text-decoration:none;">
+    &#9881; Manage Holdings
+  </a>
+</div>
 
 <!-- ── Portfolio summary ──────────────────────────────────────────── -->
 <div class="kpi-grid">

@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+{% block title %}Manage Holdings{% endblock %}
+{% block page_title %}Manage Holdings{% endblock %}
+{% block page_subtitle %}Add, edit shares/price, or remove positions · changes save to memory/portfolio_holdings.json{% endblock %}
+
+{% block content %}
+<style>
+  /* ── Form inputs ── */
+  .form-row {
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end;
+  }
+  .form-group {
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .form-label {
+    font-size: 10px; font-weight: 600; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--text-lo);
+  }
+  .form-field {
+    background: rgba(13,17,23,.5);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-hi);
+    font-size: 13px;
+    padding: 7px 10px;
+    font-family: inherit;
+    transition: border-color .15s;
+    height: 34px;
+  }
+  .form-field:focus { outline: none; border-color: var(--blue); }
+  .form-field::placeholder { color: var(--text-lo); }
+  select.form-field { cursor: pointer; }
+
+  /* ── Table inputs (editable cells) ── */
+  .tbl-input {
+    background: rgba(13,17,23,.4);
+    border: 1px solid rgba(48,54,61,.7);
+    border-radius: 4px;
+    color: var(--text-hi);
+    font-family: var(--font);
+    font-size: 12px;
+    padding: 4px 8px;
+    width: 120px;
+    text-align: right;
+    transition: border-color .15s;
+  }
+  .tbl-input:focus { outline: none; border-color: var(--blue); }
+
+  /* ── Buttons ── */
+  .btn-add {
+    background: rgba(56,189,248,.12); color: var(--blue);
+    border: 1px solid rgba(56,189,248,.3); border-radius: 6px;
+    padding: 7px 16px; font-size: 12px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; height: 34px;
+    transition: all .15s;
+  }
+  .btn-add:hover { background: rgba(56,189,248,.2); }
+
+  .btn-save {
+    background: rgba(63,185,80,.12); color: #3fb950;
+    border: 1px solid rgba(63,185,80,.3); border-radius: 6px;
+    padding: 8px 22px; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+  }
+  .btn-save:hover { background: rgba(63,185,80,.22); }
+
+  .btn-del {
+    background: rgba(248,81,73,.08); color: #f85149;
+    border: 1px solid rgba(248,81,73,.25); border-radius: 5px;
+    padding: 3px 10px; font-size: 11px; font-weight: 600;
+    cursor: pointer; transition: all .15s; white-space: nowrap;
+  }
+  .btn-del:hover { background: rgba(248,81,73,.18); }
+
+  /* ── Status banner ── */
+  .status-bar {
+    padding: 10px 16px; border-radius: var(--radius); font-size: 13px;
+    font-weight: 500; border: 1px solid rgba(56,189,248,.3);
+    background: rgba(56,189,248,.08); color: var(--blue);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .ccy-tag {
+    font-size: 9px; font-weight: 700; letter-spacing: .05em;
+    color: var(--text-lo); background: rgba(48,54,61,.6);
+    border-radius: 3px; padding: 1px 4px; margin-left: 3px;
+    vertical-align: middle;
+  }
+</style>
+
+<!-- ── Status banner ──────────────────────────────────────────── -->
+{% if msg %}
+<div class="status-bar">&#10003; {{ msg }}</div>
+{% endif %}
+
+<!-- ── Back link ──────────────────────────────────────────────── -->
+<div>
+  <a href="{{ url_for('portfolio_page') }}" class="btn-refresh" style="text-decoration:none;">
+    &#8592; Back to Portfolio
+  </a>
+</div>
+
+<!-- ── Add new holding ───────────────────────────────────────── -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Add New Holding</span>
+    <span class="card-badge">name is auto-fetched from yfinance if left blank</span>
+  </div>
+  <div class="card-body">
+    <form method="POST">
+      <input type="hidden" name="action" value="add">
+      <div class="form-row">
+
+        <div class="form-group">
+          <label class="form-label">Ticker *</label>
+          <input type="text" name="ticker" placeholder="e.g. AAPL" required
+                 class="form-field" style="width:100px; text-transform:uppercase;">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input type="text" name="name" placeholder="auto-fetched if blank"
+                 class="form-field" style="width:220px;">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Shares *</label>
+          <input type="number" name="shares" step="any" placeholder="0.000000"
+                 required min="0.000001" class="form-field" style="width:130px;">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Buy Price *</label>
+          <input type="number" name="buy_price" step="any" placeholder="0.00"
+                 required min="0.000001" class="form-field" style="width:120px;">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Currency</label>
+          <select name="currency" class="form-field" style="width:90px;">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">&nbsp;</label>
+          <button type="submit" class="btn-add">+ Add Holding</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ── Current holdings ──────────────────────────────────────── -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Current Holdings</span>
+    <span class="card-badge">{{ holdings | length }} positions · edit shares or price inline then Save</span>
+  </div>
+
+  {% if holdings %}
+  <form method="POST" id="save-form">
+    <input type="hidden" name="action" value="save">
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th class="num">Shares</th>
+            <th class="num">Buy Price</th>
+            <th>Currency</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for h in holdings %}
+          <tr>
+            {# hidden ticker for list-based POST parsing #}
+            <input type="hidden" name="ticker" value="{{ h.ticker }}">
+
+            <td><span class="symbol-badge">{{ h.ticker }}</span></td>
+
+            <td style="color:var(--text-lo); font-size:12px; max-width:200px;
+                       overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+              {{ h.name }}
+            </td>
+
+            <td class="num">
+              <input type="number" name="shares" step="any"
+                     value="{{ h.shares }}" class="tbl-input"
+                     min="0.000001">
+            </td>
+
+            <td class="num">
+              <input type="number" name="buy_price" step="any"
+                     value="{{ h.buy_price }}" class="tbl-input"
+                     min="0.000001">
+            </td>
+
+            <td style="color:var(--text-lo);">
+              {{ h.currency }}
+              <span class="ccy-tag">{{ {"USD":"$","EUR":"€","GBP":"£"}.get(h.currency, h.currency) }}</span>
+            </td>
+
+            <td>
+              <button type="button" class="btn-del"
+                      onclick="deleteHolding('{{ h.ticker | e }}')">
+                &#10005; Delete
+              </button>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex; justify-content:flex-end; align-items:center;
+                gap:16px; padding: 14px 18px; border-top: 1px solid var(--border);">
+      <span style="font-size:11px; color:var(--text-lo);">
+        Edit shares or buy price above, then save all at once
+      </span>
+      <button type="submit" class="btn-save">&#10003; Save Changes</button>
+    </div>
+  </form>
+
+  {% else %}
+  <div style="padding:32px; text-align:center; color:var(--text-lo); font-size:13px;">
+    No holdings yet. Add your first position using the form above.
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+function deleteHolding(ticker) {
+  if (!confirm('Remove ' + ticker + ' from your portfolio?')) return;
+  const f  = document.createElement('form');
+  f.method = 'POST';
+  const a1 = document.createElement('input');
+  a1.type = 'hidden'; a1.name = 'action'; a1.value = 'delete';
+  const a2 = document.createElement('input');
+  a2.type = 'hidden'; a2.name = 'ticker'; a2.value = ticker;
+  f.appendChild(a1);
+  f.appendChild(a2);
+  document.body.appendChild(f);
+  f.submit();
+}
+
+// Disable auto-refresh on this page
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof clearInterval !== 'undefined' && typeof refreshTimer !== 'undefined') {
+    clearInterval(refreshTimer);
+  }
+  const el = document.getElementById('refresh-timer');
+  if (el) el.textContent = '—';
+});
+window.refreshData = function () { location.reload(); };
+</script>
+{% endblock %}

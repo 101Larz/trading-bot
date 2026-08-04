@@ -14,7 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 import yfinance as yf
-from flask import Flask, render_template, jsonify, abort
+from flask import Flask, render_template, jsonify, abort, redirect, request, url_for
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -486,20 +486,32 @@ def api_clock():
 # Personal portfolio — tickers, signals, regime, news
 # ---------------------------------------------------------------------------
 
-PERSONAL_HOLDINGS = [
-    {"ticker": "WDC",     "name": "Western Digital",          "shares": 0.43003312,  "buy_price": 268.82,  "currency": "USD"},
-    {"ticker": "ASML",    "name": "ASML Holding",             "shares": 0.13747919,  "buy_price": 1252.60, "currency": "EUR"},
-    {"ticker": "MU",      "name": "Micron Technology",        "shares": 0.20603656,  "buy_price": 163.62,  "currency": "USD"},
-    {"ticker": "AMAT",    "name": "Applied Materials",        "shares": 0.16546614,  "buy_price": 350.34,  "currency": "USD"},
-    {"ticker": "LRCX",    "name": "Lam Research",             "shares": 0.26794250,  "buy_price": 240.61,  "currency": "USD"},
-    {"ticker": "SNDK",    "name": "SanDisk",                  "shares": 0.05929092,  "buy_price": 644.45,  "currency": "USD"},
-    {"ticker": "STX",     "name": "Seagate Technology",       "shares": 0.05853506,  "buy_price": 419.58,  "currency": "USD"},
-    {"ticker": "VUAG.L",  "name": "Vanguard S&P 500 (GBP Acc)","shares": 5.37787128, "buy_price": 101.743, "currency": "GBP"},
-    {"ticker": "PANW",    "name": "Palo Alto Networks",       "shares": 1.00000000,  "buy_price": 174.83,  "currency": "USD"},
-    {"ticker": "VFEG.L",  "name": "Vanguard FTSE EM ETF (Acc)", "shares": 1.33739782, "buy_price": 61.044,  "currency": "GBP"},
-    {"ticker": "VEUA.L",  "name": "Vanguard FTSE Europe ETF (Acc)","shares": 1.04178269,"buy_price": 49.98,   "currency": "GBP"},
-    {"ticker": "XNAS.DE", "name": "Xtrackers NASDAQ 100",    "shares": 0.24306270,  "buy_price": 43.322,  "currency": "GBP"},
-]
+HOLDINGS_FILE = MEMORY_DIR / "portfolio_holdings.json"
+
+
+def _load_holdings() -> list[dict]:
+    """Read holdings from JSON file; returns [] if file missing or corrupt."""
+    try:
+        with open(HOLDINGS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+
+def _save_holdings(holdings: list[dict]) -> None:
+    """Persist holdings list to JSON file, pretty-printed."""
+    HOLDINGS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(HOLDINGS_FILE, "w", encoding="utf-8") as f:
+        json.dump(holdings, f, indent=2, ensure_ascii=False)
+
+
+def _fetch_ticker_name(ticker: str) -> str:
+    """Try to fetch a human-readable name from yfinance; fall back to ticker."""
+    try:
+        info = yf.Ticker(ticker).info
+        return info.get("shortName") or info.get("longName") or ticker
+    except Exception:
+        return ticker
 
 _CCY_SYMBOL = {"USD": "$", "EUR": "€", "GBP": "£", "GBX": "p"}
 
@@ -691,8 +703,9 @@ def get_personal_portfolio_data() -> tuple[list[dict], dict]:
     2. Fetch all 12 holdings in parallel (6 workers).
     3. Compute EUR totals and return (holdings, totals).
     """
+    raw      = _load_holdings()
     fx_rates = _get_fx_rates()
-    order    = {h["ticker"]: i for i, h in enumerate(PERSONAL_HOLDINGS)}
+    order    = {h["ticker"]: i for i, h in enumerate(raw)}
     results  = {}
     with ThreadPoolExecutor(max_workers=6) as pool:
         futures = {
@@ -701,7 +714,7 @@ def get_personal_portfolio_data() -> tuple[list[dict], dict]:
                 h["ticker"], h["name"], h["shares"],
                 h["buy_price"], h["currency"], fx_rates,
             ): h["ticker"]
-            for h in PERSONAL_HOLDINGS
+            for h in raw
         }
         for future in as_completed(futures):
             data = future.result()
@@ -871,10 +884,84 @@ def portfolio_page():
     )
 
 
+@app.route("/portfolio/manage", methods=["GET", "POST"])
+def portfolio_manage():
+    clock = get_clock()
+
+    if request.method == "POST":
+        action = request.form.get("action", "")
+
+        if action == "add":
+            ticker    = request.form.get("ticker", "").strip().upper()
+            name      = request.form.get("name", "").strip()
+            shares    = request.form.get("shares", "").strip()
+            buy_price = request.form.get("buy_price", "").strip()
+            currency  = request.form.get("currency", "USD").strip().upper()
+            if ticker and shares and buy_price:
+                try:
+                    holdings = _load_holdings()
+                    if not any(h["ticker"] == ticker for h in holdings):
+                        if not name:
+                            name = _fetch_ticker_name(ticker)
+                        holdings.append({
+                            "ticker":    ticker,
+                            "name":      name or ticker,
+                            "shares":    float(shares),
+                            "buy_price": float(buy_price),
+                            "currency":  currency,
+                        })
+                        _save_holdings(holdings)
+                        msg = f"Added {ticker}."
+                    else:
+                        msg = f"{ticker} already exists — edit shares/price in the table below."
+                except ValueError:
+                    msg = "Invalid shares or buy price — must be numbers."
+            else:
+                msg = "Ticker, shares, and buy price are required."
+            return redirect(url_for("portfolio_manage", msg=msg))
+
+        if action == "delete":
+            ticker = request.form.get("ticker", "").strip().upper()
+            if ticker:
+                holdings = [h for h in _load_holdings() if h["ticker"] != ticker]
+                _save_holdings(holdings)
+            return redirect(url_for("portfolio_manage", msg=f"Deleted {ticker}."))
+
+        if action == "save":
+            tickers   = request.form.getlist("ticker")
+            shares_l  = request.form.getlist("shares")
+            prices_l  = request.form.getlist("buy_price")
+            holdings  = _load_holdings()
+            lookup    = {}
+            for t, s, p in zip(tickers, shares_l, prices_l):
+                try:
+                    lookup[t] = {"shares": float(s), "buy_price": float(p)}
+                except ValueError:
+                    pass
+            for h in holdings:
+                if h["ticker"] in lookup:
+                    h["shares"]    = lookup[h["ticker"]]["shares"]
+                    h["buy_price"] = lookup[h["ticker"]]["buy_price"]
+            _save_holdings(holdings)
+            return redirect(url_for("portfolio_manage", msg="Holdings saved."))
+
+        return redirect(url_for("portfolio_manage"))
+
+    msg      = request.args.get("msg")
+    holdings = _load_holdings()
+    return render_template(
+        "portfolio_manage.html",
+        holdings=holdings,
+        msg=msg,
+        clock=clock,
+        last_updated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+    )
+
+
 @app.route("/portfolio/<ticker>")
 def portfolio_detail(ticker: str):
     ticker = ticker.upper()
-    meta = next((h for h in PERSONAL_HOLDINGS if h["ticker"] == ticker), None)
+    meta = next((h for h in _load_holdings() if h["ticker"] == ticker), None)
     if meta is None:
         abort(404)
     fx_rates = _get_fx_rates()
