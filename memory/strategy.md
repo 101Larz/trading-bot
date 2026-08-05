@@ -42,8 +42,10 @@ There is no fixed watchlist. Every pre-market session runs a live Markov + momen
 
 All candidates passing Phases B and C are then checked against:
 - Price > MA20 **and** Price > MA50 (bullish alignment)
-- RSI-14 between 35 and 70 (momentum not overextended)
+- RSI-14 between 35 and 70 at entry (don't chase; RSI > 70 at entry = already extended)
 - No earnings within the next 5 trading days
+
+Note: the **exit** RSI threshold is 80 (higher than the entry cap of 70) — this gap lets winners run from RSI 70 up to 80 before the exit signal fires.
 
 ### Output: Top 3 by Sharpe
 
@@ -72,13 +74,17 @@ The screener re-runs every session — check today's `memory/research/YYYY-MM-DD
 
 ## Exit Criteria
 
-| Trigger | Action |
-|---------|--------|
-| Stop-loss: position down 8% from entry | CLOSE immediately, no exceptions |
-| Profit target: position up 15% | Consider trimming 50% |
-| RSI > 75 (overbought) | Consider full exit |
-| Macro reversal: SPY breaks below 50-day MA | Reduce all positions to 50% |
-| Earnings in < 5 trading days | Exit entirely unless high-conviction thesis |
+| Trigger | Hold Required? | Action |
+|---------|---------------|--------|
+| Stop-loss: position down 7% from entry | No — exits immediately | CLOSE immediately, no exceptions |
+| Trailing stop: price drops 15% from running high | No — Alpaca GTC order | Auto-closed by broker |
+| RSI > 80 (overbought) | Yes — ≥5 days held | Consider full exit |
+| Trend breakdown: price < MA20 AND MA20 < MA50 | Yes — ≥5 days held | Consider full exit |
+| Profit target: position up 15% | Yes — ≥5 days held | Consider trimming 50% |
+| Macro reversal: SPY breaks below 50-day MA | Yes — ≥5 days held | Reduce all positions to 50% |
+| Earnings in < 5 trading days | Yes — ≥5 days held | Exit entirely unless high-conviction thesis |
+
+**Minimum hold period: 5 days.** Signal-based exits (RSI, trend, profit target) are blocked for the first 5 days of a position. Only the hard stop (−7%) and the Alpaca trailing stop (−15%) can close a position before day 5.
 
 ---
 

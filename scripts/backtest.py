@@ -69,10 +69,12 @@ UNIVERSE = [
 ]
 
 # ── Strategy parameters ─────────────────────────────────────────────────────────
-STOP_LOSS_PCT     = 0.07    # hard stop: -7% from entry
-TRAILING_STOP_PCT = 0.10    # trailing stop: -10% from running high
-RSI_LOW           = 35
-RSI_HIGH          = 70
+STOP_LOSS_PCT     = 0.07    # hard stop: -7% from entry (bypasses min-hold)
+TRAILING_STOP_PCT = 0.15    # trailing stop: -15% from running high (was 10%)
+RSI_LOW           = 35      # entry: RSI must be above this
+RSI_BUY_MAX       = 70      # entry: don't buy if RSI > 70 (avoid chasing)
+RSI_SELL          = 80      # exit: sell signal fires when RSI > 80 (was 70)
+MIN_HOLD_DAYS     = 5       # signal exits blocked for first 5 days; hard stop still applies
 MAX_POSITIONS     = 8
 POSITION_SIZE_PCT = 0.08    # 8% of initial capital per trade
 BENCHMARK         = "SPY"
@@ -146,7 +148,7 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
 def _buy_signal(row: dict) -> bool:
     try:
         return (
-            RSI_LOW <= row["RSI"] <= RSI_HIGH
+            RSI_LOW <= row["RSI"] <= RSI_BUY_MAX   # entry cap stays at 70
             and row["Close"] > row["MA20"]
             and row["Close"] > row["MA50"]
             and row["MOM20"] > 0
@@ -155,10 +157,16 @@ def _buy_signal(row: dict) -> bool:
         return False
 
 
-def _sell_signal(row: dict, entry_price: float, running_high: float) -> tuple[bool, str]:
-    """Returns (should_exit, reason)."""
+def _sell_signal(row: dict, entry_price: float, running_high: float,
+                 holding_days: int) -> tuple[bool, str]:
+    """Returns (should_exit, reason).
+
+    Hard stops (stop-loss, trailing-stop) fire at any time.
+    Signal exits (RSI, trend) are blocked until holding_days >= MIN_HOLD_DAYS.
+    """
     close = row["Close"]
 
+    # ── Hard exits — bypass minimum hold ────────────────────────────────────
     hard_stop     = entry_price  * (1 - STOP_LOSS_PCT)
     trailing_stop = running_high * (1 - TRAILING_STOP_PCT)
     exit_floor    = max(hard_stop, trailing_stop)
@@ -166,8 +174,12 @@ def _sell_signal(row: dict, entry_price: float, running_high: float) -> tuple[bo
         reason = "stop-loss" if close <= hard_stop else "trailing-stop"
         return True, reason
 
+    # ── Signal exits — respect minimum hold period ───────────────────────────
+    if holding_days < MIN_HOLD_DAYS:
+        return False, ""
+
     rsi, ma20, ma50 = row.get("RSI"), row.get("MA20"), row.get("MA50")
-    if rsi is not None and not math.isnan(rsi) and rsi > RSI_HIGH:
+    if rsi is not None and not math.isnan(rsi) and rsi > RSI_SELL:   # was RSI > 70, now 80
         return True, "signal-rsi"
     if (ma20 is not None and ma50 is not None
             and not math.isnan(ma20) and not math.isnan(ma50)
@@ -259,7 +271,8 @@ def simulate(all_data: dict[str, pd.DataFrame], initial_capital: float) -> tuple
             close = float(row["Close"])
 
             pos["running_high"] = max(pos["running_high"], close)
-            should_exit, reason = _sell_signal(row, pos["entry_price"], pos["running_high"])
+            should_exit, reason = _sell_signal(row, pos["entry_price"], pos["running_high"],
+                                               pos["days"])
 
             if should_exit:
                 exit_price = close
@@ -487,7 +500,7 @@ def save_report(stats: dict, trades: list, start: str, end: str) -> Path:
         "## Strategy Rules Tested",
         "",
         "**Entry** (all must be true; signal on day T, enter at day T+1 open):",
-        f"- RSI-14 between {RSI_LOW} and {RSI_HIGH}",
+        f"- RSI-14 between {RSI_LOW} and {RSI_BUY_MAX} at entry",
         "- Close > MA20",
         "- Close > MA50",
         "- 1-month momentum > 0%  (close > close 20 bars ago)",
@@ -495,7 +508,8 @@ def save_report(stats: dict, trades: list, start: str, end: str) -> Path:
         "**Exit** (checked at day close; first trigger wins):",
         f"- Hard stop-loss: −{STOP_LOSS_PCT*100:.0f}% from entry price",
         f"- Trailing stop: −{TRAILING_STOP_PCT*100:.0f}% from running high",
-        "- Signal sell: RSI > 70  OR  (close < MA20 AND MA20 < MA50)",
+        f"- Signal sell (≥{MIN_HOLD_DAYS} days held): RSI > {RSI_SELL}  OR  (close < MA20 AND MA20 < MA50)",
+        f"- Minimum hold: {MIN_HOLD_DAYS} days before signal exits (hard stops always active)",
     ]
 
     out.write_text("\n".join(lines), encoding="utf-8")

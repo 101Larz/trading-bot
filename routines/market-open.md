@@ -61,13 +61,28 @@ If any are NO → log reasoning and skip, mark as NO_TRADE.
 
 For each open position with preliminary action "LIKELY SELL":
 
-### Exit Checklist:
-1. Is the position up ≥15%? (consider trimming 50%)
-2. Is RSI > 75? (overbought — consider full exit)
-3. Has the thesis changed? (new negative news, MA crossover down)
-4. Are earnings in < 5 trading days? (exit unless high-conviction)
+### 5A — Hard Stop (always exits immediately, no hold requirement)
+- Position down ≥7% from entry → close now, no questions asked
 
-If any exit trigger is met:
+### 5B — Signal Exits (minimum 5-day hold required)
+
+**Check hold duration first:**
+`python scripts/trade.py days-held [SYMBOL]`
+
+If held < 5 calendar days → skip signal exits. Log "HOLD — minimum hold period (5 days) not yet reached." Hard stop in 5A still applies.
+
+If held ≥5 days, exit if ANY of the following are true:
+
+| Check | Threshold | Reason |
+|-------|-----------|--------|
+| RSI-14 overbought | RSI > 80 | Winner has run its course — lock in gain |
+| Trend breakdown | price < MA20 AND MA20 < MA50 | Bullish structure broken |
+| Profit target | position up ≥15% | Consider trimming 50% |
+| Earnings window | earnings in < 5 trading days | Exit unless high-conviction |
+
+Note: a 15% GTC trailing stop is already placed at time of purchase — Alpaca will auto-close if price drops 15% from the running high without any manual action needed.
+
+If exit triggered:
 1. Get current bid: `python scripts/market_data.py quote [SYMBOL]`
 2. Place sell: `python scripts/trade.py safe-sell [SYMBOL] [QTY] [BID_PRICE]`
 3. Log trade and exit reason in journal

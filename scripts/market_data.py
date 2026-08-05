@@ -312,7 +312,7 @@ def full_snapshot(symbol: str) -> dict:
         "moving_averages": mas,
         "rsi_14": rsi,
         "rsi_signal": (
-            "overbought" if rsi and rsi > 70
+            "overbought" if rsi and rsi > 80
             else "oversold" if rsi and rsi < 30
             else "neutral" if rsi
             else None

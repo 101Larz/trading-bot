@@ -154,7 +154,37 @@ def safe_sell(
 MAX_BUY_POSITIONS = 8        # max concurrent long positions
 MAX_WEEKLY_BUYS = 3          # max buy-side executions Mon–Sun
 MAX_POSITION_EQUITY_PCT = 0.20  # max 20% of equity per position
-TRAILING_STOP_PCT = 10.0     # trailing stop percentage (GTC)
+TRAILING_STOP_PCT = 15.0     # trailing stop percentage (GTC) — widened from 10% to survive pullbacks
+MIN_HOLD_DAYS = 5            # minimum days to hold before signal-based exits (hard stop bypasses this)
+
+
+def days_held(symbol: str) -> int:
+    """Return the number of calendar days since the most recent filled buy for `symbol`.
+
+    Used to enforce MIN_HOLD_DAYS: signal-based sells are blocked until a position
+    has been held for at least MIN_HOLD_DAYS days. Hard stop-loss (-7%) bypasses this.
+    Returns 0 if no filled buy is found (treat as just-entered).
+    """
+    try:
+        r = requests.get(
+            f"{BROKER_BASE}/v2/orders",
+            headers=_headers(),
+            params={"status": "filled", "symbols": symbol, "limit": 50},
+            timeout=10,
+        )
+        r.raise_for_status()
+        buys = [o for o in r.json() if o.get("side") == "buy" and o.get("symbol") == symbol]
+        if not buys:
+            return 0
+        # Most recent filled buy
+        latest = max(buys, key=lambda o: o.get("filled_at") or o.get("created_at") or "")
+        fill_ts = latest.get("filled_at") or latest.get("created_at")
+        if not fill_ts:
+            return 0
+        fill_dt = datetime.fromisoformat(fill_ts.replace("Z", "+00:00"))
+        return (datetime.now(timezone.utc) - fill_dt).days
+    except Exception:
+        return 0
 
 
 def count_trades_this_week() -> int:
@@ -208,7 +238,7 @@ def _log_trade_to_performance(symbol: str, shares: float, est_price: float, orde
 
 
 def buy(symbol: str, shares: float) -> dict:
-    """Validated market buy with immediate 10% trailing stop (GTC).
+    """Validated market buy with immediate 15% trailing stop (GTC).
 
     Rules enforced here (independent of risk.py):
       1. Max 6 concurrent long positions.

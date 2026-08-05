@@ -199,7 +199,7 @@ Apply the technical entry filter:
 |-------|-------------|----------|
 | Price vs MA20 | price > MA20 | TECH:FAIL |
 | Price vs MA50 | price > MA50 | TECH:FAIL |
-| RSI-14 | 35 ≤ RSI ≤ 70 | TECH:FAIL (RSI > 70 = chasing; RSI < 35 = falling knife) |
+| RSI-14 | 35 ≤ RSI ≤ 70 | TECH:FAIL (RSI > 70 at entry = chasing; RSI < 35 = falling knife) |
 | Earnings window | No earnings in next 5 trading days | EARNINGS:BLOCKED |
 
 Check the earnings calendar via WebSearch: `"[TICKER] earnings date"`
@@ -263,10 +263,12 @@ Search: `"[SYMBOL] analyst rating"`
 
 **E. Calculate sizing for each LIKELY BUY:**
 ```
-limit_price = ask × 1.0025
-max_shares  = floor((portfolio_value × 0.08) / limit_price)
-stop_price  = limit_price × 0.92   (8% hard stop)
-target_price = limit_price × 1.15  (15% profit target)
+limit_price  = ask × 1.0025
+max_shares   = floor((portfolio_value × 0.08) / limit_price)
+stop_price   = limit_price × 0.93   (–7% hard stop — fires immediately, no hold-period bypass)
+trail_stop   = running_high × 0.85  (–15% trailing stop from running high)
+target_price = limit_price × 1.15   (15% profit target)
+min_hold     = 5 trading days        (signal exits blocked until day 5; hard stop always active)
 ```
 
 Record the full trade plan (limit, stop, target, shares, est. value) in the journal so market-open can execute without recalculating.

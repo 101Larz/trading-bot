@@ -29,15 +29,39 @@ Calculate daily P&L so far: `(current_portfolio_value - opening_portfolio_value)
 - Update heartbeat with status "halted"
 - **STOP — do not place any more trades today**
 
-## Step 3 — Check Stop-Losses on All Positions
+## Step 3 — Check Stop-Losses and Exit Signals on All Positions
 
-For each open position, recalculate current P&L vs entry:
-`python scripts/market_data.py quote [SYMBOL]`
+For each open position, run:
+`python scripts/market_data.py snapshot [SYMBOL]`
 
-If any position is down ≥8% from entry:
+This gives current price, MA20, MA50, RSI-14.
+
+### 3A — Hard Stop-Loss (always active — no hold period required)
+
+If any position is down ≥7% from entry price:
 1. Close immediately: `python scripts/trade.py close [SYMBOL]`
-2. Log stop-loss execution in journal
+2. Log stop-loss execution in journal with entry price, current price, and % loss
 3. Send notification: `python scripts/notify.py risk "Stop-loss: [SYMBOL] closed midday"`
+
+### 3B — Signal Exits (minimum 5-day hold required)
+
+Check how many calendar days the position has been open:
+`python scripts/trade.py days-held [SYMBOL]`
+
+**Only apply the following exit checks if the position has been held for ≥5 days.**
+If held < 5 days, log "HOLD — minimum hold period not reached" and skip to Step 4.
+
+If held ≥5 days, exit if ANY of the following are true:
+| Signal | Threshold | Action |
+|--------|-----------|--------|
+| RSI-14 overbought | RSI > 80 | Close — winner has run its course |
+| Trend breakdown | price < MA20 AND MA20 < MA50 | Close — bullish structure broken |
+| Trailing stop | price < running_high × 0.85 (−15%) | Close — pullback exceeded tolerance |
+
+For each triggered exit:
+1. `python scripts/trade.py limit-close [SYMBOL] [SHARES] [BID]`
+2. Log exit reason in journal
+3. `python scripts/notify.py trade "[SYMBOL] SELL — [reason]"`
 
 ## Step 4 — Quick Market Pulse via WebSearch
 
