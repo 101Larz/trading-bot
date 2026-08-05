@@ -1,17 +1,17 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-08-05T13:45:00Z",
-  "last_run_et": "2026-08-05T09:45:00-04:00",
-  "session": "claude/sweet-shannon-xwzyty",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-08-05T20:15:00Z",
+  "last_run_et": "2026-08-05T16:15:00-04:00",
+  "session": "claude/sleepy-goldberg-mpef7g",
   "status": "ok",
-  "decision": "HOLD",
-  "portfolio_value": 98988.93,
+  "decision": "EOD_SNAPSHOT",
+  "portfolio_value": 98987.04,
   "cash": 97701.14,
-  "long_market_value": 1287.79,
+  "long_market_value": 1285.9,
   "open_positions": 1,
   "trades_today": 0,
   "trades_this_week": 1,
-  "day_pnl_dollars": 2.03,
-  "day_pnl_percent": 0.00002,
-  "notes": "Market-open HOLD (17th consecutive). No approved catalyst in RESEARCH-LOG — all 3 candidates (MSFT, JPM, QQQ) gated at pre-market on broker trailing-stop infra Day 40 + unauthorized-VGK-entry investigation open. VGK 14sh +1.32%/+$16.75 unrealized; cushion to -7% cut $84.43 ~$7.56/sh (~8.22%); tighten trigger $104.41 distant. SPY macro gate PASSING (last $775.72, price $771.33 > MA20 $747.20 > MA50 $745.20, RSI 59.72). Weekly buys 1/3 used."
+  "day_pnl_dollars": 0.70,
+  "day_pnl_percent": 0.0000071,
+  "notes": "EOD 8/5. Portfolio $98,987.04 (+$0.70 vs prior close $98,986.34, essentially flat). VGK 14sh @ $91.85 +$14.86/+1.17% unrealized. 0 trades today; weekly buys 1/3. Cumulative since inception -$1,012.96/-1.01%. Broker trailing-stop infra Day 40 remains hard blocker. Unauthorized-VGK-entry investigation still open for Fri 8/7 weekly-review. NFP Friday; AMD AH tonight."
 }

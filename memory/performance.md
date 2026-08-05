@@ -4278,3 +4278,36 @@ Position management:
 Trades executed: **none.**
 
 Carry-forward: broker trailing-stop infra Day 40 (hard blocker), unauthorized-VGK-entry investigation open for Fri weekly-review, NFP Friday.
+
+
+### EOD Snapshot — 2026-08-05 (Wednesday — session: claude/sleepy-goldberg-mpef7g)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,987.04 |
+| Cash | $97,701.14 |
+| Long Market Value | $1,285.90 |
+| Day P&L | +$0.70 (+0.00071%) |
+| Trades Today | 0 |
+| Trades This Week | 1 / 3 (VGK entry, unauthorized origin flagged) |
+| Open Positions | 1 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| VGK    | 14  | $90.79    | $91.85  | +$14.86        | +1.17%       |
+
+Prior close (2026-08-04 Tue): $98,986.34 → today's close $98,987.04 → **+$0.70 (+0.00071%) essentially flat**. VGK drifted marginally (+$0.05/sh vs prior close mark). No trades, no realized P&L today.
+
+Session cadence today: pre-market HOLD (16th consecutive) → market-open NO_TRADE (17th consecutive) → midday NO_ACTION, VGK +1.25% → EOD +1.17% / +$14.86 unrealized. Position steady through the session; no cut/tighten triggers hit.
+
+Cumulative P&L since inception (5/19): -$1,012.96 (-1.01%). Marginally improved vs prior EOD (-$1,013.66) via VGK mark drift.
+
+Carry-forward into Thursday (8/6):
+- **CRITICAL — weekly-review agenda (Fri 8/7):** unauthorized-VGK-entry investigation still open; identify session that opened VGK 12→14 sh position without pre-approved catalyst; add guardrail to prevent recurrence.
+- Broker infra: yfinance TLS Day 40 (yahoo-direct fallback operational for MA/RSI); broker trailing-stop infra Day 40 (hard blocker on new entries).
+- Macro: SPY macro gate PASSING (price $771.33 > MA20 $747.20 > MA50 $745.20, RSI 59.72); FOMC hawkish digest ongoing; NFP Friday.
+- Earnings/exclusions: AAPL/AMZN/GOOGL 5-day post-earnings exclusion ending ~8/6; AMD AH tonight (Wed); LLY/CAT/DIS this week.
+- Position management: VGK 14 sh — hold, thesis intact (EU rotation, +1.17% unrealized), cut trigger -7% ($84.43), tighten-stop trigger +15% ($104.41).
+- Weekly buy budget: 2/3 remaining. Weekly Review Friday 17:00 ET.
