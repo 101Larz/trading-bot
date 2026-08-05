@@ -32,11 +32,11 @@ Run: `python scripts/research.py positions`
 
 Record the portfolio value, cash balance, and all open positions in the journal's Portfolio Status section.
 
-## Step 3B — Dynamic Markov Screen (68-Ticker Universe → Top 3 Candidates)
+## Step 3B — Dynamic Markov Screen (95-Ticker Universe → Top 3 Candidates)
 
 This step replaces the fixed watchlist with a live daily screen. It runs every pre-market session and produces the ranked candidate list for Step 6.
 
-### Phase A — Markov Scan (all 68 tickers)
+### Phase A — Markov Scan (all 95 tickers)
 
 Run the Markov regime analysis on every ticker in the screening universe. Execute from the skill directory:
 
@@ -44,7 +44,7 @@ Run the Markov regime analysis on every ticker in the screening universe. Execut
 cd ~/.claude/skills/markov-hedge-fund-method
 ```
 
-**Screening universe (run all 68 in order):**
+**Screening universe (run all 95 in order):**
 ```
 uv run python -m markov_hedge_fund_method.run --ticker AAPL --years 10
 uv run python -m markov_hedge_fund_method.run --ticker MSFT --years 10
@@ -114,6 +114,33 @@ uv run python -m markov_hedge_fund_method.run --ticker GLD --years 10
 uv run python -m markov_hedge_fund_method.run --ticker XLE --years 10
 uv run python -m markov_hedge_fund_method.run --ticker XLF --years 10
 uv run python -m markov_hedge_fund_method.run --ticker XLV --years 10
+uv run python -m markov_hedge_fund_method.run --ticker BRK-B --years 10
+uv run python -m markov_hedge_fund_method.run --ticker AVGO --years 10
+uv run python -m markov_hedge_fund_method.run --ticker TMO --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ACN --years 10
+uv run python -m markov_hedge_fund_method.run --ticker MCD --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ABT --years 10
+uv run python -m markov_hedge_fund_method.run --ticker DHR --years 10
+uv run python -m markov_hedge_fund_method.run --ticker NKE --years 10
+uv run python -m markov_hedge_fund_method.run --ticker LIN --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ORCL --years 10
+uv run python -m markov_hedge_fund_method.run --ticker PM --years 10
+uv run python -m markov_hedge_fund_method.run --ticker NEE --years 10
+uv run python -m markov_hedge_fund_method.run --ticker RTX --years 10
+uv run python -m markov_hedge_fund_method.run --ticker AMGN --years 10
+uv run python -m markov_hedge_fund_method.run --ticker SBUX --years 10
+uv run python -m markov_hedge_fund_method.run --ticker IBM --years 10
+uv run python -m markov_hedge_fund_method.run --ticker GE --years 10
+uv run python -m markov_hedge_fund_method.run --ticker INTU --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ISRG --years 10
+uv run python -m markov_hedge_fund_method.run --ticker GILD --years 10
+uv run python -m markov_hedge_fund_method.run --ticker MDLZ --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ADP --years 10
+uv run python -m markov_hedge_fund_method.run --ticker SYK --years 10
+uv run python -m markov_hedge_fund_method.run --ticker MMM --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ELV --years 10
+uv run python -m markov_hedge_fund_method.run --ticker REGN --years 10
+uv run python -m markov_hedge_fund_method.run --ticker ZTS --years 10
 ```
 
 For each ticker, record these four values:
@@ -140,9 +167,28 @@ Keep only tickers passing **all four** of these gates:
 
 Tickers failing any gate → mark **MARKOV:FAIL** in the journal. Do not trade them today regardless of any other signal.
 
-### Phase C — Technical Filter (on Markov-qualified candidates only)
+### Phase C — Momentum Filter (1-Month Return)
 
-For each ticker that passed Phase B, run:
+For each ticker that passed Phase B, compute the 1-month price return using the bars already available from the Markov run. If you need the closes explicitly, run:
+
+```
+python scripts/market_data.py snapshot [TICKER]
+```
+
+Compute:
+```
+momentum_1m = (close_today - close_20_bars_ago) / close_20_bars_ago × 100
+```
+
+| Check | Requirement | If fails |
+|-------|-------------|----------|
+| 1-month return | > 0% (price today > price 20 trading days ago) | MOMENTUM:FAIL |
+
+Tickers failing this gate → mark **MOMENTUM:FAIL** in the journal and drop from further analysis. Rationale: positive 1-month momentum confirms the Markov Bull regime is backed by real recent price action, not a stale classification.
+
+### Phase D — Technical Filter (on Markov + momentum qualified candidates only)
+
+For each ticker that passed Phases B and C, run:
 ```
 python scripts/market_data.py snapshot [TICKER]
 ```
@@ -158,9 +204,9 @@ Apply the technical entry filter:
 
 Check the earnings calendar via WebSearch: `"[TICKER] earnings date"`
 
-### Phase D — Rank and Select Top 3
+### Phase E — Rank and Select Top 3
 
-From the candidates that passed both Phase B and Phase C, rank by **Sharpe score descending**. Take the top 3. These are today's trade candidates.
+From the candidates that passed Phases B, C, and D, rank by **Sharpe score descending**. Take the top 3. These are today's trade candidates.
 
 Build a summary table in the journal:
 
@@ -200,7 +246,7 @@ Summarize findings in 2–3 sentences under a "## Macro Context" section in toda
 
 For each of the top 3 candidates:
 
-**A. Market data is already pulled** (from Phase C of Step 3B — no need to re-run). Confirm you have: current price, MA20, MA50, RSI-14, trend direction.
+**A. Market data is already pulled** (from Phase D of Step 3B — no need to re-run). Confirm you have: current price, MA20, MA50, RSI-14, trend direction.
 
 **B. Pull Alpaca news:**
 `python scripts/research.py news [SYMBOL]`
@@ -258,9 +304,9 @@ Append a complete session block:
 [bullet list]
 
 ### Markov Screen Results
-| Ticker | Regime | Signal | Stat Bull% | Sharpe | RSI | Tech | Decision |
-|--------|--------|--------|------------|--------|-----|------|----------|
-[one row per screened ticker — PASS or reason for FAIL]
+| Ticker | Regime | Signal | Stat Bull% | Sharpe | Momentum 1M | RSI | Tech | Decision |
+|--------|--------|--------|------------|--------|-------------|-----|------|----------|
+[one row per screened ticker — PASS or reason for FAIL (MARKOV:FAIL / MOMENTUM:FAIL / TECH:FAIL)]
 
 ### Screened Candidates
 [ranked top 3 table with full entry/stop/target plan]

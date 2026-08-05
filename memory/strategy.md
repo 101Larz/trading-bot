@@ -10,35 +10,37 @@ This bot is a disciplined, trend-following momentum trader. We do not predict th
 
 ---
 
-## Dynamic Screening Universe (68 tickers — re-screened every pre-market session)
+## Dynamic Screening Universe (95 tickers — re-screened every pre-market session)
 
-There is no fixed watchlist. Every pre-market session runs a live Markov + technical screen across 68 tickers and selects the top 3 candidates ranked by Sharpe. This ensures the bot always trades the best current opportunity rather than a stale list.
+There is no fixed watchlist. Every pre-market session runs a live Markov + momentum + technical screen across 95 tickers and selects the top 3 candidates ranked by Sharpe. This ensures the bot always trades the best current opportunity rather than a stale list.
 
 ### Screening Universe
 
 | Sector | Tickers |
 |--------|---------|
-| Technology | AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, INTC, CRM, ADBE, QCOM, TXN, NFLX |
+| Technology | AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, INTC, CRM, ADBE, QCOM, TXN, NFLX, AVGO, ORCL, INTU, ACN, IBM, ADP |
 | Semis / Storage | AMAT, LRCX, KLAC, MRVL, ARM, ASML, MU, WDC, SNDK, STX |
-| Financials | JPM, V, MA, BAC, GS, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, MMC, AIG, MET, PYPL |
-| Healthcare | UNH, JNJ, ABBV, LLY, MRK, PFE |
-| Consumer | WMT, HD, PG, KO, PEP, COST, DIS |
+| Financials | JPM, V, MA, BAC, GS, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, MMC, AIG, MET, PYPL, BRK-B |
+| Healthcare | UNH, JNJ, ABBV, LLY, MRK, PFE, TMO, ABT, DHR, AMGN, ISRG, GILD, ELV, REGN, ZTS, SYK |
+| Consumer | WMT, HD, PG, KO, PEP, COST, DIS, MCD, NKE, SBUX, MDLZ, PM |
 | Energy | XOM, CVX |
-| Industrials | HON, UPS, CAT, BA |
+| Industrials | HON, UPS, CAT, BA, RTX, GE, MMM |
+| Materials / Utilities | LIN, NEE |
 | ETFs / Broad Market | QQQ (Nasdaq 100), IWM (Russell 2000), EEM (MSCI Emerging Mkts), VGK (FTSE Europe), GLD (Gold), XLE (Energy sector), XLF (Financials sector), XLV (Healthcare sector) |
 
-### Screen Criteria (all four must pass)
+### Screen Criteria (all five must pass, applied in order)
 
-| Gate | Threshold | What it tests |
-|------|-----------|---------------|
-| Current regime | = Bull | Confirms the stock is in an uptrend regime right now |
-| Markov signal | > 0 | P(Bull\|current) > P(Bear\|current) — forward-looking bias is positive |
-| Stationary Bull% | ≥ 40% | Long-run regime mix favours Bull (structural, not just recent) |
-| Walk-forward Sharpe | > 0.20 | The Markov signal generated real alpha over a 10-year backtest |
+| Gate | Phase | Threshold | What it tests |
+|------|-------|-----------|---------------|
+| Current regime | B — Markov Filter | = Bull | Confirms the stock is in an uptrend regime right now |
+| Markov signal | B — Markov Filter | > 0 | P(Bull\|current) > P(Bear\|current) — forward-looking bias is positive |
+| Stationary Bull% | B — Markov Filter | ≥ 40% | Long-run regime mix favours Bull (structural, not just recent) |
+| Walk-forward Sharpe | B — Markov Filter | > 0.20 | The Markov signal generated real alpha over a 10-year backtest |
+| 1-month return | C — Momentum Filter | > 0% | Current price > price 20 trading days ago — regime backed by real recent price action |
 
-### Technical Entry Filter (applied after Markov screen)
+### Technical Entry Filter (Phase D — applied after Markov + momentum screen)
 
-All Markov-qualified candidates are then checked against:
+All candidates passing Phases B and C are then checked against:
 - Price > MA20 **and** Price > MA50 (bullish alignment)
 - RSI-14 between 35 and 70 (momentum not overextended)
 - No earnings within the next 5 trading days
