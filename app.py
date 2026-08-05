@@ -515,37 +515,61 @@ def _fetch_ticker_name(ticker: str) -> str:
         return ticker
 
 def _git_push_holdings() -> tuple[bool, str]:
-    """Commit and push portfolio_holdings.json to GitHub so changes survive Render restarts."""
+    """Commit and push portfolio_holdings.json to GitHub so changes survive Render restarts.
+
+    Works in two environments:
+    - Local dev: existing git clone, uses whatever remote is already configured.
+    - Render: deployed zip with no .git dir; initialises a repo from scratch using
+      GITHUB_TOKEN + GITHUB_REPO env vars.
+    """
     repo = str(ROOT)
+    token = os.getenv("GITHUB_TOKEN", "")
+    gh_repo = os.getenv("GITHUB_REPO", "101Larz/trading-bot")  # e.g. "owner/repo"
+
+    if not token:
+        return False, "GITHUB_TOKEN not set — skipping push."
+
+    remote_url = f"https://{token}@github.com/{gh_repo}.git"
 
     def run(cmd):
-        return subprocess.run(cmd, capture_output=True, text=True, timeout=30, cwd=repo)
+        return subprocess.run(cmd, capture_output=True, text=True, timeout=60, cwd=repo)
 
+    # ── 1. Ensure a git repo exists ──────────────────────────────────────────
+    git_dir = Path(repo) / ".git"
+    if not git_dir.exists():
+        r = run(["git", "init", "-b", "main"])
+        if r.returncode != 0:
+            # Older git without -b; init then rename
+            run(["git", "init"])
+            run(["git", "checkout", "-b", "main"])
+
+    # ── 2. Set identity (required in CI/cloud) ────────────────────────────────
     run(["git", "config", "user.email", "bot@trading-dashboard"])
     run(["git", "config", "user.name",  "Trading Dashboard"])
 
-    token = os.getenv("GITHUB_TOKEN", "")
-    if token:
-        try:
-            url_res = run(["git", "remote", "get-url", "origin"])
-            url = url_res.stdout.strip()
-            if url.startswith("https://") and "@" not in url:
-                authed = url.replace("https://", f"https://{token}@", 1)
-                run(["git", "remote", "set-url", "origin", authed])
-        except Exception:
-            pass
+    # ── 3. Set / update remote with token ────────────────────────────────────
+    check = run(["git", "remote", "get-url", "origin"])
+    if check.returncode == 0:
+        run(["git", "remote", "set-url", "origin", remote_url])
+    else:
+        run(["git", "remote", "add", "origin", remote_url])
 
+    # ── 4. Pull latest main to avoid non-fast-forward rejects ────────────────
+    run(["git", "fetch", "origin", "main"])
+    run(["git", "reset", "--mixed", "origin/main"])
+
+    # ── 5. Stage, commit, push ────────────────────────────────────────────────
     r1 = run(["git", "add", "memory/portfolio_holdings.json"])
     if r1.returncode != 0:
-        return False, f"git add failed: {r1.stderr[:100]}"
+        return False, f"git add failed: {r1.stderr[:120]}"
 
     r2 = run(["git", "commit", "-m", "chore: update portfolio holdings via dashboard"])
     if r2.returncode != 0 and "nothing to commit" not in (r2.stdout + r2.stderr):
-        return False, f"git commit failed: {r2.stderr[:100]}"
+        return False, f"git commit failed: {r2.stderr[:120]}"
 
     r3 = run(["git", "push", "origin", "main"])
     if r3.returncode != 0:
-        return False, f"git push failed: {r3.stderr[:150]}"
+        return False, f"git push failed: {r3.stderr[:200]}"
 
     return True, "Saved and pushed to GitHub."
 
