@@ -4259,3 +4259,22 @@ Carry-forward into Wednesday (8/5):
 - Earnings/exclusions: AAPL/AMZN/GOOGL 5-day post-earnings exclusion (through ~8/6); PLTR AH tonight; AMD AH Wednesday; LLY/CAT/DIS this week.
 - Position management: VGK 14 sh — hold, thesis intact (EU rotation, +1.11% unrealized), cut trigger -7% ($84.43), tighten-stop trigger +15% ($104.41).
 - Weekly buy budget: 2/3 remaining. Weekly Review Friday 17:00 ET.
+
+
+### Midday Log — 2026-08-05 (Wednesday — session: claude/exciting-bohr-2w1czq)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (~12:30 ET) |
+| Open Positions | 1 / 8 (VGK 14 sh @ $90.79 → $91.925, +$15.91 / +1.25%) |
+| Trades This Week | 1 / 3 |
+| Decision | **NO_ACTION** (HOLD VGK) |
+
+Position management:
+- VGK +1.25% — well within cut trigger (−7% @ $84.43); far from tighten triggers (+15% @ $104.41, +20% @ $108.95). Hold.
+- No losers to cut, no winners at tighten threshold.
+- Thesis intact: web search shows no negative EU headlines; VGK near 52-wk high.
+
+Trades executed: **none.**
+
+Carry-forward: broker trailing-stop infra Day 40 (hard blocker), unauthorized-VGK-entry investigation open for Fri weekly-review, NFP Friday.
