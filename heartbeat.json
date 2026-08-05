@@ -1,17 +1,17 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-08-04T20:15:00Z",
-  "last_run_et": "2026-08-04T16:15:00-04:00",
-  "session": "claude/sleepy-goldberg-xnn4vk",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-08-05T13:00:00Z",
+  "last_run_et": "2026-08-05T09:00:00-04:00",
+  "session": "claude/gallant-lamport-sckkt9",
   "status": "ok",
-  "decision": "NO_ACTION",
-  "portfolio_value": 98986.34,
+  "decision": "HOLD",
+  "portfolio_value": 98986.90,
   "cash": 97701.14,
-  "long_market_value": 1285.20,
+  "long_market_value": 1285.76,
   "open_positions": 1,
   "trades_today": 0,
   "trades_this_week": 1,
-  "day_pnl_dollars": 12.17,
-  "day_pnl_percent": 0.0123,
-  "notes": "EOD +$12.17 (+0.0123%) — VGK 14sh +1.11%/+$14.16 unrealized, no trades today. Carry: unauthorized-VGK-entry investigation Fri, broker trailing-stop infra Day 38, PLTR AH tonight, AMD AH Wed, NFP Fri."
+  "day_pnl_dollars": 0.56,
+  "day_pnl_percent": 0.00057,
+  "notes": "Pre-market HOLD (16th consecutive). VGK 14sh +1.16%/+$14.72 unrealized, thesis intact. SPY macro gate PASSING; record-high tape (S&P +1.79% Tue). AMD AH -8.8% on Helios guide disappointment — chip-momentum fragility. Gated candidates: MSFT, JPM, QQQ (all pending broker trailing-stop infra Day 39 + unauthorized-VGK-entry investigation). NFP Friday. Weekly buys 1/3 used."
 }
