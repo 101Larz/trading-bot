@@ -8,6 +8,7 @@ import os
 import re
 import sys
 import json
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -513,6 +514,42 @@ def _fetch_ticker_name(ticker: str) -> str:
     except Exception:
         return ticker
 
+def _git_push_holdings() -> tuple[bool, str]:
+    """Commit and push portfolio_holdings.json to GitHub so changes survive Render restarts."""
+    repo = str(ROOT)
+
+    def run(cmd):
+        return subprocess.run(cmd, capture_output=True, text=True, timeout=30, cwd=repo)
+
+    run(["git", "config", "user.email", "bot@trading-dashboard"])
+    run(["git", "config", "user.name",  "Trading Dashboard"])
+
+    token = os.getenv("GITHUB_TOKEN", "")
+    if token:
+        try:
+            url_res = run(["git", "remote", "get-url", "origin"])
+            url = url_res.stdout.strip()
+            if url.startswith("https://") and "@" not in url:
+                authed = url.replace("https://", f"https://{token}@", 1)
+                run(["git", "remote", "set-url", "origin", authed])
+        except Exception:
+            pass
+
+    r1 = run(["git", "add", "memory/portfolio_holdings.json"])
+    if r1.returncode != 0:
+        return False, f"git add failed: {r1.stderr[:100]}"
+
+    r2 = run(["git", "commit", "-m", "chore: update portfolio holdings via dashboard"])
+    if r2.returncode != 0 and "nothing to commit" not in (r2.stdout + r2.stderr):
+        return False, f"git commit failed: {r2.stderr[:100]}"
+
+    r3 = run(["git", "push", "origin", "main"])
+    if r3.returncode != 0:
+        return False, f"git push failed: {r3.stderr[:150]}"
+
+    return True, "Saved and pushed to GitHub."
+
+
 _CCY_SYMBOL = {"USD": "$", "EUR": "€", "GBP": "£", "GBX": "p"}
 
 
@@ -911,7 +948,8 @@ def portfolio_manage():
                             "currency":  currency,
                         })
                         _save_holdings(holdings)
-                        msg = f"Added {ticker}."
+                        ok, push_msg = _git_push_holdings()
+                        msg = f"Added {ticker}. {push_msg}"
                     else:
                         msg = f"{ticker} already exists — edit shares/price in the table below."
                 except ValueError:
@@ -925,6 +963,8 @@ def portfolio_manage():
             if ticker:
                 holdings = [h for h in _load_holdings() if h["ticker"] != ticker]
                 _save_holdings(holdings)
+                ok, push_msg = _git_push_holdings()
+                return redirect(url_for("portfolio_manage", msg=f"Deleted {ticker}. {push_msg}"))
             return redirect(url_for("portfolio_manage", msg=f"Deleted {ticker}."))
 
         if action == "save":
@@ -943,7 +983,8 @@ def portfolio_manage():
                     h["shares"]    = lookup[h["ticker"]]["shares"]
                     h["buy_price"] = lookup[h["ticker"]]["buy_price"]
             _save_holdings(holdings)
-            return redirect(url_for("portfolio_manage", msg="Holdings saved."))
+            ok, push_msg = _git_push_holdings()
+            return redirect(url_for("portfolio_manage", msg=f"Holdings saved. {push_msg}"))
 
         return redirect(url_for("portfolio_manage"))
 
