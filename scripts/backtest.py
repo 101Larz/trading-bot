@@ -370,7 +370,7 @@ def compute_stats(equity_curve: list, trades: list, benchmark_df: pd.DataFrame |
         "win_rate_pct":         round(win_rate, 1),
         "avg_win_pct":          round(avg_win, 2),
         "avg_loss_pct":         round(avg_loss, 2),
-        "profit_factor":        pf if pf != float("inf") else "∞",
+        "profit_factor":        pf if pf != float("inf") else "inf",
         "avg_holding_days":     round(avg_hold, 1),
         "exit_counts":          exit_counts,
     }
@@ -426,7 +426,7 @@ def save_report(stats: dict, trades: list, start: str, end: str) -> Path:
         "# Backtest Results",
         "",
         f"**Run:** {run_ts}  ",
-        f"**Period:** {start} → {end}  ",
+        f"**Period:** {start} to {end}  ",
         f"**Universe:** {len(UNIVERSE)} tickers  ",
         f"**Capital:** ${initial:,.0f} · {POSITION_SIZE_PCT*100:.0f}% per trade (${initial*POSITION_SIZE_PCT:,.0f}) · max {MAX_POSITIONS} positions  ",
         "",
@@ -519,7 +519,7 @@ def main() -> None:
 
     print(f"\n{'='*62}")
     print(f"  BACKTEST — {args.years}-year period")
-    print(f"  Data range : {start_str} → {end_str}")
+    print(f"  Data range : {start_str} to {end_str}")
     print(f"  Universe   : {len(UNIVERSE)} tickers")
     print(f"  Capital    : ${initial_capital:,.0f}  |  "
           f"${initial_capital*POSITION_SIZE_PCT:,.0f}/trade  |  "
@@ -570,7 +570,7 @@ def main() -> None:
 
     # Save report --------------------------------------------------------------
     out_path = save_report(stats, all_trades, start_str, end_str)
-    print(f"  Report saved → {out_path.relative_to(ROOT)}\n")
+    print(f"  Report saved -> {out_path.relative_to(ROOT)}\n")
 
 
 if __name__ == "__main__":
