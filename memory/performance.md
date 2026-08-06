@@ -4328,3 +4328,24 @@ Fix: `_wait_for_fill(order_id, max_wait=30)` polls order status every 1 s until 
 Verified live: `python trade.py trail VGK 14 15` accepted by Alpaca — `trail_percent=15`, `hwm=$91.85`, `stop_price=$78.07`, GTC. Test order c39baced cancelled after verification.
 
 **Bot is now clear to place new entries when all other gates pass (SPY macro, RSI, MA20/MA50, earnings exclusion, weekly budget).**
+
+
+### Market Open — 2026-08-06 (Thursday — session: claude/sweet-shannon-tjvytl)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market Open Execution (~09:45 ET) |
+| Portfolio Value | $98,990.75 |
+| Cash | $97,701.14 |
+| Long Market Value | $1,289.61 |
+| Open Positions | 1 / 6 (VGK 14 sh @ $90.79 → $92.115, +$18.57 / +1.46%) |
+| Trades This Week | 1 / 3 (VGK, unauthorized origin — weekly-review agenda) |
+| Trades Today | 0 |
+| Decision | **NO_TRADE** (18th consecutive market-open) |
+
+Gate check: buy-rule headroom exists (positions 1/6, trades 1/3), but NFP Friday event-risk gate blocks new entries into first-tier macro print. Trailing-stop infra now RESOLVED — bot cleared to place entries when all other gates pass; today's block is NFP-only.
+
+Position management: VGK +1.46%, well inside cut trigger (−7% @ $84.43) and tighten trigger (+15% @ $104.41). Hold.
+
+Carry-forward: NVDA/QQQ/XLF strategy-consistent candidates from pre-market refresh #4 remain gated to Monday's post-NFP pre-market for fresh screener rerun + entry evaluation.
+
