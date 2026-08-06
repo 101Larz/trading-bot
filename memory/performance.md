@@ -4349,3 +4349,22 @@ Position management: VGK +1.46%, well inside cut trigger (−7% @ $84.43) and ti
 
 Carry-forward: NVDA/QQQ/XLF strategy-consistent candidates from pre-market refresh #4 remain gated to Monday's post-NFP pre-market for fresh screener rerun + entry evaluation.
 
+
+
+### Midday Log — 2026-08-06 (Thursday — session: claude/exciting-bohr-cbzmqf)
+
+| Field | Value |
+|-------|-------|
+| Routine | Midday Scan (~12:30 ET) |
+| Open Positions | 1 / 8 (VGK 14 sh @ $90.79 → $91.885, +$15.35 / +1.21%) |
+| Trades This Week | 1 / 3 |
+| Decision | **NO_ACTION** (HOLD VGK) |
+
+Position management:
+- VGK +1.21% — no cut trigger (−7% @ $84.43), no tighten triggers (+15% @ $104.41 / +20% @ $108.95). Hold.
+- No losers to cut, no winners to tighten.
+- Thesis intact: WebSearch shows no negative EU headlines; VGK trading $91.87–$92.28.
+
+Trades executed: **none.**
+
+Carry-forward: NFP Friday event-risk gate remains active; trailing-stop infra RESOLVED (per today's market-open log); weekly-review Fri 17:00 ET — unauthorized-VGK-entry investigation still open.
