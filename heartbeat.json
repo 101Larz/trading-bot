@@ -1,12 +1,12 @@
 {
-  "last_run": "2026-08-06T14:30:00Z",
-  "routine": "pre-market",
+  "last_run": "2026-08-06T13:45:00Z",
+  "routine": "market-open",
   "status": "ok",
-  "decision": "HOLD",
-  "session": "claude/gallant-lamport-961xqb",
-  "portfolio_value": 98987.04,
+  "decision": "NO_TRADE",
+  "session": "claude/sweet-shannon-tjvytl",
+  "portfolio_value": 98990.75,
   "cash": 97701.14,
   "open_positions": 1,
   "trades_this_week": 1,
-  "notes": "4th pre-market firing today. Trailing-stop infra RESOLVED (commit 4be2121). Only remaining new-entry gate is NFP Friday event-risk. VGK 14sh +1.17%, no triggers. Ideas: NVDA/QQQ/XLF, all gated to Monday post-NFP."
+  "notes": "18th consecutive market-open NO_TRADE. NFP Friday event-risk gate active — no entries into the print. VGK 14sh +1.46% ($92.115), no triggers. Trailing-stop infra RESOLVED; entries cleared for post-NFP Monday. Candidates: NVDA/QQQ/XLF."
 }
