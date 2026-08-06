@@ -4367,4 +4367,37 @@ Position management:
 
 Trades executed: **none.**
 
+
+### EOD Snapshot — 2026-08-06 (Thursday — session: claude/sleepy-goldberg-4phnmy)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,986.76 |
+| Cash | $97,701.14 |
+| Long Market Value | $1,285.62 |
+| Day P&L | -$0.28 (-0.00028%) |
+| Trades Today | 0 |
+| Trades This Week | 1 / 3 (VGK entry, unauthorized origin flagged) |
+| Open Positions | 1 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| VGK    | 14  | $90.79    | $91.83  | +$14.58        | +1.15%       |
+
+Prior close (2026-08-05 Wed): $98,987.04 → today's close $98,986.76 → **-$0.28 (-0.00028%) essentially flat**. VGK drifted marginally (-$0.02/sh vs prior close mark). No trades, no realized P&L today.
+
+Session cadence today: infra fix (trailing-stop blocker RESOLVED, commit 4be2121) → market-open NO_TRADE (18th consecutive, NFP event-risk gate) → midday NO_ACTION, VGK +1.21% → EOD +1.15% / +$14.58 unrealized. Position steady; no cut/tighten triggers hit.
+
+Cumulative P&L since inception (5/19): -$1,013.24 (-1.01%). Marginally worse vs prior EOD (-$1,012.96) via VGK mark drift of -$0.28.
+
+Carry-forward into Friday (8/7):
+- **CRITICAL — weekly-review agenda (Fri 8/7 17:00 ET):** unauthorized-VGK-entry investigation still open; identify session that opened VGK 12→14 sh position without pre-approved catalyst; add guardrail to prevent recurrence.
+- Broker infra: trailing-stop blocker RESOLVED today (commit 4be2121); yfinance TLS Day 40 (yahoo-direct fallback operational for MA/RSI).
+- Macro: NFP print tomorrow (Fri 8/7) — first-tier event-risk gate blocks new entries into print; post-NFP pre-market Monday for fresh screener rerun.
+- Position management: VGK 14 sh — hold, thesis intact (EU rotation, +1.15% unrealized), cut trigger -7% ($84.43), tighten-stop trigger +15% ($104.41).
+- Earnings/exclusions: AAPL/AMZN/GOOGL 5-day post-earnings exclusion ended ~8/6; AMD AH digest pending; LLY/CAT/DIS reported this week.
+- Weekly buy budget: 2/3 remaining (frozen by NFP gate). Weekly Review Friday 17:00 ET.
+
 Carry-forward: NFP Friday event-risk gate remains active; trailing-stop infra RESOLVED (per today's market-open log); weekly-review Fri 17:00 ET — unauthorized-VGK-entry investigation still open.
