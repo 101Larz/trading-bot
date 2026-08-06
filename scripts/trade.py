@@ -130,7 +130,25 @@ def safe_buy(
         return {"status": "rejected", "symbol": symbol, "reasons": ["Market is closed"]}
 
     order = place_limit_order(symbol, qty, "buy", limit_price)
-    return {"status": "submitted", "order": order, "risk_checks": messages}
+
+    # Attempt trailing stop after fill (poll up to 30 s)
+    fill_status, _ = _wait_for_fill(order["id"], max_wait=30)
+    stop_result: dict = {}
+    if fill_status == "filled":
+        try:
+            stop_result = place_trailing_stop(symbol, qty)
+        except Exception as exc:
+            stop_result = {
+                "error": str(exc),
+                "note": f"Buy filled but trailing stop FAILED — fix manually: python trade.py trail {symbol} {qty}",
+            }
+    else:
+        stop_result = {
+            "note": f"Order status '{fill_status}' at 30 s — trailing stop not placed yet. "
+                    f"Run once filled: python trade.py trail {symbol} {qty}",
+        }
+
+    return {"status": "submitted", "order": order, "risk_checks": messages, "trailing_stop": stop_result}
 
 
 def safe_sell(
@@ -215,6 +233,24 @@ def place_trailing_stop(symbol: str, qty: float, trail_percent: float = TRAILING
     r = requests.post(f"{BROKER_BASE}/v2/orders", headers=_headers(), json=payload, timeout=10)
     r.raise_for_status()
     return r.json()
+
+
+def _wait_for_fill(order_id: str, max_wait: int = 30) -> tuple[str, dict]:
+    """Poll order status until filled, canceled, expired, rejected, or timeout.
+
+    Returns (status_string, order_dict). status is one of:
+      "filled" | "canceled" | "expired" | "rejected" | "timeout"
+    """
+    deadline = time.time() + max_wait
+    while time.time() < deadline:
+        r = requests.get(f"{BROKER_BASE}/v2/orders/{order_id}", headers=_headers(), timeout=10)
+        r.raise_for_status()
+        order = r.json()
+        status = order.get("status", "")
+        if status in ("filled", "canceled", "expired", "rejected"):
+            return status, order
+        time.sleep(1)
+    return "timeout", {}
 
 
 def _log_trade_to_performance(symbol: str, shares: float, est_price: float, order_id: str) -> None:
@@ -314,15 +350,25 @@ def buy(symbol: str, shares: float) -> dict:
     buy_order = r.json()
     buy_order["_paper_mode"] = PAPER_MODE
 
-    # Wait for paper fill, then place trailing stop
-    time.sleep(2)
+    # Poll until the buy order fills (up to 30 s), then place trailing stop.
+    # A fixed sleep is unreliable — paper fills can take 3–10 s depending on load.
+    fill_status, _ = _wait_for_fill(buy_order["id"], max_wait=30)
     stop_result: dict = {}
-    try:
-        stop_result = place_trailing_stop(symbol, shares)
-        if PAPER_MODE:
-            print(f"[PAPER] Trailing stop placed: {shares} {symbol}, {TRAILING_STOP_PCT:.0f}% trail GTC")
-    except Exception as exc:
-        stop_result = {"error": str(exc), "note": "Buy filled but trailing stop failed — place manually"}
+    if fill_status == "filled":
+        try:
+            stop_result = place_trailing_stop(symbol, shares)
+            if PAPER_MODE:
+                print(f"[PAPER] Trailing stop placed: {shares} {symbol}, {TRAILING_STOP_PCT:.0f}% trail GTC")
+        except Exception as exc:
+            stop_result = {
+                "error": str(exc),
+                "note": f"Buy filled but trailing stop FAILED — fix manually: python trade.py trail {symbol} {shares}",
+            }
+    else:
+        stop_result = {
+            "error": f"Buy order status '{fill_status}' before trailing stop could be placed",
+            "note": f"Run manually if order fills: python trade.py trail {symbol} {shares}",
+        }
 
     _log_trade_to_performance(symbol, shares, est_price, buy_order.get("id", "unknown"))
 
@@ -373,6 +419,14 @@ if __name__ == "__main__":
         sym = sys.argv[2].upper()
         shares = float(sys.argv[3])
         print(json.dumps(buy(sym, shares), indent=2))
+    elif action == "safe-buy" and len(sys.argv) >= 4:
+        # Usage: python trade.py safe-buy SYMBOL SHARES [ASK_PRICE]
+        # ASK_PRICE is informational; buy() fetches live price internally.
+        sym = sys.argv[2].upper()
+        shares = float(sys.argv[3])
+        print(json.dumps(buy(sym, shares), indent=2))
+    elif action == "days-held" and len(sys.argv) > 2:
+        print(days_held(sys.argv[2].upper()))
     else:
         print(
             "Usage: python trade.py "
@@ -380,5 +434,7 @@ if __name__ == "__main__":
             "|close SYMBOL"
             "|limit-close SYMBOL SHARES BID"
             "|trail SYMBOL SHARES [TRAIL_PCT]"
-            "|buy SYMBOL SHARES]"
+            "|buy SYMBOL SHARES"
+            "|safe-buy SYMBOL SHARES [ASK_PRICE]"
+            "|days-held SYMBOL]"
         )
