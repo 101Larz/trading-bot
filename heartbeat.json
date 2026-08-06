@@ -1,12 +1,12 @@
 {
-  "last_run": "2026-08-06T07:21:20Z",
+  "last_run": "2026-08-06T13:00:00Z",
   "routine": "pre-market",
   "status": "ok",
   "decision": "HOLD",
-  "session": "claude/gallant-lamport-hxjr8f",
+  "session": "claude/gallant-lamport-wk8567",
   "portfolio_value": 98987.04,
   "cash": 97701.14,
   "open_positions": 1,
   "trades_this_week": 1,
-  "notes": "HOLD \u2014 broker trailing-stop infra Day 40 hard blocker; NFP Friday; VGK +1.17%."
+  "notes": "HOLD — second pre-market firing today; state unchanged vs 07:21Z. Broker trailing-stop infra Day 40 blocker; NFP Fri; VGK +1.17%."
 }
