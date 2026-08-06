@@ -1,4 +1,4 @@
-{
+﻿{
   "last_run": "2026-08-06T09:56:00Z",
   "routine": "pre-market",
   "status": "ok",
@@ -8,5 +8,5 @@
   "cash": 97701.14,
   "open_positions": 1,
   "trades_this_week": 1,
-  "notes": "HOLD — third pre-market firing today; state unchanged vs 07:21Z / 13:00Z. Broker trailing-stop infra Day 40 blocker; NFP Fri; VGK +1.17%; SPY macro gate passing."
+  "notes": "Trailing-stop infra blocker RESOLVED (commit 4be2121, 2026-08-06). NFP Friday. VGK +1.17%; SPY macro gate passing. Bot clear for new entries when gates pass."
 }

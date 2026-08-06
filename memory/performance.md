@@ -4311,3 +4311,20 @@ Carry-forward into Thursday (8/6):
 - Earnings/exclusions: AAPL/AMZN/GOOGL 5-day post-earnings exclusion ending ~8/6; AMD AH tonight (Wed); LLY/CAT/DIS this week.
 - Position management: VGK 14 sh — hold, thesis intact (EU rotation, +1.17% unrealized), cut trigger -7% ($84.43), tighten-stop trigger +15% ($104.41).
 - Weekly buy budget: 2/3 remaining. Weekly Review Friday 17:00 ET.
+
+
+### Infrastructure Fix — 2026-08-06 (Thursday)
+
+**Trailing-stop infra blocker RESOLVED — Day 40 → FIXED (commit 4be2121)**
+
+Three root causes identified and fixed in `scripts/trade.py`:
+
+1. **`safe-buy` CLI handler missing** — every routine call to `python trade.py safe-buy SYMBOL QTY PRICE` printed usage and exited silently. Zero buy orders were ever placed by the automated routines over 40 sessions.
+2. **`days-held` CLI handler missing** — midday/market-open hold-period gate could not run.
+3. **`time.sleep(2)` before trailing stop** — paper fills take 3–10 s; the stop was placed against a position that didn't exist yet → Alpaca 422 rejection on every attempted buy.
+
+Fix: `_wait_for_fill(order_id, max_wait=30)` polls order status every 1 s until confirmed filled before placing trailing stop. Both missing CLI handlers now wired to `buy()`.
+
+Verified live: `python trade.py trail VGK 14 15` accepted by Alpaca — `trail_percent=15`, `hwm=$91.85`, `stop_price=$78.07`, GTC. Test order c39baced cancelled after verification.
+
+**Bot is now clear to place new entries when all other gates pass (SPY macro, RSI, MA20/MA50, earnings exclusion, weekly budget).**
