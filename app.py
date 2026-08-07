@@ -9,7 +9,7 @@ import re
 import sys
 import json
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -90,6 +90,43 @@ def get_positions() -> list:
 
 def get_clock() -> dict:
     return _alpaca("/v2/clock")
+
+
+def _local_clock() -> dict:
+    """Market-hours check from the system clock — no Alpaca call.
+
+    Used by personal portfolio pages so they never depend on Alpaca credentials.
+    Does not account for US market holidays; good enough for display purposes.
+    """
+    try:
+        from zoneinfo import ZoneInfo
+        ET = ZoneInfo("America/New_York")
+    except ImportError:
+        ET = timezone(timedelta(hours=-4))  # EDT fallback (no zoneinfo)
+
+    now_et  = datetime.now(ET)
+    day     = now_et.weekday()   # 0 = Monday … 6 = Sunday
+    t_open  = now_et.replace(hour=9,  minute=30, second=0, microsecond=0)
+    t_close = now_et.replace(hour=16, minute=0,  second=0, microsecond=0)
+    is_open = (day < 5) and (t_open <= now_et < t_close)
+
+    if is_open:
+        next_close = t_close
+        next_open  = (now_et + timedelta(days=1)).replace(
+            hour=9, minute=30, second=0, microsecond=0)
+    else:
+        nxt = now_et + timedelta(days=1)
+        while nxt.weekday() >= 5:
+            nxt += timedelta(days=1)
+        next_open  = nxt.replace(hour=9,  minute=30, second=0, microsecond=0)
+        next_close = nxt.replace(hour=16, minute=0,  second=0, microsecond=0)
+
+    return {
+        "is_open":    is_open,
+        "next_open":  next_open.isoformat(),
+        "next_close": next_close.isoformat(),
+        "timestamp":  now_et.isoformat(),
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -935,7 +972,7 @@ def _fetch_ticker_detail(symbol: str, name: str, shares: float,
 @app.route("/portfolio")
 def portfolio_page():
     holdings, totals = get_personal_portfolio_data()
-    clock = get_clock()
+    clock = _local_clock()
     return render_template(
         "portfolio.html",
         holdings=holdings,
@@ -947,7 +984,7 @@ def portfolio_page():
 
 @app.route("/portfolio/manage", methods=["GET", "POST"])
 def portfolio_manage():
-    clock = get_clock()
+    clock = _local_clock()
 
     if request.method == "POST":
         action = request.form.get("action", "")
@@ -1034,7 +1071,7 @@ def portfolio_detail(ticker: str):
         meta["ticker"], meta["name"], meta["shares"],
         meta["buy_price"], meta["currency"], fx_rates,
     )
-    clock = get_clock()
+    clock = _local_clock()
     return render_template(
         "portfolio_detail.html",
         h=data,
