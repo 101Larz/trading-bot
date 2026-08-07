@@ -1,12 +1,13 @@
 {
-  "last_run": "2026-08-07T13:00:00Z",
-  "routine": "pre-market",
+  "last_run": "2026-08-07T13:45:00Z",
+  "routine": "market-open",
   "status": "ok",
   "decision": "NO_TRADE",
-  "session": "claude/gallant-lamport-lcgkci",
-  "portfolio_value": 98986.76,
+  "session": "claude/sweet-shannon-dytdin",
+  "portfolio_value": 98999.08,
   "cash": 97701.14,
   "open_positions": 1,
   "trades_this_week": 1,
-  "notes": "Pre-market Friday 8/7. NFP release 08:30 ET — first-tier event-risk gate blocks new entries into the print. VGK 14sh +1.15% ($91.83), no triggers hit. Weekly Review 17:00 ET — unauthorized-VGK-entry investigation still open. Post-NFP Monday for fresh screener rerun (NVDA/QQQ/XLF carry-forward candidates)."
+  "trades_today": 0,
+  "notes": "19th consecutive market-open NO_TRADE. Pre-market gated NVDA/QQQ/XLF candidates to Monday post-NFP screener rerun — no approved catalyst in today's RESEARCH-LOG. VGK 14 sh +2.12% ($92.71), no cut/tighten triggers hit. Weekly Review 17:00 ET — unauthorized-VGK-entry investigation still open."
 }
