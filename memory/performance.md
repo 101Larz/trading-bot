@@ -4420,4 +4420,40 @@ Gate check: buy-rule headroom exists (positions 1/6, trades 1/3), but **no appro
 
 Position management: VGK +2.12% (post-NFP relief drift +$0.88/sh from pre-market mark), well inside cut trigger (−7% @ $84.43) and tighten trigger (+15% @ $104.41). Hold.
 
+
+### EOD Snapshot — 2026-08-07 (Friday — session: claude/sleepy-goldberg-c1enf0)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,002.38 |
+| Cash | $97,701.14 |
+| Long Market Value | $1,301.24 |
+| Day P&L | +$15.62 (+0.0158%) |
+| Trades Today | 0 |
+| Trades This Week | 1 / 3 (VGK entry, unauthorized origin flagged) |
+| Open Positions | 1 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| VGK    | 14  | $90.79    | $92.95  | +$30.20        | +2.38%       |
+
+Prior close (2026-08-06 Thu): $98,986.76 → today's close $99,002.38 → **+$15.62 (+0.0158%)**, driven entirely by VGK mark drift (+$1.06/sh vs prior close). No trades today, no realized P&L; day gain fully unrealized.
+
+Session cadence today (Fri 8/7 — NFP print day): pre-market NO_TRADE (NFP first-tier event-risk gate, candidates deferred to Monday) → market-open NO_TRADE (19th consecutive, no approved catalyst in today's RESEARCH-LOG) → EOD VGK +2.38% / +$30.20 unrealized. Position held through NFP without incident.
+
+Cumulative P&L since inception (5/19): -$997.62 (-0.998%). Improved vs prior EOD (-$1,013.24) by +$15.62 via VGK mark drift.
+
+Weekly stats (week ending 8/7): trades 1 / 3 budget (VGK entry, unauthorized origin — investigation open); realized P&L $0; unrealized +$30.20 on VGK; open positions 1 / 8; NFP event-risk gate blocked all new entries Mon–Fri.
+
+Carry-forward into Monday (8/10):
+- **CRITICAL — Weekly Review 17:00 ET tonight:** unauthorized-VGK-entry investigation still open; identify session that opened VGK 12→14 sh position without pre-approved catalyst; add guardrail to prevent recurrence.
+- Macro: NFP print released today — post-NFP pre-market Monday for fresh screener rerun of gated NVDA/QQQ/XLF candidates.
+- Broker infra: trailing-stop infra RESOLVED (commit 4be2121); yfinance TLS Day 41 (yahoo-direct fallback operational).
+- Position management: VGK 14 sh — hold, thesis intact (EU rotation, +2.38% unrealized), cut trigger -7% ($84.43), tighten-stop trigger +15% ($104.41).
+- Weekly buy budget: resets Monday; 2/3 unused this week (frozen by NFP gate).
+
+Carry-forward: post-NFP screener rerun Monday pre-market; VGK hold thesis intact; weekly-review Fri 17:00 ET tonight — unauthorized-VGK-entry investigation open.
+
 Carry-forward: Weekly Review 17:00 ET (unauthorized-VGK-entry investigation, screener refresh, Monday entry plan). Weekly buy budget 2/3 remaining, frozen until Monday.
