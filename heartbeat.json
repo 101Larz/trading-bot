@@ -1,13 +1,13 @@
 {
-  "last_run": "2026-08-10T16:40:00Z",
-  "routine": "midday-scan",
+  "last_run": "2026-08-10T20:15:00Z",
+  "routine": "end-of-day",
   "status": "ok",
-  "decision": "NO_ACTION",
-  "session": "claude/exciting-bohr-h6wv40",
-  "portfolio_value": 98883.735,
-  "cash": 97701.14,
+  "decision": "HOLD_BOTH",
+  "session": "claude/sleepy-goldberg-b3h1xr",
+  "portfolio_value": 98888.14,
+  "cash": 89935.12,
   "open_positions": 2,
   "trades_this_week": 1,
   "trades_today": 1,
-  "notes": "Midday HOLD both. NVDA 35 sh -2.26% (-$175.82) — well inside -7% cut ($206.35), trailing stop $188.55 active. VGK 14 sh +1.77% (+$22.49), RSI 77.25 near 80 exit but min-hold satisfied — monitor EOD. Theses intact (NVDA Lancium $3B invest; VGK Stoxx 600 record). CPI Wed 8/12 gates further entries."
+  "notes": "EOD: PV $98,888.14, day P&L -$114.24 (-0.115%). NVDA 35 sh -1.37% (-$106.27) inside -7% cut, trailing-stop $188.55 active, min-hold to 8/17. VGK 14 sh +1.75% (+$22.23), RSI drifted below 80 exit. Combined unrealized -$84.04. Cumulative since 5/19: -$1,111.86 (-1.11%). CPI Wed 8/12 event-risk gate blocks new entries; weekly budget 2/3 remaining, frozen through CPI."
 }
