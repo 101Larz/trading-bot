@@ -1,13 +1,13 @@
 {
-  "last_run": "2026-08-07T20:15:00Z",
-  "routine": "end-of-day",
+  "last_run": "2026-08-10T13:35:00Z",
+  "routine": "pre-market",
   "status": "ok",
-  "decision": "HOLD",
-  "session": "claude/sleepy-goldberg-c1enf0",
-  "portfolio_value": 99002.38,
+  "decision": "TRADE",
+  "session": "claude/gallant-lamport-no6fl7",
+  "portfolio_value": 98997.54,
   "cash": 97701.14,
   "open_positions": 1,
-  "trades_this_week": 1,
+  "trades_this_week": 0,
   "trades_today": 0,
-  "notes": "EOD snapshot appended. Day P&L +$15.62 (+0.0158%), VGK 14 sh +$30.20 unrealized (+2.38%). No trades today; NFP print released, gated candidates deferred to Monday pre-market. Weekly Review 17:00 ET tonight — unauthorized-VGK-entry investigation still open."
+  "notes": "Pre-market research complete. Screener top candidate: NVDA (bullish >MA20/50, RSI 65.61). Plan to enter at market-open, 35 sh @ limit $224.50 (~7.94% NAV). VGK 14 sh hold (+2.00%, RSI 77.25 near exit). SPY bullish RSI 69.55. CPI Wed 8/12 caps second-entry."
 }
