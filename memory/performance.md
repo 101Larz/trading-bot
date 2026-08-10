@@ -4457,3 +4457,45 @@ Carry-forward into Monday (8/10):
 Carry-forward: post-NFP screener rerun Monday pre-market; VGK hold thesis intact; weekly-review Fri 17:00 ET tonight — unauthorized-VGK-entry investigation open.
 
 Carry-forward: Weekly Review 17:00 ET (unauthorized-VGK-entry investigation, screener refresh, Monday entry plan). Weekly buy budget 2/3 remaining, frozen until Monday.
+
+### Trade Entry — 2026-08-10 13:57
+| Field | Value |
+|-------|-------|
+| Symbol | NVDA |
+| Side | BUY |
+| Shares | 35.0 |
+| Est. Price | $221.83 |
+| Est. Value | $7764.05 |
+| Order ID | 4c6505c0-df86-4483-81f3-aff4c65cb128 |
+| Trailing Stop | 15% GTC placed immediately after fill |
+
+
+### Market Open — 2026-08-10 (Monday — session: claude/sweet-shannon-wrfifm)
+
+| Field | Value |
+|-------|-------|
+| Routine | Market Open Execution (~09:57 ET) |
+| Portfolio Value | $98,991.94 (pre-trade) |
+| Cash (pre-trade) | $97,701.14 |
+| Long Market Value (pre-trade) | $1,290.80 |
+| Open Positions | 2 / 6 (VGK 14 sh + NVDA 35 sh new) |
+| Trades This Week | 1 / 3 |
+| Trades Today | 1 (NVDA BUY) |
+| Decision | **TRADE** (NVDA new entry per pre-market plan) |
+
+Gate check — all pass: positions 1/6 pre-trade → 2/6 post; weekly budget 0/3 → 1/3; per-position size 35 sh × $221.83 = $7,764 = 7.84% NAV (< 8% cap); catalyst NVDA in today's RESEARCH-LOG (pre-market screener top rank, MEDIUM confidence); RSI-14 65.61 at entry (< 70 sweet-spot); SPY macro bullish (>MA20/50).
+
+Execution: safe-buy 35 NVDA at market fill (est. $221.83) with 15% trailing stop GTC (stop @ $188.55, HWM $221.82). Order ID `4c6505c0-df86-4483-81f3-aff4c65cb128`. Trailing-stop ID `b2d05d70-b1ba-4060-baa9-3198ae165474`.
+
+Post-fill positions:
+- NVDA 35 @ $221.886 avg → mark $221.906, +$0.68 (+0.009%)
+- VGK 14 @ $90.79 avg → mark $92.20, +$19.76 (+1.55%)
+- Combined unrealized: +$20.44
+
+Risk anchors — NVDA cut trigger −7% @ $206.35 (hard stop); tighten trigger +15% @ $255.17; min-hold clock starts today 8/10 → signal-based exits blocked until 8/17.
+
+Carry-forward:
+- CPI print Wed 8/12 — no second entry until post-CPI regardless of screener output.
+- VGK RSI 77.25 approaching 80 exit threshold — monitor midday/EOD; consider trim if RSI ≥ 80.
+- Weekly buy budget 2/3 remaining.
+- Position slot 2/6 used → 4 slots free.
