@@ -3,6 +3,7 @@ Trading Bot Dashboard — Flask web server.
 Serves four pages (overview, positions, research, trades) and JSON API
 endpoints that the frontend polls every 60 seconds for live data.
 """
+from __future__ import annotations   # PEP 563: defer annotation evaluation (Python 3.9 compat)
 
 import os
 import re
