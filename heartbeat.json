@@ -1,13 +1,13 @@
 {
-  "last_run": "2026-08-10T20:15:00Z",
-  "routine": "end-of-day",
+  "last_run": "2026-08-11T07:25:00Z",
+  "routine": "pre-market",
   "status": "ok",
-  "decision": "HOLD_BOTH",
-  "session": "claude/sleepy-goldberg-b3h1xr",
-  "portfolio_value": 98888.14,
+  "decision": "HOLD",
+  "session": "claude/gallant-lamport-nb1hj7",
+  "portfolio_value": 98876.01,
   "cash": 89935.12,
   "open_positions": 2,
   "trades_this_week": 1,
-  "trades_today": 1,
-  "notes": "EOD: PV $98,888.14, day P&L -$114.24 (-0.115%). NVDA 35 sh -1.37% (-$106.27) inside -7% cut, trailing-stop $188.55 active, min-hold to 8/17. VGK 14 sh +1.75% (+$22.23), RSI drifted below 80 exit. Combined unrealized -$84.04. Cumulative since 5/19: -$1,111.86 (-1.11%). CPI Wed 8/12 event-risk gate blocks new entries; weekly budget 2/3 remaining, frozen through CPI."
+  "trades_today": 0,
+  "notes": "Pre-market 8/11: PV $98,876.01. NVDA 35 sh -1.50% (min-hold to 8/17, trailing-stop $188.55), VGK 14 sh +1.62% (RSI 71.14, below 80 exit). Combined unrealized -$96.17. SPY macro bullish (>MA20/50). CPI print Wed 8/12 — event-risk gate blocks new entries today regardless of screener. Weekly budget 2/3 remaining, frozen through CPI. Decision: HOLD both, no new entries."
 }
