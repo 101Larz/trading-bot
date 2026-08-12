@@ -4583,3 +4583,42 @@ Carry-forward into Wednesday (8/12):
 - Broker infra: trailing-stop infra RESOLVED (HWM advancing correctly); yfinance TLS Day 45 (yahoo-direct fallback operational).
 
 Carry-forward: CPI Wed 8/12 08:30 ET event-risk gate; NVDA min-hold to 8/17; VGK RSI monitoring; weekly budget 2/3 remaining (frozen through CPI).
+
+
+### Market-Open Snapshot — 2026-08-12 (Wednesday — session: claude/sweet-shannon-gicnsi)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,994.51 |
+| Cash | $89,935.11 |
+| Long Market Value | $9,059.40 |
+| Trades Today | 0 |
+| Trades This Week | 1 / 3 |
+| Open Positions | 2 / 6 |
+
+### Open Positions (post-CPI open)
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| NVDA   | 35  | $221.886  | $221.875 | -$0.40         | -0.005%      |
+| VGK    | 14  | $90.789   | $92.425  | +$22.91        | +1.80%       |
+
+Δ vs pre-market (07:30 ET → 09:47 ET): PV **+$127.75** (+0.13%). Combined unrealized recovered from -$105.41 → +$22.51 (+$127.92 swing) on constructive CPI print reception. NVDA back to breakeven from -1.63%; VGK held +1.80%.
+
+**Decision: HOLD — NO TRADE.** Pre-market plan (8/12 07:30) explicitly deferred all new entries to Thu 8/13 pre-market post-CPI digestion. No pre-approved candidate with staged entry/stop levels exists in today's RESEARCH-LOG — the pre-market Trade Ideas table listed only informational watches, not actionable candidates. Fabricating a market-open entry without a screener-ranked, thesis-backed setup would violate the process-first mandate.
+
+Buy-rule gate: positions 2/6 (4 free), weekly 1/3 (2 free), no CPI event-risk gate remaining post-print — the block is now the **absence of a staged candidate**, not a rule violation. Weekly budget preserved for Thu 8/13 screener output.
+
+Risk status:
+- **NVDA**: -0.005%, breakeven. Trailing-stop GTC at $189.03 (HWM $222.385). Min-hold to 8/17 blocks signal exits. Current $221.875 marginal vs HWM $222.385 — no advance yet, watch midday.
+- **VGK**: +1.80%, RSI 70.09 (< 80 exit). Thesis intact.
+
+Weekly stats (week starting 8/10): trades 1 / 3; realized P&L $0; unrealized combined +$22.51; open positions 2 / 6.
+
+Carry-forward into midday scan:
+- Monitor NVDA for HWM advance above $222.385 → trailing-stop lift; VGK for RSI drift toward 80 exit threshold.
+- No losers to cut, no winners to tighten.
+- **Thu 8/13 pre-market**: re-run screener with post-CPI regime read; stage top-Sharpe candidate with concrete entry/stop.
+- yfinance TLS Day 46 — yahoo-direct fallback operational.
+
+Carry-forward: NVDA min-hold to 8/17; weekly budget 2/3 remaining; Thu 8/13 pre-market to stage next candidate.
