@@ -4622,3 +4622,46 @@ Carry-forward into midday scan:
 - yfinance TLS Day 46 — yahoo-direct fallback operational.
 
 Carry-forward: NVDA min-hold to 8/17; weekly budget 2/3 remaining; Thu 8/13 pre-market to stage next candidate.
+
+### EOD Snapshot — 2026-08-12 (Wednesday — session: claude/sleepy-goldberg-0cr6sa)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,052.46 |
+| Cash | $89,935.11 |
+| Long Market Value | $9,117.35 |
+| Day P&L | +$199.91 (+0.202%) |
+| Trades Today | 0 |
+| Trades This Week | 1 / 3 (NVDA entry Mon 8/10) |
+| Open Positions | 2 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| NVDA   | 35  | $221.886  | $223.57 | +$58.85        | +0.76%       |
+| VGK    | 14  | $90.789   | $92.32  | +$21.44        | +1.69%       |
+
+Prior close (Tue 2026-08-11): $98,852.55 → today's close $99,052.46 → **+$199.91 (+0.202%)**. Constructive CPI print (08:30 ET) received well; NVDA flipped from -$0.40 breakeven at market-open to +$58.85 (+0.76%) at close on session-high intraday tick to $225.10; VGK ticked $92.425 → $92.32 (mark drift, still +1.69%). Combined unrealized moved -$119.62 → +$80.29 (+$199.91 swing).
+
+Trailing-stop advancement: NVDA HWM advanced $222.385 → **$225.10** on the intraday high, lifting stop $189.03 → **$191.335** (-15% trail). Trailing-stop GTC (id b2d05d70) intact and armed.
+
+Session cadence today (Wed 8/12 — CPI print day): pre-market NO_TRADE (CPI event-risk gate pre-print) → market-open HOLD post-CPI (no staged candidate — deferred to Thu 8/13 screener) → midday HOLD (NVDA +0.45% mark, VGK +1.48% mark, no thesis breaks) → EOD combined unrealized +$80.29.
+
+Risk status:
+- **NVDA**: +0.76% unrealized, well inside -7% cut trigger ($206.35). Trailing-stop GTC at $191.335 (HWM $225.10). Min-hold until 8/17 blocks signal-based exits. Q2 earnings 8/27 (10 trading days out — past 5-day pre-earnings exit rule).
+- **VGK**: +1.69% unrealized, well inside -7% cut ($84.43) and +15% tighten ($104.41). RSI monitoring continues (was 70.09 at open).
+
+Cumulative P&L since inception (5/19): **-$947.54 (-0.948%)**. Recovered vs Tue EOD (-$1,147.45) by +$199.91 on post-CPI constructive tape.
+
+Weekly stats (week starting 8/10): trades 1 / 3 budget used; realized P&L $0; unrealized combined +$80.29; open positions 2 / 8.
+
+Carry-forward into Thursday (8/13):
+- **Post-CPI regime read** — CPI print digested, no event-risk gate remaining. Weekly budget 2/3 available.
+- **Thu 8/13 pre-market**: re-run screener with post-CPI regime read; stage top-Sharpe candidate with concrete entry/stop levels.
+- Position management: NVDA hold (min-hold to 8/17, trailing-stop advanced to $191.335); VGK hold (thesis intact, monitor RSI).
+- No losers to cut (NVDA +0.76%, VGK +1.69%), no winners to tighten (VGK far from +15% trigger at $104.41).
+- Weekly buy budget: 2/3 remaining.
+- Broker infra: trailing-stop infra RESOLVED (HWM advancing correctly, up $2.72 today); yfinance TLS Day 46 (yahoo-direct fallback operational).
+
+Carry-forward: Thu 8/13 pre-market screener for next candidate; NVDA min-hold to 8/17; NVDA Q2 earnings 8/27 (10 trading days out); VGK RSI monitoring; weekly budget 2/3 remaining.
