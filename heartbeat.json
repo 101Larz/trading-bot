@@ -1,13 +1,13 @@
 {
-  "last_run": "2026-08-11T13:45:00Z",
-  "routine": "market-open",
+  "last_run": "2026-08-12T07:30:00Z",
+  "routine": "pre-market",
   "status": "ok",
   "decision": "HOLD",
-  "session": "claude/sweet-shannon-19dg72",
-  "portfolio_value": 98907.85,
+  "session": "claude/gallant-lamport-hoh8l0",
+  "portfolio_value": 98866.76,
   "cash": 89935.11,
   "open_positions": 2,
   "trades_this_week": 1,
   "trades_today": 0,
-  "notes": "Market-open 8/11: PV $98,907.85 (+$31.84 vs pre-market). NVDA 35 sh -1.18% (recovering, trailing-stop $188.55, min-hold to 8/17), VGK 14 sh +2.17% (RSI <80). Combined unrealized -$63.97 (improved +$32.20 vs pre-market). CPI print Wed 8/12 event-risk gate active — no new entries. Weekly budget 2/3 remaining, frozen. Decision: HOLD, no trades."
+  "notes": "Pre-market 8/12: PV $98,866.76 (-$41.09 vs 8/11 pre-mkt). NVDA 35 sh -1.63% (min-hold to 8/17, trailing-stop $188.55), VGK 14 sh +1.67% (RSI 70.09, below 80 exit). Combined unrealized -$105.41. CPI print 08:30 ET TODAY — event-risk gate active, no new entries pre-print. SPY 770.56 above MA20/MA50 bullish. Weekly budget 2/3 remaining, frozen. Decision: HOLD, no trades."
 }
