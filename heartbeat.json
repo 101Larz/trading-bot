@@ -1,15 +1,15 @@
 {
-  "last_run": "2026-08-13T13:48:00Z",
-  "routine": "market-open",
+  "last_run": "2026-08-13T20:15:00Z",
+  "routine": "end-of-day",
   "status": "ok",
-  "decision": "EXIT_VGK_EXECUTED + NO_NEW_BUYS",
-  "session": "claude/sweet-shannon-qz2saa",
-  "portfolio_value": 99133.32,
+  "decision": "EOD_SNAPSHOT_LOGGED",
+  "session": "claude/sleepy-goldberg-aoa48u",
+  "portfolio_value": 99117.57,
   "cash": 91228.57,
   "open_positions": 1,
   "trades_this_week": 1,
   "trades_today": 1,
-  "day_pnl": 22.42,
-  "day_pnl_pct": 0.0226,
-  "notes": "Market-open 8/13: VGK exit executed per pre-market plan. Sold 14 sh @ $92.16 limit (bid $92.39 − 0.25%), filled at ~$92.39. Realized +$22.42 (14 × $92.39 − 14 × $90.789 avg entry). RSI 82.6 at open confirmed the >80 exit gate; 10-day hold satisfies min-hold. Cash $89,935 → $91,229 (+$1,293). Portfolio value $99,067 → $99,133 (+$66). Positions 2 → 1 (NVDA only, +$137.51 +1.77%). NVDA trailing-stop HWM advanced $225.10 → $227.22, lifting stop $191.335 → $193.137. NO new buys — full 95-ticker Markov screener was not run this pre-market (short-form variant); no Sharpe-ranked candidate staged. RESEARCH-LOG catalyst gate not satisfied. Weekly buy budget preserved at 1/3 (2 slots remain). Carry-forward: midday NVDA HWM monitor; Fri 8/14 pre-market to run full screener for next candidate."
+  "day_pnl": 65.11,
+  "day_pnl_pct": 0.000657,
+  "notes": "EOD 8/13 (Thu): PV $99,052.46 → $99,117.57 (+$65.11 +0.066%). Trade today: VGK sell 14 sh @ ~$92.39 at market-open, realized +$22.42 (RSI 82.6 > 80 exit gate). Open positions 2 → 1 (NVDA only). NVDA +1.58% unrealized ($225.40 vs $221.886 avg), trailing-stop $193.137 (HWM $227.22). Cash 92.0% of PV. Weekly buy budget 1/3 used (2 free). Cumulative -$882.43 since 5/19. Carry-forward: Fri 8/14 pre-market to run full 95-ticker Markov screener; NVDA min-hold to 8/17; NVDA earnings 8/26 → pre-earnings 5-day exit window opens 8/19."
 }
