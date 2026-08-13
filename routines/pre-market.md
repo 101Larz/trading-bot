@@ -32,197 +32,64 @@ Run: `python scripts/research.py positions`
 
 Record the portfolio value, cash balance, and all open positions in the journal's Portfolio Status section.
 
-## Step 3B — Dynamic Markov Screen (95-Ticker Universe → Top 3 Candidates)
+## Step 3B — Read Nightly Screener Results
 
-This step replaces the fixed watchlist with a live daily screen. It runs every pre-market session and produces the ranked candidate list for Step 6.
+The full 95-ticker Markov + momentum + technical screen runs at 02:00 CEST each weekday night as a separate routine (`routines/nightly-screener.md`). Pre-market reads the saved output instead of re-running the screen.
 
-### Phase A — Markov Scan (all 95 tickers)
+### 3B-1: Load screener results
 
-Run the Markov regime analysis on every ticker in the screening universe. Execute from the skill directory:
+Read `memory/screener_results.md`.
+
+Check the **Run:** timestamp at the top. It should be dated **today** (or last night — within 12 hours). If the file is missing or more than 24 hours old:
+- Log a warning: "Nightly screener results stale or missing — running emergency Phase A-E screen now" then run the full screen from `routines/nightly-screener.md` inline before continuing.
+
+### 3B-2: Apply the earnings gate (daily check — changes every day)
+
+From the "Top 10 Candidates" table in `memory/screener_results.md`, take the top candidates in Sharpe order. For each, check the earnings calendar via WebSearch:
 
 ```
-cd ~/.claude/skills/markov-hedge-fund-method
+Search: "[TICKER] earnings date"
 ```
 
-**Screening universe (run all 95 in order):**
-```
-uv run python -m markov_hedge_fund_method.run --ticker AAPL --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MSFT --years 10
-uv run python -m markov_hedge_fund_method.run --ticker NVDA --years 10
-uv run python -m markov_hedge_fund_method.run --ticker GOOGL --years 10
-uv run python -m markov_hedge_fund_method.run --ticker AMZN --years 10
-uv run python -m markov_hedge_fund_method.run --ticker META --years 10
-uv run python -m markov_hedge_fund_method.run --ticker TSLA --years 10
-uv run python -m markov_hedge_fund_method.run --ticker JPM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker V --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MA --years 10
-uv run python -m markov_hedge_fund_method.run --ticker UNH --years 10
-uv run python -m markov_hedge_fund_method.run --ticker JNJ --years 10
-uv run python -m markov_hedge_fund_method.run --ticker XOM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker CVX --years 10
-uv run python -m markov_hedge_fund_method.run --ticker WMT --years 10
-uv run python -m markov_hedge_fund_method.run --ticker HD --years 10
-uv run python -m markov_hedge_fund_method.run --ticker BAC --years 10
-uv run python -m markov_hedge_fund_method.run --ticker PG --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ABBV --years 10
-uv run python -m markov_hedge_fund_method.run --ticker LLY --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MRK --years 10
-uv run python -m markov_hedge_fund_method.run --ticker PFE --years 10
-uv run python -m markov_hedge_fund_method.run --ticker KO --years 10
-uv run python -m markov_hedge_fund_method.run --ticker PEP --years 10
-uv run python -m markov_hedge_fund_method.run --ticker COST --years 10
-uv run python -m markov_hedge_fund_method.run --ticker NFLX --years 10
-uv run python -m markov_hedge_fund_method.run --ticker AMD --years 10
-uv run python -m markov_hedge_fund_method.run --ticker INTC --years 10
-uv run python -m markov_hedge_fund_method.run --ticker DIS --years 10
-uv run python -m markov_hedge_fund_method.run --ticker BA --years 10
-uv run python -m markov_hedge_fund_method.run --ticker PYPL --years 10
-uv run python -m markov_hedge_fund_method.run --ticker CRM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ADBE --years 10
-uv run python -m markov_hedge_fund_method.run --ticker QCOM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker TXN --years 10
-uv run python -m markov_hedge_fund_method.run --ticker HON --years 10
-uv run python -m markov_hedge_fund_method.run --ticker UPS --years 10
-uv run python -m markov_hedge_fund_method.run --ticker CAT --years 10
-uv run python -m markov_hedge_fund_method.run --ticker GS --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MS --years 10
-uv run python -m markov_hedge_fund_method.run --ticker BLK --years 10
-uv run python -m markov_hedge_fund_method.run --ticker SCHW --years 10
-uv run python -m markov_hedge_fund_method.run --ticker SPGI --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MCO --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ICE --years 10
-uv run python -m markov_hedge_fund_method.run --ticker CME --years 10
-uv run python -m markov_hedge_fund_method.run --ticker AON --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MMC --years 10
-uv run python -m markov_hedge_fund_method.run --ticker AIG --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MET --years 10
-uv run python -m markov_hedge_fund_method.run --ticker AMAT --years 10
-uv run python -m markov_hedge_fund_method.run --ticker LRCX --years 10
-uv run python -m markov_hedge_fund_method.run --ticker KLAC --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MRVL --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ARM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ASML --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MU --years 10
-uv run python -m markov_hedge_fund_method.run --ticker WDC --years 10
-uv run python -m markov_hedge_fund_method.run --ticker SNDK --years 10
-uv run python -m markov_hedge_fund_method.run --ticker STX --years 10
-uv run python -m markov_hedge_fund_method.run --ticker QQQ --years 10
-uv run python -m markov_hedge_fund_method.run --ticker IWM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker EEM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker VGK --years 10
-uv run python -m markov_hedge_fund_method.run --ticker GLD --years 10
-uv run python -m markov_hedge_fund_method.run --ticker XLE --years 10
-uv run python -m markov_hedge_fund_method.run --ticker XLF --years 10
-uv run python -m markov_hedge_fund_method.run --ticker XLV --years 10
-uv run python -m markov_hedge_fund_method.run --ticker BRK-B --years 10
-uv run python -m markov_hedge_fund_method.run --ticker AVGO --years 10
-uv run python -m markov_hedge_fund_method.run --ticker TMO --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ACN --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MCD --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ABT --years 10
-uv run python -m markov_hedge_fund_method.run --ticker DHR --years 10
-uv run python -m markov_hedge_fund_method.run --ticker NKE --years 10
-uv run python -m markov_hedge_fund_method.run --ticker LIN --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ORCL --years 10
-uv run python -m markov_hedge_fund_method.run --ticker PM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker NEE --years 10
-uv run python -m markov_hedge_fund_method.run --ticker RTX --years 10
-uv run python -m markov_hedge_fund_method.run --ticker AMGN --years 10
-uv run python -m markov_hedge_fund_method.run --ticker SBUX --years 10
-uv run python -m markov_hedge_fund_method.run --ticker IBM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker GE --years 10
-uv run python -m markov_hedge_fund_method.run --ticker INTU --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ISRG --years 10
-uv run python -m markov_hedge_fund_method.run --ticker GILD --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MDLZ --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ADP --years 10
-uv run python -m markov_hedge_fund_method.run --ticker SYK --years 10
-uv run python -m markov_hedge_fund_method.run --ticker MMM --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ELV --years 10
-uv run python -m markov_hedge_fund_method.run --ticker REGN --years 10
-uv run python -m markov_hedge_fund_method.run --ticker ZTS --years 10
-```
+| Check | Requirement | If fails |
+|-------|-------------|----------|
+| Earnings window | No earnings in next 5 trading days | EARNINGS:BLOCKED — drop from today's list |
 
-For each ticker, record these four values:
-| Ticker | Regime | Markov Signal | Stat Bull% | Sharpe |
-|--------|--------|---------------|------------|--------|
-| ...    | ...    | ...           | ...        | ...    |
+### 3B-3: Refresh RSI for market-open context (live price check)
 
-Where:
-- **Regime** = current state (Bull / Bear / Sideways)
-- **Markov signal** = P(Bull | current state) − P(Bear | current state)
-- **Stat Bull%** = stationary distribution weight on Bull regime
-- **Sharpe** = walk-forward backtest Sharpe ratio
-
-### Phase B — Markov Filter
-
-Keep only tickers passing **all four** of these gates:
-
-| Gate | Threshold | Reason |
-|------|-----------|--------|
-| Current regime | = Bull | Only ride confirmed uptrends |
-| Markov signal | > 0 | Next-state probability favours Bull over Bear |
-| Stat Bull% | ≥ 40% | Long-run regime mix has a Bull majority |
-| Walk-forward Sharpe | > 0.20 | Signal adds value over a 10-year backtest |
-
-Tickers failing any gate → mark **MARKOV:FAIL** in the journal. Do not trade them today regardless of any other signal.
-
-### Phase C — Momentum Filter (1-Month Return)
-
-For each ticker that passed Phase B, compute the 1-month price return using the bars already available from the Markov run. If you need the closes explicitly, run:
+Markov and momentum data from the nightly run is still valid. RSI can shift at the open, so run a quick snapshot on the top 5 survivors (earnings-cleared only):
 
 ```
 python scripts/market_data.py snapshot [TICKER]
 ```
 
-Compute:
-```
-momentum_1m = (close_today - close_20_bars_ago) / close_20_bars_ago × 100
-```
+Apply the RSI gate with today's live reading:
 
-| Check | Requirement | If fails |
-|-------|-------------|----------|
-| 1-month return | > 0% (price today > price 20 trading days ago) | MOMENTUM:FAIL |
+| Check | Requirement |
+|-------|-------------|
+| RSI-14 | 35 ≤ RSI ≤ 70 at entry |
 
-Tickers failing this gate → mark **MOMENTUM:FAIL** in the journal and drop from further analysis. Rationale: positive 1-month momentum confirms the Markov Bull regime is backed by real recent price action, not a stale classification.
+Update the candidate list: drop any ticker whose live RSI now fails the gate, and mark the reason (TECH:FAIL-RSI).
 
-### Phase D — Technical Filter (on Markov + momentum qualified candidates only)
+### 3B-4: Select today's Top 3
 
-For each ticker that passed Phases B and C, run:
-```
-python scripts/market_data.py snapshot [TICKER]
-```
-
-Apply the technical entry filter:
-
-| Check | Requirement | If fails |
-|-------|-------------|----------|
-| Price vs MA20 | price > MA20 | TECH:FAIL |
-| Price vs MA50 | price > MA50 | TECH:FAIL |
-| RSI-14 | 35 ≤ RSI ≤ 70 | TECH:FAIL (RSI > 70 at entry = chasing; RSI < 35 = falling knife) |
-| Earnings window | No earnings in next 5 trading days | EARNINGS:BLOCKED |
-
-Check the earnings calendar via WebSearch: `"[TICKER] earnings date"`
-
-### Phase E — Rank and Select Top 3
-
-From the candidates that passed Phases B, C, and D, rank by **Sharpe score descending**. Take the top 3. These are today's trade candidates.
+From the earnings-cleared, RSI-confirmed survivors, take the **top 3 by Sharpe** (already ranked in the screener results). These are today's trade candidates.
 
 Build a summary table in the journal:
 
 ```
 ### Screened Candidates (YYYY-MM-DD)
 
-| Rank | Ticker | Regime | Signal | Stat Bull% | Sharpe | RSI | Trend | Action |
-|------|--------|--------|--------|------------|--------|-----|-------|--------|
-| 1    | ...    | Bull   | +0.xx  | xx%        | +0.xx  | xx  | bullish | CANDIDATE |
-| 2    | ...    | Bull   | +0.xx  | xx%        | +0.xx  | xx  | bullish | CANDIDATE |
-| 3    | ...    | Bull   | +0.xx  | xx%        | +0.xx  | xx  | bullish | CANDIDATE |
+| Rank | Ticker | Regime | Signal | Stat Bull% | Sharpe | RSI (live) | Trend | Action |
+|------|--------|--------|--------|------------|--------|------------|-------|--------|
+| 1    | ...    | Bull   | +0.xx  | xx%        | +0.xx  | xx         | bullish | CANDIDATE |
+| 2    | ...    | Bull   | +0.xx  | xx%        | +0.xx  | xx         | bullish | CANDIDATE |
+| 3    | ...    | Bull   | +0.xx  | xx%        | +0.xx  | xx         | bullish | CANDIDATE |
 ```
 
-If fewer than 3 candidates pass all filters, record how many passed and note **NO_TRADE** as the pre-market default for the missing slots. If zero pass, the session is NO_TRADE — stop here and skip Step 6.
+If fewer than 3 candidates survive after earnings + RSI gates, note **NO_TRADE** for the missing slots. If zero survive, the session is NO_TRADE — skip Step 6.
 
-**These top 3 candidates replace any fixed watchlist for today's Step 6 research.**
+**These top 3 candidates drive today's Step 6 research.**
 
 ## Step 4 — Check Stop-Losses on Open Positions
 
@@ -246,7 +113,7 @@ Summarize findings in 2–3 sentences under a "## Macro Context" section in toda
 
 For each of the top 3 candidates:
 
-**A. Market data is already pulled** (from Phase D of Step 3B — no need to re-run). Confirm you have: current price, MA20, MA50, RSI-14, trend direction.
+**A. Market data is already available** from the Step 3B-3 live snapshot. Confirm you have: current price, MA20, MA50, RSI-14 (live), trend direction. If any value is missing, re-run: `python scripts/market_data.py snapshot [SYMBOL]`
 
 **B. Pull Alpaca news:**
 `python scripts/research.py news [SYMBOL]`
