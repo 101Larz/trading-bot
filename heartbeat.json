@@ -1,15 +1,15 @@
 {
-  "last_run": "2026-08-13T13:00:00Z",
-  "routine": "pre-market",
+  "last_run": "2026-08-13T13:48:00Z",
+  "routine": "market-open",
   "status": "ok",
-  "decision": "HOLD_NEW_ENTRIES + EXIT_VGK_AT_OPEN",
-  "session": "claude/gallant-lamport-8gjlq0",
-  "portfolio_value": 99067.66,
-  "cash": 89935.11,
-  "open_positions": 2,
+  "decision": "EXIT_VGK_EXECUTED + NO_NEW_BUYS",
+  "session": "claude/sweet-shannon-qz2saa",
+  "portfolio_value": 99133.32,
+  "cash": 91228.57,
+  "open_positions": 1,
   "trades_this_week": 1,
-  "trades_today": 0,
-  "day_pnl": 0.0,
-  "day_pnl_pct": 0.0,
-  "notes": "Pre-market 8/13: PV $99,067.66 (+$15.20 vs 8/12 EOD on continued post-CPI drift). NVDA 35 sh +$75.03 (+0.97%) held (min-hold 8/17, trailing $191.335 GTC, earnings 8/26). VGK 14 sh +$20.46 (+1.61%) — RSI 82.6 > 80 exit trigger, min-hold satisfied (~10 days) → RECOMMEND EXIT at market-open. Full 95-ticker Markov screener NOT run this session (short-form pre-market prompt) — no new buy candidate staged, weekly budget 2/3 preserved. SPY futures +0.08%, RSI 75.21 (elevated). Carry-forward: market-open executes VGK sell (fresh RSI confirm first) + defer new buys pending full screener next pre-market."
+  "trades_today": 1,
+  "day_pnl": 22.42,
+  "day_pnl_pct": 0.0226,
+  "notes": "Market-open 8/13: VGK exit executed per pre-market plan. Sold 14 sh @ $92.16 limit (bid $92.39 − 0.25%), filled at ~$92.39. Realized +$22.42 (14 × $92.39 − 14 × $90.789 avg entry). RSI 82.6 at open confirmed the >80 exit gate; 10-day hold satisfies min-hold. Cash $89,935 → $91,229 (+$1,293). Portfolio value $99,067 → $99,133 (+$66). Positions 2 → 1 (NVDA only, +$137.51 +1.77%). NVDA trailing-stop HWM advanced $225.10 → $227.22, lifting stop $191.335 → $193.137. NO new buys — full 95-ticker Markov screener was not run this pre-market (short-form variant); no Sharpe-ranked candidate staged. RESEARCH-LOG catalyst gate not satisfied. Weekly buy budget preserved at 1/3 (2 slots remain). Carry-forward: midday NVDA HWM monitor; Fri 8/14 pre-market to run full screener for next candidate."
 }

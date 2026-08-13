@@ -4665,3 +4665,62 @@ Carry-forward into Thursday (8/13):
 - Broker infra: trailing-stop infra RESOLVED (HWM advancing correctly, up $2.72 today); yfinance TLS Day 46 (yahoo-direct fallback operational).
 
 Carry-forward: Thu 8/13 pre-market screener for next candidate; NVDA min-hold to 8/17; NVDA Q2 earnings 8/27 (10 trading days out); VGK RSI monitoring; weekly budget 2/3 remaining.
+
+### Market-Open Snapshot — 2026-08-13 (Thursday — session: claude/sweet-shannon-qz2saa)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,133.32 |
+| Cash | $91,228.57 |
+| Long Market Value | $7,904.75 |
+| Trades Today | 1 (VGK sell) |
+| Trades This Week | 1 / 3 (sell doesn't consume buy budget) |
+| Open Positions | 1 / 8 |
+
+### Trade Executed
+
+| Time (ET) | Symbol | Side | Qty | Limit | Fill | Rationale |
+|-----------|--------|------|----:|------:|-----:|-----------|
+| 09:47 | VGK | SELL | 14 | $92.16 | ~$92.39 | RSI 82.6 > 80 exit gate; min-hold ≥ 5 days satisfied (~10 days held). Fresh RSI snapshot at open confirmed 82.6 — signal held. |
+
+**VGK closed.** Realized P&L: **+$22.42** (14 sh × $92.39 fill − $1,271.04 cost basis $90.789 avg entry). Freed 1 position slot + ~$1,293 cash.
+
+### Open Positions (post-VGK-exit)
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| NVDA   | 35  | $221.886  | $225.815 | +$137.51       | +1.77%       |
+
+### Risk Status
+
+- **NVDA**: +1.77% unrealized, well inside -7% cut ($206.35). Trailing-stop GTC ADVANCED to **$193.137** (HWM lifted $225.10 → **$227.22** on today's tick) — up from $191.335 pre-market. Min-hold to 8/17 blocks signal exits.
+- **VGK**: CLOSED. Realized +$22.42.
+- No losers to cut. No winners at +15% tighten trigger.
+
+### Decision: EXIT VGK (executed) + NO NEW BUYS
+
+Rationale:
+1. **VGK exit executed per pre-market plan** — RSI 82.6 confirmed at open, signal-based exit fired cleanly.
+2. **No new buys** — Full 95-ticker Markov screener was not run in pre-market (short-form variant); no Sharpe-ranked candidate is staged. RESEARCH-LOG catalyst gate NOT satisfied for new entries. Weekly budget stays 2/3 available for the next pre-market screener.
+3. **NVDA held** — no signal, protected by min-hold and trailing stop; benefited from HWM lift ($225.10 → $227.22).
+4. **SPY RSI 75+** — approaching overbought; incremental caution on adding fresh long risk even were a candidate staged.
+
+### Weekly Stats (week starting 8/10)
+
+| Metric | Value |
+|--------|-------|
+| Buy trades used | 1 / 3 (NVDA Mon 8/10) |
+| Sell trades | 1 (VGK Thu 8/13) |
+| Realized P&L this week | **+$22.42** |
+| Unrealized combined | +$137.51 (NVDA only) |
+| Open positions | 1 / 8 |
+
+### Carry-forward into midday scan
+
+- Monitor NVDA for further HWM advance above $227.22 → lifts trailing stop above $193.137.
+- Cash $91,228 (92% of PV) — well above 20% min. Weekly budget 2/3 available.
+- **Next pre-market (Fri 8/14)**: run full 95-ticker Markov screener (Phases A–E) to stage next buy candidate.
+- NVDA min-hold to **2026-08-17**; NVDA Q2 earnings **2026-08-26** (pre-earnings 5-day exit window opens 2026-08-19).
+- yfinance TLS Day 47 — yahoo-direct fallback operational.
+
+Carry-forward: NVDA min-hold to 8/17; NVDA earnings 8/26 (5-day window opens 8/19); Fri 8/14 pre-market to run full screener; weekly buy budget 2/3 remaining; VGK exit realized +$22.42.
