@@ -1,11 +1,11 @@
 {
-  "last_run": "2026-08-14T00:18:30Z",
-  "routine": "nightly-screener",
-  "status": "failed",
-  "decision": "SCREENER_ABORTED_SKILL_MISSING",
-  "session": "claude/happy-shannon-3t1aqp",
-  "portfolio_value": 99117.57,
-  "cash": 91228.57,
+  "last_run": "2026-08-14T08:02:00Z",
+  "routine": "pre-market",
+  "status": "ok",
+  "decision": "HOLD",
+  "session": "claude/gallant-lamport-onv5u5",
+  "portfolio_value": 99111.22,
+  "cash": 91228.52,
   "open_positions": 1,
   "trades_this_week": 1,
   "trades_today": 0,
@@ -13,5 +13,5 @@
   "day_pnl_pct": 0,
   "screener_candidates": 0,
   "screener_run_date": "2026-08-14",
-  "notes": "Nightly Screener (02:18 CEST 8/14 Fri) FAILED: markov-hedge-fund-method skill not installed on container and not enabled on account. Phase A could not run on any of the 95 tickers, so no Sharpe/Regime/Markov Signal/Stat Bull% values were produced. memory/screener_results.md written as an explicit failure marker so the 09:00 AM ET pre-market routine sees a clear signal rather than stale data — pre-market fallback: if skill still missing at 09:00, default to NO_TRADE for new buys (CLAUDE.md uncertain-default) and continue managing NVDA under its normal exit rules. Skill needs to be installed at ~/.claude/skills/markov-hedge-fund-method/ (source of the `uv run python -m markov_hedge_fund_method.run` module) before the next nightly firing. This is the first firing since the routine was introduced in commit 573c5b8 — the skill dependency was never verified. Notifying user."
+  "notes": "Pre-market (Fri 8/14) HOLD. Markov screener still failing — markov-hedge-fund-method skill still not installed on container (unchanged since 02:18Z heartbeat). Per CLAUDE.md fallback: NO_TRADE for new buys, continue managing NVDA under normal exit rules. NVDA +1.59% ($225.42) inside min-hold (to 8/17), RSI 63.88 (well under 80 exit gate), trend bullish (>MA20/MA50), trailing-stop $193.137 (HWM $227.22). SPY RSI 76.79 — overbought backdrop reinforces caution. NVDA Q2 earnings 8/26; pre-earnings exit window opens 8/19 (Tue). Weekly buy budget 2/3 remaining. yfinance TLS Day 48 — yahoo-direct fallback operational."
 }
