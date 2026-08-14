@@ -4776,3 +4776,56 @@ Carry-forward into Friday (8/14):
 
 Carry-forward: Fri 8/14 pre-market full screener; NVDA min-hold to 8/17; NVDA earnings 8/26 → pre-earnings exit window opens 8/19; weekly buy budget 2/3 remaining.
 
+
+
+### EOD Snapshot — 2026-08-14 (Friday — session: claude/sleepy-goldberg-ykqzab)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,101.77 |
+| Cash | $91,228.52 |
+| Long Market Value | $7,873.25 |
+| Day P&L | -$15.80 (-0.0159%) |
+| Realized P&L Today | $0.00 |
+| Trades Today | 0 |
+| Trades This Week | 1 buy / 3 (NVDA Mon 8/10) + 1 sell (VGK Thu 8/13) |
+| Open Positions | 1 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| NVDA   | 35  | $221.886  | $224.95 | +$107.23       | +1.38%       |
+
+Prior close (Thu 2026-08-13): $99,117.57 → today's close $99,101.77 → **-$15.80 (-0.0159%)**. Flat-to-negative session: NVDA drifted $225.40 (Thu close) → $224.95 (Fri close), giving back -$0.45/sh × 35 = ~-$15.75 unrealized on the day. No trades executed; cash unchanged at $91,228.52.
+
+Session cadence today (Fri 8/14): pre-market HOLD (Markov screener down — Phase A never ran, no staged candidate; NVDA held under normal exit rules) → market-open HOLD (same — no catalyst gate satisfied) → no midday routine executed → EOD -$15.80. Two-routine day (pre-market + market-open only) per heartbeat cadence.
+
+Trailing-stop status: NVDA HWM unchanged at $227.22 (set Thu 8/13 at market-open); trailing-stop GTC at $193.137 (-15% trail). Current price $224.95 sits $2.27 below HWM — no HWM advance today.
+
+Risk status:
+- **NVDA**: +1.38% unrealized, well inside -7% cut trigger ($206.35). Trailing-stop GTC at $193.137 (HWM $227.22). RSI-14 63.88 at pre-market (< 80 exit gate, > 35 entry floor). Trend bullish (>MA20 $209.28, >MA50 $206.31). Min-hold to 2026-08-17 (Mon) blocks signal-based exits. Q2 earnings 2026-08-26 — 5-day pre-earnings exit window opens 2026-08-19 (Tue).
+- Cash 92.1% of PV — well above 20% min. Weekly buy budget 2/3 remaining (frozen — no catalyst all week).
+
+Cumulative P&L since inception (5/19): **-$898.23 (-0.898%)**. Slight drift from Thu EOD (-$882.43) as NVDA gave back a touch of mark.
+
+Weekly stats (week ending 8/14, week starting 8/10):
+
+| Metric | Value |
+|--------|-------|
+| Buy trades used | 1 / 3 (NVDA Mon 8/10) |
+| Sell trades | 1 (VGK Thu 8/13) |
+| Realized P&L this week | **+$22.42** (VGK exit) |
+| Unrealized combined | +$107.23 (NVDA only) |
+| Open positions EOW | 1 / 8 |
+| Weekly PV Δ | Mon open $99,161.51 → Fri close $99,101.77 = **-$59.74 (-0.060%)** |
+
+Carry-forward into next week (Mon 8/17):
+- **NVDA min-hold expires Mon 8/17** — after Mon close, signal-based exits are unblocked.
+- **NVDA pre-earnings 5-day exit window opens Tue 8/19** — if NVDA still open at Tue close, exit per pre-earnings rule (Q2 earnings 8/26).
+- **Mon 8/17 pre-market**: run full 95-ticker Markov screener (Phases A–E) — Markov skill still missing on container (Day 5 of screener down). If still down, escalate; CLAUDE.md fallback = NO_TRADE remains in force. Weekly buy budget resets to 3.
+- Position management: NVDA hold (trailing-stop $193.137, HWM $227.22, RSI 63.88). No losers to cut, no winners at +15% tighten trigger ($255.17).
+- Macro backdrop: SPY RSI 76.79 near overbought — extra caution on adding fresh long risk into hot tape.
+- Broker infra: trailing-stop working; yfinance TLS Day 48 (yahoo-direct fallback operational); **Markov screener skill NOT installed** (recurring nightly failure — needs container-side fix or skill sync).
+
+Carry-forward: Mon 8/17 pre-market to re-run screener + NVDA min-hold expiry; Tue 8/19 NVDA pre-earnings exit window opens; NVDA earnings 8/26; weekly buy budget resets to 3; Markov skill install still pending (Day 5).
