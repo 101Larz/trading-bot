@@ -4829,3 +4829,30 @@ Carry-forward into next week (Mon 8/17):
 - Broker infra: trailing-stop working; yfinance TLS Day 48 (yahoo-direct fallback operational); **Markov screener skill NOT installed** (recurring nightly failure — needs container-side fix or skill sync).
 
 Carry-forward: Mon 8/17 pre-market to re-run screener + NVDA min-hold expiry; Tue 8/19 NVDA pre-earnings exit window opens; NVDA earnings 8/26; weekly buy budget resets to 3; Markov skill install still pending (Day 5).
+
+
+
+### Market-Open Snapshot — 2026-08-17 (Monday — session: claude/sweet-shannon-hg0kwd)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,136.07 |
+| Cash | $91,228.52 (92.0%) |
+| Long Market Value | $7,907.55 |
+| Open Positions | 1 / 6 |
+| Trades This Week | 0 / 3 |
+| Trades Today | 0 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| NVDA   | 35  | $221.886  | $225.925 | +$141.36      | +1.82%       |
+
+Market-open routine confirmed pre-market NO_TRADE decision. Screener ran late (10:22 UTC via `scripts/markov_screener_full.py` fallback) surfacing AMD + GE candidates — but heartbeat explicitly defers those to Tue 2026-08-18 pre-market. Buy rule catalyst gate fails today: no catalyst approved in today's RESEARCH-LOG.
+
+NVDA snapshot at market-open: last $225.63 (yahoo-direct fallback; yfinance TLS Day 51), MA20 $210.40 / MA50 $206.52 (bullish alignment intact), RSI-14 **75.44** (up from 63.88 Fri — closer to 80 exit gate). Trailing-stop GTC $193.137 live (HWM $227.22); hard-stop $206.35. Min-hold expires at today's close → signal-based exits unblocked from midday/EOD onward.
+
+Trades executed this routine: **NONE**.
+
+Carry-forward to midday scan (12:30 ET): re-check NVDA RSI (watch for cross > 80); AMD/GE remain deferred to Tue pre-market by design; trailing-stop unchanged.
