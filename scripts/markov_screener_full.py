@@ -8,7 +8,7 @@ maths inline with numpy.
 
 Usage:
     python scripts/markov_screener_full.py
-    python scripts/markov_screener_full.py --years 10 --top 10 --workers 8
+    python scripts/markov_screener_full.py --years 3 --top 10 --workers 16
 
 Output:
     memory/screener_results.md  — top N candidates + full pass/fail tables
@@ -37,27 +37,22 @@ OUTPUT_FILE = ROOT / "memory" / "screener_results.md"
 # ---------------------------------------------------------------------------
 
 UNIVERSE: list[str] = [
-    # Technology
-    "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "TSLA", "AMD", "INTC",
-    "CRM", "ADBE", "QCOM", "TXN", "NFLX", "AVGO", "ORCL", "INTU", "ACN", "IBM", "ADP",
-    # Semis / Storage
-    "AMAT", "LRCX", "KLAC", "MRVL", "ARM", "ASML", "MU", "WDC", "SNDK", "STX",
-    # Financials
-    "JPM", "V", "MA", "BAC", "GS", "MS", "BLK", "SCHW", "SPGI", "MCO",
-    "ICE", "CME", "AON", "MMC", "AIG", "MET", "PYPL", "BRK-B",
-    # Healthcare
-    "UNH", "JNJ", "ABBV", "LLY", "MRK", "PFE", "TMO", "ABT", "DHR",
-    "AMGN", "ISRG", "GILD", "ELV", "REGN", "ZTS", "SYK",
-    # Consumer
-    "WMT", "HD", "PG", "KO", "PEP", "COST", "DIS", "MCD", "NKE", "SBUX", "MDLZ", "PM",
-    # Energy
+    # Technology (10)
+    "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "TSLA", "AMD", "AVGO", "CRM",
+    # Semis (3)
+    "AMAT", "LRCX", "ASML",
+    # Financials (5)
+    "JPM", "V", "MA", "GS", "BAC",
+    # Healthcare (5)
+    "UNH", "LLY", "ABBV", "TMO", "AMGN",
+    # Consumer (5)
+    "WMT", "HD", "PG", "COST", "MCD",
+    # Energy (2)
     "XOM", "CVX",
-    # Industrials
-    "HON", "UPS", "CAT", "BA", "RTX", "GE", "MMM",
-    # Materials / Utilities
-    "LIN", "NEE",
-    # ETFs / Broad Market
-    "QQQ", "IWM", "EEM", "VGK", "GLD", "XLE", "XLF", "XLV",
+    # Industrials (3)
+    "HON", "CAT", "GE",
+    # ETFs / Broad Market (7)
+    "QQQ", "IWM", "EEM", "VGK", "GLD", "XLF", "XLV",
 ]
 
 # ---------------------------------------------------------------------------
@@ -355,9 +350,9 @@ def write_results(all_results: list[dict], top_n: int = 10) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Nightly Markov screener — 95-ticker universe")
-    ap.add_argument("--years",   type=int, default=10, help="Years of price history (default 10)")
+    ap.add_argument("--years",   type=int, default=3,  help="Years of price history (default 3)")
     ap.add_argument("--top",     type=int, default=10, help="Top N candidates to save (default 10)")
-    ap.add_argument("--workers", type=int, default=8,  help="Parallel download workers (default 8)")
+    ap.add_argument("--workers", type=int, default=16, help="Parallel download workers (default 16)")
     args = ap.parse_args()
 
     all_results = run_screener(UNIVERSE, years=args.years, workers=args.workers)

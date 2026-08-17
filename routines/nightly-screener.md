@@ -1,9 +1,9 @@
 # Routine: Nightly Markov Screener
 # Schedule: 02:00 CEST, Monday–Friday (runs overnight before pre-market)
-# Purpose: Run the full 95-ticker Markov + momentum + technical screen.
+# Purpose: Run the 40-ticker Markov + momentum + technical screen.
 #          Save top 10 ranked candidates to memory/screener_results.md so
-#          the 9:00 AM pre-market routine can read results instantly instead
-#          of spending 20–30 minutes running 95 tickers.
+#          the 9:00 AM pre-market routine can read results instantly.
+#          Universe: top 40 liquid tickers (down from 95 for cloud speed).
 #
 # Output file: memory/screener_results.md  (committed to GitHub after each run)
 
@@ -13,15 +13,16 @@ You are the autonomous trading agent for the 101Larz portfolio. It is 02:00 CEST
 
 ## Step 1 — Run the Full Markov Screener
 
-Run the standalone screener script. It analyses all 95 tickers in parallel
-(Phases A–D: Markov → Momentum → Technical), ranks top 10 by walk-forward Sharpe,
-and writes results directly to `memory/screener_results.md`.
+Run the standalone screener script. It analyses 40 tickers in parallel
+(Phases A–D: Markov → Momentum → Technical) using 3 years of history and
+16 workers, ranks top 10 by walk-forward Sharpe, and writes results to
+`memory/screener_results.md`.
 
 ```
 python scripts/markov_screener_full.py
 ```
 
-The script typically takes 3–8 minutes depending on network latency. Watch for any
+The script typically takes 2–5 minutes depending on network latency. Watch for any
 `ERR:` lines in the output — these are individual ticker failures (data unavailable)
 and do not stop the run.
 
