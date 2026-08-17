@@ -4856,3 +4856,47 @@ NVDA snapshot at market-open: last $225.63 (yahoo-direct fallback; yfinance TLS 
 Trades executed this routine: **NONE**.
 
 Carry-forward to midday scan (12:30 ET): re-check NVDA RSI (watch for cross > 80); AMD/GE remain deferred to Tue pre-market by design; trailing-stop unchanged.
+
+
+### EOD Snapshot — 2026-08-17 (Monday — session: claude/sleepy-goldberg-snlkz6)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $99,100.72 |
+| Cash | $91,228.52 (92.1%) |
+| Long Market Value | $7,872.20 |
+| Day P&L | -$1.05 (-0.001%) |
+| Realized P&L Today | $0.00 |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 1 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| NVDA   | 35  | $221.886  | $224.92 | +$106.18       | +1.37%       |
+
+Prior close (Fri 2026-08-14): $99,101.77 → today's close $99,100.72 → **-$1.05 (-0.001%)**. Essentially flat session. NVDA traded a wide intraday band ($225.63 open → $226.88 midday → $224.92 close), giving back the midday gain to close ~$0.03/sh above Friday close on this position.
+
+Session cadence today (Mon 8/17): pre-market HOLD → market-open HOLD (AMD/GE screener candidates deferred to Tue 8/18 pre-market by design) → midday HOLD (NVDA +2.25% intraday, no exit/stop-tighten triggers hit) → EOD -$1.05. Four-routine day.
+
+Trailing-stop status: NVDA HWM unchanged at $227.22 (close $224.92 sits $2.30 below HWM — no HWM advance). Trailing-stop GTC live at $193.137 (-15% trail). Hard-stop level $206.35 (-7% from avg entry).
+
+**Min-hold expiry:** NVDA min-hold expired at today's close → signal-based exits **unblocked** from tomorrow (Tue 8/18) onward.
+
+Risk status:
+- **NVDA**: +1.37% unrealized. RSI-14 75.44 at market-open → drifted through 80 gate territory during midday (need to reconfirm at Tue pre-market). Trend bullish (>MA20 $210.40, >MA50 $206.52). Q2 earnings confirmed **Wed 2026-08-27** after close → 5-day pre-earnings exit window opens **Tue 2026-08-19** (tomorrow — mandatory exit trigger if still open at Tue close).
+- Cash 92.1% of PV — well above 20% min. Weekly buy budget 0/3 used (fresh week).
+
+Cumulative P&L since inception (5/19): **-$899.28 (-0.899%)**.
+
+Carry-forward to Tue 2026-08-18 pre-market:
+- **AMD + GE candidates from Mon nightly screener** — evaluate under standard buy rules (catalyst gate, MAs, RSI, cash room). Weekly buy budget 3/3 available.
+- **NVDA pre-earnings 5-day exit window opens Tue 8/18** (with corrected earnings date 2026-08-27, exit window opens 5 trading days prior = Tue 8/19; if using 8/26 = Tue 8/19 as well — **either way exit window opens Tue 8/19**, so Tue 8/18 is the last free-hold day).
+- Re-check NVDA RSI-14 at pre-market (watch > 80 exit gate; midday drift toward that level).
+- Re-run full 95-ticker Markov screener at pre-market (still installed via fallback `scripts/markov_screener_full.py`).
+- Min-hold on NVDA now expired — signal-based exit (RSI > 80, MA break, negative news) can trigger immediately.
+- Broker infra: trailing-stop GTC working; yfinance TLS Day 51 (yahoo-direct fallback operational).
+
+Carry-forward: Tue 8/18 pre-market to evaluate AMD/GE + confirm NVDA RSI/MAs; NVDA min-hold expired (signal exits unblocked); NVDA pre-earnings exit window opens Wed 8/19 (mandatory exit that session); weekly buy budget 3/3 available; earnings 8/27.
