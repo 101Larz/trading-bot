@@ -1,17 +1,8 @@
 {
-  "last_run": "2026-08-17T07:34:00Z",
-  "routine": "pre-market",
+  "last_run": "2026-08-17T10:10:59Z",
+  "routine": "Nightly Screener",
   "status": "success",
-  "decision": "HOLD",
-  "session": "claude/gallant-lamport-ul64x6",
-  "portfolio_value": 99143.07,
-  "cash": 91228.52,
-  "open_positions": 1,
-  "trades_this_week": 0,
-  "trades_today": 0,
-  "day_pnl": 41.30,
-  "day_pnl_pct": 0.000417,
-  "screener_candidates": 0,
+  "screener_candidates": 3,
   "screener_run_date": "2026-08-17",
-  "notes": "Pre-market 2026-08-17 (Mon): HOLD / NO_TRADE for new entries. Screener DOWN Day 5 — markov-hedge-fund-method skill still not installed; USER ACTION REQUIRED. NVDA 35 @ $221.886 → $226.13 (+$148.53 / +1.91%), trailing-stop GTC $193.137 (HWM $227.22). NVDA min-hold expires TODAY (signal-based exits unblocked from close). Pre-earnings 5-day exit window opens Tue 2026-08-19; Q2 earnings 2026-08-26. Macro: SPY at all-time highs, RSI ~76.79 (overbought). Aug 17 calendar quiet (Empire State + NAHB); FOMC minutes Wed 8/19. Cash 92.0% (well above 20% floor). Weekly buy budget 3/3 (reset today). Research log written to memory/research/2026-08-17.md."
+  "notes": "Nightly screener 2026-08-17 UP (first successful run after 5 consecutive down-days). Standalone scripts/markov_screener_full.py works — no local skill dependency. Universe 95 tickers | Phase B (Markov) 6 | Phase C (Momentum) 5 | Phase D (Technical) 3. Top candidates by Sharpe: STX (Sharpe +1.579, momentum +23.6%, RSI 66.8), MU (Sharpe +1.470, momentum +14.4%, RSI 56.4), AMD (Sharpe +0.614, momentum +3.8%, RSI 53.5). All 3 in Bull regime with mixed MA alignment (price > MA20 but MA20 < MA50). Data errors: MMC (0 bars), BRK-B (Alpaca 400 on hyphenated ticker). Pre-market routine (09:00 ET) can now read memory/screener_results.md for the staged candidate list."
 }
