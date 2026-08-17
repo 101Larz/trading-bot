@@ -1,17 +1,17 @@
 {
-  "last_run": "2026-08-14T20:15:00Z",
-  "routine": "end-of-day",
-  "status": "ok",
-  "decision": "HOLD",
-  "session": "claude/sleepy-goldberg-ykqzab",
+  "last_run": "2026-08-17T00:10:00Z",
+  "routine": "nightly-screener",
+  "status": "failure",
+  "decision": "N/A",
+  "session": "claude/happy-shannon-v4cwpr",
   "portfolio_value": 99101.77,
   "cash": 91228.52,
   "open_positions": 1,
-  "trades_this_week": 1,
+  "trades_this_week": 0,
   "trades_today": 0,
-  "day_pnl": -15.80,
-  "day_pnl_pct": -0.0159,
+  "day_pnl": 0.00,
+  "day_pnl_pct": 0.0000,
   "screener_candidates": 0,
-  "screener_run_date": "2026-08-14",
-  "notes": "EOD Fri 8/14. PV $99,101.77 (-$15.80 / -0.016% vs Thu $99,117.57). Cash $91,228.52 (92.1%). 1 open (NVDA 35 @ $221.886 avg, current $224.95, +$107.23 / +1.38%). No trades today; weekly 1 buy (NVDA Mon) + 1 sell (VGK Thu). NVDA trailing-stop GTC $193.137 (HWM $227.22 unchanged). Min-hold expires Mon 8/17; pre-earnings 5-day exit window opens Tue 8/19; Q2 earnings 8/26. Markov screener down Day 5 (skill not installed) — CLAUDE.md fallback NO_TRADE held all week. Cumulative since 5/19: -$898.23 (-0.898%)."
+  "screener_run_date": "2026-08-17",
+  "notes": "Nightly screener 02:08 CEST run FAILED (2nd consecutive firing) — markov-hedge-fund-method skill still not installed on container or enabled on account. ListSkills/SearchSkills/filesystem all confirm absent. Phase A cannot execute → no Phase B/C/D/E ranking. memory/screener_results.md written with NO_TRADE fallback instruction for 09:00 ET pre-market. Portfolio values carried from last EOD heartbeat 2026-08-14 (market closed weekend): PV $99,101.77, cash $91,228.52 (92.1%), 1 open (NVDA 35 @ $221.886 avg). NVDA min-hold expires today (2026-08-17); pre-earnings 5-day exit window opens Tue 2026-08-19; Q2 earnings 2026-08-26. NVDA trailing-stop GTC $193.137 (HWM $227.22). USER ACTION REQUIRED: install markov-hedge-fund-method skill or amend routine — screener has never successfully run since introduction on 2026-08-13."
 }
