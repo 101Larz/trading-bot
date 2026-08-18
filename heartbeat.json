@@ -1,12 +1,14 @@
 {
-  "last_run": "2026-08-18T16:40:00Z",
-  "routine": "Midday Scan",
+  "last_run": "2026-08-18T20:15:00Z",
+  "routine": "End of Day",
   "status": "success",
-  "session": "claude/exciting-bohr-7fgob4",
+  "session": "claude/sleepy-goldberg-22uyxi",
   "decision": "HOLD",
-  "portfolio_value": 98938.67,
+  "portfolio_value": 98921.94,
   "cash": 91228.52,
   "open_positions": 1,
   "trades_today": 0,
-  "notes": "Midday: NVDA -0.99% (well inside -7% cut). No winners at +15%. Thesis intact but AMD headwind noted; NVDA/OpenAI Ohio 4.25GW campus offsets. RSI 75.02 < 80 exit gate; MAs bullish. Pre-earnings 5-day exit window opens tomorrow 8/19 (earnings 8/26). No trades executed."
+  "day_pnl_dollars": -178.78,
+  "day_pnl_percent": -0.180,
+  "notes": "EOD Tue 8/18: PV $98,921.94 vs prior close $99,100.72 = -$178.78 (-0.180%). NVDA mark drift ($224.92→$219.812) drove all of it. RSI 75.02 < 80 exit gate, MAs bullish, -0.94% unrealized inside -7% cut. NVDA pre-earnings 5-day exit window OPENS Wed 8/19 — mandatory exit trigger tomorrow (earnings 8/26-27). Weekly buy budget 0/3 used. PR #234 merged."
 }
