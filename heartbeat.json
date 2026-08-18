@@ -1,13 +1,12 @@
 {
-  "last_run": "2026-08-18T00:15:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-08-18T07:30:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "session": "claude/happy-shannon-bf878w",
-  "screener_run_date": "2026-08-18",
-  "universe": 40,
-  "phase_b_survivors": 3,
-  "phase_c_survivors": 2,
-  "phase_d_survivors": 0,
-  "top_candidates": [],
-  "notes": "0 Phase D survivors — no tickers passed all four gates. CAT (Sharpe 2.517, RSI 58.6, +2.0% mom) and LRCX (Sharpe 1.597, RSI 73.0, +12.1% mom) cleared Markov+Momentum but failed Technical (MA alignment / RSI edges). Shift from 2026-08-17 (AMD+GE staged). Yahoo download resets on ~11 tickers were handled via yahoo-direct fallback; run completed. Pre-market at 09:00 ET will read this and fall to HOLD/NO_TRADE (NVDA already open)."
+  "session": "claude/gallant-lamport-gii4yw",
+  "decision": "HOLD",
+  "portfolio_value": 99019.87,
+  "cash": 91228.52,
+  "open_positions": 1,
+  "trades_today": 0,
+  "notes": "0 Phase D screener survivors → NO_TRADE. NVDA held (RSI 75.44, +0.33%, min-hold expired). Today is last free-hold day; pre-earnings exit window opens Wed 8/19 (earnings 8/26). Macro tape bearish: SPX -0.41%, NDX -0.76% pre-market on ME geopolitics."
 }
