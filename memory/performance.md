@@ -4900,3 +4900,21 @@ Carry-forward to Tue 2026-08-18 pre-market:
 - Broker infra: trailing-stop GTC working; yfinance TLS Day 51 (yahoo-direct fallback operational).
 
 Carry-forward: Tue 8/18 pre-market to evaluate AMD/GE + confirm NVDA RSI/MAs; NVDA min-hold expired (signal exits unblocked); NVDA pre-earnings exit window opens Wed 8/19 (mandatory exit that session); weekly buy budget 3/3 available; earnings 8/27.
+
+
+### Market-Open Snapshot — 2026-08-18 (Tuesday — session: claude/sweet-shannon-x0hb04)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,938.67 |
+| Cash | $91,228.52 (92.2%) |
+| Long Market Value | $7,710.15 |
+| Open Positions | 1 / 6 |
+| Trades This Week | 0 / 3 |
+| Trades Today | 0 |
+
+Confirmed pre-market NO_TRADE. Buy rule catalyst gate FAILS (0 Phase D screener survivors). NVDA -0.72% unrealized ($220.29 vs $221.886 entry); trailing-stop $193.137, hard-stop $206.35 — no exit trigger (RSI 75.44 < 80, MAs bullish). Today is last free-hold day; NVDA pre-earnings 5-day exit window opens Wed 2026-08-19 (earnings 8/26).
+
+Trades executed this routine: **NONE**.
+
+Carry-forward to midday scan: re-check NVDA RSI (>80 gate); no new buys unless fresh screener survivor appears.
