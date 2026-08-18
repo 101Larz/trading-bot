@@ -4918,3 +4918,44 @@ Confirmed pre-market NO_TRADE. Buy rule catalyst gate FAILS (0 Phase D screener 
 Trades executed this routine: **NONE**.
 
 Carry-forward to midday scan: re-check NVDA RSI (>80 gate); no new buys unless fresh screener survivor appears.
+
+
+### EOD Snapshot — 2026-08-18 (Tuesday — session: claude/sleepy-goldberg-22uyxi)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,921.94 |
+| Cash | $91,228.52 (92.2%) |
+| Long Market Value | $7,693.42 |
+| Day P&L | -$178.78 (-0.180%) |
+| Realized P&L Today | $0.00 |
+| Trades Today | 0 |
+| Trades This Week | 0 / 3 |
+| Open Positions | 1 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unrealized P&L | Unrealized % |
+|--------|----:|----------:|--------:|---------------:|-------------:|
+| NVDA   | 35  | $221.886  | $219.812 | -$72.60       | -0.94%       |
+
+Prior close (Mon 2026-08-17): $99,100.72 → today's close $98,921.94 → **-$178.78 (-0.180%)**. NVDA drifted from $224.92 close Mon → $219.812 close Tue (-$5.11/sh × 35 = -$178.85 mark impact on the position; portfolio change essentially all NVDA drift).
+
+Session cadence today (Tue 8/18): pre-market HOLD → market-open HOLD (0 Phase D screener survivors, catalyst gate FAILS) → midday HOLD (RSI 75.02 < 80 exit gate, MAs bullish, well inside -7% cut) → EOD -$178.78. Four-routine day.
+
+Trailing-stop status: NVDA HWM unchanged at $227.22 (close $219.812 sits $7.41 below HWM — no HWM advance). Trailing-stop GTC live at $193.137 (-15% trail). Hard-stop level $206.35 (-7% from avg entry) — current $219.812 has $13.46 cushion.
+
+Risk status:
+- **NVDA**: -0.94% unrealized. RSI-14 ~75.02 at midday (< 80 exit gate — no signal exit). Trend bullish (>MA20, >MA50). Q2 earnings Wed 2026-08-26 (per midday note) / Wed 2026-08-27 (per Mon EOD note) — either way, **5-day pre-earnings exit window opens Wed 2026-08-19 (tomorrow)** — mandatory exit trigger if still open at Wed close.
+- Cash 92.2% of PV — well above 20% min. Weekly buy budget 0/3 used.
+
+Cumulative P&L since inception (5/19): **-$1,078.06 (-1.078%)**.
+
+Carry-forward to Wed 2026-08-19 pre-market:
+- **NVDA pre-earnings 5-day exit window OPENS** — plan mandatory exit at market-open or midday tomorrow (last free-hold day was today Tue 8/18).
+- Re-run full 95-ticker Markov screener at pre-market (fallback `scripts/markov_screener_full.py`).
+- Re-check NVDA RSI-14 (watch > 80 exit gate).
+- Weekly buy budget 3/3 available; but focus is NVDA exit planning.
+- Broker infra: trailing-stop GTC working; yfinance TLS Day 52 (yahoo-direct fallback operational).
+
+Carry-forward: Wed 8/19 pre-market → NVDA pre-earnings exit window OPEN (mandatory exit that session); re-run screener; weekly buy budget 3/3.
