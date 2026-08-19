@@ -1,15 +1,16 @@
 {
-  "last_run": "2026-08-19T13:48:00Z",
-  "routine": "Market Open Execution",
+  "last_run": "2026-08-19T20:15:00Z",
+  "routine": "End of Day",
   "status": "success",
-  "session": "claude/sweet-shannon-q72qz7",
+  "session": "claude/sleepy-goldberg-6tjl8u",
   "portfolio_value": 98933.77,
   "cash": 98933.77,
   "open_positions": 0,
   "trades_today": 1,
   "trades_this_week_buys": 0,
-  "screener_run_date": "2026-08-19",
-  "screener_phase_d_survivors": 0,
-  "decision": "SELL NVDA 35 (pre-earnings full close) + NO_TRADE on buy side",
-  "notes": "Market-open 2026-08-19 09:47 ET: executed NVDA pre-earnings full close per pre-market plan. Cancelled GTC trailing-stop (HWM $227.92, stop $193.732) then sold 35 NVDA at limit $219.65 (bid $220.20 * 0.9975); filled at $220.15 (price-improved $0.50/sh above limit). Realized P&L -$60.77 on the position. Portfolio now 100% cash ($98,933.77). Buy side: 0 Phase D screener survivors this morning → catalyst gate fails → no buys. Weekly buy budget 3/3 available. Next: midday scan re-checks screener."
+  "day_pnl_usd": 11.83,
+  "day_pnl_pct": 0.012,
+  "realized_pnl_today": -60.77,
+  "decision": "EOD snapshot — 100% cash, zero exposure",
+  "notes": "EOD 2026-08-19: portfolio value $98,933.77 (100% cash, 0 open positions). Day P&L +$11.83 (+0.012%) vs Tue close $98,921.94. Realized -$60.77 on single NVDA close (35 sh @ $220.15 fill, pre-earnings 5-day exit window). Trades today: 1 sell. Trades this week: 1 sell / 0 buys — full 3/3 buy budget carries to Thu 8/20. Cumulative since inception: -$1,066.23 (-1.066%). Screener run today: 0 Phase D survivors (catalyst gate would fail for any buys). Next: Thu pre-market re-runs screener; NVDA earnings Tue 8/26 AMC → re-screen Wed 8/27."
 }

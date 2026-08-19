@@ -5007,3 +5007,53 @@ Carry-forward to midday scan (12:30 ET):
 - Re-check screener for late Phase D candidate (unlikely at 0 Phase B this morning). If a fresh survivor appears, buy budget is 3/3 available.
 - No stop management needed (no positions).
 - Watch chip tape / NVDA pre-earnings drift for post-earnings re-entry planning (earnings Tue 8/26 AMC → re-screen Wed 8/27 pre-market).
+
+
+### EOD Snapshot — 2026-08-19 (Wednesday — session: claude/sleepy-goldberg-6tjl8u)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.77 |
+| Cash | $98,933.77 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | +$11.83 (+0.012%) |
+| Realized P&L Today | -$60.77 (NVDA close) |
+| Trades Today | 1 (sell) |
+| Trades This Week | 1 sell / 0 buys (buy budget 3/3 available) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Tue 2026-08-18): $98,921.94 → today's close $98,933.77 → **+$11.83 (+0.012%)** — flat day driven by the single NVDA close at 13:47 UTC (gap-up vs Tue mark) partially offset by realized loss on entry basis.
+
+Session cadence today (Wed 8/19): pre-market plan mandatory NVDA exit (5-day pre-earnings window opens) → market-open executed NVDA close (35 shares, sell-limit $219.65 → filled $220.15, price-improved $0.50/sh) → midday scan not run in this cadence → EOD 100% cash. Two-routine day recorded in `memory/research/2026-08-19.md`.
+
+Realized trade today:
+
+| Time (UTC) | Symbol | Side | Qty | Fill | Realized P&L | Reason |
+|------------|--------|------|----:|-----:|-------------:|--------|
+| 13:47:53 | NVDA | SELL (close) | 35 | $220.15 | −$60.77 | Pre-earnings 5-day exit window opened (earnings 2026-08-26 AMC); softening chip tape (Asia -2%, KOSPI -5.5%, Samsung/SK Hynix -7%) — not a high-conviction hold into event. |
+
+Prior GTC trailing-stop (HWM $227.92, stop $193.732) cancelled 13:47:37 UTC to free shares before sell-limit.
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk overnight.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L +0.012%).
+- Weekly buy budget: 0/3 used (sell doesn't count) — full 3-trade budget carries into Thu 8/20.
+
+Cumulative P&L since inception (5/19): **−$1,066.23 (−1.066%)** (Tue cumulative −$1,078.06 + today's +$11.83 day P&L).
+
+### Carry-Forward to Thu 2026-08-20 Pre-Market
+
+- Portfolio is 100% cash — clean slate for buy-side re-entry if screener produces a Phase D survivor.
+- **Buy budget 3/3 available.** Catalyst gate still binds: no buys unless Markov screener returns ≥1 Phase D survivor.
+- Re-run full 95-ticker Markov screener at pre-market (`scripts/markov_screener_full.py`).
+- Watch chip-sector drift ahead of NVDA earnings Tue 8/26 AMC — post-earnings re-entry planning kicks off Wed 8/27 pre-market once dust settles.
+- Broker infra: yfinance TLS Day 53 (yahoo-direct fallback still operational).
+- No positions → no stop-management this session.
