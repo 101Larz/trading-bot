@@ -1,14 +1,17 @@
 {
-  "last_run": "2026-08-19T00:29:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-08-19T07:20:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "session": "claude/happy-shannon-emthe6",
+  "session": "claude/gallant-lamport-gl9u55",
+  "portfolio_value": 98907.52,
+  "cash": 91228.52,
+  "open_positions": 1,
   "screener_run_date": "2026-08-19",
   "screener_universe": 95,
   "screener_phase_b_survivors": 0,
   "screener_phase_c_survivors": 0,
   "screener_phase_d_survivors": 0,
   "screener_candidates": 0,
-  "screener_data_errors": ["MMC", "BRK-B"],
-  "notes": "Nightly screener 2026-08-19 02:29 CEST: 95-ticker universe, --years 10, 0 candidates passed Phase B (Markov gate). yfinance API was flaky (SSL errors on ~30 tickers) but yahoo-direct/Alpaca fallbacks delivered data for 93/95; only MMC and BRK-B had unrecoverable data errors. Result of 0 Phase B survivors is anomalous vs 2026-08-18 (3/40 passed with --years 3 default) — 10-year window pushes Stat Bull% below the 40% gate for most tickers. Pre-market 09:00 ET will read this and default to HOLD. NVDA pre-earnings 5-day exit window is open today (mandatory exit trigger)."
+  "decision": "HOLD (no new buys) + stage NVDA pre-earnings exit at market open",
+  "notes": "Pre-market 2026-08-19 09:20 CEST: screener 0/95 candidates. Only holding NVDA (35 sh, -1.12%). Today is Day 1 of NVDA 5-day pre-earnings exit window (earnings 2026-08-26 AMC). Strategy mandates exit unless high-conviction thesis; chip tape derisking (Asia -2%, KOSPI -5.5%, Samsung/SK Hynix -7%), yields at year-high (10y 4.73%), hedge fund exits + AMD headline. Market-open routine to place NVDA sell-limit at bid-0.25% for full close (35 sh)."
 }
