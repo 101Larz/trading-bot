@@ -4959,3 +4959,51 @@ Carry-forward to Wed 2026-08-19 pre-market:
 - Broker infra: trailing-stop GTC working; yfinance TLS Day 52 (yahoo-direct fallback operational).
 
 Carry-forward: Wed 8/19 pre-market → NVDA pre-earnings exit window OPEN (mandatory exit that session); re-run screener; weekly buy budget 3/3.
+
+
+### Market-Open Snapshot — 2026-08-19 (Wednesday — session: claude/sweet-shannon-q72qz7)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.77 |
+| Cash | $98,933.77 (100.0%) |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 8 |
+| Trades This Week | 1 / 3 (sell doesn't count vs buy budget — buy budget 3/3 available) |
+| Trades Today | 1 (sell) |
+
+### Trades Executed This Routine
+
+| Time (UTC) | Symbol | Side | Qty | Limit | Fill | Realized P&L | Reason |
+|------------|--------|------|----:|------:|-----:|-------------:|--------|
+| 13:47:53 | NVDA | SELL (close) | 35 | $219.65 | $220.15 | **−$60.77** | Pre-earnings 5-day exit window opened today (earnings 2026-08-26 AMC). Strategy: "Earnings in < 5 trading days → Exit entirely unless high-conviction thesis." Not a high-conviction hold into softening chip tape (Asia -2%, KOSPI -5.5%, Samsung/SK Hynix -7%), hedge fund exits, AMD headline. |
+
+**Execution details**:
+- Cancelled prior GTC trailing-stop (order b2d05d70…, stop $193.732, HWM $227.92) at 13:47:37 UTC to free shares.
+- Placed sell-limit 35 @ $219.65 (bid $220.20 × 0.9975) at 13:47:52 UTC → filled 35 @ **$220.15** at 13:47:53 UTC (price-improved $0.50/sh above limit).
+- Realized: (220.15 − 221.886286) × 35 = **−$60.77**.
+- Position closed → portfolio 100% cash ($98,933.77).
+
+### Buy Rules Check (for any prospective buys this routine)
+
+- Max 6 open positions: 0 held → PASS
+- Max 3 buys/week: 0 buys this week → PASS
+- Max 20% equity/position: PASS
+- **Catalyst gate**: today's screener (pre-market run) = **0 Phase D survivors** → **FAILS** (per `strategy.md`: dynamic-screening universe requires a screen-approved candidate; buying without one violates the rule)
+
+**Buy decision**: NO_TRADE (no catalyst). Zero buys placed.
+
+### Risk / Position Status
+
+- No open positions. Zero exposure. Zero mark-to-market risk into any single-name catalyst.
+- Trailing-stop cancelled (redundant with position closed).
+
+Day P&L vs Tue close ($98,921.94) → $98,933.77 = **+$11.83 (+0.012%)** (NVDA gap-up at fill vs Tue close carried through).
+Realized P&L today: **−$60.77** (single NVDA close).
+Cumulative P&L since inception (5/19): **−$1,066.23 (−1.066%)** (Tue cumulative −$1,078.06 + $11.83 day P&L).
+
+Carry-forward to midday scan (12:30 ET):
+- Portfolio is 100% cash. No active exposure.
+- Re-check screener for late Phase D candidate (unlikely at 0 Phase B this morning). If a fresh survivor appears, buy budget is 3/3 available.
+- No stop management needed (no positions).
+- Watch chip tape / NVDA pre-earnings drift for post-earnings re-entry planning (earnings Tue 8/26 AMC → re-screen Wed 8/27 pre-market).
