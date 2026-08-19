@@ -1,9 +1,9 @@
 # Nightly Screener Results
 
-**Run:** 2026-08-18 02:15 CEST
-**Universe:** 40 tickers
-**Phase B survivors (Markov):** 3
-**Phase C survivors (Momentum):** 2
+**Run:** 2026-08-19 02:29 CEST
+**Universe:** 95 tickers
+**Phase B survivors (Markov):** 0
+**Phase C survivors (Momentum):** 0
 **Phase D survivors (Technical):** 0
 
 ---
@@ -16,17 +16,18 @@ _No tickers passed all four gates today._
 
 ## Full Phase B+C Pass List (Markov+Momentum qualifiers — failed Technical gate)
 
-| Ticker | Regime | Markov Signal | Stat Bull% | Sharpe | Momentum 1M | RSI | Tech Gate |
-|--------|--------|---------------|------------|--------|-------------|-----|-----------|
-| CAT | Bull | +0.158 | 41.5% | 2.517 | +2.0% | 58.6 | TECH:FAIL |
-| LRCX | Bull | +0.009 | 45.7% | 1.597 | +12.1% | 73.0 | TECH:FAIL |
+_None._
 
 ---
 
 ## Phase B Failures (Markov filter — not traded today)
 
-AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, AVGO, CRM, AMAT, ASML, JPM, V, MA, BAC, UNH, LLY, ABBV, TMO, AMGN, WMT, HD, PG, COST, MCD, XOM, CVX, HON, GE, QQQ, IWM, EEM, VGK, GLD, XLF, XLV
+AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, AVGO, CRM, ADBE, ORCL, INTU, IBM, ACN, NFLX, DIS, INTC, PYPL, AMAT, LRCX, KLAC, MRVL, ARM, ASML, MU, WDC, SNDK, STX, QCOM, JPM, V, MA, GS, BAC, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, AIG, MET, UNH, LLY, ABBV, TMO, AMGN, JNJ, MRK, PFE, GILD, REGN, ABT, DHR, ISRG, SYK, ELV, ZTS, WMT, PG, COST, KO, PEP, MDLZ, PM, HD, MCD, NKE, SBUX, TXN, XOM, CVX, HON, CAT, GE, UPS, BA, RTX, LIN, NEE, MMM, ADP, QQQ, IWM, EEM, VGK, GLD, XLE, XLF, XLV
 
 ## Phase C Failures (Momentum filter)
 
-GS
+_None._
+
+## Data Errors (skipped)
+
+MMC(only 0 bars (need 60+)), BRK-B(400 Client Error: Bad Request for url: https://data.alpaca.markets/v2/stocks/BRK-B/bars?timeframe=1Day&limit=2600&adjustment=raw&sort=asc&feed=iex)
