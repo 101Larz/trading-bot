@@ -37,22 +37,40 @@ OUTPUT_FILE = ROOT / "memory" / "screener_results.md"
 # ---------------------------------------------------------------------------
 
 UNIVERSE: list[str] = [
-    # Technology (10)
+    # Mega-cap tech (10)
     "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "TSLA", "AMD", "AVGO", "CRM",
-    # Semis (3)
-    "AMAT", "LRCX", "ASML",
-    # Financials (5)
-    "JPM", "V", "MA", "GS", "BAC",
-    # Healthcare (5)
-    "UNH", "LLY", "ABBV", "TMO", "AMGN",
-    # Consumer (5)
-    "WMT", "HD", "PG", "COST", "MCD",
+    # Additional tech / software (9)
+    "ADBE", "ORCL", "INTU", "IBM", "ACN", "NFLX", "DIS", "INTC", "PYPL",
+    # Semis (10)
+    "AMAT", "LRCX", "KLAC", "MRVL", "ARM", "ASML", "MU", "WDC", "SNDK", "STX",
+    "QCOM",  # note: adds 1 more semi
+    # Communications / interactive (0 — already covered above)
+    # Financials — banks & brokers (7)
+    "JPM", "V", "MA", "GS", "BAC", "MS", "BLK",
+    # Financials — exchanges & data (5)
+    "SCHW", "SPGI", "MCO", "ICE", "CME",
+    # Financials — insurance (4)
+    "AON", "MMC", "AIG", "MET",
+    # Berkshire (1)
+    "BRK-B",
+    # Healthcare — pharma & biotech (10)
+    "UNH", "LLY", "ABBV", "TMO", "AMGN", "JNJ", "MRK", "PFE", "GILD", "REGN",
+    # Healthcare — devices & services (6)
+    "ABT", "DHR", "ISRG", "SYK", "ELV", "ZTS",
+    # Consumer staples (7)
+    "WMT", "PG", "COST", "KO", "PEP", "MDLZ", "PM",
+    # Consumer discretionary (5)
+    "HD", "MCD", "NKE", "SBUX", "TXN",
     # Energy (2)
     "XOM", "CVX",
-    # Industrials (3)
-    "HON", "CAT", "GE",
-    # ETFs / Broad Market (7)
-    "QQQ", "IWM", "EEM", "VGK", "GLD", "XLF", "XLV",
+    # Industrials (6)
+    "HON", "CAT", "GE", "UPS", "BA", "RTX",
+    # Materials / utilities (3)
+    "LIN", "NEE", "MMM",
+    # Other business services (1)
+    "ADP",
+    # ETFs / broad market (8)
+    "QQQ", "IWM", "EEM", "VGK", "GLD", "XLE", "XLF", "XLV",
 ]
 
 # ---------------------------------------------------------------------------
