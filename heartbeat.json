@@ -1,21 +1,20 @@
 {
-  "last_run": "2026-08-20T16:42:00Z",
-  "routine": "Midday Scan",
+  "last_run": "2026-08-20T20:36:32Z",
+  "routine": "End of Day",
   "status": "success",
-  "session": "claude/exciting-bohr-ohwwcd",
+  "session": "claude/sleepy-goldberg-p2h5k6",
   "portfolio_value": 98933.59,
   "cash": 98933.59,
   "open_positions": 0,
+  "trades_today": 0,
   "trades_this_week": {
     "buys": 0,
     "sells": 1
   },
   "weekly_buy_budget": "3/3",
-  "screener_candidates": 0,
-  "screener_run_date": "2026-08-20",
-  "phase_b_survivors": 1,
-  "phase_c_survivors": 0,
-  "phase_d_survivors": 0,
-  "decision": "HOLD \u2014 0 open positions; all midday risk steps no-op; catalyst gate FAILS; 100% cash preserved",
-  "notes": "Midday 2026-08-20: no positions to cut/tighten/re-thesis (book 100% cash since NVDA close Wed 8/19). SPY $766.55, MA20 $759.77, MA50 $750.17 (bullish), RSI-14 73.13. Infra: first market_data call hit a transient proxy 502 on the yahoo-direct fallback (0 bars); recovered on retry for both SPY and QQQ - no action needed. yfinance TLS still down (Day 53), yahoo-direct covering as normal. Next check: EOD (16:15 ET)."
+  "day_pnl_dollars": -0.18,
+  "day_pnl_pct": -0.0002,
+  "cumulative_pnl_since_inception": -1066.41,
+  "decision": "EOD 100% cash preserved — no trades today; catalyst gate failed all routines; carry 3/3 buy budget into Fri 8/21",
+  "notes": "EOD 2026-08-20: flat day (-$0.18). Zero trades across pre-market/open/midday/EOD (catalyst gate FAILS: 0 Phase D survivors). Portfolio 100% cash at $98,933.59. Cumulative P&L since 5/19 inception: -$1,066.41 (-1.066%). Next: Fri 8/21 pre-market — re-run screener; if still 0 Phase D, HOLD into weekly review 17:00 ET."
 }

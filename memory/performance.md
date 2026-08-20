@@ -5097,3 +5097,49 @@ Carry-forward to midday scan (12:30 ET):
 - Screener output unchanged unless a manual midday re-run is triggered (unlikely — only 1 Phase B survivor overnight).
 - Watch retail earnings tape (WMT/BABA/DE/ROST/NTES) and SPY RSI (73.13 → flag ≥80).
 - No positions → no stop management.
+
+
+### EOD Snapshot — 2026-08-20 (Thursday — session: claude/sleepy-goldberg-p2h5k6)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | -$0.18 (-0.0002%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 1 sell (buy budget 3/3 available) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Wed 2026-08-19): $98,933.77 → today's close $98,933.59 → **-$0.18 (-0.0002%)** — flat day, no trades executed. Portfolio remained 100% cash throughout the session.
+
+Session cadence today (Thu 8/20): pre-market → NO_TRADE (0 Phase D screener survivors, catalyst gate FAILS); market-open → NO_TRADE (catalyst gate still fails, HOLD reaffirmed); midday scan → HOLD (no positions to manage, all midday risk steps no-op); EOD → 100% cash preserved. Four-routine day recorded in `memory/research/2026-08-20.md`.
+
+No trades executed today.
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk overnight.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L -0.0002%).
+- Weekly buy budget: 0/3 used (Mon-Fri window) — full 3-trade budget carries into Fri 8/21.
+
+Cumulative P&L since inception (5/19): **-$1,066.41 (-1.066%)** (Wed cumulative -$1,066.23 + today's -$0.18 day P&L).
+
+### Carry-Forward to Fri 2026-08-21 Pre-Market
+
+- Portfolio is 100% cash — clean slate for buy-side re-entry if screener produces a Phase D survivor.
+- **Buy budget 3/3 available.** Catalyst gate still binds: no buys unless Markov screener returns ≥1 Phase D survivor.
+- Re-run full 95-ticker Markov screener at pre-market (`scripts/markov_screener_full.py`).
+- Watch chip-sector drift ahead of NVDA earnings Tue 8/26 AMC — post-earnings re-entry planning kicks off Wed 8/27 pre-market once dust settles.
+- SPY macro filter permissive (bullish MA alignment, RSI-14 73.13 — watch for ≥80 exit trigger).
+- Broker infra: yfinance TLS Day 54 (yahoo-direct fallback still operational; midday saw one transient proxy 502 that recovered on retry).
+- No positions → no stop-management this session.
+- Fri 8/21 is the last trading day of the week → weekly review runs at 17:00 ET.
