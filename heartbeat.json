@@ -1,14 +1,18 @@
 {
-  "last_run": "2026-08-20T00:29:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-08-20T13:00:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "session": "claude/happy-shannon-vknn1h",
+  "session": "claude/gallant-lamport-d2ogn6",
+  "portfolio_value": 98933.77,
+  "cash": 98933.77,
+  "open_positions": 0,
+  "trades_this_week": {"buys": 0, "sells": 1},
+  "weekly_buy_budget": "3/3",
   "screener_candidates": 0,
   "screener_run_date": "2026-08-20",
   "phase_b_survivors": 1,
   "phase_c_survivors": 0,
   "phase_d_survivors": 0,
-  "data_errors": ["MMC", "BRK-B"],
-  "decision": "Nightly screener complete — 0 tradeable candidates for 2026-08-20",
-  "notes": "Nightly screener 2026-08-20 02:29 CEST: 95 tickers scanned, 1 Phase B (Markov) survivor (TSLA), 0 Phase C (momentum), 0 Phase D (technical). TSLA passed Markov gates but failed momentum_1m > 0. No tradeable candidates for Thu pre-market. Data errors: MMC (0 bars), BRK-B (Alpaca 400). Pre-market routine will read memory/screener_results.md — expect NO_TRADE unless macro/catalyst changes the picture."
+  "decision": "HOLD — 0 Phase D screener survivors; catalyst gate FAILS; 100% cash preserved",
+  "notes": "Pre-market 2026-08-20: portfolio 100% cash ($98,933.77) heading into Thu. Nightly screener returned 0 Phase D survivors (only TSLA passed Markov, failed momentum). Macro: SPX futures +0.16%, Nasdaq +0.42%; hawkish FOMC minutes dissent (3 members backed hike); retail earnings binary today (WMT/BABA/DE/ROST/NTES). NVDA closed 8/19 pre-earnings; post-earnings re-screen Wed 8/27. HOLD reaffirmed for market-open unless intraday screener surfaces a candidate."
 }
