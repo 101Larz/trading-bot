@@ -1,16 +1,14 @@
 {
-  "last_run": "2026-08-19T20:15:00Z",
-  "routine": "End of Day",
+  "last_run": "2026-08-20T00:29:00Z",
+  "routine": "Nightly Screener",
   "status": "success",
-  "session": "claude/sleepy-goldberg-6tjl8u",
-  "portfolio_value": 98933.77,
-  "cash": 98933.77,
-  "open_positions": 0,
-  "trades_today": 1,
-  "trades_this_week_buys": 0,
-  "day_pnl_usd": 11.83,
-  "day_pnl_pct": 0.012,
-  "realized_pnl_today": -60.77,
-  "decision": "EOD snapshot — 100% cash, zero exposure",
-  "notes": "EOD 2026-08-19: portfolio value $98,933.77 (100% cash, 0 open positions). Day P&L +$11.83 (+0.012%) vs Tue close $98,921.94. Realized -$60.77 on single NVDA close (35 sh @ $220.15 fill, pre-earnings 5-day exit window). Trades today: 1 sell. Trades this week: 1 sell / 0 buys — full 3/3 buy budget carries to Thu 8/20. Cumulative since inception: -$1,066.23 (-1.066%). Screener run today: 0 Phase D survivors (catalyst gate would fail for any buys). Next: Thu pre-market re-runs screener; NVDA earnings Tue 8/26 AMC → re-screen Wed 8/27."
+  "session": "claude/happy-shannon-vknn1h",
+  "screener_candidates": 0,
+  "screener_run_date": "2026-08-20",
+  "phase_b_survivors": 1,
+  "phase_c_survivors": 0,
+  "phase_d_survivors": 0,
+  "data_errors": ["MMC", "BRK-B"],
+  "decision": "Nightly screener complete — 0 tradeable candidates for 2026-08-20",
+  "notes": "Nightly screener 2026-08-20 02:29 CEST: 95 tickers scanned, 1 Phase B (Markov) survivor (TSLA), 0 Phase C (momentum), 0 Phase D (technical). TSLA passed Markov gates but failed momentum_1m > 0. No tradeable candidates for Thu pre-market. Data errors: MMC (0 bars), BRK-B (Alpaca 400). Pre-market routine will read memory/screener_results.md — expect NO_TRADE unless macro/catalyst changes the picture."
 }
