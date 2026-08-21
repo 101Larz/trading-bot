@@ -5186,3 +5186,47 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - Weekly buy budget still 3/3 — carries into midday and (if unused) EOD.
 - Watch flash PMI print reaction (released 9:45 ET) — if hot manufacturing, semis leadership persists into Mon 8/24 re-screen.
 - Weekly review routine at 17:00 ET.
+
+
+### EOD Snapshot — 2026-08-21 (Friday — session: claude/sleepy-goldberg-dmge47)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Thu 2026-08-20): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — perfectly flat day, no trades executed. Portfolio remained 100% cash throughout the session.
+
+Session cadence today (Fri 8/21): pre-market → NO_TRADE (catalyst gate fails, 0 Phase D survivors); market-open → HOLD reaffirmed (0 catalysts, macro filter permissive SPY RSI 62.91); midday → HOLD; EOD → 100% cash preserved. Weekly buy budget 3/3 unused going into next week.
+
+No trades executed today. No trades this week (0 buys / 0 sells since Mon 8/17).
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk over the weekend.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used — full 3-trade budget resets Mon 8/24.
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Mon 2026-08-24 Pre-Market
+
+- Portfolio is 100% cash — clean slate for buy-side re-entry.
+- **Buy budget 3/3 fresh for the new week.** Catalyst gate still binds: no buys unless Markov screener returns ≥1 Phase D survivor.
+- Re-run full 95-ticker Markov screener at Mon pre-market (`scripts/markov_screener_full.py`).
+- **NVDA earnings Tue 8/26 AMC** — chip-sector positioning discipline: no fresh chip entries Mon/Tue ahead of print; post-earnings re-entry planning kicks off Wed 8/27 pre-market.
+- SPY macro filter permissive (bullish MA alignment, RSI-14 62.91 — well below ≥80 exit trigger).
+- Weekly review routine fires at 17:00 ET (5 PM) today (Fri 8/21) to close the week.
