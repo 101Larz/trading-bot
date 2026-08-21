@@ -1,11 +1,15 @@
 {
-  "last_run": "2026-08-21T00:29:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-08-21T13:00:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
+  "decision": "HOLD",
+  "positions": 0,
+  "cash": 98933.59,
+  "portfolio_value": 98933.59,
   "screener_candidates": 0,
   "screener_run_date": "2026-08-21",
   "phase_b_survivors": 7,
   "phase_c_survivors": 0,
   "phase_d_survivors": 0,
-  "notes": "Nightly screener 2026-08-21 02:28 CEST: 7 Markov survivors (AMD/LRCX/ARM/MU/WDC/SNDK/STX — all semis), all failed momentum gate. 0 Phase D candidates for Fri 8/21 pre-market. Data errors: MMC (0 bars from fallback), BRK-B (Alpaca 400)."
+  "notes": "Pre-market 2026-08-21: 0 Phase D candidates (catalyst gate fails). Portfolio 100% cash, 0 positions. SPY futures +0.08%, semis leading MTD, flash PMI at 9:45 ET. NO_TRADE. Weekly review at 17:00 ET."
 }
