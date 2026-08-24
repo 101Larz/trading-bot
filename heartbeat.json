@@ -1,12 +1,11 @@
 {
-  "last_run": "2026-08-21T13:47:00Z",
-  "routine": "Market Open Execution",
+  "last_run": "2026-08-24T00:30:00Z",
+  "routine": "Nightly Screener",
   "status": "success",
-  "decision": "HOLD",
-  "positions": 0,
-  "cash": 98933.59,
-  "portfolio_value": 98933.59,
-  "trades_executed": 0,
-  "weekly_buy_budget_used": 0,
-  "notes": "Market-open 2026-08-21: HOLD reaffirmed. 0 Phase D screener survivors → catalyst gate fails → no buy universe. 0 positions → no exits/stops. SPY macro permissive (above MA20/MA50, RSI 62.91). 100% cash preserved. Next: midday scan 12:30 ET, weekly review 17:00 ET."
+  "screener_candidates": 0,
+  "screener_run_date": "2026-08-24",
+  "phase_b_survivors": 7,
+  "phase_c_survivors": 2,
+  "phase_d_survivors": 0,
+  "notes": "Nightly screener 2026-08-24 02:27 CEST: 95 tickers scanned. 7 passed Markov (Bull + signal>0 + StatBull>=40% + Sharpe>0.20), 2 passed momentum (GOOGL +7.8%, LRCX +2.9%), 0 passed technical gate. GOOGL failed technical due to oversold RSI 25.6. No candidates for pre-market. Data errors: MMC (0 bars), BRK-B (400)."
 }
