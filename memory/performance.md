@@ -5308,4 +5308,48 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 
 HOLD reaffirmed from pre-market. Catalyst gate fails — 0 Phase D survivors from 2026-08-25 screener. Chip-sector blackout active through NVDA earnings (Wed 8/26 AMC). SPY macro filter softening (price just below MA20). No buys authorized; no positions to manage.
 
+
+### EOD Snapshot — 2026-08-25 (Tuesday — session: claude/sleepy-goldberg-mnmhdo)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Mon 2026-08-24): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — flat day, no trades executed. Portfolio remained 100% cash throughout.
+
+Session cadence today (Tue 8/25): pre-market → HOLD (0 Phase D screener survivors, chip-sector NVDA blackout in effect); market-open → HOLD reaffirmed (catalyst gate fails, SPY macro filter softening just below MA20); midday → HOLD; EOD → 100% cash preserved. Weekly buy budget 3/3 still unused entering Wed 8/26.
+
+No trades executed today. Zero trades this week so far (0 buys / 0 sells Mon 8/24 → Tue 8/25).
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk overnight.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used.
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Wed 2026-08-26 Pre-Market
+
+- Portfolio is 100% cash — clean slate.
+- **Buy budget 3/3 available.** Catalyst gate binds: no buys unless Markov screener returns ≥1 Phase D survivor.
+- **NVDA earnings Wed 8/26 AMC** — chip-sector blackout remains in force through Wed close; post-earnings re-entry planning kicks off Thu 8/27 pre-market once dust settles.
+- Re-run nightly Markov screener before pre-market routine.
+- Watch SPY macro filter — price just below MA20 today; if MA20/MA50 alignment flips bearish or RSI-14 ≥80, exit trigger armed for any open longs.
+
+
 Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** — unchanged.
