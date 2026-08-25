@@ -5291,3 +5291,21 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **NVDA earnings Tue 8/26 AMC** — chip-sector positioning discipline: no fresh chip entries Tue ahead of print; post-earnings re-entry planning Wed 8/27.
 - Re-run nightly Markov screener before pre-market routine.
 - Watch SPY macro filter — if RSI-14 ≥80 or MA20/MA50 alignment flips bearish, exit trigger armed for any open longs.
+
+
+### Market-Open — 2026-08-25 (Tuesday — session: claude/sweet-shannon-t15lfx)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Trades Executed | 0 |
+| Positions Opened | 0 |
+| Positions Closed | 0 |
+| Weekly Buys Used | 0 / 3 |
+| Open Positions | 0 / 6 |
+
+HOLD reaffirmed from pre-market. Catalyst gate fails — 0 Phase D survivors from 2026-08-25 screener. Chip-sector blackout active through NVDA earnings (Wed 8/26 AMC). SPY macro filter softening (price just below MA20). No buys authorized; no positions to manage.
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** — unchanged.
