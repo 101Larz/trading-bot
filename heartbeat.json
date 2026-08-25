@@ -1,13 +1,11 @@
 {
-  "last_run": "2026-08-25T00:35:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-08-25T07:22:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "session": "claude/happy-shannon-h3tcaq",
-  "screener_candidates": 0,
-  "screener_run_date": "2026-08-25",
-  "screener_years_lookback": 10,
-  "phase_b_survivors": 0,
-  "phase_c_survivors": 0,
-  "phase_d_survivors": 0,
-  "notes": "Nightly Markov screener 2026-08-25 02:30 CEST — ran full 95-ticker universe with --years 10 per routine prompt. All 95 tickers failed Phase B (Markov Bull regime + signal>0 + statBull>=40% + sharpe>0.20). Data errors: MMC (0 bars), BRK-B (Alpaca 400). Note discrepancy vs 2026-08-24 run which used default --years 3 and produced 7 Phase B survivors — 10-year lookback appears materially stricter. Pre-market routine (09:00 ET) will read screener_results.md and default to HOLD."
+  "session": "claude/gallant-lamport-y9i6nh",
+  "portfolio_value": 98933.59,
+  "cash": 98933.59,
+  "open_positions": 0,
+  "decision": "HOLD",
+  "reason": "Catalyst gate fails — 0 Phase D screener survivors on 2026-08-25. Chip-sector blackout active through NVDA earnings (Wed 8/26 AMC). SPY macro filter softening (price just below MA20). Weekly buy budget 3/3 unused."
 }
