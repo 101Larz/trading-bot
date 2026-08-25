@@ -1,16 +1,13 @@
 {
-  "last_run": "2026-08-24T20:15:00Z",
-  "routine": "End of Day",
+  "last_run": "2026-08-25T00:35:00Z",
+  "routine": "Nightly Screener",
   "status": "success",
-  "session": "claude/sleepy-goldberg-uv6uwt",
-  "portfolio_value": 98933.59,
-  "cash": 98933.59,
-  "open_positions": 0,
-  "decision": "HOLD",
-  "trades_executed": 0,
-  "weekly_buys_used": 0,
-  "weekly_buys_budget": 3,
-  "day_pnl_dollars": 0.00,
-  "day_pnl_percent": 0.00,
-  "notes": "EOD 2026-08-24: flat day, 100% cash, 0 trades. Fri close $98,933.59 → today close $98,933.59 (0.00%). All four routines today were HOLD (catalyst gate binding, 0 Phase D survivors). Weekly buy budget 3/3 unused. NVDA earnings Tue 8/26 AMC — chip entries blocked Tue."
+  "session": "claude/happy-shannon-h3tcaq",
+  "screener_candidates": 0,
+  "screener_run_date": "2026-08-25",
+  "screener_years_lookback": 10,
+  "phase_b_survivors": 0,
+  "phase_c_survivors": 0,
+  "phase_d_survivors": 0,
+  "notes": "Nightly Markov screener 2026-08-25 02:30 CEST — ran full 95-ticker universe with --years 10 per routine prompt. All 95 tickers failed Phase B (Markov Bull regime + signal>0 + statBull>=40% + sharpe>0.20). Data errors: MMC (0 bars), BRK-B (Alpaca 400). Note discrepancy vs 2026-08-24 run which used default --years 3 and produced 7 Phase B survivors — 10-year lookback appears materially stricter. Pre-market routine (09:00 ET) will read screener_results.md and default to HOLD."
 }
