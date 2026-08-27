@@ -1,16 +1,18 @@
 # Nightly Screener Results
 
-**Run:** 2026-08-26 02:30 CEST
+**Run:** 2026-08-27 02:26 CEST
 **Universe:** 95 tickers
-**Phase B survivors (Markov):** 8
-**Phase C survivors (Momentum):** 5
-**Phase D survivors (Technical):** 0
+**Phase B survivors (Markov):** 6
+**Phase C survivors (Momentum):** 6
+**Phase D survivors (Technical):** 1
 
 ---
 
-## Top 0 Candidates (ranked by Sharpe)
+## Top 1 Candidates (ranked by Sharpe)
 
-_No tickers passed all four gates today._
+| Rank | Ticker | Regime | Markov Signal | Stat Bull% | Sharpe | RSI | MA Alignment | Momentum 1M |
+|------|--------|--------|---------------|------------|--------|-----|--------------|-------------|
+| 1 | MRVL | Bull | +0.001 | 43.0% | +1.048 | 62.8 | mixed | +50.0% |
 
 ---
 
@@ -18,21 +20,21 @@ _No tickers passed all four gates today._
 
 | Ticker | Regime | Markov Signal | Stat Bull% | Sharpe | Momentum 1M | RSI | Tech Gate |
 |--------|--------|---------------|------------|--------|-------------|-----|-----------|
-| NVDA | Bull | +0.064 | 45.4% | 1.542 | +8.1% | 42.5 | TECH:FAIL |
-| STX | Bull | +0.080 | 43.8% | 1.504 | +9.9% | 48.5 | TECH:FAIL |
-| LRCX | Bull | +0.004 | 43.5% | 1.468 | +16.7% | 53.3 | TECH:FAIL |
-| MU | Bull | +0.027 | 44.2% | 1.458 | +13.7% | 55.2 | TECH:FAIL |
-| AMD | Bull | +0.018 | 44.2% | 0.674 | +5.4% | 49.1 | TECH:FAIL |
+| SNDK | Bull | +0.184 | 51.2% | 2.557 | +47.6% | 61.9 | TECH:FAIL |
+| STX | Bull | +0.080 | 43.8% | 1.499 | +10.7% | 49.4 | TECH:FAIL |
+| MU | Bull | +0.028 | 44.2% | 1.450 | +27.0% | 57.6 | TECH:FAIL |
+| WDC | Bull | +0.055 | 43.9% | 1.449 | +1.5% | 53.2 | TECH:FAIL |
+| ARM | Bull | +0.069 | 45.5% | 0.907 | +11.6% | 29.3 | TECH:FAIL |
 
 ---
 
 ## Phase B Failures (Markov filter — not traded today)
 
-AAPL, MSFT, GOOGL, AMZN, META, TSLA, AVGO, CRM, ADBE, ORCL, INTU, IBM, ACN, NFLX, DIS, INTC, PYPL, AMAT, MRVL, ASML, SNDK, QCOM, JPM, V, MA, GS, BAC, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, AIG, MET, UNH, LLY, ABBV, TMO, AMGN, JNJ, MRK, PFE, GILD, REGN, ABT, DHR, ISRG, SYK, ELV, ZTS, WMT, PG, COST, KO, PEP, MDLZ, PM, HD, MCD, NKE, SBUX, TXN, XOM, CVX, HON, CAT, GE, UPS, BA, RTX, LIN, NEE, MMM, ADP, QQQ, IWM, EEM, VGK, GLD, XLE, XLF, XLV
+AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, AVGO, CRM, ADBE, ORCL, INTU, IBM, ACN, NFLX, DIS, INTC, PYPL, AMAT, LRCX, KLAC, ASML, QCOM, JPM, V, MA, GS, BAC, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, AIG, MET, UNH, LLY, ABBV, TMO, AMGN, JNJ, MRK, PFE, GILD, REGN, ABT, DHR, ISRG, SYK, ELV, ZTS, WMT, PG, COST, KO, PEP, MDLZ, PM, HD, MCD, NKE, SBUX, TXN, XOM, CVX, HON, CAT, GE, UPS, BA, RTX, LIN, NEE, MMM, ADP, QQQ, IWM, EEM, VGK, GLD, XLE, XLF, XLV
 
 ## Phase C Failures (Momentum filter)
 
-KLAC, ARM, WDC
+_None._
 
 ## Data Errors (skipped)
 
