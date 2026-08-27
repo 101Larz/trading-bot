@@ -5412,3 +5412,19 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **NVDA earnings review** — parse AMC print reaction; chip-sector blackout lifts once dust settles. Post-earnings re-entry planning is priority for Thu pre-market.
 - Re-run nightly Markov screener before pre-market routine.
 - Watch SPY macro filter — MA20 alignment, RSI-14.
+
+
+### Market-Open — 2026-08-27 (Thursday — session: claude/sweet-shannon-lim18j)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Trades Executed | 0 |
+| Positions Opened | 0 |
+| Positions Closed | 0 |
+| Weekly Buys Used | 0 / 3 |
+| Open Positions | 0 / 6 |
+
+HOLD reaffirmed from pre-market. Only Phase D screener survivor is **MRVL**, but MRVL reports Q2 FY27 AMC tonight (day 0 earnings window) — strategy explicitly bars entries with earnings inside 5 trading days. Catalyst gate FAILS: no ticker in today's RESEARCH-LOG is approved for entry. Additional macro headwind: Jackson Hole / Warsh keynote 10:00 ET Fri 8/28 = binary event, argues against fresh multi-day adds. No buys authorized. Buy budget 3/3 preserved for post-print reassessment (MRVL Fri 8/28 pre-market at earliest).

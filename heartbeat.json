@@ -1,12 +1,13 @@
 {
-  "last_run": "2026-08-27T00:26:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-08-27T13:45:00Z",
+  "routine": "Market Open Execution",
   "status": "success",
-  "screener_candidates": 1,
-  "screener_run_date": "2026-08-27",
-  "top_candidates": ["MRVL"],
-  "phase_b_survivors": 6,
-  "phase_c_survivors": 6,
-  "phase_d_survivors": 1,
-  "note": "1 Phase D survivor: MRVL (Sharpe 1.048, RSI 62.8, momentum +50%, MA alignment mixed). SNDK/STX/MU/WDC/ARM cleared Markov+Momentum but failed technical gate."
+  "decision": "HOLD",
+  "trades_executed": 0,
+  "positions_opened": 0,
+  "open_positions": 0,
+  "weekly_buys_used": 0,
+  "cash": 98933.59,
+  "portfolio_value": 98933.59,
+  "note": "HOLD reaffirmed from pre-market. Catalyst gate FAILS: only Phase D survivor MRVL blocked by day-0 earnings (AMC 8/27). Jackson Hole binary Fri 8/28. No buys authorized. Buy budget 3/3 preserved."
 }
