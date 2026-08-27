@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-08-27T13:45:00Z",
-  "routine": "Market Open Execution",
+  "last_run": "2026-08-27T20:15:00Z",
+  "routine": "End of Day",
   "status": "success",
   "decision": "HOLD",
   "trades_executed": 0,
@@ -9,5 +9,5 @@
   "weekly_buys_used": 0,
   "cash": 98933.59,
   "portfolio_value": 98933.59,
-  "note": "HOLD reaffirmed from pre-market. Catalyst gate FAILS: only Phase D survivor MRVL blocked by day-0 earnings (AMC 8/27). Jackson Hole binary Fri 8/28. No buys authorized. Buy budget 3/3 preserved."
+  "note": "EOD snapshot 2026-08-27. Flat day, 100% cash, day P&L $0.00 (0.00%). Zero trades this week. Buy budget 3/3 preserved. Carry-forward Fri 8/28: MRVL post-print parse + Jackson Hole 10:00 ET binary event."
 }

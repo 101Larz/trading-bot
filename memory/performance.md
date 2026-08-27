@@ -5428,3 +5428,46 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 | Open Positions | 0 / 6 |
 
 HOLD reaffirmed from pre-market. Only Phase D screener survivor is **MRVL**, but MRVL reports Q2 FY27 AMC tonight (day 0 earnings window) — strategy explicitly bars entries with earnings inside 5 trading days. Catalyst gate FAILS: no ticker in today's RESEARCH-LOG is approved for entry. Additional macro headwind: Jackson Hole / Warsh keynote 10:00 ET Fri 8/28 = binary event, argues against fresh multi-day adds. No buys authorized. Buy budget 3/3 preserved for post-print reassessment (MRVL Fri 8/28 pre-market at earliest).
+
+
+### EOD Snapshot — 2026-08-27 (Thursday — session: claude/sleepy-goldberg-k8hs6v)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Wed 2026-08-26): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — flat day, no trades executed. Portfolio remained 100% cash throughout.
+
+Session cadence today (Thu 8/27): pre-market → HOLD (only Phase D survivor MRVL blocked by day-0 earnings AMC); market-open → HOLD reaffirmed (catalyst gate fails, Jackson Hole binary Fri 8/28); EOD → 100% cash preserved. Weekly buy budget 3/3 still unused entering Fri 8/28.
+
+No trades executed today. Zero trades this week (0 buys / 0 sells Mon 8/24 → Thu 8/27).
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk overnight.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used.
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Fri 2026-08-28 Pre-Market
+
+- Portfolio is 100% cash — clean slate.
+- **Buy budget 3/3 available** — last trading day of the week; anything unused resets Monday.
+- **MRVL Q2 FY27 print AMC 8/27** — parse tomorrow pre-market to see if post-print reaction re-qualifies it for entry.
+- **Jackson Hole / Warsh keynote 10:00 ET Fri 8/28** — binary macro event; SPY macro filter re-check post-print. Prefer defensive posture into 10:00 ET; any fresh entries wait until post-speech tape.
+- Re-run nightly Markov screener before pre-market routine.
