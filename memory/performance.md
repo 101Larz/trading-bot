@@ -5471,3 +5471,23 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **MRVL Q2 FY27 print AMC 8/27** — parse tomorrow pre-market to see if post-print reaction re-qualifies it for entry.
 - **Jackson Hole / Warsh keynote 10:00 ET Fri 8/28** — binary macro event; SPY macro filter re-check post-print. Prefer defensive posture into 10:00 ET; any fresh entries wait until post-speech tape.
 - Re-run nightly Markov screener before pre-market routine.
+
+
+### Market-Open — 2026-08-28 (Friday — session: claude/sweet-shannon-s5s2bc)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Trades Executed | 0 |
+| Positions Opened | 0 |
+| Positions Closed | 0 |
+| Weekly Buys Used | 0 / 3 |
+| Open Positions | 0 / 6 |
+
+**HOLD — no trades.** Pre-market carry-forward explicitly bars market-open entry: *"a 09:45–10:00 ET buy is speculatively pre-positioning across a Fed-chair binary."* Warsh Jackson Hole keynote at 10:00 ET (13 min after this routine fires) is the day's macro binary; default when uncertain = NO_TRADE.
+
+Sole Phase D candidate **NVDA** passed live entry gates at 09:47 ET (last $226.75; bid/ask $226.71/$226.75 → spread 0.018% ✅; MA20 $217.21 / MA50 $208.16 bull-align ✅; RSI-14 53.5 ✅) — mechanically eligible but procedurally blocked by the pre-Warsh carry-forward. Buy budget preserved for post-speech midday reassessment.
+
+Infra update: `scripts/trade.py trail SYMBOL SHARES [PCT]` subcommand now present — broker-side trailing-stop root cause of 7/16 AMD manual-cut is resolved on the tooling side (available for use on next size-cap fill).
