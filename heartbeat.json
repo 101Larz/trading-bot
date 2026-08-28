@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-08-28T07:30:00Z",
-  "routine": "Pre-Market Research",
+  "last_run": "2026-08-28T13:46:00Z",
+  "routine": "Market-Open Execution",
   "status": "success",
   "decision": "HOLD",
   "cash": 98933.59,
@@ -8,6 +8,6 @@
   "open_positions": 0,
   "weekly_buys_used": 0,
   "top_candidate": "NVDA",
-  "candidate_status": "DEFER_TO_MARKET_OPEN",
-  "note": "Pre-market HOLD. NVDA sole Phase D pass (Sharpe +1.55, RSI 53.5) but deferred: Jackson Hole/Warsh keynote 10:00 ET binary + post-earnings +6% AH gap chase risk + 5.5% pre-market spread. Cash 100%; weekly buys 0/3 preserved. PR #260 opened to main."
+  "candidate_status": "GATES_PASS_BUT_DEFERRED_TO_MIDDAY_POST_WARSH",
+  "note": "Market-open HOLD. NVDA live gates pass (spread 0.018%, MA bullish, RSI 53.5) but pre-market carry-forward barred 09:45-10:00 ET entry ahead of Warsh Jackson Hole keynote at 10:00 ET (Fed-chair binary). Cash 100%; weekly buys 0/3 preserved. trade.py trail subcommand confirmed available (broker-side trailing-stop infra resolved)."
 }
