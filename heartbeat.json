@@ -1,13 +1,13 @@
 {
-  "last_run": "2026-08-27T20:15:00Z",
-  "routine": "End of Day",
+  "last_run": "2026-08-28T00:27:00Z",
+  "routine": "Nightly Screener",
   "status": "success",
-  "decision": "HOLD",
-  "trades_executed": 0,
-  "positions_opened": 0,
-  "open_positions": 0,
-  "weekly_buys_used": 0,
-  "cash": 98933.59,
-  "portfolio_value": 98933.59,
-  "note": "EOD snapshot 2026-08-27. Flat day, 100% cash, day P&L $0.00 (0.00%). Zero trades this week. Buy budget 3/3 preserved. Carry-forward Fri 8/28: MRVL post-print parse + Jackson Hole 10:00 ET binary event."
+  "screener_candidates": 1,
+  "screener_run_date": "2026-08-28",
+  "phase_b_survivors": 5,
+  "phase_c_survivors": 4,
+  "phase_d_survivors": 1,
+  "top_candidates": ["NVDA"],
+  "data_errors": ["MMC", "BRK-B"],
+  "note": "Nightly Markov+momentum+technical screen. NVDA sole Phase D survivor (Sharpe +1.55, Mom +16.9%, RSI 53.5). LRCX/ARM/TSLA passed Markov+momentum but failed technical gate (ARM RSI 34.1 < 35; LRCX/TSLA MA alignment). Pre-market routine should read memory/screener_results.md."
 }
