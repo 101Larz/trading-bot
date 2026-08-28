@@ -1,13 +1,13 @@
 {
-  "last_run": "2026-08-28T00:27:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-08-28T07:30:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "screener_candidates": 1,
-  "screener_run_date": "2026-08-28",
-  "phase_b_survivors": 5,
-  "phase_c_survivors": 4,
-  "phase_d_survivors": 1,
-  "top_candidates": ["NVDA"],
-  "data_errors": ["MMC", "BRK-B"],
-  "note": "Nightly Markov+momentum+technical screen. NVDA sole Phase D survivor (Sharpe +1.55, Mom +16.9%, RSI 53.5). LRCX/ARM/TSLA passed Markov+momentum but failed technical gate (ARM RSI 34.1 < 35; LRCX/TSLA MA alignment). Pre-market routine should read memory/screener_results.md."
+  "decision": "HOLD",
+  "cash": 98933.59,
+  "portfolio_value": 98933.59,
+  "open_positions": 0,
+  "weekly_buys_used": 0,
+  "top_candidate": "NVDA",
+  "candidate_status": "DEFER_TO_MARKET_OPEN",
+  "note": "Pre-market HOLD. NVDA sole Phase D pass (Sharpe +1.55, RSI 53.5) but deferred: Jackson Hole/Warsh keynote 10:00 ET binary + post-earnings +6% AH gap chase risk + 5.5% pre-market spread. Cash 100%; weekly buys 0/3 preserved. PR #260 opened to main."
 }
