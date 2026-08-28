@@ -5491,3 +5491,48 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 Sole Phase D candidate **NVDA** passed live entry gates at 09:47 ET (last $226.75; bid/ask $226.71/$226.75 → spread 0.018% ✅; MA20 $217.21 / MA50 $208.16 bull-align ✅; RSI-14 53.5 ✅) — mechanically eligible but procedurally blocked by the pre-Warsh carry-forward. Buy budget preserved for post-speech midday reassessment.
 
 Infra update: `scripts/trade.py trail SYMBOL SHARES [PCT]` subcommand now present — broker-side trailing-stop root cause of 7/16 AMD manual-cut is resolved on the tooling side (available for use on next size-cap fill).
+
+
+### EOD Snapshot — 2026-08-28 (Friday — session: claude/sleepy-goldberg-s8kdcb)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused — resets Monday) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Thu 2026-08-27): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — flat day, no trades executed. Portfolio remained 100% cash throughout.
+
+Session cadence today (Fri 8/28): market-open → HOLD (pre-Warsh Jackson Hole binary blocks entry; sole Phase D candidate NVDA mechanically eligible but procedurally blocked); EOD → 100% cash preserved. Weekly buy budget 3/3 unused; resets Monday 8/31.
+
+No trades executed today. Zero trades this week (0 buys / 0 sells Mon 8/24 → Fri 8/28) — full 5-session HOLD streak.
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk over the weekend.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used (resets Monday).
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Mon 2026-08-31 Pre-Market
+
+- Portfolio is 100% cash — clean slate into new week.
+- **Buy budget resets to 3/3 for week of 8/31.**
+- Parse Warsh Jackson Hole keynote reaction on close and any weekend follow-through news.
+- **MRVL post-print reaction** — re-assess after AMC 8/27 print settled through Friday's tape.
+- **NVDA** — reassess post-earnings-week tape action; was mechanically gate-eligible Fri but procedurally blocked.
+- Re-run nightly Markov screener before Monday pre-market routine.
+- Watch SPY macro filter — MA20 alignment, RSI-14 post-Jackson Hole.
