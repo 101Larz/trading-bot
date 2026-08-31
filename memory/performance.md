@@ -5536,3 +5536,22 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **NVDA** — reassess post-earnings-week tape action; was mechanically gate-eligible Fri but procedurally blocked.
 - Re-run nightly Markov screener before Monday pre-market routine.
 - Watch SPY macro filter — MA20 alignment, RSI-14 post-Jackson Hole.
+
+
+---
+
+## 2026-08-31 (Monday) — Market-Open Execution — HOLD
+
+**Decision: NO_TRADE.** Nightly screener returned **0 candidates** across the 95-ticker universe (regime shift — zero tickers currently in Bull regime with Markov signal>0, stationary bull%≥40%, walk-forward Sharpe>0.20). No pre-market research file exists for today. Buy-rule 4 (catalyst must be in today's RESEARCH-LOG) fails cleanly → HOLD.
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Weekly Buys Used | 0 / 3 (fresh week — reset today) |
+| Trades This Session | 0 |
+| Screener Candidates | 0 |
+
+Portfolio remains 100% cash — zero single-name and zero market delta into the new week. Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM). Carry-forward: watch for regime rebuild ahead of midday scan and tomorrow's nightly screener; no positions to manage in the interim.
