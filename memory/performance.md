@@ -5555,3 +5555,47 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 | Screener Candidates | 0 |
 
 Portfolio remains 100% cash — zero single-name and zero market delta into the new week. Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM). Carry-forward: watch for regime rebuild ahead of midday scan and tomorrow's nightly screener; no positions to manage in the interim.
+
+
+### EOD Snapshot — 2026-08-31 (Monday — session: claude/sleepy-goldberg-eftuoi)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Fri 2026-08-28): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — flat day, no trades executed. Portfolio remained 100% cash throughout.
+
+Session cadence today (Mon 8/31): market-open → HOLD (nightly screener returned 0 candidates — regime shift; no Bull-regime tickers with Markov signal>0 across 95-ticker universe; buy-rule 4 fails cleanly, no pre-market research file); EOD → 100% cash preserved. Weekly buy budget 3/3 remains unused.
+
+No trades executed today. Zero trades this week (0 buys / 0 sells) — HOLD streak extends into week of 8/31.
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk overnight.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used.
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Tue 2026-09-01 Pre-Market
+
+- Portfolio is 100% cash — clean slate.
+- **Buy budget 3/3 available.**
+- **Regime watch** — nightly screener returned 0 candidates today; monitor for regime rebuild ahead of tomorrow's pre-market. If screener remains empty, HOLD posture continues.
+- **NVDA / MRVL** — carry-forward watch items from Fri 8/28; reassess post-earnings-week tape action if regime rebuilds.
+- Re-run nightly Markov screener before pre-market routine.
+- Watch SPY macro filter — MA20 alignment, RSI-14 post-Jackson Hole follow-through.
