@@ -5599,3 +5599,30 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **NVDA / MRVL** — carry-forward watch items from Fri 8/28; reassess post-earnings-week tape action if regime rebuilds.
 - Re-run nightly Markov screener before pre-market routine.
 - Watch SPY macro filter — MA20 alignment, RSI-14 post-Jackson Hole follow-through.
+
+---
+
+## 2026-09-01 (Tuesday) — Market-Open Execution — HOLD
+
+**Decision: NO_TRADE.** Macro gate still red at open + both screener candidates fail live technical entry.
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Open Positions | 0 / 6 |
+| Weekly Buys Used | 0 / 3 |
+| Trades This Session | 0 |
+| Screener Candidates | MU, NVDA (both fail live entry) |
+
+**Live technical gates checked at open (~9:47 ET):**
+- **SPY** last $762.10 vs MA20 $769.68 → **below MA20** → strategy criterion #4 (macro) FAIL. SPY also gapped lower vs prior close $767.05 (-0.65%).
+- **MU** last $935.21 vs MA20 $927.34 / MA50 $951.47 → **below MA50** → strategy criterion #1 (bullish MA alignment) FAIL. RSI 61.9 OK, but price failed to hold prior close $958.73.
+- **NVDA** last $216.91 vs MA20 $218.75 / MA50 $208.62 → **below MA20 in live tape** → strategy criterion #1 FAIL. RSI 52.5 OK. Prior close was $220.78 (above MA20); live gap-down invalidates entry.
+
+Buy-rule 4 (catalyst in today's RESEARCH-LOG) is satisfied for both names, but strategy entry criteria (#1 MA alignment and #4 macro) override — HOLD confirmed.
+
+Portfolio remains 100% cash. Weekly buy budget 3/3 preserved. Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged).
+
+**Carry-forward to midday scan (12:30 ET):** re-check SPY MA20 reclaim; if SPY holds ≥ $769.68 AND either MU reclaims $951 or NVDA reclaims $218.75, revisit the trade ideas. Otherwise HOLD extends.
