@@ -1,12 +1,13 @@
 {
-  "last_run": "2026-09-01T13:50:00Z",
-  "routine": "Market Open Execution",
+  "last_run": "2026-09-01T20:37:14Z",
+  "routine": "End of Day",
   "status": "success",
   "decision": "HOLD",
   "cash": 98933.59,
   "portfolio_value": 98933.59,
   "open_positions": 0,
-  "screener_candidates": ["MU", "NVDA"],
-  "macro_gate": "FAIL (SPY 762.10 < MA20 769.68)",
-  "note": "Market-open HOLD: SPY gapped lower and remains under MA20; MU broke below MA50; NVDA gapped below MA20. Weekly buy budget 3/3 preserved."
+  "day_pnl": 0.0,
+  "day_pnl_pct": 0.0,
+  "trades_today": 0,
+  "note": "EOD snapshot: flat day, 100% cash, 0 trades. Buy budget 3/3 preserved into Wed."
 }
