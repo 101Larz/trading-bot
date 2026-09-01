@@ -1,12 +1,12 @@
 {
-  "last_run": "2026-09-01T00:27:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-09-01T07:26:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "screener_candidates": 2,
-  "screener_run_date": "2026-09-01",
-  "phase_b_survivors": 6,
-  "phase_c_survivors": 5,
-  "phase_d_survivors": 2,
-  "top_candidates": ["MU", "NVDA"],
-  "note": "Nightly Markov screener complete. Results written to memory/screener_results.md for the 09:00 ET pre-market routine to consume. Data errors on MMC (0 bars) and BRK-B (Alpaca 400) persist."
+  "decision": "HOLD",
+  "cash": 98933.59,
+  "portfolio_value": 98933.59,
+  "open_positions": 0,
+  "screener_candidates": ["MU", "NVDA"],
+  "macro_gate": "FAIL (SPY below MA20)",
+  "note": "Pre-market HOLD: SPY under 20-day MA blocks new longs per strategy criterion #4. Watching MU and NVDA for market-open reassessment."
 }
