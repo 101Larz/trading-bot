@@ -1,13 +1,12 @@
 {
-  "last_run": "2026-09-01T20:37:14Z",
-  "routine": "End of Day",
+  "last_run": "2026-09-02T00:28:00Z",
+  "routine": "Nightly Screener",
   "status": "success",
-  "decision": "HOLD",
-  "cash": 98933.59,
-  "portfolio_value": 98933.59,
-  "open_positions": 0,
-  "day_pnl": 0.0,
-  "day_pnl_pct": 0.0,
-  "trades_today": 0,
-  "note": "EOD snapshot: flat day, 100% cash, 0 trades. Buy budget 3/3 preserved into Wed."
+  "screener_candidates": 0,
+  "screener_run_date": "2026-09-02",
+  "phase_b_survivors": 0,
+  "phase_c_survivors": 0,
+  "phase_d_survivors": 0,
+  "data_errors": 8,
+  "note": "0 Phase B survivors — no ticker's last-bar regime labeled Bull (consistent with SPY pullback below MA20). 8 tickers hit yfinance SSL/429 errors: INTC, SPGI, MMC, BRK-B, MRK, COST, UPS, EEM. Pre-market will read HOLD signal."
 }
