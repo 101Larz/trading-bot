@@ -5687,3 +5687,49 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **NVDA** — gapped below MA20 today (live tape); reassess if it reclaims $218.75 with macro green.
 - Re-run nightly Markov screener before pre-market routine.
 - Watch SPY MA20 alignment as primary macro gate.
+
+---
+
+### EOD Snapshot — 2026-09-02 (Wednesday — session: claude/sleepy-goldberg-0t5bpq)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Tue 2026-09-01): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — flat day, no trades executed. Portfolio remained 100% cash throughout the session.
+
+Session cadence today (Wed 9/2): pre-market → HOLD (SPY $761.85 < MA20 $769.21, screener 0 Phase-B survivors); market-open → HOLD (SPY $762.32 still below MA20, reclaim condition unmet); EOD → 100% cash preserved. Weekly buy budget 3/3 remains unused.
+
+Macro tape context: SPY closed sub-MA20 for third consecutive session. Rising yields, oil bid on Persian Gulf disruption, Fed funds futures pricing ~68% probability of hike at next FOMC (post-Warsh Jackson Hole hawkish tone). Universe regime uniformly non-Bull — nothing to buy even conditionally.
+
+No trades executed today. Zero trades this week so far (0 buys / 0 sells).
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk overnight.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used.
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Thu 2026-09-03 Pre-Market
+
+- Portfolio is 100% cash — clean slate for day 4 of the HOLD stretch.
+- **Buy budget 3/3 available.**
+- **Macro watch** — SPY needs to reclaim MA20 ($769.21) before any long qualifies. Third day sub-MA20; monitor for capitulation/reversal signals overnight (yields, oil, ES futures).
+- **Screener rebuild** — nightly Markov screener returned 0 Phase-B survivors this morning; monitor for regime rebuild ahead of tomorrow's pre-market.
+- Watch data on deck for Thursday: continuing initial claims (post-JOLTS), any Fed speak.
