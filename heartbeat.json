@@ -1,12 +1,11 @@
 {
-  "last_run": "2026-09-02T09:00:00-04:00",
-  "routine": "Pre-Market Research",
+  "last_run": "2026-09-02T09:47:00-04:00",
+  "routine": "Market Open Execution",
   "status": "success",
   "decision": "HOLD",
-  "reason": "SPY below MA20 (761.85 vs 769.21); 0 screener candidates; hawkish Fed + rising yields + geopolitical risk-off",
+  "reason": "SPY still below MA20 (762.32 vs 769.21); reclaim condition not met; 0 screener candidates from pre-market",
   "positions": 0,
   "cash": 98933.59,
   "portfolio_value": 98933.59,
-  "orders_placed": 0,
-  "pr": "https://github.com/101Larz/trading-bot/pull/267"
+  "orders_placed": 0
 }
