@@ -1,12 +1,12 @@
 {
-  "last_run": "2026-09-02T00:28:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-09-02T09:00:00-04:00",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "screener_candidates": 0,
-  "screener_run_date": "2026-09-02",
-  "phase_b_survivors": 0,
-  "phase_c_survivors": 0,
-  "phase_d_survivors": 0,
-  "data_errors": 8,
-  "note": "0 Phase B survivors — no ticker's last-bar regime labeled Bull (consistent with SPY pullback below MA20). 8 tickers hit yfinance SSL/429 errors: INTC, SPGI, MMC, BRK-B, MRK, COST, UPS, EEM. Pre-market will read HOLD signal."
+  "decision": "HOLD",
+  "reason": "SPY below MA20 (761.85 vs 769.21); 0 screener candidates; hawkish Fed + rising yields + geopolitical risk-off",
+  "positions": 0,
+  "cash": 98933.59,
+  "portfolio_value": 98933.59,
+  "orders_placed": 0,
+  "pr": "https://github.com/101Larz/trading-bot/pull/267"
 }
