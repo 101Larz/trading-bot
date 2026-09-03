@@ -5733,3 +5733,13 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **Macro watch** — SPY needs to reclaim MA20 ($769.21) before any long qualifies. Third day sub-MA20; monitor for capitulation/reversal signals overnight (yields, oil, ES futures).
 - **Screener rebuild** — nightly Markov screener returned 0 Phase-B survivors this morning; monitor for regime rebuild ahead of tomorrow's pre-market.
 - Watch data on deck for Thursday: continuing initial claims (post-JOLTS), any Fed speak.
+
+---
+
+### Market-Open Trade Log — 2026-09-03 (Thursday — session: claude/sweet-shannon-8h99cd)
+
+| Time (ET) | Symbol | Side | Qty | Price | Reason |
+|-----------|--------|------|-----|-------|--------|
+| 09:45 | — | HOLD | — | — | No pre-market research file for 2026-09-03; nightly screener 0/93 Phase-B survivors; SPY < MA20 (3rd session); catalyst gate FAIL |
+
+- 0 trades executed. Weekly buy budget still 0/3 used. Portfolio remains 100% cash ($98,933.59).
