@@ -1,8 +1,12 @@
 {
-  "last_run": "2026-09-03T02:30:00+02:00",
-  "routine": "Nightly Screener",
+  "last_run": "2026-09-03T09:00:00-04:00",
+  "routine": "Pre-Market Research",
   "status": "success",
+  "decision": "HOLD",
+  "portfolio_value": 98933.59,
+  "cash": 98933.59,
+  "open_positions": 0,
   "screener_candidates": 0,
   "screener_run_date": "2026-09-03",
-  "notes": "Phase B: 0/93 passed Markov Bull gate; 2 data errors (MMC, BRK-B); no tickers pass — pre-market should default HOLD"
+  "notes": "Pre-market: HOLD. Screener 0/93 Bull passes; macro filter unverified; risk-off tape (Middle East, oil, yields). No positions. Weekly buys 0/3."
 }
