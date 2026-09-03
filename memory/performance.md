@@ -5743,3 +5743,47 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 | 09:45 | — | HOLD | — | — | No pre-market research file for 2026-09-03; nightly screener 0/93 Phase-B survivors; SPY < MA20 (3rd session); catalyst gate FAIL |
 
 - 0 trades executed. Weekly buy budget still 0/3 used. Portfolio remains 100% cash ($98,933.59).
+
+---
+
+### EOD Snapshot — 2026-09-03 (Thursday — session: claude/sleepy-goldberg-umoep2)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Wed 2026-09-02): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — flat day, no trades executed. Portfolio remained 100% cash throughout the session.
+
+Session cadence today (Thu 9/3): market-open → HOLD (no pre-market research file; nightly screener 0/93 Phase-B survivors; SPY still sub-MA20 for 4th consecutive session; catalyst gate FAIL); EOD → 100% cash preserved. Weekly buy budget 3/3 remains unused.
+
+No trades executed today. Zero trades this week (0 buys / 0 sells).
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk overnight.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used.
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Fri 2026-09-04 Pre-Market
+
+- Portfolio is 100% cash — clean slate entering day 5 of the HOLD stretch.
+- **Buy budget 3/3 available** heading into final session of the week.
+- **Macro watch** — SPY needs to reclaim MA20 before any long qualifies. Fourth consecutive sub-MA20 session; monitor for capitulation/reversal signals overnight.
+- **Screener rebuild** — nightly Markov screener has now returned 0 Phase-B survivors two mornings running; monitor for regime rebuild ahead of Friday's pre-market.
+- Weekly Review routine fires Friday 17:00 ET — expect full flat/no-trade week summary.
