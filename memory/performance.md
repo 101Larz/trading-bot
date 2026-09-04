@@ -5787,3 +5787,49 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **Macro watch** — SPY needs to reclaim MA20 before any long qualifies. Fourth consecutive sub-MA20 session; monitor for capitulation/reversal signals overnight.
 - **Screener rebuild** — nightly Markov screener has now returned 0 Phase-B survivors two mornings running; monitor for regime rebuild ahead of Friday's pre-market.
 - Weekly Review routine fires Friday 17:00 ET — expect full flat/no-trade week summary.
+
+---
+
+### EOD Snapshot — 2026-09-04 (Friday — session: claude/sleepy-goldberg-ft3hrj)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Thu 2026-09-03): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — flat day, no trades executed. Portfolio remained 100% cash throughout the session.
+
+Session cadence today (Fri 9/4): pre-market → HOLD (SPY < MA20 for 4th consecutive session, screener 0/93 Phase-B survivors, NFP binary pre-open); market-open → HOLD (no candidate, no trades); midday → HOLD (no positions, no-op); EOD → 100% cash preserved. Weekly buy budget 3/3 remains unused for the full week.
+
+Weekly tally (Mon 8/31 – Fri 9/4): **0 trades executed, 0 buys / 0 sells, buy budget 0/3 used.** Full-week HOLD driven by (a) macro gate FAIL — SPY sub-MA20 every session; (b) screener zero survivors most mornings; (c) Fri NFP binary risk.
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk over weekend.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used (resets Monday).
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Mon 2026-09-07 Pre-Market
+
+- Portfolio is 100% cash entering the weekend — clean slate for next week.
+- **Buy budget resets to 3/3 on Monday.**
+- **Macro watch** — SPY needs to reclaim MA20 before any long qualifies. Fifth consecutive sub-MA20 close; monitor weekend headlines and Sunday-night ES futures for regime change.
+- **Screener rebuild** — nightly Markov screener has produced 0 Phase-B survivors multiple mornings running; monitor for regime rebuild ahead of Monday's pre-market.
+- **Fri NFP result** — post-session, review the actual print vs consensus and any Fed-speak; incorporate into Monday's pre-market context.
+- **Weekly Review routine** fires Friday 17:00 ET — expect flat/no-trade week summary and lessons-log update if warranted.
+
