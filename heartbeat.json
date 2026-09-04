@@ -1,12 +1,14 @@
 {
-  "last_run": "2026-09-04T12:30:00-04:00",
-  "routine": "Midday Scan",
-  "status": "success",
-  "action": "HOLD",
-  "trades_executed": 0,
-  "positions_open": 0,
-  "cash": 98933.59,
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-09-04T20:15:00Z",
+  "session": "claude/sleepy-goldberg-ft3hrj",
+  "status": "ok",
   "portfolio_value": 98933.59,
-  "buy_budget_remaining_week": 3,
-  "notes": "Midday scan: 0 open positions — nothing to cut, tighten, or re-thesis. No-op."
+  "cash": 98933.59,
+  "open_positions": 0,
+  "day_pnl": 0.00,
+  "day_pnl_pct": 0.00,
+  "trades_today": 0,
+  "trades_this_week": 0,
+  "note": "EOD 2026-09-04: flat day, 100% cash, no trades all week (0/3 buy budget)."
 }
