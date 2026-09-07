@@ -5833,3 +5833,50 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **Fri NFP result** — post-session, review the actual print vs consensus and any Fed-speak; incorporate into Monday's pre-market context.
 - **Weekly Review routine** fires Friday 17:00 ET — expect flat/no-trade week summary and lessons-log update if warranted.
 
+---
+
+### EOD Snapshot — 2026-09-07 (Monday — Labor Day — session: claude/sleepy-goldberg-ntffun)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,933.59 |
+| Cash | $98,933.59 (100.0%) |
+| Long Market Value | $0.00 |
+| Day P&L | $0.00 (0.00%) |
+| Realized P&L Today | $0.00 (no trades) |
+| Trades Today | 0 |
+| Trades This Week | 0 buys / 0 sells (buy budget 3/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+None — portfolio is 100% cash.
+
+### Day Summary
+
+Prior close (Fri 2026-09-04): $98,933.59 → today's close $98,933.59 → **$0.00 (0.00%)** — **US markets CLOSED for Labor Day.** No orders possible, no MTM movement, no risk-management action required.
+
+Session cadence today (Mon 9/7): pre-market → HOLD (market closed; documented Tues 9/8 plan — MU priority, NVDA with RSI/gap guard, SNDK skipped pending trend confirmation); market-open → NO_TRADE (Alpaca clock `is_open: false`); EOD → 100% cash preserved.
+
+Notable setup shift: nightly screener returned **first non-zero output in ~1 week** (3 survivors: MU, SNDK, NVDA) and SPY macro gate flipped positive for 2nd consecutive session (SPY $770.19 > MA20 $769.05). Execution deferred to Tues 9/8 open.
+
+No trades executed today. Zero trades this week so far (0 buys / 0 sells).
+
+### Risk Status
+
+- **Zero exposure.** No open positions → zero single-name / market delta risk overnight.
+- Cash 100% of PV — well above 20% minimum.
+- Daily loss limit 3% — not breached (day P&L 0.00%).
+- Weekly buy budget: 0/3 used.
+
+Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged — no trades, no MTM).
+
+### Carry-Forward to Tues 2026-09-08 Pre-Market
+
+- Portfolio 100% cash entering the first regular session of the week. Buy budget 3/3 available.
+- **Re-check screener** at Tues 07:15 UTC nightly re-run — expect MU / NVDA still ranked; SNDK deprioritized pending trend confirmation.
+- **Macro gate** — SPY needs to hold above MA20 ($769.05) on Tues open. A gap-down that drops SPY back below MA20 reverts to HOLD.
+- **Order-of-priority Tues open:** MU first (cleanest bull-trend + Citi upside Catalyst Watch, earnings 9/30 outside 5-day block); NVDA second (guard RSI ≤70 + gap risk near ATH); SNDK skipped.
+- **Position sizing:** 8% cap ≈ $7,915 per name. Both MU + NVDA if qualified ≈ 16% deployed, cash ratio ~84%.
+- **FOMC 9/16** — entire buy window this week runs into a Fed meeting; hawkish surprise risk highest for memory/AI names. Size conservatively.
+- **Data-feed watch** — yfinance TLS still broken; yahoo-direct fallback the sole live source. Both fail = HOLD by default.
