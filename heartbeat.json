@@ -1,14 +1,10 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-09-04T20:15:00Z",
-  "session": "claude/sleepy-goldberg-ft3hrj",
-  "status": "ok",
-  "portfolio_value": 98933.59,
-  "cash": 98933.59,
-  "open_positions": 0,
-  "day_pnl": 0.00,
-  "day_pnl_pct": 0.00,
-  "trades_today": 0,
-  "trades_this_week": 0,
-  "note": "EOD 2026-09-04: flat day, 100% cash, no trades all week (0/3 buy budget)."
+  "last_routine": "nightly-screener",
+  "last_run_utc": "2026-09-07T00:27:00Z",
+  "session": "claude/happy-shannon-ihhu1a",
+  "status": "success",
+  "screener_candidates": 3,
+  "screener_run_date": "2026-09-07",
+  "screener_top": ["MU", "SNDK", "NVDA"],
+  "note": "Nightly screener: 12 Markov pass, 6 momentum pass, 3 tech pass. Top: MU, SNDK, NVDA."
 }
