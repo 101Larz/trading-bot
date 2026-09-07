@@ -1,10 +1,11 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run_utc": "2026-09-07T00:27:00Z",
-  "session": "claude/happy-shannon-ihhu1a",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-09-07T07:30:00Z",
+  "session": "claude/gallant-lamport-6uzp44",
   "status": "success",
-  "screener_candidates": 3,
-  "screener_run_date": "2026-09-07",
-  "screener_top": ["MU", "SNDK", "NVDA"],
-  "note": "Nightly screener: 12 Markov pass, 6 momentum pass, 3 tech pass. Top: MU, SNDK, NVDA."
+  "decision": "HOLD",
+  "reason": "Labor Day — US markets closed. Screener produced 3 candidates (MU, SNDK, NVDA); macro gate PASS; execution deferred to Tue 9/8.",
+  "portfolio_value": 98933.59,
+  "cash": 98933.59,
+  "open_positions": 0
 }
