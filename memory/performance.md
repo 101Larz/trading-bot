@@ -5955,3 +5955,57 @@ Executed the pre-market plan cleanly. SPY macro gate PASS on daily-bar basis (cl
 - **Thesis checks:** MU (memory supercycle, strike concerns easing) intact; NVDA (Strong Buy 57/1, $0.25 dividend ex 9/10) intact
 - **Weekly buy budget:** 2/3 used, 1 slot preserved for FOMC-week caution
 - **Next checkpoint:** 16:15 ET End-of-Day
+
+---
+
+### EOD Snapshot — 2026-09-08 (Tuesday — session: claude/sleepy-goldberg-udgob0)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,688.91 |
+| Cash | $84,002.13 (85.1%) |
+| Long Market Value | $14,686.78 (14.9%) |
+| Buying Power | $377,131.50 |
+| Day P&L | −$244.68 (−0.247%) |
+| Realized P&L Today | $0.00 (no exits) |
+| Unrealized P&L (open) | −$244.68 |
+| Trades Today | 2 buys / 0 sells |
+| Trades This Week | 2 buys / 0 sells (buy budget 2/3 used) |
+| Open Positions | 2 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Market Value | Unrealized P&L | % |
+|--------|-----|-----------|---------|--------------|----------------|---|
+| MU | 7 | $1,017.84 | $1,002.00 | $7,014.00 | −$110.90 | −1.56% |
+| NVDA | 34 | $229.60 | $225.67 | $7,672.78 | −$133.78 | −1.71% |
+
+Trailing stops (15% GTC): MU $865.00, NVDA $195.09. Hard-stop (−7% from fill): MU $946.59, NVDA $213.53. Neither triggered — both positions well inside normal daily variance.
+
+### Day Summary
+
+Prior close (Mon 2026-09-07 Labor Day, market closed): $98,933.59 → today's close $98,688.91 → **−$244.68 (−0.247%)** — first trading day of the week, first deployment of capital in ~2 weeks.
+
+Session cadence today (Tue 9/8): pre-market → TRADE plan (MU priority, NVDA gap-guard, SNDK skipped); market-open → BOTH executed (MU 7 @ $1,017.84, NVDA 34 @ $229.60); midday → HOLD (both drawdowns within variance, no thesis break, no stop breach); EOD → 2 open positions, ~15% deployed, ~85% cash.
+
+Weekly tally so far: **2 buys / 0 sells, buy budget 2/3 used.** One slot preserved for the remainder of the week (FOMC 9/16 caution).
+
+### Risk Status
+
+- **Total exposure 14.9%** — well within 80% cap. Cash 85.1% — well above 20% floor.
+- **Single-position sizes:** MU 7.1%, NVDA 7.8% — both under 8% cap.
+- **Daily loss limit 3%** — not breached (day P&L −0.247%).
+- **Position count 2/8.**
+- **Stop discipline:** trailing 15% GTC live on both fills. Hard-stop reviews per session.
+
+Cumulative P&L since inception (5/19): **−$1,311.09 (−1.311%)** — down $244.68 today from unrealized MTM on new positions.
+
+### Carry-Forward to Wed 2026-09-09 Pre-Market
+
+- Portfolio 14.9% long / 85.1% cash entering day 2 of the week. Buy budget 1/3 remaining, held in reserve for FOMC-week caution.
+- **MU** — 7 shares, unrealized −1.56%. Thesis intact (HBM/AI-memory supercycle, Citi Catalyst Watch upside). Earnings 9/30 — outside 5-day blackout. Monitor spread quality and any weekend headlines.
+- **NVDA** — 34 shares, unrealized −1.71%. Thesis intact (Strong Buy 57/1). Ex-dividend 9/10 ($0.25). RSI drift — recheck at pre-market.
+- **Macro gate** — SPY needs to hold above MA20. Watch overnight ES futures for gap risk.
+- **FOMC 9/16** — 8 days out. Hawkish surprise risk highest for AI/memory names. Keep 1/3 slot in reserve; consider tightening stops on any pop.
+- **Screener** — expect MU / NVDA still ranked; watch for a third qualifier if buy budget is deployed later this week.
+
