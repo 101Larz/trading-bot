@@ -5880,3 +5880,64 @@ Cumulative P&L since inception (5/19): **−$1,066.41 (−1.066%)** (unchanged �
 - **Position sizing:** 8% cap ≈ $7,915 per name. Both MU + NVDA if qualified ≈ 16% deployed, cash ratio ~84%.
 - **FOMC 9/16** — entire buy window this week runs into a Fed meeting; hawkish surprise risk highest for memory/AI names. Size conservatively.
 - **Data-feed watch** — yfinance TLS still broken; yahoo-direct fallback the sole live source. Both fail = HOLD by default.
+
+### Trade Entry — 2026-09-08 13:51
+| Field | Value |
+|-------|-------|
+| Symbol | MU |
+| Side | BUY |
+| Shares | 7.0 |
+| Est. Price | $1017.98 |
+| Est. Value | $7125.86 |
+| Order ID | 58b8cd9d-7a83-4700-b683-b8873462e2fa |
+| Trailing Stop | 15% GTC placed immediately after fill |
+
+### Trade Entry — 2026-09-08 13:51
+| Field | Value |
+|-------|-------|
+| Symbol | NVDA |
+| Side | BUY |
+| Shares | 34.0 |
+| Est. Price | $229.64 |
+| Est. Value | $7807.76 |
+| Order ID | 780fd82c-94fc-455e-94f0-3fed74221e18 |
+| Trailing Stop | 15% GTC placed immediately after fill |
+
+---
+
+## 2026-09-08 (Tuesday) — Market-Open Session
+
+### Session Summary
+- **Routine:** Market-Open Execution (session `claude/sweet-shannon-surnvk`)
+- **Decision:** TRADE — 2 buys executed
+- **Weekly buy budget:** 2/3 used (1 slot reserved)
+
+### Portfolio (post-fill)
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,941.19 |
+| Cash | $84,002.13 (84.9%) |
+| Long Market Value | $14,939.06 (15.1%) |
+| Buying Power | $377,837.88 |
+| Open Positions | 2 / 8 |
+| Cumulative P&L (from 5/19) | −$1,058.81 (−1.058%) |
+
+### Fills
+- **MU** BUY 7 @ $1,017.84 → $7,124.90 (7.2% of PV) — trailing stop 15% GTC at $865.00
+- **NVDA** BUY 34 @ $229.60 → $7,806.55 (7.9% of PV) — trailing stop 15% GTC at $195.09
+
+### Hard-Stop Levels (−7% from fill)
+- MU: $946.59
+- NVDA: $213.53
+
+### Risk Gate Compliance
+All non-negotiable rules PASS: 8% single-position cap, 20% cash floor, 8-position ceiling, limit-only orders, daily loss limit not breached (day P&L +$7.60 / +0.008%).
+
+### Rationale (brief)
+Executed the pre-market plan cleanly. SPY macro gate PASS on daily-bar basis (close $770.19 > MA20 $769.05); intraday tick $767.50 marginally below MA20 (−0.20%) is normal open volatility, not a gap-down. MU is Screener rank 1 (HBM/AI-memory secular tailwind, RSI 50.7, earnings 9/30). NVDA is Screener rank 2 (RSI 53.7 < 65 gap-guard, no adverse news). SNDK skipped (MA20 < MA50).
+
+### Notes / Watchlist
+- MU opened with a wide 1.1% bid-ask spread — filled at $1,017.84 (1.2% inside limit ask). Monitor spread quality for signs of reduced liquidity.
+- NVDA near ATH ($236.54 52w high); RSI 53.7 leaves room but is drifting.
+- FOMC 9/16 (one week out) — remaining 1/3 weekly slot preserved for defensive posture.
+- Next checkpoint: 12:30 ET Midday Scan.

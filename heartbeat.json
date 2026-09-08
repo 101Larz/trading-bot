@@ -1,17 +1,20 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-09-08T07:22:00Z",
-  "session": "claude/gallant-lamport-t2muy8",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-09-08T13:52:00Z",
+  "session": "claude/sweet-shannon-surnvk",
   "status": "success",
-  "screener_candidates": 3,
-  "screener_run_date": "2026-09-08",
-  "top_candidates": ["MU", "NVDA", "SNDK"],
-  "phase_b_survivors": 10,
-  "phase_c_survivors": 6,
-  "phase_d_survivors": 3,
-  "portfolio_value": 98933.59,
-  "cash": 98933.59,
-  "open_positions": 0,
+  "trades_placed": 2,
+  "positions_count": 2,
+  "cash_balance": 84002.13,
+  "portfolio_value": 98941.19,
+  "long_market_value": 14939.06,
+  "cash_pct": 84.9,
+  "weekly_buys_used": 2,
+  "weekly_buys_remaining": 1,
+  "trades": [
+    {"symbol": "MU", "side": "BUY", "qty": 7, "avg_fill": 1017.84, "trail_stop_pct": 15},
+    {"symbol": "NVDA", "side": "BUY", "qty": 34, "avg_fill": 229.60, "trail_stop_pct": 15}
+  ],
   "decision": "TRADE",
-  "plan": "MU primary, NVDA secondary (RSI/gap guard), SNDK skip (MA20<MA50)"
+  "notes": "Both pre-market candidates (MU, NVDA) filled at 09:51 ET. Macro gate on daily-bar basis PASS (SPY close 770.19 > MA20 769.05). SNDK skipped per plan. 1 buy-budget slot reserved for FOMC-week caution."
 }
