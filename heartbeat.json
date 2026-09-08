@@ -1,20 +1,20 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-09-08T13:52:00Z",
-  "session": "claude/sweet-shannon-surnvk",
+  "last_routine": "midday-scan",
+  "last_run_utc": "2026-09-08T16:30:00Z",
+  "session": "claude/exciting-bohr-t7hn84",
   "status": "success",
-  "trades_placed": 2,
+  "trades_placed": 0,
   "positions_count": 2,
   "cash_balance": 84002.13,
-  "portfolio_value": 98941.19,
-  "long_market_value": 14939.06,
-  "cash_pct": 84.9,
+  "portfolio_value": 98824.41,
+  "long_market_value": 14824.41,
+  "cash_pct": 85.0,
   "weekly_buys_used": 2,
   "weekly_buys_remaining": 1,
-  "trades": [
-    {"symbol": "MU", "side": "BUY", "qty": 7, "avg_fill": 1017.84, "trail_stop_pct": 15},
-    {"symbol": "NVDA", "side": "BUY", "qty": 34, "avg_fill": 229.60, "trail_stop_pct": 15}
+  "positions": [
+    {"symbol": "MU", "qty": 7, "avg_entry": 1017.84, "mark": 1021.03, "unrealized_plpc": 0.00313},
+    {"symbol": "NVDA", "qty": 34, "avg_entry": 229.60, "mark": 225.80, "unrealized_plpc": -0.01657}
   ],
-  "decision": "TRADE",
-  "notes": "Both pre-market candidates (MU, NVDA) filled at 09:51 ET. Macro gate on daily-bar basis PASS (SPY close 770.19 > MA20 769.05). SNDK skipped per plan. 1 buy-budget slot reserved for FOMC-week caution."
+  "decision": "HOLD",
+  "notes": "Midday scan: no -7% losers to cut, no +15%/+20% winners to tighten stops on. MU +0.31%, NVDA -1.66% — both within normal variance. WebSearch confirmed both theses intact (MU memory supercycle, NVDA Strong Buy). 15% trailing stops remain GTC-active."
 }
