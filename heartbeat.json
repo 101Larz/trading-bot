@@ -1,15 +1,17 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run_utc": "2026-09-08T00:28:00Z",
-  "session": "claude/happy-shannon-dzymme",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-09-08T07:22:00Z",
+  "session": "claude/gallant-lamport-t2muy8",
   "status": "success",
   "screener_candidates": 3,
   "screener_run_date": "2026-09-08",
-  "top_candidates": ["SNDK", "NVDA", "MU"],
+  "top_candidates": ["MU", "NVDA", "SNDK"],
   "phase_b_survivors": 10,
   "phase_c_survivors": 6,
   "phase_d_survivors": 3,
   "portfolio_value": 98933.59,
   "cash": 98933.59,
-  "open_positions": 0
+  "open_positions": 0,
+  "decision": "TRADE",
+  "plan": "MU primary, NVDA secondary (RSI/gap guard), SNDK skip (MA20<MA50)"
 }
