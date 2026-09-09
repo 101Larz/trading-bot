@@ -1,14 +1,16 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run_utc": "2026-09-09T00:28:00Z",
-  "session": "claude/happy-shannon-j3oh9s",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-09-09T07:20:00Z",
+  "session": "claude/gallant-lamport-mdkm63",
   "status": "success",
-  "screener_candidates": 3,
-  "screener_run_date": "2026-09-09",
+  "decision": "HOLD",
+  "positions_open": 2,
+  "positions": ["MU", "NVDA"],
+  "portfolio_value": 98749.9,
+  "cash": 84002.13,
+  "cash_pct": 85.1,
+  "weekly_buys_used": 2,
+  "weekly_buys_remaining": 1,
   "screener_top": ["SNDK", "NVDA", "MU"],
-  "phase_b_survivors": 10,
-  "phase_c_survivors": 6,
-  "phase_d_survivors": 3,
-  "data_errors": ["MMC", "BRK-B"],
-  "notes": "Nightly screen: same 3 candidates as 2026-09-08 (SNDK Sharpe +2.229, NVDA +1.546, MU +1.471). 9:00 AM pre-market routine will read memory/screener_results.md."
+  "notes": "Pre-market HOLD. MU + NVDA already at 7.2%/7.8% size caps — no add room. SNDK ranks 1 by Sharpe but fails Entry Criterion 1 (MA alignment mixed). FOMC 9/16 + CPI Fri argue defense; reserve last weekly buy slot."
 }
