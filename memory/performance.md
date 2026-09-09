@@ -6054,3 +6054,56 @@ Cumulative P&L since inception (5/19): **−$1,311.09 (−1.311%)** — down $24
 - Re-verify SPY macro filter (SNDK add remains conditional on SPY reclaiming MA20 with entry gates intact and time-of-day within routine window).
 - Monitor NVDA cushion (post ex-div 9/10: ~$11.09/sh, ~4.9%).
 - Both hard-stops: MU $946.59, NVDA $213.53.
+
+---
+
+### EOD Snapshot — 2026-09-09 (Wednesday — session: 01RDGKFWY3Pr1vSeyKacfuQJ)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,792.59 |
+| Cash | $84,002.12 (85.03%) |
+| Long Market Value | $14,790.47 (14.97%) |
+| Buying Power | $377,421.78 |
+| Day P&L | +$103.68 (+0.105%) |
+| Realized P&L Today | $0.00 (no exits) |
+| Unrealized P&L (open) | −$140.99 |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 2 buys / 0 sells (buy budget 2/3 used) |
+| Open Positions | 2 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Market Value | Unrealized P&L | % |
+|--------|-----|-----------|---------|--------------|----------------|---|
+| MU | 7 | $1,017.84 | $1,026.10 | $7,182.70 | +$57.80 | +0.81% |
+| NVDA | 34 | $229.60 | $223.76 | $7,607.77 | −$198.79 | −2.55% |
+
+Trailing stops (15% GTC): MU $865.00, NVDA $195.09. Hard-stop (−7% from fill): MU $946.59, NVDA $213.53. Neither triggered.
+
+### Day Summary
+
+Prior close (Tue 2026-09-08): $98,688.91 → today's close $98,792.59 → **+$103.68 (+0.105%)** — modest green day. MU rebounded (+2.58% intraday), NVDA slipped (−0.87%) on soft macro (SPY < MA20 at open).
+
+Session cadence today (Wed 9/9): pre-market → HOLD (macro filter fail SPY < MA20; buy budget preserved for FOMC 9/15–16); market-open → HOLD (SPY still below MA20, no new opens per Entry Criterion 4); EOD → 2 open positions, ~15% deployed, ~85% cash.
+
+Weekly tally so far: **2 buys / 0 sells, buy budget 2/3 used** (1 slot reserved through PPI Thu / CPI Fri / FOMC 9/15–16).
+
+### Risk Status
+
+- **Total exposure 14.97%** — well within 80% cap. Cash 85.03% — well above 20% floor.
+- **Single-position sizes:** MU 7.27%, NVDA 7.70% — both under 8% cap.
+- **Daily loss limit 3%** — not breached (day P&L +0.105%).
+- **Position count 2/8.**
+- **Stop discipline:** trailing 15% GTC live on both fills. Hard-stops respected.
+
+Cumulative P&L since inception (5/19): **−$1,207.41 (−1.207%)** — recovered +$103.68 today from MU rebound.
+
+### Carry-Forward to Thu 2026-09-10 Pre-Market
+
+- Portfolio 14.97% long / 85.03% cash entering day 3 of the week. Buy budget 1/3 remaining, held in reserve.
+- **MU** — 7 shares, unrealized +0.81%. Thesis intact. Earnings 9/30 (outside 5-day blackout). Monitor spread quality.
+- **NVDA** — 34 shares, unrealized −2.55%. Thesis intact. **Ex-dividend 9/10 ($0.25)** — expect ~$0.25/sh price drop tomorrow (~$8.50 total). Hard-stop cushion 5.04% ($11.34/sh) will tighten to ~4.9% post ex-div.
+- **Macro gate** — SPY still below MA20 at $765.96 vs $768.70. Reclaim of MA20 required to unlock new opens.
+- **Catalysts** — PPI (Thu 9/10), CPI (Fri 9/11), FOMC (9/15–16). Any hawkish surprise → AI/memory drawdown risk. Keep 1/3 slot reserve.
+- **SNDK** — screener PASS but macro-gate blocked; re-evaluate if SPY reclaims MA20.
