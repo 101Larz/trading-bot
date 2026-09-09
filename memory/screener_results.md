@@ -1,6 +1,6 @@
 # Nightly Screener Results
 
-**Run:** 2026-09-08 02:28 CEST
+**Run:** 2026-09-09 02:28 CEST
 **Universe:** 95 tickers
 **Phase B survivors (Markov):** 10
 **Phase C survivors (Momentum):** 6
