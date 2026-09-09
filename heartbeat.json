@@ -1,16 +1,16 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-09-09T07:20:00Z",
-  "session": "claude/gallant-lamport-mdkm63",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-09-09T13:50:00Z",
+  "session": "01AdkLkPdig9i2N17ecSFBDv",
   "status": "success",
   "decision": "HOLD",
   "positions_open": 2,
   "positions": ["MU", "NVDA"],
-  "portfolio_value": 98749.9,
-  "cash": 84002.13,
+  "portfolio_value": 98729.23,
+  "cash": 84002.12,
   "cash_pct": 85.1,
   "weekly_buys_used": 2,
   "weekly_buys_remaining": 1,
   "screener_top": ["SNDK", "NVDA", "MU"],
-  "notes": "Pre-market HOLD. MU + NVDA already at 7.2%/7.8% size caps — no add room. SNDK ranks 1 by Sharpe but fails Entry Criterion 1 (MA alignment mixed). FOMC 9/16 + CPI Fri argue defense; reserve last weekly buy slot."
+  "notes": "Market-open HOLD — no trades. SPY $765.96 < MA20 $768.70 (macro filter FAIL, blocks all buys). SNDK now technically green (bullish MA + RSI 60) but vetoed by macro. MU/NVDA at 7.2%/7.8% caps (no add room). Both hard-stops respected (MU cushion 6.28%, NVDA 5.04%). Weekly buy slot 1/3 preserved into PPI/CPI/FOMC."
 }

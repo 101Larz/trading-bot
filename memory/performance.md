@@ -6009,3 +6009,48 @@ Cumulative P&L since inception (5/19): **−$1,311.09 (−1.311%)** — down $24
 - **FOMC 9/16** — 8 days out. Hawkish surprise risk highest for AI/memory names. Keep 1/3 slot in reserve; consider tightening stops on any pop.
 - **Screener** — expect MU / NVDA still ranked; watch for a third qualifier if buy budget is deployed later this week.
 
+
+---
+
+## Market-Open Log — 2026-09-09 (Wednesday — session: 01AdkLkPdig9i2N17ecSFBDv)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,729.23 |
+| Cash | $84,002.12 (85.1%) |
+| Long Market Value | $14,727.11 |
+| Intraday P&L vs prior EOD | −$20.67 (−0.021%) |
+| Trades Today | 0 |
+| Trades This Week | 2 buys / 0 sells (budget 2/3 used) |
+| Open Positions | 2 / 8 |
+| Decision | **HOLD — no trades** |
+
+### Open Positions (live @ 09:48 ET)
+
+| Symbol | Qty | Avg Entry | Last | Unrealized $ | Unrealized % | Hard-stop | Cushion |
+|--------|-----|-----------|------|--------------|--------------|-----------|---------|
+| MU | 7 | $1,017.84 | $1,010.03 | −$54.69 | −0.77% | $946.59 | $63.44/sh (6.28%) |
+| NVDA | 34 | $229.60 | $224.87 | −$160.89 | −2.06% | $213.53 | $11.34/sh (5.04%) |
+
+### Live Entry-Gate Checks
+
+- **Macro filter — SPY > MA20:** SPY $765.96 vs MA20 $768.70 → **FAIL** (−0.36%). MA50 $757.60 held; RSI 48.5. Blocks all new opens per Entry Criterion 4.
+- **SNDK (reserved-slot candidate):** last $1,737.99, MA20 $1,554.80, MA50 $1,543.20 → bullish alignment; RSI 60.05 → within 35–70. Technical filter now PASSES (flipped from nightly "mixed" on index-inclusion demand), but macro gate vetoes.
+
+### Decision Rationale
+
+1. **Macro filter fails** (SPY < MA20) — Entry Criterion 4 blocks any new opens.
+2. **No add capacity** — MU (7.16%) and NVDA (7.75%) already near 8% single-position cap.
+3. **Weekly buy budget preserved** (1/3 remaining) into PPI (Thu) / CPI (Fri) / FOMC (9/15–16) binaries.
+4. **No exit trigger** — both hard-stops respected; NVDA cushion 5.04% ($11.34/sh) is the tighter side, watch post ex-div 9/10.
+5. **Ex-div NVDA 9/10** ($0.25) — expected small drop tomorrow, not a thesis break.
+
+### Trades Executed
+
+*(none)*
+
+### Carry-Forward to Midday Scan
+
+- Re-verify SPY macro filter (SNDK add remains conditional on SPY reclaiming MA20 with entry gates intact and time-of-day within routine window).
+- Monitor NVDA cushion (post ex-div 9/10: ~$11.09/sh, ~4.9%).
+- Both hard-stops: MU $946.59, NVDA $213.53.
