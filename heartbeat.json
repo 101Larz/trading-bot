@@ -1,13 +1,13 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-09-09T16:37:00Z",
-  "session": "01MrfjBX7yw2Zwxo21c2yRLo",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-09-10T07:20:00Z",
+  "session": "01A7TAszv44EzY4Sj37GFi1p",
   "status": "success",
   "decision": "HOLD",
   "positions_open": 2,
   "positions": ["MU", "NVDA"],
-  "portfolio_value": 98729.23,
+  "portfolio_value": 98750.22,
   "cash": 84002.12,
-  "cash_pct": 85.1,
-  "notes": "Midday scan HOLD — no trades. MU +0.27% ($1020.60), NVDA -2.45% ($223.99). Neither at -7% cut threshold, neither at +15%/+20% profit tier. Thesis intact on both: MU 256% YTD w/ $1513 analyst target, earnings 9/30 (outside 5-day window); NVDA strong Q2 earnings, Hugging Face acquisition, Goldman conf 9/10. No stop tightening or exits triggered."
+  "cash_pct": 85.06,
+  "notes": "Pre-market HOLD — SPY $762.35 < MA20 $768.29 (macro gate FAIL, Entry Criterion 4). MU +0.57%, NVDA -2.87%; both above hard-stops and inside 5-day min-hold. Catalysts today: PPI 8:30 ET, ECB, NVDA Goldman fireside 11:50 ET, NVDA ex-div. No new orders. Buy budget 2/3 used; reserve 1/3 slot for post-FOMC (9/15-16)."
 }
