@@ -1,13 +1,13 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-09-10T16:30:00Z",
-  "session": "opus-4-7-midday-scan",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-09-10T20:15:00Z",
+  "session": "opus-4-7-end-of-day",
   "status": "success",
-  "decision": "HOLD",
+  "decision": "EOD_SNAPSHOT",
   "positions_open": 2,
   "positions": ["MU", "NVDA"],
-  "portfolio_value": 98233.71,
+  "portfolio_value": 98271.62,
   "cash": 84002.12,
-  "cash_pct": 85.51,
-  "notes": "Midday HOLD — no trades. MU -4.22% (cushion 2.90%), NVDA -5.11% (cushion 1.99%). Neither at -7% cut. No winners to tighten. Both theses intact (NVDA Goldman conf today; MU macro-driven drawdown, thesis unchanged into 9/30 ER). Both inside 5-day min-hold — only hard-stop / 15% trailing GTC can close. Macro gate still FAIL (SPY < MA20)."
+  "cash_pct": 85.48,
+  "notes": "EOD 2026-09-10: portfolio $98,271.62, day P&L -$520.97 (-0.527%). 2 positions (MU -3.92%, NVDA -4.88%). Both inside 5-day min-hold; NVDA cushion 2.23% is tightest — watch for gap-down 9/11. Weekly 2 buys / 0 sells. Cumulative since inception -1.728%."
 }
