@@ -1,13 +1,13 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-09-10T20:15:00Z",
-  "session": "opus-4-7-end-of-day",
+  "last_run": "2026-09-11T00:28:00Z",
+  "routine": "Nightly Screener",
   "status": "success",
-  "decision": "EOD_SNAPSHOT",
-  "positions_open": 2,
-  "positions": ["MU", "NVDA"],
-  "portfolio_value": 98271.62,
-  "cash": 84002.12,
-  "cash_pct": 85.48,
-  "notes": "EOD 2026-09-10: portfolio $98,271.62, day P&L -$520.97 (-0.527%). 2 positions (MU -3.92%, NVDA -4.88%). Both inside 5-day min-hold; NVDA cushion 2.23% is tightest — watch for gap-down 9/11. Weekly 2 buys / 0 sells. Cumulative since inception -1.728%."
+  "screener_candidates": 4,
+  "screener_run_date": "2026-09-11",
+  "top_candidates": ["SNDK", "MU", "MRVL", "AMD"],
+  "phase_b_survivors": 6,
+  "phase_c_survivors": 5,
+  "phase_d_survivors": 4,
+  "data_errors": ["MMC", "BRK-B"],
+  "notes": "Nightly Markov+momentum+technical screen on 95 tickers. Top 4: SNDK (Sharpe 2.23), MU (1.46), MRVL (0.96), AMD (0.64). All semis, all Bull regime. Current MU position confirmed in top 4. NVDA (currently held) dropped from Bull regime — flag for 9AM pre-market review of NVDA stop discipline. Data errors: MMC (0 bars), BRK-B (Alpaca 400)."
 }
