@@ -6197,3 +6197,16 @@ Cumulative P&L since inception (5/19): **−$1,728.38 (−1.728%)** — down $52
 - Qualified catalyst in today's RESEARCH-LOG → **FAIL** (SNDK/MRVL/AMD all conditional on SPY reclaiming MA20; not yet reclaimed).
 
 **No trades — HOLD reaffirmed.** Preserve 1/3 remaining buy slot for post-CPI / post-FOMC reset if SPY reclaims MA20 and a screened candidate qualifies. Watch NVDA cushion (2.76%) — closest to hard-stop; no tightening below hard-stop allowed inside 5-day min-hold.
+
+
+## Midday Log — 2026-09-11 (Friday — session: opus-4-7 midday-scan)
+
+**Decision: HOLD — no trades executed.**
+
+- Live positions: MU 7 sh @ $973.24 (−4.38%, cushion 2.74% to $946.59); NVDA 34 sh @ $219.03 (−4.61%, cushion 2.51% to $213.53). LMV $14,259.70.
+- **STEP 3 (cut −7% losers):** neither position ≤ −7% → no cuts.
+- **STEP 4 (tighten +15%/+20% winners):** no position at profit-target → no stop tightening.
+- **STEP 5 (thesis check):** WebSearch confirms NVDA thesis intact (Strong Buy, +106% YoY revenue, Hugging Face deal). MU thesis intact but noisier (Netlist patent action, chip sell-off) — no fundamental break; ER 9/30 upcoming. Both remain inside 5-day min-hold through Mon 9/14 → signal-based exits blocked regardless; only hard-stop / trailing GTC can close.
+- Macro gate SPY < MA20 unchanged from pre-market/market-open → new opens still blocked.
+
+**No trades — HOLD reaffirmed.** NVDA is the tightest cushion (2.51%); cut immediately on hard-stop $213.53 breach. MU cushion 2.74%. Trailing 15% GTC live on both.
