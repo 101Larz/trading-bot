@@ -6209,4 +6209,59 @@ Cumulative P&L since inception (5/19): **−$1,728.38 (−1.728%)** — down $52
 - **STEP 5 (thesis check):** WebSearch confirms NVDA thesis intact (Strong Buy, +106% YoY revenue, Hugging Face deal). MU thesis intact but noisier (Netlist patent action, chip sell-off) — no fundamental break; ER 9/30 upcoming. Both remain inside 5-day min-hold through Mon 9/14 → signal-based exits blocked regardless; only hard-stop / trailing GTC can close.
 - Macro gate SPY < MA20 unchanged from pre-market/market-open → new opens still blocked.
 
+---
+
+### EOD Snapshot — 2026-09-11 (Friday — session: opus-4-7 end-of-day)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $98,246.74 |
+| Cash | $84,002.12 (85.50%) |
+| Long Market Value | $14,244.62 (14.50%) |
+| Buying Power | $375,893.41 |
+| Day P&L | −$24.88 (−0.025%) |
+| Realized P&L Today | $0.00 (no exits) |
+| Unrealized P&L (open) | −$686.84 |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 2 buys / 0 sells (buy budget 2/3 used) |
+| Open Positions | 2 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Market Value | Unrealized P&L | % |
+|--------|-----|-----------|---------|--------------|----------------|---|
+| MU | 7 | $1,017.84 | $974.39 | $6,820.72 | −$304.18 | −4.27% |
+| NVDA | 34 | $229.60 | $218.35 | $7,423.90 | −$382.66 | −4.90% |
+
+Hard-stops (−7% from fill): MU $946.59 (cushion ~2.85%), NVDA $213.53 (cushion ~2.21%). Trailing 15% GTC: MU $865.00, NVDA $195.09. Neither hard-stop nor trailing triggered.
+
+### Day Summary
+
+Prior close (Thu 2026-09-10): $98,271.62 → today's close $98,246.74 → **−$24.88 (−0.025%)** — essentially flat day. Both open positions drifted marginally lower (MU −0.31% intraday, NVDA effectively flat at −0.005%). Well within 3% daily-loss halt. CPI (Fri 9/11) print did not produce the feared hawkish drawdown for AI/memory names; tape absorbed the read.
+
+Session cadence today (Fri 9/11): pre-market → HOLD (macro gate FAIL SPY < MA20); market-open → HOLD (macro gate FAIL, no qualified catalyst); midday → HOLD (both inside 5-day min-hold, thesis intact); EOD → 2 open positions, ~14.5% deployed, ~85.5% cash. Week closes with buy budget 2/3 used, 1 slot preserved through FOMC (9/15–16).
+
+Weekly tally: **2 buys / 0 sells, buy budget 2/3 used** (both opens Monday 9/8). No trades since.
+
+### Risk Status
+
+- **Total exposure 14.50%** — well within 80% cap. Cash 85.50% — well above 20% floor.
+- **Single-position sizes:** MU 6.94%, NVDA 7.56% — both under 8% cap.
+- **Daily loss limit 3%** — not breached (day P&L −0.025%).
+- **Position count 2/8.**
+- **Stop discipline:** hard-stops respected on both. NVDA cushion tightest at 2.21% — one bad print away from cut. Inside 5-day min-hold through Mon 9/14; no signal-based tightening allowed.
+
+Cumulative P&L since inception (5/19): **−$1,753.26 (−1.753%)** — down $24.88 today.
+
+### Carry-Forward to Mon 2026-09-14 Pre-Market
+
+- Portfolio 14.50% long / 85.50% cash entering the new week. Buy budget resets Monday.
+- **MU** — 7 shares, unrealized −4.27%. Cushion ~2.85% to hard-stop $946.59. Thesis intact; ER 9/30. **5-day min-hold expires Mon 9/14** — signal-based exits unlock next session.
+- **NVDA** — 34 shares, unrealized −4.90%. Cushion ~2.21% to hard-stop $213.53 (**tightest position**). Thesis intact. **5-day min-hold expires Mon 9/14**.
+- **Macro gate** — SPY still below MA20; reclaim required to unlock new opens.
+- **Catalysts next week** — **FOMC 9/15–16** is the dominant event. Expect elevated volatility; keep 1/3 slot reserve into the print. Blackout tightening decisions on Wed 9/16 into FOMC statement.
+- **SNDK** — screener PASS but macro-gate blocked; re-evaluate if SPY reclaims MA20.
+- **Watch NVDA cushion at open Monday** — any gap-down that breaches $213.53 triggers hard-stop cut immediately.
+
+
 **No trades — HOLD reaffirmed.** NVDA is the tightest cushion (2.51%); cut immediately on hard-stop $213.53 breach. MU cushion 2.74%. Trailing 15% GTC live on both.
