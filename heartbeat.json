@@ -1,19 +1,19 @@
 {
-  "last_run": "2026-09-11T13:00:00Z",
-  "routine": "Pre-Market Research",
+  "last_run": "2026-09-11T13:45:00Z",
+  "routine": "Market Open Execution",
   "status": "success",
   "decision": "HOLD",
-  "portfolio_value": 98382.62,
+  "portfolio_value": 98338.00,
   "cash": 84002.12,
-  "long_market_value": 14380.5,
+  "long_market_value": 14335.88,
   "open_positions": 2,
   "positions": ["MU", "NVDA"],
   "macro_gate": "FAIL (SPY $757.83 < MA20 $767.56, < MA50 $758.25)",
   "min_hold_active": ["MU (through 2026-09-14)", "NVDA (through 2026-09-14)"],
-  "tightest_cushion_pct": 2.83,
+  "tightest_cushion_pct": 2.76,
   "tightest_cushion_symbol": "NVDA",
   "weekly_buy_budget_remaining": 1,
-  "screener_candidates_blocked_by_macro_gate": ["SNDK", "MRVL", "AMD"],
-  "watch_items": ["CPI 8:30am ET", "NVDA hard-stop $213.53", "SPY MA20 reclaim $767.56"],
-  "notes": "Pre-market: HOLD. Macro gate FAIL — new opens blocked. Both open positions inside 5-day min-hold through 2026-09-14. Only hard-stop or trailing GTC can close early. NVDA cushion tightest at ~2.83%."
+  "trades_executed_today": 0,
+  "watch_items": ["NVDA hard-stop $213.53", "MU hard-stop $946.59", "SPY MA20 reclaim $767.56"],
+  "notes": "Market-open: HOLD. Macro gate FAIL — new opens blocked. Both positions inside 5-day min-hold through 2026-09-14. NVDA cushion tightest at ~2.76%; no hard-stop breach."
 }

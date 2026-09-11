@@ -6179,3 +6179,21 @@ Cumulative P&L since inception (5/19): **−$1,728.38 (−1.728%)** — down $52
 - **SNDK** — screener PASS but macro-gate blocked; re-evaluate if SPY reclaims MA20 during Friday session.
 - **Watch NVDA cushion at open** — any gap-down that breaches $213.53 triggers hard-stop cut immediately.
 
+
+## Market-Open Log — 2026-09-11 (Friday — session: opus-4-7 market-open)
+
+**Decision: HOLD — no trades executed.**
+
+- Portfolio $98,338.00 / cash $84,002.12 (85.42%) / LMV $14,335.88 (14.58%). Positions 2/6 rule cap.
+- MU 7 sh @ $1,017.84 → mark $981.23, −$256.29 (−3.60%). Cushion to −7% hard-stop $946.59 = ~$34.64/sh (~3.53%).
+- NVDA 34 sh @ $229.60 → mark $219.59, −$340.50 (−4.36%). Cushion to −7% hard-stop $213.53 = ~$6.06/sh (~2.76%) — **tightest**. Above cut.
+- Both inside 5-day min-hold (through Mon 9/14) → signal-based exits blocked. Hard-stop + 15% trailing GTC live on both.
+
+**Buy-rule check:**
+- Positions 2/6 → OK.
+- Weekly trades 2/3 used → 1 slot remaining.
+- Per-position cap 20% equity ($19,668 max) → n/a (no trade).
+- Macro gate SPY < MA20 (and < MA50) → **FAIL** (carried from pre-market: SPY $757.83, MA20 $767.56, MA50 $758.25).
+- Qualified catalyst in today's RESEARCH-LOG → **FAIL** (SNDK/MRVL/AMD all conditional on SPY reclaiming MA20; not yet reclaimed).
+
+**No trades — HOLD reaffirmed.** Preserve 1/3 remaining buy slot for post-CPI / post-FOMC reset if SPY reclaims MA20 and a screened candidate qualifies. Watch NVDA cushion (2.76%) — closest to hard-stop; no tightening below hard-stop allowed inside 5-day min-hold.
