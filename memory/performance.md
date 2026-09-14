@@ -6265,3 +6265,45 @@ Cumulative P&L since inception (5/19): **−$1,753.26 (−1.753%)** — down $24
 
 
 **No trades — HOLD reaffirmed.** NVDA is the tightest cushion (2.51%); cut immediately on hard-stop $213.53 breach. MU cushion 2.74%. Trailing 15% GTC live on both.
+
+
+## Market-Open Log — 2026-09-14 (Monday — session: opus-4-7 market-open)
+
+**Decision: FORCED CUT of MU + NVDA (both breached hard stop). NO NEW BUYS (macro gate FAIL).**
+
+### Pre-execution State
+- Portfolio $97,572.41 / cash $84,002.12 (86.10%) / LMV $13,570.29 (13.90%). Positions 2/6.
+- MU 7 sh @ $1,017.84 → live $917.35, unrealized **−9.87%**. Breached −7% strategy hard stop ($946.59) AND −8% CLAUDE.md stop.
+- NVDA 34 sh @ $229.60 → live $210.36, unrealized **−8.38%**. Breached both stops ($213.53 strategy / $211.24 CLAUDE.md).
+
+### Executions
+Cancelled trailing-stop GTC orders (cancel-all HTTP 207) then placed limit-close sells at bid − 0.25%:
+
+| Time (UTC) | Symbol | Side | Qty | Limit | Fill Avg | Proceeds | Cost Basis | Realized P&L | % |
+|-----------:|--------|------|----:|------:|---------:|---------:|-----------:|-------------:|---:|
+| 13:51:02 | MU | SELL | 7 | $913.38 | $914.48 | $6,401.36 | $7,124.88 | **−$723.52** | **−10.16%** |
+| 13:51:07 | NVDA | SELL | 34 | $210.55 | $211.20 | $7,180.76 | $7,806.56 | **−$625.80** | **−8.03%** |
+
+**Total realized loss today: −$1,349.32 (−1.38% of portfolio).** Within 3% daily-loss halt.
+
+### Post-execution State
+- Portfolio $97,584.24 / cash $97,584.24 (**100%**) / LMV $0.00 (0.00%). Positions 0/6.
+- Buying power $390,336.96. Weekly buy budget 0/3 preserved.
+
+### Buy-rule check (all had to pass to open new):
+- Positions ≤ 6 → OK.
+- Weekly trades ≤ 3 → OK (0/3).
+- Per-position ≤ 20% equity → n/a.
+- Macro gate SPY > MA20 → **FAIL** (SPY $760.45 vs MA20 $766.88).
+- Qualified catalyst in today's RESEARCH-LOG → **FAIL** (MRVL/AMD/TSLA all contingent on SPY reclaim, not achieved).
+
+**No new BUYs.** Cash 100%, dry-powder maximum ahead of FOMC Wed 9/16. Book flat.
+
+### Risk Status
+- Total exposure 0% — well within 80% cap.
+- Cash 100% — well above 20% floor.
+- Daily loss limit 3% — not breached (day P&L −1.38%).
+- Position count 0/8.
+- All hard-stop discipline honored (both closes triggered by rule, not discretion).
+
+Cumulative P&L since inception (5/19): approx **−$3,102.58** (rough — reconciled at EOD).

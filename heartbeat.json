@@ -1,22 +1,23 @@
 {
-  "last_routine": "pre-market",
-  "last_run": "2026-09-14T09:20:00-04:00",
-  "session": "opus-4-7 pre-market",
+  "last_routine": "market-open",
+  "last_run": "2026-09-14T09:52:00-04:00",
+  "session": "opus-4-7 market-open",
   "status": "success",
-  "trades_placed": 0,
-  "positions_count": 2,
-  "cash_balance": 84002.12,
-  "portfolio_value": 97822.98,
-  "long_market_value": 13820.86,
-  "open_positions": ["MU", "NVDA"],
+  "trades_placed": 2,
+  "positions_count": 0,
+  "cash_balance": 97584.24,
+  "portfolio_value": 97584.24,
+  "long_market_value": 0.0,
+  "open_positions": [],
   "flags": [
-    "MU: -8.04% — HARD-STOP BREACH, cut at market-open",
-    "NVDA: -6.89% — ~$0.26/sh from -7% hard stop, pre-stage cut",
-    "SPY < MA20 — macro criterion #4 fails, no new buys",
+    "MU CUT: 7 sh @ $914.48 (limit $913.38), realized -$723.52 (-10.16%)",
+    "NVDA CUT: 34 sh @ $211.20 (limit $210.55), realized -$625.80 (-8.03%)",
+    "Total realized today: -$1,349.32 (-1.38% of portfolio), within 3% daily-loss halt",
+    "SPY $760.45 < MA20 $766.88 — macro gate FAILS, no new BUYs",
     "FOMC Wed 9/16 binary"
   ],
   "screener_top_3": ["MRVL", "AMD", "TSLA"],
-  "decision": "HOLD new entries; FORCED CUT of MU at market-open",
+  "decision": "FORCED CUT MU+NVDA at market-open (hard-stop breach); NO NEW BUYS (macro fail)",
   "weekly_buys": "0/3",
-  "notes": "Pre-market: SPY below MA20 blocks new entries. MU breached -7% strategy hard stop and -8% CLAUDE.md stop; scheduled for cut at market-open. NVDA on cut-watch. AI-slowdown headline + FOMC Wed + hot core CPI = risk-off tape."
+  "notes": "Both open positions breached -7% strategy / -8% CLAUDE.md stops; forced cuts executed at 9:31 ET. Book flat (100% cash). MRVL/AMD/TSLA candidates blocked by SPY < MA20; would need macro reclaim + FOMC clear before re-entry."
 }
