@@ -6307,3 +6307,52 @@ Cancelled trailing-stop GTC orders (cancel-all HTTP 207) then placed limit-close
 - All hard-stop discipline honored (both closes triggered by rule, not discretion).
 
 Cumulative P&L since inception (5/19): approx **−$3,102.58** (rough — reconciled at EOD).
+
+
+### EOD Snapshot — 2026-09-14 (Monday — session: opus-4-7 end-of-day)
+
+| Field | Value |
+|-------|-------|
+| Portfolio Value | $97,584.24 |
+| Cash | $97,584.24 (100.00%) |
+| Long Market Value | $0.00 (0.00%) |
+| Buying Power | $390,336.96 |
+| Day P&L | −$662.50 (−0.674%) |
+| Realized P&L Today | −$1,349.32 (MU −$723.52, NVDA −$625.80) |
+| Unrealized P&L (open) | $0.00 (no open positions) |
+| Trades Today | 0 buys / 2 sells (MU + NVDA forced cuts) |
+| Trades This Week | 0 buys / 2 sells (both today; buy budget 0/3 used) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+_None — book flat._
+
+### Day Summary
+
+Prior close (Fri 2026-09-11): $98,246.74 → today's close $97,584.24 → **−$662.50 (−0.674%)** — hard-stop day. Both MU and NVDA gapped through their −7% strategy stops and −8% CLAUDE.md stops at the open; forced-cut executed at 13:51 UTC on hard-stop discipline. Realized loss −$1,349.32 (−1.38% of portfolio); the daily equity move (−0.674%) is smaller than the realized figure because most of the MTM damage was already carried on the books from Friday's close. Well within 3% daily-loss halt.
+
+Session cadence today (Mon 9/14): pre-market → HOLD + MU cut-flag; market-open → **FORCED CUT MU + NVDA** on hard-stop breach, no new buys (macro gate FAIL SPY $760.45 < MA20 $766.88, no qualified catalyst); midday → HOLD (flat book, nothing to manage); EOD → 0 positions, 100% cash. Buy budget preserved 0/3 into FOMC.
+
+Weekly tally: **0 buys / 2 sells** (both cuts today; buy budget 0/3 preserved).
+
+### Risk Status
+
+- **Total exposure 0.00%** — well within 80% cap. Cash 100.00% — well above 20% floor.
+- **Single-position sizes:** none.
+- **Daily loss limit 3%** — not breached (day P&L −0.674%; realized −1.38%).
+- **Position count 0/8.**
+- **Stop discipline:** both closes rule-driven (hard-stop breach), not discretionary. No open GTC exposure.
+
+Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — down $662.50 today.
+
+### Carry-Forward to Tue 2026-09-15 Pre-Market
+
+- Portfolio 100% cash / 0% long entering FOMC week. Maximum dry powder.
+- **No open positions** — nothing to manage on stops, thesis, or min-hold.
+- **Macro gate** — SPY $760.45 vs MA20 $766.88 still FAIL. Reclaim required to unlock new opens.
+- **FOMC 9/15–16** — dominant event. Statement Wed 2 PM ET, presser 2:30 PM ET. Do NOT open into the print; blackout tightening decisions on Wed into statement. Post-FOMC re-engagement contingent on macro-gate reclaim + qualified catalyst.
+- **Watchlist re-eval** — SNDK screener PASS remained macro-blocked; MRVL/AMD/TSLA catalysts contingent on SPY reclaim. Re-evaluate all if SPY > MA20 confirms Tue/Wed.
+- **Buy budget 0/3** — full week fresh, 1 slot reserve into FOMC recommended.
+
+
