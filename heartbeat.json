@@ -1,14 +1,22 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run": "2026-09-14T02:29:00+02:00",
-  "session": "opus-4-7 nightly-screener",
+  "last_routine": "pre-market",
+  "last_run": "2026-09-14T09:20:00-04:00",
+  "session": "opus-4-7 pre-market",
   "status": "success",
-  "screener_candidates": 3,
-  "screener_run_date": "2026-09-14",
-  "top_candidates": ["MRVL", "AMD", "TSLA"],
-  "phase_b_survivors": 5,
-  "phase_c_survivors": 3,
-  "phase_d_survivors": 3,
-  "data_errors": ["MMC", "BRK-B"],
-  "notes": "Nightly screener 95 tickers. 3 pass all gates: MRVL (Sharpe +0.985), AMD (+0.653), TSLA (+0.413). Pre-market routine will consume results at 09:00 ET."
+  "trades_placed": 0,
+  "positions_count": 2,
+  "cash_balance": 84002.12,
+  "portfolio_value": 97822.98,
+  "long_market_value": 13820.86,
+  "open_positions": ["MU", "NVDA"],
+  "flags": [
+    "MU: -8.04% — HARD-STOP BREACH, cut at market-open",
+    "NVDA: -6.89% — ~$0.26/sh from -7% hard stop, pre-stage cut",
+    "SPY < MA20 — macro criterion #4 fails, no new buys",
+    "FOMC Wed 9/16 binary"
+  ],
+  "screener_top_3": ["MRVL", "AMD", "TSLA"],
+  "decision": "HOLD new entries; FORCED CUT of MU at market-open",
+  "weekly_buys": "0/3",
+  "notes": "Pre-market: SPY below MA20 blocks new entries. MU breached -7% strategy hard stop and -8% CLAUDE.md stop; scheduled for cut at market-open. NVDA on cut-watch. AI-slowdown headline + FOMC Wed + hot core CPI = risk-off tape."
 }
