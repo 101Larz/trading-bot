@@ -1,14 +1,14 @@
 {
-  "last_routine": "midday-scan",
-  "last_run": "2026-09-11T12:30:00-04:00",
-  "session": "opus-4-7 midday-scan",
-  "status": "ok",
-  "decision": "HOLD",
-  "trades_executed": 0,
-  "open_positions": 2,
-  "positions": [
-    {"symbol": "MU", "qty": 7, "unrealized_plpc": -0.0438, "hard_stop": 946.59, "cushion_pct": 2.74},
-    {"symbol": "NVDA", "qty": 34, "unrealized_plpc": -0.0461, "hard_stop": 213.53, "cushion_pct": 2.51}
-  ],
-  "notes": "No losers <= -7%; no winners >= +15%; both inside 5-day min-hold through 2026-09-14; macro gate SPY < MA20; theses intact."
+  "last_routine": "nightly-screener",
+  "last_run": "2026-09-14T02:29:00+02:00",
+  "session": "opus-4-7 nightly-screener",
+  "status": "success",
+  "screener_candidates": 3,
+  "screener_run_date": "2026-09-14",
+  "top_candidates": ["MRVL", "AMD", "TSLA"],
+  "phase_b_survivors": 5,
+  "phase_c_survivors": 3,
+  "phase_d_survivors": 3,
+  "data_errors": ["MMC", "BRK-B"],
+  "notes": "Nightly screener 95 tickers. 3 pass all gates: MRVL (Sharpe +0.985), AMD (+0.653), TSLA (+0.413). Pre-market routine will consume results at 09:00 ET."
 }
