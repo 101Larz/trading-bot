@@ -6356,3 +6356,42 @@ Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — down $66
 - **Buy budget 0/3** — full week fresh, 1 slot reserve into FOMC recommended.
 
 
+
+
+## Market-Open Log — 2026-09-15 (Tuesday — session: opus-4-7 market-open)
+
+**Decision: HOLD. No buys, no sells. Book stays 100% cash into FOMC (statement Wed 9/16 14:00 ET).**
+
+### Pre-execution State
+- Portfolio $97,584.24 / cash $97,584.24 (100.00%) / LMV $0.00 / positions 0/6.
+- Buying power $390,336.96. Weekly buy budget 0/3.
+
+### Live Re-Check (09:46 ET)
+- **SPY $759.77 vs MA20 $766.11** → macro gate STILL FAIL (−0.83%). No intraday reclaim vs pre-market.
+- TSLA $365.00 — bullish aligned, RSI 54.1 (tech PASS; macro-blocked).
+- MRVL $225.00 — below MA20 $227.59 (tech FAIL).
+- AMD  $506.83 — below MA50 $496.06 (tech FAIL).
+
+### Buy-Rule Preflight
+| Rule | Status |
+|------|:------:|
+| Positions ≤ 6 | ✅ (0/6) |
+| Weekly buys ≤ 3 | ✅ (0/3) |
+| Per-position ≤ 20% equity | n/a |
+| Macro gate SPY > MA20 | **❌ FAIL** |
+| Qualified catalyst in today's RESEARCH-LOG | **❌ FAIL** (all contingent on SPY reclaim not achieved) |
+
+**No buy admissible.** No open positions → no sell to manage. **Executions: 0.**
+
+### Post-execution State
+- Portfolio $97,584.24 / cash $97,584.24 (100%) / LMV $0 / positions 0/6.
+- Buying power $390,336.96. Weekly buy budget 0/3 preserved. Full dry powder into FOMC.
+
+### Risk Status
+- Total exposure 0% — within 80% cap.
+- Cash 100% — above 20% floor.
+- Daily P&L $0 — 3% halt not in play.
+- Position count 0/8.
+- No open GTC stops (no positions).
+
+Cumulative P&L since inception (5/19) unchanged: approx **−$2,415.76 (−2.416%)**.
