@@ -1,15 +1,14 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run": "2026-09-15T00:08:23Z",
-  "session": "opus-4-7 nightly-screener",
+  "last_routine": "pre-market",
+  "last_run": "2026-09-15T07:12:30Z",
+  "session": "opus-4-7 pre-market",
   "status": "success",
-  "screener_run_date": "2026-09-15",
-  "screener_candidates": 3,
+  "decision": "HOLD",
+  "portfolio_value": 97584.24,
+  "cash": 97584.24,
+  "open_positions": 0,
   "screener_top_3": ["MRVL", "AMD", "TSLA"],
-  "universe_size": 95,
-  "phase_b_survivors": 5,
-  "phase_c_survivors": 3,
-  "phase_d_survivors": 3,
-  "data_errors": ["MMC", "BRK-B"],
-  "notes": "Same 3 survivors as 2026-09-14 run; unchanged top-3. Pre-market routine at 09:00 ET will apply macro/FOMC gates before any trade decision."
+  "macro_gate": "FAIL (SPY 760.88 < MA20 766.11)",
+  "tech_gate_pass": ["TSLA"],
+  "notes": "100% cash into FOMC 9/16. No new entries — macro gate fails + 2-day meeting risk. MRVL/AMD broke MA alignment overnight; TSLA sole tech pass but blocked by macro. Market-open re-checks Empire State + SPY MA20 reclaim."
 }
