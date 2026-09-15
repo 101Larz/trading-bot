@@ -1,14 +1,13 @@
 {
-  "last_routine": "market-open",
-  "last_run": "2026-09-15T13:46:30Z",
-  "session": "opus-4-7 market-open",
+  "last_routine": "midday-scan",
+  "last_run": "2026-09-15T16:37:00Z",
+  "session": "opus-4-7 midday",
   "status": "success",
   "decision": "HOLD",
   "portfolio_value": 97584.24,
   "cash": 97584.24,
   "open_positions": 0,
   "trades_executed": 0,
-  "macro_gate": "FAIL (SPY 759.77 < MA20 766.11)",
-  "tech_gate_pass": ["TSLA"],
-  "notes": "100% cash preserved into FOMC (statement Wed 9/16 14:00 ET). SPY did not reclaim MA20 at open. MRVL/AMD still MA-broken. No qualified catalyst live. Weekly buys 0/3 preserved. Re-check at midday and post-FOMC Thursday."
+  "macro_gate": "FAIL (SPY 759.77 < MA20 766.11 at open)",
+  "notes": "Flat book — zero positions to cut, tighten, or thesis-check. 100% cash preserved into FOMC (statement Wed 9/16 14:00 ET). Weekly buys 0/3 preserved. Next re-engagement window post-FOMC Thursday 9/17."
 }
