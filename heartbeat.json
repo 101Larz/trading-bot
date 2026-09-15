@@ -1,22 +1,15 @@
 {
-  "last_routine": "midday-scan",
-  "last_run": "2026-09-14T12:40:00-04:00",
-  "session": "opus-4-7 midday-scan",
+  "last_routine": "nightly-screener",
+  "last_run": "2026-09-15T00:08:23Z",
+  "session": "opus-4-7 nightly-screener",
   "status": "success",
-  "trades_placed": 0,
-  "positions_count": 0,
-  "cash_balance": 97584.24,
-  "portfolio_value": 97584.24,
-  "long_market_value": 0.0,
-  "open_positions": [],
-  "flags": [
-    "Book flat (100% cash) after market-open forced cuts of MU + NVDA (-$1,349.32 realized today)",
-    "No positions to cut, no winners to tighten, no theses to recheck",
-    "SPY $762.08 < MA20 $766.88 - macro gate still FAILS, no new BUYs",
-    "FOMC Wed 9/16 binary - discretion off"
-  ],
+  "screener_run_date": "2026-09-15",
+  "screener_candidates": 3,
   "screener_top_3": ["MRVL", "AMD", "TSLA"],
-  "decision": "HOLD - flat book, no risk actions required at midday",
-  "weekly_buys": "0/3",
-  "notes": "Midday scan on flat book. All position-management steps no-ops (0 positions). Macro gate still failing (SPY -0.63% below MA20). Screened candidates blocked until SPY reclaim + FOMC clear."
+  "universe_size": 95,
+  "phase_b_survivors": 5,
+  "phase_c_survivors": 3,
+  "phase_d_survivors": 3,
+  "data_errors": ["MMC", "BRK-B"],
+  "notes": "Same 3 survivors as 2026-09-14 run; unchanged top-3. Pre-market routine at 09:00 ET will apply macro/FOMC gates before any trade decision."
 }
