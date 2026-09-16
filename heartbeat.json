@@ -1,7 +1,7 @@
 {
-  "last_routine": "pre-market",
-  "last_run": "2026-09-16T13:00:00Z",
-  "session": "opus-4-7 pre-market",
+  "last_routine": "market-open",
+  "last_run": "2026-09-16T13:45:00Z",
+  "session": "opus-4-7 market-open",
   "status": "success",
   "trades_placed": 0,
   "positions_count": 0,
@@ -9,5 +9,5 @@
   "portfolio_value": 97584.24,
   "screener_candidates": 0,
   "decision": "HOLD",
-  "notes": "FOMC decision day 14:00 ET. Screener zero survivors (0/95 Phase B). SPY $757.77 below BOTH MA20 ($765.34) and MA50 ($759.06) — macro doubly FAILS. Book 100% cash preserved into binary print; post-FOMC Thursday is primary re-engagement window."
+  "notes": "Market-open reaffirms pre-market HOLD. 100% cash, zero positions. Buy-rule catalyst gate fails (0 screener candidates); macro gate fails (SPY < MA20 & MA50). FOMC 14:00 ET binary in ~4hr — no front-running. Midday re-engagement bar: macro reclaim AND fresh in-day catalyst (both required)."
 }
