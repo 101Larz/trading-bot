@@ -1,9 +1,13 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run": "2026-09-16T00:07:00Z",
-  "session": "opus-4-7 nightly-screener",
+  "last_routine": "pre-market",
+  "last_run": "2026-09-16T13:00:00Z",
+  "session": "opus-4-7 pre-market",
   "status": "success",
+  "trades_placed": 0,
+  "positions_count": 0,
+  "cash_balance": 97584.24,
+  "portfolio_value": 97584.24,
   "screener_candidates": 0,
-  "screener_run_date": "2026-09-16",
-  "notes": "Zero Phase B survivors (95/95 failed Markov gate) after 10y lookback. Consistent with macro FAIL (SPY < MA20) into FOMC 2026-09-16. Yesterday's leaders MRVL/AMD/TSLA all dropped out of Bull regime overnight. Data errors: MMC (delisted/no bars), BRK-B (Alpaca 400)."
+  "decision": "HOLD",
+  "notes": "FOMC decision day 14:00 ET. Screener zero survivors (0/95 Phase B). SPY $757.77 below BOTH MA20 ($765.34) and MA50 ($759.06) — macro doubly FAILS. Book 100% cash preserved into binary print; post-FOMC Thursday is primary re-engagement window."
 }
