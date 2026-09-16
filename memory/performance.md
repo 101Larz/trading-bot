@@ -6445,3 +6445,56 @@ Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — unchange
 - **Watchlist** — TSLA tech PASS but macro-blocked; MRVL/AMD tech FAIL; SNDK screener PASS macro-blocked. Re-evaluate all after FOMC print if SPY reclaims MA20.
 - **Buy budget 0/3** — full week fresh. Recommend keeping ≥1 slot reserve into FOMC uncertainty.
 - **No open positions** — nothing to manage on stops, thesis, or min-hold.
+
+
+
+## EOD Snapshot — 2026-09-16 (Wednesday — session: opus-4-7 eod)
+
+### Account
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,584.24 |
+| Cash | $97,584.24 (100.00%) |
+| Long Market Value | $0.00 (0.00%) |
+| Buying Power | $390,336.96 |
+| Day P&L | $0.00 (0.000%) |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | $0.00 (no open positions) |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 0 buys / 2 sells (MU + NVDA forced cuts Mon 9/14; buy budget 0/3 preserved) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+_None — book flat._
+
+### Day Summary
+
+Prior close (Tue 2026-09-15): $97,584.24 → today's close $97,584.24 → **$0.00 (0.000%)** — third consecutive flat session on a 100%-cash book. FOMC decision day: statement 14:00 ET, presser 14:30 ET (SEP + dot plot). Zero executions across pre-market, market-open, and midday routines. All three sessions decided HOLD on the same two-part failure: **macro FAIL** (SPY $757.77 < MA20 $765.34 AND < MA50 $759.06 — deteriorated from yesterday's below-MA20-only posture) + **zero screener candidates** (0/95 Phase B survivors overnight; yesterday's leaders MRVL/AMD/TSLA all fell out of Bull regime). Buy budget preserved 0/3.
+
+Session cadence today (Wed 9/16): pre-market → HOLD into FOMC (macro gate FAILS harder, 0 screener candidates); market-open → HOLD (two hard-blocks: no catalyst + macro FAIL); midday → HOLD blackout into 14:00 ET print; EOD → 0 positions, 100% cash, dry powder maximized post-FOMC.
+
+Weekly tally (Mon–Wed): **0 buys / 2 sells** (both cuts Mon 9/14; buy budget 0/3 fresh into remainder of week).
+
+### Risk Status
+
+- **Total exposure 0.00%** — well within 80% cap. Cash 100.00% — well above 20% floor.
+- **Single-position sizes:** none.
+- **Daily loss limit 3%** — not breached (day P&L 0.000%).
+- **Position count 0/8.**
+- **Stop discipline:** no open positions → no stops to manage; FOMC blackout on tightening/loosening decisions honored.
+
+Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — unchanged today.
+
+### Carry-Forward to Thu 2026-09-17 Pre-Market
+
+- Portfolio 100% cash / 0% long entering post-FOMC session. Maximum dry powder.
+- **Post-FOMC re-engagement window opens Thu 9/17** — contingent on:
+  1. Macro-gate reclaim (SPY > MA20 confirmed post-decision)
+  2. Fresh nightly screener returning ≥ 1 qualified catalyst
+  3. Post-print volatility digest (avoid opening into any residual whipsaw)
+- **Macro gate** — SPY $757.77 vs MA20 $765.34 (−1.00%) & MA50 $759.06 (−0.22%). Reclaim of both required for full risk-on; MA20 reclaim is the hard rule.
+- **Watchlist** — MRVL/AMD/TSLA all dropped from Bull regime overnight; SNDK previously screener PASS but macro-blocked. Full re-screen expected Thursday.
+- **Buy budget 0/3** — full week fresh with only 2 sessions remaining (Thu, Fri). Recommend deploying max 2 slots this week if catalysts materialize; hold ≥1 in reserve.
+- **No open positions** — nothing to manage on stops, thesis, or min-hold.

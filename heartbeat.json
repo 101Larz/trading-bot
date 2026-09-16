@@ -1,7 +1,7 @@
 {
-  "last_routine": "market-open",
-  "last_run": "2026-09-16T13:45:00Z",
-  "session": "opus-4-7 market-open",
+  "last_routine": "end-of-day",
+  "last_run": "2026-09-16T20:15:00Z",
+  "session": "opus-4-7 end-of-day",
   "status": "success",
   "trades_placed": 0,
   "positions_count": 0,
@@ -9,5 +9,5 @@
   "portfolio_value": 97584.24,
   "screener_candidates": 0,
   "decision": "HOLD",
-  "notes": "Market-open reaffirms pre-market HOLD. 100% cash, zero positions. Buy-rule catalyst gate fails (0 screener candidates); macro gate fails (SPY < MA20 & MA50). FOMC 14:00 ET binary in ~4hr — no front-running. Midday re-engagement bar: macro reclaim AND fresh in-day catalyst (both required)."
+  "notes": "EOD FOMC day. Book 100% cash / 0 positions. Day P&L $0.00 (0.000%). Third consecutive flat session. Weekly tally 0 buys / 2 sells (MU+NVDA Mon cuts). Cumulative since 5/19: -$2,415.76 (-2.416%). Carry-forward: post-FOMC re-engagement Thu 9/17 contingent on SPY MA20 reclaim + fresh catalyst."
 }
