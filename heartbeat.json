@@ -1,13 +1,14 @@
 {
-  "last_routine": "end-of-day",
-  "last_run": "2026-09-16T20:15:00Z",
-  "session": "opus-4-7 end-of-day",
+  "last_routine": "nightly-screener",
+  "last_run": "2026-09-17T00:07:00Z",
+  "session": "opus-4-7 nightly-screener",
   "status": "success",
-  "trades_placed": 0,
-  "positions_count": 0,
-  "cash_balance": 97584.24,
-  "portfolio_value": 97584.24,
   "screener_candidates": 0,
-  "decision": "HOLD",
-  "notes": "EOD FOMC day. Book 100% cash / 0 positions. Day P&L $0.00 (0.000%). Third consecutive flat session. Weekly tally 0 buys / 2 sells (MU+NVDA Mon cuts). Cumulative since 5/19: -$2,415.76 (-2.416%). Carry-forward: post-FOMC re-engagement Thu 9/17 contingent on SPY MA20 reclaim + fresh catalyst."
+  "screener_run_date": "2026-09-17",
+  "phase_b_survivors": 4,
+  "phase_c_survivors": 0,
+  "phase_d_survivors": 0,
+  "phase_b_tickers": ["NVDA", "AMD", "MRVL", "ARM"],
+  "data_errors": ["MMC", "BRK-B"],
+  "notes": "Second consecutive zero-candidate day. 4/95 pass Markov (all semis: NVDA, AMD, MRVL, ARM) — Bull regime returning to the AI/semi theme. All 4 fail 1-month momentum gate (still net negative). No Phase D survivors → pre-market Thu 9/17 has no candidate universe to research. NVDA re-entering Bull regime is notable given Mon's forced cut. Book unchanged: 100% cash."
 }
