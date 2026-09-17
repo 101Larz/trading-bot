@@ -6498,3 +6498,53 @@ Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — unchange
 - **Watchlist** — MRVL/AMD/TSLA all dropped from Bull regime overnight; SNDK previously screener PASS but macro-blocked. Full re-screen expected Thursday.
 - **Buy budget 0/3** — full week fresh with only 2 sessions remaining (Thu, Fri). Recommend deploying max 2 slots this week if catalysts materialize; hold ≥1 in reserve.
 - **No open positions** — nothing to manage on stops, thesis, or min-hold.
+
+
+
+## EOD Snapshot — 2026-09-17 (Thursday — session: opus-4-7 eod)
+
+### Account
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,584.24 |
+| Cash | $97,584.24 (100.00%) |
+| Long Market Value | $0.00 (0.00%) |
+| Buying Power | $390,336.96 |
+| Day P&L | $0.00 (0.000%) |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | $0.00 (no open positions) |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 0 buys / 2 sells (MU + NVDA forced cuts Mon 9/14; buy budget 0/3 preserved) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+_None — book flat._
+
+### Day Summary
+
+Prior close (Wed 2026-09-16): $97,584.24 → today's close $97,584.24 → **$0.00 (0.000%)** — fourth consecutive flat session on a 100%-cash book. Zero executions across pre-market, market-open, and midday routines. All three sessions decided HOLD on the same two-part failure: **macro FAIL** (SPY $762.23 live vs MA20 $764.67, −0.32% — still below the hard rule) + **zero screener catalysts** (4 Phase B survivors NVDA/AMD/MRVL/ARM, 0 Phase C, 0 Phase D). Buy budget preserved 0/3.
+
+Session cadence today (Thu 9/17): pre-market → HOLD (post-FOMC, macro FAIL, 0 catalysts); market-open → HOLD (no qualified BUY, no positions to manage); midday → HOLD (nothing to cut/tighten/re-thesis on a flat book); EOD → 0 positions, 100% cash, dry powder preserved.
+
+Weekly tally (Mon–Thu): **0 buys / 2 sells** (both cuts Mon 9/14; buy budget 0/3 fresh into Friday).
+
+### Risk Status
+
+- **Total exposure 0.00%** — well within 80% cap. Cash 100.00% — well above 20% floor.
+- **Single-position sizes:** none.
+- **Daily loss limit 3%** — not breached (day P&L 0.000%).
+- **Position count 0/8.**
+- **Stop discipline:** no open positions → no stops to manage.
+
+Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — unchanged today.
+
+### Carry-Forward to Fri 2026-09-18 Pre-Market
+
+- Portfolio 100% cash / 0% long entering week-close session. Maximum dry powder into weekly review.
+- **Macro gate** — SPY $762.23 (live close approximation) vs MA20 $764.67 (−0.32%) still FAIL, but the gap narrowed materially post-FOMC (Wed close was −1.00%). MA50 $759.19 reclaimed intraday. Watch for a Friday close above MA20 to unlock Monday risk-on.
+- **Watchlist** — Phase B rebuilt to 4 names (NVDA, AMD, MRVL, ARM) but 0 progressed through Phase C/D — no admissible catalyst. Screener will re-run overnight; Friday pre-market should re-check for a fresh Phase D survivor.
+- **Buy budget 0/3** — full week fresh with only Friday remaining. If a catalyst materializes AND macro reclaims, max 2 slots deployable; ≥1 reserve into weekend.
+- **No open positions** — nothing to manage on stops, thesis, or min-hold.
+- **Weekly review (Fri 5:00 PM ET)** — this will be a **0-trade, 2-cut week** ledger. Focus on process adherence (both cuts rule-driven), buy-discipline (0 buys because macro/catalyst never both cleared), and cash-preservation into an unfavorable regime.
