@@ -1,7 +1,7 @@
 {
-  "last_routine": "pre-market",
-  "last_run": "2026-09-17T13:10:00Z",
-  "session": "opus-4-7 pre-market",
+  "last_routine": "market-open",
+  "last_run": "2026-09-17T13:47:00Z",
+  "session": "opus-4-7 market-open",
   "status": "success",
   "decision": "HOLD",
   "trades_executed": 0,
@@ -10,7 +10,8 @@
   "phase_c_survivors": 0,
   "phase_d_survivors": 0,
   "phase_b_tickers": ["NVDA", "AMD", "MRVL", "ARM"],
-  "spy_price": 754.05,
+  "spy_price_live": 760.86,
+  "spy_price_close": 754.05,
   "spy_ma20": 764.67,
   "spy_ma50": 759.19,
   "spy_rsi14": 39.59,
@@ -18,5 +19,6 @@
   "portfolio_value": 97584.24,
   "cash": 97584.24,
   "open_positions": 0,
-  "notes": "Pre-market 9/17 (post-FOMC): HOLD. Zero screener candidates (2nd straight day). SPY < MA20 AND MA50. Book 100% cash. WebSearch tool intermittently unavailable — decision anchored on mechanical screen + macro filter."
+  "weekly_buys_used": 0,
+  "notes": "Market-open 9/17 (post-FOMC): HOLD. Semis (AMD/MRVL/ARM/NVDA) gapped up live but macro gate still FAILS on live SPY ($760.86 < MA20 $764.67 by -0.50%). No admissible catalyst in today's RESEARCH-LOG. Buy budget preserved 0/3."
 }
