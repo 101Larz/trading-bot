@@ -1,14 +1,22 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run": "2026-09-17T00:07:00Z",
-  "session": "opus-4-7 nightly-screener",
+  "last_routine": "pre-market",
+  "last_run": "2026-09-17T13:10:00Z",
+  "session": "opus-4-7 pre-market",
   "status": "success",
+  "decision": "HOLD",
+  "trades_executed": 0,
   "screener_candidates": 0,
-  "screener_run_date": "2026-09-17",
   "phase_b_survivors": 4,
   "phase_c_survivors": 0,
   "phase_d_survivors": 0,
   "phase_b_tickers": ["NVDA", "AMD", "MRVL", "ARM"],
-  "data_errors": ["MMC", "BRK-B"],
-  "notes": "Second consecutive zero-candidate day. 4/95 pass Markov (all semis: NVDA, AMD, MRVL, ARM) — Bull regime returning to the AI/semi theme. All 4 fail 1-month momentum gate (still net negative). No Phase D survivors → pre-market Thu 9/17 has no candidate universe to research. NVDA re-entering Bull regime is notable given Mon's forced cut. Book unchanged: 100% cash."
+  "spy_price": 754.05,
+  "spy_ma20": 764.67,
+  "spy_ma50": 759.19,
+  "spy_rsi14": 39.59,
+  "macro_gate": "FAIL",
+  "portfolio_value": 97584.24,
+  "cash": 97584.24,
+  "open_positions": 0,
+  "notes": "Pre-market 9/17 (post-FOMC): HOLD. Zero screener candidates (2nd straight day). SPY < MA20 AND MA50. Book 100% cash. WebSearch tool intermittently unavailable — decision anchored on mechanical screen + macro filter."
 }
