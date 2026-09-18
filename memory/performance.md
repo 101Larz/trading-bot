@@ -6548,3 +6548,52 @@ Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — unchange
 - **Buy budget 0/3** — full week fresh with only Friday remaining. If a catalyst materializes AND macro reclaims, max 2 slots deployable; ≥1 reserve into weekend.
 - **No open positions** — nothing to manage on stops, thesis, or min-hold.
 - **Weekly review (Fri 5:00 PM ET)** — this will be a **0-trade, 2-cut week** ledger. Focus on process adherence (both cuts rule-driven), buy-discipline (0 buys because macro/catalyst never both cleared), and cash-preservation into an unfavorable regime.
+
+
+## EOD Snapshot — 2026-09-18 (Friday — session: opus-4-7 eod)
+
+### Account
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,584.24 |
+| Cash | $97,584.24 (100.00%) |
+| Long Market Value | $0.00 (0.00%) |
+| Buying Power | $390,336.96 |
+| Day P&L | $0.00 (0.000%) |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | $0.00 (no open positions) |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 0 buys / 2 sells (MU + NVDA forced cuts Mon 9/14; buy budget 0/3 unused) |
+| Open Positions | 0 / 8 |
+
+### Open Positions
+
+_None — book flat._
+
+### Day Summary
+
+Prior close (Thu 2026-09-17): $97,584.24 → today's close $97,584.24 → **$0.00 (0.000%)** — fifth consecutive flat session on a 100%-cash book, closing the week. Zero executions across pre-market, market-open, and midday routines. All three sessions decided HOLD on the persistent macro-gate FAIL: SPY $758.89 (midday) vs MA20 $764.35 (−0.71%), with the gap widening intraday from market-open (−0.42%). SPY held above MA50 $759.53 by only $0.64 at the midday snapshot — thin technical floor. Triple Witching post-15:00 ET further discouraged late entries. Buy budget preserved 0/3 (unused all week).
+
+Session cadence today (Fri 9/18): pre-market → HOLD (macro FAIL, no catalyst); market-open → HOLD (macro FAIL widening, no BUY qualified, no positions to manage); midday → HOLD (macro gate worsening −0.71%, Triple Witching blackout on late entries, flat book); EOD → 0 positions, 100% cash, maximum dry powder into weekend + weekly review.
+
+Weekly tally (Mon–Fri): **0 buys / 2 sells** (both cuts Mon 9/14; buy budget 0/3 unused — week closes with full reserve).
+
+### Risk Status
+
+- **Total exposure 0.00%** — well within 80% cap. Cash 100.00% — well above 20% floor.
+- **Single-position sizes:** none.
+- **Daily loss limit 3%** — not breached (day P&L 0.000%).
+- **Position count 0/8.**
+- **Stop discipline:** no open positions → no stops to manage.
+
+Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — unchanged today, unchanged all week.
+
+### Carry-Forward to Weekly Review (Fri 17:00 ET) & Mon 2026-09-21 Pre-Market
+
+- Portfolio 100% cash / 0% long entering the weekend. Maximum dry powder preserved.
+- **Macro gate** — SPY $758.89 vs MA20 $764.35 (−0.71%) still FAIL and worsening intraday; MA50 $759.53 held by only $0.64. Reclaim of MA20 is the hard rule for Monday risk-on.
+- **Watchlist** — Phase D remained empty all week; no admissible catalyst survived screener → macro-gate combined filter on any session. Screener re-runs over the weekend for Monday.
+- **Buy budget 3/3 fresh** into Mon–Fri 9/22–9/26 week (weekly counter resets). Discipline held: cash preservation into an unfavorable regime.
+- **No open positions** — nothing to manage on stops, thesis, or min-hold.
+- **Weekly review focus** — 0-buy / 2-sell week ledger. Adherence: both cuts rule-driven (Mon 9/14 forced stop-outs); zero buys because macro gate never cleared AND no catalyst ever fully qualified on the same session. Process win despite flat P&L.
