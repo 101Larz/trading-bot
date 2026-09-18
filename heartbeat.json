@@ -1,7 +1,7 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run": "2026-09-18T00:07:00Z",
-  "session": "opus-4-7 nightly-screener",
+  "last_routine": "pre-market",
+  "last_run": "2026-09-18T07:15:00Z",
+  "session": "opus-4-7 pre-market",
   "status": "success",
   "screener_candidates": 2,
   "screener_run_date": "2026-09-18",
@@ -10,6 +10,7 @@
   "phase_c_survivors": 2,
   "phase_d_survivors": 2,
   "decision": "HOLD",
+  "conditional_buy_at_open": "MRVL",
   "trades_executed": 0,
   "portfolio_value": 97584.24,
   "cash": 97584.24,
@@ -23,10 +24,10 @@
   "trades_week_buys": 0,
   "trades_week_sells": 2,
   "weekly_buys_used": 0,
-  "spy_price_live": 762.23,
-  "spy_ma20": 764.67,
-  "spy_ma50": 759.19,
+  "spy_price_live": 762.5,
+  "spy_ma20": 764.35,
+  "spy_ma50": 759.53,
   "macro_gate": "FAIL",
   "cumulative_pnl_since_inception_pct": -2.416,
-  "notes": "Nightly screener 2026-09-18: 2 Phase-D candidates (MRVL Sharpe 0.984, AMD Sharpe 0.654). 6 Markov-Bull tickers total; NVDA/ARM/WDC/STX failed momentum. Data errors: MMC (0 bars), BRK-B (Alpaca 400). Macro gate still FAIL from 9/17 close — pre-market routine to re-check."
+  "notes": "Pre-market 2026-09-18: HOLD in pre-market (macro gate SPY $762.50 < MA20 $764.35, -0.24%). Futures +1.94% suggest reclaim at 9:30 open. Primary candidate MRVL (Sharpe 0.984, RSI 49.71, +5.4% above MA20, BofA/Susquehanna/Piper Sandler upgrades). Conditional MRVL 30-share limit buy at ~$253 pending live macro reclaim at market open. AMD skipped (RSI 67.09, +17.5% above MA20 — too extended). Triple Witching today — execute early, avoid final hour."
 }
