@@ -1,8 +1,14 @@
 {
-  "last_routine": "end-of-day",
-  "last_run": "2026-09-17T20:15:00Z",
-  "session": "opus-4-7 eod",
+  "last_routine": "nightly-screener",
+  "last_run": "2026-09-18T00:07:00Z",
+  "session": "opus-4-7 nightly-screener",
   "status": "success",
+  "screener_candidates": 2,
+  "screener_run_date": "2026-09-18",
+  "screener_top": ["MRVL", "AMD"],
+  "phase_b_survivors": 6,
+  "phase_c_survivors": 2,
+  "phase_d_survivors": 2,
   "decision": "HOLD",
   "trades_executed": 0,
   "portfolio_value": 97584.24,
@@ -22,5 +28,5 @@
   "spy_ma50": 759.19,
   "macro_gate": "FAIL",
   "cumulative_pnl_since_inception_pct": -2.416,
-  "notes": "EOD 9/17: 0-trade day. Book 100% cash, 4th consecutive flat session. SPY $762.23 vs MA20 $764.67 (-0.32%) — macro gate still FAIL but gap narrowed post-FOMC. Weekly tally Mon-Thu: 0 buys / 2 sells (both cuts Mon 9/14). Buy budget 0/3 into Friday."
+  "notes": "Nightly screener 2026-09-18: 2 Phase-D candidates (MRVL Sharpe 0.984, AMD Sharpe 0.654). 6 Markov-Bull tickers total; NVDA/ARM/WDC/STX failed momentum. Data errors: MMC (0 bars), BRK-B (Alpaca 400). Macro gate still FAIL from 9/17 close — pre-market routine to re-check."
 }
