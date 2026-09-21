@@ -6675,3 +6675,56 @@ SPY live $767.15 vs MA20 $762.50 → **+0.61% PASS** (reclaim confirmed at open;
 - Monitor SNDK / NVDA for post-open follow-through and trailing-stop HWM lifts.
 - STX reserve — deploy only on midweek confirmation of macro strength + Phase D re-pass.
 - Min-hold locks both new positions until **2026-09-26**; only hard stops or trailing GTC can close before then.
+
+
+## EOD Snapshot — 2026-09-21 (Monday — session: opus-4-7 eod)
+
+### Account
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,489.54 |
+| Cash | $82,728.74 (84.86%) |
+| Long Market Value | $14,760.80 (15.14%) |
+| Buying Power | $372,245.20 |
+| Day P&L | −$94.70 (−0.097%) |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | −$95.02 |
+| Trades Today | 2 buys / 0 sells (SNDK + NVDA at open) |
+| Trades This Week | 2 buys / 0 sells (Mon only; buy budget 2/3 used) |
+| Open Positions | 2 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|
+| NVDA   | 34  | $224.59   | $226.87 | $7,713.58 | +$77.52    | +1.02%   | 7.91%  |
+| SNDK   | 4   | $1,804.86 | $1,761.72 | $7,046.90 | −$172.54  | −2.39%   | 7.23%  |
+| **Total** | | | | **$14,760.48** | **−$95.02** | **−0.64%** | **15.14%** |
+
+### Day Summary
+
+Prior close (Fri 2026-09-18): $97,584.24 → today's close $97,489.54 → **−$94.70 (−0.097%)** — new week opened with macro-gate reclaim at open (SPY +0.61% vs MA20) unlocking risk-on. Two BUYs executed 09:49 ET (SNDK 4 sh @ $1,804.43, NVDA 34 sh @ $224.605) sized to CLAUDE.md 8% single-position cap; 15% trailing-stop GTCs placed on both immediately. Intraday: NVDA held gains (+1.02% unrealized) while SNDK fell back (−2.39% unrealized) — net book slightly red but well inside daily-loss limit and both stops far untouched.
+
+Session cadence today (Mon 9/21): pre-market → HOLD (macro FAIL −0.11%, conditional buys staged); market-open → 2 BUYs (SNDK + NVDA on macro reclaim); midday → HOLD (both positions in tolerance, theses intact); EOD → 2 open, book slightly red on SNDK drift, NVDA green.
+
+Weekly tally (Mon-only): **2 buys / 0 sells** (buy budget 2/3 used, 1 in reserve for midweek CPI).
+
+### Risk Status
+
+- **Total exposure 15.14%** — well within 80% cap. Cash 84.86% — well above 20% floor.
+- **Single-position sizes:** NVDA 7.91%, SNDK 7.23% — both inside 8% cap.
+- **Daily loss limit 3%** — not breached (day P&L −0.097%).
+- **Position count 2/8.**
+- **Stop discipline:** 15% trailing GTCs active on both; hard −8% floors monitored (NVDA $206.64, SNDK $1,660.08).
+
+Cumulative P&L since inception (5/19): **−$2,510.46 (−2.510%)** — down $94.70 from prior week's close.
+
+### Carry-Forward to Tue 2026-09-22 Pre-Market
+
+- Portfolio 84.86% cash / 15.14% long (2 positions). Buy budget 1/3 reserved.
+- **Min-hold** locks both NVDA and SNDK until **2026-09-26** (Fri) unless stops trigger.
+- **NVDA thesis** — +1.02% into close; AWS/Vera catalyst intact. Continue monitoring for follow-through; trail HWM already lifted.
+- **SNDK thesis** — −2.39% into close on post-S&P 100 inclusion drift; well above 15% trail. No thesis change; monitor for CPI-driven volatility Wed.
+- **STX reserve slot** — 1/3 buy budget preserved for midweek CPI print (Wed 2026-09-24). Deploy only if macro remains PASS and STX confirms Phase D re-pass.
+- **Macro gate** — SPY $767.15 (open PASS) — monitor Tue open for continuation. MA20 reclaim confirmed; MA50 also above.
