@@ -6597,3 +6597,81 @@ Cumulative P&L since inception (5/19): **−$2,415.76 (−2.416%)** — unchange
 - **Buy budget 3/3 fresh** into Mon–Fri 9/22–9/26 week (weekly counter resets). Discipline held: cash preservation into an unfavorable regime.
 - **No open positions** — nothing to manage on stops, thesis, or min-hold.
 - **Weekly review focus** — 0-buy / 2-sell week ledger. Adherence: both cuts rule-driven (Mon 9/14 forced stop-outs); zero buys because macro gate never cleared AND no catalyst ever fully qualified on the same session. Process win despite flat P&L.
+
+### Trade Entry — 2026-09-21 13:49
+| Field | Value |
+|-------|-------|
+| Symbol | SNDK |
+| Side | BUY |
+| Shares | 4.0 |
+| Est. Price | $1805.85 |
+| Est. Value | $7223.40 |
+| Order ID | 93db52b9-8e86-46df-b5c3-a0012fc572f3 |
+| Trailing Stop | 15% GTC placed immediately after fill |
+
+### Trade Entry — 2026-09-21 13:49
+| Field | Value |
+|-------|-------|
+| Symbol | NVDA |
+| Side | BUY |
+| Shares | 34.0 |
+| Est. Price | $224.61 |
+| Est. Value | $7636.74 |
+| Order ID | debbd1bc-716e-4a34-9a50-713af77f4045 |
+| Trailing Stop | 15% GTC placed immediately after fill |
+
+
+## Market-Open Trade Log — 2026-09-21 (Monday — session: opus-4-7 market-open)
+
+### Account (pre-trade)
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,584.24 |
+| Cash | $97,584.24 (100.00%) |
+| Buying Power | $390,336.96 |
+| Open Positions | 0 / 8 |
+| Buy Budget | 3 / 3 fresh |
+
+### Macro Gate
+
+SPY live $767.15 vs MA20 $762.50 → **+0.61% PASS** (reclaim confirmed at open; Fri close $761.69 → gap-up $767.15).
+
+### Trades Executed
+
+| Time (ET) | Symbol | Side | Qty | Est. Ask | Fill Price | Value | Order ID | Trail-Stop ID | Trail Stop |
+|-----------|--------|------|----:|---------:|-----------:|------:|----------|---------------|-----------:|
+| 09:49 | SNDK | BUY | 4  | $1,820.00 | $1,804.43 | $7,217.72 | 93db52b9-8e86-46df-b5c3-a0012fc572f3 | 3c4bb17b-57f4-4269-86b9-1a93a1327b56 | $1,533.7655 |
+| 09:49 | NVDA | BUY | 34 | $224.84   | $224.605  | $7,636.57 | debbd1bc-716e-4a34-9a50-713af77f4045 | 5aa1a591-48fd-4b47-abfd-d6c0967ec5c7 | $190.91425 |
+
+**Sizing** (CLAUDE.md 8% single-position cap, tighter than routine's 20% cap):
+- SNDK: floor(97,584.24 × 0.08 / 1,824.55) = 4 sh → ~7.40% of portfolio
+- NVDA: floor(97,584.24 × 0.08 / 225.40) = 34 sh → ~7.83% of portfolio
+
+**Trailing stops:** 15% GTC placed automatically post-fill on both positions. Hard −8% cuts monitored: SNDK $1,660.08 / NVDA $206.64.
+
+### Account (post-trade)
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,566.24 |
+| Cash | $82,728.74 (84.79%) |
+| Long Market Value | $14,837.50 (15.21%) |
+| Buying Power | $372,459.96 |
+| Open Positions | 2 / 8 |
+| Buy Budget | 2 / 3 used — 1 reserved |
+| Unrealized P&L | −$17.32 (initial slippage) |
+
+### Decision & Discipline
+
+- **SNDK (Rank 1) executed first** — highest-conviction catalyst (S&P 100 inclusion effective today's open).
+- **NVDA (Rank 2) executed second** — thesis intact (AWS/Vera deal, Sharpe 1.48). Re-entry after 9/14 forced cut is thesis-consistent, not revenge.
+- **STX (Rank 3) held in reserve** — 1/3 budget preserved into midweek CPI print. STX intraday soft (mixed MA regime); no rush.
+- Position count 2/8, exposure 15.21%, cash 84.79% — all rules PASS.
+- Weekly ledger opens: **2 buys / 0 sells**.
+
+### Carry-Forward to Midday Scan
+
+- Monitor SNDK / NVDA for post-open follow-through and trailing-stop HWM lifts.
+- STX reserve — deploy only on midweek confirmation of macro strength + Phase D re-pass.
+- Min-hold locks both new positions until **2026-09-26**; only hard stops or trailing GTC can close before then.

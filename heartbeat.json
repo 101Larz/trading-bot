@@ -1,14 +1,17 @@
 {
-  "last_routine": "pre-market",
-  "last_run": "2026-09-21T07:15:00Z",
-  "session": "opus-4-7 pre-market",
+  "last_routine": "market-open",
+  "last_run": "2026-09-21T13:49:30Z",
+  "session": "opus-4-7 market-open",
   "status": "success",
-  "decision": "HOLD",
-  "reason": "Macro gate FAIL on live spot (SPY $761.69 vs MA20 $762.50, -0.11%); futures +0.41% suggest reclaim at open. Book flat, 100% cash.",
-  "screener_top": ["SNDK", "NVDA", "STX", "MU", "ARM"],
-  "trade_ideas": ["SNDK (S&P 100 inclusion today)", "NVDA (AWS deal)", "STX (storage co-tape)"],
-  "positions": 0,
-  "cash_pct": 100.0,
-  "portfolio_value": 97584.24,
-  "buy_budget_remaining": 3
+  "decision": "TRADE",
+  "reason": "Macro gate CLEARED at open (SPY live $767.15 vs MA20 $762.50, +0.61%). Executed pre-market plan: SNDK Rank 1 (S&P 100 inclusion) + NVDA Rank 2 (AWS deal). STX Rank 3 held in reserve into midweek CPI print.",
+  "trades_executed": [
+    {"symbol": "SNDK", "side": "buy", "qty": 4, "fill_price": 1804.43},
+    {"symbol": "NVDA", "side": "buy", "qty": 34, "fill_price": 224.605}
+  ],
+  "positions": 2,
+  "cash_pct": 84.79,
+  "portfolio_value": 97566.24,
+  "long_market_value": 14837.5,
+  "buy_budget_remaining": 1
 }
