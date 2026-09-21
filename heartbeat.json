@@ -1,17 +1,14 @@
 {
-  "last_routine": "market-open",
-  "last_run": "2026-09-21T13:49:30Z",
-  "session": "opus-4-7 market-open",
+  "last_routine": "midday-scan",
+  "last_run": "2026-09-21T16:35:00Z",
+  "session": "opus-4-7 midday",
   "status": "success",
-  "decision": "TRADE",
-  "reason": "Macro gate CLEARED at open (SPY live $767.15 vs MA20 $762.50, +0.61%). Executed pre-market plan: SNDK Rank 1 (S&P 100 inclusion) + NVDA Rank 2 (AWS deal). STX Rank 3 held in reserve into midweek CPI print.",
-  "trades_executed": [
-    {"symbol": "SNDK", "side": "buy", "qty": 4, "fill_price": 1804.43},
-    {"symbol": "NVDA", "side": "buy", "qty": 34, "fill_price": 224.605}
-  ],
+  "decision": "HOLD",
+  "reason": "SNDK -2.98% (S&P 100 inclusion-day chop, thesis intact), NVDA +0.66% (AI semi rally, thesis intact). Neither at -7% cut nor +15%/+20% tighten threshold. Both min-hold locked to 2026-09-26.",
+  "trades_executed": [],
   "positions": 2,
-  "cash_pct": 84.79,
-  "portfolio_value": 97566.24,
-  "long_market_value": 14837.5,
+  "cash_pct": 84.93,
+  "portfolio_value": 97407.54,
+  "long_market_value": 14678.8,
   "buy_budget_remaining": 1
 }
