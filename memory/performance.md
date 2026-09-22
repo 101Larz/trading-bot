@@ -6782,3 +6782,57 @@ Total exposure 15.60% (<80%); cash 84.40% (>20% floor); position count 2/8; sing
 - Re-quote STX at 12:30 ET; if spread ≤ 0.5% and ask ≤ $925 with macro PASS → deploy reserved slot at 8% cap.
 - Monitor SNDK / NVDA continuation; both under min-hold — no discretionary exits.
 - Abort all new buys if SPY breaks below MA20 intraday.
+
+
+## EOD — 2026-09-22 (Tuesday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $98,007.44 |
+| Cash | $82,728.74 (84.41%) |
+| Long Market Value | $15,278.70 (15.59%) |
+| Buying Power | $373,695.32 |
+| Day P&L | +$517.90 (+0.531%) |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | +$423.20 |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 2 buys / 0 sells (Mon only; buy budget 2/3 used, 1 reserved) |
+| Open Positions | 2 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|
+| NVDA   | 34  | $224.59   | $228.15   | $7,757.10 | +$121.04   | +1.59%   | 7.91%  |
+| SNDK   |  4  | $1,804.86 | $1,880.40 | $7,521.60 | +$302.16   | +4.19%   | 7.67%  |
+| **Total** | | | | **$15,278.70** | **+$423.20** | **+2.85%** | **15.59%** |
+
+### Day Summary
+
+Prior close (Mon 2026-09-21): $97,489.54 → today's close $98,007.44 → **+$517.90 (+0.531%)** — recovery day driven by SNDK continuation post-S&P 100 inclusion (+6.44% intraday) and modest NVDA drift (+0.34%). Both open positions flipped to green after Monday's slightly-red mark; book unrealized swung from −$95 to +$423 (Δ +$518).
+
+Session cadence today (Tue 9/22): pre-market → HOLD (STX reserved slot conditional on quote); market-open → HOLD (STX spread 5.16% FAIL, ask $945 > $925 cap → defer); midday → HOLD (theses intact, no new triggers). No trades executed; buy budget unchanged at 2/3 used with 1 in reserve.
+
+Weekly tally (through Tue): **2 buys / 0 sells** (buy budget 2/3 used, 1 reserved for midweek CPI Wed 9/24).
+
+### Risk Status
+
+- **Total exposure 15.59%** — well within 80% cap. Cash 84.41% — well above 20% floor.
+- **Single-position sizes:** NVDA 7.91%, SNDK 7.67% — both inside 8% cap.
+- **Daily loss limit 3%** — not in play (day P&L +0.531%).
+- **Position count 2/8.**
+- **Stop discipline:** 15% trailing GTCs active on both. NVDA HWM lifted to $229.97 (stop $195.47), SNDK HWM lifted to $1,909.48 (stop $1,623.06). Hard −8% floors monitored (NVDA $206.64, SNDK $1,660.08).
+
+Cumulative P&L since inception (5/19): **−$1,992.56 (−1.993%)** — up $517.90 from prior day's close, recovering ~$518 of drawdown.
+
+### Carry-Forward to Wed 2026-09-24 Pre-Market (CPI Print)
+
+- Portfolio 84.41% cash / 15.59% long (2 positions). Buy budget 1/3 reserved for CPI-conditional deployment.
+- **Min-hold** locks both NVDA and SNDK until **2026-09-26** (Fri) unless stops trigger.
+- **NVDA thesis** — +1.59% unrealized; AWS/Vera catalyst intact. Trail HWM lifted; continue monitoring.
+- **SNDK thesis** — +4.19% unrealized; post-S&P 100 inclusion rip continuing. Trail HWM lifted; no thesis change.
+- **STX reserve slot** — re-quote at Wed pre-market. Deploy only if (a) macro remains PASS, (b) spread ≤ 0.5%, (c) ask ≤ $925 confirmed, and (d) CPI print does not break SPY < MA20.
+- **Macro gate** — SPY $774.38 (PASS +1.49% vs MA20). Trend bullish; MA20 > MA50; RSI 55.97 neutral. Monitor CPI-driven volatility Wed.
+- **Abort trigger** — halt all new buys if SPY breaks below MA20 intraday on CPI reaction.
