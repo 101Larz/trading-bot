@@ -1,14 +1,14 @@
 {
-  "last_routine": "pre-market",
-  "last_run": "2026-09-22T13:15:00Z",
-  "session": "opus-4-7 pre-market",
+  "last_routine": "market-open",
+  "last_run": "2026-09-22T13:46:00Z",
+  "session": "opus-4-7 market-open",
   "status": "success",
-  "portfolio_value": 97457.30,
+  "portfolio_value": 98022.30,
   "cash": 82728.74,
   "open_positions": 2,
   "positions": ["NVDA", "SNDK"],
   "buy_budget_used": 2,
   "buy_budget_total": 3,
   "decision": "HOLD",
-  "notes": "STX deferred to market-open pending tight spread; both held positions under min-hold until 2026-09-26"
+  "notes": "STX re-check FAIL at open (ask $945 > $925 cap; spread 5.16% > 0.5%); deferred to midday. Macro gate PASS (SPY +1.49% vs MA20). NVDA +1.35% / SNDK +4.64% both min-hold locked to 2026-09-26."
 }

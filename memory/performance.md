@@ -6728,3 +6728,57 @@ Cumulative P&L since inception (5/19): **−$2,510.46 (−2.510%)** — down $94
 - **SNDK thesis** — −2.39% into close on post-S&P 100 inclusion drift; well above 15% trail. No thesis change; monitor for CPI-driven volatility Wed.
 - **STX reserve slot** — 1/3 buy budget preserved for midweek CPI print (Wed 2026-09-24). Deploy only if macro remains PASS and STX confirms Phase D re-pass.
 - **Macro gate** — SPY $767.15 (open PASS) — monitor Tue open for continuation. MA20 reclaim confirmed; MA50 also above.
+
+
+## Market-Open — 2026-09-22 (Tuesday — session: opus-4-7 market-open)
+
+### Account (pre-check)
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $98,022.30 |
+| Cash | $82,728.74 (84.40%) |
+| Long Market Value | $15,293.56 (15.60%) |
+| Open Positions | 2 / 8 |
+| Buy Budget (week) | 2 / 3 used |
+
+### Macro Gate
+
+SPY $774.38 vs MA20 $762.99 → **+1.49% PASS**; MA20 > MA50; trend bullish; RSI 55.97 neutral.
+
+### STX Re-Check (reserved slot)
+
+- Bid $897.91 / Ask $945.00 → spread 5.16% (**FAIL** vs 0.5% limit)
+- Ask $945.00 → **FAIL** vs $925 cap set in pre-market
+- Bar MAs bullish, RSI 56.55 — PASS
+- Two of three gates fail → **DEFER to midday scan**
+
+### Trades Executed
+
+None. No buys, no sells.
+
+### Position Marks
+
+| Symbol | Qty | Avg Entry | Mkt | Unreal P&L | Unreal % | Day Chg |
+|--------|----:|----------:|----:|-----------:|---------:|--------:|
+| NVDA   | 34  | $224.59   | $227.61   | +$102.68  | +1.35%  | +0.10%  |
+| SNDK   |  4  | $1,804.86 | $1,888.52 | +$334.66  | +4.64%  | +6.90%  |
+
+Both min-hold locked to 2026-09-26. SNDK ripping post-S&P 100 inclusion.
+
+### Decision & Discipline
+
+- **HOLD** at market-open — STX unlock conditions failed; no other candidate cleared 8% cap or slot rules.
+- NVDA / SNDK adds blocked by 8% single-name cap (share indivisibility).
+- Buy budget preserved 1/3 into midday scan.
+- Weekly ledger unchanged: **2 buys / 0 sells**.
+
+### Risk Status
+
+Total exposure 15.60% (<80%); cash 84.40% (>20% floor); position count 2/8; single-name sizes 7.90% (NVDA) and 7.71% (SNDK), both inside 8% cap. Daily loss limit 3% — not in play (portfolio up ~$565 unrealized vs Mon close). 15% trailing GTCs active on both.
+
+### Carry-Forward to Midday Scan
+
+- Re-quote STX at 12:30 ET; if spread ≤ 0.5% and ask ≤ $925 with macro PASS → deploy reserved slot at 8% cap.
+- Monitor SNDK / NVDA continuation; both under min-hold — no discretionary exits.
+- Abort all new buys if SPY breaks below MA20 intraday.
