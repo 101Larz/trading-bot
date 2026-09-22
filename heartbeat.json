@@ -1,13 +1,14 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run": "2026-09-22T00:07:00Z",
-  "session": "opus-4-7 nightly-screener",
+  "last_routine": "pre-market",
+  "last_run": "2026-09-22T13:15:00Z",
+  "session": "opus-4-7 pre-market",
   "status": "success",
-  "screener_candidates": 5,
-  "screener_run_date": "2026-09-22",
-  "phase_b_survivors": 12,
-  "phase_c_survivors": 6,
-  "phase_d_survivors": 5,
-  "top_candidates": ["SNDK", "NVDA", "STX", "MU", "ARM"],
-  "data_errors": ["MMC", "BRK-B"]
+  "portfolio_value": 97457.30,
+  "cash": 82728.74,
+  "open_positions": 2,
+  "positions": ["NVDA", "SNDK"],
+  "buy_budget_used": 2,
+  "buy_budget_total": 3,
+  "decision": "HOLD",
+  "notes": "STX deferred to market-open pending tight spread; both held positions under min-hold until 2026-09-26"
 }
