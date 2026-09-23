@@ -6836,3 +6836,57 @@ Cumulative P&L since inception (5/19): **−$1,992.56 (−1.993%)** — up $517.
 - **STX reserve slot** — re-quote at Wed pre-market. Deploy only if (a) macro remains PASS, (b) spread ≤ 0.5%, (c) ask ≤ $925 confirmed, and (d) CPI print does not break SPY < MA20.
 - **Macro gate** — SPY $774.38 (PASS +1.49% vs MA20). Trend bullish; MA20 > MA50; RSI 55.97 neutral. Monitor CPI-driven volatility Wed.
 - **Abort trigger** — halt all new buys if SPY breaks below MA20 intraday on CPI reaction.
+
+
+## Market-Open — 2026-09-23 (Wednesday — session: opus-4-7 market-open)
+
+### Account (pre-check)
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,903.56 |
+| Cash | $82,728.74 (84.50%) |
+| Long Market Value | $15,174.82 (15.50%) |
+| Open Positions | 2 / 8 |
+| Buy Budget (week) | 2 / 3 used (1 reserved) |
+
+### Macro Gate
+
+SPY $771.48 vs MA20 $762.99 → **+1.11% PASS**; MA20 > MA50; RSI 55.97 neutral.
+
+### Deferred-Candidate Re-Check
+
+- **STX**: bid $878 / ask $912 → spread **3.87% FAIL** (>0.5%). Skip.
+- **MU**: bid $1,085 / ask $1,086.53 → spread **0.14% PASS**. But Phase D earnings gate **FAIL** — MU reports 2026-09-30 (Wed after close), exactly 5 trading days from today (9/24, 9/25, 9/28, 9/29, 9/30). Also fresh −catalyst: Michael Burry increased MU short position (9/22 filing). **BLOCKED.**
+- **TSLA**: bid $380.50 / ask $385.32 → spread **1.27% FAIL** (>0.5%). Skip.
+
+### Trades Executed
+
+None. No buys, no sells.
+
+### Position Marks
+
+| Symbol | Qty | Avg Entry | Mkt | Unreal P&L | Unreal % | Day Chg |
+|--------|----:|----------:|----:|-----------:|---------:|--------:|
+| NVDA   | 34  | $224.59   | $228.53 | +$133.96 | +1.75% | −0.15% |
+| SNDK   |  4  | $1,804.86 | $1,851.58 | +$186.88 | +2.59% | −1.88% |
+
+Both min-hold locked to 2026-09-26. 15% trailing GTCs active.
+
+### Decision & Discipline
+
+- **HOLD** at market-open — all three deferred candidates blocked (STX spread, MU earnings, TSLA spread).
+- Buy budget preserved: 2/3 used, **1 reserved** for midday / EOD.
+- Weekly ledger unchanged: **2 buys / 0 sells** (Mon only).
+
+### Risk Status
+
+Total exposure 15.50% (<80% cap); cash 84.50% (>20% floor); position count 2/8; single-name sizes 7.94% (NVDA) and 7.57% (SNDK), both inside 8% cap. Daily loss limit 3% — not in play. 15% trailing GTCs active on both.
+
+### Carry-Forward to Midday Scan
+
+- **MU disqualified** for the rest of the week (earnings 9/30 stays inside 5-td window through 9/25). Do not re-attempt pre-earnings.
+- Re-quote **STX** at midday: if spread ≤ 0.5% AND macro PASS → deploy reserved slot at 8% cap.
+- **TSLA** as tertiary if STX still wide and spread tightens.
+- **Macro abort**: SPY < MA20 intraday → halt all new buys.
+- **Fed speeches 10:05/10:20 ET** — monitor for macro reversal; SPY breaking $773.70 triggers block.
