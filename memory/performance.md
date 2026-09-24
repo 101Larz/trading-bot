@@ -6945,3 +6945,14 @@ Cumulative P&L since inception (5/19): **−$2,330.76 (−2.331%)** — down $33
 - **MU** — remains blocked (earnings 9/30 inside 5-td window through 9/25); do not re-attempt until post-earnings.
 - **TSLA** — tertiary; re-quote if spread tightens ≤ 0.5%.
 - **Macro gate** — SPY $771.48 (PASS +1.11% vs MA20). Monitor Thu open for post-CPI continuation; abort new buys if SPY breaks below MA20 intraday.
+
+### Trade Entry — 2026-09-24 13:47
+| Field | Value |
+|-------|-------|
+| Symbol | STX |
+| Side | BUY |
+| Shares | 8.0 |
+| Est. Price | $918.45 |
+| Est. Value | $7347.60 |
+| Order ID | f2ff0908-cd87-4fde-b264-d8af64c0de5c |
+| Trailing Stop | 15% GTC placed immediately after fill |
