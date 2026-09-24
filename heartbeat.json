@@ -1,17 +1,20 @@
 {
-  "last_run": "2026-09-24T16:37:00Z",
-  "routine": "Midday Scan",
+  "last_run": "2026-09-24T20:15:00Z",
+  "routine": "End of Day",
   "status": "success",
-  "decision": "HOLD — no cut/tighten triggers; all theses intact",
-  "portfolio_value": 97424.50,
+  "decision": "EOD snapshot recorded; buy budget exhausted 3/3",
+  "portfolio_value": 97206.84,
   "cash": 75383.40,
-  "long_market_value": 22041.10,
+  "long_market_value": 21823.44,
   "open_positions": ["NVDA", "SNDK", "STX"],
   "weekly_buys_used": 3,
   "weekly_buys_remaining": 0,
+  "day_pnl_dollars": -462.40,
+  "day_pnl_percent": -0.473,
+  "trades_today": 1,
+  "trades_this_week": 3,
   "macro_filter": "PASS",
   "spy_price": 767.68,
   "spy_ma20": 763.77,
-  "trades_executed": [],
-  "notes": "Midday scan: NVDA -0.29%, SNDK -1.90%, STX -0.05%. None near -7% cut. None at +15%/+20% for stop-tighten. Macro PASS widened to +0.51% vs MA20. All 15% trailing GTCs active. Weekly buy budget exhausted (3/3). Carry to EOD: watch SNDK pullback continuation."
+  "notes": "EOD: portfolio -0.473% ($97,669.24 -> $97,206.84). All 3 positions closed slightly red (NVDA -0.38%, SNDK -3.25%, STX -1.54%); none near cut triggers. Weekly buy budget now exhausted at 3/3. Carry to Fri: watch SNDK continuation of pullback, STX day-two behavior; NVDA/SNDK min-hold unlock 9/26. Weekly review scheduled Fri 5PM ET."
 }
