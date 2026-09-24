@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-09-23T20:15:00.000000Z",
-  "routine": "end-of-day",
-  "status": "ok",
-  "session": "opus-4-7 end-of-day 2026-09-23",
-  "trades_executed": 0,
-  "positions": 2,
-  "notes": "EOD Wed. Portfolio $97,669.24, day P&L -$338.20 (-0.345%). Book +$85 unrealized. 0 trades today, 2 buys this week (Mon). All risk gates green."
+  "last_run": "2026-09-24T00:07:00.000000Z",
+  "routine": "Nightly Screener",
+  "status": "success",
+  "screener_candidates": 5,
+  "screener_run_date": "2026-09-24",
+  "top_candidates": ["SNDK", "NVDA", "STX", "LRCX", "TSLA"],
+  "notes": "Phase B (Markov) 13 pass; Phase C (Momentum) 11 pass; Phase D (Technical) 5 pass. MMC/BRK-B data errors (skipped)."
 }
