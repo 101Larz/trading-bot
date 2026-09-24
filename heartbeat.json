@@ -1,9 +1,18 @@
 {
-  "last_run": "2026-09-24T00:07:00.000000Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-09-24T09:00:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "screener_candidates": 5,
-  "screener_run_date": "2026-09-24",
+  "decision": "HOLD (pre-market) / TRADE-READY at market-open",
+  "portfolio_value": 97462.60,
+  "cash": 82728.74,
+  "long_market_value": 14733.86,
+  "open_positions": ["NVDA", "SNDK"],
+  "weekly_buys_used": 2,
+  "weekly_buys_remaining": 1,
+  "macro_filter": "PASS",
+  "spy_price": 767.81,
+  "spy_ma20": 763.77,
   "top_candidates": ["SNDK", "NVDA", "STX", "LRCX", "TSLA"],
-  "notes": "Phase B (Markov) 13 pass; Phase C (Momentum) 11 pass; Phase D (Technical) 5 pass. MMC/BRK-B data errors (skipped)."
+  "reserve_slot_target": "STX",
+  "notes": "SPY macro PASS +0.53% vs MA20. NVDA/SNDK held, min-hold through 9/26. STX reserved slot from Wed carry-forward; deploy at market-open if ask <= 925 and spread <= 0.5%. LRCX backup if STX rejects."
 }
