@@ -1,17 +1,20 @@
 {
-  "last_run": "2026-09-25T07:20:00Z",
-  "routine": "Pre-Market Research",
+  "last_run": "2026-09-25T16:30:00Z",
+  "routine": "Midday Scan",
   "status": "success",
   "decision": "HOLD",
   "portfolio_value": 97514.10,
   "cash": 75383.40,
-  "long_market_value": 22130.70,
+  "long_market_value": 22097.06,
   "open_positions": ["NVDA", "SNDK", "STX"],
   "position_count": 3,
-  "buy_budget_used": "3/3",
-  "buy_budget_remaining": 0,
-  "macro_gate": "PASS",
-  "spy_price": 767.15,
-  "spy_vs_ma20": "+0.42%",
-  "notes": "Pre-market research complete. HOLD: buy budget exhausted (3/3), all 3 positions inside min-hold windows, no stop/signal triggers. Macro PASS. Weekly Review at 5 PM ET."
+  "position_pnl": {
+    "NVDA": "+0.07%",
+    "SNDK": "-1.65%",
+    "STX": "+0.15%"
+  },
+  "cuts": 0,
+  "stops_tightened": 0,
+  "theses_broken": 0,
+  "notes": "Midday scan clean. All 3 positions inside acceptable P&L bands (no -7% triggers, no +15%/+20% winners to tighten). Thesis check: NVDA AI growth intact, SNDK riding NAND demand + S&P 100 inclusion, STX benign. No action required."
 }
