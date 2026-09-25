@@ -1,14 +1,17 @@
 {
-  "last_run": "2026-09-25T00:08:00Z",
-  "routine": "Nightly Screener",
+  "last_run": "2026-09-25T07:20:00Z",
+  "routine": "Pre-Market Research",
   "status": "success",
-  "screener_candidates": 2,
-  "screener_run_date": "2026-09-25",
-  "top_candidates": ["STX", "ASML"],
-  "phase_b_survivors": 4,
-  "phase_c_survivors": 4,
-  "phase_d_survivors": 2,
-  "universe_size": 95,
-  "data_errors": ["MMC", "BRK-B"],
-  "notes": "Nightly screener complete. Only 2 tickers passed all four gates (STX, ASML). STX is already an open position — likely add candidate blocked by max-position sizing / weekly buy budget exhausted (0 remaining). ASML mixed-MA + weak momentum (+0.3%). Broad Phase B failure across 87 tickers signals a defensive market backdrop. Pre-market routine should verify weekly buy budget before considering new adds."
+  "decision": "HOLD",
+  "portfolio_value": 97514.10,
+  "cash": 75383.40,
+  "long_market_value": 22130.70,
+  "open_positions": ["NVDA", "SNDK", "STX"],
+  "position_count": 3,
+  "buy_budget_used": "3/3",
+  "buy_budget_remaining": 0,
+  "macro_gate": "PASS",
+  "spy_price": 767.15,
+  "spy_vs_ma20": "+0.42%",
+  "notes": "Pre-market research complete. HOLD: buy budget exhausted (3/3), all 3 positions inside min-hold windows, no stop/signal triggers. Macro PASS. Weekly Review at 5 PM ET."
 }
