@@ -7009,3 +7009,67 @@ Cumulative P&L since inception (5/19): **−$2,793.16 (−2.793%)** — down $46
 - **STX thesis** — −1.54% unrealized on day-one; well inside normal entry noise. Monitor Fri for bounce.
 - **Macro gate** — SPY $767.68 (PASS +0.51% vs MA20). Continue to monitor for post-CPI/Fed-speech continuation; abort any new activity (none allowed anyway) if SPY breaks below MA20.
 - **Weekly review Friday 5 PM ET** — full reflection routine will process the week's cadence and any lessons from the STX deployment.
+
+
+## EOD — 2026-09-25 (Friday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,465.32 |
+| Cash | $75,383.40 (77.34%) |
+| Long Market Value | $22,081.92 (22.66%) |
+| Buying Power | $363,362.98 |
+| Day P&L | +$258.48 (+0.266%) |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | −$118.92 |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 3 buys / 0 sells (Mon: NVDA, SNDK; Thu: STX — buy budget 3/3 exhausted) |
+| Open Positions | 3 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % | Day Chg |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|--------:|
+| NVDA   | 34  | $224.59   | $225.04   | $7,651.36 | +$15.30    | +0.20%   | 7.85%  | +0.21%  |
+| SNDK   |  4  | $1,804.86 | $1,775.44 | $7,101.76 | −$117.68   | −1.63%   | 7.29%  | +1.24%  |
+| STX    |  8  | $918.17   | $916.10   | $7,328.80 | −$16.54    | −0.23%   | 7.52%  | +1.12%  |
+| **Total** | | | | **$22,081.92** | **−$118.92** | **−0.54%** | **22.66%** | |
+
+### Day Summary
+
+Prior close (Thu 2026-09-24): $97,206.84 → today's close $97,465.32 → **+$258.48 (+0.266%)** — modest recovery day with all three positions ticking green on the tape (day-chg NVDA +0.21%, SNDK +1.24%, STX +1.12%). Book unrealized swung from −$377 (Thu EOD) to −$119 (Fri EOD; Δ +$258), driven mainly by SNDK bouncing +$68 off Thursday's post-inclusion mean-reversion low and STX firming +$97 on day-two.
+
+Session cadence today (Fri 9/25): pre-market → HOLD (buy budget 3/3 exhausted; min-hold locks NVDA/SNDK to today, STX to next week); market-open → HOLD (all positions inside acceptable bands, no −7% or +15%/+20% triggers); midday → HOLD (theses intact, no adverse news, macro filter still PASS); EOD → all three positions closed within normal noise, none near cut or tighten thresholds. **No trades executed all day.**
+
+Weekly tally (final, Mon→Fri): **3 buys / 0 sells** — NVDA + SNDK deployed Mon at open, STX deployed Thu midday after spread tightened. Buy budget fully utilized (3/3). Zero exits — every position held through the full week.
+
+### Risk Status
+
+- **Total exposure 22.66%** — well within 80% cap. Cash 77.34% — well above 20% floor.
+- **Single-position sizes:** NVDA 7.85%, SNDK 7.29%, STX 7.52% — all inside 8% cap.
+- **Daily loss limit 3%** — not in play (day P&L +0.266%).
+- **Position count 3/8.**
+- **Stop discipline:** 15% trailing GTCs active on all three. Hard −8% floors monitored (NVDA $206.64, SNDK $1,660.08, STX $844.72) — all comfortably below current marks.
+
+Cumulative P&L since inception (5/19): **−$2,534.68 (−2.535%)** — up $258.48 from prior day's close, recovering ~$258 of drawdown.
+
+### Weekly Recap (Mon 2026-09-21 → Fri 2026-09-25)
+
+- **Week open (Mon pre-market baseline):** ~$100,000 starting equity (per performance history; check weekly-review routine for precise Mon open).
+- **Week close (Fri EOD):** $97,465.32.
+- **Trades this week:** 3 buys (NVDA Mon, SNDK Mon, STX Thu) / 0 sells.
+- **Positions carried into next week:** NVDA (+0.20%), SNDK (−1.63%), STX (−0.23%).
+- **Cadence:** 15 routine sessions Mon–Fri (5 pre-market, 5 market-open, 5 midday) plus 5 EODs — every one logged; git history clean with per-session commits.
+- **Discipline highlights:** Deferred STX 3 sessions before spread cleared; blocked MU on Phase D earnings gate; held both Mon buys through Wed CPI-driven pullback; no impulsive cuts.
+
+### Carry-Forward to Mon 2026-09-28 Pre-Market
+
+- Portfolio 77.34% cash / 22.66% long (3 positions). **Buy budget resets Monday** — fresh 3/3 available.
+- **Min-hold expiry:** NVDA and SNDK unlock at market close Fri 2026-09-26 (today) — eligible for discretionary sell from Mon open. STX min-hold locks per its own entry-day rule (2026-09-24 + 2 sessions → unlocks Mon 2026-09-28).
+- **NVDA thesis** — +0.20% unrealized; AWS/Vera catalyst intact. Trail HWM held; continue monitoring.
+- **SNDK thesis** — −1.63% unrealized; post-S&P 100 mean-reversion largely completed. Not near −7% cut. Watch for continuation or bounce.
+- **STX thesis** — −0.23% unrealized on day-two; well inside normal entry noise. Monitor Mon for continuation.
+- **Macro gate** — SPY trend still PASS vs MA20 into weekend close. Re-check Mon pre-market.
+- **Weekly Review** — scheduled Fri 5 PM ET routine; will process the full week's reflection, lessons, and Mon carry-forward.

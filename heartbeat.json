@@ -1,20 +1,21 @@
 {
-  "last_run": "2026-09-25T16:30:00Z",
-  "routine": "Midday Scan",
+  "last_run": "2026-09-25T20:15:00Z",
+  "routine": "End of Day",
   "status": "success",
   "decision": "HOLD",
-  "portfolio_value": 97514.10,
+  "portfolio_value": 97465.32,
   "cash": 75383.40,
-  "long_market_value": 22097.06,
+  "long_market_value": 22081.92,
+  "day_pnl_usd": 258.48,
+  "day_pnl_pct": 0.266,
   "open_positions": ["NVDA", "SNDK", "STX"],
   "position_count": 3,
   "position_pnl": {
-    "NVDA": "+0.07%",
-    "SNDK": "-1.65%",
-    "STX": "+0.15%"
+    "NVDA": "+0.20%",
+    "SNDK": "-1.63%",
+    "STX": "-0.23%"
   },
-  "cuts": 0,
-  "stops_tightened": 0,
-  "theses_broken": 0,
-  "notes": "Midday scan clean. All 3 positions inside acceptable P&L bands (no -7% triggers, no +15%/+20% winners to tighten). Thesis check: NVDA AI growth intact, SNDK riding NAND demand + S&P 100 inclusion, STX benign. No action required."
+  "trades_today": 0,
+  "trades_this_week": 3,
+  "notes": "EOD Fri 2026-09-25: +$258.48 (+0.266%) recovery day. All 3 positions closed green on the tape (NVDA +0.21%, SNDK +1.24%, STX +1.12%). Book unrealized -$118.92, well inside risk envelope. Weekly tally: 3 buys / 0 sells (budget exhausted). Carry-forward to Mon 9/28: min-hold expiry on NVDA/SNDK, STX still locked. Buy budget resets Mon."
 }
