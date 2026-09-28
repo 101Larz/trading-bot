@@ -1,11 +1,11 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-09-28T16:30:00Z",
-  "last_run_et": "2026-09-28 12:30 ET",
-  "session": "opus-4-7 midday-scan",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-09-28T20:15:00Z",
+  "last_run_et": "2026-09-28 16:15 ET",
+  "session": "opus-4-7 end-of-day",
   "status": "success",
-  "decision": "NO_TRADE",
+  "decision": "HOLD",
   "positions_open": 3,
   "trades_executed": 0,
-  "notes": "HOLD NVDA/SNDK/STX. No -7% cuts, no +15%/+20% stop-tighten, no thesis breaks."
+  "notes": "EOD Mon 9/28: PV $97,365.01, day -$100.31 (-0.103%). SNDK -5.28% (watch), NVDA +1.81%, STX +0.31%. Buy budget 3/3 fresh."
 }
