@@ -1,19 +1,23 @@
 {
-  "last_run": "2026-09-28T07:25:00Z",
-  "routine": "Pre-Market Research",
+  "last_run": "2026-09-28T13:48:00Z",
+  "routine": "Market Open Execution",
   "status": "success",
-  "session_id": "opus-4-7 pre-market",
-  "decision": "TRADE (prepare for market-open)",
-  "portfolio_value": 97014.50,
+  "session_id": "opus-4-7 market-open",
+  "decision": "NO_TRADE (HOLD)",
+  "portfolio_value": 97299.00,
   "cash": 75383.40,
-  "cash_pct": 0.7770,
-  "long_market_value": 21631.10,
+  "cash_pct": 0.7748,
+  "long_market_value": 21915.60,
   "open_positions": 3,
   "position_symbols": ["NVDA", "SNDK", "STX"],
-  "unrealized_pl": -569.74,
+  "unrealized_pl": -280.16,
+  "day_pl": 284.50,
   "buy_budget_remaining": 3,
-  "screener_top": ["SNDK", "STX", "ARM", "ASML"],
-  "market_open_candidates": ["ARM (primary, 8% cap)", "ASML (secondary, conditional on MA alignment re-check)"],
-  "macro_gate": "PASS (SPY 771.38 > MA20 764.03 > MA50 759.91)",
-  "notes": "Pre-market research 2026-09-28 (Mon). Weekend gap -0.463% ($97,465→$97,014). Screener picked SNDK/STX/ARM/ASML; ranks 1&2 already held at cap. Primary buy plan: ARM at market-open pending spread/RSI/earnings re-check. Secondary: ASML only if MA20>MA50 alignment cleans up. Buy budget 3/3 fresh, all reserved for post-open. NVDA/SNDK/STX all HOLD (STX min-hold locked through 9/30)."
+  "trades_this_session": 0,
+  "macro_gate": "PASS marginal (SPY 767.64 > MA20 764.03 > MA50 759.91; sitting $0.03 below pre-market line-in-sand $767.67)",
+  "candidates_evaluated": {
+    "ARM": "SKIP — spread 4.82% (bid 279.10/ask 292.88) >> 0.5% cap; RSI 65.86 near ceiling",
+    "ASML": "SKIP — Phase D fail (MA20 1686 < MA50 1717); spread 0.549% marginal"
+  },
+  "notes": "Market-open 2026-09-28 (Mon). Both pre-market candidates failed re-check gates: ARM opening spread 4.82% >> 0.5% cap on Alpaca IEX; ASML MA20<MA50 Phase D fail. Per pre-market fallback rule, HOLD all three existing positions, no new entries. Buy budget preserved 3/3 for midday retry. NVDA +3.43% (size drifted to 8.12% via price, no action needed); SNDK -5.07% cushion 3.09% to cut floor; STX -2.50% min-hold locked through 9/30 cushion 5.64%. Macro gate PASS but marginal (SPY $0.03 below pre-market line-in-sand). Carry-forward: re-quote ARM at midday for spread tightening."
 }

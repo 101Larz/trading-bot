@@ -7073,3 +7073,61 @@ Cumulative P&L since inception (5/19): **−$2,534.68 (−2.535%)** — up $258.
 - **STX thesis** — −0.23% unrealized on day-two; well inside normal entry noise. Monitor Mon for continuation.
 - **Macro gate** — SPY trend still PASS vs MA20 into weekend close. Re-check Mon pre-market.
 - **Weekly Review** — scheduled Fri 5 PM ET routine; will process the full week's reflection, lessons, and Mon carry-forward.
+
+
+## Market Open — 2026-09-28 (Monday — session: opus-4-7 market-open)
+
+### Account Snapshot (13:47 UTC)
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,299.00 |
+| Cash | $75,383.40 (77.48%) |
+| Long Market Value | $21,915.60 (22.52%) |
+| Day P&L (vs pre-mkt eq $97,014.50) | +$284.50 (+0.293%) |
+| Unrealized P&L (open) | −$280.16 |
+| Trades This Session | 0 buys / 0 sells |
+| Trades This Week | 0 buys / 0 sells (budget 3/3 fresh) |
+| Open Positions | 3 / 8 |
+
+### Trades Executed
+
+None.
+
+### Decision: NO_TRADE
+
+Both pre-market candidates failed their market-open re-check gates:
+
+- **ARM (primary):** Alpaca IEX bid $279.10 / ask $292.88 → **4.82% spread** vs 0.5% cap. Opening-tape single-exchange quote too wide for a safe limit fill. RSI 65.86 also close to 70 cap. **Skipped.**
+- **ASML (secondary):** MA20 $1,686 < MA50 $1,717 → **Phase D FAIL** (trend "mixed", not clean bullish). Spread 0.549% also marginally over cap. Per pre-market fallback rule: skip when MA20 < MA50 at open. **Skipped.**
+
+Per pre-market fallback plan, both candidates failing → HOLD all three positions, no new entries. Buy budget preserved at **3/3** for midday retry.
+
+### Positions Held
+
+| Symbol | Unreal % | Cut Floor | Cushion | Size % | Action |
+|---|---:|---:|---:|---:|---|
+| NVDA | +3.43% | $206.64 | +12.4% | 8.12% (drift) | HOLD — no exit signal; 15% GTC trailing active |
+| SNDK | −5.07% | $1,660.08 | +3.09% | 7.04% | HOLD — thesis intact (Rank 1 Sharpe); min-hold expired but no exit trigger |
+| STX  | −2.50% | $844.72   | +5.64% | 7.36% | HOLD — min-hold locked through Wed 2026-09-30 |
+
+### Risk Status
+
+- **Total exposure 22.52%** — well within 80% cap. Cash 77.48% — well above 20% floor.
+- **Single-position sizes:** NVDA 8.12% (passive drift on +3.21% day move; entry rule caps *new* buys, not held-position drift), SNDK 7.04%, STX 7.36%.
+- **Daily loss limit 3%** — not in play (session P&L green).
+- **Position count 3/8.**
+- **Stop discipline:** 15% trailing GTCs active on all three. Hard −7% floors monitored — all above current marks (NVDA +12.4% cushion, SNDK +3.09%, STX +5.64%).
+
+### Macro Gate
+
+- **SPY $767.64** · MA20 $764.03 · MA50 $759.91 · RSI 52.5 → **PASS bullish** (+0.47% vs MA20, +1.02% vs MA50).
+- Sitting **$0.03 below the pre-market line-in-sand ($767.67)** — marginal. Any further weakness invalidates today's tape thesis.
+
+### Carry-Forward to Midday Scan
+
+- Re-quote ARM at 12:30 ET — opening spread should tighten once NBBO consolidates. RSI 65.86 approaching 70 cap.
+- ASML MA20/MA50 crossover unlikely to flip today (~$30 apart) — deprioritize.
+- Monitor SPY for MA20 break ($764.03) — would fail macro gate and block all new entries.
+- Existing positions: monitor SNDK/STX for approach to hard-cut floors. NVDA above 8% size cap by drift — no action.
+- Weekly budget 3/3 preserved.
