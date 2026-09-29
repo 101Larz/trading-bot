@@ -1,13 +1,14 @@
 {
-  "last_routine": "pre-market",
-  "last_run_utc": "2026-09-29T07:18:00Z",
-  "last_run_et": "2026-09-29 03:18 ET",
-  "session": "opus-4-7 pre-market",
+  "last_routine": "market-open",
+  "last_run_utc": "2026-09-29T13:46:37Z",
+  "last_run_et": "2026-09-29 09:46 ET",
+  "session": "opus-4-7 market-open",
   "status": "success",
-  "portfolio_value": 97530.82,
+  "portfolio_value": 97376.76,
   "cash": 75383.4,
   "open_positions": 3,
-  "decision": "HOLD",
-  "candidates_for_market_open": ["ARM"],
-  "notes": "Pre-market 2026-09-29: SPY macro gate PASS (765.66 > MA20 763.93 > MA50 760.39). Holding NVDA/SNDK/STX. ARM queued for market-open re-quote (spread must tighten). ASML deprioritized (MA20<MA50 Phase D FAIL persists). SNDK cushion 2.87% to -7% cut — monitor."
+  "decision": "NO_TRADE",
+  "trades_this_session": 0,
+  "trades_this_week": 0,
+  "notes": "Market-open 2026-09-29: NO_TRADE. ARM spread 7.13% (bid 274.12/ask 295.17) vs 0.5% cap - skipped. ASML Phase D FAIL persists. HOLD NVDA/SNDK/STX. SNDK cushion tight (+2.11% to -7% cut). SPY macro gate PASS but marginal. Buy budget 3/3 preserved."
 }
