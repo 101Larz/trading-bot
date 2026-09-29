@@ -7186,3 +7186,58 @@ Cumulative P&L since inception (5/19): **−$2,634.99 (−2.635%)** — down $10
 - **STX thesis** — +0.31% unrealized; well inside normal bands. Min-hold locks through Wed.
 - **Macro gate** — SPY sitting near MA20 line-in-sand ($764.03); re-check Tue pre-market. Any MA20 break blocks new entries.
 - **Candidates for Tue re-quote:** ARM (spread must tighten ≤ 0.5%, RSI still near 70 cap), ASML deprioritized (Phase D FAIL persists).
+
+## Market-Open — 2026-09-29 (Tuesday — session: opus-4-7 market-open)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,376.76 |
+| Cash | $75,383.40 (77.42%) |
+| Long Market Value | $21,993.36 (22.59%) |
+| Buying Power | $363,115.01 |
+| Unrealized P&L (open) | −$206.90 |
+| Trades This Session | 0 buys / 0 sells |
+| Trades This Week | 0 buys / 0 sells (budget 3/3 fresh) |
+| Open Positions | 3 / 8 |
+
+### Trades Executed
+
+None.
+
+### Decision: NO_TRADE
+
+Second consecutive market-open with **ARM** spread failing the execution gate: Alpaca/yfinance quote bid $274.12 / ask $295.17 → **7.13% spread** vs 0.5% cap (worse than Mon's 4.82%). No safe limit fill possible. **Skipped.**
+
+**ASML** deprioritized (MA20 $1,690 < MA50 $1,717 → Phase D FAIL persists) — not re-quoted.
+
+Per pre-market fallback plan: HOLD all three positions, no new entries, buy budget preserved 3/3 for midday retry.
+
+### Positions Held
+
+| Symbol | Unreal % | Cut Floor | Cushion | Size % | Action |
+|---|---:|---:|---:|---:|---|
+| NVDA | +2.41% | $208.87 | +10.13% | 8.03% (drift) | HOLD |
+| SNDK | −5.04% | $1,678.52 | +2.11% | 7.04% | HOLD — cushion tight, monitor |
+| STX  | −0.37% | $853.90  | +7.13% | 7.51% | HOLD — min-hold locked through Wed 2026-09-30 |
+
+### Risk Status
+
+- **Total exposure 22.59%** — well within 80% cap. Cash 77.42% — well above 20% floor.
+- **Daily loss limit 3%** — not in play.
+- **Position count 3/8.**
+- **Stop discipline:** 15% trailing GTCs active on all three. Hard −7% floors monitored.
+
+### Macro Gate
+
+- **SPY $765.19** · MA20 $763.93 · MA50 $760.39 · RSI 51.24 → **PASS bullish** (+0.16% vs MA20, +0.63% vs MA50). Marginal cushion.
+
+### Carry-Forward to Midday Scan
+
+- Re-quote ARM at 12:30 ET. If spread still > 0.5% after NBBO consolidation, drop from today's candidate set.
+- **SNDK is the risk item** — cushion +2.11% to −7% cut. Another −3% move triggers immediate cut.
+- NVDA 8.03% by drift — no adds until size falls back inside cap.
+- STX min-hold locks through Wed — signal exits blocked regardless.
+- SPY macro gate cushion narrow (+0.16% vs MA20) — any intraday close below $763.93 blocks new entries.
+- Weekly budget 3/3 preserved.
