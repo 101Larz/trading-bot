@@ -1,11 +1,13 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run_utc": "2026-09-29T00:08:00Z",
-  "last_run_et": "2026-09-28 20:08 ET",
-  "session": "opus-4-7 nightly-screener",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-09-29T07:18:00Z",
+  "last_run_et": "2026-09-29 03:18 ET",
+  "session": "opus-4-7 pre-market",
   "status": "success",
-  "screener_candidates": 4,
-  "screener_run_date": "2026-09-29",
-  "top_candidates": ["STX", "SNDK", "ASML", "ARM"],
-  "notes": "Nightly screener 2026-09-29 02:08 CEST: 11 Markov survivors, 6 momentum survivors, 4 technical survivors. Top-4 all semis/hardware: STX (Sharpe 2.47), SNDK (1.91), ASML (1.81), ARM (1.22). CAT & MRVL passed B+C but failed technical gate (RSI 70 for MRVL). Data errors: MMC, BRK-B."
+  "portfolio_value": 97530.82,
+  "cash": 75383.4,
+  "open_positions": 3,
+  "decision": "HOLD",
+  "candidates_for_market_open": ["ARM"],
+  "notes": "Pre-market 2026-09-29: SPY macro gate PASS (765.66 > MA20 763.93 > MA50 760.39). Holding NVDA/SNDK/STX. ARM queued for market-open re-quote (spread must tighten). ASML deprioritized (MA20<MA50 Phase D FAIL persists). SNDK cushion 2.87% to -7% cut — monitor."
 }
