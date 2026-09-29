@@ -7241,3 +7241,61 @@ Per pre-market fallback plan: HOLD all three positions, no new entries, buy budg
 - STX min-hold locks through Wed — signal exits blocked regardless.
 - SPY macro gate cushion narrow (+0.16% vs MA20) — any intraday close below $763.93 blocks new entries.
 - Weekly budget 3/3 preserved.
+
+
+## EOD — 2026-09-29 (Tuesday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,352.60 |
+| Cash | $75,383.40 (77.43%) |
+| Long Market Value | $21,969.20 (22.57%) |
+| Buying Power | $363,047.36 |
+| Day P&L (vs prior EOD $97,365.01) | −$12.41 (−0.013%) |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | −$231.64 |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 0 buys / 0 sells (budget 3/3 fresh) |
+| Open Positions | 3 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % | Day Chg |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|--------:|
+| NVDA   | 34  | $224.59   | $227.86   | $7,747.24 | +$111.18   | +1.46%   | 7.96%  | −0.44%  |
+| SNDK   |  4  | $1,804.86 | $1,729.49 | $6,917.96 | −$301.48   | −4.18%   | 7.11%  | +0.97%  |
+| STX    |  8  | $918.17   | $913.00   | $7,304.00 | −$41.34    | −0.56%   | 7.50%  | −0.92%  |
+| **Total** | | | | **$21,969.20** | **−$231.64** | **−1.05%** | **22.57%** | |
+
+### Day Summary
+
+Prior close (Mon 2026-09-28): $97,365.01 → today's close $97,352.60 → **−$12.41 (−0.013%)** — flat-line day, narrowest close-to-close move of the month. SNDK bounced +0.97% (+$80 to book, cushion up to +2.95% from +2.11% at market-open), NVDA gave back −0.44% (−$27), STX slipped −0.92% (−$41). Net unrealized moved slightly against the book (market-open −$206.90 → EOD −$231.64; Δ −$25).
+
+Session cadence today (Tue 9/29): pre-market → HOLD (ARM queued for market-open with tight spread caveat, ASML deprioritized); market-open → NO_TRADE (ARM spread 7.13% — worse than Mon's 4.82%); midday → (assumed HOLD, no session block written to research log — will verify at week-end); EOD → all three positions closed within acceptable bands, none near cut floor. **No trades executed all day.**
+
+Weekly tally (Mon-Tue so far): **0 buys / 0 sells** — buy budget fresh 3/3 preserved for Wed.
+
+### Risk Status
+
+- **Total exposure 22.57%** — well within 80% cap. Cash 77.43% — well above 20% floor.
+- **Single-position sizes:** NVDA 7.96%, SNDK 7.11%, STX 7.50% — all inside 8% cap.
+- **Daily loss limit 3%** — not in play (day P&L −0.013%).
+- **Position count 3/8.**
+- **Stop discipline:** 15% trailing GTCs active on all three. Hard −7% floors monitored:
+  - NVDA cut $208.87 — current $227.86 → cushion +8.33%
+  - SNDK cut $1,678.52 — current $1,729.49 → cushion +2.95% (**risk item**)
+  - STX cut $853.90 — current $913.00 → cushion +6.47%
+
+Cumulative P&L since inception (5/19): **−$2,647.40 (−2.647%)** — down $12.41 from prior day's close.
+
+### Carry-Forward to Wed 2026-09-30 Pre-Market
+
+- Portfolio 77.43% cash / 22.57% long (3 positions). **Buy budget 3/3 fresh** for the week.
+- **Min-hold status:** NVDA and SNDK fully unlocked. STX min-hold locks through Wed 2026-09-30 close.
+- **NVDA thesis** — +1.46% unrealized; AWS/Vera catalyst intact. 15% trail GTC active.
+- **SNDK thesis** — −4.18% unrealized; cushion tight (+2.95% to −7% cut). Another −3% move triggers immediate cut. **Highest-risk position — flag for Wed midday review.**
+- **STX thesis** — −0.56% unrealized; well inside normal bands. Min-hold unlocks Thu 2026-10-01.
+- **Macro gate** — SPY closed above MA20 line-in-sand today; re-check Wed pre-market for continued PASS.
+- **Candidates for Wed re-quote:** ARM (spread must tighten ≤ 0.5% — 2 sessions failed, if third fails drop from candidate set). ASML deprioritized (Phase D FAIL persists).
