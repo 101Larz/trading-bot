@@ -1,11 +1,11 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-09-28T20:15:00Z",
-  "last_run_et": "2026-09-28 16:15 ET",
-  "session": "opus-4-7 end-of-day",
+  "last_routine": "nightly-screener",
+  "last_run_utc": "2026-09-29T00:08:00Z",
+  "last_run_et": "2026-09-28 20:08 ET",
+  "session": "opus-4-7 nightly-screener",
   "status": "success",
-  "decision": "HOLD",
-  "positions_open": 3,
-  "trades_executed": 0,
-  "notes": "EOD Mon 9/28: PV $97,365.01, day -$100.31 (-0.103%). SNDK -5.28% (watch), NVDA +1.81%, STX +0.31%. Buy budget 3/3 fresh."
+  "screener_candidates": 4,
+  "screener_run_date": "2026-09-29",
+  "top_candidates": ["STX", "SNDK", "ASML", "ARM"],
+  "notes": "Nightly screener 2026-09-29 02:08 CEST: 11 Markov survivors, 6 momentum survivors, 4 technical survivors. Top-4 all semis/hardware: STX (Sharpe 2.47), SNDK (1.91), ASML (1.81), ARM (1.22). CAT & MRVL passed B+C but failed technical gate (RSI 70 for MRVL). Data errors: MMC, BRK-B."
 }
