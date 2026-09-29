@@ -1,14 +1,14 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-09-29T13:46:37Z",
-  "last_run_et": "2026-09-29 09:46 ET",
-  "session": "opus-4-7 market-open",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-09-29T20:15:00Z",
+  "last_run_et": "2026-09-29 16:15 ET",
+  "session": "opus-4-7 end-of-day",
   "status": "success",
-  "portfolio_value": 97376.76,
+  "portfolio_value": 97352.6,
   "cash": 75383.4,
   "open_positions": 3,
-  "decision": "NO_TRADE",
+  "decision": "HOLD",
   "trades_this_session": 0,
   "trades_this_week": 0,
-  "notes": "Market-open 2026-09-29: NO_TRADE. ARM spread 7.13% (bid 274.12/ask 295.17) vs 0.5% cap - skipped. ASML Phase D FAIL persists. HOLD NVDA/SNDK/STX. SNDK cushion tight (+2.11% to -7% cut). SPY macro gate PASS but marginal. Buy budget 3/3 preserved."
+  "notes": "EOD 2026-09-29: -$12.41 (-0.013%) flat day. HOLD NVDA (+1.46%)/SNDK (-4.18%, cushion tight +2.95%)/STX (-0.56%). 0 trades today, 0 this week. Buy budget 3/3 fresh. SNDK flagged as highest-risk position for Wed monitoring."
 }
