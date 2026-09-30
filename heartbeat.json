@@ -1,13 +1,18 @@
 {
-  "last_run": "2026-09-30T00:09:00Z",
-  "last_routine": "Nightly Screener",
-  "last_run_utc": "2026-09-30T00:09:00Z",
-  "last_run_et": "2026-09-29 20:09 ET",
-  "session": "opus-4-7 nightly-screener",
+  "last_run": "2026-09-30T13:15:00Z",
+  "last_routine": "Pre-Market Research",
+  "last_run_utc": "2026-09-30T13:15:00Z",
+  "last_run_et": "2026-09-30 09:15 ET",
+  "session": "opus-4-7 pre-market",
   "status": "success",
-  "routine": "Nightly Screener",
+  "routine": "Pre-Market Research",
   "screener_candidates": 4,
   "screener_run_date": "2026-09-30",
-  "screener_top": ["NVDA", "STX", "KLAC", "ASML"],
-  "notes": "Nightly screener 2026-09-30 02:09 CEST — 95 tickers, 4 Phase D survivors (NVDA, STX, KLAC, ASML). Zero B/C tech-fails. Data errors: MMC (0 bars), BRK-B (Alpaca hyphen). Pre-market at 09:00 ET will read memory/screener_results.md."
+  "screener_top": [
+    "NVDA",
+    "STX",
+    "KLAC",
+    "ASML"
+  ],
+  "notes": "Pre-market 2026-09-30 09:15 ET \u2014 SPY macro gate PASS (razor-thin +0.04% above MA20). 3 open positions (NVDA/SNDK/STX). Decision: TRADE at open \u2014 primary KLAC (39 sh) or fallback ASML (4 sh) if spread clean. SNDK cushion tight at +2.63%."
 }
