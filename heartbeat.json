@@ -1,14 +1,13 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-09-29T20:15:00Z",
-  "last_run_et": "2026-09-29 16:15 ET",
-  "session": "opus-4-7 end-of-day",
+  "last_run": "2026-09-30T00:09:00Z",
+  "last_routine": "Nightly Screener",
+  "last_run_utc": "2026-09-30T00:09:00Z",
+  "last_run_et": "2026-09-29 20:09 ET",
+  "session": "opus-4-7 nightly-screener",
   "status": "success",
-  "portfolio_value": 97352.6,
-  "cash": 75383.4,
-  "open_positions": 3,
-  "decision": "HOLD",
-  "trades_this_session": 0,
-  "trades_this_week": 0,
-  "notes": "EOD 2026-09-29: -$12.41 (-0.013%) flat day. HOLD NVDA (+1.46%)/SNDK (-4.18%, cushion tight +2.95%)/STX (-0.56%). 0 trades today, 0 this week. Buy budget 3/3 fresh. SNDK flagged as highest-risk position for Wed monitoring."
+  "routine": "Nightly Screener",
+  "screener_candidates": 4,
+  "screener_run_date": "2026-09-30",
+  "screener_top": ["NVDA", "STX", "KLAC", "ASML"],
+  "notes": "Nightly screener 2026-09-30 02:09 CEST — 95 tickers, 4 Phase D survivors (NVDA, STX, KLAC, ASML). Zero B/C tech-fails. Data errors: MMC (0 bars), BRK-B (Alpaca hyphen). Pre-market at 09:00 ET will read memory/screener_results.md."
 }
