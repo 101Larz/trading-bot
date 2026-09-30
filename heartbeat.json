@@ -1,18 +1,16 @@
 {
-  "last_run": "2026-09-30T13:15:00Z",
-  "last_routine": "Pre-Market Research",
-  "last_run_utc": "2026-09-30T13:15:00Z",
-  "last_run_et": "2026-09-30 09:15 ET",
-  "session": "opus-4-7 pre-market",
+  "last_run": "2026-09-30T13:50:00Z",
+  "last_routine": "Market Open Execution",
+  "last_run_utc": "2026-09-30T13:50:00Z",
+  "last_run_et": "2026-09-30 09:50 ET",
+  "session": "opus-4-7 market-open",
   "status": "success",
-  "routine": "Pre-Market Research",
-  "screener_candidates": 4,
-  "screener_run_date": "2026-09-30",
-  "screener_top": [
-    "NVDA",
-    "STX",
-    "KLAC",
-    "ASML"
-  ],
-  "notes": "Pre-market 2026-09-30 09:15 ET \u2014 SPY macro gate PASS (razor-thin +0.04% above MA20). 3 open positions (NVDA/SNDK/STX). Decision: TRADE at open \u2014 primary KLAC (39 sh) or fallback ASML (4 sh) if spread clean. SNDK cushion tight at +2.63%."
+  "routine": "Market Open Execution",
+  "trades_executed": 1,
+  "trades_this_week": 1,
+  "weekly_buys_remaining": 2,
+  "open_positions": 4,
+  "portfolio_value": 97423.52,
+  "cash": 67706.53,
+  "notes": "Market-open 2026-09-30 09:47 ET — BUY KLAC 39 sh @ avg $196.79 (7.87% of equity). Trailing-stop 15% GTC active. SPY macro gate PASS (+0.34% above MA20). Book: NVDA +2.73%, SNDK -4.43% (cushion +2.76% tight), STX -0.51%, KLAC -0.11%. Weekly buys 1/3."
 }

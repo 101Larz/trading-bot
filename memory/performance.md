@@ -7299,3 +7299,55 @@ Cumulative P&L since inception (5/19): **−$2,647.40 (−2.647%)** — down $12
 - **STX thesis** — −0.56% unrealized; well inside normal bands. Min-hold unlocks Thu 2026-10-01.
 - **Macro gate** — SPY closed above MA20 line-in-sand today; re-check Wed pre-market for continued PASS.
 - **Candidates for Wed re-quote:** ARM (spread must tighten ≤ 0.5% — 2 sessions failed, if third fails drop from candidate set). ASML deprioritized (Phase D FAIL persists).
+
+### Trade Entry — 2026-09-30 13:47
+| Field | Value |
+|-------|-------|
+| Symbol | KLAC |
+| Side | BUY |
+| Shares | 39.0 |
+| Est. Price | $196.89 |
+| Est. Value | $7678.71 |
+| Order ID | 1186b35b-36c4-45e4-9485-e1581874cfe1 |
+| Trailing Stop | 15% GTC placed immediately after fill |
+
+## Market-Open — 2026-09-30 (Wednesday — session: opus-4-7 market-open)
+
+**Action:** BUY KLAC 39 sh executed 09:47 ET.
+
+- Fill: avg $196.79, position value $7,676.99 (7.87% of $97,423.52 equity, inside 8% cap).
+- Trailing-stop GTC 15% active from open: HWM $196.69, initial stop $167.19.
+- Weekly buys 1/3; 2 remaining for Thu/Fri.
+
+**Buy-rule checks (all pass):**
+- Positions 4/6 (was 3, KLAC opens the 4th slot). ✅
+- Weekly trades 1/3 (fresh budget). ✅
+- Position size 7.87% ≤ 8% strategy cap ≤ 20% CLAUDE.md cap. ✅
+- Catalyst in RESEARCH-LOG: KLAC Rank #3 by Sharpe, backlog $12.57B (+60% YoY), Cantor upgrade cited. ✅
+
+**Macro / entry gates at execution:**
+- SPY $766.52 > MA20 $763.89 (+0.34%). Macro gate PASS.
+- KLAC bid $196.59 / ask $196.74 → spread 0.076% (<< 1.0% cap). Clean quote.
+- KLAC RSI 62.6 (< 70 chase line), price $196.53 > MA20 $180.14 > and > MA50 $188.11.
+
+**Book after execution:**
+| Symbol | Qty | Avg Entry | Current | Unreal P&L | Unreal % |
+|--------|----:|----------:|--------:|-----------:|---------:|
+| NVDA   | 34  | $224.59   | $230.73 | +$208.76   | +2.73%   |
+| SNDK   | 4   | $1,804.86 | $1,724.91 | −$319.80 | −4.43%   |
+| STX    | 8   | $918.17   | $913.52 | −$37.22    | −0.51%   |
+| KLAC   | 39  | $196.79   | $196.58 | −$8.37     | −0.11%   |
+
+Exposure: ~30.4% of equity long / ~69.6% cash. Position count 4/8.
+
+**Cushions to −7% floors:**
+- NVDA cut $208.87, cushion +9.51%
+- SNDK cut $1,678.52, cushion +2.76% (**tight — carry to midday**)
+- STX cut $853.90, cushion +6.51%
+- KLAC cut $182.98, cushion +6.99%
+
+**Carry-forward to midday:**
+- SNDK cushion +2.76% remains the risk item. Any −3% intraday triggers manual cut.
+- STX min-hold unlocks Thu 10/01.
+- KLAC now in position book; monitor for gap up above RSI 70.
+- Weekly buy budget 2/3 for Thu/Fri.
