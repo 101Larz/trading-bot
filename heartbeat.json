@@ -1,16 +1,16 @@
 {
-  "last_run": "2026-09-30T16:37:47Z",
-  "last_routine": "Midday Scan",
-  "last_run_utc": "2026-09-30T16:37:47Z",
-  "last_run_et": "2026-09-30 12:37 ET",
-  "session": "opus-4-7 midday-scan",
+  "last_run": "2026-09-30T20:15:00Z",
+  "last_routine": "End of Day",
+  "last_run_utc": "2026-09-30T20:15:00Z",
+  "last_run_et": "2026-09-30 16:15 ET",
+  "session": "opus-4-7 end-of-day",
   "status": "success",
-  "routine": "Midday Scan",
-  "trades_executed": 0,
+  "routine": "End of Day",
+  "trades_executed": 1,
   "trades_this_week": 1,
   "weekly_buys_remaining": 2,
   "open_positions": 4,
-  "portfolio_value": 97423.52,
-  "cash": 67706.53,
-  "notes": "Midday 2026-09-30 12:37 ET — HOLD ×4. No -7% cuts (worst SNDK -3.96%, cushion +3.17%). No +15%/+20% stop tightens (best NVDA +2.48%). SNDK thesis intact; Micron earnings tonight is Thu-open risk. SPY macro PASS (+0.52% vs MA20). Trailing 15% GTCs active on all."
+  "portfolio_value": 97540.47,
+  "cash": 67708.41,
+  "notes": "EOD 2026-09-30 — Day P&L +$187.87 (+0.193%). 1 trade today (BUY KLAC 39 sh @ $196.79, 7.87% of equity). Book: NVDA +2.04%, SNDK -3.48%, STX +0.81%, KLAC -0.14%. Cushions: NVDA +9.72%, SNDK +3.78% (tightest but improved), STX +8.40%, KLAC +7.40%. Buy budget 2/3 for Thu/Fri. STX min-hold unlocks Thu open. Micron earnings tonight is Thu-open gap risk for SNDK."
 }

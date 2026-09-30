@@ -7351,3 +7351,65 @@ Exposure: ~30.4% of equity long / ~69.6% cash. Position count 4/8.
 - STX min-hold unlocks Thu 10/01.
 - KLAC now in position book; monitor for gap up above RSI 70.
 - Weekly buy budget 2/3 for Thu/Fri.
+
+
+## EOD — 2026-09-30 (Wednesday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,540.47 |
+| Cash | $67,708.41 (69.42%) |
+| Long Market Value | $29,832.06 (30.58%) |
+| Buying Power | $354,363.41 |
+| Day P&L (vs prior EOD $97,352.60) | +$187.87 (+0.193%) |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | −$46.55 |
+| Trades Today | 1 buy (KLAC) / 0 sells |
+| Trades This Week | 1 buy / 0 sells (budget 2/3 remaining) |
+| Open Positions | 4 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % | Day Chg |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|--------:|
+| NVDA   | 34  | $224.59   | $229.18   | $7,792.12 | +$156.06   | +2.04%   | 7.99%  | +0.87%  |
+| SNDK   |  4  | $1,804.86 | $1,742.00 | $6,968.00 | −$251.44   | −3.48%   | 7.14%  | +0.71%  |
+| STX    |  8  | $918.17   | $925.61   | $7,404.88 | +$59.54    | +0.81%   | 7.59%  | +1.33%  |
+| KLAC   | 39  | $196.79   | $196.52   | $7,664.28 | −$10.71    | −0.14%   | 7.86%  | −0.01%  |
+| **Total** | | | | **$29,829.28** | **−$46.55** | **−0.16%** | **30.58%** | |
+
+### Day Summary
+
+Prior close (Tue 2026-09-29): $97,352.60 → today's close $97,540.47 → **+$187.87 (+0.193%)** — modest green day driven by NVDA (+0.87%), STX (+1.33%), and SNDK (+0.71% bounce off tight cushion). KLAC (new position from market-open) essentially flat post-entry (−0.01%). Net unrealized book improved from prior EOD −$231.64 → today −$46.55 (Δ +$185.09), tracking the day P&L cleanly.
+
+Session cadence today (Wed 9/30): pre-market → BUY candidate KLAC identified (Rank #3 by Sharpe, semi-cap catalyst); market-open → BUY KLAC 39 sh @ $196.79 (7.87% of equity, inside 8% cap, trailing 15% GTC placed immediately); midday → HOLD ×4 (no −7% cuts, worst SNDK cushion +3.17%, no +15%/+20% stop tightens, SPY macro PASS +0.52% vs MA20); EOD → all four positions closed within acceptable bands, none near cut or tighten thresholds. **1 trade executed today (KLAC BUY).**
+
+Weekly tally (Mon-Wed so far): **1 buy / 0 sells** — buy budget 2/3 remaining for Thu/Fri.
+
+### Risk Status
+
+- **Total exposure 30.58%** — well within 80% cap. Cash 69.42% — well above 20% floor.
+- **Single-position sizes:** NVDA 7.99% (top of cap), SNDK 7.14%, STX 7.59%, KLAC 7.86% — all inside 8% cap.
+- **Daily loss limit 3%** — not in play (day P&L +0.193%).
+- **Position count 4/8.**
+- **Stop discipline:** 15% trailing GTCs active on all four. Hard −7% floors monitored:
+  - NVDA cut $208.87 — current $229.18 → cushion +9.72%
+  - SNDK cut $1,678.52 — current $1,742.00 → cushion +3.78% (**still tightest, but improved from +2.95% Tue EOD**)
+  - STX cut $853.90 — current $925.61 → cushion +8.40%
+  - KLAC cut $182.98 — current $196.52 → cushion +7.40%
+
+Cumulative P&L since inception (5/19): **−$2,459.53 (−2.460%)** — up $187.87 from prior day's close.
+
+### Carry-Forward to Thu 2026-10-01 Pre-Market
+
+- Portfolio 69.42% cash / 30.58% long (4 positions). **Buy budget 2/3 remaining** for Thu/Fri.
+- **Min-hold status:** NVDA, SNDK, KLAC fully unlocked. STX min-hold locks through Wed close (unlocks Thu open 2026-10-01).
+- **NVDA thesis** — +2.04% unrealized; AWS/Vera catalyst intact. Position at 7.99% size (top of cap — no adds).
+- **SNDK thesis** — −3.48% unrealized; cushion improved to +3.78% off Tue's +2.95% low. Still the highest-risk position — monitor for continued mean reversion.
+- **STX thesis** — +0.81% unrealized; well inside normal bands. Min-hold unlocks Thu — signal exits now permitted.
+- **KLAC thesis** — flat post-entry, orderly first day. Semi-cap backlog thesis intact (Cantor upgrade, $12.57B backlog +60% YoY).
+- **Macro gate** — SPY macro PASS at midday (+0.52% vs MA20). Re-check Thu pre-market.
+- **Thu risk item — Micron earnings** (post-close Wed) — SNDK is a memory peer; watch for gap risk at Thu open.
+
