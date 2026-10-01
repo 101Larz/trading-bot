@@ -7413,3 +7413,59 @@ Cumulative P&L since inception (5/19): **−$2,459.53 (−2.460%)** — up $187.
 - **Macro gate** — SPY macro PASS at midday (+0.52% vs MA20). Re-check Thu pre-market.
 - **Thu risk item — Micron earnings** (post-close Wed) — SNDK is a memory peer; watch for gap risk at Thu open.
 
+
+---
+
+## 2026-10-01 (Thursday) — Market-Open Routine
+
+### Account Snapshot (09:46 ET)
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,684.32 |
+| Cash | $67,708.40 (69.31%) |
+| Long Market Value | $29,975.92 (30.69%) |
+| Buying Power | $354,766.18 |
+| Open Positions | 4 / 8 |
+| Weekly Buy Budget | 2 / 3 remaining |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Unreal P&L | Unreal % | Min-hold |
+|--------|----:|----------:|--------:|-----------:|---------:|---------|
+| NVDA   | 34  | $224.59   | $230.91 | +$214.71   | +2.81%   | Unlocked |
+| SNDK   |  4  | $1,804.86 | $1,753.00 | −$207.44 | −2.87%   | Unlocked |
+| STX    |  8  | $918.17   | $923.81 | +$45.14    | +0.62%   | Unlocked today |
+| KLAC   | 39  | $196.79   | $198.12 | +$51.69    | +0.67%   | Unlocked |
+
+### Macro Gate — FAIL
+
+- SPY last price **$763.44** vs MA20 **$764.02** → **−0.076% below MA20**
+- MA50 $761.19 (above) — trend "mixed"
+- RSI 55.84 (neutral)
+- Pre-market futures implied gate restore did not materialize — SPY opened/holds just below MA20
+
+### Decision: **NO_TRADE — Hold All**
+
+Per pre-market decision tree: "If SPY opens below $764.02 at 09:30: HOLD all, no new entries."
+
+- **MU buy CANCELLED** — primary action blocked by macro gate. MU setup remains clean (price $1060 > MA20/MA50, RSI 64.5, bullish MA alignment, earnings cleared), but strategy requires SPY macro PASS before new entries.
+- **LRCX** — secondary idea also deferred.
+- **All four held positions** — HOLD. No −7% breaches, no RSI>80, no trend-break exits triggered. STX min-hold now unlocked but no exit signal present.
+- Weekly buy budget unchanged at **2/3 remaining** for Thu/Fri.
+
+### Risk Status
+
+- Total exposure 30.69% — well inside 80% cap. Cash 69.31% — well above 20% floor.
+- Day P&L vs Wed close: −$387.93 (−0.395%) — SNDK giving back some of the pre-market peer bid.
+- Daily loss limit (3%) not in play.
+- Position count 4/8.
+- Trailing 15% GTCs active on all four.
+
+### Carry-Forward to Midday Scan (12:30 ET)
+
+- Re-check SPY macro gate — if ≥ $764.02, MU buy re-eligible (confirm RSI ≤70, spread tight).
+- Monitor SNDK — morning fade in play; cut floor $1,678.52 (current cushion +4.44%, tightest).
+- Watch STX for signal-based exit triggers now that min-hold cleared.
+- Weekly buy budget 2/3 — still have Thu midday + Fri slots if macro restores.
+
