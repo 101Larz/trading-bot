@@ -7469,3 +7469,65 @@ Per pre-market decision tree: "If SPY opens below $764.02 at 09:30: HOLD all, no
 - Watch STX for signal-based exit triggers now that min-hold cleared.
 - Weekly buy budget 2/3 — still have Thu midday + Fri slots if macro restores.
 
+
+## EOD — 2026-10-01 (Thursday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $98,071.29 |
+| Cash | $67,708.40 (69.04%) |
+| Long Market Value | $30,362.89 (30.96%) |
+| Buying Power | $355,849.68 |
+| Day P&L (vs prior EOD $97,540.47) | **+$530.82 (+0.544%)** |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | +$487.06 |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 1 buy (KLAC Wed) / 0 sells (budget 2/3 remaining) |
+| Open Positions | 4 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % | Day Chg |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|--------:|
+| NVDA   | 34  | $224.59   | $231.12 | $7,858.02 | +$221.96   | +2.91%   | 8.01%  | +1.20%  |
+| SNDK   |  4  | $1,804.86 | $1,781.00 | $7,124.00 | −$95.44  | −1.32%   | 7.26%  | +2.36%  |
+| STX    |  8  | $918.17   | $946.00 | $7,568.00 | +$222.66   | +3.03%   | 7.72%  | +2.57%  |
+| KLAC   | 39  | $196.79   | $200.33 | $7,812.87 | +$137.88   | +1.80%   | 7.97%  | +2.77%  |
+| **Total** | | | | **$30,362.89** | **+$487.06** | **+1.63%** | **30.96%** | |
+
+### Day Summary
+
+Prior close (Wed 2026-09-30): $97,540.47 → today's close $98,071.29 → **+$530.82 (+0.544%)** — broad green day, all four positions up. STX (+2.57%) and KLAC (+2.77%) led; SNDK rebounded +2.36% off the morning fade (Micron peer bid + NAND/AI demand narrative held); NVDA +1.20%. Net unrealized book flipped from prior EOD −$46.55 → today +$487.06 (Δ +$533.61), tracking the day P&L cleanly.
+
+Session cadence today (Thu 10/01): pre-market → MU identified as primary candidate (semi memory beneficiary), LRCX as secondary; market-open → **NO_TRADE** (SPY macro gate FAIL, SPY $763.44 vs MA20 $764.02 → −0.076%, MU buy cancelled); midday → HOLD ×4 (no cuts, no tightens, SPY still FAIL −0.22%); EOD → all four positions closed in positive territory, SNDK the only remaining unrealized loss but cushion restored. **0 trades executed today.**
+
+Weekly tally (Mon–Thu so far): **1 buy / 0 sells** — buy budget 2/3 remaining for Fri.
+
+### Risk Status
+
+- **Total exposure 30.96%** — well within 80% cap. Cash 69.04% — well above 20% floor.
+- **Single-position sizes:** NVDA 8.01% (right at cap, no adds), SNDK 7.26%, STX 7.72%, KLAC 7.97% — all inside 8% cap.
+- **Daily loss limit 3%** — not in play (day P&L +0.544%).
+- **Position count 4/8.**
+- **Stop discipline:** 15% trailing GTCs active on all four. Hard −7% floors monitored:
+  - NVDA cut $208.87 — current $231.12 → cushion **+9.63%**
+  - SNDK cut $1,678.52 — current $1,781.00 → cushion **+5.75%** (restored from midday +4.14%)
+  - STX cut $853.90 — current $946.00 → cushion **+9.74%**
+  - KLAC cut $182.98 — current $200.33 → cushion **+8.66%**
+
+Cumulative P&L since inception (5/19): **−$1,928.71 (−1.929%)** — up $530.82 from prior close; strongest single-day gain this week.
+
+### Carry-Forward to Fri 2026-10-02 Pre-Market
+
+- Portfolio 69.04% cash / 30.96% long (4 positions). **Buy budget 2/3 remaining** — final day of the week.
+- **Macro gate** — SPY closed below MA20 Thu (−0.22% at midday last check); re-run SPY MA20/MA50/RSI pull at Fri pre-market. If still FAIL, carry MU/LRCX ideas into next week.
+- **MU candidate** — remains clean fundamentally; re-eligible only if SPY ≥ MA20 at Fri open with RSI ≤70 and spread ≤1%.
+- **LRCX** — deferred secondary, keep in watchlist.
+- **NVDA** — +2.91% unrealized at 8.01% size (top of cap — no adds). Monitor for RSI>80 tighten trigger.
+- **SNDK** — recovered to −1.32% unrealized; cushion +5.75% comfortable. Micron earnings tailwind continues.
+- **STX** — +3.03% unrealized; min-hold cleared, no exit signal, trend intact.
+- **KLAC** — +1.80% unrealized; semi-cap backlog thesis intact (Cantor upgrade, $12.57B backlog +60% YoY). Monitor RSI for tighten trigger.
+- **Risk items for Fri:** none flagged — no min-hold expirations, no earnings in current book, no −7% proximity.
+
