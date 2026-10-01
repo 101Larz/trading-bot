@@ -1,16 +1,16 @@
 {
-  "last_run": "2026-10-01T13:15:00Z",
-  "last_routine": "Pre-Market Research",
-  "last_run_utc": "2026-10-01T13:15:00Z",
-  "last_run_et": "2026-10-01 09:15 ET",
-  "session": "opus-4-7 pre-market",
+  "last_run": "2026-10-01T13:47:00Z",
+  "last_routine": "Market Open Execution",
+  "last_run_utc": "2026-10-01T13:47:00Z",
+  "last_run_et": "2026-10-01 09:47 ET",
+  "session": "opus-4-7 market-open",
   "status": "success",
-  "routine": "Pre-Market Research",
-  "portfolio_value": 98072.25,
-  "cash": 67708.41,
+  "routine": "Market Open Execution",
+  "portfolio_value": 97684.32,
+  "cash": 67708.40,
   "open_positions": 4,
   "weekly_buy_budget_remaining": 2,
-  "decision": "CONDITIONAL TRADE — BUY MU 7 sh at open if SPY macro gate restores (≥$764.02)",
-  "candidates": ["MU", "LRCX"],
-  "notes": "Pre-market 2026-10-01 — SPY cash 0.18% below MA20 but futures +0.4-0.6% imply gate restores at open. Screener top 3 by Sharpe: SNDK (held), MU (new candidate), LRCX (new, secondary). All four held positions green pre-market (NVDA +2.9%, SNDK -1.0%, STX +2.5%, KLAC +2.0%). MU earnings Wed post-close — record Q4, raised Q1 guide. LRCX earnings Oct 21 (clear). Primary action at 09:45 market-open: buy MU 7 sh if macro PASS."
+  "decision": "NO_TRADE — macro gate FAIL (SPY $763.44 < MA20 $764.02 by 0.076%); hold all 4 positions, MU buy cancelled",
+  "candidates": ["MU (blocked by macro)", "LRCX (deferred)"],
+  "notes": "Market-open 2026-10-01 — SPY macro gate failed to restore at open (−0.076% below MA20). Pre-market plan prescribed NO_TRADE in this case. All 4 held positions giving back some pre-market gains but no cut-floor breaches: SNDK tightest cushion +4.44%, NVDA +9.6%, STX +7.6%, KLAC +7.7%. Weekly buy budget 2/3 preserved. Re-eval at midday if SPY recaptures $764.02."
 }
