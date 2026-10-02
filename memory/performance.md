@@ -7531,3 +7531,27 @@ Cumulative P&L since inception (5/19): **−$1,928.71 (−1.929%)** — up $530.
 - **KLAC** — +1.80% unrealized; semi-cap backlog thesis intact (Cantor upgrade, $12.57B backlog +60% YoY). Monitor RSI for tighten trigger.
 - **Risk items for Fri:** none flagged — no min-hold expirations, no earnings in current book, no −7% proximity.
 
+
+
+## 2026-10-02 (Friday) — Market Open
+
+### Trades Executed
+- **STX SELL (trailing stop fire)** — 8 sh exited at open via GTC 15% trailing stop
+  - Fills: 2 sh @ $800.00 (09:31:39 ET), 6 sh @ $803.77 (09:32:36 ET)
+  - Avg exit: $802.83 | Avg entry: $918.17
+  - **Realized P&L: −$922.72 (−12.56%)**
+  - Trigger: Thu close $946 → Fri open ~$800 (−15.4% gap) hit trailing floor $804.10
+  - Note: Stock-specific gap despite broad semi/memory tape green on Micron bid
+
+### Market Open Decision: NO_TRADE
+- SPY macro gate RESTORED (+1.03% vs MA20) on soft jobs print
+- LRCX pre-market primary candidate gapped +3.5% ($356.52 → $368.96), pushing RSI >70 → entry rule #2 fails
+- MU still extended +12.9% vs MA20 → defer
+- No position adds (NVDA 8.3%, KLAC 8.3%, SNDK 7.1% — all at/above cap)
+- Weekly buy budget 2/3 remaining — midday is last window
+
+### Portfolio
+- Portfolio value: $97,224.33 (vs Thu close $98,071.29 → −$846.96 / −0.864%)
+- Cash: $74,131.02 (76.25%) | Long: $23,093.31 (23.75%)
+- Open positions: 3 (NVDA +5.64%, SNDK −3.93%, KLAC +5.37%)
+- Weekly tally: 1 buy (KLAC Wed) / 1 sell (STX Fri)
