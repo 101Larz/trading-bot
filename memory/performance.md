@@ -7555,3 +7555,68 @@ Cumulative P&L since inception (5/19): **−$1,928.71 (−1.929%)** — up $530.
 - Cash: $74,131.02 (76.25%) | Long: $23,093.31 (23.75%)
 - Open positions: 3 (NVDA +5.64%, SNDK −3.93%, KLAC +5.37%)
 - Weekly tally: 1 buy (KLAC Wed) / 1 sell (STX Fri)
+
+
+## EOD — 2026-10-02 (Friday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,026.08 |
+| Cash | $74,131.02 (76.40%) |
+| Long Market Value | $22,895.06 (23.60%) |
+| Buying Power | $360,630.26 |
+| Day P&L (vs prior EOD $98,071.29) | **−$1,045.21 (−1.066%)** |
+| Realized P&L Today | −$922.72 (STX trailing stop) |
+| Unrealized P&L (open) | +$364.58 |
+| Trades Today | 0 buys / 1 sell (STX gap-down) |
+| Trades This Week | 1 buy (KLAC Wed) / 1 sell (STX Fri) — budget 2/3 used |
+| Open Positions | 3 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % | Day Chg |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|--------:|
+| NVDA   | 34  | $224.59   | $233.95 | $7,954.35 | +$318.29   | +4.17%   | 8.20%  | +1.34%  |
+| SNDK   |  4  | $1,804.86 | $1,718.00 | $6,872.00 | −$347.44 | −4.81%   | 7.08%  | −3.90%  |
+| KLAC   | 39  | $196.79   | $206.89 | $8,068.71 | +$393.72   | +5.13%   | 8.32%  | +3.28%  |
+| **Total** | | | | **$22,895.06** | **+$364.58** | **+1.62%** | **23.60%** | |
+
+### Day Summary
+
+Prior close (Thu 2026-10-01): $98,071.29 → today's close $97,026.08 → **−$1,045.21 (−1.066%)**. The red day was driven entirely by the **STX trailing stop fire at the open** (−$922.72 realized on a −15.4% stock-specific gap from Thu close $946 → Fri open ~$800, despite broad semi/memory tape green on Micron bid). Remaining three positions were mixed-to-green: KLAC +3.28% (strong), NVDA +1.34%, SNDK −3.90% (gave back prior-day peer bounce). Unrealized book moved from prior EOD +$487.06 → today +$364.58 (Δ −$122.48 on the 3 remaining names); the dominant delta was the realized STX loss.
+
+Session cadence today (Fri 10/02): pre-market → LRCX primary / MU secondary identified; market-open → **STX trailing GTC fired** (−$922.72), SPY macro gate RESTORED (+1.03% vs MA20), but LRCX gapped +3.5% past RSI 70 entry cap → **NO_TRADE** on new entries; midday → HOLD ×3 (no further cuts, SNDK cushion still tightest). **1 sell executed today (STX gap-down forced exit).**
+
+Weekly tally (Mon–Fri): **1 buy / 1 sell** — budget 2/3 used. Net realized this week: −$922.72 (STX).
+
+### Risk Status
+
+- **Total exposure 23.60%** — well within 80% cap. Cash 76.40% — well above 20% floor.
+- **Single-position sizes:** NVDA 8.20% (slight drift above 8% cap on appreciation — no adds, no forced trim), SNDK 7.08%, KLAC 8.32% (same drift). All within acceptable tolerance; organic drift from gains.
+- **Daily loss limit 3%** — not breached (day P&L −1.066%).
+- **Position count 3/8.**
+- **Stop discipline:** 15% trailing GTCs active on all three remaining. Hard −7% floors:
+  - NVDA cut $208.87 — current $233.95 → cushion **+10.72%**
+  - SNDK cut $1,678.52 — current $1,718.00 → cushion **+2.30%** (tightest, back near Tue EOD lows)
+  - KLAC cut $182.98 — current $206.89 → cushion **+11.56%**
+
+Cumulative P&L since inception (5/19): **−$2,973.92 (−2.974%)** — down $1,045.21 from prior close; worst single-day drawdown of the week driven by STX gap.
+
+### Weekly Review (for Fri 5:00 PM routine)
+
+- **Trades:** 1 buy (KLAC @ $196.79 Wed) / 1 sell (STX @ $802.83 avg Fri — forced trailing stop).
+- **Realized P&L this week:** −$922.72 (STX).
+- **Unrealized change this week:** entered Mon with 4 positions (NVDA, SNDK, STX, KLAC-not-yet, pre-KLAC book); exited Fri with 3. KLAC +5.13%, NVDA +4.17%, SNDK −4.81%.
+- **Lesson flagged:** STX gap-down −15.4% at open despite peer-group green — stock-specific risk not captured by trailing stop until after the gap. Review STX pre-earnings posture rule in `memory/lessons.md`.
+- **Macro:** SPY macro gate oscillated FAIL/PASS across the week — restored Fri open on soft jobs print. MU and LRCX candidates deferred (both failed entry rules on Fri: MU extended +12.9% vs MA20, LRCX RSI >70 after gap).
+
+### Carry-Forward to Mon 2026-10-05 Pre-Market
+
+- Portfolio 76.40% cash / 23.60% long (3 positions). **Fresh weekly buy budget resets Monday (3/3).**
+- **SNDK** — tightest cushion in book (+2.30%); monitor Mon open for continued fade. Pre-earnings Oct 29 window still well out.
+- **NVDA / KLAC** — both >+4% unrealized, orderly; drift slightly above 8% cap on appreciation (acceptable, no forced trim).
+- **Macro gate** — SPY restored Fri; re-check Mon pre-market before any new entries.
+- **MU / LRCX** — carry both to Mon watchlist. Entry eligibility: MU needs RSI ≤70 and ≤+8% vs MA20; LRCX needs RSI ≤70 after Fri's gap.
+- **Weekly review routine** (Fri 5:00 PM) will append its own block separately.
