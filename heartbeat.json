@@ -1,14 +1,13 @@
 {
-  "last_run": "2026-10-01T20:15:00Z",
-  "last_routine": "End of Day",
-  "last_run_utc": "2026-10-01T20:15:00Z",
-  "last_run_et": "2026-10-01 16:15 ET",
-  "session": "opus-4-7 end-of-day",
+  "last_run": "2026-10-02T00:08:00Z",
+  "last_routine": "Nightly Screener",
+  "last_run_utc": "2026-10-02T00:08:00Z",
+  "last_run_cest": "2026-10-02 02:08 CEST",
+  "session": "opus-4-7 nightly-screener",
   "status": "success",
-  "routine": "End of Day",
-  "open_positions": 4,
-  "weekly_buy_budget_remaining": 2,
-  "decision": "EOD snapshot — portfolio $98,071.29, +$530.82 (+0.544%), 0 trades today, 4 open (NVDA/SNDK/STX/KLAC all up on the day).",
-  "candidates": ["MU (next week if macro restores)", "LRCX (deferred)"],
-  "notes": "EOD 2026-10-01 — Broad green day, all 4 positions positive. SNDK recovered to -1.32% (cushion +5.75% from midday +4.14%). STX +3.03%, KLAC +1.80%, NVDA +2.91%. SPY macro still below MA20 → carry MU/LRCX to Fri pre-market. Weekly tally: 1 buy / 0 sells, 2/3 budget remaining for Fri. Cumulative since inception: -$1,928.71 (-1.929%)."
+  "routine": "Nightly Screener",
+  "screener_candidates": 4,
+  "screener_run_date": "2026-10-02",
+  "top_candidates": ["SNDK", "STX", "NVDA", "LRCX"],
+  "notes": "Nightly screener 2026-10-02 — 95 tickers → 6 Markov pass → 5 momentum pass → 4 technical pass. Top 4: SNDK (Sharpe 1.84), STX (1.50), NVDA (1.50), LRCX (1.19). Current holdings SNDK/STX/NVDA all retained Markov confirmation; KLAC dropped off Phase B (regime/signal shift). AMD passed Markov+Momentum but failed Technical (RSI 74.8 overbought). TSLA failed momentum. MMC/BRK-B data errors."
 }
