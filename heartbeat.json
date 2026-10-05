@@ -1,15 +1,19 @@
 {
-  "last_run": "2026-10-05T16:30:00Z",
-  "last_routine": "Midday Scan",
-  "last_run_utc": "2026-10-05T16:30:00Z",
-  "last_run_cest": "2026-10-05 18:30 CEST",
-  "session": "opus-4-7 midday-scan",
+  "last_run": "2026-10-05T20:15:00Z",
+  "last_routine": "End of Day",
+  "last_run_utc": "2026-10-05T20:15:00Z",
+  "last_run_cest": "2026-10-05 22:15 CEST",
+  "session": "opus-4-7 end-of-day",
   "status": "success",
-  "routine": "Midday Scan",
+  "routine": "End of Day",
   "open_positions": 3,
   "positions": ["KLAC", "NVDA", "SNDK"],
-  "decision": "HOLD_ALL",
+  "decision": "EOD_SNAPSHOT",
   "trades_executed": 0,
+  "day_pnl_dollars": 153.06,
+  "day_pnl_pct": 0.158,
+  "portfolio_value": 97179.14,
+  "cash": 74130.87,
   "weekly_buy_budget_remaining": 3,
-  "notes": "Midday 2026-10-05 — HOLD ALL. KLAC +3.57%, NVDA +5.19%, SNDK -5.19% (cushion +3.06% above hard stop $1660.47). No -7% breaches, no +15%/+20% winners for stop tighten, SNDK thesis intact (AI storage demand, consensus $2,113 target, Rosenblatt BUY $2,400). 0 trades, weekly budget 3/3 remaining."
+  "notes": "EOD 2026-10-05 — Portfolio $97,179.14, Day P&L +$153.06 (+0.158%). KLAC +5.35%, NVDA +6.66%, SNDK -5.56% (cushion +1.55% above hard stop $1,678.52 — tightest, monitor Tue open). 0 trades today, 0 trades this week. Fresh weekly buy budget 3/3. ARM carried to Tue pre-market if gap closes."
 }

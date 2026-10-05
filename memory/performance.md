@@ -7641,3 +7641,61 @@ Cumulative P&L since inception (5/19): **−$2,973.92 (−2.974%)** — down $1,
 - Open positions: 3 (KLAC +1.90%, NVDA +5.60%, SNDK −4.50%)
 - Day P&L vs prior EOD: −0.106% — no daily-loss-limit stress
 - Trailing 15% GTCs active on all three; all hard −7% floors cushioned ≥ +3.80%.
+
+
+## EOD — 2026-10-05 (Monday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $97,179.14 |
+| Cash | $74,130.87 (76.28%) |
+| Long Market Value | $23,048.27 (23.72%) |
+| Buying Power | $361,058.62 |
+| Day P&L (vs prior EOD $97,026.08) | **+$153.06 (+0.158%)** |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | +$517.57 |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week | 0 buys / 0 sells (fresh week, budget 3/3 remaining) |
+| Open Positions | 3 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % | Day Chg |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|--------:|
+| KLAC   | 39  | $196.79   | $207.32 | $8,085.57 | +$410.58   | +5.35%   | 8.32%  | +0.21%  |
+| NVDA   | 34  | $224.59   | $239.54 | $8,144.49 | +$508.43   | +6.66%   | 8.38%  | +2.39%  |
+| SNDK   |  4  | $1,804.86 | $1,704.50 | $6,818.00 | −$401.44 | −5.56%   | 7.02%  | −0.90%  |
+| **Total** | | | | **$23,048.27** | **+$517.57** | **+2.30%** | **23.72%** | |
+
+### Day Summary
+
+Prior close (Fri 2026-10-02): $97,026.08 → today's close $97,179.14 → **+$153.06 (+0.158%)** — mild green day, NVDA (+2.39%) led while SNDK (−0.90%) continued its mild fade. KLAC essentially flat (+0.21%). Unrealized book moved from Fri's +$364.58 → today's +$517.57 (Δ +$152.99) tracking day P&L cleanly.
+
+Session cadence today (Mon 10/05): pre-market → ARM identified as sole Phase D screener survivor; market-open → **ARM BUY CANCELLED** at open on +12.19% gap vs Fri close, ~26.7% bid/ask spread, implied RSI >70 — all three hard guards failed → NO_TRADE; midday → HOLD ×3 (no cuts, no tightens, SNDK thesis intact per Rosenblatt BUY $2,400 + consensus $2,113 target); EOD → all three positions held. **0 trades executed today.**
+
+Weekly tally (Mon only): **0 buys / 0 sells** — fresh weekly buy budget 3/3 remaining for Tue–Fri.
+
+### Risk Status
+
+- **Total exposure 23.72%** — well within 80% cap. Cash 76.28% — well above 20% floor.
+- **Single-position sizes:** KLAC 8.32%, NVDA 8.38%, SNDK 7.02% — KLAC/NVDA drift slightly above 8% cap on appreciation (organic, acceptable, no forced trim).
+- **Daily loss limit 3%** — not in play (day P&L +0.158%).
+- **Position count 3/8.**
+- **Stop discipline:** 15% trailing GTCs active on all three. Hard −7% floors monitored:
+  - KLAC cut $182.98 — current $207.32 → cushion **+13.30%**
+  - NVDA cut $208.87 — current $239.54 → cushion **+14.69%**
+  - SNDK cut $1,678.52 — current $1,704.50 → cushion **+1.55%** (tightest — monitor Tue open closely)
+
+Cumulative P&L since inception (5/19): **−$2,820.86 (−2.821%)** — up $153.06 from prior close.
+
+### Carry-Forward to Tue 2026-10-06 Pre-Market
+
+- Portfolio 76.28% cash / 23.72% long (3 positions). **Weekly buy budget 3/3 remaining.**
+- **SNDK** — cushion now **+1.55%** (tightest in book, approaching hard-stop proximity). Monitor Tue open for continued fade; current price $1,704.50 vs $1,678.52 floor = $25.98 cushion. If SNDK breaches $1,680 intraday, hard-stop exit per non-negotiable risk rules.
+- **NVDA / KLAC** — both strong (+6.66%, +5.35% unrealized); monitor RSI for overbought tighten triggers. NVDA RSI was 82.97 at open — re-check Tue.
+- **Macro gate** — SPY was PASS Mon open (+0.84% vs MA20); re-check Tue pre-market before any new entries.
+- **ARM** — carry forward to Tue pre-market: eligible only if gap closes, RSI ≤70, spread ≤0.50%.
+- **MU / LRCX** — remain deferred secondary candidates (prior week carry-forward).
+- **Risk items for Tue:** SNDK proximity to hard stop is the sole active watch item. No min-hold expirations, no earnings in current book.
