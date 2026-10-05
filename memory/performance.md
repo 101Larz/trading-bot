@@ -7620,3 +7620,24 @@ Cumulative P&L since inception (5/19): **−$2,973.92 (−2.974%)** — down $1,
 - **Macro gate** — SPY restored Fri; re-check Mon pre-market before any new entries.
 - **MU / LRCX** — carry both to Mon watchlist. Entry eligibility: MU needs RSI ≤70 and ≤+8% vs MA20; LRCX needs RSI ≤70 after Fri's gap.
 - **Weekly review routine** (Fri 5:00 PM) will append its own block separately.
+
+
+## 2026-10-05 (Monday) — Market Open
+
+### Trades Executed
+- None. **ARM BUY cancelled** at open: live print $344.97 = **+12.19% gap** vs Fri close $307.49 (pre-market guard cap +3%), bid/ask $263.77/$344.97 → **~26.7% spread** (cap 0.50%), implied RSI at entry > 70. All three hard guards failed → NO_TRADE per pre-market plan's own rule.
+
+### Market Open Decision: NO_TRADE
+- **SPY macro gate PASS** (+0.84% vs MA20).
+- **ARM** — only Phase D screener survivor, but opened too hot to enter cleanly. Setup carried forward to midday / Tue pre-market if ARM pulls back under RSI 70 and spread tightens.
+- **NVDA signal review** — RSI 82.97 (overbought) but price +1.38% today (no gap-down leg). Trim rule requires BOTH legs → HOLD, no trim.
+- **KLAC HOLD** — RSI 90.32 but day 4 min-hold blocks signal exit; hard stop $181.05 intact.
+- **SNDK HOLD** — RSI 60.31, trend bullish, cushion −4.50% above hard stop.
+- Weekly buy budget: **3/3 remaining** (fresh week).
+
+### Portfolio (09:47 ET live)
+- Portfolio value: $96,922.80 (vs Fri close $97,026.08 → −$103.28 / −0.106%)
+- Cash: $74,130.87 (76.49%) | Long: $22,791.93 (23.51%)
+- Open positions: 3 (KLAC +1.90%, NVDA +5.60%, SNDK −4.50%)
+- Day P&L vs prior EOD: −0.106% — no daily-loss-limit stress
+- Trailing 15% GTCs active on all three; all hard −7% floors cushioned ≥ +3.80%.
