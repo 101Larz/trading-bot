@@ -7745,3 +7745,59 @@ Cumulative P&L since inception (5/19): **−$2,820.86 (−2.821%)** — up $153.
 - Day P&L (realized today): −$530.28 (SNDK stop-loss)
 - Weekly tally: 0 buys / 1 sell (SNDK)
 
+
+
+## EOD — 2026-10-06 (Tuesday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $96,675.16 |
+| Cash | $80,820.03 (83.60%) |
+| Long Market Value | $15,855.13 (16.40%) |
+| Buying Power | $367,674.48 |
+| Day P&L (vs prior EOD $97,179.14) | **−$503.98 (−0.519%)** |
+| Realized P&L Today | −$530.28 (SNDK hard-stop) |
+| Unrealized P&L (open) | +$544.08 |
+| Trades Today | 0 buys / 1 sell (SNDK midday hard-stop) |
+| Trades This Week | 0 buys / 1 sell — budget 3/3 remaining (sells don't consume buy budget) |
+| Open Positions | 2 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % | Day Chg |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|--------:|
+| KLAC   | 39  | $196.79   | $197.59 | $7,706.01 | +$31.02    | +0.40%   | 7.97%  | −4.48%  |
+| NVDA   | 34  | $224.59   | $239.68 | $8,149.12 | +$513.06   | +6.72%   | 8.43%  | +0.33%  |
+| **Total** | | | | **$15,855.13** | **+$544.08** | **+3.55%** | **16.40%** | |
+
+### Day Summary
+
+Prior close (Mon 2026-10-05): $97,179.14 → today's close $96,675.16 → **−$503.98 (−0.519%)**. The red day was driven by the **SNDK hard-stop fire at midday** (−$530.28 realized when unrealized breached −7% floor) plus a **KLAC pullback (−4.48%)** that gave back most of the week's winner cushion. NVDA was essentially flat (+0.33%). The SNDK exit prevented further downside — position had been the tightest-cushion name entering Tue (+1.55% above floor).
+
+Session cadence today (Tue 10/06): pre-market → ARM primary candidate carried from Mon, SNDK flagged for proximity to hard stop; market-open → **ARM BUY CANCELLED** again (18.74% spread, 2nd consecutive session rejected by liquidity guard), SPY macro gate PASS (+1.92% vs MA20); midday → **SNDK SELL at $1,672.29 (−$530.28 realized)** triggered by −7.19% unrealized breach of hardcoded −7% rule, GTC trailing stop cancelled first then market close; EOD → KLAC + NVDA held. **1 sell executed today (SNDK forced hard-stop).**
+
+Weekly tally (Mon–Tue): **0 buys / 1 sell** — buy budget 3/3 remaining (Wed/Thu/Fri window).
+
+### Risk Status
+
+- **Total exposure 16.40%** — well within 80% cap. Cash 83.60% — well above 20% floor (highest cash % since inception).
+- **Single-position sizes:** KLAC 7.97%, NVDA 8.43% (slight drift above 8% on appreciation — acceptable, no forced trim).
+- **Daily loss limit 3%** — not breached (day P&L −0.519%).
+- **Position count 2/8.**
+- **Stop discipline:** 15% trailing GTCs active on both remaining. Hard −7% floors:
+  - KLAC cut $182.98 — current $197.59 → cushion **+7.98%**
+  - NVDA cut $208.87 — current $239.68 → cushion **+14.75%**
+
+Cumulative P&L since inception (5/19): **−$3,324.84 (−3.325%)** — down $503.98 from prior close; week-to-date realized −$530.28 (SNDK).
+
+### Carry-Forward to Wed 2026-10-07 Pre-Market
+
+- Portfolio 83.60% cash / 16.40% long (2 positions). **Buy budget 3/3 fully intact for Wed–Fri.**
+- **KLAC** — pulled back −4.48% today; cushion vs hard stop now +7.98% (healthy but down from Mon's +13.30%). Monitor RSI (was 90.32 at Mon open — likely cooled with the drop). No earnings in near window.
+- **NVDA** — orderly, +6.72% unrealized, cushion +14.75%. Pre-market RSI was 82.97 Mon → re-check Wed for overbought trim trigger (requires BOTH RSI >80 AND gap-down leg per rule).
+- **ARM** — carry forward to Wed pre-market but **flag for structural illiquidity**: 2 consecutive sessions rejected by spread guard (26.7% on 10/05, 18.74% on 10/06). If 3rd session also rejects, consider removing from watchlist or escalating to lessons.md.
+- **Macro gate** — SPY PASS Tue open (+1.92% vs MA20, RSI 67.23); re-check Wed pre-market before any new entries.
+- **MU / LRCX** — remain deferred secondary candidates. New Phase D screener run due Wed pre-market.
+- **Risk items for Wed:** No positions in hard-stop proximity (both >+7% cushion). Elevated cash gives flexibility for new entries if screener surfaces a clean setup. SNDK realized loss should be reviewed for lessons.md pattern (SNDK was flagged tightest-cushion entering Tue — thesis-break rule check: did Rosenblatt BUY $2,400 target hold through the drop?).
