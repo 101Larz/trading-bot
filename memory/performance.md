@@ -7699,3 +7699,23 @@ Cumulative P&L since inception (5/19): **−$2,820.86 (−2.821%)** — up $153.
 - **ARM** — carry forward to Tue pre-market: eligible only if gap closes, RSI ≤70, spread ≤0.50%.
 - **MU / LRCX** — remain deferred secondary candidates (prior week carry-forward).
 - **Risk items for Tue:** SNDK proximity to hard stop is the sole active watch item. No min-hold expirations, no earnings in current book.
+
+
+## 2026-10-06 (Tuesday) — Market Open
+
+### Trades Executed
+- None. **ARM BUY cancelled** at open: Alpaca live bid/ask $264.10 / $325.00 → **18.74% spread** (cap 0.50%). Last trade print $304.10, RSI 66.42 and MA alignment both PASS, but spread gate fails. Second consecutive session the spread guard has rejected ARM (10/05 spread was 26.7%); illiquidity pattern persists.
+
+### Market Open Decision: NO_TRADE
+- **SPY macro gate PASS** (+1.92% vs MA20, RSI 67.23).
+- **ARM** — RSI 66.42 ✅, MA20/50 alignment ✅, SPY ✅, but 18.74% spread ❌ → NO_TRADE. Carry forward to midday if spread tightens.
+- **TRIM candidates (NVDA/KLAC)** — the pre-market overbought-trim recommendations are deferred to the midday scan (this market-open routine is BUY-only).
+- **SNDK** — unrealized P&L −6.75%, last print $1,684.19 vs hard stop $1,678.52 (cushion only $5.67 / 0.34%). Trailing GTC remains primary brake; manual exit only if intraday breaches the floor.
+- Weekly buy budget: **3/3 remaining** (Mon–Tue 0/0; three days left to deploy).
+
+### Portfolio (09:48 ET live)
+- Portfolio value: $97,000.21 (vs Mon close $97,179.14 → −$178.93 / −0.184%)
+- Cash: $74,130.87 (76.42%) | Long: $22,869.34 (23.58%)
+- Open positions: 3 (KLAC +3.02%, NVDA +7.64%, SNDK −6.75%)
+- Day P&L vs prior EOD: −0.184% — no daily-loss-limit stress
+- Trailing 15% GTCs active on all three; SNDK hard-stop cushion is critical (+0.34%).

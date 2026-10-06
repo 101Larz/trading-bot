@@ -1,16 +1,8 @@
 {
-  "last_run": "2026-10-06T07:16:00Z",
-  "last_routine": "Pre-Market Research",
-  "last_run_utc": "2026-10-06T07:16:00Z",
-  "last_run_cest": "2026-10-06 09:16 CEST",
-  "session": "opus-4-7 pre-market",
-  "status": "success",
-  "routine": "Pre-Market Research",
-  "portfolio_value": 97132.95,
-  "cash": 74130.87,
-  "open_positions": 3,
-  "position_symbols": ["KLAC", "NVDA", "SNDK"],
-  "screener_top_candidate": "ARM",
-  "decision": "TRADE",
-  "notes": "Pre-market 2026-10-06. Portfolio $97,132.95, 3 positions (KLAC +5.11%, NVDA +6.86%, SNDK -6.15% CRITICAL cushion 0.91% to -7% stop). ARM remains sole Phase D survivor (Sharpe +1.106, RSI 66.4 improved from 68.6). Plan: BUY ARM 24-25sh at open (subject to 5 open-quote guards), TRIM NVDA 50% and KLAC 50% on overbought exit signals (RSI >80, min-hold passed), HOLD SNDK with manual-cut watch at $1678.52. SPY $774.84 above MA20 - macro gate PASS. Research written to memory/research/2026-10-06.md."
+  "last_routine": "market-open",
+  "last_run_at": "2026-10-06T13:50:00Z",
+  "status": "ok",
+  "decision": "NO_TRADE",
+  "trades_executed": 0,
+  "note": "ARM BUY cancelled on 18.74% spread (cap 0.50%); HOLD KLAC/NVDA/SNDK; SNDK hard-stop cushion tight (0.34%)"
 }
