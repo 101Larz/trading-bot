@@ -7719,3 +7719,29 @@ Cumulative P&L since inception (5/19): **−$2,820.86 (−2.821%)** — up $153.
 - Open positions: 3 (KLAC +3.02%, NVDA +7.64%, SNDK −6.75%)
 - Day P&L vs prior EOD: −0.184% — no daily-loss-limit stress
 - Trailing 15% GTCs active on all three; SNDK hard-stop cushion is critical (+0.34%).
+
+
+## 2026-10-06 (Tuesday) — Midday Scan
+
+### Trades Executed
+- **SNDK SELL (hard-stop fire)** — 4 sh market-closed at midday scan
+  - Trigger: Unrealized P&L **−7.19%** (−$518.96) at 12:38 ET, breached the −7% hard-stop rule
+  - Avg exit: $1,672.29 | Avg entry: $1,804.86
+  - **Realized P&L: −$530.28 (−7.35%)**
+  - GTC trailing stop cancelled first (order 3c4bb17b…), then DELETE /positions/SNDK filled market in <5 sec
+  - Note: Spread was ~1.65% at exit (bid $1,672.20 / ask $1,699.88). Market close used because trailing stop had not fired yet and the position breached the hardcoded −7% floor during normal session.
+
+### Winner Stop Tightens
+- NVDA +7.08% unrealized — below +15% / +20% thresholds → no tighten
+- KLAC +0.87% unrealized — below +15% / +20% thresholds → no tighten
+
+### Thesis Check
+- NVDA/KLAC both green/orderly; existing GTC 15% trailing stops remain in force. No news-driven thesis break action taken this scan.
+
+### Portfolio (post-sell)
+- Portfolio value: $96,738.78
+- Cash: $80,820.03 (83.54%) | Long: $15,918.75 (16.45%)
+- Open positions: 2 (KLAC +0.87%, NVDA +7.08%)
+- Day P&L (realized today): −$530.28 (SNDK stop-loss)
+- Weekly tally: 0 buys / 1 sell (SNDK)
+
