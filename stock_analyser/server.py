@@ -512,7 +512,9 @@ def _openrouter_analyse(ticker: str):
     Call OpenRouter API to analyse a stock ticker.
     Yields (event_name, data_str) tuples.
     """
-    if not OPENROUTER_API_KEY:
+    # Re-read at request time so Render env vars are always picked up
+    api_key = os.environ.get("OPENROUTER_API_KEY", "")
+    if not api_key:
         yield ("log", "[error] OPENROUTER_API_KEY niet ingesteld op de server")
         yield ("log", "[info] Stel OPENROUTER_API_KEY in als environment variable op Render")
         raise ValueError("No API key")
@@ -562,7 +564,7 @@ Daarna volgt je volledige analyse."""
         "https://openrouter.ai/api/v1/chat/completions",
         data=payload,
         headers={
-            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+            "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
             "HTTP-Referer": "https://101larz-stock-analyser.onrender.com",
             "X-Title": "101Larz Stock Analyser",
