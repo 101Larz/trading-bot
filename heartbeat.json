@@ -1,10 +1,11 @@
 {
-  "last_routine": "pre-market",
-  "timestamp": "2026-10-07T07:25:00+00:00",
+  "last_routine": "market-open",
+  "timestamp": "2026-10-07T13:52:30+00:00",
   "status": "success",
-  "notes": "Pre-market research 2026-10-07 complete. Portfolio $96,657.67 / cash 83.6% / 2 positions (KLAC +0.04%, NVDA +6.85%). Screener Top 2: STX (Rank 1 Sharpe +1.464) rejected on MA alignment + 11.14% spread; TSLA (Rank 2) is primary BUY candidate at $387 with bullish alignment / RSI 63.7, pending spread guard at open. NVDA 50% trim planned (RSI 84 overbought, day 19+). STX NO_TRADE; TSLA conditional BUY; NVDA conditional TRIM; KLAC HOLD.",
+  "notes": "Market-open 2026-10-07: TSLA BUY 19sh FILLED @ $377.78 (7.44% equity), 15% trailing GTC placed @ stop $320.94. Weekly buys 1/3 used. Portfolio $96,423.18, cash 76.37%, 3 positions. SPY macro PASS. Spread guard: IEX showed 1.57% (paper-feed artifact) but true SIP NBBO was 0.08%; fill at $377.78 confirmed real market tight. NVDA trim (17sh @ RSI 84) deferred to midday — BUY-only workflow. KLAC HOLD (-1.98% intraday, cushion +5.42% to hard stop).",
   "decision": "TRADE",
-  "candidates": ["TSLA (BUY 19sh, 7.62%)", "NVDA (TRIM 17sh)"],
-  "rejected": ["STX (MA align fail + 11.14% spread)"],
-  "screener_run_date": "2026-10-07"
+  "trades_executed": ["TSLA BUY 19sh @ $377.78"],
+  "trades_deferred": ["NVDA TRIM 17sh (overbought RSI 84, day 19+)"],
+  "weekly_buys_used": 1,
+  "weekly_buys_remaining": 2
 }

@@ -7801,3 +7801,14 @@ Cumulative P&L since inception (5/19): **−$3,324.84 (−3.325%)** — down $50
 - **Macro gate** — SPY PASS Tue open (+1.92% vs MA20, RSI 67.23); re-check Wed pre-market before any new entries.
 - **MU / LRCX** — remain deferred secondary candidates. New Phase D screener run due Wed pre-market.
 - **Risk items for Wed:** No positions in hard-stop proximity (both >+7% cushion). Elevated cash gives flexibility for new entries if screener surfaces a clean setup. SNDK realized loss should be reviewed for lessons.md pattern (SNDK was flagged tightest-cushion entering Tue — thesis-break rule check: did Rosenblatt BUY $2,400 target hold through the drop?).
+
+### Trade Entry — 2026-10-07 13:51
+| Field | Value |
+|-------|-------|
+| Symbol | TSLA |
+| Side | BUY |
+| Shares | 19.0 |
+| Est. Price | $377.87 |
+| Est. Value | $7179.53 |
+| Order ID | d82d11f6-0dff-4ac8-9a66-0e5290b6b314 |
+| Trailing Stop | 15% GTC placed immediately after fill |
