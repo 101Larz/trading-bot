@@ -1,8 +1,10 @@
 {
-  "last_routine": "nightly-screener",
-  "timestamp": "2026-10-07T02:15:00+02:00",
+  "last_routine": "pre-market",
+  "timestamp": "2026-10-07T07:25:00+00:00",
   "status": "success",
-  "notes": "95-ticker Markov+momentum+technical screen complete. Phase B: 5, Phase C: 4, Phase D: 2. Top candidates: STX (Sharpe +1.464), TSLA (Sharpe +0.374).",
-  "screener_candidates": 2,
+  "notes": "Pre-market research 2026-10-07 complete. Portfolio $96,657.67 / cash 83.6% / 2 positions (KLAC +0.04%, NVDA +6.85%). Screener Top 2: STX (Rank 1 Sharpe +1.464) rejected on MA alignment + 11.14% spread; TSLA (Rank 2) is primary BUY candidate at $387 with bullish alignment / RSI 63.7, pending spread guard at open. NVDA 50% trim planned (RSI 84 overbought, day 19+). STX NO_TRADE; TSLA conditional BUY; NVDA conditional TRIM; KLAC HOLD.",
+  "decision": "TRADE",
+  "candidates": ["TSLA (BUY 19sh, 7.62%)", "NVDA (TRIM 17sh)"],
+  "rejected": ["STX (MA align fail + 11.14% spread)"],
   "screener_run_date": "2026-10-07"
 }
