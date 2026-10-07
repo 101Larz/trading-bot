@@ -1,9 +1,8 @@
 {
-  "last_routine": "midday-scan",
-  "timestamp": "2026-10-06T12:40:00-04:00",
-  "status": "ok",
-  "notes": "SNDK stop-loss fired (-7.35% realized, -$530.28). 2 positions remaining (KLAC, NVDA).",
-  "portfolio_value": 96738.78,
-  "cash": 80820.03,
-  "positions": 2
+  "last_routine": "nightly-screener",
+  "timestamp": "2026-10-07T02:15:00+02:00",
+  "status": "success",
+  "notes": "95-ticker Markov+momentum+technical screen complete. Phase B: 5, Phase C: 4, Phase D: 2. Top candidates: STX (Sharpe +1.464), TSLA (Sharpe +0.374).",
+  "screener_candidates": 2,
+  "screener_run_date": "2026-10-07"
 }
