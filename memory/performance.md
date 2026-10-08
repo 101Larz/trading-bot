@@ -7870,3 +7870,62 @@ Cumulative P&L since inception (5/19): **−$3,444.60 (−3.445%)** — down $11
 - **ARM** — Watchlist flag persists: 2 consecutive sessions rejected by spread guard (10/05, 10/06). Did not trigger in 10/07 screener. Keep flagged; if next re-attempt also rejects, escalate to lessons.md.
 - **Macro gate** — SPY PASS Wed open. Re-check Thu pre-market before any new entries.
 - **Risk items for Thu:** No positions in hard-stop proximity (all >+7% cushion). KLAC and TSLA tied as closest-to-floor at ~+7.4%. 2 buy slots remain for Thu/Fri — screener run due Thu pre-market.
+
+
+## EOD — 2026-10-08 (Thursday — session: opus-4-7 end-of-day)
+
+### Account Snapshot
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $96,327.23 |
+| Cash | $73,642.10 (76.45%) |
+| Long Market Value | $22,685.13 (23.55%) |
+| Buying Power | $352,390.56 |
+| Day P&L (vs prior EOD $96,555.40) | **−$228.17 (−0.236%)** |
+| Realized P&L Today | $0.00 |
+| Unrealized P&L (open) | +$196.31 |
+| Trades Today | 0 buys / 0 sells |
+| Trades This Week (Mon–Thu) | 1 buy (TSLA Wed) / 1 sell (SNDK Tue) — buy budget 2/3 remaining |
+| Open Positions | 3 / 8 |
+
+### Open Positions
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unreal P&L | Unreal % | Size % | Day Chg |
+|--------|----:|----------:|--------:|----------:|-----------:|---------:|-------:|--------:|
+| KLAC   | 39  | $196.79   | $197.68 | $7,709.52 | +$34.53    | +0.45%   | 8.00%  | +0.43%  |
+| NVDA   | 34  | $224.59   | $231.04 | $7,855.36 | +$219.30   | +2.87%   | 8.16%  | −2.71%  |
+| TSLA   | 19  | $377.78   | $374.75 | $7,120.25 | −$57.52    | −0.80%   | 7.39%  | −0.81%  |
+| **Total** | | | | **$22,685.13** | **+$196.31** | **+0.87%** | **23.55%** | |
+
+### Day Summary
+
+Prior close (Wed 2026-10-07): $96,555.40 → today's close $96,327.23 → **−$228.17 (−0.236%)**. A modest red day driven by NVDA (−2.71%) giving back part of the week's cushion, with TSLA (−0.81%) softening slightly on day two and KLAC (+0.43%) ticking green. No trades executed — pre-market plan had TSLA/KLAC/NVDA on HOLD with a conditional AVGO entry at open; **AVGO BUY cancelled** at open on the hard entry gate (price below MA50 → "mixed" trend tag = NO per rule 1). Midday scan: HOLD ×3 (no −7% breaches, no winners at +15%/+20% stop-tighten triggers, no thesis breaks).
+
+Session cadence today (Thu 10/08): pre-market → HOLD base + conditional AVGO; market-open → **AVGO NO_TRADE** (below MA50); midday → HOLD ×3; EOD → KLAC/NVDA/TSLA held. **0 trades executed today.**
+
+Weekly tally (Mon–Thu): **1 buy / 1 sell** — buy budget 2/3 remaining (Fri only remaining session).
+
+### Risk Status
+
+- **Total exposure 23.55%** — well within 80% cap. Cash 76.45% — well above 20% floor.
+- **Single-position sizes:** KLAC 8.00%, NVDA 8.16%, TSLA 7.39% — NVDA slight drift above 8% cap on appreciation (acceptable; drift-from-entry rule, no forced trim).
+- **Daily loss limit 3%** — not breached (day P&L −0.236%).
+- **Position count 3/8.**
+- **Stop discipline:** 15% trailing GTCs active on all three. Hard −7% floors:
+  - KLAC cut $183.02 — current $197.68 → cushion **+8.01%**
+  - NVDA cut $208.87 — current $231.04 → cushion **+10.61%**
+  - TSLA cut $351.33 — current $374.75 → cushion **+6.67%** (tightest — watch Fri open)
+
+Cumulative P&L since inception (5/19): **−$3,672.77 (−3.673%)** — down $228.17 from prior close; week-to-date P&L **−$851.91 (−0.877%)** vs Mon prior-close $97,179.14 (realized −$530.28 SNDK Tue + unrealized drift).
+
+### Carry-Forward to Fri 2026-10-09 Pre-Market
+
+- Portfolio 76.45% cash / 23.55% long (3 positions). **Buy budget 2/3 remaining — final session of week.**
+- **TSLA** — cushion now **+6.67%** vs −7% hard-stop (closest in book, below the +7% safety band). Monitor Fri open closely; if TSLA breaches $351.33 intraday, hard-stop exit per non-negotiable risk rules. 5-day min-hold window still active (entered Wed 10/07).
+- **KLAC** — cushion +8.01% (second-closest); essentially flat on entry (+0.45% unrealized). No earnings in near window.
+- **NVDA** — orderly, +2.87% unrealized, cushion +10.61%. Still below +15%/+20% stop-tighten triggers.
+- **AVGO** — rejected Thu open on MA50; carry forward to Fri pre-market only if screener re-surfaces with price > MA50.
+- **ARM** — Watchlist flag persists (2 consecutive spread-guard rejections 10/05–10/06); did not surface in 10/07–10/08 screeners.
+- **Macro gate** — re-check SPY vs MA20 and RSI Fri pre-market before any new entries.
+- **Risk items for Fri:** TSLA proximity to hard stop is the sole active watch item (first position inside the <+7% safety band since SNDK pre-stop-fire). No earnings in current book. One screener run due Fri pre-market; weekly review routine fires Fri 5:00 PM ET post-close.

@@ -1,12 +1,14 @@
 {
-  "last_routine": "Midday Scan",
-  "timestamp": "2026-10-08T16:30:00+00:00",
+  "last_routine": "End of Day",
+  "timestamp": "2026-10-08T20:15:00+00:00",
   "status": "success",
-  "notes": "Midday 2026-10-08: account $96,559.90 (+$4.50 vs prior EOD), 3 positions held (KLAC +2.20%, NVDA +4.73%, TSLA -1.43%). No cuts (none at -7%), no stop-tightens (none at +15%/+20%), no thesis breaks. HOLD x3. Weekly buy budget 2/3 remaining.",
-  "decision": "HOLD",
-  "portfolio_value": 96559.90,
+  "notes": "EOD 2026-10-08: portfolio $96,327.23 (−$228.17 / −0.236% vs prior EOD), 3 positions held (KLAC +0.45%, NVDA +2.87%, TSLA −0.80%). 0 trades today. Weekly tally Mon–Thu: 1 buy (TSLA Wed) / 1 sell (SNDK Tue), buy budget 2/3 remaining. TSLA cushion +6.67% is tightest — watch Fri open.",
+  "decision": "EOD_SNAPSHOT",
+  "portfolio_value": 96327.23,
   "cash": 73642.10,
   "open_positions": 3,
   "trades_executed": 0,
-  "weekly_buy_budget_remaining": 2
+  "weekly_buy_budget_remaining": 2,
+  "day_pnl_dollars": -228.17,
+  "day_pnl_percent": -0.236
 }
