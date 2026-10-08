@@ -1,15 +1,13 @@
 {
-  "last_routine": "end-of-day",
-  "timestamp": "2026-10-07T20:40:00+00:00",
+  "last_routine": "Nightly Screener",
+  "timestamp": "2026-10-08T00:08:00+00:00",
   "status": "success",
-  "notes": "EOD 2026-10-07: Portfolio $96,555.40, cash 76.27%. Day P&L -$119.76 (-0.124%) vs prior EOD $96,675.16. Open 3/8: KLAC -0.12%, NVDA +5.75%, TSLA -0.07%. Unrealized +$424.47. 1 buy today (TSLA @ open), 0 sells. Weekly 1 buy/1 sell, buy budget 2/3 remaining. 15% trailing GTCs active on all three. Hard-stop cushions all >+7% (KLAC +7.39%, NVDA +13.72%, TSLA +7.44%). No daily-loss-limit stress, no stop-tighten triggers, no thesis breaks.",
-  "decision": "EOD_SNAPSHOT",
-  "portfolio_value": 96555.40,
-  "cash": 73642.11,
-  "day_pnl_usd": -119.76,
-  "day_pnl_pct": -0.124,
-  "open_positions": 3,
-  "trades_today": 1,
-  "weekly_buys_used": 1,
-  "weekly_buys_remaining": 2
+  "notes": "Nightly screener 2026-10-08: 95 tickers scanned, Phase B=4, Phase C=4, Phase D=2. Top candidates: AVGO (Sharpe +1.275, RSI 69.5, MA mixed, +2.1% mom), TSLA (Sharpe +0.380, RSI 63.7, MA bullish, +3.4% mom). 2 data errors skipped: MMC (delisted on Yahoo), BRK-B (Alpaca 400). Results written to memory/screener_results.md for 09:00 ET pre-market routine.",
+  "decision": "SCREENER_RUN",
+  "screener_candidates": 2,
+  "screener_run_date": "2026-10-08",
+  "phase_b_survivors": 4,
+  "phase_c_survivors": 4,
+  "phase_d_survivors": 2,
+  "top_candidates": ["AVGO", "TSLA"]
 }
