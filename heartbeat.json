@@ -1,12 +1,13 @@
 {
-  "last_routine": "Pre-Market Research",
-  "timestamp": "2026-10-08T07:20:00+00:00",
+  "last_routine": "Market Open Execution",
+  "timestamp": "2026-10-08T13:50:00+00:00",
   "status": "success",
-  "notes": "Pre-market 2026-10-08: account $96,384.02, cash 76.4%, 3 open positions (KLAC -1.46%, NVDA +5.08%, TSLA -0.32%). Screener top: AVGO (new, Sharpe +1.275, RSI 69.5 borderline, MA mixed), TSLA (already held). Decision: HOLD + conditional AVGO buy at open if RSI<=70, MA20 & MA50 cleared, spread<=0.50%. SPY RSI 73.61 (elevated).",
-  "decision": "HOLD_WITH_CONDITIONAL",
-  "portfolio_value": 96384.02,
-  "cash": 73642.11,
+  "notes": "Market-open 2026-10-08: account $96,251.91, cash 76.5%, 3 open positions (KLAC -1.75%, NVDA +4.29%, TSLA -1.03%). AVGO entry gate FAILED on MA50 (price $367.92 < MA50 $372.09; trend 'mixed'). No trades executed. Macro gate (SPY) PASS. Decision: HOLD. Weekly buy budget 2/3 remaining.",
+  "decision": "HOLD",
+  "portfolio_value": 96251.91,
+  "cash": 73642.10,
   "open_positions": 3,
-  "candidates": ["AVGO", "TSLA"],
+  "candidates_rejected": ["AVGO (MA50 fail)"],
+  "trades_executed": 0,
   "weekly_buy_budget_remaining": 2
 }
