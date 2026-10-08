@@ -1,13 +1,12 @@
 {
-  "last_routine": "Nightly Screener",
-  "timestamp": "2026-10-08T00:08:00+00:00",
+  "last_routine": "Pre-Market Research",
+  "timestamp": "2026-10-08T07:20:00+00:00",
   "status": "success",
-  "notes": "Nightly screener 2026-10-08: 95 tickers scanned, Phase B=4, Phase C=4, Phase D=2. Top candidates: AVGO (Sharpe +1.275, RSI 69.5, MA mixed, +2.1% mom), TSLA (Sharpe +0.380, RSI 63.7, MA bullish, +3.4% mom). 2 data errors skipped: MMC (delisted on Yahoo), BRK-B (Alpaca 400). Results written to memory/screener_results.md for 09:00 ET pre-market routine.",
-  "decision": "SCREENER_RUN",
-  "screener_candidates": 2,
-  "screener_run_date": "2026-10-08",
-  "phase_b_survivors": 4,
-  "phase_c_survivors": 4,
-  "phase_d_survivors": 2,
-  "top_candidates": ["AVGO", "TSLA"]
+  "notes": "Pre-market 2026-10-08: account $96,384.02, cash 76.4%, 3 open positions (KLAC -1.46%, NVDA +5.08%, TSLA -0.32%). Screener top: AVGO (new, Sharpe +1.275, RSI 69.5 borderline, MA mixed), TSLA (already held). Decision: HOLD + conditional AVGO buy at open if RSI<=70, MA20 & MA50 cleared, spread<=0.50%. SPY RSI 73.61 (elevated).",
+  "decision": "HOLD_WITH_CONDITIONAL",
+  "portfolio_value": 96384.02,
+  "cash": 73642.11,
+  "open_positions": 3,
+  "candidates": ["AVGO", "TSLA"],
+  "weekly_buy_budget_remaining": 2
 }
