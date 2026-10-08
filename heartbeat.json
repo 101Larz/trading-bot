@@ -1,13 +1,12 @@
 {
-  "last_routine": "Market Open Execution",
-  "timestamp": "2026-10-08T13:50:00+00:00",
+  "last_routine": "Midday Scan",
+  "timestamp": "2026-10-08T16:30:00+00:00",
   "status": "success",
-  "notes": "Market-open 2026-10-08: account $96,251.91, cash 76.5%, 3 open positions (KLAC -1.75%, NVDA +4.29%, TSLA -1.03%). AVGO entry gate FAILED on MA50 (price $367.92 < MA50 $372.09; trend 'mixed'). No trades executed. Macro gate (SPY) PASS. Decision: HOLD. Weekly buy budget 2/3 remaining.",
+  "notes": "Midday 2026-10-08: account $96,559.90 (+$4.50 vs prior EOD), 3 positions held (KLAC +2.20%, NVDA +4.73%, TSLA -1.43%). No cuts (none at -7%), no stop-tightens (none at +15%/+20%), no thesis breaks. HOLD x3. Weekly buy budget 2/3 remaining.",
   "decision": "HOLD",
-  "portfolio_value": 96251.91,
+  "portfolio_value": 96559.90,
   "cash": 73642.10,
   "open_positions": 3,
-  "candidates_rejected": ["AVGO (MA50 fail)"],
   "trades_executed": 0,
   "weekly_buy_budget_remaining": 2
 }
