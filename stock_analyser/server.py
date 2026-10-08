@@ -542,17 +542,20 @@ def _openrouter_analyse(ticker: str):
     time.sleep(0.3)
 
     today = datetime.date.today().isoformat()
-    prompt = f"""Je bent een professionele aandelenmarkt analist. Analyseer het aandeel {ticker.upper()} per {today}.
+    prompt = f"""Je bent een assertieve aandelenmarkt analist met een scherpe mening. Analyseer {ticker.upper()} per {today}.
 
-Geef een beknopte analyse (max 300 woorden) met:
-1. Huidige marktpositie en sector
-2. Recente ontwikkelingen (nieuws, earnings, trends)
-3. Technische indicatoren (trend, momentum)
-4. Risico's en kansen
-5. Eindadvies: BUY, HOLD of SELL met korte onderbouwing
+KRITISCH: Je MOET een duidelijke aanbeveling geven. HOLD is alleen toegestaan als er werkelijk geen richting is.
+Geef bij twijfel de sterkste richting aan op basis van beschikbare informatie.
 
-Begin je antwoord ALTIJD met exact één van deze drie woorden op de eerste regel: BUY, HOLD, of SELL
-Daarna volgt je volledige analyse."""
+Analyseer:
+1. Sector en concurrentiepositie
+2. Recente koersontwikkeling en momentum
+3. Fundamentals (groei, waardering, marges)
+4. Risico's vs kansen — weeg ze expliciet af
+5. Jouw definitieve oordeel met concrete onderbouwing
+
+EERSTE REGEL: schrijf precies één woord: BUY, HOLD, of SELL (hoofdletters, geen interpunctie)
+Daarna: je volledige analyse in max 250 woorden. Wees specifiek en opinionated."""
 
     payload = json.dumps({
         "model": MODEL,
