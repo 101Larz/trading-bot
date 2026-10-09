@@ -424,7 +424,7 @@ def build_overview_data() -> dict:
     positions = get_positions()
 
     total_unrealized = sum(p["unrealized_pl"] for p in positions)
-    total_realized   = sum(t["pnl"] for t in perf["trades"])
+    total_realized   = sum(t["pnl"] for t in perf["trades"] if t["pnl"] is not None)
 
     # Chart series: dates and cumulative portfolio values from daily log
     chart_labels = [d["date"] for d in perf["daily"]]
