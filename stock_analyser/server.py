@@ -6,7 +6,7 @@ Deploy on Render: set OPENROUTER_API_KEY as environment variable.
 """
 
 from flask import Flask, Response, request
-import json, time, datetime, os, traceback, re, urllib.request, urllib.error
+import json, time, datetime, os, traceback, re, urllib.request, urllib.error, urllib.parse
 
 app = Flask(__name__)
 
@@ -507,6 +507,52 @@ def _sse(event: str, data: str) -> str:
     return f"event: {event}\ndata: {safe}\n\n"
 
 
+def _fetch_market_data(ticker: str) -> dict:
+    """Fetch real-time market data from Yahoo Finance (no API key needed)."""
+    try:
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ticker)}?interval=1d&range=5d"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+
+        result = data["chart"]["result"][0]
+        meta = result["meta"]
+
+        price = meta.get("regularMarketPrice", 0)
+        prev_close = meta.get("chartPreviousClose", price)
+        change_pct = ((price - prev_close) / prev_close * 100) if prev_close else 0
+        week52_high = meta.get("fiftyTwoWeekHigh", 0)
+        week52_low = meta.get("fiftyTwoWeekLow", 0)
+        volume = meta.get("regularMarketVolume", 0)
+        market_cap = meta.get("marketCap", 0)
+
+        return {
+            "price": round(price, 2),
+            "change_pct": round(change_pct, 2),
+            "week52_high": round(week52_high, 2),
+            "week52_low": round(week52_low, 2),
+            "volume": volume,
+            "market_cap": market_cap,
+            "currency": meta.get("currency", "USD"),
+            "exchange": meta.get("exchangeName", ""),
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+def _fetch_news(ticker: str) -> list:
+    """Fetch recent news headlines from Yahoo Finance."""
+    try:
+        url = f"https://query1.finance.yahoo.com/v1/finance/search?q={urllib.parse.quote(ticker)}&newsCount=5&quotesCount=0"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        news = data.get("news", [])
+        return [item.get("title", "") for item in news[:5] if item.get("title")]
+    except Exception:
+        return []
+
+
 def _openrouter_analyse(ticker: str):
     """
     Call OpenRouter API to analyse a stock ticker.
@@ -536,25 +582,56 @@ def _openrouter_analyse(ticker: str):
         yield ("log", f"[{i+1}/{len(agents)}] {agent}: analysing {ticker.upper()} ...")
         time.sleep(0.4)
 
-    yield ("log", "[trader] Ophalen marktdata en nieuwscontext ...")
-    time.sleep(0.5)
+    yield ("log", "[trader] Ophalen real-time marktdata ...")
+    market = _fetch_market_data(ticker)
+    news = _fetch_news(ticker)
+
+    if "error" not in market:
+        yield ("log", f"[data] Koers: {market['currency']} {market['price']} ({market['change_pct']:+.2f}% vandaag)")
+        yield ("log", f"[data] 52w range: {market['week52_low']} – {market['week52_high']}")
+    else:
+        yield ("log", f"[data] Marktdata niet beschikbaar: {market['error']}")
+
+    if news:
+        yield ("log", f"[nieuws] {len(news)} recente headlines gevonden")
+
     yield ("log", "[trader] Schrijven eindadvies ...")
     time.sleep(0.3)
 
     today = datetime.date.today().isoformat()
-    prompt = f"""Je bent een kritische aandelenmarkt analist. Analyseer {ticker.upper()} per {today}.
 
-Geef een eerlijke, gebalanceerde analyse. BUY alleen als er duidelijk positief momentum is én de waardering redelijk is. SELL als er echte risico's zijn of overgewaardeerd. HOLD als het gemengd is.
+    # Build market context string
+    if "error" not in market:
+        price_vs_52w_high = ((market['price'] - market['week52_high']) / market['week52_high'] * 100) if market['week52_high'] else 0
+        price_vs_52w_low = ((market['price'] - market['week52_low']) / market['week52_low'] * 100) if market['week52_low'] else 0
+        market_ctx = f"""
+LIVE MARKTDATA ({today}):
+- Huidige koers: {market['currency']} {market['price']} ({market['change_pct']:+.2f}% vandaag)
+- 52-weeks high: {market['week52_high']} (koers staat {price_vs_52w_high:.1f}% onder high)
+- 52-weeks low: {market['week52_low']} (koers staat {price_vs_52w_low:.1f}% boven low)
+- Volume: {market['volume']:,}
+- Marktwaarde: ${market['market_cap']:,.0f}"""
+    else:
+        market_ctx = "(live marktdata niet beschikbaar)"
+
+    news_ctx = ""
+    if news:
+        news_ctx = "\n\nRECENTE NIEUWS HEADLINES:\n" + "\n".join(f"- {h}" for h in news)
+
+    prompt = f"""Je bent een kritische aandelenmarkt analist. Analyseer {ticker.upper()} per {today}.
+{market_ctx}{news_ctx}
+
+Geef een eerlijke analyse gebaseerd op bovenstaande data. BUY alleen als momentum en waardering dit rechtvaardigen. SELL bij echte risico's of als de koers dicht bij het 52-weeks high staat zonder reden. HOLD als het gemengd is.
 
 Analyseer:
-1. Huidige waardering (P/E, groei) — is het duur of goedkoop?
-2. Recente koersontwikkeling en momentum
-3. Fundamentals (omzetgroei, marges, schulden)
-4. Concrete risico's (macro, concurrentie, regelgeving)
-5. Eindoordeel met specifieke onderbouwing
+1. Koerspositie t.o.v. 52-weeks range — zit er nog upside?
+2. Momentum (dagwijziging, trend)
+3. Fundamentals en waardering
+4. Nieuws sentiment en risico's
+5. Eindoordeel met concrete onderbouwing van de data
 
 EERSTE REGEL: schrijf precies één woord: BUY, HOLD, of SELL (hoofdletters, geen interpunctie)
-Daarna: analyse in max 250 woorden. Wees eerlijk — niet elke stock is een BUY."""
+Daarna: analyse in max 250 woorden. Gebruik de live data als basis."""
 
     payload = json.dumps({
         "model": MODEL,
