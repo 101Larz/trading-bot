@@ -76,15 +76,22 @@ The screener re-runs every session — check today's `memory/research/YYYY-MM-DD
 
 | Trigger | Hold Required? | Action |
 |---------|---------------|--------|
-| Stop-loss: position down 7% from entry | No — exits immediately | CLOSE immediately, no exceptions |
-| Trailing stop: price drops 15% from running high | No — Alpaca GTC order | Auto-closed by broker |
-| RSI > 80 (overbought) | Yes — ≥5 days held | Consider full exit |
-| Trend breakdown: price < MA20 AND MA20 < MA50 | Yes — ≥5 days held | Consider full exit |
-| Profit target: position up 15% | Yes — ≥5 days held | Consider trimming 50% |
-| Macro reversal: SPY breaks below 50-day MA | Yes — ≥5 days held | Reduce all positions to 50% |
-| Earnings in < 5 trading days | Yes — ≥5 days held | Exit entirely unless high-conviction thesis |
+| Hard stop-loss: position down 5% from entry | No — exits immediately | CLOSE immediately, no exceptions |
+| Early weakness stop: down 3% within first 3 days | No — exits immediately | CLOSE — trade is not working, no reason to wait for the full 5% |
+| Trailing stop: price drops 10% from running high | No — Alpaca GTC order | Auto-closed by broker |
+| RSI > 80 (overbought) | Yes — ≥3 days held | Consider full exit |
+| Trend breakdown: price < MA20 AND MA20 < MA50 | Yes — ≥3 days held | Consider full exit |
+| Profit target: position up 12% | Yes — ≥3 days held | Trim 50%; trail the rest |
+| Macro reversal: SPY breaks below 50-day MA | No hold required | Reduce all positions to 50% immediately |
+| Earnings in < 5 trading days | Yes — ≥3 days held | Exit entirely unless high-conviction thesis |
 
-**Minimum hold period: 5 days.** Signal-based exits (RSI, trend, profit target) are blocked for the first 5 days of a position. Only the hard stop (−7%) and the Alpaca trailing stop (−15%) can close a position before day 5.
+**Minimum hold period reduced to 3 days** (was 5). Signal-based exits are blocked for the first 3 days. Only hard stop (−5%) and early weakness stop (−3% within 3 days) can close before day 3.
+
+### Why these changes (lessons from closed trades)
+- The old 7% hard stop was too wide for volatile tech/semi stocks — most losses hit the full 7–8% before exiting
+- Waiting 5 days before acting on weakness allowed losers to deepen; 3 days is enough to judge whether a trade is working
+- The 15% trailing stop was never triggered (no position got anywhere close to +15%); 10% trailing is more realistic
+- Early weakness rule (−3% in 3 days) is the most important addition — it cuts trades that go wrong immediately instead of holding through a full stop
 
 ---
 
