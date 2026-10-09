@@ -1,14 +1,11 @@
 {
-  "last_routine": "End of Day",
-  "timestamp": "2026-10-08T20:15:00+00:00",
+  "last_routine": "Nightly Screener",
+  "timestamp": "2026-10-09T00:08:00+00:00",
   "status": "success",
-  "notes": "EOD 2026-10-08: portfolio $96,327.23 (−$228.17 / −0.236% vs prior EOD), 3 positions held (KLAC +0.45%, NVDA +2.87%, TSLA −0.80%). 0 trades today. Weekly tally Mon–Thu: 1 buy (TSLA Wed) / 1 sell (SNDK Tue), buy budget 2/3 remaining. TSLA cushion +6.67% is tightest — watch Fri open.",
-  "decision": "EOD_SNAPSHOT",
-  "portfolio_value": 96327.23,
-  "cash": 73642.10,
-  "open_positions": 3,
-  "trades_executed": 0,
-  "weekly_buy_budget_remaining": 2,
-  "day_pnl_dollars": -228.17,
-  "day_pnl_percent": -0.236
+  "notes": "Nightly screener 2026-10-09: 95 tickers scanned (93 processed, MMC+BRK-B data errors). Phase B (Markov) survivors: 2 (MU, SNDK). Phase C (momentum) survivors: 1 (MU; SNDK failed). Phase D (technical) survivors: 1. Top candidate for pre-market: MU — Bull, Markov +0.022, Sharpe +1.490, RSI 67.3, bullish MA alignment, +5.9% 1m momentum. Narrow night: AVGO and TSLA (yesterday's picks) both filtered at Markov Phase B.",
+  "decision": "SCREENER_RUN",
+  "screener_candidates": 1,
+  "screener_run_date": "2026-10-09",
+  "screener_top": ["MU"],
+  "screener_data_errors": ["MMC", "BRK-B"]
 }
