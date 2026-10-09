@@ -92,6 +92,7 @@ details[open] summary::before { content: '\\25BC  '; }
     <p class="hint">Bijv. AAPL &middot; NVDA &middot; IREN &middot; MSFT &mdash; duurt 5&ndash;10 min</p>
   </div>
   <div id="result">
+    <div id="chart-wrap" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:18px 20px"></div>
     <div class="verdict" id="verdict-card">
       <div class="verdict-label">Aanbeveling</div>
       <div class="verdict-ticker" id="result-ticker"></div>
@@ -476,6 +477,45 @@ function showResult(data,log){
   document.getElementById('verdict-meaning').textContent=data.verdict_meaning;
   document.getElementById('decision-body').textContent=data.decision;
   document.getElementById('log-body').textContent=log||'(geen log)';
+
+  // Draw price chart if history available
+  const hist = data.history || [];
+  const chartWrap = document.getElementById('chart-wrap');
+  if(hist.length > 1){
+    const prices = hist.map(h=>h.p);
+    const minP = Math.min(...prices), maxP = Math.max(...prices);
+    const range = maxP - minP || 1;
+    const W=600, H=120, pad=8;
+    const xs = prices.map((_,i)=> pad + (i/(prices.length-1))*(W-2*pad));
+    const ys = prices.map(p=> pad + (1-(p-minP)/range)*(H-2*pad));
+    const pathD = xs.map((x,i)=>(i===0?'M':'L')+x.toFixed(1)+','+ys[i].toFixed(1)).join(' ');
+    const isUp = prices[prices.length-1] >= prices[0];
+    const col = isUp ? 'var(--buy)' : 'var(--sell)';
+    const areaD = pathD + ` L${xs[xs.length-1].toFixed(1)},${H} L${xs[0].toFixed(1)},${H} Z`;
+    const mkt = data.market || {};
+    const priceLabel = mkt.price ? `${mkt.currency||'$'} ${mkt.price} (${mkt.change_pct>=0?'+':''}${mkt.change_pct}% today)` : '';
+    chartWrap.innerHTML = `
+      <div style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:8px">
+        30-daagse koers &nbsp;<span style="color:${col}">${priceLabel}</span>
+      </div>
+      <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">
+        <defs>
+          <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="${col}" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="${col}" stop-opacity="0.02"/>
+          </linearGradient>
+        </defs>
+        <path d="${areaD}" fill="url(#cg)"/>
+        <path d="${pathD}" fill="none" stroke="${col}" stroke-width="1.8" stroke-linejoin="round"/>
+        <text x="${pad}" y="${H-2}" font-size="9" fill="var(--fg-muted)" font-family="monospace">${hist[0].d}</text>
+        <text x="${W-pad}" y="${H-2}" font-size="9" fill="var(--fg-muted)" font-family="monospace" text-anchor="end">${hist[hist.length-1].d}</text>
+        <text x="${xs[xs.length-1]}" y="${ys[ys.length-1]-6}" font-size="10" fill="${col}" font-family="monospace" text-anchor="end">$${prices[prices.length-1]}</text>
+      </svg>`;
+    chartWrap.style.display='block';
+  } else {
+    chartWrap.style.display='none';
+  }
+
   const res=document.getElementById('result');
   res.style.display='flex';res.style.flexDirection='column';res.style.gap='16px';
   document.getElementById('analyse-btn').disabled=false;
@@ -510,7 +550,7 @@ def _sse(event: str, data: str) -> str:
 def _fetch_market_data(ticker: str) -> dict:
     """Fetch real-time market data from Yahoo Finance (no API key needed)."""
     try:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ticker)}?interval=1d&range=5d"
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ticker)}?interval=1d&range=1mo"
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read().decode("utf-8"))
@@ -526,6 +566,15 @@ def _fetch_market_data(ticker: str) -> dict:
         volume = meta.get("regularMarketVolume", 0)
         market_cap = meta.get("marketCap", 0)
 
+        # Extract 30-day price history for chart
+        timestamps = result.get("timestamp", [])
+        closes = result.get("indicators", {}).get("quote", [{}])[0].get("close", [])
+        history = []
+        for ts, c in zip(timestamps, closes):
+            if c is not None:
+                date_str = datetime.datetime.utcfromtimestamp(ts).strftime("%m/%d")
+                history.append({"d": date_str, "p": round(c, 2)})
+
         return {
             "price": round(price, 2),
             "change_pct": round(change_pct, 2),
@@ -535,6 +584,7 @@ def _fetch_market_data(ticker: str) -> dict:
             "market_cap": market_cap,
             "currency": meta.get("currency", "USD"),
             "exchange": meta.get("exchangeName", ""),
+            "history": history,
         }
     except Exception as e:
         return {"error": str(e)}
@@ -676,6 +726,8 @@ Daarna: analyse in max 250 woorden. Gebruik de live data als basis."""
         "verdict_text":    verdict_text,
         "verdict_meaning": verdict_meaning,
         "decision":        decision_text,
+        "market":          market if "error" not in market else {},
+        "history":         market.get("history", []),
     }
     yield ("done", json.dumps(result))
 
