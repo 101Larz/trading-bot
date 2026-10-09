@@ -33,17 +33,14 @@
   <div class="kpi-card">
     <div class="kpi-label">Avg Win / Avg Loss</div>
     <div class="kpi-value">
-      {% set exits  = trades | selectattr('type', 'equalto', 'EXIT') | list %}
-      {% set wins   = exits | selectattr('pnl', 'gt', 0) | list %}
-      {% set losses = exits | selectattr('pnl', 'lt', 0) | list %}
-      {% if wins %}
-        <span class="positive">${{ "{:,.0f}".format(wins | sum(attribute='pnl') / wins | length) }}</span>
+      {% if avg_win is not none %}
+        <span class="positive">${{ "{:,.0f}".format(avg_win) }}</span>
       {% else %}
         <span>—</span>
       {% endif %}
       /
-      {% if losses %}
-        <span class="negative">${{ "{:,.0f}".format((losses | sum(attribute='pnl') / losses | length) | abs) }}</span>
+      {% if avg_loss is not none %}
+        <span class="negative">${{ "{:,.0f}".format(avg_loss | abs) }}</span>
       {% else %}
         <span>—</span>
       {% endif %}
@@ -129,8 +126,7 @@
 </div>
 
 <!-- ── P&L chart (exits only) ────────────────────────────────── -->
-{% set exits = trades | selectattr('type', 'equalto', 'EXIT') | list %}
-{% if exits %}
+{% if exit_trades %}
 <div class="card">
   <div class="card-header">
     <span class="card-title">Realized P&amp;L — Closed Trades</span>
@@ -155,12 +151,11 @@
 {% endblock %}
 
 {% block scripts %}
-{% set exits = trades | selectattr('type', 'equalto', 'EXIT') | list %}
-{% if exits %}
+{% if exit_trades %}
 <script>
 (function () {
-  const pnls   = {{ exits | map(attribute='pnl') | list | tojson }};
-  const labels = {{ exits | map(attribute='date') | list | tojson }};
+  const pnls   = {{ exit_trades | map(attribute='pnl') | list | tojson }};
+  const labels = {{ exit_trades | map(attribute='date') | list | tojson }};
   const colors  = pnls.map(v => v >= 0 ? "rgba(63,185,80,0.75)"  : "rgba(248,81,73,0.75)");
   const borders = pnls.map(v => v >= 0 ? "#3fb950" : "#f85149");
 

@@ -498,11 +498,13 @@ def trades_page():
     trades  = perf["trades"]
     for t in trades:
         t["pl_class"] = _pnl_class(t["pnl"]) if t["pnl"] is not None else "neutral"
-    exit_trades = [t for t in trades if t["type"] == "EXIT"]
+    exit_trades = [t for t in trades if t["type"] == "EXIT" and t["pnl"] is not None]
     total_pnl  = sum(t["pnl"] for t in exit_trades)
     win_count  = sum(1 for t in exit_trades if t["pnl"] > 0)
     loss_count = sum(1 for t in exit_trades if t["pnl"] < 0)
     win_rate   = round(win_count / len(exit_trades) * 100, 1) if exit_trades else 0
+    avg_win    = (sum(t["pnl"] for t in exit_trades if t["pnl"] > 0) / win_count) if win_count else None
+    avg_loss   = (sum(t["pnl"] for t in exit_trades if t["pnl"] < 0) / loss_count) if loss_count else None
     return render_template(
         "trades.html",
         trades=list(reversed(trades)),
@@ -513,6 +515,9 @@ def trades_page():
         win_count=win_count,
         loss_count=loss_count,
         win_rate=win_rate,
+        avg_win=avg_win,
+        avg_loss=avg_loss,
+        exit_trades=exit_trades,
         last_updated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     )
 
