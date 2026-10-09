@@ -1,11 +1,11 @@
 {
-  "last_routine": "Nightly Screener",
-  "timestamp": "2026-10-09T00:08:00+00:00",
+  "last_routine": "Pre-Market Research",
+  "timestamp": "2026-10-09T07:22:00+00:00",
   "status": "success",
-  "notes": "Nightly screener 2026-10-09: 95 tickers scanned (93 processed, MMC+BRK-B data errors). Phase B (Markov) survivors: 2 (MU, SNDK). Phase C (momentum) survivors: 1 (MU; SNDK failed). Phase D (technical) survivors: 1. Top candidate for pre-market: MU — Bull, Markov +0.022, Sharpe +1.490, RSI 67.3, bullish MA alignment, +5.9% 1m momentum. Narrow night: AVGO and TSLA (yesterday's picks) both filtered at Markov Phase B.",
-  "decision": "SCREENER_RUN",
-  "screener_candidates": 1,
-  "screener_run_date": "2026-10-09",
-  "screener_top": ["MU"],
-  "screener_data_errors": ["MMC", "BRK-B"]
+  "notes": "Pre-market 2026-10-09: Portfolio $96,658.46 (+0.28% overnight), cash 76.2%, 3 positions all green (KLAC +2.37%, NVDA +4.13%, TSLA +0.42%). TSLA day 3/5 min hold. KLAC+NVDA marginally over 8% cap on appreciation (no action). Screener returned 1 pass only: MU (Bull, Sharpe +1.490, RSI 67.3, bullish MA, +5.9% momentum). Decision: HOLD all + CONDITIONAL TRADE on MU at open gated on live RSI/MA/spread/earnings/SPY checks. Weekly buy budget 2/3 remaining. Sector concentration watch if MU fills (3 semis).",
+  "decision": "HOLD + CONDITIONAL_TRADE_MU",
+  "candidate": "MU",
+  "cash_pct": 76.2,
+  "positions": 3,
+  "weekly_buys_remaining": 2
 }
