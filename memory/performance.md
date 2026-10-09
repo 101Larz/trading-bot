@@ -7929,3 +7929,63 @@ Cumulative P&L since inception (5/19): **−$3,672.77 (−3.673%)** — down $22
 - **ARM** — Watchlist flag persists (2 consecutive spread-guard rejections 10/05–10/06); did not surface in 10/07–10/08 screeners.
 - **Macro gate** — re-check SPY vs MA20 and RSI Fri pre-market before any new entries.
 - **Risk items for Fri:** TSLA proximity to hard stop is the sole active watch item (first position inside the <+7% safety band since SNDK pre-stop-fire). No earnings in current book. One screener run due Fri pre-market; weekly review routine fires Fri 5:00 PM ET post-close.
+
+---
+
+## 2026-10-09 (Friday) — Market-Open Execution Log
+
+### Session Snapshot (13:49 UTC / 09:49 ET, live Alpaca paper)
+
+| Metric | Value |
+|---|---|
+| Portfolio Value | $96,550.51 |
+| Cash | $73,642.10 (76.3%) |
+| Long Market Value | $22,908.41 (23.7%) |
+| Open Positions | 3 / 6 |
+| Weekly buys used / budget | 1 / 3 |
+
+### Live Position Marks
+
+| Symbol | Qty | Avg Entry | Current | Unreal P&L | Unreal % | Day Chg |
+|--------|----:|----------:|--------:|-----------:|---------:|--------:|
+| KLAC | 39 | $196.79 | $196.81 | +$0.60 | +0.01% | +0.05% |
+| NVDA | 34 | $224.59 | $231.69 | +$241.40 | +3.16% | +0.52% |
+| TSLA | 19 | $377.78 | $387.37 | +$182.17 | +2.54% | +3.30% |
+| **Total** | | | | **+$424.17** | **+1.85%** | |
+
+TSLA cushion rebuilt comfortably (now ~+9.3% above hard stop $351.33). KLAC gave back prior-session premium but still flat/green on entry.
+
+### Trade Decisions
+
+| Candidate | Source | Live Gates | Outcome |
+|-----------|--------|------------|---------|
+| MU (buy) | Pre-market Rank 1 Sharpe +1.49, catalyst in research log | RSI 53.0 ✅ / MA20 ✅ (thin) / MA50 ✅ / spread 0.34% ✅ / SPY macro ✅ / **≥10-share clip ❌** — 8% cap $7,724 only funds 7 shares at $1,042.74 limit | **NO_TRADE** |
+| KLAC / NVDA / TSLA | Open book | No exit triggers (no −7% breach, no RSI>80 w/ 5d hold, no trend break w/ 5d hold, no +15% w/ 5d hold) | **HOLD** |
+
+**0 trades executed. Weekly buy budget remains 2 / 3 (one midday opportunity if a candidate reappears).**
+
+### Buy-Rule Compliance
+
+| Rule | Current | OK? |
+|---|---|:--:|
+| Max 6 open positions | 3 | ✅ |
+| Max 3 trades this week | 1 used | ✅ |
+| Max 20% equity / position | NVDA 8.16% largest | ✅ |
+| Catalyst in RESEARCH-LOG | MU present but gated out on sizing | n/a |
+
+### Risk Status (open-of-session)
+
+- **Total exposure 23.7%** — well within 80% cap. Cash 76.3% — well above 20% floor.
+- **Daily loss limit 3%** — not touched (session +0.23% so far vs prior close).
+- **Hard-stop cushions (live):**
+  - KLAC cut $183.02 → current $196.81 → cushion **+7.53%**
+  - NVDA cut $208.87 → current $231.69 → cushion **+10.93%**
+  - TSLA cut $351.33 → current $387.37 → cushion **+10.26%** (recovered)
+- Trailing GTCs (15%) active on all three. NVDA GTC HWM at $243.37; KLAC and TSLA GTCs confirmed on-file per prior-session order list.
+
+### Flags for Midday Scan
+
+- **No new buys unless** a candidate reappears from the dynamic screener AND passes all live gates (including ≥10-share clip at the 8% cap).
+- **MU recheck trigger**: ask ≤ ~$772 would make the 8% cap support ≥10 shares. Unlikely on a day with buyback newsflow, but worth a glance.
+- **Sector watch**: KLAC + NVDA already carry ~16.1% of equity in semis. If memory sector weakens into ASML print (Wed 10/14), consider prepping a partial-trim scenario for EOD.
+- **TSLA**: now +10.3% cushion — out of the sub-+7% danger zone that flagged at Thu EOD. Still inside 5-day min-hold (day 3/5); only hard −7% or trailing GTC can close pre-day-5.
