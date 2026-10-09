@@ -204,6 +204,9 @@ def parse_performance() -> dict:
             idx += 1
             while idx < len(lines_list):
                 row = lines_list[idx]
+                if row.strip() == "":
+                    idx += 1
+                    continue
                 if not row.strip().startswith("|"):
                     break
                 m = re.match(r"\|\s*(.+?)\s*\|\s*(.+?)\s*\|", row)
@@ -496,9 +499,33 @@ def trades_page():
     account = get_account()
     clock   = get_clock()
     trades  = perf["trades"]
+
+    # Match entries to exits by symbol (in order) so we can mark entries as closed
+    from collections import defaultdict
+    exit_counts: dict = defaultdict(int)
+    entry_counts: dict = defaultdict(int)
     for t in trades:
+        if t["type"] == "EXIT":
+            exit_counts[t["symbol"]] += 1
+    # Mark entries: if there's a matching exit for this symbol, mark as closed
+    # Process trades in chronological order; first N entries are "closed" if N exits exist
+    running_exits: dict = defaultdict(int)
+    running_entries: dict = defaultdict(int)
+    for t in trades:
+        sym = t["symbol"]
+        if t["type"] == "EXIT":
+            running_exits[sym] += 1
+        else:
+            running_entries[sym] += 1
+            # This entry is "closed" if there are enough exits for this symbol
+            t["_closed"] = running_entries[sym] <= exit_counts[sym]
+
+    # Show all exits + only OPEN entries (not yet matched to an exit)
+    display_trades = [t for t in trades if t["type"] == "EXIT" or not t.get("_closed", False)]
+
+    for t in display_trades:
         t["pl_class"] = _pnl_class(t["pnl"]) if t["pnl"] is not None else "neutral"
-    exit_trades = [t for t in trades if t["type"] == "EXIT" and t["pnl"] is not None]
+    exit_trades = [t for t in display_trades if t["type"] == "EXIT" and t["pnl"] is not None]
     total_pnl  = sum(t["pnl"] for t in exit_trades)
     win_count  = sum(1 for t in exit_trades if t["pnl"] > 0)
     loss_count = sum(1 for t in exit_trades if t["pnl"] < 0)
@@ -507,7 +534,7 @@ def trades_page():
     avg_loss   = (sum(t["pnl"] for t in exit_trades if t["pnl"] < 0) / loss_count) if loss_count else None
     return render_template(
         "trades.html",
-        trades=list(reversed(trades)),
+        trades=list(reversed(display_trades)),
         account=account,
         clock=clock,
         stats=perf["stats"],
