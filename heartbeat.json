@@ -1,12 +1,13 @@
 {
-  "last_routine": "Market Open Execution",
-  "timestamp": "2026-10-09T13:49:49+00:00",
-  "status": "success",
-  "notes": "Market-open 2026-10-09: Portfolio $96,550.51, cash 76.3%, 3 positions all green intraday (KLAC flat +0.01%, NVDA +3.16%, TSLA +2.54%). TSLA cushion rebuilt to +10.3% above hard stop (was +6.67% at Thu EOD). MU candidate failed Gate #6 (≥10-share clip): 8% cap $7,724 only funds 7 shares at $1,042.74 limit. 0 trades executed. Weekly buy budget still 2/3 remaining.",
-  "decision": "NO_TRADE_MU + HOLD",
-  "candidate": "MU",
+  "last_routine": "End of Day",
+  "timestamp": "2026-10-09T20:15:00+00:00",
+  "status": "failure",
+  "notes": "EOD 2026-10-09: Alpaca API returned 401 Unauthorized on /v2/account and /v2/positions. Env vars present (APCA_API_KEY_ID len=26, APCA_API_SECRET_KEY len=44, APCA_BASE_URL=https://paper-api.alpaca.markets) but credentials rejected — likely rotated/expired or paper account disconnected. Could not compute day P&L or append EOD snapshot to performance.md. Last known state from prior Market Open run: portfolio $96,550.51, cash 76.3%, 3 positions (NVDA, KLAC, TSLA). User notified via push.",
+  "decision": "BLOCKED_AUTH_FAILURE",
+  "candidate": null,
   "trades_executed": 0,
-  "cash_pct": 76.3,
-  "positions": 3,
-  "weekly_buys_remaining": 2
+  "cash_pct": null,
+  "positions": null,
+  "weekly_buys_remaining": null,
+  "error": "401 Unauthorized from Alpaca paper API"
 }
