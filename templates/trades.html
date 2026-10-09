@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Trade History{% endblock %}
 {% block page_title %}Trade History{% endblock %}
-{% block page_subtitle %}All closed trades parsed from memory/performance.md{% endblock %}
+{% block page_subtitle %}All trades parsed from memory/performance.md{% endblock %}
 
 {% block content %}
 
@@ -10,10 +10,14 @@
   <div class="kpi-card">
     <div class="kpi-label">Total Trades</div>
     <div class="kpi-value">{{ trades | length }}</div>
-    <div class="kpi-sub">Closed positions</div>
+    <div class="kpi-sub">
+      {% set entry_count = trades | selectattr('type', 'equalto', 'ENTRY') | list | length %}
+      {% set exit_count  = trades | selectattr('type', 'equalto', 'EXIT')  | list | length %}
+      {{ entry_count }} entries · {{ exit_count }} exits
+    </div>
   </div>
   <div class="kpi-card">
-    <div class="kpi-label">Win Rate</div>
+    <div class="kpi-label">Win Rate (Exits)</div>
     <div class="kpi-value {{ 'positive' if win_rate >= 45 else 'negative' }}">
       {{ win_rate }}%
     </div>
@@ -24,13 +28,14 @@
     <div class="kpi-value {{ total_pnl | pl_class }}">
       {{ total_pnl | money }}
     </div>
-    <div class="kpi-sub">All closed trades</div>
+    <div class="kpi-sub">Closed positions only</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Avg Win / Avg Loss</div>
     <div class="kpi-value">
-      {% set wins  = trades | selectattr('pnl', 'gt', 0) | list %}
-      {% set losses = trades | selectattr('pnl', 'lt', 0) | list %}
+      {% set exits  = trades | selectattr('type', 'equalto', 'EXIT') | list %}
+      {% set wins   = exits | selectattr('pnl', 'gt', 0) | list %}
+      {% set losses = exits | selectattr('pnl', 'lt', 0) | list %}
       {% if wins %}
         <span class="positive">${{ "{:,.0f}".format(wins | sum(attribute='pnl') / wins | length) }}</span>
       {% else %}
@@ -43,7 +48,7 @@
         <span>—</span>
       {% endif %}
     </div>
-    <div class="kpi-sub">Per trade average</div>
+    <div class="kpi-sub">Per closed trade</div>
   </div>
 </div>
 
@@ -52,36 +57,70 @@
 <!-- ── Trades table ───────────────────────────────────────────── -->
 <div class="card">
   <div class="card-header">
-    <span class="card-title">Closed Trades</span>
-    <span class="card-badge">Newest first</span>
+    <span class="card-title">All Trades</span>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span class="badge-entry">ENTRY</span>
+      <span class="badge-exit">EXIT</span>
+      <span class="card-badge">Newest first</span>
+    </div>
   </div>
   <div class="table-wrap">
     <table class="data-table">
       <thead>
         <tr>
           <th>Date</th>
+          <th>Type</th>
           <th>Symbol</th>
           <th>Side</th>
           <th class="num">Qty</th>
-          <th class="num">Entry</th>
-          <th class="num">Exit</th>
+          <th class="num">Price</th>
+          <th class="num">Value</th>
           <th class="num">P&amp;L</th>
           <th class="num">Hold Days</th>
-          <th>Exit Reason</th>
+          <th>Notes</th>
         </tr>
       </thead>
       <tbody>
         {% for t in trades %}
-        <tr class="trade-row {{ t.pl_class }}-row">
+        <tr class="trade-row {% if t.type == 'EXIT' %}{{ t.pl_class }}-row{% else %}entry-row{% endif %}">
           <td>{{ t.date }}</td>
+          <td>
+            {% if t.type == 'ENTRY' %}
+              <span class="badge-entry">ENTRY</span>
+            {% else %}
+              <span class="badge-exit">EXIT</span>
+            {% endif %}
+          </td>
           <td><span class="symbol-badge">{{ t.symbol }}</span></td>
           <td><span class="side-badge side-{{ t.side | lower }}">{{ t.side | upper }}</span></td>
           <td class="num">{{ t.qty }}</td>
-          <td class="num">${{ "{:,.2f}".format(t.entry) }}</td>
-          <td class="num">${{ "{:,.2f}".format(t.exit) }}</td>
-          <td class="num {{ t.pl_class }} fw-bold">{{ t.pnl | money }}</td>
-          <td class="num">{{ t.hold_days }}d</td>
-          <td class="exit-reason">{{ t.exit_reason or '—' }}</td>
+          <td class="num">${{ "{:,.2f}".format(t.price) }}</td>
+          <td class="num">
+            {% if t.type == 'ENTRY' and t.value %}
+              ${{ "{:,.2f}".format(t.value) }}
+            {% elif t.type == 'EXIT' %}
+              —
+            {% else %}
+              —
+            {% endif %}
+          </td>
+          <td class="num {% if t.pnl is not none %}{{ t.pl_class }} fw-bold{% endif %}">
+            {% if t.pnl is not none %}
+              {{ t.pnl | money }}
+            {% else %}
+              <span class="muted">open</span>
+            {% endif %}
+          </td>
+          <td class="num">
+            {% if t.hold_days %}{{ t.hold_days }}d{% else %}—{% endif %}
+          </td>
+          <td class="exit-reason">
+            {% if t.type == 'EXIT' %}
+              {{ t.exit_reason or '—' }}
+            {% else %}
+              <span class="muted">entry @ ${{ "{:,.2f}".format(t.entry) }}</span>
+            {% endif %}
+          </td>
         </tr>
         {% endfor %}
       </tbody>
@@ -89,23 +128,26 @@
   </div>
 </div>
 
-<!-- ── Win/Loss distribution mini-chart ──────────────────────── -->
+<!-- ── P&L chart (exits only) ────────────────────────────────── -->
+{% set exits = trades | selectattr('type', 'equalto', 'EXIT') | list %}
+{% if exits %}
 <div class="card">
   <div class="card-header">
-    <span class="card-title">P&amp;L Distribution</span>
+    <span class="card-title">Realized P&amp;L — Closed Trades</span>
   </div>
   <div class="chart-wrap chart-wrap-sm">
     <canvas id="dist-chart"></canvas>
   </div>
 </div>
+{% endif %}
 
 {% else %}
 <div class="card empty-card">
   <div class="empty-icon">⇅</div>
-  <div class="empty-title">No closed trades yet</div>
+  <div class="empty-title">No trades yet</div>
   <div class="empty-sub">
-    Trade history appears here after positions are closed.<br>
-    The bot logs every exit to memory/performance.md during the end-of-day routine.
+    Trade history appears here after the bot places orders.<br>
+    Entries are logged immediately; exits are logged when positions are closed.
   </div>
 </div>
 {% endif %}
@@ -113,13 +155,13 @@
 {% endblock %}
 
 {% block scripts %}
-{% if trades %}
+{% set exits = trades | selectattr('type', 'equalto', 'EXIT') | list %}
+{% if exits %}
 <script>
 (function () {
-  // P&L distribution bar chart
-  const pnls   = {{ trades | map(attribute='pnl') | list | tojson }};
-  const labels = {{ trades | map(attribute='date') | list | tojson }};
-  const colors = pnls.map(v => v >= 0 ? "rgba(63,185,80,0.75)" : "rgba(248,81,73,0.75)");
+  const pnls   = {{ exits | map(attribute='pnl') | list | tojson }};
+  const labels = {{ exits | map(attribute='date') | list | tojson }};
+  const colors  = pnls.map(v => v >= 0 ? "rgba(63,185,80,0.75)"  : "rgba(248,81,73,0.75)");
   const borders = pnls.map(v => v >= 0 ? "#3fb950" : "#f85149");
 
   const ctx = document.getElementById("dist-chart");
@@ -130,7 +172,7 @@
     data: {
       labels: labels,
       datasets: [{
-        label: "P&L per Trade",
+        label: "P&L per Exit",
         data: pnls,
         backgroundColor: colors,
         borderColor: borders,
@@ -170,5 +212,32 @@
 
 window.refreshData = function () { location.reload(); };
 </script>
+
+<style>
+.badge-entry {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  background: rgba(56,139,253,.15);
+  color: #58a6ff;
+  border: 1px solid rgba(56,139,253,.3);
+}
+.badge-exit {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  background: rgba(210,153,34,.15);
+  color: #d2a520;
+  border: 1px solid rgba(210,153,34,.3);
+}
+.entry-row td { opacity: .85; }
+.muted { color: var(--text-muted, #8b949e); font-size: .85em; }
+</style>
 {% endif %}
 {% endblock %}

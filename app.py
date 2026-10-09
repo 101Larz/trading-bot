@@ -189,17 +189,17 @@ def parse_performance() -> dict:
                 except Exception:
                     pass
 
-    # ── Trade Exit blocks (### Trade Exit — YYYY-MM-DD ... heading + vertical kv table)
-    # The bot logs exits as structured blocks; the ## Closed Trade Log table is never
-    # populated by the EOD routine, so we parse the blocks directly instead.
+    # ── Trade Entry + Exit blocks ─────────────────────────────────────────────
     trades = []
     lines_list = text.splitlines()
     idx = 0
     while idx < len(lines_list):
         line = lines_list[idx]
-        if line.startswith("### Trade Exit"):
+
+        if line.startswith("### Trade Entry") or line.startswith("### Trade Exit"):
+            is_exit = line.startswith("### Trade Exit")
             date_m = re.search(r"(\d{4}-\d{2}-\d{2})", line)
-            exit_date = date_m.group(1) if date_m else ""
+            trade_date = date_m.group(1) if date_m else ""
             kv: dict[str, str] = {}
             idx += 1
             while idx < len(lines_list):
@@ -210,28 +210,51 @@ def parse_performance() -> dict:
                 if m and m.group(1).strip() not in ("Field", "---", ""):
                     kv[m.group(1).strip()] = m.group(2).strip()
                 idx += 1
+
             if kv.get("Symbol"):
-                pnl_raw = kv.get("Realized P&L", "0")
-                pnl_m = re.search(r"([-+]?)\s*\$?([\d,]+\.?\d*)", pnl_raw)
-                if pnl_m:
-                    sign = -1 if pnl_m.group(1) == "-" else 1
-                    pnl_val = sign * float(pnl_m.group(2).replace(",", ""))
+                if is_exit:
+                    pnl_raw = kv.get("Realized P&L", "0")
+                    pnl_m = re.search(r"([-+]?)\s*\$?([\d,]+\.?\d*)", pnl_raw)
+                    if pnl_m:
+                        sign = -1 if pnl_m.group(1) == "-" else 1
+                        pnl_val = sign * float(pnl_m.group(2).replace(",", ""))
+                    else:
+                        pnl_val = 0.0
+                    hold_raw = kv.get("Hold Days", "0")
+                    hold_m = re.search(r"(\d+)", hold_raw)
+                    hold_days = int(hold_m.group(1)) if hold_m else 0
+                    trades.append({
+                        "date":        trade_date,
+                        "symbol":      kv.get("Symbol", ""),
+                        "type":        "EXIT",
+                        "side":        kv.get("Side", "SELL"),
+                        "qty":         _to_float(kv.get("Shares", "0")),
+                        "price":       _to_float(kv.get("Avg Exit Price", "0")),
+                        "value":       0.0,
+                        "pnl":         pnl_val,
+                        "hold_days":   hold_days,
+                        "exit_reason": kv.get("Exit Reason", ""),
+                        # legacy compat
+                        "entry": _to_float(kv.get("Avg Entry Price", "0")),
+                        "exit":  _to_float(kv.get("Avg Exit Price", "0")),
+                    })
                 else:
-                    pnl_val = 0.0
-                hold_raw = kv.get("Hold Days", "0")
-                hold_m = re.search(r"(\d+)", hold_raw)
-                hold_days = int(hold_m.group(1)) if hold_m else 0
-                trades.append({
-                    "date":        exit_date,
-                    "symbol":      kv.get("Symbol", ""),
-                    "side":        "SELL",
-                    "qty":         _to_float(kv.get("Shares", "0")),
-                    "entry":       _to_float(kv.get("Avg Entry Price", "0")),
-                    "exit":        _to_float(kv.get("Avg Exit Price", "0")),
-                    "pnl":         pnl_val,
-                    "hold_days":   hold_days,
-                    "exit_reason": kv.get("Exit Reason", ""),
-                })
+                    price = _to_float(kv.get("Est. Price", "0"))
+                    value = _to_float(kv.get("Est. Value", "0"))
+                    trades.append({
+                        "date":        trade_date,
+                        "symbol":      kv.get("Symbol", ""),
+                        "type":        "ENTRY",
+                        "side":        kv.get("Side", "BUY"),
+                        "qty":         _to_float(kv.get("Shares", "0")),
+                        "price":       price,
+                        "value":       value,
+                        "pnl":         None,
+                        "hold_days":   0,
+                        "exit_reason": "",
+                        "entry": price,
+                        "exit":  0.0,
+                    })
         else:
             idx += 1
 
@@ -474,11 +497,12 @@ def trades_page():
     clock   = get_clock()
     trades  = perf["trades"]
     for t in trades:
-        t["pl_class"] = _pnl_class(t["pnl"])
-    total_pnl  = sum(t["pnl"] for t in trades)
-    win_count  = sum(1 for t in trades if t["pnl"] > 0)
-    loss_count = sum(1 for t in trades if t["pnl"] < 0)
-    win_rate   = round(win_count / len(trades) * 100, 1) if trades else 0
+        t["pl_class"] = _pnl_class(t["pnl"]) if t["pnl"] is not None else "neutral"
+    exit_trades = [t for t in trades if t["type"] == "EXIT"]
+    total_pnl  = sum(t["pnl"] for t in exit_trades)
+    win_count  = sum(1 for t in exit_trades if t["pnl"] > 0)
+    loss_count = sum(1 for t in exit_trades if t["pnl"] < 0)
+    win_rate   = round(win_count / len(exit_trades) * 100, 1) if exit_trades else 0
     return render_template(
         "trades.html",
         trades=list(reversed(trades)),
