@@ -1,10 +1,10 @@
 {
-  "last_routine": "Market Open Execution",
-  "timestamp": "2026-10-12T13:47:54+00:00",
+  "last_routine": "Midday Scan",
+  "timestamp": "2026-10-12T16:30:00+00:00",
   "status": "success_no_trade",
-  "notes": "Market-open 2026-10-12: Alpaca paper API still 401 on /v2/account and /v2/positions — credentials unchanged since 2026-10-09 EOD. Pre-market decision was HOLD (top screener candidate ASML blocked by 5-td earnings exclusion; ASML reports Wed 10/14 AM). No new entries, no adds, no exits scheduled for today. Positions NVDA/KLAC/TSLA unchanged. Watch items: TSLA enters 5-td earnings window Wed 10/14 close; ASML earnings + Sep CPI Wed 10/14. Credential rotation required before any further trading-capable session.",
-  "decision": "NO_TRADE",
-  "candidate": "ASML (blocked)",
+  "notes": "Midday 2026-10-12: Alpaca paper /v2/account + /v2/positions still 401 (3rd routine today blocked). Cannot read live P&L or submit stops; midday loss-cut (-7%) and winner-tighten (+15/+20%) rules not executable. Last-known marks (pre-market): KLAC +2.37%, NVDA +4.13%, TSLA +0.42% — none near any midday threshold. No action taken. Credential rotation (APCA_API_KEY_ID / APCA_API_SECRET_KEY) still required before next trading-capable session. TSLA earnings-exit calendar: Wed 10/14 close.",
+  "decision": "NO_ACTION",
+  "candidate": null,
   "trades_executed": 0,
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
@@ -15,6 +15,6 @@
     "Wed 2026-10-14 close: TSLA enters 5-td earnings window (TSLA 10/21) — exit decision",
     "Wed 2026-10-14 AM: ASML earnings — semi-sector binary (NVDA/KLAC sympathy risk)",
     "Wed 2026-10-14: Sep CPI print (consensus ~3.7% y/y)",
-    "Resolve Alpaca credential 401"
+    "Resolve Alpaca credential 401 (blocking 3 consecutive routines today)"
   ]
 }
