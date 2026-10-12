@@ -1,13 +1,17 @@
 {
-  "last_routine": "End of Day",
-  "timestamp": "2026-10-09T20:15:00+00:00",
-  "status": "failure",
-  "notes": "EOD 2026-10-09: Alpaca API returned 401 Unauthorized on /v2/account and /v2/positions. Env vars present (APCA_API_KEY_ID len=26, APCA_API_SECRET_KEY len=44, APCA_BASE_URL=https://paper-api.alpaca.markets) but credentials rejected — likely rotated/expired or paper account disconnected. Could not compute day P&L or append EOD snapshot to performance.md. Last known state from prior Market Open run: portfolio $96,550.51, cash 76.3%, 3 positions (NVDA, KLAC, TSLA). User notified via push.",
-  "decision": "BLOCKED_AUTH_FAILURE",
-  "candidate": null,
+  "last_routine": "Nightly Screener",
+  "timestamp": "2026-10-12T00:10:00+00:00",
+  "status": "success",
+  "notes": "Nightly screener 2026-10-12: 95 tickers screened via yfinance fallback (Alpaca data API still returning 401 — same credential issue flagged in 2026-10-09 EOD). Patched scripts/market_data.py so get_bars catches Alpaca exceptions and falls through to yfinance/yahoo-direct instead of aborting the symbol. Phase B survivors=4, Phase C=2, Phase D=2. Top candidates: ASML (Sharpe +0.909, RSI 59.4, mom +4.8%) and TSLA (Sharpe +0.396, RSI 55.0, mom +4.7%). MMC skipped (yfinance returns 0 bars — same as prior run). Pre-market routine should re-verify Alpaca credentials before placing any orders.",
+  "decision": "SCREENER_COMPLETE",
+  "candidate": "ASML",
   "trades_executed": 0,
   "cash_pct": null,
   "positions": null,
   "weekly_buys_remaining": null,
-  "error": "401 Unauthorized from Alpaca paper API"
+  "error": null,
+  "screener_candidates": 2,
+  "screener_run_date": "2026-10-12",
+  "screener_top": ["ASML", "TSLA"],
+  "alpaca_auth_still_failing": true
 }

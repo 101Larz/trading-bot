@@ -166,7 +166,14 @@ def get_bars(symbol: str, limit: int = 60) -> tuple[list[dict], str]:
     3. Yahoo Finance v8 chart API (direct requests, browser headers) — used when
        yfinance itself is blocked at the TLS/network layer in cloud environments
     """
-    bars = get_bars_alpaca(symbol, limit)
+    try:
+        bars = get_bars_alpaca(symbol, limit)
+    except Exception as exc:
+        print(
+            f"[WARN market_data] {symbol}: alpaca failed ({exc}) — falling back to yfinance",
+            file=sys.stderr,
+        )
+        bars = []
     if len(bars) >= 20:
         return bars, "alpaca"
 
