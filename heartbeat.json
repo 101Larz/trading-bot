@@ -1,17 +1,20 @@
 {
-  "last_routine": "Nightly Screener",
-  "timestamp": "2026-10-12T00:10:00+00:00",
-  "status": "success",
-  "notes": "Nightly screener 2026-10-12: 95 tickers screened via yfinance fallback (Alpaca data API still returning 401 — same credential issue flagged in 2026-10-09 EOD). Patched scripts/market_data.py so get_bars catches Alpaca exceptions and falls through to yfinance/yahoo-direct instead of aborting the symbol. Phase B survivors=4, Phase C=2, Phase D=2. Top candidates: ASML (Sharpe +0.909, RSI 59.4, mom +4.8%) and TSLA (Sharpe +0.396, RSI 55.0, mom +4.7%). MMC skipped (yfinance returns 0 bars — same as prior run). Pre-market routine should re-verify Alpaca credentials before placing any orders.",
-  "decision": "SCREENER_COMPLETE",
+  "last_routine": "Pre-Market Research",
+  "timestamp": "2026-10-12T07:30:00+00:00",
+  "status": "success_no_trade",
+  "notes": "Pre-market 2026-10-12: Alpaca paper API still returning 401 on /v2/account and /v2/positions (persistent credential issue since 2026-10-09 EOD). Decision HOLD — no new entries. Top screener candidate ASML (Sharpe +0.909) blocked by 5-td earnings exclusion (ASML reports Wed 10/14 AM). TSLA (Rank 2) already held; crosses into 5-td earnings window Wed 10/14 close — flagged for exit decision then. NVDA/KLAC held; both clear of earnings window (KLAC 10/29 = 13 td out). Market open today (Columbus Day — equities open, bonds closed). Big week: JPM/JNJ/UNH/WFC/GS Tue, ASML/MS Wed, Sep CPI Wed. Alpaca credential rotation needed before next trading-capable session.",
+  "decision": "HOLD",
   "candidate": "ASML",
   "trades_executed": 0,
-  "cash_pct": null,
-  "positions": null,
-  "weekly_buys_remaining": null,
+  "cash_pct": 76.2,
+  "positions": ["KLAC", "NVDA", "TSLA"],
+  "weekly_buys_remaining": 2,
   "error": null,
-  "screener_candidates": 2,
-  "screener_run_date": "2026-10-12",
-  "screener_top": ["ASML", "TSLA"],
-  "alpaca_auth_still_failing": true
+  "alpaca_auth_still_failing": true,
+  "watch_items": [
+    "Wed 2026-10-14 close: TSLA enters 5-td earnings window (TSLA 10/21) — exit decision",
+    "Wed 2026-10-14 AM: ASML earnings — semi-sector binary (NVDA/KLAC sympathy risk)",
+    "Wed 2026-10-14: Sep CPI print (consensus ~3.7% y/y)",
+    "Resolve Alpaca credential 401"
+  ]
 }
