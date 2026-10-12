@@ -366,6 +366,39 @@
 
 ---
 
+## EOD Snapshots
+
+### 2026-10-12 (Monday) — EOD **BLOCKED (Alpaca 401)**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (every routine blocked on credentials) |
+| Trades this week | 0 (Monday only) |
+| Routines blocked today | 4 (pre-market, market-open, midday, EOD) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark referenced in 10-09 midday log) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 | +0.42% | $347.56 |
+
+**Blocker:** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders.
+
+**Carry-forward to Tuesday 2026-10-13:**
+- Credential rotation remains the #1 blocker.
+- No new buy candidate queued (ASML gated out by Wed earnings; TSLA already held at cap).
+- TSLA earnings-exit calendar: Wed 10/14 close → 5-td window opens.
+- Wed 10/14: ASML earnings (AM) + Sep CPI print — semi-sector binary for NVDA/KLAC.
+
+---
+
 ## Lessons Learned
 
 - **Cutting losses quickly is critical** — most losses were held past initial stop signals
@@ -373,3 +406,4 @@
 - **Win rate of 10% is unsustainable** — need stronger entry criteria and higher confidence threshold
 - **Stop-loss discipline must be enforced** — bot should auto-exit at 8% loss without exception
 - **Position sizing consistent** — ~$7K per position is appropriate for portfolio size
+- **Operational: credential outage must be surfaced immediately** — four consecutive routines blocked without rotation is a monitoring/alerting gap in itself
