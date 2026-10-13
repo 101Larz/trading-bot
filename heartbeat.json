@@ -1,26 +1,26 @@
 {
-  "last_routine": "Market Open Execution",
-  "timestamp": "2026-10-13T13:47:29+00:00",
+  "last_routine": "Midday Scan",
+  "timestamp": "2026-10-13T16:30:00+00:00",
   "status": "blocked",
   "screener_candidates": 3,
   "screener_run_date": "2026-10-13",
   "screener_top": ["GOOGL", "ASML", "TSLA"],
-  "notes": "Market-open 2026-10-13: NO_TRADE. Alpaca 401 persists (6th consecutive routine blocked — pre-market/market-open/midday/EOD on 10/12 + pre-market/market-open on 10/13). No approved buy existed from pre-market (GOOGL mixed MA, ASML earnings tomorrow, TSLA at cap). Hard decision date on TSLA exit = Wed 10/14 close (earnings 5-td window) — if credentials still blocked by then, we are mechanically trapped through earnings.",
-  "decision": "NO_TRADE",
+  "notes": "Midday 2026-10-13: NO_ACTION. Alpaca 401 persists (7th consecutive routine blocked). Cannot read live positions, so −7% cut and +15%/+20% stop-tighten rules unevaluable. Last-known marks unchanged (KLAC +2.37%, NVDA +4.13%, TSLA +0.42%) — none at midday-trigger levels on stale data, but intraday moves not observable. TSLA earnings 5-td exclusion zone opens Wed 10/14 close — mechanical trap tightens by one day.",
+  "decision": "NO_ACTION",
   "candidate": null,
   "trades_executed": 0,
   "trades_this_week": 0,
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 3,
-  "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions (6th consecutive routine)",
+  "error": "Alpaca 401 Unauthorized on /v2/positions (7th consecutive routine)",
   "alpaca_auth_still_failing": true,
   "watch_items": [
-    "Rotate Alpaca paper credentials — now 6 consecutive routines blocked",
-    "Wed 2026-10-14 close: hard TSLA exit decision (earnings 10/21 enters 5-td zone)",
+    "ROTATE ALPACA PAPER CREDENTIALS — 7 consecutive routines blocked across 2 days",
+    "Wed 2026-10-14 close: hard TSLA exit decision (earnings 10/21 enters 5-td zone) — becomes forced hold through earnings if credentials still down",
     "Wed 2026-10-14 AM: ASML earnings — semi-sector binary (~±5.6% implied)",
     "Wed 2026-10-14: Sep CPI print (consensus ~3.7% y/y)",
     "GOOGL mixed MA alignment — wait for MA20 to cross above MA50 before entry",
-    "Tue 2026-10-13 AM: JPM/GS/WFC/C/JNJ/UNH earnings — tape read for financials/healthcare"
+    "7 straight blocked routines with no auto-escalation is a monitoring gap — log for weekly review"
   ]
 }
