@@ -1,26 +1,26 @@
 {
-  "last_routine": "Nightly Screener",
-  "timestamp": "2026-10-13T00:11:00+00:00",
-  "status": "success",
+  "last_routine": "Pre-Market Research",
+  "timestamp": "2026-10-13T07:16:00+00:00",
+  "status": "blocked",
   "screener_candidates": 3,
   "screener_run_date": "2026-10-13",
   "screener_top": ["GOOGL", "ASML", "TSLA"],
-  "notes": "Nightly screener 2026-10-13 02:09 CEST — 95 tickers analysed via self-contained scripts/markov_screener_full.py (external markov skill not installed in container). Phase B (Markov): 8 pass. Phase C (Momentum): 3 pass. Phase D (Tech): 3 pass. Top by Sharpe: GOOGL (+1.875, mixed MA), ASML (+1.760, bullish), TSLA (+1.403, bullish). Pre-market routine must still check (a) earnings calendar — ASML earnings Wed 10/14 AM, TSLA earnings 10/21 (enters 5-td exit window Wed 10/14 close), (b) Alpaca credentials — still 401 blocked since 2026-10-09 EOD, requires owner rotation before any trade.",
-  "decision": "SCREENER_ONLY",
+  "notes": "Pre-market 2026-10-13: HOLD/NO_TRADE. Alpaca 401 still active (5th consecutive routine blocked). All 3 screener candidates fail a gate: GOOGL mixed MA (MA20<MA50), ASML earnings tomorrow (Wed AM), TSLA already held near cap. Wed 10/14 close = hard TSLA exit decision (earnings 5-td window) — if 401 persists through Wed, we are mechanically trapped into TSLA earnings. Credential rotation remains #1 priority.",
+  "decision": "HOLD",
   "candidate": null,
   "trades_executed": 0,
   "trades_this_week": 0,
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 2,
-  "error": null,
+  "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions (5th consecutive routine)",
   "alpaca_auth_still_failing": true,
   "watch_items": [
-    "Rotate Alpaca paper credentials before 2026-10-13 09:00 ET pre-market (5 routines now blocked)",
-    "Wed 2026-10-14 close: TSLA enters 5-td earnings window (TSLA 10/21) — exit decision",
-    "Wed 2026-10-14 AM: ASML earnings — semi-sector binary; ASML is a top-3 screener candidate but DO NOT ENTER until after earnings",
+    "Rotate Alpaca paper credentials — now 5 consecutive routines blocked",
+    "Wed 2026-10-14 close: hard TSLA exit decision (earnings 10/21 enters 5-td zone)",
+    "Wed 2026-10-14 AM: ASML earnings — semi-sector binary (±5.6% implied)",
     "Wed 2026-10-14: Sep CPI print (consensus ~3.7% y/y)",
-    "GOOGL is top candidate but MA alignment is 'mixed' (price > MA20 but MA20 < MA50) — pre-market must re-verify technical gate",
-    "MMC data fetch returned 0 bars — Yahoo symbol/listing issue to investigate"
+    "GOOGL mixed MA alignment — wait for MA20 to cross above MA50 before entry",
+    "Tue 2026-10-13 AM: JPM/GS/WFC/C/JNJ/UNH earnings — tape read for financials/healthcare"
   ]
 }
