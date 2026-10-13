@@ -1,19 +1,20 @@
 # Nightly Screener Results
 
-**Run:** 2026-10-12 02:09 CEST
+**Run:** 2026-10-13 02:09 CEST
 **Universe:** 95 tickers
-**Phase B survivors (Markov):** 4
-**Phase C survivors (Momentum):** 2
-**Phase D survivors (Technical):** 2
+**Phase B survivors (Markov):** 8
+**Phase C survivors (Momentum):** 3
+**Phase D survivors (Technical):** 3
 
 ---
 
-## Top 2 Candidates (ranked by Sharpe)
+## Top 3 Candidates (ranked by Sharpe)
 
 | Rank | Ticker | Regime | Markov Signal | Stat Bull% | Sharpe | RSI | MA Alignment | Momentum 1M |
 |------|--------|--------|---------------|------------|--------|-----|--------------|-------------|
-| 1 | ASML | Bull | +0.005 | 42.9% | +0.909 | 59.4 | bullish | +4.8% |
-| 2 | TSLA | Bull | +0.018 | 43.0% | +0.396 | 55.0 | bullish | +4.7% |
+| 1 | GOOGL | Bull | +0.091 | 42.5% | +1.875 | 46.9 | mixed | +3.9% |
+| 2 | ASML | Bull | +0.003 | 44.6% | +1.760 | 59.4 | bullish | +4.8% |
+| 3 | TSLA | Bull | +0.012 | 42.3% | +1.403 | 55.0 | bullish | +4.7% |
 
 ---
 
@@ -25,11 +26,11 @@ _None._
 
 ## Phase B Failures (Markov filter — not traded today)
 
-AAPL, MSFT, NVDA, GOOGL, AMZN, META, AMD, AVGO, CRM, ADBE, ORCL, INTU, IBM, ACN, NFLX, DIS, INTC, PYPL, AMAT, LRCX, KLAC, MRVL, ARM, MU, SNDK, QCOM, JPM, V, MA, GS, BAC, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, AIG, MET, BRK-B, UNH, LLY, ABBV, TMO, AMGN, JNJ, MRK, PFE, GILD, REGN, ABT, DHR, ISRG, SYK, ELV, ZTS, WMT, PG, COST, KO, PEP, MDLZ, PM, HD, MCD, NKE, SBUX, TXN, XOM, CVX, HON, CAT, GE, UPS, BA, RTX, LIN, NEE, MMM, ADP, QQQ, IWM, EEM, VGK, GLD, XLE, XLF, XLV
+AAPL, MSFT, NVDA, AMZN, META, AMD, AVGO, CRM, ADBE, ORCL, INTU, IBM, ACN, NFLX, DIS, INTC, PYPL, AMAT, LRCX, KLAC, MRVL, ARM, MU, SNDK, QCOM, JPM, V, MA, BAC, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, AIG, MET, BRK-B, UNH, LLY, ABBV, TMO, AMGN, JNJ, MRK, PFE, GILD, REGN, ABT, DHR, ISRG, SYK, ELV, ZTS, WMT, PG, COST, KO, PEP, MDLZ, PM, HD, MCD, NKE, SBUX, TXN, XOM, CVX, HON, UPS, BA, RTX, LIN, NEE, MMM, ADP, QQQ, IWM, EEM, VGK, GLD, XLE, XLF, XLV
 
 ## Phase C Failures (Momentum filter)
 
-WDC, STX
+WDC, STX, GS, CAT, GE
 
 ## Data Errors (skipped)
 

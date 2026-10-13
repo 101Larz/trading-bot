@@ -1,21 +1,26 @@
 {
-  "last_routine": "End of Day",
-  "timestamp": "2026-10-12T20:15:00+00:00",
-  "status": "blocked_alpaca_401",
-  "notes": "EOD 2026-10-12: Alpaca paper /v2/account + /v2/positions still 401 (4th consecutive routine blocked today — pre-market, market-open, midday, EOD). Cannot read live portfolio value, cash, day P&L, or submit orders. Last confirmed equity $96,384.02 (2026-10-08 EOD). Credential rotation (APCA_API_KEY_ID / APCA_API_SECRET_KEY) by account owner is required before Tue pre-market. TSLA earnings-exit window opens Wed 10/14 close.",
-  "decision": "NO_ACTION",
+  "last_routine": "Nightly Screener",
+  "timestamp": "2026-10-13T00:11:00+00:00",
+  "status": "success",
+  "screener_candidates": 3,
+  "screener_run_date": "2026-10-13",
+  "screener_top": ["GOOGL", "ASML", "TSLA"],
+  "notes": "Nightly screener 2026-10-13 02:09 CEST — 95 tickers analysed via self-contained scripts/markov_screener_full.py (external markov skill not installed in container). Phase B (Markov): 8 pass. Phase C (Momentum): 3 pass. Phase D (Tech): 3 pass. Top by Sharpe: GOOGL (+1.875, mixed MA), ASML (+1.760, bullish), TSLA (+1.403, bullish). Pre-market routine must still check (a) earnings calendar — ASML earnings Wed 10/14 AM, TSLA earnings 10/21 (enters 5-td exit window Wed 10/14 close), (b) Alpaca credentials — still 401 blocked since 2026-10-09 EOD, requires owner rotation before any trade.",
+  "decision": "SCREENER_ONLY",
   "candidate": null,
   "trades_executed": 0,
   "trades_this_week": 0,
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 2,
-  "error": "alpaca_401_unauthorized",
+  "error": null,
   "alpaca_auth_still_failing": true,
   "watch_items": [
-    "Rotate Alpaca paper credentials before 2026-10-13 09:00 ET pre-market (4 routines blocked)",
+    "Rotate Alpaca paper credentials before 2026-10-13 09:00 ET pre-market (5 routines now blocked)",
     "Wed 2026-10-14 close: TSLA enters 5-td earnings window (TSLA 10/21) — exit decision",
-    "Wed 2026-10-14 AM: ASML earnings — semi-sector binary (NVDA/KLAC sympathy risk)",
-    "Wed 2026-10-14: Sep CPI print (consensus ~3.7% y/y)"
+    "Wed 2026-10-14 AM: ASML earnings — semi-sector binary; ASML is a top-3 screener candidate but DO NOT ENTER until after earnings",
+    "Wed 2026-10-14: Sep CPI print (consensus ~3.7% y/y)",
+    "GOOGL is top candidate but MA alignment is 'mixed' (price > MA20 but MA20 < MA50) — pre-market must re-verify technical gate",
+    "MMC data fetch returned 0 bars — Yahoo symbol/listing issue to investigate"
   ]
 }
