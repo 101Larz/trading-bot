@@ -382,6 +382,19 @@
 
 **Blocker:** credential rotation still outstanding. Hard decision date on TSLA exit is Wed 2026-10-14 close (earnings 5-td window).
 
+### 2026-10-13 (Tuesday) — Midday Scan **BLOCKED (Alpaca 401, 7th consecutive routine)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **Could not evaluate** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **Could not evaluate** — no live position reads |
+| Thesis-break scan | Deferred — moot while orders cannot be submitted |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+
+**Blocker:** credential rotation. TSLA earnings 5-td exit zone opens **Wed 2026-10-14 close** — if credentials remain down past tomorrow afternoon, bot is mechanically trapped through earnings 10/21.
+
 ## EOD Snapshots
 
 ### 2026-10-12 (Monday) — EOD **BLOCKED (Alpaca 401)**
