@@ -1,12 +1,12 @@
 {
-  "last_routine": "Nightly Screener",
-  "timestamp": "2026-10-14T00:08:00+00:00",
-  "status": "success",
+  "last_routine": "Pre-Market Research",
+  "timestamp": "2026-10-14T07:16:50+00:00",
+  "status": "blocked",
   "screener_candidates": 0,
   "screener_run_date": "2026-10-14",
   "screener_top": [],
-  "notes": "Nightly screener 2026-10-14 (02:08 CEST): 0 candidates passed all four gates vs 3 yesterday (GOOGL/ASML/TSLA). Regime flip on Mon 10/13 close — SPY went Sideways (stat Bull 28.6%), ASML/TSLA/NVDA flipped to Bear, GOOGL went Sideways. Only MSFT held a Bull regime label but failed on stat Bull% (37.0% vs 40% threshold); Markov signal +0.0125, Sharpe 0.643, RSI 77.9 (also near Phase D RSI≤70 ceiling). Clean 'no setup' tape — screener did its job and said stand down. Alpaca 401 for live account reads is still unresolved (yfinance fallback carried the whole screen, which is why this routine succeeded while the trading routines keep blocking).",
-  "decision": "NO_CANDIDATES",
+  "notes": "Pre-Market 2026-10-14 (03:16 ET / 07:16 UTC): 9th consecutive trading routine blocked by Alpaca 401. Nightly screener (yfinance) returned 0 Phase B survivors after regime flip on 10/13 close (SPY/GOOGL Bull->Sideways; ASML/TSLA/NVDA Bull->Bear; MSFT held Bull but failed stat Bull% at 37.0 vs 40 threshold). Two independent gates force NO_TRADE: zero screener candidates AND no credential-authenticated order path. TSLA earnings 5-td exclusion zone opens TODAY at 16:00 ET -- if credentials not rotated by close, forced hold through 2026-10-21 earnings. Operator rotation of APCA_API_KEY_ID / APCA_API_SECRET_KEY is the #1 blocker.",
+  "decision": "NO_TRADE",
   "candidate": null,
   "trades_executed_today": 0,
   "trades_this_week": 0,
@@ -16,23 +16,22 @@
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 3,
-  "error": null,
+  "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions",
   "alpaca_auth_still_failing": true,
-  "consecutive_blocked_routines": 8,
+  "consecutive_blocked_routines": 9,
   "screener_stats": {
     "universe": 95,
     "phase_b_survivors": 0,
     "phase_c_survivors": 0,
     "phase_d_survivors": 0,
-    "data_errors": ["MMC"],
     "closest_phase_b_fail": "MSFT (Bull regime, sig +0.013, Sharpe 0.643, Stat Bull% 37.0 < 40 threshold)"
   },
   "watch_items": [
-    "0 Phase B survivors — pre-market routine will have no screener candidates to deep-research; expect NO_TRADE on screen alone even if Alpaca credentials recover",
-    "ROTATE ALPACA PAPER CREDENTIALS — 8 consecutive trading routines blocked across 2 full business days (10/12 Mon ×4 + 10/13 Tue ×4); screener runs independently via yfinance",
-    "Wed 2026-10-14 08:30 ET: Sep CPI print (consensus ~3.7% y/y) — rate-path binary; may re-regime the tape in either direction",
-    "Wed 2026-10-14 pre-market: ASML earnings — semi-sector binary (~±5.6% implied); ASML is a current position via screener history and currently in Bear regime label",
-    "Wed 2026-10-14 16:00 ET: TSLA earnings 5-td exclusion zone opens — forced hold through 10/21 earnings if credentials still down",
-    "Market regime flip Mon 10/13 close: ASML/TSLA/NVDA Bull→Bear, GOOGL Bull→Sideways, SPY Bull→Sideways; CPI tomorrow is likely the re-set catalyst in either direction"
+    "ROTATE ALPACA PAPER CREDENTIALS -- 9 consecutive trading routines blocked across 3 business days (10/12 Mon x4 + 10/13 Tue x4 + 10/14 pre-market); screener runs independently via yfinance",
+    "TSLA earnings 5-td exclusion zone OPENS TODAY at 16:00 ET -- if credentials still down at close, forced hold through 2026-10-21 earnings (~$7.2K binary event risk)",
+    "08:30 ET: Sep CPI print (consensus ~3.7% y/y) -- rate-path binary; likely re-regime catalyst",
+    "Pre-market: ASML Q3 earnings -- semi-sector binary (~+/-5.6% implied), direct read-through to NVDA/KLAC",
+    "0 Phase B survivors -- even if credentials recover today, screener provides no new trade candidate",
+    "Last confirmed equity $96,384.02 (2026-10-08 EOD); position marks now 48h+ stale"
   ]
 }
