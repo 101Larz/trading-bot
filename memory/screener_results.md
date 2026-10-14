@@ -1,20 +1,16 @@
 # Nightly Screener Results
 
-**Run:** 2026-10-13 02:09 CEST
+**Run:** 2026-10-14 02:08 CEST
 **Universe:** 95 tickers
-**Phase B survivors (Markov):** 8
-**Phase C survivors (Momentum):** 3
-**Phase D survivors (Technical):** 3
+**Phase B survivors (Markov):** 0
+**Phase C survivors (Momentum):** 0
+**Phase D survivors (Technical):** 0
 
 ---
 
-## Top 3 Candidates (ranked by Sharpe)
+## Top 0 Candidates (ranked by Sharpe)
 
-| Rank | Ticker | Regime | Markov Signal | Stat Bull% | Sharpe | RSI | MA Alignment | Momentum 1M |
-|------|--------|--------|---------------|------------|--------|-----|--------------|-------------|
-| 1 | GOOGL | Bull | +0.091 | 42.5% | +1.875 | 46.9 | mixed | +3.9% |
-| 2 | ASML | Bull | +0.003 | 44.6% | +1.760 | 59.4 | bullish | +4.8% |
-| 3 | TSLA | Bull | +0.012 | 42.3% | +1.403 | 55.0 | bullish | +4.7% |
+_No tickers passed all four gates today._
 
 ---
 
@@ -26,11 +22,11 @@ _None._
 
 ## Phase B Failures (Markov filter — not traded today)
 
-AAPL, MSFT, NVDA, AMZN, META, AMD, AVGO, CRM, ADBE, ORCL, INTU, IBM, ACN, NFLX, DIS, INTC, PYPL, AMAT, LRCX, KLAC, MRVL, ARM, MU, SNDK, QCOM, JPM, V, MA, BAC, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, AIG, MET, BRK-B, UNH, LLY, ABBV, TMO, AMGN, JNJ, MRK, PFE, GILD, REGN, ABT, DHR, ISRG, SYK, ELV, ZTS, WMT, PG, COST, KO, PEP, MDLZ, PM, HD, MCD, NKE, SBUX, TXN, XOM, CVX, HON, UPS, BA, RTX, LIN, NEE, MMM, ADP, QQQ, IWM, EEM, VGK, GLD, XLE, XLF, XLV
+AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA, AMD, AVGO, CRM, ADBE, ORCL, INTU, IBM, ACN, NFLX, DIS, INTC, PYPL, AMAT, LRCX, KLAC, MRVL, ARM, ASML, MU, WDC, SNDK, STX, QCOM, JPM, V, MA, GS, BAC, MS, BLK, SCHW, SPGI, MCO, ICE, CME, AON, AIG, MET, BRK-B, UNH, LLY, ABBV, TMO, AMGN, JNJ, MRK, PFE, GILD, REGN, ABT, DHR, ISRG, SYK, ELV, ZTS, WMT, PG, COST, KO, PEP, MDLZ, PM, HD, MCD, NKE, SBUX, TXN, XOM, CVX, HON, CAT, GE, UPS, BA, RTX, LIN, NEE, MMM, ADP, QQQ, IWM, EEM, VGK, GLD, XLE, XLF, XLV
 
 ## Phase C Failures (Momentum filter)
 
-WDC, STX, GS, CAT, GE
+_None._
 
 ## Data Errors (skipped)
 
