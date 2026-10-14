@@ -368,6 +368,20 @@
 
 ## Routine Snapshots
 
+### 2026-10-14 (Wednesday) — Market Open **BLOCKED (Alpaca 401, 10th consecutive routine)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 (Mon + Tue + Wed all blocked) |
+| Decision | NO_TRADE |
+| Candidate | None — pre-market screener returned 0 Phase B survivors |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥48 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+
+**Blocker:** credential rotation outstanding across 3 business days. **Hard deadline today 16:00 ET** — TSLA 5-trading-day earnings exclusion zone opens; if credentials are still down then, TSLA is forced-hold through 2026-10-21 earnings.
+
 ### 2026-10-13 (Tuesday) — Market Open **BLOCKED (Alpaca 401, 6th consecutive routine)**
 
 | Field | Value |
