@@ -1,12 +1,12 @@
 {
-  "last_routine": "Market Open Execution",
-  "timestamp": "2026-10-14T13:48:00+00:00",
+  "last_routine": "Midday Scan",
+  "timestamp": "2026-10-14T16:37:00+00:00",
   "status": "blocked",
   "screener_candidates": 0,
   "screener_run_date": "2026-10-14",
   "screener_top": [],
-  "notes": "Market-Open 2026-10-14 (09:48 ET / 13:48 UTC): 10th consecutive trading routine blocked by Alpaca 401. Pre-market screener returned 0 Phase B survivors after regime flip on 10/13 close. Decision: NO_TRADE on three independent gates -- zero screener candidates, Alpaca 401, and macro-binary open (CPI 08:30 ET + ASML earnings). TSLA 5-td earnings exclusion zone OPENS TODAY at 16:00 ET -- ~6 hours to credential rotation or TSLA becomes forced hold through 2026-10-21 earnings. Operator action required.",
-  "decision": "NO_TRADE",
+  "notes": "Midday 2026-10-14 (12:37 ET / 16:37 UTC): 11th consecutive trading routine blocked by Alpaca 401. Cut-losers (-7%) and stop-tightening (+15%/+20%) rules UNEVALUATED -- no live position reads. Thesis-break scan deferred (moot while orders cannot be submitted). Last-known position marks now 72h+ stale. TSLA 5-td earnings exclusion zone OPENS AT 16:00 ET TODAY -- T-3h 23m at routine fire. Push notification sent. Operator action required.",
+  "decision": "NO_ACTION",
   "candidate": null,
   "trades_executed_today": 0,
   "trades_this_week": 0,
@@ -16,22 +16,20 @@
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 3,
-  "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions",
+  "error": "Alpaca 401 Unauthorized on /v2/positions",
   "alpaca_auth_still_failing": true,
-  "consecutive_blocked_routines": 10,
-  "screener_stats": {
-    "universe": 95,
-    "phase_b_survivors": 0,
-    "phase_c_survivors": 0,
-    "phase_d_survivors": 0,
-    "closest_phase_b_fail": "MSFT (Bull regime, sig +0.013, Sharpe 0.643, Stat Bull% 37.0 < 40 threshold)"
+  "consecutive_blocked_routines": 11,
+  "midday_rules_evaluated": {
+    "cut_losers_minus_7pct": "unevaluated_no_live_reads",
+    "tighten_stop_plus_20pct": "unevaluated_no_live_reads",
+    "tighten_stop_plus_15pct": "unevaluated_no_live_reads",
+    "thesis_break_scan": "deferred_cannot_submit_orders"
   },
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 10 consecutive trading routines blocked across 3 business days; hard deadline today 16:00 ET for TSLA exit path",
-    "TSLA earnings 5-td exclusion zone OPENS TODAY at 16:00 ET -- if credentials still down at close, forced hold through 2026-10-21 earnings (~$7.2K binary event risk)",
-    "08:30 ET: Sep CPI print (consensus ~3.7% y/y) -- rate-path binary; likely re-regime catalyst",
-    "Pre-market: ASML Q3 earnings -- semi-sector binary (~+/-5.6% implied), direct read-through to NVDA/KLAC",
-    "0 Phase B survivors -- even if credentials recover today, screener provides no new trade candidate",
-    "Last confirmed equity $96,384.02 (2026-10-08 EOD); position marks now 48h+ stale"
+    "ROTATE ALPACA PAPER CREDENTIALS -- 11 consecutive trading routines blocked across 3 business days; hard deadline today 16:00 ET for TSLA exit path",
+    "TSLA earnings 5-td exclusion zone OPENS AT 16:00 ET TODAY -- T-3h 23m -- if credentials still down at close, forced hold through 2026-10-21 earnings (~$7.2K binary event risk)",
+    "0 Phase B survivors in last night's screener -- no new trade candidate even if credentials recover",
+    "Last-known position marks on KLAC/NVDA/TSLA now 72h+ stale -- cut-losers rule cannot be enforced from the bot side",
+    "EOD routine (16:15 ET) is the last chance for bot-side TSLA close before exclusion zone bell"
   ]
 }
