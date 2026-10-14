@@ -1,11 +1,11 @@
 {
-  "last_routine": "Midday Scan",
-  "timestamp": "2026-10-14T16:37:00+00:00",
+  "last_routine": "End of Day",
+  "timestamp": "2026-10-14T20:15:00+00:00",
   "status": "blocked",
   "screener_candidates": 0,
   "screener_run_date": "2026-10-14",
   "screener_top": [],
-  "notes": "Midday 2026-10-14 (12:37 ET / 16:37 UTC): 11th consecutive trading routine blocked by Alpaca 401. Cut-losers (-7%) and stop-tightening (+15%/+20%) rules UNEVALUATED -- no live position reads. Thesis-break scan deferred (moot while orders cannot be submitted). Last-known position marks now 72h+ stale. TSLA 5-td earnings exclusion zone OPENS AT 16:00 ET TODAY -- T-3h 23m at routine fire. Push notification sent. Operator action required.",
+  "notes": "EOD 2026-10-14 (16:15 ET / 20:15 UTC): 12th consecutive trading routine blocked by Alpaca 401 (3 full business days). TSLA 5-td earnings exclusion zone OPENED at 16:00 ET today -- bot was unable to submit a close before the bell. TSLA (19 sh, ~$7.2K) is now forced-held through 2026-10-21 earnings. Operator may close manually via Alpaca web UI on any of 10/15, 10/16, 10/17, 10/20 RTH. Secondary in-session fix: pip install requests python-dotenv required before scripts/research.py would import -- SessionStart hook should install from requirements.txt. Push notification sent.",
   "decision": "NO_ACTION",
   "candidate": null,
   "trades_executed_today": 0,
@@ -16,20 +16,27 @@
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 3,
-  "error": "Alpaca 401 Unauthorized on /v2/positions",
+  "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions",
   "alpaca_auth_still_failing": true,
-  "consecutive_blocked_routines": 11,
-  "midday_rules_evaluated": {
-    "cut_losers_minus_7pct": "unevaluated_no_live_reads",
-    "tighten_stop_plus_20pct": "unevaluated_no_live_reads",
-    "tighten_stop_plus_15pct": "unevaluated_no_live_reads",
-    "thesis_break_scan": "deferred_cannot_submit_orders"
+  "consecutive_blocked_routines": 12,
+  "tsla_exclusion_zone": {
+    "opened_at": "2026-10-14T16:00:00-04:00",
+    "earnings_date": "2026-10-21",
+    "bot_can_close": false,
+    "operator_close_window_rth": ["2026-10-15", "2026-10-16", "2026-10-17", "2026-10-20"],
+    "forced_hold_through_earnings": true,
+    "position_notional_last_known": 7207.84
   },
+  "last_confirmed_equity": {
+    "value": 96384.02,
+    "as_of": "2026-10-08"
+  },
+  "last_known_positions_stale_hours": 96,
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 11 consecutive trading routines blocked across 3 business days; hard deadline today 16:00 ET for TSLA exit path",
-    "TSLA earnings 5-td exclusion zone OPENS AT 16:00 ET TODAY -- T-3h 23m -- if credentials still down at close, forced hold through 2026-10-21 earnings (~$7.2K binary event risk)",
-    "0 Phase B survivors in last night's screener -- no new trade candidate even if credentials recover",
-    "Last-known position marks on KLAC/NVDA/TSLA now 72h+ stale -- cut-losers rule cannot be enforced from the bot side",
-    "EOD routine (16:15 ET) is the last chance for bot-side TSLA close before exclusion zone bell"
+    "ROTATE ALPACA PAPER CREDENTIALS -- 12 consecutive blocked routines across 3 business days; every mechanical action remains unavailable",
+    "TSLA earnings exclusion zone OPEN -- bot cannot act; operator must decide manual close on 10/15 / 10/16 / 10/17 / 10/20 (RTH) or accept hold through 2026-10-21 print",
+    "0 Phase B screener survivors overnight -- no new trade candidate even if credentials recover",
+    "KLAC/NVDA/TSLA marks now 96h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules remain UNEVALUATED on the bot side",
+    "SessionStart hook should install from requirements.txt -- today's EOD had to pip install requests + python-dotenv before scripts/research.py would import"
   ]
 }

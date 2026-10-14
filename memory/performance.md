@@ -425,6 +425,52 @@
 
 ## EOD Snapshots
 
+### 2026-10-14 (Wednesday) — EOD **BLOCKED (Alpaca 401, 12th consecutive routine) — TSLA FORCED HOLD THROUGH EARNINGS**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or yesterday |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (every routine blocked on credentials) |
+| Trades this week | 0 (Mon + Tue + Wed; week-to-date zero across 3 trading days) |
+| Routines blocked today | 4 (pre-market, market-open, midday, EOD) |
+| Routines blocked 3-day running total | 12 (10/12 × 4 + 10/13 × 4 + 10/14 × 4) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark referenced in 10-09 midday log) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market — now ≥96 h stale, not refreshed):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 | +0.42% | $347.56 |
+
+**Blocker (unchanged):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session are still rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. Twelfth consecutive blocked routine; marks on all three open positions are now ≥96 hours stale (last read 2026-10-12 pre-market).
+
+**Environment note:** this EOD session also had to `pip install requests python-dotenv` before `scripts/research.py` would even import — a secondary gap on top of the credential outage. The 401 was the actual blocker; the module gap was fixable in-session but should be covered by the SessionStart hook.
+
+**Hard decision point — TSLA earnings exclusion zone has now OPENED:**
+- TSLA reports **2026-10-21 Tue**.
+- 5-trading-day pre-earnings exclusion zone **opened at 2026-10-14 16:00 ET close** — 15 minutes before this EOD routine fired.
+- Credentials remained 401 through close → the bot could not submit a TSLA close before the bell.
+- **TSLA is now a forced hold through earnings** regardless of thesis status. ~$7.2K binary event risk the risk model never approved.
+- Only remaining escape path: operator closes TSLA manually via Alpaca web UI during RTH on any of the next 4 trading days (10/15, 10/16, 10/17, 10/20) before 2026-10-21 open.
+
+**Wednesday 2026-10-14 macro / sector reads (unverified by this routine — no live tape):**
+- Sep CPI print (08:30 ET), ASML earnings (pre-market), SPY/semi reaction — not sampled from this blocked session.
+- Last confirmed regime read: SPY → Sideways, NVDA/ASML/TSLA → Bear (nightly screener, 2026-10-13).
+
+**Carry-forward to Thursday 2026-10-15:**
+- Credential rotation remains the **#1 blocker** — now 3 full business days of outage with zero mechanical action possible from the bot side.
+- No new buy candidate queued (0 Phase B screener survivors overnight; macro-binary tape unverified).
+- GOOGL still gated on MA20/MA50 cross.
+- TSLA is forced-hold through earnings; the only risk-reducing action available for the next 4 trading days is a manual close by the operator.
+- Push notification sent to escalate both (a) credential rotation and (b) the TSLA exclusion-zone breach.
+
+---
+
 ### 2026-10-13 (Tuesday) — EOD **BLOCKED (Alpaca 401, 8th consecutive routine)**
 
 | Field | Value |
