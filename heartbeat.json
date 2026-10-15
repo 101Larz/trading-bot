@@ -1,8 +1,8 @@
 {
-  "last_routine": "Market Open Execution",
-  "timestamp": "2026-10-15T13:45:00+00:00",
+  "last_routine": "Midday Scan",
+  "timestamp": "2026-10-15T16:30:00+00:00",
   "status": "blocked",
-  "decision": "NO_TRADE",
+  "decision": "NO_ACTION",
   "candidate": "MRVL (deferred — needs credentials)",
   "trades_executed_today": 0,
   "trades_this_week": 0,
@@ -14,27 +14,37 @@
   "weekly_buys_remaining": 3,
   "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions (unchanged across 4 business days)",
   "alpaca_auth_still_failing": true,
-  "consecutive_blocked_routines": 14,
-  "screener_candidates_today": ["NVDA", "MRVL"],
-  "actionable_new_buy": "MRVL (deferred — needs credentials)",
+  "consecutive_blocked_routines": 15,
+  "midday_rules_unevaluated": {
+    "cut_losers_minus_7_pct": "UNEVALUATED — no live mark reads",
+    "tighten_stop_plus_15_pct": "UNEVALUATED — no live mark reads",
+    "tighten_stop_plus_20_pct": "UNEVALUATED — no live mark reads",
+    "thesis_break_scan": "deferred — moot while orders cannot be submitted"
+  },
+  "env_gaps_still_open": [
+    "SessionStart hook does not install requirements.txt — requests/python-dotenv missing on each session start",
+    "python3 resolves to Python 3.11 on this image; dependencies install to 3.13 — scripts must invoke python3.13 explicitly to import requests/dotenv"
+  ],
   "tsla_exclusion_zone": {
     "opened_at": "2026-10-14T16:00:00-04:00",
     "earnings_date": "2026-10-21",
     "bot_can_close": false,
     "operator_close_window_rth": ["2026-10-15", "2026-10-16", "2026-10-17", "2026-10-20"],
     "forced_hold_through_earnings": true,
-    "position_notional_last_known": 7207.84
+    "position_notional_last_known": 7207.84,
+    "operator_close_day": "1 of 4"
   },
   "last_confirmed_equity": {
     "value": 96384.02,
     "as_of": "2026-10-08"
   },
   "last_known_positions_stale_hours": 148,
+  "push_notification_suppressed_this_routine": "same credential-rotation signal already pushed earlier today (pre-market and market-open); repeating within one business day is noise",
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 14 consecutive blocked routines over 4 business days; nothing moves on bot side until rotated",
-    "TSLA FORCED HOLD THROUGH EARNINGS 2026-10-21 -- bot cannot submit a close inside the 5-td exclusion zone; operator-only close window: 10/15, 10/16, 10/17, 10/20 (RTH, via Alpaca web UI)",
+    "ROTATE ALPACA PAPER CREDENTIALS -- 15 consecutive blocked routines over 4 business days; nothing moves on bot side until rotated",
+    "TSLA FORCED HOLD THROUGH EARNINGS 2026-10-21 -- bot cannot submit a close inside the 5-td exclusion zone; operator-only close window Day 1 of 4 today (RTH 10/15), then 10/16, 10/17, 10/20",
     "MRVL queued as net-new buy candidate (nightly screener rank 2, Sharpe +1.046, RSI 55.1, mom +21.2%) -- fire only once credentials recover",
     "KLAC/NVDA/TSLA marks now 148h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules remain UNEVALUATED on the bot side",
-    "SessionStart hook must install requests/python-dotenv from requirements.txt -- 3rd session in a row where scripts/research.py failed to import until pip ran"
+    "SessionStart hook must install requests/python-dotenv from requirements.txt (into python3.13 path) -- 15th session failing to import until manual pip ran"
   ]
 }
