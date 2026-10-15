@@ -1,9 +1,9 @@
 {
-  "last_routine": "Pre-Market Research",
-  "timestamp": "2026-10-15T13:00:00+00:00",
+  "last_routine": "Market Open Execution",
+  "timestamp": "2026-10-15T13:45:00+00:00",
   "status": "blocked",
   "decision": "NO_TRADE",
-  "candidate": null,
+  "candidate": "MRVL (deferred — needs credentials)",
   "trades_executed_today": 0,
   "trades_this_week": 0,
   "day_pnl_dollars": null,
@@ -14,7 +14,7 @@
   "weekly_buys_remaining": 3,
   "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions (unchanged across 4 business days)",
   "alpaca_auth_still_failing": true,
-  "consecutive_blocked_routines": 13,
+  "consecutive_blocked_routines": 14,
   "screener_candidates_today": ["NVDA", "MRVL"],
   "actionable_new_buy": "MRVL (deferred — needs credentials)",
   "tsla_exclusion_zone": {
@@ -29,12 +29,12 @@
     "value": 96384.02,
     "as_of": "2026-10-08"
   },
-  "last_known_positions_stale_hours": 144,
+  "last_known_positions_stale_hours": 148,
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 13 consecutive blocked routines over 4 business days; nothing moves on bot side until rotated",
+    "ROTATE ALPACA PAPER CREDENTIALS -- 14 consecutive blocked routines over 4 business days; nothing moves on bot side until rotated",
     "TSLA FORCED HOLD THROUGH EARNINGS 2026-10-21 -- bot cannot submit a close inside the 5-td exclusion zone; operator-only close window: 10/15, 10/16, 10/17, 10/20 (RTH, via Alpaca web UI)",
     "MRVL queued as net-new buy candidate (nightly screener rank 2, Sharpe +1.046, RSI 55.1, mom +21.2%) -- fire only once credentials recover",
-    "KLAC/NVDA/TSLA marks now 144h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules remain UNEVALUATED on the bot side",
-    "SessionStart hook must install requests/python-dotenv from requirements.txt -- 2nd session in a row where scripts/research.py failed to import until pip ran"
+    "KLAC/NVDA/TSLA marks now 148h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules remain UNEVALUATED on the bot side",
+    "SessionStart hook must install requests/python-dotenv from requirements.txt -- 3rd session in a row where scripts/research.py failed to import until pip ran"
   ]
 }
