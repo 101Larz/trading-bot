@@ -368,6 +368,20 @@
 
 ## Routine Snapshots
 
+### 2026-10-15 (Thursday) — Midday Scan **BLOCKED (Alpaca 401, 15th consecutive routine)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Deferred — moot while orders cannot be submitted |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥148 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA operator-close window | **Day 1 of 4** — 10/15 RTH, 10/16, 10/17, 10/20 (via Alpaca web UI) |
+
+**Blocker (unchanged):** credential rotation outstanding across 4 business days. Push notification suppressed this routine — same signal pushed earlier today; repeating it adds noise. TSLA remains mechanically trapped through 2026-10-21 earnings unless the operator closes manually in the next 4 RTH sessions.
+
 ### 2026-10-15 (Thursday) — Market Open **BLOCKED (Alpaca 401, 14th consecutive routine)**
 
 | Field | Value |
