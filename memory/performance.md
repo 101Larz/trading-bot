@@ -13,7 +13,7 @@
 | Avg Loss | -$429.87 |
 | Best Trade | VGK +$22.42 |
 | Worst Trade | STX -$922.72 |
-| Open Positions | 3 (NVDA, KLAC, TSLA) |
+| Open Positions | 3 (NVDA, KLAC, TSLA) — all marks ≥144 h stale as of 2026-10-15 EOD |
 
 ---
 
@@ -453,6 +453,55 @@
 **Blocker:** credential rotation. TSLA earnings 5-td exit zone opens **Wed 2026-10-14 close** — if credentials remain down past tomorrow afternoon, bot is mechanically trapped through earnings 10/21.
 
 ## EOD Snapshots
+
+### 2026-10-15 (Thursday) — EOD **BLOCKED (Alpaca 401, 16th consecutive routine) — TSLA OPERATOR-CLOSE DAY 1 OF 4 ENDED WITH NO ACTION**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or yesterday |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (every routine blocked on credentials) |
+| Trades this week | 0 (Mon + Tue + Wed + Thu; week-to-date zero across 4 trading days) |
+| Routines blocked today | 4 (pre-market, market-open, midday, EOD) |
+| Routines blocked 4-day running total | 16 (10/12 × 4 + 10/13 × 4 + 10/14 × 4 + 10/15 × 4) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark — now ≥7 calendar days stale) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market — now ≥72 h past weekend / ≥120 h weekday-stale, not refreshed):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 | +0.42% | $347.56 |
+
+**Blocker (unchanged — Day 4):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session are still rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. Sixteenth consecutive blocked routine across 4 full business days; marks on all three open positions are now ≥144 hours stale.
+
+**TSLA operator-close window — Day 1 of 4 closed:**
+- Window opened 2026-10-14 16:00 ET when 5-td earnings exclusion zone began.
+- Earnings date: **2026-10-21 Tue** (pre-market or AMC — binary event).
+- Operator-only close window RTH (bot cannot submit inside exclusion zone): **10/15 Thu ✓ ended no-action**, 10/16 Fri, 10/19 Mon, 10/20 Tue.
+- Three operator-close RTH sessions remain before earnings.
+- Position notional ~$7.2K — a binary event risk the risk model never approved.
+- *(Note: prior heartbeat/log entries listed 10/17 as an operator-close day — that is a Saturday and incorrect; correct next-three are Fri 10/16, Mon 10/19, Tue 10/20.)*
+
+**Push-notification posture this routine:** EOD push sent — flags Day-1 window close + 16-routine credential outage as the day's capstone, distinct from the pre-market / market-open pushes earlier today.
+
+**Weekly scoreboard (through Thu 10/15 close):**
+- Trades Mon–Thu: **0**
+- Routines Mon–Thu: **16 attempted / 16 blocked** (100% blocked rate)
+- Push notifications fired: pre-market Mon, Tue, Wed, Thu + market-open Mon, Tue, Wed, Thu + EOD Thu = ~9 escalations across 4 days
+- Weekly review (Fri 17:00 ET) will capture this as a monitoring/alerting failure: 4 business days of outage without rotation.
+
+**Carry-forward to Friday 2026-10-16 (final full session before earnings calendar freezes further):**
+- Credential rotation remains **the only unblock path**; still #1 blocker.
+- MRVL candidate (nightly screener rank 2) remains queued, deferred until creds rotate.
+- GOOGL still gated on MA20/MA50 cross — not actionable regardless of creds.
+- TSLA: operator-close Day 2 of 4 tomorrow during RTH 10/16 — last Friday before earnings.
+- If credentials remain down through 10/20 close → forced hold through earnings 10/21.
+
+---
 
 ### 2026-10-14 (Wednesday) — EOD **BLOCKED (Alpaca 401, 12th consecutive routine) — TSLA FORCED HOLD THROUGH EARNINGS**
 

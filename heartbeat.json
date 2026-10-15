@@ -1,9 +1,9 @@
 {
-  "last_routine": "Midday Scan",
-  "timestamp": "2026-10-15T16:30:00+00:00",
+  "last_routine": "End of Day",
+  "timestamp": "2026-10-15T20:15:00+00:00",
   "status": "blocked",
   "decision": "NO_ACTION",
-  "candidate": "MRVL (deferred — needs credentials)",
+  "candidate": null,
   "trades_executed_today": 0,
   "trades_this_week": 0,
   "day_pnl_dollars": null,
@@ -14,13 +14,7 @@
   "weekly_buys_remaining": 3,
   "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions (unchanged across 4 business days)",
   "alpaca_auth_still_failing": true,
-  "consecutive_blocked_routines": 15,
-  "midday_rules_unevaluated": {
-    "cut_losers_minus_7_pct": "UNEVALUATED — no live mark reads",
-    "tighten_stop_plus_15_pct": "UNEVALUATED — no live mark reads",
-    "tighten_stop_plus_20_pct": "UNEVALUATED — no live mark reads",
-    "thesis_break_scan": "deferred — moot while orders cannot be submitted"
-  },
+  "consecutive_blocked_routines": 16,
   "env_gaps_still_open": [
     "SessionStart hook does not install requirements.txt — requests/python-dotenv missing on each session start",
     "python3 resolves to Python 3.11 on this image; dependencies install to 3.13 — scripts must invoke python3.13 explicitly to import requests/dotenv"
@@ -29,22 +23,32 @@
     "opened_at": "2026-10-14T16:00:00-04:00",
     "earnings_date": "2026-10-21",
     "bot_can_close": false,
-    "operator_close_window_rth": ["2026-10-15", "2026-10-16", "2026-10-17", "2026-10-20"],
+    "operator_close_window_rth": ["2026-10-15", "2026-10-16", "2026-10-19", "2026-10-20"],
+    "operator_close_window_note": "prior logs listed 10/17 — that is Saturday; corrected to 10/19 Mon",
     "forced_hold_through_earnings": true,
     "position_notional_last_known": 7207.84,
-    "operator_close_day": "1 of 4"
+    "operator_close_day_completed": "1 of 4 (10/15 Thu RTH ended with no operator action)",
+    "operator_close_days_remaining": ["2026-10-16 Fri", "2026-10-19 Mon", "2026-10-20 Tue"]
   },
   "last_confirmed_equity": {
     "value": 96384.02,
     "as_of": "2026-10-08"
   },
-  "last_known_positions_stale_hours": 148,
-  "push_notification_suppressed_this_routine": "same credential-rotation signal already pushed earlier today (pre-market and market-open); repeating within one business day is noise",
+  "last_known_positions_stale_hours": 168,
+  "weekly_scoreboard_through_thu_close": {
+    "trades_mon_thu": 0,
+    "routines_attempted": 16,
+    "routines_blocked": 16,
+    "blocked_rate": "100%",
+    "push_escalations_fired_this_week": 9
+  },
+  "push_notification_fired_this_routine": "EOD push — Day-1 operator-close window closed without operator action; 16-routine credential outage across 4 business days is the day's capstone (distinct from pre-market / market-open pushes earlier today)",
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 15 consecutive blocked routines over 4 business days; nothing moves on bot side until rotated",
-    "TSLA FORCED HOLD THROUGH EARNINGS 2026-10-21 -- bot cannot submit a close inside the 5-td exclusion zone; operator-only close window Day 1 of 4 today (RTH 10/15), then 10/16, 10/17, 10/20",
+    "ROTATE ALPACA PAPER CREDENTIALS -- 16 consecutive blocked routines over 4 full business days; nothing moves on bot side until rotated",
+    "TSLA OPERATOR-CLOSE DAY 1 OF 4 ENDED NO-ACTION -- 3 RTH sessions remain to close manually before 2026-10-21 earnings (Fri 10/16, Mon 10/19, Tue 10/20); otherwise forced hold through binary earnings event",
     "MRVL queued as net-new buy candidate (nightly screener rank 2, Sharpe +1.046, RSI 55.1, mom +21.2%) -- fire only once credentials recover",
-    "KLAC/NVDA/TSLA marks now 148h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules remain UNEVALUATED on the bot side",
-    "SessionStart hook must install requests/python-dotenv from requirements.txt (into python3.13 path) -- 15th session failing to import until manual pip ran"
+    "KLAC/NVDA/TSLA marks now 168h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED on the bot side for 4 business days",
+    "SessionStart hook must install requests/python-dotenv from requirements.txt (into python3.13 path) -- 16th session failing to import until manual pip ran",
+    "Weekly review Fri 17:00 ET must flag 4-day outage with no auto-rotation / auto-pager as a monitoring gap, not just a credential incident"
   ]
 }
