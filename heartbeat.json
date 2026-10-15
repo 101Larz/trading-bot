@@ -1,12 +1,15 @@
 {
-  "last_routine": "End of Day",
-  "timestamp": "2026-10-14T20:15:00+00:00",
-  "status": "blocked",
-  "screener_candidates": 0,
-  "screener_run_date": "2026-10-14",
-  "screener_top": [],
-  "notes": "EOD 2026-10-14 (16:15 ET / 20:15 UTC): 12th consecutive trading routine blocked by Alpaca 401 (3 full business days). TSLA 5-td earnings exclusion zone OPENED at 16:00 ET today -- bot was unable to submit a close before the bell. TSLA (19 sh, ~$7.2K) is now forced-held through 2026-10-21 earnings. Operator may close manually via Alpaca web UI on any of 10/15, 10/16, 10/17, 10/20 RTH. Secondary in-session fix: pip install requests python-dotenv required before scripts/research.py would import -- SessionStart hook should install from requirements.txt. Push notification sent.",
-  "decision": "NO_ACTION",
+  "last_routine": "Nightly Screener",
+  "timestamp": "2026-10-15T00:07:00+00:00",
+  "status": "success",
+  "screener_candidates": 2,
+  "screener_run_date": "2026-10-15",
+  "screener_top": ["NVDA", "MRVL"],
+  "screener_phase_b_survivors": 4,
+  "screener_phase_c_survivors": 4,
+  "screener_phase_d_survivors": 2,
+  "notes": "Nightly Screener 2026-10-15 02:07 CEST: 95-ticker Markov + momentum + technical screen completed via scripts/markov_screener_full.py (10y history, yfinance fallback since Alpaca 401 persists). 2 candidates for pre-market: NVDA (Sharpe +1.524, RSI 54.4, mom +7.7%) and MRVL (Sharpe +1.046, RSI 55.1, mom +21.2%). Phase B+C-only (failed Tech): AVGO, AMD. 1 data error: MMC. Alpaca auth state and TSLA exclusion zone from EOD 2026-10-14 unchanged -- credentials still need rotation, TSLA still forced-held through 2026-10-21 earnings. Earnings calendar check deferred to pre-market routine per prompt.",
+  "decision": "SCREENER_ONLY",
   "candidate": null,
   "trades_executed_today": 0,
   "trades_this_week": 0,
@@ -16,7 +19,7 @@
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 3,
-  "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions",
+  "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions (unchanged from EOD 2026-10-14)",
   "alpaca_auth_still_failing": true,
   "consecutive_blocked_routines": 12,
   "tsla_exclusion_zone": {
@@ -31,12 +34,12 @@
     "value": 96384.02,
     "as_of": "2026-10-08"
   },
-  "last_known_positions_stale_hours": 96,
+  "last_known_positions_stale_hours": 120,
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 12 consecutive blocked routines across 3 business days; every mechanical action remains unavailable",
+    "ROTATE ALPACA PAPER CREDENTIALS -- 12 consecutive blocked routines; nightly screener runs on yfinance but pre-market/open/midday/EOD remain blocked until creds rotated",
     "TSLA earnings exclusion zone OPEN -- bot cannot act; operator must decide manual close on 10/15 / 10/16 / 10/17 / 10/20 (RTH) or accept hold through 2026-10-21 print",
-    "0 Phase B screener survivors overnight -- no new trade candidate even if credentials recover",
-    "KLAC/NVDA/TSLA marks now 96h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules remain UNEVALUATED on the bot side",
-    "SessionStart hook should install from requirements.txt -- today's EOD had to pip install requests + python-dotenv before scripts/research.py would import"
+    "2 fresh screener candidates for pre-market: NVDA (already held) and MRVL -- MRVL would be the net-new buy candidate if credentials recover before 09:30 ET",
+    "KLAC/NVDA/TSLA marks now 120h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules remain UNEVALUATED on the bot side",
+    "SessionStart hook should install from requirements.txt -- nightly screener had to install numpy/pandas/yfinance/requests/python-dotenv/curl_cffi via pip --break-system-packages targeting python3.13 (the pip default) before scripts/markov_screener_full.py would import"
   ]
 }
