@@ -368,6 +368,21 @@
 
 ## Routine Snapshots
 
+### 2026-10-15 (Thursday) — Market Open **BLOCKED (Alpaca 401, 14th consecutive routine)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 (Mon + Tue + Wed + Thu AM all blocked) |
+| Decision | NO_TRADE |
+| Candidate | MRVL (nightly screener rank 2, Sharpe +1.046, RSI 55.1, mom +21.2%) — deferred, needs creds |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥148 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA earnings exclusion zone | OPEN (opened 2026-10-14 16:00 ET); operator-only close 10/15–10/20 RTH |
+
+**Blocker:** credential rotation outstanding across 4 business days. Operator must rotate `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper/dashboard/overview and update GitHub Actions / cloud session env. Push notification sent.
+
 ### 2026-10-14 (Wednesday) — Midday Scan **BLOCKED (Alpaca 401, 11th consecutive routine)**
 
 | Field | Value |
