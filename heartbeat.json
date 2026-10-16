@@ -1,8 +1,15 @@
 {
-  "last_routine": "End of Day",
-  "timestamp": "2026-10-15T20:15:00+00:00",
-  "status": "blocked",
-  "decision": "NO_ACTION",
+  "last_routine": "Nightly Screener",
+  "timestamp": "2026-10-16T00:07:00+00:00",
+  "status": "success",
+  "screener_candidates": 0,
+  "screener_run_date": "2026-10-16",
+  "screener_phase_b_survivors": 0,
+  "screener_phase_c_survivors": 0,
+  "screener_phase_d_survivors": 0,
+  "screener_note": "Zero Phase B survivors — broad risk-off tape on 2026-10-15 flipped prior Bull leaders (NVDA -3.2%, MRVL -8.7%, AVGO -3.1%, AMD -5.7%) into Bear/Sideways. Pre-market routine will have no candidates to buy today.",
+  "data_errors": ["MMC (0 bars after all 3 sources — likely ticker symbol change / delisting)"],
+  "decision": "NO_CANDIDATES",
   "candidate": null,
   "trades_executed_today": 0,
   "trades_this_week": 0,
@@ -12,19 +19,17 @@
   "cash_pct": 76.2,
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 3,
-  "error": "Alpaca 401 Unauthorized on /v2/account and /v2/positions (unchanged across 4 business days)",
   "alpaca_auth_still_failing": true,
-  "consecutive_blocked_routines": 16,
+  "consecutive_blocked_routines_prior": 16,
   "env_gaps_still_open": [
     "SessionStart hook does not install requirements.txt — requests/python-dotenv missing on each session start",
-    "python3 resolves to Python 3.11 on this image; dependencies install to 3.13 — scripts must invoke python3.13 explicitly to import requests/dotenv"
+    "python3 resolves to Python 3.11 on this image; dependencies install to 3.13 — scripts must invoke python3.13 explicitly to import requests/numpy/yfinance"
   ],
   "tsla_exclusion_zone": {
     "opened_at": "2026-10-14T16:00:00-04:00",
     "earnings_date": "2026-10-21",
     "bot_can_close": false,
-    "operator_close_window_rth": ["2026-10-15", "2026-10-16", "2026-10-19", "2026-10-20"],
-    "operator_close_window_note": "prior logs listed 10/17 — that is Saturday; corrected to 10/19 Mon",
+    "operator_close_window_rth": ["2026-10-16", "2026-10-19", "2026-10-20"],
     "forced_hold_through_earnings": true,
     "position_notional_last_known": 7207.84,
     "operator_close_day_completed": "1 of 4 (10/15 Thu RTH ended with no operator action)",
@@ -34,21 +39,14 @@
     "value": 96384.02,
     "as_of": "2026-10-08"
   },
-  "last_known_positions_stale_hours": 168,
-  "weekly_scoreboard_through_thu_close": {
-    "trades_mon_thu": 0,
-    "routines_attempted": 16,
-    "routines_blocked": 16,
-    "blocked_rate": "100%",
-    "push_escalations_fired_this_week": 9
-  },
-  "push_notification_fired_this_routine": "EOD push — Day-1 operator-close window closed without operator action; 16-routine credential outage across 4 business days is the day's capstone (distinct from pre-market / market-open pushes earlier today)",
+  "last_known_positions_stale_hours": 192,
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 16 consecutive blocked routines over 4 full business days; nothing moves on bot side until rotated",
-    "TSLA OPERATOR-CLOSE DAY 1 OF 4 ENDED NO-ACTION -- 3 RTH sessions remain to close manually before 2026-10-21 earnings (Fri 10/16, Mon 10/19, Tue 10/20); otherwise forced hold through binary earnings event",
-    "MRVL queued as net-new buy candidate (nightly screener rank 2, Sharpe +1.046, RSI 55.1, mom +21.2%) -- fire only once credentials recover",
-    "KLAC/NVDA/TSLA marks now 168h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED on the bot side for 4 business days",
-    "SessionStart hook must install requests/python-dotenv from requirements.txt (into python3.13 path) -- 16th session failing to import until manual pip ran",
-    "Weekly review Fri 17:00 ET must flag 4-day outage with no auto-rotation / auto-pager as a monitoring gap, not just a credential incident"
+    "ROTATE ALPACA PAPER CREDENTIALS -- 16 consecutive blocked routines over 4 full business days; screener used yfinance fallback successfully, but all trade routines still blocked",
+    "BROAD RISK-OFF SIGNAL -- 0 Phase B survivors across 95-ticker universe (first zero-result run on record); 10/15 was a universally red session (NVDA/MRVL/AVGO/AMD all < -3%). Pre-market 09:00 ET will see empty candidate list and must default to NO_TRADE",
+    "TSLA OPERATOR-CLOSE DAY 2 OF 4 TODAY -- 2026-10-16 Fri RTH is the next window; otherwise forced hold through 10/21 binary earnings event",
+    "KLAC/NVDA/TSLA marks now 192h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED on the bot side for 5 business days",
+    "SessionStart hook must install requests/numpy/yfinance from requirements.txt (into python3.13 path) -- same env gap on 17th session",
+    "MMC delisted/renamed in universe -- consider replacing with another insurance ticker in scripts/markov_screener_full.py",
+    "Weekly review Fri 17:00 ET must flag 4-day outage with no auto-rotation / auto-pager as a monitoring gap"
   ]
 }
