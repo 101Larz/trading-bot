@@ -454,6 +454,57 @@
 
 ## EOD Snapshots
 
+### 2026-10-16 (Friday) — EOD **BLOCKED (Alpaca 401, 18th consecutive routine) — TSLA OPERATOR-CLOSE DAY 2 OF 4 ENDED WITH NO ACTION — WEEK CLOSES AT 0 TRADES**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or in the prior 5 business days |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (every routine still blocked on credentials) |
+| Trades this week | **0** (Mon + Tue + Wed + Thu + Fri; first zero-trade week since paper-trading phase began) |
+| Routines blocked today | 2 posted (pre-market, EOD); market-open and midday did not commit to main — likely did not fire or failed pre-commit |
+| Routines blocked 5-day running total | 18 (10/12 ×4 + 10/13 ×4 + 10/14 ×4 + 10/15 ×4 + 10/16 ×2 posted) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark — now 8 calendar days stale) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market — now ≥192 h stale, not refreshed):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 | +0.42% | $347.56 |
+
+**Blocker (unchanged — Day 5):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session are still rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. Eighteenth consecutive blocked routine across 5 full business days; marks on all three open positions are now ≥192 hours stale.
+
+**TSLA operator-close window — Day 2 of 4 closed:**
+- 5-td earnings exclusion zone opened 2026-10-14 16:00 ET.
+- Earnings date: **2026-10-21 Tue AMC** — binary event.
+- Operator-only close window RTH (bot cannot submit inside exclusion zone): 10/15 Thu ✓ no-action, **10/16 Fri ✓ ended no-action (today)**, 10/19 Mon, 10/20 Tue.
+- **Two operator-close RTH sessions remain** before the binary event (weekend plus Mon + Tue).
+- Position notional ~$7.2K binary-event risk the risk model never approved.
+- Today was the **last Friday** before earnings — any Mon/Tue close is intra-week-of-earnings exposure.
+
+**Push-notification posture this routine:** EOD push sent — flags Day-2 window close + 18-routine credential outage + first zero-trade week as the week's capstone, distinct from the pre-market push earlier today.
+
+**Weekly scoreboard (Mon 10/12 → Fri 10/16 close) — final:**
+- Trades this week: **0** (0 buys, 0 sells)
+- Routines attempted / posted this week: **18 attempted / 18 blocked** on credentials (100% blocked rate)
+- Push notifications fired this week: 5 pre-market + 4 market-open + 4 EOD ≈ 13+ escalations across 5 trading days
+- Weekly review (Fri 17:00 ET today — next routine) will capture this as a monitoring/alerting gap: 5 full business days of outage without rotation and without auto-pager alongside the manual push notifications.
+
+**Carry-forward to Weekly Review (Fri 17:00 ET today) and Monday 2026-10-19:**
+- Credential rotation remains **the only unblock path**; still #1 blocker.
+- SessionStart hook gap (requests / python-dotenv / numpy / yfinance missing from python3.13 path on every cold session) is a secondary blocker that should be queued for the review.
+- Screener produced 0 Phase B survivors overnight (first zero-result run on record); even if creds rotate, no buy candidate exists.
+- GOOGL still gated on MA20/MA50 cross — not actionable regardless of creds.
+- TSLA: operator-close Day 3 of 4 next trading day (Mon 10/19 RTH). Then Day 4 Tue 10/20 RTH. If no manual close by 10/20 16:00 ET → forced hold through earnings 10/21.
+- MRVL (nightly screener rank 2 on 10/14) dropped -8.7% on 10/15 and is almost certainly no longer passing Phase B/C/D; defer to Monday overnight screener for a new carry candidate.
+- Weekly review should flag: (a) 5-day credential outage with no auto-rotation + no auto-pager; (b) SessionStart hook pip gap on every cold session; (c) TSLA exclusion-zone breach as a risk-rule drift the operator must own.
+
+---
+
 ### 2026-10-15 (Thursday) — EOD **BLOCKED (Alpaca 401, 16th consecutive routine) — TSLA OPERATOR-CLOSE DAY 1 OF 4 ENDED WITH NO ACTION**
 
 | Field | Value |
