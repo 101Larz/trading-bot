@@ -1,15 +1,16 @@
 {
-  "last_routine": "Nightly Screener",
-  "timestamp": "2026-10-16T00:07:00+00:00",
-  "status": "success",
+  "last_routine": "Pre-Market Research",
+  "timestamp": "2026-10-16T07:15:03+00:00",
+  "status": "blocked",
+  "block_reason": "alpaca_401_credential_rotation_outstanding",
+  "consecutive_blocked_routines": 17,
+  "blocked_business_days": 5,
   "screener_candidates": 0,
   "screener_run_date": "2026-10-16",
   "screener_phase_b_survivors": 0,
   "screener_phase_c_survivors": 0,
   "screener_phase_d_survivors": 0,
-  "screener_note": "Zero Phase B survivors — broad risk-off tape on 2026-10-15 flipped prior Bull leaders (NVDA -3.2%, MRVL -8.7%, AVGO -3.1%, AMD -5.7%) into Bear/Sideways. Pre-market routine will have no candidates to buy today.",
-  "data_errors": ["MMC (0 bars after all 3 sources — likely ticker symbol change / delisting)"],
-  "decision": "NO_CANDIDATES",
+  "decision": "NO_TRADE",
   "candidate": null,
   "trades_executed_today": 0,
   "trades_this_week": 0,
@@ -20,20 +21,17 @@
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 3,
   "alpaca_auth_still_failing": true,
-  "consecutive_blocked_routines_prior": 16,
   "env_gaps_still_open": [
-    "SessionStart hook does not install requirements.txt — requests/python-dotenv missing on each session start",
-    "python3 resolves to Python 3.11 on this image; dependencies install to 3.13 — scripts must invoke python3.13 explicitly to import requests/numpy/yfinance"
+    "SessionStart hook does not install requirements.txt into python3.13 path — requests/python-dotenv missing on each session start"
   ],
   "tsla_exclusion_zone": {
     "opened_at": "2026-10-14T16:00:00-04:00",
     "earnings_date": "2026-10-21",
     "bot_can_close": false,
-    "operator_close_window_rth": ["2026-10-16", "2026-10-19", "2026-10-20"],
+    "operator_close_window_rth_remaining": ["2026-10-16", "2026-10-19", "2026-10-20"],
+    "operator_close_day_today": "2 of 4",
     "forced_hold_through_earnings": true,
-    "position_notional_last_known": 7207.84,
-    "operator_close_day_completed": "1 of 4 (10/15 Thu RTH ended with no operator action)",
-    "operator_close_days_remaining": ["2026-10-16 Fri", "2026-10-19 Mon", "2026-10-20 Tue"]
+    "position_notional_last_known": 7207.84
   },
   "last_confirmed_equity": {
     "value": 96384.02,
@@ -41,12 +39,13 @@
   },
   "last_known_positions_stale_hours": 192,
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 16 consecutive blocked routines over 4 full business days; screener used yfinance fallback successfully, but all trade routines still blocked",
-    "BROAD RISK-OFF SIGNAL -- 0 Phase B survivors across 95-ticker universe (first zero-result run on record); 10/15 was a universally red session (NVDA/MRVL/AVGO/AMD all < -3%). Pre-market 09:00 ET will see empty candidate list and must default to NO_TRADE",
-    "TSLA OPERATOR-CLOSE DAY 2 OF 4 TODAY -- 2026-10-16 Fri RTH is the next window; otherwise forced hold through 10/21 binary earnings event",
-    "KLAC/NVDA/TSLA marks now 192h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED on the bot side for 5 business days",
-    "SessionStart hook must install requests/numpy/yfinance from requirements.txt (into python3.13 path) -- same env gap on 17th session",
-    "MMC delisted/renamed in universe -- consider replacing with another insurance ticker in scripts/markov_screener_full.py",
-    "Weekly review Fri 17:00 ET must flag 4-day outage with no auto-rotation / auto-pager as a monitoring gap"
+    "ROTATE ALPACA PAPER CREDENTIALS -- 17 consecutive blocked routines over 5 full business days; every trade routine still blocked",
+    "SCREENER EMPTY -- 0 Phase B survivors, broad risk-off tape 10/15; no buy candidate for 09:45 ET market-open routine either",
+    "TSLA OPERATOR-CLOSE DAY 2 OF 4 TODAY (Fri RTH 09:30-16:00 ET) -- last Friday before Tue 10/21 AMC earnings",
+    "NVDA DAY 2 SINCE -3.2% ADVERSE PRINT -- cannot evaluate -3% early-weakness stop without live mark",
+    "KLAC/NVDA/TSLA marks 192h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED for 5 business days",
+    "SessionStart hook must install requests/numpy/yfinance from requirements.txt (into python3.13 path)",
+    "MMC delisted/renamed in universe -- replacement candidate still pending",
+    "Weekly review Fri 17:00 ET must flag 5-day outage with no auto-rotation / auto-pager as a monitoring gap"
   ]
 }
