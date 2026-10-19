@@ -468,6 +468,52 @@
 
 ## EOD Snapshots
 
+### 2026-10-19 (Monday) — EOD **BLOCKED (Alpaca 401, 20th consecutive routine) — TSLA OPERATOR-CLOSE DAY 3 OF 4 ENDED WITH NO ACTION — ONLY TUE 10/20 RTH REMAINS BEFORE EARNINGS**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or in the prior 6 business days |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (pre-market and EOD both blocked on credentials; market-open and midday did not post to repo) |
+| Trades this week | 0 (Mon 10/19 only; new week opens at zero) |
+| Routines blocked today | 2 posted (pre-market, EOD) |
+| Routines blocked 6-day running total | **20** (10/12 ×4 + 10/13 ×4 + 10/14 ×4 + 10/15 ×4 + 10/16 ×2 + 10/19 ×2 posted) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark — now 11 calendar days stale) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market — now ≥264 h stale, not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 | +0.42% | $347.56 |
+
+**Blocker (Day 6):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session are still rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) remains the sole unblock path. Twentieth consecutive blocked routine across six full business days; all three position marks are now ≥264 hours stale.
+
+**TSLA operator-close window — Day 3 of 4 closed:**
+- 5-td earnings exclusion zone opened 2026-10-14 16:00 ET.
+- Earnings date: **2026-10-21 Wed AMC** — ~±7.5% options-implied move; ~$7.2K binary-event risk the risk model never approved.
+- Operator-only close window RTH remaining: 10/15 ✓ no-action, 10/16 ✓ no-action, **10/19 ✓ no-action (today)**, **10/20 Tue — LAST RTH** before Wed 10/21 AMC earnings.
+- **One operator-close RTH session remains.** If no manual close by Tue 10/20 16:00 ET → TSLA is held through the binary print.
+
+**Metrics (today / week-to-date):**
+- Day P&L: UNCOMPUTABLE (no equity read today or yesterday).
+- Trades today: 0; trades this week: 0; trades this month: 0 (every October routine still net-zero on fills).
+- Routines fired today that posted: 2 (pre-market, EOD); 0 trades executed.
+
+**Push-notification posture this routine:** EOD push sent — flags Day-3 window close + 20-routine / 6-business-day credential outage + Tuesday 10/20 as the final operator-close window before TSLA earnings.
+
+**Carry-forward to Tuesday 2026-10-20:**
+- **TSLA last operator-close RTH is tomorrow** — operator must manually close via app.alpaca.markets web UI before 10/20 16:00 ET, or accept binary earnings exposure on Wed 10/21 AMC.
+- Credential rotation still the only unblock path for all bot activity.
+- SessionStart hook pip gap re-triggered on this cold python3.11 session (requests / python-dotenv had to be installed in-session before `scripts/research.py` would import) — unchanged from pre-market routine today.
+- Nightly screener for 10/20 pre-market has not yet been read; 10/16 run was 0 Phase B survivors.
+- Weekly review Fri 2026-10-23 must capture: (a) 6-business-day outage, (b) SessionStart pip gap on every cold session, (c) TSLA exclusion-zone breach, (d) auto-pager gap behind manual push notifications.
+
+---
+
 ### 2026-10-16 (Friday) — EOD **BLOCKED (Alpaca 401, 18th consecutive routine) — TSLA OPERATOR-CLOSE DAY 2 OF 4 ENDED WITH NO ACTION — WEEK CLOSES AT 0 TRADES**
 
 | Field | Value |
