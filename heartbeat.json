@@ -1,15 +1,15 @@
 {
-  "last_routine": "End of Day",
-  "timestamp": "2026-10-16T20:40:00+00:00",
+  "last_routine": "Pre-Market Research",
+  "timestamp": "2026-10-19T07:14:33+00:00",
   "status": "blocked",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
-  "consecutive_blocked_routines": 18,
-  "blocked_business_days": 5,
-  "week_closed": true,
+  "consecutive_blocked_routines": 19,
+  "blocked_business_days": 6,
+  "week_closed": false,
   "week_trades": 0,
-  "week_routines_posted": 18,
-  "week_routines_blocked": 18,
-  "zero_trade_week": true,
+  "week_routines_posted": 1,
+  "week_routines_blocked": 1,
+  "zero_trade_week": false,
   "screener_candidates": 0,
   "screener_run_date": "2026-10-16",
   "screener_phase_b_survivors": 0,
@@ -27,14 +27,14 @@
   "weekly_buys_remaining": 3,
   "alpaca_auth_still_failing": true,
   "env_gaps_still_open": [
-    "SessionStart hook does not install requirements.txt into python3.13 path — requests/python-dotenv missing on each session start"
+    "SessionStart hook does not install requirements.txt into python3.11 path — requests/python-dotenv/numpy missing on each session start"
   ],
   "tsla_exclusion_zone": {
     "opened_at": "2026-10-14T16:00:00-04:00",
     "earnings_date": "2026-10-21",
     "bot_can_close": false,
     "operator_close_window_rth_remaining": ["2026-10-19", "2026-10-20"],
-    "operator_close_day_today": "2 of 4 (closed, no action)",
+    "operator_close_day_today": "3 of 4",
     "forced_hold_through_earnings": true,
     "position_notional_last_known": 7207.84
   },
@@ -42,16 +42,14 @@
     "value": 96384.02,
     "as_of": "2026-10-08"
   },
-  "last_known_positions_stale_hours": 192,
+  "last_known_positions_stale_hours": 240,
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 18 consecutive blocked routines over 5 full business days; every trade routine still blocked",
-    "FIRST ZERO-TRADE WEEK of paper phase -- 0 buys, 0 sells, 18 blocked routines",
-    "SCREENER EMPTY -- 0 Phase B survivors; next screener Sun->Mon overnight",
-    "TSLA OPERATOR-CLOSE DAY 2 OF 4 ENDED NO-ACTION -- Mon 10/19 and Tue 10/20 are the only RTH sessions remaining before 10/21 AMC earnings",
-    "NVDA DAY 3 SINCE -3.2% ADVERSE PRINT -- cannot evaluate -3% early-weakness stop without live mark",
-    "KLAC/NVDA/TSLA marks 192h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED for 5 business days",
-    "SessionStart hook must install requests/numpy/yfinance from requirements.txt (into python3.13 path)",
+    "ROTATE ALPACA PAPER CREDENTIALS -- 19 consecutive blocked routines over 6 business days; every trade routine still blocked",
+    "TSLA OPERATOR-CLOSE DAY 3 OF 4 TODAY -- only Mon 10/19 and Tue 10/20 RTH remain before Wed 10/21 AMC earnings",
+    "SCREENER WAS EMPTY ON 10/16 -- 0 Phase B survivors; new overnight screener for 10/19 not yet read into this session",
+    "KLAC/NVDA/TSLA marks 240h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED for 6 business days",
+    "SessionStart hook must install requirements.txt (into python3.11 path) -- requests/python-dotenv/numpy missing every cold session",
     "MMC delisted/renamed in universe -- replacement candidate still pending",
-    "Weekly review Fri 17:00 ET must flag 5-day outage, auto-rotation / auto-pager gap, SessionStart pip gap, TSLA exclusion-zone breach"
+    "Weekly review Fri 2026-10-23 must flag 6-day outage, auto-pager gap, SessionStart pip gap, TSLA exclusion-zone breach"
   ]
 }
