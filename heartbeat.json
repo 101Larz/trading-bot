@@ -1,7 +1,7 @@
 {
-  "last_routine": "End of Day",
-  "timestamp": "2026-10-16T20:40:00+00:00",
-  "status": "blocked",
+  "last_routine": "Nightly Screener",
+  "timestamp": "2026-10-19T00:10:00+00:00",
+  "status": "success",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
   "consecutive_blocked_routines": 18,
   "blocked_business_days": 5,
@@ -11,10 +11,23 @@
   "week_routines_blocked": 18,
   "zero_trade_week": true,
   "screener_candidates": 0,
-  "screener_run_date": "2026-10-16",
+  "screener_run_date": "2026-10-19",
   "screener_phase_b_survivors": 0,
   "screener_phase_c_survivors": 0,
   "screener_phase_d_survivors": 0,
+  "screener_consecutive_zero_runs": 2,
+  "screener_universe_analyzable": 94,
+  "screener_regime_dist": { "bull": 31, "bear": 41, "sideways": 22 },
+  "screener_gate_pass_counts": {
+    "current_regime_bull":   31,
+    "markov_signal_positive": 90,
+    "stat_bull_pct_ge_40":    15,
+    "walk_forward_sharpe_gt_020": 78
+  },
+  "screener_blocking_gate": "stat_bull_pct_ge_40",
+  "screener_three_of_four_survivors": 23,
+  "screener_max_stat_bull_pct_universe": 49.6,
+  "screener_near_miss_top": ["BA", "ABBV", "CVX", "XLE", "AIG", "BLK", "XOM", "SPGI", "JPM", "PM", "ADP", "V", "COST", "SBUX", "CME"],
   "decision": "NO_TRADE",
   "candidate": null,
   "trades_executed_today": 0,
@@ -27,7 +40,7 @@
   "weekly_buys_remaining": 3,
   "alpaca_auth_still_failing": true,
   "env_gaps_still_open": [
-    "SessionStart hook does not install requirements.txt into python3.13 path — requests/python-dotenv missing on each session start"
+    "SessionStart hook does not install requirements.txt into python3.11 path — yfinance/numpy/requests/pandas missing on each session start; this routine installed them manually before running"
   ],
   "tsla_exclusion_zone": {
     "opened_at": "2026-10-14T16:00:00-04:00",
@@ -42,16 +55,16 @@
     "value": 96384.02,
     "as_of": "2026-10-08"
   },
-  "last_known_positions_stale_hours": 192,
+  "last_known_positions_stale_hours": 216,
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 18 consecutive blocked routines over 5 full business days; every trade routine still blocked",
-    "FIRST ZERO-TRADE WEEK of paper phase -- 0 buys, 0 sells, 18 blocked routines",
-    "SCREENER EMPTY -- 0 Phase B survivors; next screener Sun->Mon overnight",
+    "ROTATE ALPACA PAPER CREDENTIALS -- 18 consecutive blocked trade routines; nightly screener runs on yfinance fallback but all trade routines remain blocked",
+    "SCREENER STRUCTURALLY EMPTY -- 2nd consecutive 0-survivor run; blocking gate is stat_bull_pct >= 40%; 23 tickers pass 3-of-4 Phase B gates (BA, ABBV, CVX, XLE, AIG, BLK, XOM, SPGI, JPM, PM, ADP, V, COST, SBUX, CME near-miss). Max stat_bull_pct in universe = 49.6%; most strong uptrenders sit at 34-38%. Operator decision needed: lower gate to 35% OR widen daily ±0.5% regime thresholds OR accept zero-trade weeks until regime shifts.",
+    "FIRST ZERO-TRADE WEEK of paper phase -- 0 buys, 0 sells, 18 blocked routines (week ended Fri 10/16)",
     "TSLA OPERATOR-CLOSE DAY 2 OF 4 ENDED NO-ACTION -- Mon 10/19 and Tue 10/20 are the only RTH sessions remaining before 10/21 AMC earnings",
-    "NVDA DAY 3 SINCE -3.2% ADVERSE PRINT -- cannot evaluate -3% early-weakness stop without live mark",
-    "KLAC/NVDA/TSLA marks 192h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED for 5 business days",
-    "SessionStart hook must install requests/numpy/yfinance from requirements.txt (into python3.13 path)",
-    "MMC delisted/renamed in universe -- replacement candidate still pending",
-    "Weekly review Fri 17:00 ET must flag 5-day outage, auto-rotation / auto-pager gap, SessionStart pip gap, TSLA exclusion-zone breach"
+    "NVDA DAY 3 SINCE -3.2% ADVERSE PRINT -- cannot evaluate -3% early-weakness stop without live mark (NVDA now at 10y Markov Bear regime, below MA20/MA50, RSI 33)",
+    "KLAC/NVDA/TSLA marks 216h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED for 6 business days",
+    "SessionStart hook must install requirements.txt (yfinance/numpy/requests/pandas) into python3.11 path -- note python3 is 3.11 but system pip targets 3.13",
+    "MMC still delisted/missing from universe -- replacement candidate still pending (universe = 94 analyzable)",
+    "Weekly review Fri 17:00 ET must flag: 5-day Alpaca outage, auto-rotation/auto-pager gap, SessionStart pip gap, TSLA exclusion-zone breach, Markov Phase B calibration (2 consecutive 0-survivor nightly runs)"
   ]
 }
