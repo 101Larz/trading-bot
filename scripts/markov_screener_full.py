@@ -356,6 +356,40 @@ def write_results(all_results: list[dict], top_n: int = 10) -> None:
     if errors:
         lines += ["", "## Data Errors (skipped)", "", ", ".join(errors)]
 
+    # ── Full-universe diagnostic table ──────────────────────────────────────
+    # Lets the operator see which gate every ticker failed, especially useful
+    # on days with zero Phase B survivors.
+    diag = [r for r in all_results if not r["error"]]
+    diag.sort(key=lambda r: (
+        -(r.get("markov_signal") or -99),
+        -(r.get("sharpe")        or -99),
+    ))
+    if diag:
+        lines += [
+            "",
+            "---",
+            "",
+            "## Full-Universe Diagnostics (all tickers, sorted by Markov signal desc)",
+            "",
+            "Shows metrics for every ticker — including those that failed gates — so the",
+            "operator can see why nothing passed and whether the thresholds are tight.",
+            "",
+            "**Phase B gates:** Regime=Bull · Signal>0 · Bull%≥40% · Sharpe>0.20",
+            "",
+            "| Ticker | Regime | Signal | Bull% | Sharpe | Mom1M | RSI | >MA20 | >MA50 | B | C | D |",
+            "|--------|--------|--------|-------|--------|-------|-----|-------|-------|---|---|---|",
+        ]
+        for r in diag:
+            bull = f"{r['stat_bull_pct']:.1f}%" if r['stat_bull_pct'] is not None else "?"
+            shp  = f"{r['sharpe']:+.3f}"        if r['sharpe']        is not None else "?"
+            rsi  = f"{r['rsi']}"                if r['rsi']           is not None else "N/A"
+            tick = lambda b: "✓" if b else "·"
+            lines.append(
+                f"| {r['ticker']} | {r['regime']} | {_sig(r)} | {bull} | {shp} "
+                f"| {_mom(r)} | {rsi} | {tick(r['above_ma20'])} | {tick(r['above_ma50'])} "
+                f"| {tick(r['phase_b'])} | {tick(r['phase_c'])} | {tick(r['phase_d'])} |"
+            )
+
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"[screener] Written → {OUTPUT_FILE}", flush=True)

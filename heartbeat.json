@@ -1,7 +1,7 @@
 {
-  "last_routine": "End of Day",
-  "timestamp": "2026-10-19T20:15:00+00:00",
-  "status": "blocked",
+  "last_routine": "Nightly Screener",
+  "timestamp": "2026-10-20T00:12:00+00:00",
+  "status": "success",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
   "consecutive_blocked_routines": 20,
   "blocked_business_days": 6,
@@ -11,10 +11,22 @@
   "week_routines_blocked": 2,
   "zero_trade_week": false,
   "screener_candidates": 0,
-  "screener_run_date": "2026-10-16",
+  "screener_run_date": "2026-10-20",
   "screener_phase_b_survivors": 0,
   "screener_phase_c_survivors": 0,
   "screener_phase_d_survivors": 0,
+  "screener_consecutive_empty_runs": 2,
+  "screener_universe_size": 95,
+  "screener_tickers_analyzed": 94,
+  "screener_data_errors": ["MMC"],
+  "screener_top_signals_by_markov": [
+    {"ticker": "KLAC", "regime": "Bear", "signal": 0.153, "bull_pct": 43.2, "sharpe": 1.054, "momentum_1m": -6.4},
+    {"ticker": "ASML", "regime": "Bear", "signal": 0.144, "bull_pct": 42.8, "sharpe": 0.902, "momentum_1m": -2.3},
+    {"ticker": "QQQ",  "regime": "Bear", "signal": 0.127, "bull_pct": 34.5, "sharpe": 1.094, "momentum_1m": -1.5},
+    {"ticker": "AMAT", "regime": "Bear", "signal": 0.110, "bull_pct": 43.0, "sharpe": 1.204, "momentum_1m": -7.9},
+    {"ticker": "NVDA", "regime": "Bear", "signal": 0.110, "bull_pct": 45.4, "sharpe": 1.524, "momentum_1m": -3.7}
+  ],
+  "screener_regime_distribution_last_day": "22 Bull, 50 Bear, 22 Sideways (approx); no Bull-regime ticker has stat_bull_pct >= 40%",
   "decision": "NO_TRADE",
   "candidate": null,
   "trades_executed_today": 0,
@@ -34,7 +46,7 @@
     "earnings_date": "2026-10-21",
     "bot_can_close": false,
     "operator_close_window_rth_remaining": ["2026-10-20"],
-    "operator_close_day_today": "3 of 4 (closed no-action)",
+    "operator_close_day_today": "4 of 4 (TODAY — last RTH before earnings)",
     "forced_hold_through_earnings": true,
     "position_notional_last_known": 7207.84
   },
@@ -42,14 +54,14 @@
     "value": 96384.02,
     "as_of": "2026-10-08"
   },
-  "last_known_positions_stale_hours": 264,
+  "last_known_positions_stale_hours": 288,
   "watch_items": [
     "ROTATE ALPACA PAPER CREDENTIALS -- 20 consecutive blocked routines over 6 business days; every trade routine still blocked",
-    "TSLA OPERATOR-CLOSE DAY 4 OF 4 TOMORROW (Tue 10/20) -- LAST RTH before Wed 10/21 AMC earnings; manual close via Alpaca web UI before 16:00 ET or accept binary event risk",
-    "SCREENER WAS EMPTY ON 10/16 -- 0 Phase B survivors; new overnight screener for 10/20 not yet read into this session",
-    "KLAC/NVDA/TSLA marks 264h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED for 6 business days",
-    "SessionStart hook must install requirements.txt (into python3.11 path) -- requests/python-dotenv/numpy missing every cold session",
-    "MMC delisted/renamed in universe -- replacement candidate still pending",
-    "Weekly review Fri 2026-10-23 must flag 6-day outage, auto-pager gap, SessionStart pip gap, TSLA exclusion-zone breach"
+    "TSLA OPERATOR-CLOSE DAY 4 OF 4 TODAY (Tue 10/20) -- LAST RTH before Wed 10/21 AMC earnings; manual close via Alpaca web UI before 16:00 ET or accept binary event risk",
+    "SCREENER EMPTY FOR 2ND CONSECUTIVE RUN (10/16 and 10/20) -- 0 Phase B survivors across 94 analyzed tickers; strong Markov signals exist (KLAC +0.153, NVDA +0.110 Sharpe 1.52, AMAT +0.110 Sharpe 1.20) but regime gate (last-day >+0.5%) tagging them Bear; no Bull-regime ticker in universe has stat_bull_pct >= 40%",
+    "KLAC/NVDA/TSLA marks 288h+ stale -- cut-losers (-7%) and tighten-stop (+15%/+20%) rules UNEVALUATED for 6 business days",
+    "SessionStart hook must install requirements.txt (into python3.11 path) -- requests/python-dotenv/numpy missing every cold session; nightly screener had to pip install at 02:10 CEST",
+    "MMC delisted/renamed in universe -- 2nd week of 0-bars errors; replacement candidate still pending (next weekly review 2026-10-23)",
+    "Weekly review Fri 2026-10-23 must flag: 6-day Alpaca outage, auto-pager gap, SessionStart pip gap, TSLA exclusion-zone breach, screener regime-gate sensitivity (consider adjusting last-day threshold or stat_bull_pct gate)"
   ]
 }
