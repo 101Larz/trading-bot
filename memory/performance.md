@@ -368,6 +368,20 @@
 
 ## Routine Snapshots
 
+### 2026-10-20 (Tuesday) — Midday Scan **BLOCKED (Alpaca 401, 23rd consecutive routine) — TSLA OPERATOR-CLOSE DAY 4 OF 4 (~3.5 h LEFT TO LAST RTH DEADLINE)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Deferred — moot while orders cannot be submitted |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥336 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA operator-close window | **Day 4 of 4 — LAST RTH**; ~3.5 h to 16:00 ET deadline |
+
+**Blocker (Day 6, routine #23):** credential rotation outstanding across 6 full business days. SessionStart pip gap re-confirmed again this session. Midday steps 3/4/5 all unevaluable without live marks; TSLA bot-side close barred by exclusion zone, operator-only path to risk reduction with ~3.5 h left. Push notification sent flagging LAST-RTH deadline + 23-routine outage.
+
 ### 2026-10-20 (Tuesday) — Market Open **BLOCKED (Alpaca 401, 22nd consecutive routine) — TSLA OPERATOR-CLOSE DAY 4 OF 4 (LAST RTH BEFORE EARNINGS)**
 
 | Field | Value |
