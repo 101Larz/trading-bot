@@ -1,14 +1,14 @@
 {
-  "last_routine": "Pre-Market Research",
-  "timestamp": "2026-10-20T13:00:00+00:00",
+  "last_routine": "Market Open Execution",
+  "timestamp": "2026-10-20T13:45:00+00:00",
   "status": "blocked",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
-  "consecutive_blocked_routines": 21,
+  "consecutive_blocked_routines": 22,
   "blocked_business_days": 6,
   "week_closed": false,
   "week_trades": 0,
-  "week_routines_posted": 1,
-  "week_routines_blocked": 1,
+  "week_routines_posted": 2,
+  "week_routines_blocked": 2,
   "zero_trade_week": false,
   "screener_candidates": 0,
   "screener_run_date": "2026-10-20",
@@ -47,7 +47,7 @@
     "earnings_timing": "AMC (call ~17:30 ET)",
     "bot_can_close": false,
     "operator_close_window_rth_remaining": ["2026-10-20"],
-    "operator_close_day_today": "4 of 4 (TODAY — LAST RTH before earnings)",
+    "operator_close_day_today": "4 of 4 (TODAY — LAST RTH before earnings, ~6h to 16:00 ET)",
     "forced_hold_through_earnings_if_no_action": true,
     "position_notional_last_known": 7207.84,
     "implied_move_pct": 7.5
@@ -58,11 +58,11 @@
   },
   "last_known_positions_stale_hours": 312,
   "watch_items": [
-    "ROTATE ALPACA PAPER CREDENTIALS -- 21 consecutive blocked routines over 6 business days; every trade routine still blocked",
+    "ROTATE ALPACA PAPER CREDENTIALS -- 22 consecutive blocked routines over 6 business days; every trade routine still blocked",
     "TSLA OPERATOR-CLOSE DAY 4 OF 4 TODAY (Tue 10/20) -- LAST RTH before Wed 10/21 AMC earnings; manual close via Alpaca web UI before 16:00 ET or accept ~$7.2K binary event risk (~±7.5% implied move)",
     "SCREENER EMPTY FOR 2ND CONSECUTIVE RUN (10/16 and 10/20) -- 0 Phase B survivors across 94 analyzed tickers; strong Markov signals exist (KLAC +0.153, NVDA +0.110 Sharpe 1.52, AMAT +0.110 Sharpe 1.20) but regime gate tagging them Bear",
     "KLAC/NVDA/TSLA marks 312h+ stale -- cut-losers and tighten-stop rules UNEVALUATED for 6 business days",
-    "SessionStart hook must install requirements.txt (into python3.11 path) -- requests/python-dotenv/numpy missing every cold session; pre-market routine had to pip install",
+    "SessionStart hook must install requirements.txt (into python3.11 path) -- requests/python-dotenv/numpy missing every cold session; market-open routine had to pip install",
     "MMC delisted/renamed in universe -- 2nd week of 0-bars errors; replacement candidate still pending (next weekly review 2026-10-23)",
     "Weekly review Fri 2026-10-23 must flag: 6-day Alpaca outage, auto-pager gap, SessionStart pip gap, TSLA exclusion-zone breach, screener regime-gate sensitivity"
   ]

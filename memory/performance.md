@@ -368,6 +368,21 @@
 
 ## Routine Snapshots
 
+### 2026-10-20 (Tuesday) — Market Open **BLOCKED (Alpaca 401, 22nd consecutive routine) — TSLA OPERATOR-CLOSE DAY 4 OF 4 (LAST RTH BEFORE EARNINGS)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 |
+| Decision | NO_TRADE |
+| Candidate | None — pre-market screener returned 0 Phase B survivors (2nd consecutive empty run) |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥312 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA operator-close window | **Day 4 of 4 — LAST RTH** before Wed 10/21 AMC earnings; ~6 h to 16:00 ET deadline |
+
+**Blocker (Day 6, routine #22):** credential rotation outstanding across 6 full business days. SessionStart pip gap re-triggered on cold python3.11 session (requests/python-dotenv/numpy had to be installed in-session before `scripts/research.py` would import). Market-open and all buy rules PASS structurally (3 of 6 positions, 0 of 3 weekly trades) except (a) no in-policy candidate from screener and (b) no Alpaca credentials. Push notification sent flagging TSLA Day-4 deadline + 22-routine outage.
+
 ### 2026-10-20 (Tuesday) — Pre-Market **BLOCKED (Alpaca 401, 21st consecutive routine) — TSLA OPERATOR-CLOSE DAY 4 OF 4 (LAST RTH BEFORE EARNINGS)**
 
 | Field | Value |
