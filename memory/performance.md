@@ -368,6 +368,20 @@
 
 ## Routine Snapshots
 
+### 2026-10-20 (Tuesday) — Pre-Market **BLOCKED (Alpaca 401, 21st consecutive routine) — TSLA OPERATOR-CLOSE DAY 4 OF 4 (LAST RTH BEFORE EARNINGS)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Decision | NO_TRADE / HOLD |
+| Candidate | None — 10/20 overnight screener returned 0 Phase B survivors (2nd consecutive empty run after 10/16) |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥312 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA operator-close window | **Day 4 of 4 — LAST RTH** before Wed 10/21 AMC earnings |
+
+**Blocker (Day 6, routine #21):** credential rotation outstanding across 6 full business days. SessionStart pip gap re-triggered on cold python3.11 session (requests/python-dotenv/numpy had to be installed in-session before `scripts/research.py` would import). TSLA Q3 2026 earnings confirmed Wed 2026-10-21 AMC with ~±7.5% options-implied move; today is the last RTH window the operator can manually close via Alpaca web UI before accepting the binary event. Screener 2nd consecutive 0-Phase-B run — Markov signals present (KLAC +0.153, NVDA +0.110 Sharpe 1.52, AMAT +0.110 Sharpe 1.20) but regime gate tagging them Bear; flag for weekly review.
+
 ### 2026-10-19 (Monday) — Pre-Market **BLOCKED (Alpaca 401, 19th consecutive routine) — TSLA OPERATOR-CLOSE DAY 3 OF 4**
 
 | Field | Value |
