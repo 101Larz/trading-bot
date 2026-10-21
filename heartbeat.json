@@ -1,14 +1,14 @@
 {
-  "last_routine": "Midday Scan",
-  "timestamp": "2026-10-21T16:30:00+00:00",
+  "last_routine": "End of Day",
+  "timestamp": "2026-10-21T20:15:00+00:00",
   "status": "blocked",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
-  "consecutive_blocked_routines": 27,
+  "consecutive_blocked_routines": 28,
   "blocked_business_days": 7,
   "week_closed": false,
   "week_trades": 0,
-  "week_routines_posted": 7,
-  "week_routines_blocked": 7,
+  "week_routines_posted": 8,
+  "week_routines_blocked": 8,
   "zero_trade_week": false,
   "screener_candidates": 0,
   "screener_run_date": "2026-10-21",
@@ -32,13 +32,14 @@
   "positions": ["KLAC", "NVDA", "TSLA"],
   "weekly_buys_remaining": 3,
   "alpaca_auth_still_failing": true,
-  "position_marks_stale_hours": 385,
+  "position_marks_stale_hours": 408,
   "losers_cut_evaluated": false,
   "stops_tightened_evaluated": false,
   "thesis_break_scan_evaluated": false,
   "tsla_earnings_today_amc": true,
+  "tsla_earnings_print_tonight": true,
   "tsla_operator_close_window": {
-    "day": "4 of 4",
+    "day": "closed",
     "is_last_rth": false,
     "status": "window_closed_no_bot_side_confirmation",
     "operator_action_confirmed": null,
@@ -49,5 +50,5 @@
   },
   "session_start_pip_gap_this_session": true,
   "pushed_notification": false,
-  "push_suppressed_reason": "same_signal_as_premarket_and_market_open_pushes_today"
+  "push_suppressed_reason": "same_signal_as_premarket_push_today_eod_repush_would_add_noise_before_print"
 }
