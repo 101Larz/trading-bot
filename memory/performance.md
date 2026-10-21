@@ -368,6 +368,21 @@
 
 ## Routine Snapshots
 
+### 2026-10-21 (Wednesday) — Midday Scan **BLOCKED (Alpaca 401, 27th consecutive routine — Day 7) — TSLA EARNINGS AMC TONIGHT**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Deferred — moot while orders cannot be submitted |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥385 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA state | Exclusion zone active; earnings AMC tonight ~17:30 ET; operator-close window ended 10/20 16:00 ET with no bot-side confirmation; ~$7.2K binary notional unverified |
+| Push notification | Suppressed (same signal as pre-market/market-open pushes earlier today) |
+
+**Blocker (Day 7, routine #27):** credentials still 401. Midday steps 3/4/5 all unevaluable without live marks. TSLA bot-side close barred by exclusion zone; operator-close window closed yesterday 10/20 16:00 ET; earnings print lands tonight AMC. Push suppressed — same signal as earlier today.
+
 ### 2026-10-21 (Wednesday) — Market Open **BLOCKED (Alpaca 401, 26th consecutive routine — Day 7) — TSLA EARNINGS AMC TONIGHT**
 
 | Field | Value |
