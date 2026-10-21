@@ -368,6 +368,20 @@
 
 ## Routine Snapshots
 
+### 2026-10-21 (Wednesday) — Pre-Market **BLOCKED (Alpaca 401, 25th consecutive routine — Day 7) — TSLA EARNINGS AMC TODAY**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Decision | NO_TRADE / HOLD |
+| Candidate | None — 2026-10-21 overnight screener returned 10 Phase B passers but 0 Phase C survivors (3rd consecutive empty C/D run) |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥360 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA operator-close window | **CLOSED** — 10/20 16:00 ET elapsed with no bot-side confirmation; earnings AMC tonight |
+
+**Blocker (Day 7, routine #25):** credential rotation outstanding across 7 full business days. SessionStart hook pip gap re-triggered on cold python3.11 session — `requests` + `python-dotenv` + `numpy` had to be installed in-session before `scripts/research.py` would import. Screener produced a semi Bull-regime cluster (NVDA, TSLA, AMD, AVGO, LRCX, MRVL, MU, WDC, SNDK, STX) but all 10 fail Phase C momentum (1M return −5% to −25%) → no in-policy candidate. TSLA inside its earnings exclusion zone (print tonight AMC, ~±7.5% implied move, ~$7.2K binary notional) — bot cannot submit any order and the operator window has already passed. Push notification sent flagging 25-routine / 7-business-day outage + TSLA held into print pending operator confirmation.
+
 ### 2026-10-20 (Tuesday) — EOD **BLOCKED (Alpaca 401, 24th consecutive routine) — TSLA OPERATOR-CLOSE DAY 4 OF 4 ENDED WITH NO BOT-SIDE CONFIRMATION — TSLA HELD INTO WED 10/21 AMC EARNINGS**
 
 | Field | Value |
