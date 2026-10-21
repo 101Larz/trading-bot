@@ -368,6 +368,22 @@
 
 ## Routine Snapshots
 
+### 2026-10-21 (Wednesday) — Market Open **BLOCKED (Alpaca 401, 26th consecutive routine — Day 7) — TSLA EARNINGS AMC TONIGHT**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining) |
+| Decision | NO_TRADE |
+| Candidate | None — 2026-10-21 overnight screener 0 Phase C/D survivors (3rd consecutive empty C/D run) |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥360 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA state | Exclusion zone active; earnings AMC tonight ~17:30 ET; operator-close window ended 10/20 16:00 ET with no bot-side confirmation; ~$7.2K binary notional unverified |
+| Push notification | Suppressed (same signal as pre-market push earlier today) |
+
+**Blocker (Day 7, routine #26):** credentials still 401. Both buy gates fail — no Phase C/D screener survivor AND no usable credentials. Market-open structural checks pass (3 of 6 positions, 0 of 3 weekly trades) but execute path is doubly blocked. Session start pip gap re-triggered on cold python3.11 (fixed in-session via `python -m pip install requests python-dotenv numpy`).
+
 ### 2026-10-21 (Wednesday) — Pre-Market **BLOCKED (Alpaca 401, 25th consecutive routine — Day 7) — TSLA EARNINGS AMC TODAY**
 
 | Field | Value |
