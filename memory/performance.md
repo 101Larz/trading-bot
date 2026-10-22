@@ -368,6 +368,28 @@
 
 ## Routine Snapshots
 
+### 2026-10-22 (Thursday) — Market Open **BLOCKED (Alpaca 401, 30th consecutive routine — Day 8) — TSLA POST-EARNINGS TAPE LIVE, UNVERIFIED**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining — new week after Mon-Wed all zero) |
+| Decision | NO_TRADE |
+| Candidate | None — nightly screener 10/21 → 0 Phase C/D survivors (3rd consecutive empty run); no 10/22 catalyst in research log |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥456 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; today's open is the P&L event; bot blind to operator-close or forced-hold outcome |
+| Push notification | Suppressed (identical signal pushed from pre-market routine ~45 min ago) |
+
+**Buy-rule gate check (step 3):**
+- Max 6 positions: 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: UNEVALUABLE (no equity read)
+- Catalyst in today's research log: **FAIL** — no in-policy candidate
+
+**Blocker (Day 8, routine #30):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. SessionStart pip gap re-triggered again on cold python3.11 — `requests` + `python-dotenv` + `numpy` had to be installed in-session before `scripts/research.py` would import.
+
 ### 2026-10-21 (Wednesday) — EOD **BLOCKED (Alpaca 401, 28th consecutive routine — Day 7) — TSLA EARNINGS PRINT TONIGHT AMC**
 
 | Field | Value |
