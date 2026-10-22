@@ -368,6 +368,21 @@
 
 ## Routine Snapshots
 
+### 2026-10-22 (Thursday) — Midday Scan **BLOCKED (Alpaca 401, 31st consecutive routine — Day 8) — TSLA POST-EARNINGS TAPE LIVE, UNVERIFIED**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Deferred — moot while orders cannot be submitted; TSLA post-print tape unverifiable |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥480 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; today's open was the P&L event; bot blind to operator-close or forced-hold outcome |
+| Push notification | Suppressed (same signal as pre-market/market-open pushes earlier today) |
+
+**Blocker (Day 8, routine #31):** credentials still 401. Midday steps 3/4/5 all unevaluable without live marks. SessionStart pip gap re-triggered again on cold python3.11 — `requests` + `python-dotenv` + `numpy` had to be installed in-session before `scripts/research.py` would import. TSLA post-earnings P&L event already live on today's open; bot-side confirmation lands only on the first routine that gets through 401.
+
 ### 2026-10-22 (Thursday) — Market Open **BLOCKED (Alpaca 401, 30th consecutive routine — Day 8) — TSLA POST-EARNINGS TAPE LIVE, UNVERIFIED**
 
 | Field | Value |
