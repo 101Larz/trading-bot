@@ -368,6 +368,60 @@
 
 ## Routine Snapshots
 
+### 2026-10-23 (Friday) — EOD **BLOCKED (Alpaca 401, 36th consecutive routine — Day 9) — TSLA POST-EARNINGS TAPE STILL UNVERIFIED — SECOND CONSECUTIVE ZERO-TRADE WEEK CLOSES**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 9, routine #36) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 15 calendar days stale) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or in the prior 9 business days |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (pre-market, market-open, midday, EOD all blocked) |
+| Trades this week | 0 (Mon + Tue + Wed + Thu + Fri; second consecutive zero-trade week **CLOSED**) |
+| Trades this month (Oct) | 0 (every October routine still net-zero on fills) |
+| Routines blocked today | 4 (pre-market, market-open, midday, EOD) |
+| Routines blocked 9-business-day running total | **36** (10/12 ×4, 10/13 ×4, 10/14 ×4, 10/15 ×4, 10/16 ×2 posted, 10/19 ×2 posted, 10/20 ×4, 10/21 ×4, 10/22 ×4, 10/23 ×4 = 36) |
+| Open positions (last-known, ≥600 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; 10/22 reaction tape + 10/23 full session elapsed; bot remains blind to final position/P&L |
+| Weekly review fires | **17:00 ET today (next scheduled routine)** |
+
+**Open positions table (last-known marks from 2026-10-12 pre-market — now ≥600 h stale, not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 |
+
+**Blocker (Day 9, routine #36):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. Thirty-sixth consecutive blocked routine across nine full business days; marks on all three open positions are now ≥600 hours stale. SessionStart hook pip gap re-triggered again on cold python3.11 — `requests` + `python-dotenv` + `numpy` had to be installed in-session before `scripts/research.py` would import.
+
+**Trades executed today:** _None_
+
+**Positions closed today:** _None visible to the bot_
+
+**End-of-Day reflection:**
+- 9 full business days of 401 outage is now the record for this account, surpassing the 8-day high set yesterday. The auto-pager / escalation gap identified on day 2 remains the dominant operational risk — a monitoring/alerting failure, not a trading failure. Weekly review in ~45 min owns this.
+- **Second consecutive zero-trade week closes** — 0 fills Mon 10/19 through Fri 10/23, following 0 fills Mon 10/12 through Fri 10/16. 20 routines attempted this week / 20 routines blocked.
+- TSLA binary-event risk is fully realized but still unverified: the ~$7.2K notional was live into Tue night's AMC print and the gap flashed through Wed's open; whether the P&L was favorable or adverse remains unknown to the bot after two full post-print trading sessions elapsed.
+- Screener produced a 1-Phase-D survivor today (TSLA) — unusable because TSLA is already a held position inside its post-earnings reconciliation window. Four consecutive sessions (10/16, 10/20, 10/21, 10/23) have now produced 0–1 Phase C/D survivors.
+- EOD push suppressed this routine — same signal as earlier today's pre-market/market-open/midday pushes; the P&L event cannot be verified from this session so re-pushing adds noise. Weekly review in ~45 min will own the formal scoreboard push.
+
+**Weekly scoreboard (Mon 10/19 → Fri 10/23 close) — WEEK CLOSED:**
+- Trades this week: **0** (0 buys, 0 sells across pre-market, market-open, midday, EOD × 5 days)
+- Routines attempted / blocked this week: **20 attempted / 20 blocked** on credentials (100% blocked rate)
+- Push notifications fired this week: pre-market Mon, Tue, Wed, Thu, Fri + market-open Tue, Wed, (Fri suppressed) + midday Tue = multiple escalations across all 5 days
+- This is the **second consecutive zero-trade week** (first was Mon 10/12 → Fri 10/16).
+
+**Carry-forward to Weekly Review (today 17:00 ET) and Monday 2026-10-26:**
+- Weekly review must own: (a) 9-business-day credential outage + auto-pager gap, (b) SessionStart pip gap on every cold python3.11 session, (c) TSLA exclusion-zone breach realized — the first on-record forced binary-event exposure the risk model never approved, (d) screener regime-gate sensitivity (4 consecutive 0–1 Phase C/D runs), (e) second consecutive zero-trade week.
+- **Operator action over weekend / pre-market Mon 10/26:**
+  - **ROTATE** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper and update GitHub Actions / cloud session env.
+  - **CONFIRM TSLA state** post-earnings via Alpaca web UI — whether TSLA was closed 10/20 before the exclusion-zone deadline (and at what fill) or is still open at post-print prices.
+- Monday pre-market routine (09:00 ET) will fire; if credentials remain 401, that is routine #37 and Day 10 — a two-week outage.
+
+---
+
 ### 2026-10-23 (Friday) — Midday Scan **BLOCKED (Alpaca 401, 35th consecutive routine — Day 9) — TSLA POST-EARNINGS TAPE STILL UNVERIFIED**
 
 | Field | Value |
