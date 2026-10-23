@@ -368,6 +368,23 @@
 
 ## Routine Snapshots
 
+### 2026-10-23 (Friday) — Midday Scan **BLOCKED (Alpaca 401, 35th consecutive routine — Day 9) — TSLA POST-EARNINGS TAPE STILL UNVERIFIED**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Executed via WebSearch — no definitive thesis-break signal for KLAC/NVDA/TSLA on 10/23; TSLA post-earnings tape remains bot-side unverified |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥576 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; 10/22 reaction tape elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed (same signal as pre-market / market-open pushes earlier today) |
+
+**Blocker (Day 9, routine #35):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. SessionStart pip gap re-triggered again on cold python3.11 — `requests` + `python-dotenv` + `numpy` had to be installed in-session before `scripts/research.py` would import. Weekly review fires today 17:00 ET.
+
+---
+
 ### 2026-10-23 (Friday) — Market Open **BLOCKED (Alpaca 401, 34th consecutive routine — Day 9) — TSLA POST-EARNINGS TAPE STILL UNVERIFIED**
 
 | Field | Value |
