@@ -368,6 +368,52 @@
 
 ## Routine Snapshots
 
+### 2026-10-26 (Monday) — EOD **BLOCKED (Alpaca 401, 40th consecutive routine — Day 10) — RECORD OUTAGE WEEK OPENS AT ZERO TRADES — TSLA POST-EARNINGS P&L STILL UNVERIFIED**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 10, routine #40) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 18 calendar days stale) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or at any prior close in the two-week outage |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (NO_ACTION across pre-market, market-open, midday, EOD) |
+| Trades this week | 0 (Monday only; 1 of 5 sessions elapsed in week 3 of outage) |
+| Zero-trade week streak | 2 full weeks closed + 1 day of week 3 — the first full session of the new week opens at 0 trades |
+| Routines blocked today | 4 (pre-market, market-open, midday, EOD) |
+| Routines blocked 10-business-day running total | **40** (10/12 ×4, 10/13 ×4, 10/14 ×4, 10/15 ×4, 10/16 ×4, 10/19 ×2, 10/20 ×4, 10/21 ×4, 10/22 ×4, 10/23 ×4, 10/26 ×4 = 40) |
+| Open positions (last-known, ≥696 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC. 3 post-print RTH sessions (10/22, 10/23, 10/26) + weekend elapsed; bot still blind to final position/P&L (open or flat is unknown). |
+
+**Open positions table (last-known marks from 2026-10-12 pre-market — now ≥696 h stale, not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 | +0.42% | $347.56 (pre-earnings; current state unverified post-print) |
+
+**Blocker (Day 10, routine #40):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. Fortieth consecutive blocked routine across ten full business days — this remains the record outage for this account. SessionStart hook pip gap re-triggered again on cold python3.11 — `requests` + `python-dotenv` had to be installed in-session on `/usr/local/bin/python` (python3.11) before `scripts/research.py` would import; system `pip` default (python3.13) is not where the scripts bind. Unchanged from every prior cold session in this outage.
+
+**Trades executed today:** _None_
+
+**Positions closed today:** _None visible to the bot_
+
+**End-of-Day reflection:**
+- Week 3 of the outage opened at zero trades after two consecutive zero-trade weeks closed on 10/16 and 10/23. The outage is now the dominant operational story — thesis management, screener output, and risk-rule enforcement are all moot while live state is unreadable.
+- The 2026-10-21 TSLA earnings print is now 3 post-print RTH sessions in the past and the bot has still never read the resulting state. If TSLA was manually closed before the print, the position shows flat; if held, the ~$7.2K binary P&L is realized but un-marked.
+- Push notification suppressed this routine — same signal as the midday push ~3.5 h ago; re-pushing adds noise without new information. The last substantive escalation ping landed earlier in the day; operator action remains outstanding.
+
+**Carry-forward to Tuesday 2026-10-27:**
+- **Operator action overnight / pre-market 10/27 (unchanged, Day 11 if still pending):**
+  - **ROTATE** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper and update GitHub Actions / cloud session env.
+  - **CONFIRM TSLA state** via Alpaca web UI (open or flat; if flat, note fill price and date for reconciliation into performance.md).
+  - **RESOLVE SessionStart pip gap** so cold python3.11 sessions no longer need in-session `pip install`.
+- First credential-cleared routine must prioritize: (a) full `/v2/account` + `/v2/positions` snapshot, (b) TSLA state reconciliation and backfill of any closed-position P&L into performance.md trade history, (c) regime refresh on KLAC/NVDA/TSLA before any new buy, (d) screener re-run.
+- Weekly review 2026-10-30 (Fri) must own the credential rotation runbook, the SessionStart pip gap root cause, and the regime-gate sensitivity that produced the recent 0-Phase-B overnight runs.
+
+---
+
 ### 2026-10-26 (Monday) — Midday Scan **BLOCKED (Alpaca 401, 39th consecutive routine — Day 10) — TWO-WEEK OUTAGE RECORD CONTINUES — TSLA POST-EARNINGS STILL UNVERIFIED**
 
 | Field | Value |
