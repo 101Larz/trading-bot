@@ -1,9 +1,9 @@
 {
-  "last_routine": "Pre-Market",
-  "timestamp": "2026-10-26T07:20:15+00:00",
+  "last_routine": "Market Open",
+  "timestamp": "2026-10-26T13:46:00+00:00",
   "status": "blocked",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
-  "consecutive_blocked_routines": 37,
+  "consecutive_blocked_routines": 38,
   "blocked_business_days": 10,
   "two_week_outage_record": true,
   "week_number_of_outage": "week_3",
@@ -32,8 +32,8 @@
   "tsla_sessions_elapsed_post_print": 2,
   "weekend_elapsed_without_rotation": true,
   "session_start_pip_gap_this_session": true,
-  "pushed_notification": true,
-  "push_signal": "pre_market_day_10_credential_outage_37_routines_tsla_post_earnings_still_unverified",
+  "pushed_notification": false,
+  "push_signal_suppressed_reason": "same_signal_as_premarket_push_45min_ago",
   "operator_carry_forward": [
     "rotate_apca_api_key_id_and_secret_at_app_alpaca_markets_paper",
     "update_cloud_session_env_and_github_actions",

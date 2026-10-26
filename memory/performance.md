@@ -368,6 +368,30 @@
 
 ## Routine Snapshots
 
+### 2026-10-26 (Monday) — Market Open **BLOCKED (Alpaca 401, 38th consecutive routine — Day 10) — TWO-WEEK CREDENTIAL OUTAGE RECORD — TSLA POST-EARNINGS STILL UNVERIFIED**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining — new week after 2 consecutive zero-trade weeks) |
+| Decision | NO_TRADE |
+| Candidate | None — screener deferred pending credential rotation; no in-policy catalyst in today's research log |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥648 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; 2 post-print RTH sessions + weekend elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed (same signal as pre-market push ~45 min ago) |
+
+**Buy-rule gate check (step 3):**
+- Max 6 positions: 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: UNEVALUABLE (no equity read)
+- Catalyst in today's research log: **FAIL** — no in-policy candidate
+
+**Blocker (Day 10, routine #38):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). This is now **the record outage for this account**: 10 full business days / 38 consecutive blocked routines. Weekend did not clear the block — rotation by the account owner (e.larsve@gmail.com) remains outstanding. SessionStart pip gap re-triggered again on cold python3.11.
+
+---
+
 ### 2026-10-23 (Friday) — EOD **BLOCKED (Alpaca 401, 36th consecutive routine — Day 9) — TSLA POST-EARNINGS TAPE STILL UNVERIFIED — SECOND CONSECUTIVE ZERO-TRADE WEEK CLOSES**
 
 | Field | Value |
