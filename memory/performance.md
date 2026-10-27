@@ -368,6 +368,30 @@
 
 ## Routine Snapshots
 
+### 2026-10-27 (Tuesday) — Market Open **BLOCKED (Alpaca 401, 42nd consecutive routine — Day 11) — THREE-WEEK OUTAGE ACTIVE**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining; week 3 of outage, Mon 10/26 opened at 0) |
+| Decision | NO_TRADE |
+| Candidate | None — pre-market screener produced 0 Phase C/D survivors (4th such run in 7 sessions); no in-policy catalyst in today's research log |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥696 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings state | Print landed 2026-10-21 ~17:30 ET AMC; 4 post-print RTH sessions elapsed (10/22, 10/23, 10/26, 10/27 open); bot still blind to final position/P&L |
+| Push notification | Suppressed (same signal as pre-market push ~45 min ago) |
+
+**Buy-rule gate check (step 3):**
+- Max 6 positions: 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: UNEVALUABLE (no equity read)
+- Catalyst in today's research log: **FAIL** — no in-policy candidate
+
+**Blocker (Day 11, routine #42):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. 42nd consecutive blocked routine across 11 full business days — this is now the record outage for this account and the third calendar week of the outage is active. SessionStart pip gap re-triggered again on cold python3.11.
+
+---
+
 ### 2026-10-26 (Monday) — EOD **BLOCKED (Alpaca 401, 40th consecutive routine — Day 10) — RECORD OUTAGE WEEK OPENS AT ZERO TRADES — TSLA POST-EARNINGS P&L STILL UNVERIFIED**
 
 | Field | Value |
