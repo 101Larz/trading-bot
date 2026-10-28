@@ -368,6 +368,20 @@
 
 ## Routine Snapshots
 
+### 2026-10-28 (Wednesday) — Market Open **BLOCKED (Alpaca 401, 46th consecutive routine — Day 12)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Decision | NO_TRADE / HOLD |
+| Buy-rule gate | Catalyst-in-today's-RESEARCH-LOG FAIL (pre-market produced no actionable candidate); equity gate UNEVALUABLE |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥761 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Still unverified — 5 post-print RTH sessions + 1 open elapsed since 2026-10-21 AMC print |
+
+**Blocker (Day 12, routine #46):** credential rotation outstanding across 12 full business days. Second routine of the day; pre-market (#45) already pushed a Day-12 escalation. SessionStart pip gap re-triggered on cold python3.11 — `requests` + `python-dotenv` + `numpy` installed in-session before `scripts/research.py` would import. No order submitted (would 401 on the `scripts/risk.py` pre-flight equity read before reaching the orders endpoint).
+
 ### 2026-10-27 (Tuesday) — EOD **BLOCKED (Alpaca 401, 44th consecutive routine — Day 11) — THREE-WEEK OUTAGE ACTIVE — TSLA POST-EARNINGS P&L STILL UNVERIFIED**
 
 | Field | Value |
