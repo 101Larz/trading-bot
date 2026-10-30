@@ -368,6 +368,30 @@
 
 ## Routine Snapshots
 
+### 2026-10-30 (Friday) — Market Open **BLOCKED (Alpaca 401, 53rd consecutive routine — Day 14) — WEEKLY-REVIEW DAY, THREE-WEEK OUTAGE**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining; week 3 of outage, Fri market-open at zero) |
+| Decision | NO_TRADE |
+| Candidate | None — nightly screener produced 0 Phase D survivors (AVGO sole B+C qualifier, failed Technical gate); no research log file for 2026-10-30 |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥908 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; 6 post-print RTH sessions elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed (same signal as past 52 routines; weekly review at 17:00 ET today owns the three-week outage push) |
+
+**Buy-rule gate check (step 3):**
+- Max 6 positions: 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: UNEVALUABLE (no equity read)
+- Catalyst in today's research log: **FAIL** — nightly screener produced 0 candidates and no 2026-10-30 research log exists
+
+**Blocker (Day 14, routine #53):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. 53rd consecutive blocked routine across 14 full business days — new record. SessionStart pip gap re-triggered again on cold python3.11 — `requests` + `python-dotenv` + `numpy` installed in-session before `scripts/research.py` would import. Today's weekly review (17:00 ET) owns the three-week outage retrospective + credential rotation runbook.
+
+---
+
 ### 2026-10-29 (Thursday) — EOD **BLOCKED (Alpaca 401, 52nd consecutive routine — Day 13) — THREE-WEEK OUTAGE WEEK 3 CLOSES AT ZERO TRADES FOR DAY 4**
 
 | Field | Value |
