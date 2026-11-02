@@ -368,6 +368,23 @@
 
 ## Routine Snapshots
 
+### 2026-11-02 (Monday) — Midday Scan **BLOCKED (Alpaca 401, 57th consecutive routine — Day 15) — WEEK 4 OF OUTAGE**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Deferred — moot while orders cannot be submitted; TSLA post-print state still unverified |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥1032 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 7 post-print RTH sessions elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed (same signal as prior 56 routines; weekly review Fri 2026-11-06 17:00 ET owns the four-week outage push if still pending) |
+
+**Blocker (Day 15, routine #57):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/positions`). Midday steps 3/4/5 all unevaluable without live marks. Rotation by the account owner (e.larsve@gmail.com) remains outstanding into Day 15. SessionStart pip gap re-triggered again on cold python3.11 — `requests` + `python-dotenv` + `numpy` had to be installed in-session before `scripts/research.py` would import.
+
+---
+
 ### 2026-11-02 (Monday) — Market Open **BLOCKED (Alpaca 401, 56th consecutive routine — Day 15) — WEEK 4 OF OUTAGE OPENS**
 
 | Field | Value |
