@@ -1,17 +1,19 @@
 {
-  "last_routine": "Midday Scan",
-  "timestamp": "2026-11-02T16:58:14+00:00",
+  "last_routine": "End of Day",
+  "timestamp": "2026-11-02T21:15:00+00:00",
   "status": "blocked",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
-  "consecutive_blocked_routines": 57,
+  "consecutive_blocked_routines": 58,
   "blocked_business_days": 15,
   "three_week_outage_active": true,
   "three_full_zero_trade_weeks_closed": true,
   "week_number_of_outage": "week_4",
   "week_trades": 0,
   "zero_trade_week_streak": 3,
+  "zero_trade_days_week4": 1,
   "trades_today": 0,
   "trades_this_week": 0,
+  "trades_this_month_nov": 0,
   "weekly_buys_remaining": 3,
   "decision": "NO_ACTION",
   "losers_cut_minus_7pct": "UNEVALUATED",
@@ -26,12 +28,12 @@
   "last_confirmed_equity_date": "2026-10-08",
   "last_confirmed_equity_days_stale": 25,
   "positions": ["KLAC", "NVDA", "TSLA"],
-  "position_marks_stale_hours": 1032,
+  "position_marks_stale_hours": 1056,
   "tsla_earnings_printed": true,
   "tsla_post_earnings_reconciliation_still_unverified": true,
-  "tsla_post_print_rth_sessions_elapsed": 7,
+  "tsla_post_print_rth_sessions_elapsed": 8,
   "push_notification_sent": false,
-  "push_notification_suppressed_reason": "same_signal_as_prior_56_blocked_routines_weekly_review_2026_11_06_owns_four_week_outage_push_if_pending",
+  "push_notification_suppressed_reason": "same_signal_as_prior_57_blocked_routines_weekly_review_2026_11_06_owns_four_week_outage_push_if_pending",
   "operator_carry_forward": [
     "rotate_apca_api_key_id_and_secret_at_app_alpaca_markets_paper",
     "update_cloud_session_env_and_github_actions",
@@ -39,5 +41,5 @@
     "resolve_session_start_pip_gap_cold_python3_11"
   ],
   "underlying_block_still_outstanding": true,
-  "trading_block_notes": "Midday scan blocked. No positions read, no stops adjusted, no orders submitted. Credentials still 401 on Day 15."
+  "trading_block_notes": "EOD snapshot appended. No live equity read, no positions read, no orders submitted. Credentials still 401 on Day 15; week 4 of outage opens at 0/1 zero-trade sessions."
 }
