@@ -368,6 +368,31 @@
 
 ## Routine Snapshots
 
+### 2026-11-02 (Monday) — Market Open **BLOCKED (Alpaca 401, 56th consecutive routine — Day 15) — WEEK 4 OF OUTAGE OPENS**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining; week 4 of outage, Mon market-open at zero) |
+| Decision | NO_TRADE |
+| Candidate | None — nightly screener (yfinance, 2026-11-02 01:09 UTC) produced 0 Phase B/C/D survivors; no research log for 2026-11-02 before this routine |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥1008 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 25 calendar days stale) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 7 post-print RTH sessions elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed (same signal as prior 55 routines; weekly review Fri 2026-11-06 17:00 ET owns the four-week outage push if still pending) |
+
+**Buy-rule gate check (step 3):**
+- Max 6 positions: last-known 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: **UNEVALUABLE** (no equity read)
+- Catalyst in today's research log: **FAIL** — 0 screener survivors, no in-policy candidate
+
+**Blocker (Day 15, routine #56):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. 56th consecutive blocked routine across 15 full business days; week 4 of outage now active. SessionStart pip gap re-triggered again on cold python3.11 — `requests` + `python-dotenv` + `numpy` installed in-session before `scripts/research.py` would import.
+
+---
+
 ### 2026-10-30 (Friday) — EOD **BLOCKED (Alpaca 401, 55th consecutive routine — Day 14) — THREE-WEEK OUTAGE WEEK 3 CLOSES AT 0/5 ZERO-TRADE SESSIONS**
 
 | Field | Value |
