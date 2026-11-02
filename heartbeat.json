@@ -1,20 +1,19 @@
 {
-  "last_routine": "Nightly Screener",
-  "timestamp": "2026-11-02T01:09:00+00:00",
-  "status": "success",
+  "last_routine": "Market Open",
+  "timestamp": "2026-11-02T14:35:42+00:00",
+  "status": "blocked",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
-  "consecutive_blocked_routines": 55,
-  "blocked_business_days": 14,
+  "consecutive_blocked_routines": 56,
+  "blocked_business_days": 15,
   "three_week_outage_active": true,
   "three_full_zero_trade_weeks_closed": true,
-  "week_number_of_outage": "week_3_closed",
-  "zero_trade_week3_sessions_elapsed": 5,
+  "week_number_of_outage": "week_4_opens",
   "week_trades": 0,
   "zero_trade_week_streak": 3,
   "trades_today": 0,
   "trades_this_week": 0,
   "weekly_buys_remaining": 3,
-  "decision": "NO_ACTION",
+  "decision": "NO_TRADE",
   "candidate": null,
   "screener_candidates": 0,
   "screener_run_date": "2026-11-02",
@@ -22,7 +21,7 @@
   "screener_phase_c_survivors": 0,
   "screener_phase_d_survivors": 0,
   "screener_regime_summary": "defensive_market_zero_tickers_pass_bull_regime_and_bull_40_pct_jointly",
-  "research_log_exists_today": false,
+  "research_log_exists_today": true,
   "day_pnl_dollars": "UNCOMPUTABLE",
   "day_pnl_pct": "UNCOMPUTABLE",
   "cash_pct": 76.2,
@@ -35,7 +34,7 @@
   "tsla_post_earnings_reconciliation_still_unverified": true,
   "tsla_post_print_rth_sessions_elapsed": 7,
   "push_notification_sent": false,
-  "push_notification_suppressed_reason": "weekly_review_17_00_ET_owns_three_week_outage_retrospective_push",
+  "push_notification_suppressed_reason": "same_signal_as_prior_55_blocked_routines_weekly_review_2026_11_06_owns_four_week_outage_push_if_pending",
   "operator_carry_forward": [
     "rotate_apca_api_key_id_and_secret_at_app_alpaca_markets_paper",
     "update_cloud_session_env_and_github_actions",
@@ -43,5 +42,5 @@
     "resolve_session_start_pip_gap_cold_python3_11"
   ],
   "underlying_block_still_outstanding": true,
-  "trading_block_notes": "Nightly screener runs on public yfinance data and is unaffected by Alpaca 401 outage. Trading remains blocked until credentials are rotated."
+  "trading_block_notes": "Market-open routine blocked. No orders submitted; credentials still 401. Nightly screener produced 0 candidates on public yfinance data."
 }
