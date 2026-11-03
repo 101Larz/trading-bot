@@ -368,6 +368,35 @@
 
 ## Routine Snapshots
 
+### 2026-11-03 (Tuesday) — Pre-Market Research **BLOCKED (Alpaca 401, 59th consecutive routine — Day 16) — WEEK 4 OF OUTAGE, DAY 2**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 16, routine #59) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 26 calendar days stale) |
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining; week 4 of outage, Tue pre-market at zero) |
+| Decision | NO_TRADE |
+| Candidate | TSLA (nightly screener's sole Phase-D survivor; already held per last-known) |
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Open positions (last-known, ≥1103 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 8 post-print RTH sessions elapsed + today's pre-market; bot still blind to final position/P&L |
+| Push notification | Suppressed (same signal as prior 58 routines; weekly review Fri 2026-11-06 17:00 ET owns the four-week outage push if still pending) |
+
+**Buy-rule gate check:**
+- Max 6 positions: last-known 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: **UNEVALUABLE** (no equity read)
+- Catalyst / in-policy new-name candidate: **FAIL** — only screener survivor is TSLA (already held), position state unverified
+
+**Blocker (Day 16, routine #59):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets. 59th consecutive blocked routine across 16 full business days. SessionStart pip gap re-triggered again — `requests` + `python-dotenv` + `numpy` installed in-session, but pip's install path (python3.13 site-packages) does not match `/usr/local/bin/python` (3.11); `scripts/research.py` ran under `python3.13` as workaround. Rotation by the account owner (e.larsve@gmail.com) remains outstanding.
+
+Web searches for market context (S&P 500 futures, catalysts, held-position news, sector rotation) returned no results dated 2026-11-03 — search index stale. No live macro signal; relied on screener + last-known marks only.
+
+---
+
 ### 2026-11-02 (Monday) — EOD **BLOCKED (Alpaca 401, 58th consecutive routine — Day 15) — WEEK 4 OF OUTAGE OPENS AT 0/1**
 
 | Field | Value |
