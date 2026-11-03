@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-11-03T14:45:00+00:00",
-  "routine": "Market Open Execution",
+  "last_run": "2026-11-03T21:15:00+00:00",
+  "routine": "End of Day",
   "status": "blocked_alpaca_401",
   "screener_candidates": 1,
   "screener_run_date": "2026-11-03",
@@ -8,10 +8,10 @@
   "screener_phase_b_survivors": 1,
   "screener_phase_c_survivors": 1,
   "screener_phase_d_survivors": 1,
-  "last_routine": "Market Open Execution",
-  "timestamp": "2026-11-03T14:45:00+00:00",
+  "last_routine": "End of Day",
+  "timestamp": "2026-11-03T21:15:00+00:00",
   "block_reason": "alpaca_401_credential_rotation_outstanding",
-  "consecutive_blocked_routines": 60,
+  "consecutive_blocked_routines": 61,
   "blocked_business_days": 16,
   "three_week_outage_active": true,
   "three_full_zero_trade_weeks_closed": true,
@@ -36,12 +36,12 @@
   "last_confirmed_equity_date": "2026-10-08",
   "last_confirmed_equity_days_stale": 26,
   "positions": ["KLAC", "NVDA", "TSLA"],
-  "position_marks_stale_hours": 1104,
+  "position_marks_stale_hours": 1128,
   "tsla_earnings_printed": true,
   "tsla_post_earnings_reconciliation_still_unverified": true,
-  "tsla_post_print_rth_sessions_elapsed": 8,
+  "tsla_post_print_rth_sessions_elapsed": 9,
   "push_notification_sent": false,
-  "push_notification_suppressed_reason": "same_signal_as_prior_59_blocked_routines_weekly_review_owns_four_week_outage_push",
+  "push_notification_suppressed_reason": "same_signal_as_prior_60_blocked_routines_weekly_review_owns_four_week_outage_push",
   "operator_carry_forward": [
     "rotate_apca_api_key_id_and_secret_at_app_alpaca_markets_paper",
     "update_cloud_session_env_and_github_actions",
@@ -49,5 +49,5 @@
     "resolve_session_start_pip_gap_cold_python3_11_align_python_version_to_pip"
   ],
   "underlying_block_still_outstanding": true,
-  "trading_block_notes": "Market-open Day 16, routine #60: Alpaca /v2/account and /v2/positions still return 401. Step 4 (scripts/trade.py buy) unreachable. Nightly screener's only Phase-D survivor is TSLA (already held per last-known); no new-name candidate. Decision NO_TRADE."
+  "trading_block_notes": "EOD Day 16, routine #61: Alpaca /v2/account and /v2/positions still return 401. Day P&L uncomputable; week 4 of outage runs at 0/2 zero-trade sessions. Open positions unchanged per last-known: KLAC/NVDA/TSLA. Decision NO_ACTION."
 }
