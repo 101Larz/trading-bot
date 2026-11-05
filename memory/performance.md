@@ -1843,3 +1843,38 @@ Web searches for market context (S&P 500 futures, catalysts, held-position news,
 - **Stop-loss discipline must be enforced** — bot should auto-exit at 8% loss without exception
 - **Position sizing consistent** — ~$7K per position is appropriate for portfolio size
 - **Operational: credential outage must be surfaced immediately** — four consecutive routines blocked without rotation is a monitoring/alerting gap in itself
+
+---
+
+### 2026-11-05 (Thursday) — EOD **BLOCKED (Alpaca 401, 69th consecutive routine — Day 18, Week 4 Day 4)**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read for today or yesterday |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (every routine blocked on credentials) |
+| Trades this week (Mon-Thu) | 0 |
+| Trades this month (Nov MTD) | 0 |
+| Routines blocked today | 4 (pre-market, market-open, midday, EOD) |
+| Routines blocked running total | 69 across 18 full business days |
+| Zero-trade week streak | 3 closed + week 4 running (4 of 4 trading days zero, Fri pending) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark, now 28 calendar days stale) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market — not refreshed today; TSLA state unverified post-2026-10-21 earnings print):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; current state unverified post-print, 10 RTH sessions elapsed) |
+
+**Blocker:** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. 18 full business days of outage; marks on all three open positions are now >1200 hours stale; TSLA is now 10 RTH sessions past its 2026-10-21 AMC earnings print with final state still unverified.
+
+**Carry-forward to Fri 2026-11-06 (Weekly Review Day):**
+- Credential rotation remains the **#1 blocker** — four full calendar weeks of outage close tomorrow.
+- SessionStart pip gap re-confirmed today (pip→3.13, python→3.11; `python -m pip install` used as per-session workaround).
+- TSLA post-earnings state still unverified; operator confirmation via Alpaca web UI outstanding.
+- Fri 2026-11-06 17:00 ET weekly review owns the four-week outage retrospective + escalation push.
+- No new buy candidate queued (0 Phase C/D screener survivors across all five sessions of week 4).
