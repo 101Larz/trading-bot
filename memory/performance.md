@@ -1917,3 +1917,44 @@ Web searches for market context (S&P 500 futures, catalysts, held-position news,
 | Decision | NO_TRADE — credential 401 + 0 Phase B/C/D screener survivors |
 
 **Carry-forward:** credential rotation remains the #1 blocker; weekly review at 17:00 ET owns the four-week outage retrospective push.
+
+---
+
+### 2026-11-06 (Friday) — EOD **BLOCKED (Alpaca 401, 73rd consecutive routine — Day 19, Week 4 Day 5, FOUR-WEEK OUTAGE CLOSED)**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized (retried under `python3.13`) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today, no reference equity from yesterday |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (every routine blocked on credentials) |
+| Trades this week (Mon–Fri) | 0 — **4th consecutive zero-trade week closes today** |
+| Trades this month (Nov MTD) | 0 |
+| Routines blocked today | 4 (pre-market, market-open, midday, EOD) |
+| Routines blocked running total | 73 across 19 full business days |
+| Zero-trade week streak | **4 closed** (weeks ending 10-16, 10-23, 10-30, 11-06) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark — now 29 calendar days stale) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market — now ≈1248 h / 52 days stale; TSLA state unverified post-2026-10-21 earnings print):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; current state unverified post-print, 10 RTH sessions + today's full session elapsed) |
+
+**Blocker:** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. **Day 19 of outage; four full calendar weeks of zero-trade sessions now closed; TSLA is 10 RTH sessions + 1 full RTH session past its 2026-10-21 AMC earnings print with final state still unverified.**
+
+**Operational notes today:**
+- SessionStart pip gap re-confirmed again: `python3.11` lacks `requests`, `python3.13` has it. All EOD Alpaca calls ran under `python3.13` as per-session workaround.
+- No new buy candidate queued; broad-tape screener returned 0 Phase B/C/D survivors every session this week (only COST / GLD / ADP cleared the bull-regime gate out of 95 tickers).
+
+**Push notification:** Weekly Review at 17:00 ET (≈46 min) owns the four-week outage retrospective + the single escalation push that goes out today. No separate EOD push — same signal as the prior 72 routines.
+
+**Carry-forward to Mon 2026-11-09 (Week 5 Day 1):**
+- Credential rotation remains the **#1 blocker** — four full calendar weeks of outage now closed.
+- TSLA post-earnings state still unverified; operator confirmation via Alpaca web UI outstanding.
+- SessionStart pip gap re-confirmed; workaround = run `scripts/research.py` under `python3.13`.
+- Weekly Review (17:00 ET today) owns the escalation push for the four-week outage.
+- If credentials restore before Mon pre-market: resume full routine cadence and reconcile TSLA post-earnings position first.
