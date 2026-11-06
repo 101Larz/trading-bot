@@ -1878,3 +1878,19 @@ Web searches for market context (S&P 500 futures, catalysts, held-position news,
 - TSLA post-earnings state still unverified; operator confirmation via Alpaca web UI outstanding.
 - Fri 2026-11-06 17:00 ET weekly review owns the four-week outage retrospective + escalation push.
 - No new buy candidate queued (0 Phase C/D screener survivors across all five sessions of week 4).
+
+---
+
+### 2026-11-06 (Friday) — Market-Open Execution **BLOCKED (Alpaca 401, 71st consecutive routine — Day 19, Week 4 Day 5)**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` 401 |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Trades today | 0 (NO_TRADE) |
+| Trades this week (Mon–Fri through market-open) | 0 |
+| Routines blocked today | 2 so far (pre-market, market-open); midday + EOD + Weekly Review pending |
+| Routines blocked running total | 71 across 19 business days |
+| Decision | NO_TRADE — credential 401 + 0 Phase B/C/D screener survivors |
+
+**Carry-forward:** credential rotation remains the #1 blocker; weekly review at 17:00 ET owns the four-week outage retrospective push.
