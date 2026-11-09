@@ -368,6 +368,34 @@
 
 ## Routine Snapshots
 
+### 2026-11-09 (Monday) — Market Open Execution **BLOCKED (Alpaca 401, 75th consecutive routine — Day 20) — WEEK 5 OF OUTAGE, DAY 1**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining; week 5 of outage, Mon market-open at zero) |
+| Decision | NO_TRADE |
+| Candidate | None — nightly screener (2026-11-09 01:12 UTC, 95-ticker universe) produced 11 Phase B / 0 Phase C / 0 Phase D survivors |
+| Phase B passers | SNDK, ARM, NVDA, AVGO, KLAC, AMD, MU, TSLA, LRCX, MRVL, ASML (all semis / mega-cap tech) |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified under `/usr/local/bin/python` after pip workaround) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine) |
+| Open positions (last-known, ≥1275 h ≈ 53 days stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 32 calendar days stale) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 12 post-print RTH sessions elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed — same signal as pre-market ~3 h ago; nightly screener already sent the regime-shift push |
+
+**Buy-rule gate check:**
+- Max 6 positions: last-known 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: **UNEVALUABLE** (no equity read)
+- Catalyst in today's research log: **FAIL** — 0 Phase C/D survivors; no in-policy new-name candidate
+
+**Blocker (Day 20, routine #75):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by paper-api.alpaca.markets. 75th consecutive blocked routine across 20 full business days — week 5 of outage opens. Rotation by the account owner (e.larsve@gmail.com) remains outstanding. SessionStart pip gap re-triggered again — `requests` / `python-dotenv` / `numpy` installed in-session before `scripts/research.py` would import under `/usr/local/bin/python` (3.11).
+
+**Trades executed:** _None_
+
+---
+
 ### 2026-11-06 (Friday) — Midday Scan **BLOCKED (Alpaca 401, 72nd consecutive routine — Day 19) — WEEK 4 OF OUTAGE, DAY 5 (FRI, WEEKLY REVIEW DAY)**
 
 | Field | Value |
