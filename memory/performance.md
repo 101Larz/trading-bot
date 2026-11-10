@@ -368,6 +368,33 @@
 
 ## Routine Snapshots
 
+### 2026-11-10 (Tuesday) — Market Open Execution **BLOCKED (Alpaca 401, 79th consecutive routine — Day 21) — WEEK 5 OF OUTAGE, DAY 2**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining; week 5 of outage, Tue market-open at zero) |
+| Decision | NO_TRADE |
+| Candidate | None — nightly screener (2026-11-10 01:10 UTC) produced 12 Phase B / 1 Phase C (TSLA) / 0 Phase D survivors |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified this routine) |
+| Alpaca `/v2/positions` | 401 Unauthorized (not re-tested — same credential) |
+| Open positions (last-known, ≥1297 h ≈ 54 days stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 33 calendar days stale) |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; 13 post-print RTH sessions elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed — same signal as pre-market ~2.75 h ago and prior 77 routines |
+
+**Buy-rule gate check:**
+- Max 6 positions: last-known 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: **UNEVALUABLE** (no equity read)
+- Catalyst in today's research log: **FAIL** — 0 Phase D survivors (7th consecutive run); no in-policy new-name candidate
+
+**Blocker (Day 21, routine #79):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by paper-api.alpaca.markets. 79th consecutive blocked routine across 21 full business days — week 5 of outage, day 2. Rotation by the account owner (e.larsve@gmail.com) remains outstanding. SessionStart pip gap re-triggered again — `requests` / `python-dotenv` / `numpy` installed in-session with `--target /usr/local/lib/python3.11/dist-packages` before `scripts/research.py` would import under `/usr/local/bin/python` (3.11).
+
+**Trades executed:** _None_
+
+---
+
 ### 2026-11-09 (Monday) — EOD **BLOCKED (Alpaca 401, 77th consecutive routine — Day 20) — WEEK 5 OF OUTAGE, DAY 1 CLOSES AT ZERO**
 
 | Field | Value |

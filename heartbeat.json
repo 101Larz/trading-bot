@@ -1,14 +1,14 @@
 {
-  "last_run": "2026-11-10T07:21:38+00:00",
-  "routine": "Pre-Market Research 2026-11-10",
+  "last_run": "2026-11-10T14:45:00+00:00",
+  "routine": "Market Open Execution 2026-11-10",
   "status": "blocked_alpaca_401",
   "alpaca_401_still_outstanding": true,
-  "consecutive_blocked_trading_routines": 78,
+  "consecutive_blocked_trading_routines": 79,
   "blocked_business_days": 21,
   "zero_trade_week_streak": 5,
   "week_of_outage": 5,
   "day_of_week_in_outage": 2,
-  "decision": "HOLD_NO_TRADE",
+  "decision": "NO_TRADE",
   "trades_today": 0,
   "trades_this_week": 0,
   "positions": [
@@ -16,14 +16,14 @@
     "NVDA",
     "TSLA"
   ],
-  "position_marks_stale_hours_approx": 1294,
+  "position_marks_stale_hours_approx": 1297,
   "last_confirmed_equity_usd": 96384.02,
   "last_confirmed_equity_date": "2026-10-08",
   "tsla_post_earnings_reconciliation_still_unverified": true,
   "screener_phase_d_survivors_carry_forward": 0,
   "screener_phase_d_zero_consecutive_runs": 7,
   "push_notification_sent": false,
-  "push_notification_reason": "same_signal_as_prior_77_routines",
+  "push_notification_reason": "same_signal_as_prior_78_routines",
   "operator_carry_forward": [
     "rotate_apca_api_key_id_and_secret_at_app_alpaca_markets_paper",
     "update_cloud_session_env_and_github_actions",
@@ -33,5 +33,5 @@
   ],
   "python_interpreter_used": "/usr/local/bin/python",
   "python311_pip_gap_still_outstanding": true,
-  "timestamp": "2026-11-10T07:21:38+00:00"
+  "timestamp": "2026-11-10T14:45:00+00:00"
 }
