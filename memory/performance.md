@@ -368,6 +368,33 @@
 
 ## Routine Snapshots
 
+### 2026-11-11 (Wednesday) — Market Open Execution **BLOCKED (Alpaca 401, 83rd consecutive routine — Day 22) — WEEK 5 OF OUTAGE, DAY 3**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (3 remaining; week 5 of outage, Wed market-open at zero) |
+| Decision | NO_TRADE |
+| Candidate | None — pre-market produced zero trade ideas (credentials 401, no screener survivor) |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified this routine) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine) |
+| Open positions (last-known, ≥1322 h ≈ 55 days stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 34 calendar days stale) |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; 15 post-print RTH sessions elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed — same signal as pre-market ~7.5 h ago and prior 82 routines |
+
+**Buy-rule gate check:**
+- Max 6 positions: last-known 3 of 6 — structural PASS
+- Max 3 weekly trades: 0 of 3 — structural PASS
+- Max 20% equity per position: **UNEVALUABLE** (no equity read)
+- Catalyst in today's research log: **FAIL** — no Phase D survivor; no in-policy new-name candidate
+
+**Blocker (Day 22, routine #83):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by paper-api.alpaca.markets. 83rd consecutive blocked routine across 22 full business days — week 5 of outage, day 3. Rotation by the account owner (e.larsve@gmail.com) remains outstanding. SessionStart pip gap re-triggered again — `requests` / `python-dotenv` / `numpy` installed in-session with `--target /usr/local/lib/python3.11/dist-packages`.
+
+**Trades executed:** _None_
+
+---
+
 ### 2026-11-10 (Tuesday) — EOD **BLOCKED (Alpaca 401, 81st consecutive routine — Day 21) — WEEK 5 OF OUTAGE, DAY 2 CLOSES AT ZERO**
 
 | Field | Value |
