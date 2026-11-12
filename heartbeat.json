@@ -1,8 +1,8 @@
 {
-  "last_run": "2026-11-12T14:00:00+00:00",
-  "routine": "Pre-Market Research 2026-11-12",
+  "last_run": "2026-11-12T14:45:00+00:00",
+  "routine": "Market-Open Execution 2026-11-12",
   "status": "blocked_alpaca_401",
-  "consecutive_blocked_trading_routines": 86,
+  "consecutive_blocked_trading_routines": 87,
   "outage_business_days": 23,
   "zero_trade_week_streak": "4 full weeks + week 5 day 4 pending",
   "decision": "HOLD / NO_TRADE",
@@ -27,5 +27,5 @@
   "alpaca_401_still_outstanding": true,
   "operator_action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY; confirm TSLA post-earnings state; resolve SessionStart pip gap",
   "push_notification_sent": false,
-  "push_notification_reason_suppressed": "Identical signal to prior 85 blocked routines; no new operator-actionable info"
+  "push_notification_reason_suppressed": "Identical signal to prior 86 blocked routines; no new operator-actionable info"
 }
