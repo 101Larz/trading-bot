@@ -368,6 +368,56 @@
 
 ## Routine Snapshots
 
+### 2026-11-12 (Thursday) — EOD **BLOCKED (Alpaca 401, 89th consecutive routine — Day 23) — WEEK 5 OF OUTAGE, DAY 4 CLOSES AT ZERO**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 23, routine #89, re-verified this routine) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 35 calendar days stale) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or at any prior close in the five-week outage |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (NO_ACTION across pre-market, market-open, midday, EOD) |
+| Trades this week | 0 (Mon + Tue + Wed + Thu; week 5 of outage, 4 of 5 sessions elapsed, all zero) |
+| Trades this month (Nov) | 0 (first 9 business days of November — 11/02, 11/03, 11/04, 11/05, 11/06, 11/09, 11/10, 11/11, 11/12 — all zero fills) |
+| Zero-trade week streak | **4 full weeks closed + 4 days of week 5** (10/12–10/16, 10/19–10/23, 10/26–10/30, 11/02–11/06, 11/09–11/12) |
+| Routines blocked today | 4 recorded (pre-market #86, market-open #87, midday #88, EOD #89) |
+| Routines blocked 23-business-day running total | **89** (10/12 ×4, 10/13 ×4, 10/14 ×4, 10/15 ×4, 10/16 ×4, 10/19 ×2 posted, 10/20 ×4, 10/21 ×4, 10/22 ×4, 10/23 ×4, 10/26 ×4, 10/27 ×4, 10/28 ×4, 10/29 ×4, 10/30 ×3, 11/02 ×3, 11/03 ×3, 11/04 ×4, 11/05 ×4, 11/06 ×4, 11/09 ×4, 11/10 ×4, 11/11 ×4, 11/12 ×4 = 89) |
+| Open positions (last-known, ≈1356 h stale) | KLAC 39 @ $196.79, NVDA 34 @ $224.59, TSLA 19 @ $377.78 |
+| TSLA post-earnings status | Print landed 2026-10-21 ~17:30 ET AMC; 16 post-print RTH sessions + 22 calendar days elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed — same signal as prior 88 routines; no new operator-actionable info at this close |
+
+**Open positions table (last-known marks from 2026-10-12 pre-market — now ≈1356 h stale, not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; current state unverified post-print) |
+
+**Blocker (Day 23, routine #89):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` served to this session continue to be rejected by paper-api.alpaca.markets (401 on `/v2/account` and `/v2/positions`, re-verified under both `/usr/local/bin/python` 3.11 and `python3.13`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. 89th consecutive blocked routine across 23 full business days — week 5 of outage, day 4 of 5 closes at zero. SessionStart pip gap re-triggered again on cold python3.11 for this session; `python3.13` already had `requests` site-packages so EOD endpoint re-verification ran under it.
+
+**Trades executed today:** _None_
+
+**Positions closed today:** _None visible to the bot_
+
+**End-of-Day reflection (day 4 of week 5 of the outage):**
+- Day 23 of the outage closes exactly like the prior 22 days: credentials still 401, live state still unreadable, day/week P&L uncomputable. The dominant operational issue remains the still-missing credential rotation.
+- **Week 5 of the outage now runs at 0/4 zero-trade sessions.** Four full zero-trade weeks plus Mon + Tue + Wed + Thu of week 5 — new high-water mark for the longest zero-trade streak and longest Alpaca-blocked outage on record for this account.
+- The 2026-10-21 TSLA earnings print is now 16 post-print RTH sessions and 22 calendar days in the past; the bot has still never read the resulting state. If TSLA was manually closed before the print, the position shows flat; if held, the ~$7.2K binary P&L has been realized but un-marked in performance.md.
+- Nightly screener re-ran 2026-11-12 pre-market: 13 Phase B survivors, 1 Phase C survivor, 1 Phase D survivor (TSLA) across a 95-ticker universe (MMC data-error). The sole Phase D name is already held in last-known positions, so credential-cleared routine Day 1 has no genuinely new buy candidate to chase ahead of the open.
+- Push notification suppressed this routine — same signal as the prior midday ~2.75 h ago and the prior 88 routines. No new operator-actionable info at this close beyond the standing credential rotation ask.
+
+**Carry-forward to Friday 2026-11-13 (day 5 of week 5 of outage + Weekly Review day):**
+- **Operator action overnight (unchanged, Day 24 if still pending Friday pre-market):**
+  - **ROTATE** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper and update GitHub Actions / cloud session env.
+  - **CONFIRM TSLA state** via Alpaca web UI (open or flat; if flat, note fill price and date for reconciliation into performance.md).
+  - **RESOLVE SessionStart pip gap** so cold python3.11 sessions no longer need in-session `pip install --target /usr/local/lib/python3.11/dist-packages`.
+- Friday 2026-11-13 17:00 ET weekly review owns: (a) **five-week outage retrospective + the single escalation push that goes out that routine** (i.e., not suppressed), (b) screener trend review across the outage window (TSLA remains the dominant Phase D candidate), (c) reconciliation checklist for the first credential-cleared routine.
+- First credential-cleared routine must prioritize: (a) full `/v2/account` + `/v2/positions` snapshot, (b) TSLA state reconciliation and backfill of any closed-position P&L into performance.md trade history, (c) regime refresh on KLAC/NVDA/TSLA before any new buy, (d) screener re-run with verified universe before acting on TSLA Phase D signal.
+
+---
+
 ### 2026-11-12 (Thursday) — Midday Scan **BLOCKED (Alpaca 401, 88th consecutive routine — Day 23) — WEEK 5 OF OUTAGE, DAY 4**
 
 | Field | Value |
