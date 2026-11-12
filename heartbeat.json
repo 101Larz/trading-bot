@@ -1,49 +1,31 @@
 {
-  "last_run": "2026-11-12T01:10:00+00:00",
-  "routine": "Nightly Screener",
-  "status": "success",
-  "screener_candidates": 1,
-  "screener_run_date": "2026-11-12",
-  "screener_top_candidates": [
-    "TSLA"
+  "last_run": "2026-11-12T14:00:00+00:00",
+  "routine": "Pre-Market Research 2026-11-12",
+  "status": "blocked_alpaca_401",
+  "consecutive_blocked_trading_routines": 86,
+  "outage_business_days": 23,
+  "zero_trade_week_streak": "4 full weeks + week 5 day 4 pending",
+  "decision": "HOLD / NO_TRADE",
+  "positions_last_known": [
+    "KLAC 39 @ $196.79",
+    "NVDA 34 @ $224.59",
+    "TSLA 19 @ $377.78 (post-earnings state unverified)"
   ],
+  "last_confirmed_equity_usd": 96384.02,
+  "last_confirmed_equity_date": "2026-10-08",
+  "screener_run_date": "2026-11-12",
   "screener_phase_b_survivors": 13,
   "screener_phase_c_survivors": 1,
   "screener_phase_d_survivors": 1,
+  "screener_top_candidates": [
+    "TSLA"
+  ],
   "screener_universe": 95,
   "screener_data_errors": [
     "MMC"
   ],
-  "prior_routine_before_this_one": {
-    "routine": "End of Day 2026-11-11",
-    "status": "blocked_alpaca_401",
-    "consecutive_blocked_trading_routines": 85,
-    "zero_trade_week_streak": 5,
-    "positions": [
-      "KLAC",
-      "NVDA",
-      "TSLA"
-    ],
-    "last_confirmed_equity_usd": 96384.02,
-    "last_confirmed_equity_date": "2026-10-08"
-  },
   "alpaca_401_still_outstanding": true,
-  "notes": [
-    "Nightly screener uses yfinance/yahoo-direct bar data — not affected by Alpaca 401.",
-    "Markov skill directory ~/.claude/skills/markov-hedge-fund-method absent in this session; used self-contained scripts/markov_screener_full.py (same tool used for prior nightly runs per memory/screener_results.md history).",
-    "Ran --years 10 --top 10 --workers 16 against the 95-ticker universe.",
-    "MMC bar fetch failed on all three sources (alpaca 401, yfinance delisted/crumb, yahoo-direct 404); carried forward as a single-ticker data error, not a screener failure.",
-    "Pre-market routine at 09:00 ET should ignore the Alpaca-paper outage for READ-ONLY screener consumption; trade execution remains blocked until APCA keys are rotated."
-  ],
-  "operator_carry_forward": [
-    "rotate_apca_api_key_id_and_secret_at_app_alpaca_markets_paper",
-    "update_cloud_session_env_and_github_actions",
-    "confirm_tsla_state_via_alpaca_web_ui",
-    "resolve_session_start_pip_gap_cold_python3_11",
-    "investigate_mmc_persistent_zero_bars_across_all_providers"
-  ],
-  "python_interpreter_used": "/usr/local/bin/python3 (3.11.18)",
-  "python311_pip_gap_still_outstanding": false,
-  "python311_pip_gap_resolution": "python3 -m pip install --break-system-packages numpy pandas yfinance requests python-dotenv alpaca-py — succeeded this session",
-  "timestamp": "2026-11-12T01:10:00+00:00"
+  "operator_action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY; confirm TSLA post-earnings state; resolve SessionStart pip gap",
+  "push_notification_sent": false,
+  "push_notification_reason_suppressed": "Identical signal to prior 85 blocked routines; no new operator-actionable info"
 }
