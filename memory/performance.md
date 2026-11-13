@@ -368,6 +368,40 @@
 
 ## Routine Snapshots
 
+### 2026-11-13 (Friday) — Pre-Market Research **BLOCKED (Alpaca 401, 90th consecutive routine — Day 24) — WEEK 5 OF OUTAGE, DAY 5 (FRIDAY)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Decision | NO_TRADE — credentials 401; no in-policy new-name buy possible |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified under /usr/local/bin/python 3.11 after in-session pip workaround) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 36 calendar days stale) |
+| Open positions (last-known, ≈1368 h ≈ 57 days stale) | KLAC 39 @ $196.79 (**regime flipped Bear today**), NVDA 34 @ $224.59 (**regime Bear, Mom1M −23.5%, RSI 24.5**), TSLA 19 @ $377.78 (regime Bull) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 17 post-print RTH sessions + 23 calendar days elapsed; bot still blind to final position/P&L |
+| Nightly screener (2026-11-13 01:15 UTC) | 95-ticker run: 3 Phase B / 3 Phase C / **3 Phase D** survivors — **AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44)**. Richest Phase D set of the outage. |
+| Push notification | Suppressed — identical signal to the prior 89 routines; today's 17:00 ET Weekly Review owns the weekly escalation push |
+
+**Blocker (Day 24, routine #90):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets`. 90th consecutive blocked routine across 24 full business days — week 5 of outage, day 5 (Friday). Rotation by the account owner (e.larsve@gmail.com) remains outstanding. SessionStart pip gap re-triggered again — `requests` / `python-dotenv` / `numpy` installed in-session with `--target /usr/local/lib/python3.11/dist-packages`.
+
+**Trade ideas (informational, not actionable):**
+- **AVGO** — Rank 1. Bull regime, Sharpe 1.33, RSI 61.7, Mom1M +5.8%. Earnings 2026-12-09 (26 days / ~18 TD out — clears "no earnings <5 TD" rule). MA alignment "mixed" — check before entry.
+- **AMD** — Rank 2. Bull, Sharpe 0.75, RSI 57.4, Mom1M +4.1%. Q3 beat + Oppenheimer upgrade to Outperform PT $600 (2026-11-09); has round-tripped a −37% drawdown + rebound in 5 wk, volatility elevated.
+- **TSLA** — Rank 3. Bull, Sharpe 0.44, RSI 57.9, Mom1M +9.7%. Robotaxi expansion (San Antonio 2026-11-09, Fort Worth 2026-11-02). **Already potentially held — do not re-enter until TSLA state reconciles.**
+
+**Held-position regime flips (require immediate review on first credential-cleared routine):**
+- **KLAC** flipped Bear overnight — first Bear read since entry; trend-breakdown signal-based exit is in-play (position held ≥3 days).
+- **NVDA** Bear with Mom1M −23.5% and RSI 24.5; stop-loss at $211.27 may already have triggered depending on current mark (last-known $233.87 was +4.13% but was 55+ days ago).
+- **TSLA** remains Bull and is the only held name still in the screener's Phase D output.
+
+**First credential-cleared routine priority (unchanged, reinforced):**
+1. `/v2/account` + `/v2/positions` snapshot.
+2. TSLA state reconciliation + performance.md backfill.
+3. Regime-break exit review on KLAC and NVDA (both Bear today).
+4. Consider AVGO (rank 1) as the top new-buy candidate once held-position triage is complete.
+
+---
+
 ### 2026-11-12 (Thursday) — EOD **BLOCKED (Alpaca 401, 89th consecutive routine — Day 23) — WEEK 5 OF OUTAGE, DAY 4 CLOSES AT ZERO**
 
 | Field | Value |
