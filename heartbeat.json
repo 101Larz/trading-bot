@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-11-13T07:15:19+00:00",
-  "routine": "Pre-Market Research 2026-11-13",
+  "last_run": "2026-11-13T15:34:17+00:00",
+  "routine": "Market Open Execution 2026-11-13",
   "status": "blocked_alpaca_401",
   "day_of_outage": 24,
-  "consecutive_blocked_routines": 90,
+  "consecutive_blocked_routines": 91,
   "week_of_outage": 5,
   "weekday_of_week_5": "Friday (day 5 of 5)",
   "alpaca_account_status": "401 Unauthorized",
@@ -15,13 +15,13 @@
     {"symbol": "NVDA", "qty": 34, "avg_entry": 224.59, "last_mark": 233.87, "regime_today": "Bear"},
     {"symbol": "TSLA", "qty": 19, "avg_entry": 377.78, "last_mark": "pre-earnings 379.36", "regime_today": "Bull"}
   ],
-  "tsla_post_earnings_status": "Print 2026-10-21 ~17:30 ET AMC; 17 post-print RTH sessions + 23 calendar days elapsed; bot still blind to final position/P&L",
+  "tsla_post_earnings_status": "Print 2026-10-21 ~17:30 ET AMC; 18 post-print RTH sessions + 24 calendar days elapsed; bot still blind to final position/P&L",
   "screener_top_candidates": ["AVGO", "AMD", "TSLA"],
   "screener_phase_d_survivors": 3,
   "trades_executed": 0,
   "decision": "NO_TRADE",
   "operator_action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY; confirm TSLA post-earnings state; resolve SessionStart pip gap",
   "push_notification_sent": false,
-  "push_notification_reason_suppressed": "Identical signal to prior 89 routines; 3-candidate Phase D set and KLAC/NVDA Bear flips are not actionable while 401 blocks trades; today's 17:00 ET Weekly Review owns the once-per-week escalation push",
-  "notes": "90th consecutive blocked routine across 24 full business days. SessionStart pip gap re-triggered; requests / python-dotenv / numpy re-installed to /usr/local/lib/python3.11/dist-packages. Nightly screener (01:15 UTC) succeeded via yfinance fallback — 3 of 95 passed all gates for the first time this outage."
+  "push_notification_reason_suppressed": "Identical signal to prior 90 routines; buy-rule gates 1 (max positions) and 3 (max equity %) are uncomputable without live Alpaca; today's 17:00 ET Weekly Review owns the once-per-week escalation push",
+  "notes": "91st consecutive blocked routine across 24 full business days (Week 5 Day 5 / Friday open). SessionStart pip gap re-triggered; requests / python-dotenv / numpy re-installed to /usr/local/lib/python3.11/dist-packages. No trade submitted; catalysts present on AVGO/AMD/TSLA but position-sizing formula uncomputable with 401 on /v2/account."
 }
