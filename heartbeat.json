@@ -1,15 +1,21 @@
 {
-  "last_run": "2026-11-13T16:44:02+00:00",
-  "routine": "Midday Scan 2026-11-13",
+  "last_run": "2026-11-13T20:39:22+00:00",
+  "routine": "End of Day 2026-11-13",
   "status": "blocked_alpaca_401",
   "day_of_outage": 24,
-  "consecutive_blocked_routines": 92,
+  "consecutive_blocked_routines": 93,
   "week_of_outage": 5,
-  "weekday_of_week_5": "Friday (day 5 of 5)",
+  "weekday_of_week_5": "Friday (day 5 of 5) — WEEK 5 CLOSED",
   "alpaca_account_status": "401 Unauthorized",
   "alpaca_positions_status": "401 Unauthorized",
   "last_confirmed_equity": 96384.02,
   "last_confirmed_equity_date": "2026-10-08",
+  "day_pnl_dollars": "UNCOMPUTABLE",
+  "day_pnl_percent": "UNCOMPUTABLE",
+  "trades_today": 0,
+  "trades_this_week": 0,
+  "trades_nov_mtd": 0,
+  "zero_trade_weeks_closed": 5,
   "last_known_positions": [
     {"symbol": "KLAC", "qty": 39, "avg_entry": 196.79, "last_mark": 201.46, "regime_today": "Bear"},
     {"symbol": "NVDA", "qty": 34, "avg_entry": 224.59, "last_mark": 233.87, "regime_today": "Bear"},
@@ -18,11 +24,7 @@
   "tsla_post_earnings_status": "Print 2026-10-21 ~17:30 ET AMC; 18 post-print RTH sessions + 24 calendar days elapsed; bot still blind to final position/P&L",
   "screener_top_candidates": ["AVGO", "AMD", "TSLA"],
   "screener_phase_d_survivors": 3,
-  "midday_steps": {
-    "step3_cut_losers_at_minus_7pct": "UNEVALUATED (401)",
-    "step4_tighten_stops_at_plus_15_or_20pct": "UNEVALUATED (401)",
-    "step5_thesis_break_scan": "deferred (401)"
-  },
-  "push_notification": "suppressed (same signal as prior 91 routines; Weekly Review in ~3.25 h owns the weekly escalation)",
-  "operator_action_required": "ROTATE APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper; CONFIRM TSLA state via Alpaca web UI; RESOLVE SessionStart pip gap"
+  "push_notification": "suppressed (same signal as prior 92 routines; Weekly Review in ~1.5 h owns the weekly escalation push)",
+  "operator_action_required": "ROTATE APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper; CONFIRM TSLA state via Alpaca web UI; RESOLVE SessionStart pip gap",
+  "next_routine": "Weekly Review 2026-11-13 17:00 ET (owns 5-week outage retrospective push)"
 }
