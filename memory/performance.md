@@ -368,6 +368,41 @@
 
 ## Routine Snapshots
 
+### 2026-11-13 (Friday) — EOD **BLOCKED (Alpaca 401, 93rd consecutive routine — Day 24) — WEEK 5 OF OUTAGE, DAY 5 CLOSES AT ZERO (FIVE-WEEK OUTAGE CLOSED)**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 24, routine #93, re-verified this routine under python3.13) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 36 calendar days stale) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or at any prior close in the five-week outage |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (NO_ACTION across pre-market, market-open, midday, EOD) |
+| Trades this week | 0 (Mon + Tue + Wed + Thu + Fri; **week 5 of outage closes at zero fills**) |
+| Trades this month (Nov) | 0 (first 10 business days of November — 11/02, 11/03, 11/04, 11/05, 11/06, 11/09, 11/10, 11/11, 11/12, 11/13 — all zero fills) |
+| Zero-trade week streak | **5 full weeks closed** (10/12–10/16, 10/19–10/23, 10/26–10/30, 11/02–11/06, 11/09–11/13) |
+| Routines blocked today | 4 recorded (pre-market #90, market-open #91, midday #92, EOD #93) |
+| Routines blocked 24-business-day running total | **93** (10/12 ×4, 10/13 ×4, 10/14 ×4, 10/15 ×4, 10/16 ×4, 10/19 ×2, 10/20 ×4, 10/21 ×4, 10/22 ×4, 10/23 ×4, 10/26 ×4, 10/27 ×4, 10/28 ×4, 10/29 ×4, 10/30 ×3, 11/02 ×3, 11/03 ×3, 11/04 ×4, 11/05 ×4, 11/06 ×4, 11/09 ×4, 11/10 ×4, 11/11 ×4, 11/12 ×4, 11/13 ×4 = 93) |
+| Open positions (last-known, ≈1380 h ≈ 57 days stale) | KLAC 39 @ $196.79 (Bear today), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%, RSI 24.5), TSLA 19 @ $377.78 (Bull, post-earnings state unverified) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 18 post-print RTH sessions + 24 calendar days elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed — identical signal to prior 92 routines; the 17:00 ET Weekly Review in ~1.5 h owns today's weekly escalation push with a five-week outage retrospective |
+
+**Blocker (Day 24, routine #93):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. **Day 24 of outage; five full calendar weeks of zero-trade sessions now closed; TSLA is 18 RTH sessions + 24 calendar days past its 2026-10-21 AMC earnings print with final state still unverified.**
+
+**Operational notes today:**
+- SessionStart pip gap re-confirmed again: `/usr/local/bin/python` 3.11 lacks `requests` out of session; EOD Alpaca calls succeeded (same 401 response) under `python3.13` where `requests` is already available.
+- Nightly screener (2026-11-13 01:15 UTC): 3 Phase D survivors — AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44). Richest Phase D set of the outage, but un-actionable while 401 blocks any order.
+- KLAC and NVDA both flipped Bear overnight and remain Bear today — regime-break exit review is top priority on the first credential-cleared routine.
+
+**Carry-forward to Mon 2026-11-16 (Week 6 Day 1):**
+- Credential rotation remains the **#1 blocker** — five full calendar weeks of outage now closed.
+- TSLA post-earnings state still unverified; operator confirmation via Alpaca web UI outstanding.
+- SessionStart pip gap re-confirmed; workaround = run `scripts/research.py` under `python3.13` (or `pip install --target /usr/local/lib/python3.11/dist-packages requests python-dotenv numpy`).
+- Weekly Review (17:00 ET today, ~1.5 h out) owns the once-weekly escalation push with the five-week outage retrospective.
+- First credential-cleared routine sequence (unchanged): `/v2/account` + `/v2/positions` → TSLA reconcile + backfill → KLAC/NVDA Bear regime-break exit review → then and only then consider AVGO as top new-buy candidate.
+
+---
+
 ### 2026-11-13 (Friday) — Midday Scan **BLOCKED (Alpaca 401, 92nd consecutive routine — Day 24) — WEEK 5 OF OUTAGE, DAY 5 (FRIDAY)**
 
 | Field | Value |
