@@ -1,24 +1,18 @@
 {
-  "last_run": "2026-11-12T21:15:00+00:00",
-  "routine": "End of Day 2026-11-12",
-  "status": "blocked_alpaca_401",
-  "consecutive_blocked_trading_routines": 89,
-  "outage_business_days": 23,
-  "zero_trade_week_streak": "4 full weeks + week 5 days 1-4 closed, Fri pending",
-  "decision": "HOLD / NO_TRADE",
-  "positions_last_known": [
-    "KLAC 39 @ $196.79",
-    "NVDA 34 @ $224.59",
-    "TSLA 19 @ $377.78 (post-earnings state unverified)"
-  ],
-  "last_confirmed_equity_usd": 96384.02,
-  "last_confirmed_equity_date": "2026-10-08",
-  "day_pnl_usd": null,
-  "day_pnl_pct": null,
-  "trades_today": 0,
-  "trades_this_week": 0,
+  "last_run": "2026-11-13T01:15:00+00:00",
+  "routine": "Nightly Screener 2026-11-13",
+  "status": "success",
+  "screener_candidates": 3,
+  "screener_run_date": "2026-11-13",
+  "screener_top": ["AVGO", "AMD", "TSLA"],
+  "screener_phase_b_survivors": 3,
+  "screener_phase_c_survivors": 3,
+  "screener_phase_d_survivors": 3,
+  "screener_data_errors": ["MMC"],
+  "notes": "95-ticker Markov+momentum+technical run complete. 3 of 95 passed all gates. Alpaca data-API still returning 401 for bar fetches (Day 24) — screener fell back to yfinance successfully for all tickers except MMC (delisted/renamed). Pre-market routine at 09:00 ET can read memory/screener_results.md directly.",
   "alpaca_401_still_outstanding": true,
+  "consecutive_blocked_trading_routines_at_last_eod": 89,
   "operator_action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY; confirm TSLA post-earnings state; resolve SessionStart pip gap",
   "push_notification_sent": false,
-  "push_notification_reason_suppressed": "Identical signal to prior 88 blocked routines; no new operator-actionable info. Fri 2026-11-13 Weekly Review owns the escalation push for the five-week outage."
+  "push_notification_reason_suppressed": "Nightly screener is a routine prep task, not operator-actionable. 3 clean candidates for pre-market is a normal/positive outcome."
 }
