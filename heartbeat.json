@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-11-13T15:34:17+00:00",
-  "routine": "Market Open Execution 2026-11-13",
+  "last_run": "2026-11-13T16:44:02+00:00",
+  "routine": "Midday Scan 2026-11-13",
   "status": "blocked_alpaca_401",
   "day_of_outage": 24,
-  "consecutive_blocked_routines": 91,
+  "consecutive_blocked_routines": 92,
   "week_of_outage": 5,
   "weekday_of_week_5": "Friday (day 5 of 5)",
   "alpaca_account_status": "401 Unauthorized",
@@ -18,10 +18,11 @@
   "tsla_post_earnings_status": "Print 2026-10-21 ~17:30 ET AMC; 18 post-print RTH sessions + 24 calendar days elapsed; bot still blind to final position/P&L",
   "screener_top_candidates": ["AVGO", "AMD", "TSLA"],
   "screener_phase_d_survivors": 3,
-  "trades_executed": 0,
-  "decision": "NO_TRADE",
-  "operator_action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY; confirm TSLA post-earnings state; resolve SessionStart pip gap",
-  "push_notification_sent": false,
-  "push_notification_reason_suppressed": "Identical signal to prior 90 routines; buy-rule gates 1 (max positions) and 3 (max equity %) are uncomputable without live Alpaca; today's 17:00 ET Weekly Review owns the once-per-week escalation push",
-  "notes": "91st consecutive blocked routine across 24 full business days (Week 5 Day 5 / Friday open). SessionStart pip gap re-triggered; requests / python-dotenv / numpy re-installed to /usr/local/lib/python3.11/dist-packages. No trade submitted; catalysts present on AVGO/AMD/TSLA but position-sizing formula uncomputable with 401 on /v2/account."
+  "midday_steps": {
+    "step3_cut_losers_at_minus_7pct": "UNEVALUATED (401)",
+    "step4_tighten_stops_at_plus_15_or_20pct": "UNEVALUATED (401)",
+    "step5_thesis_break_scan": "deferred (401)"
+  },
+  "push_notification": "suppressed (same signal as prior 91 routines; Weekly Review in ~3.25 h owns the weekly escalation)",
+  "operator_action_required": "ROTATE APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper; CONFIRM TSLA state via Alpaca web UI; RESOLVE SessionStart pip gap"
 }
