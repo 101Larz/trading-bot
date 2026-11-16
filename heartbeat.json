@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-11-16T13:47:02+00:00",
-  "routine": "Market Open Execution 2026-11-16",
+  "last_run": "2026-11-16T17:30:00+00:00",
+  "routine": "Midday Scan 2026-11-16",
   "status": "blocked_alpaca_401",
   "day_of_outage": 25,
-  "consecutive_blocked_routines": 95,
+  "consecutive_blocked_routines": 96,
   "week_of_outage": 6,
   "weekday_of_week_6": "Monday (day 1 of 5)",
   "alpaca_account_status": "401 Unauthorized",
@@ -16,6 +16,9 @@
   "trades_this_week": 0,
   "trades_nov_mtd": 0,
   "zero_trade_weeks_closed": 5,
+  "midday_step3_losers_cut": "UNEVALUATED",
+  "midday_step4_stops_tightened": "UNEVALUATED",
+  "midday_step5_thesis_break_scan": "DEFERRED",
   "last_known_positions": [
     {"symbol": "KLAC", "qty": 39, "avg_entry": 196.79, "last_mark": 201.46, "regime_fri_close": "Bear"},
     {"symbol": "NVDA", "qty": 34, "avg_entry": 224.59, "last_mark": 233.87, "regime_fri_close": "Bear"},
@@ -25,7 +28,7 @@
   "screener_top_candidates": ["AVGO", "AMD", "TSLA"],
   "screener_phase_d_survivors": 3,
   "screener_run_date": "2026-11-13 02:15 CEST (weekend did not refresh)",
-  "push_notification": "suppressed (same-signal as pre-market Week 6 Day 1 escalation push)",
+  "push_notification": "suppressed (same-signal as pre-market Week 6 Day 1 escalation push ~10 h ago)",
   "operator_action_required": "ROTATE APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper; CONFIRM TSLA state via Alpaca web UI; RESOLVE SessionStart pip gap",
-  "next_routine": "Midday Scan 2026-11-16 12:30 ET"
+  "next_routine": "End of Day 2026-11-16 16:15 ET"
 }

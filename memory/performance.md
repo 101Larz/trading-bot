@@ -368,6 +368,24 @@
 
 ## Routine Snapshots
 
+### 2026-11-16 (Monday) — Midday Scan **BLOCKED (Alpaca 401, 96th consecutive routine — Day 25) — WEEK 6 OF OUTAGE, DAY 1 (MONDAY)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Deferred — moot while orders would 401; TSLA post-print state still unverified (26 cal days post-print) |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified this routine under `python3.13`) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine) |
+| Open positions (last-known, ≈1455 h stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 19 post-print RTH sessions + 26 calendar days elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed — identical signal to prior 95 routines; Week 6 Day 1 pre-market already sent the fresh weekly escalation push ~10 h ago |
+
+**Blocker (Day 25, routine #96):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by paper-api.alpaca.markets. Midday steps 3/4/5 all unevaluable without live marks. Rotation by the account owner (e.larsve@gmail.com) remains outstanding into Day 25 (Week 6 Day 1).
+
+---
+
 ### 2026-11-13 (Friday) — EOD **BLOCKED (Alpaca 401, 93rd consecutive routine — Day 24) — WEEK 5 OF OUTAGE, DAY 5 CLOSES AT ZERO (FIVE-WEEK OUTAGE CLOSED)**
 
 | Field | Value |
