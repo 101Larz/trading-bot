@@ -2404,3 +2404,37 @@ Web searches for market context (S&P 500 futures, catalysts, held-position news,
 | Decision | NO_TRADE — credentials 401; position sizing uncomputable; no actionable candidate |
 
 Candidates (informational): AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44) — none actionable without live equity read. Credential rotation remains #1 blocker.
+
+---
+
+### 2026-11-16 (Monday) — EOD **BLOCKED (Alpaca 401, 97th consecutive routine — Day 25, Week 6 Day 1)**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today, no reference equity from prior session |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (every routine blocked on credentials) |
+| Trades this week (Mon through EOD) | 0 of 1 session complete |
+| Trades this month (Nov MTD) | 0 |
+| Routines blocked today | 4 (pre-market, market-open, midday, EOD) |
+| Routines blocked running total | 97 across 25 full business days |
+| Zero-trade week streak | 5 closed (weeks ending 10-16, 10-23, 10-30, 11-06, 11-13) + week 6 running (day 1 of 5) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark — now 39 calendar days stale) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market — now ≈896 h / 35 days stale; TSLA state unverified post-2026-10-21 earnings print):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; state unverified post-print, 19 RTH sessions + today elapsed) |
+
+**Blocker:** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. **Day 25 of outage; five full calendar weeks of zero-trade sessions closed; TSLA is 19 RTH sessions + 1 RTH session past its 2026-10-21 AMC earnings print with final state still unverified.**
+
+**Carry-forward to Tue 2026-11-17 (Week 6 Day 2):**
+- Credential rotation remains the **#1 blocker** — five full calendar weeks of outage now closed, Day 25 running.
+- TSLA post-earnings state still unverified; operator confirmation via Alpaca web UI outstanding.
+- SessionStart pip gap re-confirmed; workaround = run `scripts/research.py` under `python3.13`.
+- Informational screener leaders: AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44) — none actionable without live equity read.
