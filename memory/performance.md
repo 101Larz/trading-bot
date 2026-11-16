@@ -2372,3 +2372,17 @@ Web searches for market context (S&P 500 futures, catalysts, held-position news,
 - SessionStart pip gap re-confirmed; workaround = run `scripts/research.py` under `python3.13`.
 - Weekly Review (17:00 ET today) owns the escalation push for the four-week outage.
 - If credentials restore before Mon pre-market: resume full routine cadence and reconcile TSLA post-earnings position first.
+
+---
+
+### 2026-11-16 (Monday) — Market-Open Execution **BLOCKED (Alpaca 401, 95th consecutive routine — Day 25, Week 6 Day 1)**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` 401 |
+| Trades today | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 |
+| Routines blocked running total | 95 across 25 business days |
+| Decision | NO_TRADE — credentials 401; position sizing uncomputable; no actionable candidate |
+
+Candidates (informational): AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44) — none actionable without live equity read. Credential rotation remains #1 blocker.
