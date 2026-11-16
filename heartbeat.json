@@ -1,12 +1,25 @@
 {
-  "last_run": "2026-11-13T20:39:22+00:00",
-  "routine": "End of Day 2026-11-13",
-  "status": "blocked_alpaca_401",
-  "day_of_outage": 24,
-  "consecutive_blocked_routines": 93,
-  "week_of_outage": 5,
-  "weekday_of_week_5": "Friday (day 5 of 5) — WEEK 5 CLOSED",
-  "alpaca_account_status": "401 Unauthorized",
+  "last_run": "2026-11-16T01:08:00+00:00",
+  "routine": "Nightly Screener 2026-11-16",
+  "status": "success",
+  "screener_run_date": "2026-11-16",
+  "screener_universe": 95,
+  "screener_phase_b_survivors": 0,
+  "screener_phase_c_survivors": 0,
+  "screener_phase_d_survivors": 0,
+  "screener_candidates": 0,
+  "screener_top_candidates": [],
+  "screener_data_source": "yfinance fallback (Alpaca 401 still blocks data endpoint)",
+  "screener_data_errors": ["MMC"],
+  "regime_shift": "Friday 2026-11-13 had 3 Phase-D survivors (AVGO, AMD, TSLA all Bull). Today 2026-11-16 all three flipped to Bear regime; zero tickers meet all four Markov gates (Bull regime + Signal>0 + Bull%≥40% + Sharpe>0.20).",
+  "notable_near_misses": [
+    {"symbol": "COST", "regime": "Bull", "bull_pct": 34.8, "sharpe": 1.139, "fail_gate": "Bull%<40%"},
+    {"symbol": "BRK-B", "regime": "Bull", "bull_pct": 31.6, "sharpe": 1.278, "fail_gate": "Bull%<40%"},
+    {"symbol": "LLY", "regime": "Bull", "bull_pct": 37.3, "sharpe": 1.303, "fail_gate": "Bull%<40%"},
+    {"symbol": "WMT", "regime": "Bull", "bull_pct": 33.2, "sharpe": 1.360, "fail_gate": "Bull%<40%"},
+    {"symbol": "JPM", "regime": "Bull", "bull_pct": 35.7, "sharpe": 1.446, "fail_gate": "Bull%<40%"}
+  ],
+  "alpaca_account_status": "401 Unauthorized (day 27 of outage; still blocks trading + position/P&L reads)",
   "alpaca_positions_status": "401 Unauthorized",
   "last_confirmed_equity": 96384.02,
   "last_confirmed_equity_date": "2026-10-08",
@@ -19,12 +32,10 @@
   "last_known_positions": [
     {"symbol": "KLAC", "qty": 39, "avg_entry": 196.79, "last_mark": 201.46, "regime_today": "Bear"},
     {"symbol": "NVDA", "qty": 34, "avg_entry": 224.59, "last_mark": 233.87, "regime_today": "Bear"},
-    {"symbol": "TSLA", "qty": 19, "avg_entry": 377.78, "last_mark": "pre-earnings 379.36", "regime_today": "Bull"}
+    {"symbol": "TSLA", "qty": 19, "avg_entry": 377.78, "last_mark": "pre-earnings 379.36", "regime_today": "Bear"}
   ],
-  "tsla_post_earnings_status": "Print 2026-10-21 ~17:30 ET AMC; 18 post-print RTH sessions + 24 calendar days elapsed; bot still blind to final position/P&L",
-  "screener_top_candidates": ["AVGO", "AMD", "TSLA"],
-  "screener_phase_d_survivors": 3,
-  "push_notification": "suppressed (same signal as prior 92 routines; Weekly Review in ~1.5 h owns the weekly escalation push)",
-  "operator_action_required": "ROTATE APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper; CONFIRM TSLA state via Alpaca web UI; RESOLVE SessionStart pip gap",
-  "next_routine": "Weekly Review 2026-11-13 17:00 ET (owns 5-week outage retrospective push)"
+  "tsla_post_earnings_status": "Print 2026-10-21 ~17:30 ET AMC; 18 post-print RTH sessions + 26 calendar days elapsed; bot still blind to final position/P&L",
+  "push_notification": "suppressed (2 AM CEST; regime-shift NO_TRADE handed off to 09:00 ET pre-market routine via memory/screener_results.md)",
+  "operator_action_required": "ROTATE APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper; CONFIRM TSLA state via Alpaca web UI; RESOLVE SessionStart pip gap (numpy/pandas/yfinance/python-dotenv not pre-installed)",
+  "next_routine": "Pre-Market Research 2026-11-16 09:00 ET (reads memory/screener_results.md — will see zero candidates and recommend NO_TRADE)"
 }
