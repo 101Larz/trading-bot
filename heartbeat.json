@@ -1,8 +1,8 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-11-17T16:35:42.016260Z",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-11-17T21:15:00Z",
   "status": "BLOCKED",
-  "reason": "Alpaca 401 \u2014 Day 25, Week 6 Day 2, 100th consecutive blocked routine",
+  "reason": "Alpaca 401 — Day 25, Week 6 Day 2, 101st consecutive blocked routine",
   "trades_placed": 0,
   "decision": "NO_ACTION"
 }
