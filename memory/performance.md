@@ -368,6 +368,50 @@
 
 ## Routine Snapshots
 
+### 2026-11-17 (Tuesday) — EOD **BLOCKED (Alpaca 401, 101st consecutive routine — Day 25) — WEEK 6 DAY 2 CLOSES AT ZERO**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 25, routine #101, re-verified this routine under both `/usr/local/bin/python` 3.11 and `python3.13`) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 40 calendar days stale) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or at any prior close in the six-week outage |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (NO_ACTION across pre-market, market-open, midday, EOD) |
+| Trades this week | 0 (Mon + Tue; week 6 of outage, 2 of 5 sessions elapsed, all zero) |
+| Trades this month (Nov) | 0 (first 12 business days of November — 11/02 through 11/17 — all zero fills) |
+| Zero-trade week streak | **5 full weeks closed + 2 days of week 6** (10/12–10/16, 10/19–10/23, 10/26–10/30, 11/02–11/06, 11/09–11/13, 11/16–11/17) |
+| Routines blocked today | 4 recorded (pre-market #98, market-open #99, midday #100, EOD #101) |
+| Open positions (last-known, ≈1544 h ≈ 64 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 27 cal days + 20 RTH sessions post-print) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 20 post-print RTH sessions + 27 calendar days elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed — identical signal to prior 100 routines; Week 6 Day 2 pre-market already sent the escalation push ~12 h ago |
+
+**Open positions table (last-known marks from 2026-10-12 pre-market — now ≈1544 h stale, not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.05 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; current state unverified post-print) |
+
+**Blocker (Day 25, routine #101):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets`. 101st consecutive blocked routine across 25 full business days — **triple-digit milestone fully closed**; week 6 of outage, day 2 of 5 closes at zero. Rotation by the account owner (e.larsve@gmail.com) remains outstanding.
+
+**Trades executed today:** _None_
+
+**Positions closed today:** _None visible to the bot_
+
+**End-of-Day reflection (day 2 of week 6 of the outage):**
+- Day 25 closes identically to the prior 24: credentials still 401, live state still unreadable, day/week P&L uncomputable. Credential rotation remains the single unblocking action.
+- Week 6 now at 0/2 zero-trade sessions. Five full zero-trade weeks plus Mon + Tue of week 6.
+- TSLA print is now 20 post-print RTH sessions and 27 calendar days in the past; bot has still never read the resulting state.
+- Push notification suppressed this routine — same signal as prior 100 routines.
+
+**Carry-forward to Wed 2026-11-18 (day 3 of week 6 if still pending):**
+- **Operator action overnight (unchanged):** rotate `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper and update env; confirm TSLA state via Alpaca web UI.
+- First credential-cleared routine priority: (a) `/v2/account` + `/v2/positions` snapshot, (b) TSLA state reconciliation + performance.md backfill, (c) regime-break exit review on KLAC/NVDA (both Bear), (d) consider AVGO as top new-buy candidate.
+
+---
+
 ### 2026-11-17 (Tuesday) — Midday Scan **BLOCKED (Alpaca 401, 100th consecutive routine — Day 25) — WEEK 6 DAY 2 (TUESDAY)**
 
 | Field | Value |
