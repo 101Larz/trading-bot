@@ -1,8 +1,8 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-11-17T13:47:21.221511Z",
+  "last_routine": "midday-scan",
+  "last_run_utc": "2026-11-17T16:35:42.016260Z",
   "status": "BLOCKED",
-  "reason": "Alpaca 401 \u2014 Day 25, Week 6 Day 2, 99th consecutive blocked routine",
+  "reason": "Alpaca 401 \u2014 Day 25, Week 6 Day 2, 100th consecutive blocked routine",
   "trades_placed": 0,
-  "decision": "NO_TRADE"
+  "decision": "NO_ACTION"
 }
