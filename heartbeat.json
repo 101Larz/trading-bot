@@ -1,29 +1,8 @@
 {
-  "last_run": "2026-11-17T01:08:00+00:00",
-  "routine": "Nightly Screener 2026-11-17",
-  "status": "success",
-  "screener_candidates": 0,
-  "screener_run_date": "2026-11-17",
-  "screener_phase_b_survivors": 0,
-  "screener_phase_c_survivors": 0,
-  "screener_phase_d_survivors": 0,
-  "screener_universe": 95,
-  "screener_data_errors": ["MMC (only 0 bars after all 3 sources)"],
-  "screener_note": "Full 95-ticker scan ran via scripts/markov_screener_full.py (self-contained — no external skill dir required). 0 tickers passed Phase B Markov gates today (Regime=Bull, Signal>0, Bull%>=40%, Sharpe>0.20). Broad market signals Bear/Sideways regime across universe.",
-  "alpaca_outage_context": {
-    "day_of_outage": 25,
-    "consecutive_blocked_routines": 97,
-    "week_of_outage": 6,
-    "alpaca_account_status": "401 Unauthorized",
-    "alpaca_positions_status": "401 Unauthorized",
-    "last_confirmed_equity": 96384.02,
-    "last_confirmed_equity_date": "2026-10-08",
-    "operator_action_required": "ROTATE APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper"
-  },
-  "last_known_positions": [
-    {"symbol": "KLAC", "qty": 39, "avg_entry": 196.79, "last_mark": 201.46},
-    {"symbol": "NVDA", "qty": 34, "avg_entry": 224.59, "last_mark": 233.87},
-    {"symbol": "TSLA", "qty": 19, "avg_entry": 377.78, "last_mark": "pre-earnings 379.36"}
-  ],
-  "next_routine": "Pre-Market 2026-11-17 09:00 ET (reads memory/screener_results.md)"
+  "last_routine": "market-open",
+  "last_run_utc": "2026-11-17T13:47:21.221511Z",
+  "status": "BLOCKED",
+  "reason": "Alpaca 401 \u2014 Day 25, Week 6 Day 2, 99th consecutive blocked routine",
+  "trades_placed": 0,
+  "decision": "NO_TRADE"
 }

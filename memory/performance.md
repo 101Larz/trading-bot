@@ -2438,3 +2438,14 @@ Candidates (informational): AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44) — none
 - TSLA post-earnings state still unverified; operator confirmation via Alpaca web UI outstanding.
 - SessionStart pip gap re-confirmed; workaround = run `scripts/research.py` under `python3.13`.
 - Informational screener leaders: AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44) — none actionable without live equity read.
+
+### 2026-11-17 (Tuesday) — Market-Open **BLOCKED (Alpaca 401, 99th consecutive routine — Day 25, Week 6 Day 2)**
+
+| Field | Value |
+|-------|-------|
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Trades placed | 0 |
+| Trades this week | 0 of 3 |
+| Decision | NO_TRADE — credentials 401; zero Phase D survivors in nightly screen; macro-breadth Bear |
+| Push notification | Suppressed — pre-market (session 98) already sent today's Week 6 Day 2 escalation; no new signal in 2.5 h |
