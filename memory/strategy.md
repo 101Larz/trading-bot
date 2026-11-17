@@ -66,9 +66,14 @@ The screener re-runs every session — check today's `memory/research/YYYY-MM-DD
 
 1. **Trend confirmed**: Current price is above both the 20-day MA and 50-day MA (bullish alignment).
 2. **Momentum not overextended**: RSI-14 is between 35 and 70 at entry. Avoid chasing overbought setups (RSI > 70).
-3. **News sentiment**: No significant negative catalysts in the last 48 hours (check via WebSearch + Alpaca news).
-4. **Macro context**: S&P 500 (SPY) is not in a confirmed downtrend (SPY above its own 20-day MA).
-5. **Risk budget available**: Position would not violate any rule in the Non-Negotiable Risk Rules table in CLAUDE.md.
+3. **Momentum already visible**: Price must already be moving in the right direction — up at least 2% over the last 5 days. Do not enter a flat or stalling stock hoping it will move.
+4. **News sentiment**: No significant negative catalysts in the last 48 hours (check via WebSearch + Alpaca news).
+5. **Macro context**: S&P 500 (SPY) is not in a confirmed downtrend (SPY above its own 20-day MA).
+6. **Risk budget available**: Position would not violate any rule in the Non-Negotiable Risk Rules table in CLAUDE.md.
+7. **Confidence is HIGH**: MEDIUM confidence = NO_TRADE, no exceptions. If the thesis cannot be stated in one specific sentence, it is not HIGH confidence.
+8. **No sector concentration**: Do not open a new position in a sector already represented by an open position (e.g. two semis at once). Correlated positions count as one risk.
+9. **Stock price ≤ $500/share**: For stocks above $500/share, apply extra conservative sizing (max 2 shares) AND the early weakness stop is mandatory from day 1.
+10. **Thesis is specific**: "AI exposure" or "defensive tech" are NOT valid theses. A valid thesis names the specific catalyst, timing, and why NOW is the right entry.
 
 ---
 
@@ -92,6 +97,27 @@ The screener re-runs every session — check today's `memory/research/YYYY-MM-DD
 - Waiting 5 days before acting on weakness allowed losers to deepen; 3 days is enough to judge whether a trade is working
 - The 15% trailing stop was never triggered (no position got anywhere close to +15%); 10% trailing is more realistic
 - Early weakness rule (−3% in 3 days) is the most important addition — it cuts trades that go wrong immediately instead of holding through a full stop
+- VGK was the only winner (+$22) vs avg loss of -$430 — risk/reward was 1:20, completely unsustainable. Wins must be allowed to run to at least 8% before trimming
+
+### Risk/Reward Minimum (new — mandatory)
+
+Every trade must have a planned risk/reward of at least **1:2** before entry:
+- Calculate max loss: entry price × stop% × shares
+- Calculate target gain: entry price × 8% × shares (minimum target)
+- If target gain < 2× max loss → NO_TRADE
+
+This filters out setups where the potential win is too small relative to the risk taken.
+
+### Lessons Protocol (mandatory after every closed trade)
+
+After every closed trade, before the next session:
+1. Open `memory/lessons.md`
+2. Write a new lesson block at the top of the Lessons section
+3. Identify which pattern from the Patroonanalyse table repeated
+4. If a new pattern appears for the second time, add it to the table
+5. Update `memory/performance.md` summary statistics
+
+This is not optional. A session that closes a trade without writing a lesson has failed its process.
 
 ---
 
