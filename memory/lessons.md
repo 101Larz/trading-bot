@@ -9,91 +9,100 @@ Agent appends new lessons here after significant trades or market events. Read b
 Each lesson follows this template:
 
 ```
-### YYYY-MM-DD — [Brief Title]
-**What happened:** [Describe the trade or event]
-**What went wrong / right:** [Root cause or insight]
-**Rule change or reminder:** [What to do differently, or confirm what to keep doing]
+### YYYY-MM-DD — [SYMBOL]: [één zin wat er gebeurde]
+**What happened:** Entry [datum], exit [datum], [shares] shares, entry $[prijs], exit $[prijs], P&L [bedrag], hold [dagen] dagen.
+**What went wrong / right:** [Concrete root cause — niet generiek]
+**Rule change or reminder:** [Één specifieke actie of regel die dit voorkomt]
 ```
 
 ---
 
 ## Lessons
 
-### 2026-06-25 — AAPL: MEDIUM confidence trade met minimale positiegrootte
-**What happened:** AAPL gekocht op MEDIUM confidence als "initial test position". 1 share, $301.88 entry. Na 35 dagen gestopt op $285.52. Verlies: -$16.36.
-**What went wrong:** MEDIUM confidence trades zouden NO_TRADE moeten zijn. Dit was een experimentele positie zonder duidelijke thesis — "defensive tech" is geen edge. 35 dagen vastgehouden zonder winst zegt genoeg: de setup werkte nooit.
-**Rule change or reminder:** Geen MEDIUM confidence trades. Minimum is HIGH. Als de thesis niet in één zin scherp te omschrijven is, is het geen trade.
+### 2026-10-02 — STX: grootste verlies ooit, MEDIUM confidence, storage buiten AI-kern
+**What happened:** Entry 2026-09-24, exit 2026-10-02, 8 shares @ $918.17 → $802.83. P&L: **-$922.72**. Hold: 8 dagen. Gestopt out.
+**What went wrong:** MEDIUM confidence, thesis "Hard drive demand, AI data center storage" — generiek en zwak. STX is een legacy storage bedrijf, geen directe AI-speler. Positiegrootte van 8 shares × $918 = $7.345 is enorm voor een MEDIUM confidence trade. De stop had al op dag 2–3 getriggerd moeten zijn bij early weakness. Dit is patroon #1 (te laat gestopt) + patroon #2 (MEDIUM confidence) + patroon #4 (hoge stuksprijs).
+**Rule change or reminder:** MEDIUM confidence = NO_TRADE. Geen uitzonderingen. STX had nooit de entry-check mogen passeren.
 
 ---
 
-### 2026-06-10 — GOOGL: grote positiegrootte op MEDIUM confidence
-**What happened:** GOOGL gekocht op MEDIUM confidence, 12 shares à $385.82 = $4.629. Na 19 dagen gestopt op $358.25. Verlies: -$330.84.
-**What went wrong:** $4.600 risico op een MEDIUM confidence trade. Dit is precies het tegenovergestelde van wat de strategie zegt. De thesis "Large-cap tech, AI exposure" is generiek — dat is geen reden om 8% van portfolio te riskeren.
-**Rule change or reminder:** Positiegrootte is altijd gekoppeld aan confidence. MEDIUM = geen trade. HIGH = max 8%. Generieke sector-theses ("AI exposure") tellen niet als specifieke entry-reden.
+### 2026-10-06 — SNDK: $530 verlies op dure storage-trade, same week als STX
+**What happened:** Entry 2026-09-21, exit 2026-10-06, 4 shares @ $1.804.86 → $1.672.29. P&L: **-$530.28**. Hold: 15 dagen. Gestopt out.
+**What went wrong:** MEDIUM confidence, thesis "Storage demand, NAND recovery" — net als STX een storage thesis in dezelfde periode. Stuksprijs $1.804 is extreem hoog. 15 dagen vastgehouden terwijl de positie consistent daalde. Early weakness stop op dag 3 had dit moeten beëindigen bij ~-$160 i.p.v. -$530. Patroon #1 + #2 + #4.
+**Rule change or reminder:** Bij stuksprijzen boven $500: early weakness stop is verplicht vanaf dag 1, niet optioneel. Nooit twee storage-aandelen tegelijk houden.
 
 ---
 
-### 2026-06-05 — NVDA #1: te vroeg ingestapt, te snel gestopt
-**What happened:** NVDA gekocht op HIGH confidence, 23 shares à $215.99. Na slechts 7 dagen gestopt op $209.04. Verlies: -$160.08.
-**What went wrong:** Positie werkte nooit — direct na entry begon de daling. De hard stop (5%) was correct, maar de entry zelf was slecht getimed. RSI of MA-check heeft hier niet goed gefilterd.
-**Rule change or reminder:** Controleer bij entry altijd of de prijs al boven MA20 én MA50 staat én de RSI tussen 35–70 valt. Als de setup binnen 3 dagen 3% of meer verliest, is dat bewijs de entry verkeerd was — early weakness stop toepassen.
+### 2026-09-14 — MU: -$723 door hoge stuksprijs + sector-concentratie met NVDA
+**What happened:** Entry 2026-09-08, exit 2026-09-14, 7 shares @ $1.017.84 → $914.48. P&L: **-$723.54**. Hold: 6 dagen. Gestopt out.
+**What went wrong:** MEDIUM confidence, thesis "Memory chip recovery, HBM demand for AI." MU geopend op dezelfde dag als NVDA #3 — twee grote semi-posities tegelijk. Toen semis die week daalden verloor de bot op beide tegelijk (-$625 NVDA + -$723 MU = -$1.349 op één dag). Stuksprijs $1.017: 7 shares = $7.125 risico. Patroon #2 + #3 (sector-concentratie) + #4 (hoge stuksprijs).
+**Rule change or reminder:** Nooit twee semis tegelijk openen. Sector-correlatie = geconcentreerd risico. MU had die dag NO_TRADE moeten zijn omdat NVDA al open stond.
 
 ---
 
-### 2026-07-16 — AMD: langste verliesgevende trade (24 dagen)
-**What happened:** AMD gekocht, 14 shares à $546.19 = $7.646. Na 24 dagen gestopt op $509.02. Verlies: -$520.44.
-**What went wrong:** 24 dagen vastgehouden terwijl de positie consistent verloor. De early weakness stop (−3% binnen 3 dagen) zou hier veel eerder hebben ingegrepen. AMD bewoog ook in een brede techcorrectie — macro-context (SPY t.o.v. MA50) was waarschijnlijk negatief.
-**Rule change or reminder:** Early weakness stop is niet optioneel. Als een positie binnen de eerste 3 dagen −3% staat, exit zonder discussie. 24 dagen wachten kost viermaal zo veel als eerder stoppen.
+### 2026-09-14 — NVDA #3: -$625 verlies, derde NVDA-poging in korte tijd
+**What happened:** Entry 2026-09-08, exit 2026-09-14, 34 shares @ $229.64 → $211.20. P&L: **-$625.80**. Hold: 6 dagen. Gestopt out.
+**What went wrong:** HIGH confidence maar derde NVDA-entry binnen 4 maanden — de bot blijft hetzelfde aandeel proberen zonder te leren. Na NVDA #1 (-$160) en NVDA #2 (-$60) had dit patroon herkend moeten worden. Op dag 6 was de positie al -7.5% — de hard stop van -5% had eerder getriggerd moeten zijn. Patroon #1 (te laat gestopt) + nieuw patroon: hetzelfde aandeel te vaak opnieuw proberen na verlies.
+**Rule change or reminder:** Na twee opeenvolgende verliezen op hetzelfde aandeel: cooldown van minimaal 20 handelsdagen voor een nieuwe entry in dat aandeel.
 
 ---
 
-### 2026-08-13 — VGK: enige winnende trade — wat ging goed?
-**What happened:** VGK (Europa ETF) gekocht, 14 shares à $90.82. Na 10 dagen verkocht op $92.39. Winst: +$22.42.
-**What went wrong / right:** Dit is de enige winnende trade van de tien. Wat opvalt: lage volatiliteit instrument (Europa ETF), duidelijke target bereikt, 10 dagen hold — niet te lang vastgehouden. Maar de winst (+$22) is kleiner dan het gemiddeld verlies (-$430). Dat is het kernprobleem van de strategie.
-**Rule change or reminder:** Een winnende trade moet minimaal 2× het gemiddelde risico opleveren (risk/reward ≥ 1:2). VGK winst van $22 tegenover een gemiddeld verlies van $430 is een ratio van 1:20 — volledig onhoudbaar. Profit targets moeten agressiever: pas verkopen bij +8–12%, niet bij de eerste kleine winst.
+### 2026-08-19 — NVDA #2: -$60 verlies, positie bewoog nauwelijks
+**What happened:** Entry 2026-08-10, exit 2026-08-19, 35 shares @ $221.86 → $220.15. P&L: **-$59.77**. Hold: 9 dagen. Gestopt out.
+**What went wrong:** HIGH confidence, re-entry na NVDA #1 verlies. Positie bewoog in 9 dagen slechts -0.8% — er was geen momentum. De bot stapte in op een aandeel dat still stond. Geen duidelijke catalyst voor het moment van entry. Patroon #6 (geen momentum bij entry).
+**Rule change or reminder:** Een trending stock moet al bewegen bij entry. Eis: prijs +2% of meer in de 5 dagen voor entry. Zo niet → wacht of NO_TRADE.
 
 ---
 
-### 2026-08-19 — NVDA #2: tweede poging NVDA, zelfde patroon
-**What happened:** NVDA opnieuw gekocht, 35 shares à $221.86. Na 9 dagen gestopt op $220.15. Verlies: -$59.77.
-**What went wrong:** Tweede NVDA-trade in korte tijd, bijna op break-even gestopt. De positie bewoog nauwelijks — er was geen momentum. Als een aandeel na 7+ dagen nauwelijks beweegt, is er geen trend om op te rijden.
-**Rule change or reminder:** Een trending stock moet al bewegen op het moment van entry. Als een positie na 5 dagen minder dan 2% in jouw richting beweegt, is er geen momentum — overweeg vroegtijdig exit, ook al is de stop nog niet geraakt.
+### 2026-08-13 — VGK: +$22 winst — enige winner, maar profit te snel genomen
+**What happened:** Entry 2026-08-03, exit 2026-08-13, 14 shares @ $90.82 → $92.39. P&L: **+$22.42**. Hold: 10 dagen. Target reached.
+**What went wrong / right:** Dit was MEDIUM confidence ("European equity diversification") — dus ook deze winner had eigenlijk NO_TRADE moeten zijn op basis van de nieuwe regels. De winst (+$22) staat tegenover een gemiddeld verlies van -$430: ratio 1:20. VGK bewoog +1.7% — dat is geen echte momentum move. Target te vroeg genomen.
+**Rule change or reminder:** Een winner van +1.7% op 10 dagen is onvoldoende. Minimum target is +8% voor een echte exit. Laat winnaars lopen tot de trailing stop of het profit target.
 
 ---
 
-### 2026-09-14 — NVDA #3 + MU: beide gestopt op dezelfde dag, grote verliezen
-**What happened:** NVDA (34 shares à $229.64) en MU (7 shares à $1017.84) beide gekocht op 2026-09-08 en beide gestopt op 2026-09-14. NVDA verlies: -$625.80. MU verlies: -$723.54. Totaal op één dag: -$1.349.
-**What went wrong:** Twee grote posities tegelijk geopend in sterk gecorreleerde sectoren (semis). Toen de semimarkt draaide, verloor de bot op beide posities tegelijk. Dit is het concentratierisico in de praktijk. Bovendien was MU entry op $1.017 een extreem hoge stuksprijs — kleine beweging = groot verlies in dollars.
-**Rule change or reminder:** Nooit twee semis tegelijk houden als grote posities. Sector-correlatie telt als geconcentreerd risico. Bij aandelen boven $500 per share: pas de positionering extra conservatief aan (minder shares). Verspreid entries over verschillende dagen.
+### 2026-07-16 — AMD: -$520, langste verliezende trade (24 dagen)
+**What happened:** Entry 2026-06-22, exit 2026-07-16, 14 shares @ $546.19 → $509.02. P&L: **-$520.44**. Hold: 24 dagen. Gestopt out.
+**What went wrong:** MEDIUM confidence, thesis "Semiconductor recovery, AI GPU exposure" — generiek. AMD daalde consistent over 24 dagen. Early weakness stop op dag 3 had dit beëindigd bij ~-3% (-$229) i.p.v. -$520. Stuksprijs $546 is hoog. Patroon #1 (te laat gestopt) + #2 (MEDIUM confidence) + #4 (hoge stuksprijs).
+**Rule change or reminder:** 24 dagen vastgehouden terwijl alles wees op een mislukte trade. Early weakness stop is niet onderhandelbaar. Had dit op dag 3 gesloten: verlies ~$229 i.p.v. $520.
 
 ---
 
-### 2026-10-06 — SNDK: 15 dagen vastgehouden tot volledig stop
-**What happened:** SNDK 4 shares à $1.804.86 = $7.219. Na 15 dagen gestopt op $1.672.29. Verlies: -$530.28.
-**What went wrong:** Hoge stuksprijs ($1.800+), kleine aantalposities maar groot dollarrisico. 15 dagen vastgehouden terwijl de positie consistent daalde. Geen early weakness stop toegepast in de eerste 3 dagen.
-**Rule change or reminder:** Bij aandelen met een stuksprijs boven $500: maximaal 2–3 shares, en de early weakness stop (−3% in 3 dagen) is verplicht. SNDK van $1.800 naar $1.672 is −7.3% — dat was ruimschoots binnen de 5% hard stop die eerder getriggerd had moeten worden.
+### 2026-06-05 — NVDA #1: -$160, te vroeg ingestapt zonder bevestigd momentum
+**What happened:** Entry 2026-05-29, exit 2026-06-05, 23 shares @ $215.99 → $209.04. P&L: **-$160.08**. Hold: 7 dagen. Gestopt out.
+**What went wrong:** HIGH confidence, thesis "AI chip leader, momentum play." De positie ging direct na entry omlaag — er was geen momentum op het moment van instappen. RSI of MA-check heeft hier niet goed gefilterd. Op dag 3 stond de positie al negatief — early weakness stop had toen al getriggerd moeten zijn. Patroon #6 (geen momentum bij entry) + #1 (te laat gestopt).
+**Rule change or reminder:** HIGH confidence beschermt niet tegen een slechte entry-timing. Controleer altijd of de prijs al in beweging is (momentum zichtbaar) voor je instapt.
 
 ---
 
-### 2026-10-02 — STX: grootste verlies van de portfolio
-**What happened:** STX was de slechtste trade: verlies -$922.72 (exacte entry/exit uit performance.md).
-**What went wrong:** Dit is de worst trade. STX is een storage-aandeel — fundamenteel anders dan de AI/semi thesis van de rest van de bot. Het paste niet in de strategie. Grote positiegrootte op een instrument buiten de kernthesis.
-**Rule change or reminder:** Elk aandeel dat de bot overweegt moet expliciet passen in de Markov+momentum screeningcriteria. "Opportunistisch" instappen op een aandeel buiten de universe is verboden. STX zit wel in de universe maar als storage play — alleen handelen als het ook de AI-infrastructuurthesis ondersteunt.
+### 2026-06-10 — GOOGL: -$330, grote positie op MEDIUM confidence
+**What happened:** Entry 2026-05-22, exit 2026-06-10, 12 shares @ $385.82 → $358.25. P&L: **-$330.84**. Hold: 19 dagen. Gestopt out.
+**What went wrong:** MEDIUM confidence, thesis "Large-cap tech, AI exposure" — 12 shares × $385 = $4.629 risico. Dit is de definitie van een te grote positie op te lage confidence. 19 dagen vastgehouden ondanks consistent verlies. Patroon #1 + #2 + de thesis is volledig generiek (patroon #5 straks).
+**Rule change or reminder:** Positiegrootte is altijd gekoppeld aan confidence. MEDIUM confidence = geen trade. NOOIT $4.000+ riskeren zonder HIGH confidence en specifieke thesis.
 
 ---
 
-## Patroonanalyse (na 10 trades)
+### 2026-06-25 — AAPL: -$16, test positie zonder echte thesis
+**What happened:** Entry 2026-05-21, exit 2026-06-25, 1 share @ $301.88 → $285.52. P&L: **-$16.36**. Hold: 35 dagen. Gestopt out.
+**What went wrong:** MEDIUM confidence, thesis "Initial test position, defensive tech." 35 dagen vastgehouden voor het kleinste verlies van de portfolio. "Test position" is geen geldige reden om een trade te openen — elke trade moet een volwaardige setup zijn. Patroon #2 (MEDIUM confidence) + patroon #1 (35 dagen voor er actie was).
+**Rule change or reminder:** Er bestaan geen "test positions." Elke trade volgt exact dezelfde criteria. Als de setup niet sterk genoeg is voor een volwaardige positie, is het geen trade.
 
-Dit zijn de terugkerende fouten op basis van alle gesloten trades:
+---
+
+## Patroonanalyse (na 10 closed trades)
 
 | # | Patroon | Voorkomt in | Fix |
 |---|---------|-------------|-----|
-| 1 | **Te laat gestopt** | GOOGL, AMD, SNDK, STX | Early weakness stop verplicht dag 1–3 |
-| 2 | **MEDIUM confidence trades genomen** | AAPL, GOOGL | Minimum confidence = HIGH |
-| 3 | **Sector-concentratie** | NVDA+MU zelfde dag | Max 1 semi tegelijk |
-| 4 | **Wins te vroeg genomen** | VGK +$22 vs avg loss -$430 | Risk/reward min 1:2, profit target ≥8% |
-| 5 | **Hoge stuksprijzen onderschat** | MU $1017, SNDK $1804 | Max $500/share OF extra conservatief |
-| 6 | **Geen momentum bij entry** | NVDA #2 (nauwelijks bewogen) | Entry alleen als trend al zichtbaar is |
+| 1 | **Te laat gestopt** | AAPL (35d), GOOGL (19d), AMD (24d), SNDK (15d), STX (8d) | Early weakness stop verplicht dag 1–3 |
+| 2 | **MEDIUM confidence trades genomen** | AAPL, GOOGL, AMD, VGK, MU, SNDK, STX (7 van 10!) | Minimum confidence = HIGH, geen uitzonderingen |
+| 3 | **Sector-concentratie** | NVDA+MU zelfde dag, STX+SNDK zelfde week | Max 1 semi / 1 storage tegelijk |
+| 4 | **Hoge stuksprijs onderschat** | AMD $546, MU $1017, SNDK $1804, STX $918 | Max $500/share OF max 2 shares + verplichte early weakness stop |
+| 5 | **Generieke thesis** | AAPL "defensive tech", GOOGL "AI exposure", AMD "semi recovery" | Thesis moet specifieke catalyst + timing bevatten |
+| 6 | **Geen momentum bij entry** | NVDA #1, NVDA #2 | Eis +2% prijsbeweging in 5 dagen vóór entry |
+| 7 | **Zelfde aandeel te vaak herproberen** | NVDA: 4 entries, 3 verliezen op rij | Cooldown 20 handelsdagen na 2 opeenvolgende verliezen op zelfde aandeel |
+| 8 | **Wins te vroeg genomen** | VGK +$22 (slechts +1.7%) vs avg loss -$430 | Minimum profit target 8%, laat winnaars lopen |
+
+**Kernprobleem:** 8 van 10 trades waren MEDIUM confidence. De strategie zei al dat MEDIUM = NO_TRADE, maar de bot negeerde dat consequent.
 
 ---
 
@@ -104,23 +113,23 @@ Dit zijn de terugkerende fouten op basis van alle gesloten trades:
 - Earnings weeks are high-risk. Exit positions at least 2 days before scheduled earnings unless thesis explicitly includes an earnings catalyst.
 - When SPY is down >1% pre-market, reduce position targets by 50% for that day.
 - A journal entry is mandatory even on days with zero trades.
-- **After every closed trade: immediately write a new lesson block above the Patroonanalyse section.** No exceptions.
+- **After every closed trade: immediately write a new lesson block at the top of the Lessons section.** No exceptions.
 
 ---
 
 ## Automatisch lessen schrijven — Protocol
 
-Na elke gesloten trade schrijft de bot een nieuwe les in dit formaat bovenaan de Lessons-sectie:
+Na elke gesloten trade schrijft de bot een nieuwe les bovenaan de Lessons-sectie (onder de horizontale lijn):
 
 ```markdown
 ### YYYY-MM-DD — [SYMBOL]: [één zin wat er gebeurde]
 **What happened:** Entry [datum], exit [datum], [shares] shares, entry $[prijs], exit $[prijs], P&L [bedrag], hold [dagen] dagen.
-**What went wrong / right:** [Concrete root cause — niet generiek]
-**Rule change or reminder:** [Één specifieke actie of regel die dit voorkomt]
+**What went wrong / right:** [Root cause — welk patroon uit de tabel herhaalde zich?]
+**Rule change or reminder:** [Één concrete actie die dit de volgende keer voorkomt]
 ```
 
 Regels:
-- Elke winnende trade krijgt ook een les ("wat ging goed en waarom")
+- Elke winnende trade krijgt ook een les ("wat ging goed en waarom, en lieten we de winst ver genoeg lopen?")
 - Elke verliezende trade: zoek de **vroegste waarschuwing** die gemist werd
-- Vergelijk altijd met de patroonanalyse hierboven — welk patroon herhaalde zich?
+- Vergelijk altijd met de patroonanalyse-tabel — welk patroon herhaalde zich (nummer vermelden)?
 - Update de patroonanalyse-tabel als een nieuw patroon ≥2x voorkomt
