@@ -1,8 +1,11 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-11-17T21:15:00Z",
-  "status": "BLOCKED",
-  "reason": "Alpaca 401 — Day 25, Week 6 Day 2, 101st consecutive blocked routine",
-  "trades_placed": 0,
-  "decision": "NO_ACTION"
+  "last_routine": "nightly-screener",
+  "last_run_utc": "2026-11-18T01:07:00Z",
+  "status": "success",
+  "screener_candidates": 0,
+  "screener_phase_b": 5,
+  "screener_phase_c": 1,
+  "screener_phase_d": 0,
+  "screener_run_date": "2026-11-18",
+  "note": "AVGO sole Phase C survivor failed Technical (MA50) gate. 76/95 tickers Bear or Sideways regime. Alpaca still 401 — yfinance fallback used."
 }
