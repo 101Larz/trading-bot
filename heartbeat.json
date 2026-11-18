@@ -1,11 +1,17 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run_utc": "2026-11-18T01:07:00Z",
-  "status": "success",
+  "last_routine": "pre-market-research",
+  "last_run_utc": "2026-11-18T14:00:00Z",
+  "status": "blocked_alpaca_401",
+  "outage_day": 26,
+  "consecutive_blocked_routines": 102,
+  "week_of_outage": 6,
+  "day_of_week": 3,
+  "decision": "NO_TRADE",
   "screener_candidates": 0,
   "screener_phase_b": 5,
   "screener_phase_c": 1,
   "screener_phase_d": 0,
   "screener_run_date": "2026-11-18",
-  "note": "AVGO sole Phase C survivor failed Technical (MA50) gate. 76/95 tickers Bear or Sideways regime. Alpaca still 401 — yfinance fallback used."
+  "push_sent": false,
+  "note": "Alpaca 401 Day 26 (102nd routine, Week 6 Day 3). Screener 0 Phase D survivors; AVGO closest miss (MA50 gate fails). Held KLAC/NVDA/TSLA all Bear. Push suppressed — same signal as prior 101 routines. Operator rotation of APCA creds still outstanding."
 }
