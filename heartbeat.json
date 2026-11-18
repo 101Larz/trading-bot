@@ -1,17 +1,20 @@
 {
-  "last_routine": "pre-market-research",
-  "last_run_utc": "2026-11-18T14:00:00Z",
+  "last_routine": "market-open-execution",
+  "last_run_utc": "2026-11-18T14:45:00Z",
   "status": "blocked_alpaca_401",
   "outage_day": 26,
-  "consecutive_blocked_routines": 102,
+  "consecutive_blocked_routines": 103,
   "week_of_outage": 6,
   "day_of_week": 3,
   "decision": "NO_TRADE",
+  "trades_placed": 0,
+  "trades_this_week": 0,
+  "trades_this_week_cap": 3,
   "screener_candidates": 0,
   "screener_phase_b": 5,
   "screener_phase_c": 1,
   "screener_phase_d": 0,
   "screener_run_date": "2026-11-18",
   "push_sent": false,
-  "note": "Alpaca 401 Day 26 (102nd routine, Week 6 Day 3). Screener 0 Phase D survivors; AVGO closest miss (MA50 gate fails). Held KLAC/NVDA/TSLA all Bear. Push suppressed — same signal as prior 101 routines. Operator rotation of APCA creds still outstanding."
+  "note": "Alpaca 401 Day 26 (103rd routine, Week 6 Day 3). Market-open re-verified 401 on /v2/account and /v2/positions. Zero Phase D survivors; buy-rule gate 0 and 1 both fail. Push suppressed — pre-market (#423) already carried today's signal. Operator rotation of APCA creds still outstanding."
 }
