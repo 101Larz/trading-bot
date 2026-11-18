@@ -2510,3 +2510,16 @@ Candidates (informational): AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44) — none
 | Trades this week | 0 of 3 |
 | Decision | NO_TRADE — credentials 401; zero Phase D survivors in nightly screen; macro-breadth Bear |
 | Push notification | Suppressed — pre-market (session 98) already sent today's Week 6 Day 2 escalation; no new signal in 2.5 h |
+
+### 2026-11-18 (Wednesday) — Market-Open **BLOCKED (Alpaca 401, 103rd consecutive routine — Day 26, Week 6 Day 3)**
+
+| Field | Value |
+|-------|-------|
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified at market-open) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified at market-open) |
+| Trades placed | 0 |
+| Trades this week | 0 of 3 |
+| Trades this month (Nov MTD) | 0 (first 13 business days all zero fills) |
+| Routines blocked (running total) | 103 across 26 business days |
+| Decision | NO_TRADE — credentials 401; zero Phase D survivors in today's screen; macro-breadth Bear |
+| Push notification | Suppressed — pre-market (session 102) already carried Week 6 Day 3 signal 1.5 h ago; no new operator-actionable info |
