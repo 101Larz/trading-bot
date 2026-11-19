@@ -1,20 +1,14 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-11-18T20:33:46Z",
-  "status": "blocked_alpaca_401",
-  "outage_day": 26,
-  "consecutive_blocked_routines": 105,
-  "week_of_outage": 6,
-  "day_of_week": 3,
-  "decision": "NO_TRADE",
-  "trades_placed": 0,
-  "trades_this_week": 0,
-  "trades_this_week_cap": 3,
-  "trades_this_month": 0,
-  "portfolio_value": null,
-  "cash": null,
-  "day_pnl_usd": null,
-  "day_pnl_pct": null,
-  "push_sent": false,
-  "note": "EOD 2026-11-18 (Wed, Week 6 Day 3): /v2/account and /v2/positions re-verified 401 under python3.13. Day/week/month P&L uncomputable — no live equity read. Push suppressed — identical signal to prior 104 routines; pre-market session 102 carried today's escalation 7h ago. Operator rotation of APCA creds still outstanding."
+  "last_run": "2026-11-19T00:09:26Z",
+  "routine": "Nightly Screener",
+  "status": "success",
+  "screener_candidates": 1,
+  "screener_run_date": "2026-11-19",
+  "top_candidates": [
+    "AVGO"
+  ],
+  "phase_b_survivors": 6,
+  "phase_c_survivors": 1,
+  "phase_d_survivors": 1,
+  "note": "Universe 95. 1 Phase-D survivor: AVGO (Sharpe +1.332, Bull% 41.6%, RSI 52.3, Mom1M +4.8%, MA mixed). Alpaca 401 outage ongoing (Day 27) \u2014 bars sourced via yfinance."
 }
