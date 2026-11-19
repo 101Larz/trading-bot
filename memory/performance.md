@@ -2576,3 +2576,16 @@ Candidates (informational): AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44) — none
 - TSLA post-earnings state still unverified; operator confirmation via Alpaca web UI outstanding.
 - SessionStart pip gap re-confirmed; workaround = run `scripts/research.py` under `python3.13`.
 - Zero Phase D screener survivors for today; macro-breadth Bear.
+
+### 2026-11-19 (Thursday) — Market-Open **BLOCKED (Alpaca 401, 107th consecutive routine — Day 27, Week 6 Day 4)**
+
+| Field | Value |
+|-------|-------|
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified at market-open) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified at market-open) |
+| Trades placed | 0 |
+| Trades this week | 0 of 3 |
+| Trades this month (Nov MTD) | 0 (first 14 business days all zero fills) |
+| Routines blocked (running total) | 107 across 27 business days |
+| Decision | NO_TRADE — credentials 401; only Phase D survivor (AVGO) un-actionable; held KLAC/NVDA/TSLA state ~70 d stale |
+| Push notification | Suppressed — pre-market (session 106) already sent today's Week 6 Day 4 signal ~4 h ago; no new operator-actionable info |
