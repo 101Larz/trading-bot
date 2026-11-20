@@ -368,6 +368,25 @@
 
 ## Routine Snapshots
 
+### 2026-11-20 (Friday) — Market-Open **BLOCKED (Alpaca 401, 110th consecutive routine — Day 28) — WEEK 6 DAY 5 (FRIDAY)**
+
+| Field | Value |
+|-------|-------|
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified this routine under python3.13) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine) |
+| Trades placed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (Mon + Tue + Wed + Thu + Fri so far all zero) |
+| Trades this month (Nov MTD) | 0 (first 15 business days all zero fills) |
+| Routines blocked running total | **110** across 28 business days |
+| Open positions (last-known, ≈1735 h ≈ 72 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (post-earnings state unverified — 30 cal days + 22 RTH sessions post-2026-10-21 AMC print) |
+| Push notification | Suppressed — identical signal to prior 109 routines; today's 17:00 ET Weekly Review owns this week's escalation push with a six-week outage retrospective |
+
+**Buy-rule check:** all gates uncheckable (`/v2/account` + `/v2/positions` 401). No pre-market research for today; sole Phase D survivors remain the 2026-11-13 screener set (AVGO Sharpe 1.33, AMD 0.75, TSLA 0.44) which is 7 days stale.
+
+**Decision:** NO_TRADE — Day 28 of Alpaca credential outage; sizing and submission both blocked. Credential rotation by e.larsve@gmail.com remains the single unblocking action.
+
+---
+
 ### 2026-11-19 (Thursday) — EOD **BLOCKED (Alpaca 401, 109th consecutive routine — Day 27) — WEEK 6 DAY 4 CLOSES AT ZERO**
 
 | Field | Value |
