@@ -368,6 +368,32 @@
 
 ## Routine Snapshots
 
+### 2026-11-20 (Friday) — Pre-Market Research **BLOCKED (Alpaca 401, 110th consecutive routine — Day 28) — WEEK 6 DAY 5 (FRIDAY)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_TRADE) |
+| Decision | NO_TRADE — credentials 401; no in-policy new-name buy possible |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified under python3.11 after in-session pip install) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 43 calendar days stale) |
+| Open positions (last-known, ≈1736 h stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%, 52w low 2026-11-12), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 30 cal days + 22 RTH sessions post-print) |
+| Nightly screener | Last fresh run 2026-11-19: 1 Phase D survivor (AVGO, Sharpe 1.33). Not re-run this session. |
+| Push notification | Suppressed — identical signal to prior 109 routines; today's 17:00 ET Weekly Review (Friday) owns the weekly escalation push |
+
+**Blocker (Day 28, routine #110):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets`. 110th consecutive blocked routine across 28 business days — week 6 of outage, day 5 (Friday). Rotation by the account owner (e.larsve@gmail.com) remains outstanding.
+
+**Trade ideas (informational, not actionable):**
+- **AVGO** (sole Phase D survivor from 2026-11-19 screener) — Bull, Sharpe 1.33, RSI ~52, Mom1M +4.8%. Earnings 2026-12-09 (13 TD out). MA alignment mixed; needs confirmation.
+- **Held-position triage priority**: KLAC (likely stopped out at $181.10), NVDA (52w low 2026-11-12, almost certainly past $211.27 hard stop), TSLA (post-earnings state unverified).
+
+**Carry-forward to 2026-11-20 17:00 ET Weekly Review:**
+- Six-week outage retrospective — Week 6 Day 5 closes week at zero trades; five+1 full zero-trade weeks.
+- Operator action overnight (unchanged): rotate `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper.
+- Branch note: commit routed to `claude/gallant-lamport-ovf2il` per environment policy (overrides CLAUDE.md's "work on main").
+
+---
+
 ### 2026-11-19 (Thursday) — EOD **BLOCKED (Alpaca 401, 109th consecutive routine — Day 27) — WEEK 6 DAY 4 CLOSES AT ZERO**
 
 | Field | Value |
