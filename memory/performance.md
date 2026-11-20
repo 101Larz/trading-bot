@@ -368,6 +368,52 @@
 
 ## Routine Snapshots
 
+### 2026-11-20 (Friday) — EOD **BLOCKED (Alpaca 401, 113th consecutive routine — Day 28) — WEEK 6 CLOSES AT ZERO (SIX-WEEK OUTAGE CLOSED)**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 28, routine #113, re-verified this routine under python3.13) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 43 calendar days stale) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or at any prior close in the six-week outage |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (NO_ACTION across pre-market #110, market-open #111, midday #112, EOD #113 — pre-market numbering per today's research log) |
+| Trades this week | 0 (Mon + Tue + Wed + Thu + Fri; **week 6 of outage closes at zero fills**) |
+| Trades this month (Nov) | 0 (first 15 business days of November — 11/02 through 11/20 — all zero fills) |
+| Zero-trade week streak | **6 full weeks closed** (10/12–10/16, 10/19–10/23, 10/26–10/30, 11/02–11/06, 11/09–11/13, 11/16–11/20) |
+| Routines blocked today | 4 recorded (market-open #111, midday #112, EOD #113 plus the pre-market that preceded them per today's research log) |
+| Routines blocked running total | **113** across 28 business days |
+| Open positions (last-known, ≈1750 h ≈ 73 days stale) | KLAC 39 @ $196.79 (Bear as of 11/13), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 30 cal days + 22 RTH sessions post-print) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; 22 post-print RTH sessions + 30 calendar days elapsed; bot still blind to final position/P&L |
+| Push notification | Suppressed — identical signal to prior 112 routines; the 17:00 ET Weekly Review (~45 min out) owns today's weekly escalation push with the six-week outage retrospective |
+
+**Open positions table (last-known marks from 2026-10-12 pre-market — now ≈1750 h stale, not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.10 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; current state unverified post-print) |
+
+**Blocker (Day 28, routine #113):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. **Day 28 of outage; six full calendar weeks of zero-trade sessions now closed; TSLA is 22 RTH sessions + 30 calendar days past its 2026-10-21 AMC earnings print with final state still unverified.**
+
+**Trades executed today:** _None_
+
+**Positions closed today:** _None visible to the bot_
+
+**End-of-Day reflection (day 5 of week 6 of the outage):**
+- Day 28 closes identically to the prior 27: credentials still 401, live state still unreadable, day/week P&L uncomputable. Credential rotation remains the single unblocking action.
+- Week 6 now at 0/5 zero-trade sessions — **six full zero-trade weeks closed**.
+- TSLA print is now 22 post-print RTH sessions and 30 calendar days in the past; bot has still never read the resulting state.
+- EOD push notification suppressed — Weekly Review at 17:00 ET owns the weekly escalation push with the six-week retrospective.
+
+**Carry-forward to Mon 2026-11-23 (Week 7 Day 1 if still pending):**
+- **Operator action over the weekend (unchanged):** rotate `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper and update cloud session env; confirm TSLA state via Alpaca web UI.
+- First credential-cleared routine priority (unchanged): (a) `/v2/account` + `/v2/positions` snapshot, (b) TSLA state reconciliation + performance.md backfill, (c) regime-break / hard-stop exit review on KLAC/NVDA (both Bear), (d) consider AVGO as top new-buy candidate (Phase D Sharpe 1.33, now 7 days stale).
+- Weekly Review 2026-11-20 17:00 ET owns the week's escalation push with the six-week outage retrospective.
+
+---
+
 ### 2026-11-20 (Friday) — Midday Scan **BLOCKED (Alpaca 401, 111th consecutive routine — Day 28) — WEEK 6 DAY 5 (FRIDAY)**
 
 | Field | Value |
