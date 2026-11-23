@@ -1,8 +1,8 @@
 {
-  "last_run": "2026-11-23T17:30:00Z",
-  "routine": "Midday Scan",
+  "last_run": "2026-11-23T21:15:00Z",
+  "routine": "End of Day",
   "status": "blocked",
-  "blocker": "Alpaca 401 on /v2/account and /v2/positions — Day 29, Week 7 Day 1",
+  "blocker": "Alpaca 401 on /v2/account and /v2/positions — Day 29, Week 7 Day 1 closes at zero",
   "decision": "NO_ACTION",
   "portfolio_value": "UNKNOWN",
   "cash": "UNKNOWN",
@@ -13,8 +13,8 @@
   "trades_today": 0,
   "trades_this_week": 0,
   "trades_this_month": 0,
-  "routines_blocked_total": 116,
-  "zero_trade_streak": "6 full weeks closed + Week 7 Day 1 (pre-market + market-open + midday all blocked)",
-  "push_notification": "suppressed — identical signal to pre-market this morning (Week 7 Day 1 escalation already sent ~4.75 h ago)",
-  "note": "Midday scan Day 29 of credential outage — 116th consecutive blocked routine. /v2/account and /v2/positions both 401 under python3.13 after fresh pip install. Steps 3 (cut losers), 4 (tighten stops), 5 (thesis break) all unevaluable without live marks. Held-position state (KLAC/NVDA/TSLA) still ≈76 d stale; TSLA state 33 cal days post-print unverified. Credential rotation by e.larsve@gmail.com remains the single unblocking action. EOD will suppress push unless state changes."
+  "routines_blocked_total": 117,
+  "zero_trade_streak": "6 full weeks closed + Week 7 Day 1 (pre-market + market-open + midday + EOD all blocked)",
+  "push_notification": "suppressed — identical signal to pre-market Week 7 Day 1 escalation ~7.5 h ago; no state change since",
+  "note": "EOD Day 29 of credential outage — 117th consecutive blocked routine. /v2/account and /v2/positions both 401 under python3.13 after fresh pip install. Day/week P&L uncomputable (no live equity read in 46 cal days). Held positions KLAC/NVDA/TSLA now ≈76 d stale; TSLA state 33 cal days + 23 RTH sessions post-print still unverified. Credential rotation by e.larsve@gmail.com remains the single unblocking action. Carry-forward to Tue 2026-11-24 pre-market."
 }
