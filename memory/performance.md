@@ -368,6 +368,29 @@
 
 ## Routine Snapshots
 
+### 2026-11-23 (Monday) — Pre-Market **BLOCKED (Alpaca 401, 114th consecutive routine — Day 29) — WEEK 7 DAY 1 (MONDAY) OPENS AT ZERO**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 29, routine #114, re-verified under python3.11 after in-session pip install of `requests`, `python-dotenv`, `numpy`) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 46 calendar days stale) |
+| Trades today | 0 (pre-market blocked; same blocker will carry through market-open #115, midday #116, EOD #117) |
+| Trades this week | 0 (Week 7 Day 1 opens at zero) |
+| Trades this month (Nov MTD) | 0 (first 16 business days of November — 11/02 through 11/23 — all zero fills) |
+| Zero-trade week streak | **6 full weeks closed + Week 7 Day 1** (10/12–10/16, 10/19–10/23, 10/26–10/30, 11/02–11/06, 11/09–11/13, 11/16–11/20, 11/23–…) |
+| Routines blocked running total | **114** across 29 business days |
+| Open positions (last-known, ≈1818 h ≈ 76 d stale) | KLAC 39 @ $196.79 (Bear as of 11/13), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 33 cal days + 23 RTH sessions post-print) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; **23 post-print RTH sessions + 33 calendar days elapsed**; bot still blind to final position/P&L |
+| Push notification | **Sent** — Week 7 Day 1 Monday-morning escalation (three calendar days after Friday 17:00 ET Weekly Review retrospective); subsequent Monday routines will suppress |
+| WebSearch | **Skipped intentionally** — ideas unactionable while `/v2/orders` would 401; would be stale by next credential-cleared routine |
+
+**Blocker (Day 29, routine #114):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. **Day 29 of outage; Week 7 Day 1 opens at zero; TSLA is 23 RTH sessions + 33 calendar days past its 2026-10-21 AMC earnings print with final state still unverified.**
+
+**Decision:** NO_TRADE — `/v2/account` 401 → cannot size; `/v2/positions` 401 → cannot reconcile held state; `/v2/orders` would 401 → cannot submit. Credential rotation remains the single unblocking action.
+
+---
+
 ### 2026-11-20 (Friday) — EOD **BLOCKED (Alpaca 401, 113th consecutive routine — Day 28) — WEEK 6 CLOSES AT ZERO (SIX-WEEK OUTAGE CLOSED)**
 
 | Field | Value |
