@@ -368,6 +368,51 @@
 
 ## Routine Snapshots
 
+### 2026-11-23 (Monday) — EOD **BLOCKED (Alpaca 401, 117th consecutive routine — Day 29) — WEEK 7 DAY 1 CLOSES AT ZERO**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 29, routine #117, re-verified under python3.13 after fresh pip install of `requests`, `python-dotenv`, `numpy`) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 46 calendar days stale) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today or at any prior close in the six-week+ outage |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (NO_ACTION across pre-market #114, market-open #115, midday #116, EOD #117) |
+| Trades this week | 0 (Week 7 Day 1 — Mon closes at zero) |
+| Trades this month (Nov) | 0 (first 16 business days of November — 11/02 through 11/23 — all zero fills) |
+| Zero-trade week streak | **6 full weeks closed + Week 7 Day 1** (10/12–10/16, 10/19–10/23, 10/26–10/30, 11/02–11/06, 11/09–11/13, 11/16–11/20, 11/23…) |
+| Routines blocked today | 4 recorded (pre-market #114, market-open #115, midday #116, EOD #117) |
+| Routines blocked running total | **117** across 29 business days |
+| Open positions (last-known, ≈1829 h ≈ 76 d stale) | KLAC 39 @ $196.79 (Bear as of 11/13), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 33 cal days + 23 RTH sessions post-print) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; **23 post-print RTH sessions + 33 calendar days elapsed**; bot still blind to final position/P&L |
+| Push notification | Suppressed — identical signal to prior 116 routines; Week 7 Day 1 pre-market (routine #114) already carried today's escalation push ~7.5 h ago |
+
+**Open positions table (last-known marks from 2026-10-12 pre-market — now ≈1829 h stale, not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.10 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; current state unverified post-print) |
+
+**Blocker (Day 29, routine #117):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. **Day 29 of outage; Week 7 Day 1 closes at zero; TSLA is 23 RTH sessions + 33 calendar days past its 2026-10-21 AMC earnings print with final state still unverified.**
+
+**Trades executed today:** _None_
+
+**Positions closed today:** _None visible to the bot_
+
+**End-of-Day reflection (Week 7 Day 1 of the outage):**
+- Day 29 closes identically to the prior 28: credentials still 401, live state still unreadable, day/week P&L uncomputable. Credential rotation remains the single unblocking action.
+- Week 7 opens 0/1 zero-trade sessions. Six full zero-trade weeks closed plus Mon of Week 7.
+- TSLA print is now 23 post-print RTH sessions and 33 calendar days in the past; bot has still never read the resulting state.
+- EOD push notification suppressed — Week 7 Day 1 pre-market carried today's escalation push ~7.5 h ago; no state change since.
+
+**Carry-forward to Tue 2026-11-24 (Week 7 Day 2 if still pending):**
+- **Operator action overnight (unchanged):** rotate `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper and update cloud session env; confirm TSLA state via Alpaca web UI.
+- First credential-cleared routine priority (unchanged): (a) `/v2/account` + `/v2/positions` snapshot, (b) TSLA state reconciliation + performance.md backfill, (c) regime-break / hard-stop exit review on KLAC/NVDA (both Bear), (d) fresh 95-ticker Phase B/C/D screen before any new buy, (e) only then consider the top ranked candidate (AVGO Sharpe 1.33 from 2026-11-13 is now 10 days stale).
+
+---
+
 ### 2026-11-23 (Monday) — Midday Scan **BLOCKED (Alpaca 401, 116th consecutive routine — Day 29) — WEEK 7 DAY 1 (MONDAY)**
 
 | Field | Value |
