@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-11-23T07:15:52Z",
-  "routine": "Pre-Market Research",
+  "last_run": "2026-11-23T14:45:00Z",
+  "routine": "Market Open Execution",
   "status": "blocked",
   "blocker": "Alpaca 401 on /v2/account and /v2/positions — Day 29, Week 7 Day 1",
   "decision": "NO_TRADE",
@@ -13,8 +13,8 @@
   "trades_today": 0,
   "trades_this_week": 0,
   "trades_this_month": 0,
-  "routines_blocked_total": 114,
-  "zero_trade_streak": "6 full weeks closed + Week 7 Day 1 opens (10/12-10/16, 10/19-10/23, 10/26-10/30, 11/02-11/06, 11/09-11/13, 11/16-11/20, 11/23-...)",
-  "push_notification": "sent — Week 7 Day 1 Monday-morning escalation (three calendar days after Friday Weekly Review)",
-  "note": "Pre-market Day 29 of credential outage — 114th consecutive blocked routine. Week 7 Day 1 opens with zero trades; six full zero-trade weeks closed Fri 11/20. Day/week P&L uncomputable. Held-position state (KLAC/NVDA/TSLA) ≈1818 h / ~76 d stale; TSLA 23 post-print RTH sessions / 33 cal days with state unverified. Credential rotation by e.larsve@gmail.com remains the single unblocking action. WebSearch was intentionally skipped — ideas unactionable while orders would 401 and would be stale by next credential-cleared routine."
+  "routines_blocked_total": 115,
+  "zero_trade_streak": "6 full weeks closed + Week 7 Day 1 (pre-market + market-open both blocked)",
+  "push_notification": "suppressed — identical signal to pre-market this morning (Week 7 Day 1 escalation already sent)",
+  "note": "Market-open Day 29 of credential outage — 115th consecutive blocked routine. /v2/account and /v2/positions both 401 under python3.13 after fresh pip install. No state change vs pre-market 01:55 h ago. Held-position state (KLAC/NVDA/TSLA) still ≈76 d stale; TSLA state 33 cal days post-print unverified. Credential rotation by e.larsve@gmail.com remains the single unblocking action. Midday + EOD will suppress push unless state changes."
 }
