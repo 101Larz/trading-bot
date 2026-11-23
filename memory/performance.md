@@ -368,6 +368,34 @@
 
 ## Routine Snapshots
 
+### 2026-11-23 (Monday) — Midday Scan **BLOCKED (Alpaca 401, 116th consecutive routine — Day 29) — WEEK 7 DAY 1 (MONDAY)**
+
+| Field | Value |
+|-------|-------|
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Deferred — moot while orders would 401; TSLA post-print state still unverified (33 cal days + 23 RTH sessions post-print) |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified this routine under python3.13 after fresh pip install) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine) |
+| Open positions (last-known, ≈1821 h / ~76 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified) |
+| Push notification | Suppressed — identical signal to prior 115 routines; Week 7 Day 1 pre-market (routine #114) already carried today's escalation push ~4.75 h ago |
+
+**Blocker (Day 29, routine #116):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by paper-api.alpaca.markets. Midday steps 3/4/5 all unevaluable without live marks. Rotation by the account owner (e.larsve@gmail.com) remains outstanding into Day 29 (Week 7 Day 1).
+
+---
+
+### 2026-11-23 (Monday) — Market-Open **BLOCKED (Alpaca 401, 115th consecutive routine — Day 29) — WEEK 7 DAY 1 (MONDAY)**
+
+| Field | Value |
+|-------|-------|
+| Alpaca `/v2/account` | 401 Unauthorized |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Trades placed | 0 (NO_TRADE) |
+| Routines blocked running total | **115** across 29 business days |
+
+---
+
 ### 2026-11-23 (Monday) — Pre-Market **BLOCKED (Alpaca 401, 114th consecutive routine — Day 29) — WEEK 7 DAY 1 (MONDAY) OPENS AT ZERO**
 
 | Field | Value |
