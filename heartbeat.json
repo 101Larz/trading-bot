@@ -1,29 +1,29 @@
 {
-  "last_run": "2026-11-24T14:46:00Z",
-  "routine": "Market Open Execution",
+  "last_run": "2026-11-24T21:15:00Z",
+  "routine": "End of Day",
   "status": "blocked_alpaca_401",
   "day_of_outage": 30,
-  "routine_number": 119,
+  "routine_number": 121,
   "week": 7,
   "week_day": 2,
-  "alpaca_status": "401 Unauthorized on /v2/account (re-verified this routine under python3.11 after fresh pip install)",
+  "alpaca_status": "401 Unauthorized on /v2/account and /v2/positions (re-verified at EOD under python3.13)",
   "trades_today": 0,
   "trades_this_week": 0,
   "trades_this_month_nov": 0,
   "zero_trade_week_streak": "6 full weeks + Week 7 Day 2",
-  "screener_last_run": "2026-11-24T01:07Z",
-  "screener_phase_b_survivors": 12,
-  "screener_phase_c_survivors": 0,
-  "screener_phase_d_survivors": 0,
-  "screener_note": "All 12 Markov Bull-regime survivors failed Phase C momentum gate — nothing to buy today even if credentials cleared",
-  "open_positions_last_known_stale_hours": 1844,
+  "last_confirmed_equity": 96384.02,
+  "last_confirmed_equity_date": "2026-10-08",
+  "equity_stale_calendar_days": 47,
+  "open_positions_last_known_stale_hours": 1068,
   "open_positions": [
     {"symbol": "KLAC", "qty": 39, "avg_entry": 196.79, "last_mark": 201.46, "regime": "Bear", "hard_stop": 181.10},
-    {"symbol": "NVDA", "qty": 34, "avg_entry": 224.59, "last_mark": 233.87, "regime": "Bear", "mom_1m_pct": -23.5, "hard_stop": 206.62},
-    {"symbol": "TSLA", "qty": 19, "avg_entry": 377.78, "last_mark_pre_earnings": 379.36, "regime": "Bull", "post_earnings_state": "UNVERIFIED (34 cal days + 24 RTH sessions post-2026-10-21 AMC print)", "hard_stop_pre_earnings": 347.56}
+    {"symbol": "NVDA", "qty": 34, "avg_entry": 224.59, "last_mark": 233.87, "regime": "Bear", "hard_stop": 206.62},
+    {"symbol": "TSLA", "qty": 19, "avg_entry": 377.78, "last_mark_pre_earnings": 379.36, "regime": "Bull", "post_earnings_state": "UNVERIFIED (34 cal days + 24 RTH sessions + today post-2026-10-21 AMC print)", "hard_stop_pre_earnings": 347.56}
   ],
-  "push_notification": "suppressed — identical signal to pre-market #118 ~2h ago and Mon Week 7 Day 1 escalation ~26h ago; Fri Weekly Review owns next escalation",
+  "push_notification": "suppressed — Mon Week 7 Day 1 escalation pushed ~26h ago; Fri Weekly Review owns next escalation; no new operator-actionable info",
   "operator_action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper and update cloud session env; confirm TSLA state via Alpaca web UI",
   "operator_email": "e.larsve@gmail.com",
-  "prior_blocker_carry": "Day 30 — one-calendar-month milestone of the Alpaca 401 credential outage. 119 consecutive routines blocked. TSLA post-earnings state still unverified 34 days after the 2026-10-21 AMC print."
+  "prior_blocker_carry": "Day 30 of Alpaca 401 — one-calendar-month milestone closed. 121 consecutive routines blocked across 30 business days. TSLA post-earnings state still unverified 34 days after the 2026-10-21 AMC print.",
+  "next_routine": "Wed 2026-11-25 pre-market (Week 7 Day 3)",
+  "holiday_note": "Thu 2026-11-26 Thanksgiving (closed); Fri 2026-11-27 early close 1:00 PM ET"
 }

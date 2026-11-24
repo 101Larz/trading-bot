@@ -2885,3 +2885,37 @@ Candidates (informational): AVGO (Sharpe 1.33), AMD (0.75), TSLA (0.44) — none
 | Routines blocked (running total) | 107 across 27 business days |
 | Decision | NO_TRADE — credentials 401; only Phase D survivor (AVGO) un-actionable; held KLAC/NVDA/TSLA state ~70 d stale |
 | Push notification | Suppressed — pre-market (session 106) already sent today's Week 6 Day 4 signal ~4 h ago; no new operator-actionable info |
+
+### 2026-11-24 (Tuesday) — EOD **BLOCKED (Alpaca 401, 121st consecutive routine — Day 30, Week 7 Day 2) — ONE-CALENDAR-MONTH OUTAGE MILESTONE**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — live `/v2/account` returns 401 Unauthorized (re-verified at EOD under python3.13) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read today; no reference equity from prior session |
+| Day P&L (%) | **UNCOMPUTABLE** |
+| Trades today | 0 (every routine blocked on credentials) |
+| Trades this week (Mon–Tue EOD) | 0 of 2 sessions complete |
+| Trades this month (Nov MTD) | 0 (first 17 business days all zero fills) |
+| Routines blocked today | 4 (pre-market #118, market-open #119, midday #120, EOD #121) |
+| Routines blocked running total | 121 across 30 full business days |
+| Zero-trade week streak | 6 closed (weeks ending 10-16, 10-23, 10-30, 11-06, 11-13, 11-20) + Week 7 running (day 2 of 5) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD mark — now 47 calendar days / ≈1,128 h stale) |
+
+**Open positions (last-known marks from 2026-10-12 pre-market — now ≈1,068 h / 44.5 days stale; TSLA state unverified post-2026-10-21 earnings print):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.10 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; state unverified post-print, 24 RTH sessions + today elapsed) |
+
+**Blocker:** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` (401 on `/v2/account` and `/v2/positions`). Rotation by the account owner (e.larsve@gmail.com) is required before any further routine can read live state or submit orders. **Day 30 of outage — one-calendar-month milestone. 121 consecutive routines blocked across 30 business days; six full calendar weeks of zero-trade sessions closed + Week 7 Day 2 running; TSLA is 24 RTH sessions + today past its 2026-10-21 AMC earnings print with final state still unverified.**
+
+**Push notification:** Suppressed — identical 401 signal to the 120 prior routines. Monday Week 7 Day 1 escalation already pushed ~26 h ago; Friday Weekly Review owns next operator escalation.
+
+**Carry-forward to Wed 2026-11-25 (Week 7 Day 3):**
+- Credential rotation remains the **#1 blocker** — Day 30 (one-calendar-month) outage closes; Week 7 Day 2 at zero.
+- TSLA post-earnings state still unverified; operator confirmation via Alpaca web UI outstanding (34 calendar days post-print).
+- Nightly screener: 12 Phase B Markov Bull-regime survivors, 0 Phase C / Phase D survivors — nothing to buy tomorrow even if credentials cleared.
+- Thursday 2026-11-26 is Thanksgiving (US market closed); Friday 2026-11-27 is early close (1:00 PM ET) — Weekly Review routine shifts/compresses accordingly.
