@@ -368,6 +368,30 @@
 
 ## Routine Snapshots
 
+### 2026-11-24 (Tuesday) — Pre-Market **BLOCKED (Alpaca 401, 118th consecutive routine — Day 30) — WEEK 7 DAY 2 OPENS AT ZERO — ONE-MONTH MILESTONE**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` returns 401 Unauthorized (Day 30, routine #118, re-verified under python3.11 after `python -m pip install` of `requests`, `python-dotenv`, `numpy`) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 47 calendar days stale) |
+| Trades today | 0 (pre-market blocked; same blocker will carry through market-open #119, midday #120, EOD #121 if no rotation) |
+| Trades this week | 0 (Week 7 Day 2 opens at zero after Mon closed at zero) |
+| Trades this month (Nov MTD) | 0 (first 17 business days of November — 11/02 through 11/24 — all zero fills) |
+| Zero-trade week streak | **6 full weeks closed + Days 1–2 of Week 7** |
+| Routines blocked running total | **118** across 30 business days — **one calendar month** |
+| Nightly screener | Succeeded 2026-11-24 01:07 UTC — 12 Phase-B Markov survivors, **0 Phase-C** (all failed momentum gate), **0 Phase-D** |
+| Open positions (last-known, ≈1842 h / ~77 d stale) | KLAC 39 @ $196.79 (Bear as of 11/13), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 34 cal days + 24 RTH sessions post-print) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; **24 post-print RTH sessions + 34 calendar days elapsed**; bot still blind to final position/P&L |
+| Push notification | Suppressed — identical signal to Monday pre-market escalation push ~24 h ago; Fri Weekly Review will own the Week 7 retrospective |
+| WebSearch | Skipped intentionally — screener produced zero Phase-D survivors so there is nothing to research even if credentials cleared |
+
+**Blocker (Day 30, routine #118):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets`. Rotation by the account owner (e.larsve@gmail.com) is required before any further live routine can read state or submit orders. **Second independent block today:** fresh Phase B/C/D screen produced zero survivors — 12 Markov Bull-regime names (semis/mega-cap tech) all failed the Phase C 1-month momentum gate. Nothing to buy under current strategy rules even if credentials cleared this hour.
+
+**Decision:** NO_TRADE — Day 30 compound block (credential outage + zero screener survivors).
+
+---
+
 ### 2026-11-23 (Monday) — EOD **BLOCKED (Alpaca 401, 117th consecutive routine — Day 29) — WEEK 7 DAY 1 CLOSES AT ZERO**
 
 | Field | Value |
