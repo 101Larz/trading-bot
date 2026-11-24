@@ -368,6 +368,22 @@
 
 ## Routine Snapshots
 
+### 2026-11-24 (Tuesday) — Market-Open **BLOCKED (Alpaca 401, 119th consecutive routine — Day 30) — WEEK 7 DAY 2**
+
+| Field | Value |
+|-------|-------|
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified this routine under python3.11 after fresh pip install) |
+| Trades placed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (Week 7 Day 2 Tuesday market-open) |
+| Trades this month (Nov MTD) | 0 (first 17 business days of November — 11/02 through 11/24 — all zero fills) |
+| Routines blocked running total | **119** across 30 business days |
+| Screener Phase-D survivors | **0** (from 2026-11-24 01:07 UTC nightly run; all 12 Markov survivors failed Phase C momentum gate) |
+| Push notification | Suppressed — identical signal to pre-market #118 ~2 h ago and Mon Week 7 Day 1 escalation ~26 h ago; Fri Weekly Review owns next escalation |
+
+**Blocker (Day 30, routine #119):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets`. Independent second blocker: zero Phase-D survivors in today's screener. NO_TRADE on either ground alone.
+
+---
+
 ### 2026-11-24 (Tuesday) — Pre-Market **BLOCKED (Alpaca 401, 118th consecutive routine — Day 30) — WEEK 7 DAY 2 OPENS AT ZERO — ONE-MONTH MILESTONE**
 
 | Field | Value |
