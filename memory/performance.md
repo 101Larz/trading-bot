@@ -368,6 +368,23 @@
 
 ## Routine Snapshots
 
+### 2026-11-24 (Tuesday) — Midday Scan **BLOCKED (Alpaca 401, 120th consecutive routine — Day 30) — WEEK 7 DAY 2**
+
+| Field | Value |
+|-------|-------|
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine under python3.11 after fresh pip install) |
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — no live position reads |
+| Thesis-break scan | Deferred — moot while `/v2/orders` would 401; TSLA post-print state still unverified (34 cal days + 24 RTH sessions post-print) |
+| Routines blocked running total | **120** across 30 business days |
+| Open positions (last-known, ≈1848 h / ~77 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified) |
+| Push notification | Suppressed — identical signal to pre-market #118 and market-open #119 earlier today; Fri Weekly Review owns next escalation |
+
+**Blocker (Day 30, routine #120):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets`. Midday steps 3/4/5 all unevaluable without live marks. Rotation by the account owner (e.larsve@gmail.com) remains outstanding into Day 30 (Week 7 Day 2).
+
+---
+
 ### 2026-11-24 (Tuesday) — Market-Open **BLOCKED (Alpaca 401, 119th consecutive routine — Day 30) — WEEK 7 DAY 2**
 
 | Field | Value |
