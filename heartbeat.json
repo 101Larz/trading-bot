@@ -1,9 +1,9 @@
 {
-  "last_routine": "midday-scan",
-  "last_run_utc": "2026-11-25T17:30:00Z",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-11-25T21:15:00Z",
   "status": "BLOCKED",
-  "reason": "Alpaca 401 Unauthorized on /v2/positions — Day 31, routine #124",
+  "reason": "Alpaca 401 Unauthorized on /v2/account and /v2/positions — Day 31, routine #125",
   "trades_executed": 0,
-  "routines_blocked_total": 124,
+  "routines_blocked_total": 125,
   "action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper"
 }
