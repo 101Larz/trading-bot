@@ -33,6 +33,14 @@ For each position flagged as a stop-loss candidate in pre-market:
 3. Place the close: `python scripts/trade.py close [SYMBOL]`
 4. Log the trade in the journal with reasoning "Stop-loss triggered — down [X]% from entry"
 5. Send notification: `python scripts/notify.py risk "Stop-loss closed [SYMBOL] — down [X]%"`
+6. **Write a lesson immediately** — open `memory/lessons.md` and add a new lesson block at the top of the Lessons section:
+   ```
+   ### YYYY-MM-DD — [SYMBOL]: stop-loss geraakt, down [X]% na [N] dagen
+   **What happened:** Entry [datum], exit vandaag, [shares] shares, entry $[prijs], exit $[prijs], P&L [bedrag], hold [N] dagen.
+   **What went wrong:** [Root cause + patroon nummer uit Patroonanalyse tabel]
+   **Rule change or reminder:** [Wat te doen anders bij de volgende vergelijkbare setup]
+   ```
+   Also update `memory/performance.md` with the full Trade Exit block.
 
 ## Step 4 — Evaluate Buy Opportunities
 
@@ -86,6 +94,8 @@ If exit triggered:
 1. Get current bid: `python scripts/market_data.py quote [SYMBOL]`
 2. Place sell: `python scripts/trade.py safe-sell [SYMBOL] [QTY] [BID_PRICE]`
 3. Log trade and exit reason in journal
+4. **Write a lesson immediately** — open `memory/lessons.md` and add a new lesson block at the top of the Lessons section. For a winner: what went right and did we let it run far enough? For a loser: which patroon nummer herhaalde zich?
+5. Update `memory/performance.md` with the full Trade Exit block.
 
 ## Step 6 — Decision Log for NO_TRADE Symbols
 

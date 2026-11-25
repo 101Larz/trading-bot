@@ -51,9 +51,37 @@ Open `memory/performance.md` and append a row to the Daily P&L Log:
 
 Update the Summary Statistics section if any values have changed materially.
 
-## Step 7 — Update Lessons (If Applicable)
+## Step 7 — Update Lessons (Mandatory — No Exceptions)
 
-If today produced a notable lesson (good or bad), append it to `memory/lessons.md` using the format defined in that file.
+This step is NOT optional. Execute it every day, even on zero-trade days.
+
+### 7a — Check for closed positions today
+
+Compare today's closed positions (Step 4) against `memory/performance.md`. For every position closed today:
+
+1. Open `memory/lessons.md`
+2. Add a new lesson block at the **top** of the Lessons section (below the horizontal line, above the previous lessons) in this exact format:
+
+```markdown
+### YYYY-MM-DD — [SYMBOL]: [één zin wat er gebeurde]
+**What happened:** Entry [datum], exit [datum], [shares] shares, entry $[prijs], exit $[prijs], P&L [bedrag], hold [dagen] dagen.
+**What went wrong / right:** [Root cause — welk patroon uit de Patroonanalyse tabel herhaalde zich? Noem het nummer.]
+**Rule change or reminder:** [Één concrete actie die dit de volgende keer voorkomt of bevestigt wat goed ging]
+```
+
+3. Check the Patroonanalyse table in `memory/lessons.md`. If a pattern repeated, note it. If a **new** pattern appeared for the second time, add it to the table.
+
+4. Also update `memory/performance.md` — append the closed trade to the Trade History with a full Exit block.
+
+### 7b — Zero-trade days
+
+If no positions were closed today, still write a one-line note at the top of lessons.md:
+
+```markdown
+### YYYY-MM-DD — No trades closed. [One observation about today's market or open positions.]
+```
+
+This keeps the log continuous and forces daily reflection.
 
 ## Step 8 — Send Daily Digest
 
