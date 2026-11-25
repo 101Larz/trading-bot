@@ -368,6 +368,43 @@
 
 ## Routine Snapshots
 
+### 2026-11-25 (Wednesday) — Market-Open **BLOCKED (Alpaca 401, 123rd consecutive routine — Day 31) — WEEK 7 DAY 3**
+
+| Field | Value |
+|-------|-------|
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified under python3.11 after fresh pip install) |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Trades placed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (Week 7 Day 3 Wed market-open) |
+| Trades this month (Nov MTD) | 0 (first 18 business days of November — 11/02 through 11/25 — all zero fills) |
+| Routines blocked running total | **123** across 31 business days |
+| Screener Phase-D survivors | **0** (from 2026-11-24 01:07 UTC nightly run; all 12 Markov survivors failed Phase C momentum gate) |
+| Catalyst in today's RESEARCH-LOG | None — pre-market logged zero survivors and skipped WebSearch |
+| Push notification | Suppressed — identical signal to pre-market #122 ~2 h ago; Fri Weekly Review owns next escalation |
+
+**Blocker (Day 31, routine #123):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets`. Independent second blocker: zero Phase-D survivors in today's screener. Third blocker per Step 3 of the market-open checklist: no catalyst in today's RESEARCH-LOG. NO_TRADE on any ground alone.
+
+---
+
+### 2026-11-25 (Wednesday) — Pre-Market **BLOCKED (Alpaca 401, 122nd consecutive routine — Day 31) — WEEK 7 DAY 3**
+
+| Field | Value |
+|-------|-------|
+| Portfolio value | **UNKNOWN** — `/v2/account` 401 Unauthorized (re-verified under python3.11) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 48 calendar days stale) |
+| Trades today | 0 |
+| Trades this week | 0 (Week 7 Day 3 opens at zero after Mon/Tue closed at zero) |
+| Trades this month (Nov MTD) | 0 |
+| Zero-trade week streak | **6 full weeks closed + Days 1–3 of Week 7** |
+| Routines blocked running total | **122** across 31 business days |
+| Nightly screener | 2026-11-24 01:07 UTC — 12 Phase-B Markov survivors, **0 Phase-C**, **0 Phase-D** |
+| Push notification | Suppressed — identical signal to Monday Week 7 Day 1 pre-market escalation push ~48 h ago; Fri Weekly Review owns next escalation |
+
+**Blocker (Day 31, routine #122):** Credential rotation by e.larsve@gmail.com still outstanding one calendar month + one business day into the outage. Second independent block: zero Phase-D screener survivors — nothing to buy even if credentials cleared.
+
+---
+
 ### 2026-11-24 (Tuesday) — Midday Scan **BLOCKED (Alpaca 401, 120th consecutive routine — Day 30) — WEEK 7 DAY 2**
 
 | Field | Value |
