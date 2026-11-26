@@ -368,6 +368,52 @@
 
 ## Routine Snapshots
 
+### 2026-11-26 (Thursday) — EOD **BLOCKED (Thanksgiving market closed + Alpaca 401, 127th consecutive routine — Day 32) — WEEK 7 DAY 4**
+
+| Field | Value |
+|-------|-------|
+| Market status | **Closed — Thanksgiving Day** (no session today); Fri 2026-11-27 early close 1:00 PM ET |
+| Portfolio value | **UNKNOWN** — `/v2/account` 401 Unauthorized (re-verified EOD under python3.11 after fresh pip install of `requests`, `python-dotenv`, `numpy`) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 49 calendar days stale) |
+| Day P&L ($) | **UNCOMPUTABLE** — holiday (no session) + credentials 401; no live equity read possible |
+| Day P&L (%) | **UNCOMPUTABLE** — same cause |
+| Trades today | 0 (market closed — no session to trade) |
+| Trades this week | 0 (Week 7 Days 1–3 all zero, Day 4 Thanksgiving) |
+| Trades this month (Nov MTD) | 0 (first 18 trading days of November all zero fills; Day 19 is tomorrow's early close) |
+| Zero-trade week streak | **6 full weeks closed + Days 1–4 of Week 7** |
+| Routines blocked today | 4 (pre-market #124, market-open #125, midday #126, EOD #127) |
+| Routines blocked running total | **127** across 32 business days |
+| Open positions (last-known, ≈1899 h / ~79 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 36 cal days + 25 RTH sessions post-print) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; **25 post-print RTH sessions + 36 calendar days elapsed**; bot still blind to final position/P&L |
+| Push notification | Suppressed — identical signal to prior 126 routines; Fri Weekly Review owns next escalation push |
+
+**Open positions table (last-known marks — not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.10 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; current state unverified post-print) |
+
+**Blocker (Day 32, routine #127):** Triple block — US markets closed for Thanksgiving + `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` + zero Phase-D screener survivors from last nightly run. Even with a holiday carve-out, the credential outage is the binding constraint: no live state readable for a 32nd consecutive business day.
+
+**Trades executed today:** _None — market closed_
+**Positions closed today:** _None visible to the bot_
+
+**End-of-Day reflection (Week 7 Day 4 of the outage; Thanksgiving holiday):**
+- Day 32 closes identically to the prior 31: credentials still 401, live state still unreadable, day/week P&L uncomputable. Market closure means no trading opportunity was forgone today.
+- Week 7 sits at 0/4 zero-trade sessions (Mon/Tue/Wed trading sessions + Thu holiday). Friday is a shortened session (1:00 PM ET close) and the Weekly Review runs at 17:00 ET Fri regardless.
+- TSLA print is now 25 post-print RTH sessions and 36 calendar days in the past; bot has still never read the resulting state.
+- EOD push notification suppressed — no state change versus the 126 prior routines; Fri Weekly Review owns the Week 7 retrospective escalation.
+
+**Carry-forward to Fri 2026-11-27 (Week 7 Day 5, early-close session + Weekly Review):**
+- **Operator action overnight (unchanged):** rotate `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper and update cloud session env; confirm TSLA state via Alpaca web UI.
+- Fri pre-market still fires 9:00 ET; market-open 9:45 ET; midday 12:30 ET (within the shortened session); EOD 16:15 ET (after the 13:00 ET close); Weekly Review 17:00 ET.
+- First credential-cleared routine priority (unchanged): (a) `/v2/account` + `/v2/positions` snapshot, (b) TSLA state reconciliation + performance.md backfill, (c) regime-break / hard-stop exit review on KLAC/NVDA (both Bear), (d) fresh 95-ticker Phase B/C/D screen before any new buy, (e) only then consider the top ranked candidate.
+
+---
+
 ### 2026-11-26 (Thursday) — Midday Scan **BLOCKED (Thanksgiving market closed + Alpaca 401, 126th consecutive routine — Day 32) — WEEK 7 DAY 4**
 
 | Field | Value |
