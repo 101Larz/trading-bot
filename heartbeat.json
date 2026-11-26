@@ -1,9 +1,10 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-11-25T21:15:00Z",
-  "status": "BLOCKED",
-  "reason": "Alpaca 401 Unauthorized on /v2/account and /v2/positions — Day 31, routine #125",
-  "trades_executed": 0,
-  "routines_blocked_total": 125,
+  "last_routine": "nightly-screener",
+  "last_run_utc": "2026-11-26T00:08:20Z",
+  "status": "success",
+  "reason": "Nightly 95-ticker Markov+momentum+technical screen completed; 0 candidates passed Phase B gates (broad Bear/Sideways regime)",
+  "screener_candidates": 0,
+  "screener_run_date": "2026-11-26",
+  "alpaca_outage_day": 31,
   "action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper"
 }
