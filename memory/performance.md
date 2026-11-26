@@ -368,6 +368,24 @@
 
 ## Routine Snapshots
 
+### 2026-11-26 (Thursday) — Midday Scan **BLOCKED (Thanksgiving market closed + Alpaca 401, 126th consecutive routine — Day 32) — WEEK 7 DAY 4**
+
+| Field | Value |
+|-------|-------|
+| Market status | **Closed — Thanksgiving Day**; Fri 2026-11-27 early close 1:00 PM ET |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine under python3.11 after fresh pip install) |
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads + market closed |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — same cause |
+| Thesis-break scan | Skipped — holiday + orders would 401; TSLA post-print state still unverified (36 cal days post-print) |
+| Routines blocked running total | **126** across 32 business days |
+| Open positions (last-known, ≈1896 h / ~79 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified) |
+| Push notification | Suppressed — identical signal to pre-market #125 earlier today; Fri Weekly Review owns next escalation |
+
+**Blocker (Day 32, routine #126):** Triple block — US markets closed for Thanksgiving + `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` + zero Phase-D screener survivors from last nightly run. No action possible on any axis today.
+
+---
+
 ### 2026-11-25 (Wednesday) — Midday Scan **BLOCKED (Alpaca 401, 124th consecutive routine — Day 31) — WEEK 7 DAY 3**
 
 | Field | Value |
