@@ -368,6 +368,42 @@
 
 ## Routine Snapshots
 
+### 2026-11-26 (Thursday) — Market-Open **BLOCKED (Alpaca 401, 124th consecutive routine — Day 32) + MARKET HOLIDAY (Thanksgiving)**
+
+| Field | Value |
+|-------|-------|
+| Market state | **CLOSED** — Thanksgiving Day (no US cash session) |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified under python3.11) |
+| Trades placed | 0 (NO_TRADE — no venue open, credentials 401, 0 screener survivors) |
+| Trades this week | 0 of 3 (Week 7 Day 4 Thu) |
+| Trades this month (Nov MTD) | 0 (first 19 business days of November all zero fills) |
+| Routines blocked running total | **124** across 32 business days |
+| Screener Phase-D survivors | **0** (from 2026-11-26 01:07 UTC nightly run; all 95 tickers failed Phase B) |
+| Push notification | Suppressed — identical signal to pre-market #123 ~2 h ago; Fri Weekly Review owns next escalation |
+
+**Compound block (Day 32, routine #124):** market holiday + Alpaca 401 + 0 screener survivors. Any one alone forces NO_TRADE.
+
+---
+
+### 2026-11-26 (Thursday) — Pre-Market **BLOCKED (Alpaca 401, 123rd consecutive routine — Day 32) + MARKET HOLIDAY (Thanksgiving) — WEEK 7 DAY 4**
+
+| Field | Value |
+|-------|-------|
+| Market state | **CLOSED — Thanksgiving Day (US federal holiday)** |
+| Alpaca `/v2/account` | **401 Unauthorized** |
+| Portfolio value | **UNKNOWN** — no live equity read in 32 business days |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now 49 calendar days stale) |
+| Trades today | 0 (market closed; routine blocked regardless) |
+| Trades this week | 0 of 3 (Week 7 Days 1–4 all zero) |
+| Zero-trade week streak | **6 full weeks closed + Days 1–4 of Week 7** |
+| Routines blocked running total | **123** across 32 business days |
+| Nightly screener | 2026-11-26 01:07 UTC — **0 Phase B** (step-down from 12 on 2026-11-25), **0 Phase C**, **0 Phase D** |
+| Push notification | Suppressed — holiday routine, operator-facing content unchanged since Monday escalation ~72 h ago |
+
+**Blocker (Day 32, routine #123):** market closed (Thanksgiving) + Alpaca 401 + zero Phase B survivors (broadest regime-fail reading since dynamic screener introduced). Credential rotation by e.larsve@gmail.com remains the single unblocking action.
+
+---
+
 ### 2026-11-25 (Wednesday) — Midday Scan **BLOCKED (Alpaca 401, 124th consecutive routine — Day 31) — WEEK 7 DAY 3**
 
 | Field | Value |
