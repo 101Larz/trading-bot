@@ -1,10 +1,13 @@
 {
-  "last_routine": "nightly-screener",
-  "last_run_utc": "2026-11-26T00:08:20Z",
-  "status": "success",
-  "reason": "Nightly 95-ticker Markov+momentum+technical screen completed; 0 candidates passed Phase B gates (broad Bear/Sideways regime)",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-11-26T07:15:00Z",
+  "status": "blocked",
+  "reason": "Thanksgiving market closed + Alpaca 401 Day 32 + 0 Phase D screener survivors (triple block)",
   "screener_candidates": 0,
   "screener_run_date": "2026-11-26",
-  "alpaca_outage_day": 31,
+  "alpaca_outage_day": 32,
+  "market_closed_today": true,
+  "market_closed_reason": "Thanksgiving Day",
+  "next_session": "2026-11-27 early close 1:00 PM ET",
   "action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper"
 }
