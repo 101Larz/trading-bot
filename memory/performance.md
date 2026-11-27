@@ -368,6 +368,54 @@
 
 ## Routine Snapshots
 
+### 2026-11-27 (Friday) — EOD **BLOCKED (Alpaca 401, 131st consecutive routine — Day 33) — WEEK 7 DAY 5 CLOSES AT ZERO — Black Friday shortened session**
+
+| Field | Value |
+|-------|-------|
+| Market status | **Closed — Black Friday shortened session** (equity close 1:00 PM ET / 18:00 UTC; EOD fires after close for bookkeeping) |
+| Portfolio value | **UNKNOWN** — `/v2/account` 401 Unauthorized (re-verified EOD under python3.11 after fresh pip install of `requests`, `python-dotenv`, `numpy`) |
+| Cash | **UNKNOWN** (last-known ≈ 76.2%) |
+| Last confirmed equity | $96,384.02 (Thu 2026-10-08 EOD, now **50 calendar days stale**) |
+| Day P&L ($) | **UNCOMPUTABLE** — no live equity read possible on Day 33 |
+| Day P&L (%) | **UNCOMPUTABLE** — same cause |
+| Trades today | 0 (NO_ACTION across pre-market #128, market-open #129, midday #130, EOD #131) |
+| Trades this week | 0 (Week 7 Days 1–3 trading sessions all zero + Day 4 Thanksgiving + Day 5 shortened Black Friday) |
+| Trades this month (Nov MTD) | 0 (first 20 of 20 business days of November all zero fills; month closes with 1 full trading day left on Mon 11/30) |
+| Zero-trade week streak | **7 full weeks closed** (10/12–10/16, 10/19–10/23, 10/26–10/30, 11/02–11/06, 11/09–11/13, 11/16–11/20, 11/23–11/27) |
+| Routines blocked today | 4 (pre-market #128, market-open #129, midday #130, EOD #131) |
+| Routines blocked running total | **131** across 33 business days |
+| Screener Phase-D survivors | **0** (from 2026-11-27 nightly run — 0 Phase B / 0 Phase C / 0 Phase D; 1 universe data error on MMC) |
+| Open positions (last-known, ≈1931 h / ~80 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 37 cal days + 26 RTH sessions post-print) |
+| TSLA post-earnings status | Print 2026-10-21 ~17:30 ET AMC; **26 post-print RTH sessions + 37 calendar days elapsed**; bot still blind to final position/P&L |
+| Push notification | Suppressed — identical signal to midday #130 ~2.5 h ago; Fri Weekly Review (17:00 ET, ~1.5 h out) owns Week 7 retrospective escalation |
+
+**Open positions table (last-known marks — not refreshable):**
+
+| Symbol | Qty | Avg Entry | Last Mark | Unreal % | Hard Stop |
+|--------|----:|----------:|----------:|---------:|----------:|
+| KLAC | 39 | $196.79 | $201.46 | +2.37% | $181.10 |
+| NVDA | 34 | $224.59 | $233.87 | +4.13% | $206.62 |
+| TSLA | 19 | $377.78 | $379.36 (pre-earnings) | +0.42% (pre-earnings) | $347.56 (pre-earnings; current state unverified post-print) |
+
+**Blocker (Day 33, routine #131):** Triple block carries into EOD — `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` + zero Phase-D screener survivors from tonight's nightly run + no catalyst in today's RESEARCH-LOG. Credential rotation by the account owner (e.larsve@gmail.com) remains outstanding 50 calendar days after the last confirmed equity read (2026-10-08).
+
+**Trades executed today:** _None — NO_TRADE across all four routines_
+**Positions closed today:** _None visible to the bot_
+
+**End-of-Day reflection (Week 7 Day 5 — closes 7th consecutive zero-trade week; Day 33 of credential outage):**
+- Week 7 closes at 0 trades across 4 trading sessions (Mon/Tue/Wed regular + Fri Black Friday shortened; Thu Thanksgiving holiday). This is the 7th consecutive full zero-trade week — the longest dry streak in the portfolio's history.
+- November closes its 20th business day today with zero fills; only Mon 11/30 remains before month-end.
+- TSLA print is now 26 post-print RTH sessions and 37 calendar days in the past; bot has still never read the resulting state. If TSLA exited (either by stop-out or target), the P&L is already realised in Alpaca's books but invisible here; if it still holds, the thesis (robotaxi/EV momentum) is 37 days older with no refresh.
+- EOD push notification suppressed — no state change versus the 130 prior routines; Fri Weekly Review at 17:00 ET (~1.5 h out) owns the Week 7 retrospective escalation push.
+- Nothing to execute on Monday 11/30 even if credentials cleared: 0 Phase-D screener survivors in tonight's run. First priority on any credential recovery remains (a) `/v2/account` + `/v2/positions` snapshot, (b) TSLA reconciliation + performance.md backfill, (c) regime-break / hard-stop exit review on KLAC/NVDA, (d) fresh 95-ticker Phase B/C/D screen, (e) only then consider the top ranked candidate.
+
+**Carry-forward to Mon 2026-11-30 (Week 8 Day 1, full session):**
+- **Operator action over the long weekend (unchanged):** rotate `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` at app.alpaca.markets/paper and update cloud session env; confirm TSLA state via Alpaca web UI.
+- Mon pre-market fires 9:00 ET; market-open 9:45 ET; midday 12:30 ET; EOD 16:15 ET (regular hours resume).
+- Week 8 opening escalation push already owed on Monday's pre-market per prior policy (three-calendar-day gap since Friday Weekly Review), subject to the Weekly Review's own instructions tonight.
+
+---
+
 ### 2026-11-27 (Friday) — Midday Scan **BLOCKED (Alpaca 401, 130th consecutive routine — Day 33) — WEEK 7 DAY 5 — Black Friday early close**
 
 | Field | Value |

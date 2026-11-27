@@ -1,14 +1,17 @@
 {
-  "last_routine": "market-open",
-  "last_run_utc": "2026-11-27T14:45:00Z",
+  "last_routine": "end-of-day",
+  "last_run_utc": "2026-11-27T20:33:00Z",
   "status": "blocked",
-  "reason": "Alpaca 401 Day 33 + 0 Phase D screener survivors + no catalyst in RESEARCH-LOG (triple block). Black Friday early close 1:00 PM ET.",
+  "reason": "Alpaca 401 Day 33 (routine #131) — Black Friday shortened session closes Week 7 Day 5 at zero trades. Triple block (credentials + 0 Phase-D + no catalyst).",
   "screener_candidates": 0,
   "screener_run_date": "2026-11-27",
   "alpaca_outage_day": 33,
-  "routines_blocked_total": 129,
+  "routines_blocked_total": 131,
   "market_closed_today": false,
   "market_early_close": "13:00 ET",
-  "next_session": "2026-11-30 regular session",
+  "zero_trade_week_streak": 7,
+  "nov_mtd_trades": 0,
+  "next_session": "2026-11-30 regular session (Week 8 Day 1)",
+  "weekly_review_due": "2026-11-27 17:00 ET",
   "action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper"
 }
