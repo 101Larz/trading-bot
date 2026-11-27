@@ -1,14 +1,14 @@
 {
-  "last_routine": "end-of-day",
-  "last_run_utc": "2026-11-26T21:15:00Z",
+  "last_routine": "pre-market",
+  "last_run_utc": "2026-11-27T13:00:00Z",
   "status": "blocked",
-  "reason": "Thanksgiving market closed + Alpaca 401 Day 32 + 0 Phase D screener survivors (triple block)",
+  "reason": "Alpaca 401 Day 33 + 0 Phase D screener survivors (double block). Black Friday early close 1:00 PM ET.",
   "screener_candidates": 0,
-  "screener_run_date": "2026-11-26",
-  "alpaca_outage_day": 32,
-  "routines_blocked_total": 127,
-  "market_closed_today": true,
-  "market_closed_reason": "Thanksgiving Day",
-  "next_session": "2026-11-27 early close 1:00 PM ET",
+  "screener_run_date": "2026-11-27",
+  "alpaca_outage_day": 33,
+  "routines_blocked_total": 128,
+  "market_closed_today": false,
+  "market_early_close": "13:00 ET",
+  "next_session": "2026-11-30 regular session",
   "action_required": "Rotate APCA_API_KEY_ID / APCA_API_SECRET_KEY at app.alpaca.markets/paper"
 }
