@@ -368,6 +368,26 @@
 
 ## Routine Snapshots
 
+### 2026-11-27 (Friday) — Market-Open **BLOCKED (Alpaca 401, 129th consecutive routine — Day 33) — WEEK 7 DAY 5 — Black Friday early close**
+
+| Field | Value |
+|-------|-------|
+| Market state | Open — Black Friday shortened session, equity close 1:00 PM ET |
+| Alpaca `/v2/account` | 401 Unauthorized (re-verified this routine under python3.11 after fresh pip install of `requests`, `python-dotenv`, `numpy`) |
+| Alpaca `/v2/positions` | 401 Unauthorized |
+| Trades placed | 0 (NO_TRADE) |
+| Trades this week | 0 of 3 (Week 7 Day 5 Fri market-open — M/T/W closed at zero, Thu Thanksgiving) |
+| Trades this month (Nov MTD) | 0 (first 19 of 20 business days of November all zero fills) |
+| Routines blocked running total | **129** across 33 business days |
+| Screener Phase-D survivors | **0** (from 2026-11-27 nightly run — 0 Phase B / 0 Phase C / 0 Phase D; 1 universe data error on MMC) |
+| Catalyst in today's RESEARCH-LOG | None — pre-market logged zero survivors and skipped WebSearch |
+| Open positions (last-known, ≈1922 h / ~80 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified — 37 cal days / 25 RTH sessions post-print) |
+| Push notification | Suppressed — identical signal to pre-market #128 ~45 min ago; Fri Weekly Review (17:00 ET) owns Week 7 retrospective escalation |
+
+**Blocker (Day 33, routine #129):** Triple block — `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets` + 0 Phase-D screener survivors + no catalyst in today's RESEARCH-LOG. NO_TRADE on any ground alone.
+
+---
+
 ### 2026-11-26 (Thursday) — EOD **BLOCKED (Thanksgiving market closed + Alpaca 401, 127th consecutive routine — Day 32) — WEEK 7 DAY 4**
 
 | Field | Value |
