@@ -368,6 +368,24 @@
 
 ## Routine Snapshots
 
+### 2026-11-27 (Friday) — Midday Scan **BLOCKED (Alpaca 401, 130th consecutive routine — Day 33) — WEEK 7 DAY 5 — Black Friday early close**
+
+| Field | Value |
+|-------|-------|
+| Market status | Open — Black Friday shortened session, equity close 1:00 PM ET (midday fired within session) |
+| Alpaca `/v2/positions` | 401 Unauthorized (re-verified this routine under python3.11 after fresh pip install of `requests`, `python-dotenv`, `numpy`) |
+| Trades executed | 0 (NO_ACTION) |
+| Losers cut (−7% rule) | **UNEVALUATED** — no live position reads |
+| Stops tightened (+15% / +20% rule) | **UNEVALUATED** — same cause |
+| Thesis-break scan | Skipped — moot while `/v2/orders` would 401; TSLA post-print state still unverified (37 cal days + 26 RTH sessions post-print) |
+| Routines blocked running total | **130** across 33 business days |
+| Open positions (last-known, ≈1925 h / ~80 d stale) | KLAC 39 @ $196.79 (Bear), NVDA 34 @ $224.59 (Bear, Mom1M −23.5%), TSLA 19 @ $377.78 (Bull, post-earnings state unverified) |
+| Push notification | Suppressed — identical signal to market-open #129 ~2.75 h ago; Fri Weekly Review (17:00 ET, ~4.5 h out) owns Week 7 retrospective escalation |
+
+**Blocker (Day 33, routine #130):** `APCA_API_KEY_ID` / `APCA_API_SECRET_KEY` continue to be rejected by `paper-api.alpaca.markets`. Midday steps 3/4/5 all unevaluable without live marks. Shortened session (1:00 PM ET close) leaves no post-midday trading window; EOD routine (16:15 ET) still fires after close for bookkeeping. Weekly Review at 17:00 ET owns the Week 7 retrospective.
+
+---
+
 ### 2026-11-27 (Friday) — Market-Open **BLOCKED (Alpaca 401, 129th consecutive routine — Day 33) — WEEK 7 DAY 5 — Black Friday early close**
 
 | Field | Value |
